@@ -1,0 +1,30 @@
+<div class="col-xs-12 nopadding pwcontainer">
+    <div ng-show="found_credentials.length === 0">
+        No credentials found for this site!
+    </div>
+    <div ng-show="found_credentials.length > 0">We've found {{found_credentials.length}} credentials for this site</div>
+    <div class="credential" ng-repeat="credential in found_credentials">
+        <div class="col-xs-7 nopadding">{{credential.label}}<br/>
+            <small>{{credential.username}}</small>
+        </div>
+        <div class="col-xs-5 OTP" ng-if="credential.otp.secret">
+            OTP: <div otp-generator secret="credential.otp.secret"></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div style="position: absolute; left: 50%; margin-top: -7px; width: 110px;">
+        <div style="position: relative; left: -50%; margin-top: 1.3em;">
+            <small>{{credential_amount}} {{ credential_amount === 1 ? 'credential' : 'credentials'}} in the database</small>
+        </div>
+    </div>
+    <div class="bottomBtn" ng-click="goto_settings()" title="Settings"><i class="fa fa-gears"></i></div>
+    <div class="bottomBtn" ng-click="refresh()" title="Refresh credential list"><i class="fa fa-refresh" ng-class="{'fa-spin': refreshing_credentials}"></i></div>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"
+       title="Developent depends on donations, please support us"
+       rel="nofollow noopener noreferrer" class="bottomBtn pull-right" ng-click="lockExtension()"
+    ><i class="fa fa-paypal"></i> </a>
+    <div class="bottomBtn pull-right" ng-click="lockExtension()" title="Lock extension"><i class="fa fa-lock"></i></div>
+    <!-- <a class="btn btn-success pull-right"
+       >Donate</a> -->
+</div>

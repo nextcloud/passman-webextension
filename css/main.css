@@ -1,0 +1,176 @@
+body {
+  font-family: "Open Sans", Frutiger, Calibri, "Myriad Pro", Myriad, sans-serif;
+  background-color: #0082c9;
+  color: #fff;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+#mainPopup {
+  padding: 10px;
+  min-height: 260px;
+  overflow-y: auto;
+  width: 400px;
+  font-family: Helvetica, Ubuntu, Arial, sans-serif; }
+  #mainPopup .pwcontainer {
+    max-height: 195px;
+    overflow: auto;
+    /*padding-right: 15px;*/ }
+    #mainPopup .pwcontainer .credential {
+      border: 1px solid #fff;
+      margin-bottom: 0.3em;
+      float: left;
+      width: 100%;
+      padding: 5px; }
+  #mainPopup .footer {
+    background: #fff;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    margin-left: -10px;
+    width: 100%;
+    color: #000;
+    background: -webkit-linear-gradient(#fff, #ddd);
+    background: linear-gradient(#fff, #ddd); }
+    #mainPopup .footer small {
+      width: 100%;
+      display: block;
+      text-align: center; }
+    #mainPopup .footer .bottomBtn {
+      float: left;
+      font-size: 18px;
+      padding: 14px;
+      cursor: pointer; }
+    #mainPopup .footer .bottomBtn:hover {
+      /*background-color: #ddd;*/
+      background: -webkit-linear-gradient(#ddd, #fff);
+      background: linear-gradient(#ddd, #fff);
+      border: 1px solid #ccc; }
+
+.equalDivide td {
+  vertical-align: middle;
+  padding: 3px; }
+
+/*
+.bottom {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+}*/
+.ng-invalid {
+  border-color: #a94442; }
+
+.alerts li {
+  list-style-type: none; }
+
+input[type="password"], input[type="text"] {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 36px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 3px;
+  padding: 7px 10px;
+  font-size: 13px;
+  cursor: auto; }
+
+.unlock {
+  min-height: 275px;
+  text-align: center; }
+  .unlock input[type="text"] {
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  .unlock input[type="checkbox"] {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .unlock .error {
+    padding: 5px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    margin-bottom: 10px;
+    border-radius: 3px; }
+  .unlock .error.ng-hide {
+    display: block;
+    visibility: hidden; }
+
+.setup {
+  background-color: #0082c9;
+  color: #fff;
+  min-height: 350px; }
+  .setup h2 {
+    font-size: 18px; }
+  .setup label {
+    display: block; }
+  .setup input[type="text"], .setup input[type="password"] {
+    width: 100%; }
+  .setup input[type="text"], .setup input[type="password"], .setup select {
+    display: block; }
+  .setup .btn {
+    position: fixed;
+    bottom: 15px; }
+    .setup .btn.stepNext {
+      right: 15px; }
+
+.angular-steps {
+  position: relative; }
+  .angular-steps .step {
+    position: absolute;
+    z-index: 1;
+    margin-top: -10px;
+    margin-left: -10px;
+    height: 100%;
+    width: 100%;
+    padding: 10px; }
+  .angular-steps .step.ng-hide {
+    display: block !important;
+    z-index: 0; }
+
+/*
+ * Animations (optional) - requires ngAnimate
+ */
+.angular-steps .step.ng-hide-add,
+.angular-steps .step.ng-hide-remove {
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 1; }
+.angular-steps .step.ng-hide {
+  opacity: 0; }
+
+.nopadding {
+  padding: 0; }
+
+.radial-progress {
+  display: inline-block;
+  left: 10px;
+  top: 6px;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-color: #d6dadc;
+  border-radius: 50%; }
+  .radial-progress .circle .mask, .radial-progress .circle .fill {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .radial-progress .circle .mask {
+    clip: rect(0px, 25px, 25px, 12.5px); }
+    .radial-progress .circle .mask .fill {
+      clip: rect(0px, 12.5px, 25px, 0px);
+      background-color: #97a71d; }
+
+.ng-hide {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */

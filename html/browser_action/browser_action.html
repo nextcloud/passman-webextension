@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="passmanExtension" ng-csp>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Passman rules</title>
+        <script src="/js/vendor/jquery/dist/jquery.js"></script>
+        <script src="/js/vendor/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/js/vendor/angular/angular.js"></script>
+
+        <script src="/js/lib/promise.js"></script>
+        <script src="/js/lib/API/base.js"></script>
+        <script src="/js/lib/API/storage.js"></script>
+        <script src="/js/lib/API/runtime.js"></script>
+        <script src="/js/lib/API/tabs.js"></script>
+        <script src="/js/lib/API/cookies.js"></script>
+        <script src="/js/lib/API/extension.js"></script>
+        <script src="/js/lib/font-awesome.js"></script>
+        <script src="/js/vendor/sjcl/sjcl.js"></script>
+        <script src="/js/vendor/angular-resource/angular-resource.js"></script>
+
+        <script src="/js/vendor/angular-route/angular-route.js"></script>
+        <script src="/js/vendor/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/js/vendor/angular-translate/angular-translate.js"></script>
+        <script src="/js/vendor/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="/js/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="/js/vendor/angular-steps/angular-steps.js"></script>
+        <script src="/js/vendor/sha/sha.js"></script>
+
+        <script src="/js/lib/api.js"></script>
+        
+        <script src="/js/ui/popup/app.js"></script>
+        
+        <script src="/js/ui/popup/factories/storage.js"></script>
+        <script src="/js/ui/popup/factories/debounce.js"></script>
+        
+        <script src="/js/ui/popup/controllers/main.js"></script>
+        <script src="/js/ui/popup/controllers/settings.js"></script>
+        <script src="/js/ui/popup/controllers/password_prompt.js"></script>
+        <script src="/js/ui/popup/controllers/setup.js"></script>
+        <script src="/js/ui/popup/directives/otp.js"></script>
+
+        
+        <link href="/js/vendor/bootstrap/dist/css/bootstrap.css" media="all" rel="stylesheet" />
+        <link href="/js/vendor/bootstrap/dist/css/bootstrap-theme.css" media="all" rel="stylesheet" />
+        <link href="/css/vendor/font-awesome.css" media="all" rel="stylesheet" />
+        <link href="/css/main.css" media="all" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="mainPopup" ng-view>
+
+        </div>
+    </body>
+</html>

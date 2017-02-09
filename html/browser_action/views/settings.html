@@ -1,0 +1,62 @@
+
+<h4 align="center">Please enter your nextCloud credentials:</h4>
+<div class="alerts alert alert-warning" ng-if="errors.length > 0">
+    <li ng-repeat="error in errors">{{error}}</li>
+</div>
+<div style="max-height: 350px; overflow-y: auto;">
+    <table class="table">
+        <tr>
+            <td><small>Host:</small></td>
+            <td><input type="url" class="form-control input-sm" id="host" ng-model="settings.nextcloud_host" required ng-debounce="1000">
+            </td>
+        </tr>
+        <tr ng-if="settings.nextcloud_host.indexOf('http://') == 0">
+            <td colspan=2><div class="alert alert-warning">Warning: This connection is insecure!</div></td>
+        </tr>
+        <tr>
+            <td><small>Username:</small></td>
+            <td><input type="text" class="form-control input-sm" id="user" ng-model="settings.nextcloud_username" required ng-debounce="1000"></td>
+        </tr>
+        <tr>
+            <td><small>Password:</small></td>
+            <td><input type="password" class="form-control input-sm" id="password" ng-model="settings.nextcloud_password" required ng-debounce="1000"></td>
+        </tr>
+        <tr class="login-req"  ng-if="vaults">
+            <td><small>Select default vault:</small></td>
+            <td><select id="defaultVault"  class="form-control input-sm" ng-model="settings.default_vault" required ng-options="vault.guid as vault.name for vault in vaults track by vault.guid"></select></td>
+        </tr>
+        <tr class="login-req" id="vaultPassRow" ng-show="settings.default_vault != ''">
+            <td valign="top">
+                <small>Vault password</small>
+            </td>
+            <td>
+                <input type="password" class="form-control input-sm" id="vaultPassword" ng-model="settings.vault_password">
+            </td>
+        </tr>
+        <tr>
+            <td><small>Refresh timer [s]:</small></td>
+            <td><input type="text" id="timer" class="form-control input-sm" ng-model="settings.refreshTime"></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type="checkbox" id="ignoreProtocol" ng-model="settings.ignoreProtocol"><small>Ignore protocol for site matching</small></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type="checkbox" id="ignoreSubdomain" ng-model="settings.ignoreSubdomain"><small>Ignore subdomain for site matching</small></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type="checkbox" id="ignorePath" ng-model="settings.ignorePort"><small>Ignore port for site matching</small></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type="checkbox" id="ignorePath" ng-model="settings.ignorePath"><small>Ignore path for site matching</small></td>
+        </tr>
+        <tr>
+            <td colspan=2><input type="checkbox" id="disableAutoFill" ng-model="settings.disableAutoFill"><small>Disable auto fill of forms</small></td>
+        </tr>
+        <tr>
+            <td colspan=2 align="center">
+                <button class="btn btn-success" ng-click="saveSettings()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> Save</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</div>
