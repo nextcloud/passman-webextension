@@ -1,0 +1,5 @@
+filter:
+    excluded_paths:
+        - 'js/vendor*'
+        - 'l10n/'
+        - 'tests/'
