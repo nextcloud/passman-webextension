@@ -1,5 +1,6 @@
 filter:
     excluded_paths:
         - 'js/vendor*'
+        - 'js/lib/passwordgen.js'
         - 'l10n/'
         - 'tests/'
