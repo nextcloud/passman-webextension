@@ -1,6 +1,11 @@
 #Passman Webextension
 
-This extension aims to provide you with your passwords in your browser.
+Tested on:   
+- Chrome
+- Firefox
+- Safari
+
+This extension aims to provide you with your passwords in your browser.   
 The passwords will be provided by [passman](https://github.com/nextcloud/passman).   
 Features   
 - List accounts for the current site 
