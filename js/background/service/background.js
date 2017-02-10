@@ -21,7 +21,7 @@
     var master_password = null;
 
     function getMasterPasswordSet() {
-        return (master_password !== null)
+        return (master_password !== null);
     }
 
     _self.getMasterPasswordSet = getMasterPasswordSet;
@@ -31,15 +31,15 @@
         if (opts.hasOwnProperty('savePassword') && opts.savePassword === true) {
             // Save the password in plain text on user request.
             // No secure local storage is available :/
-            storage.set('master_password', opts.password)
+            storage.set('master_password', opts.password);
         } else {
-            storage.set('master_password', null)
+            storage.set('master_password', null);
         }
 
         if (opts.password) {
             getSettings();
         } else {
-            displayLogoutIcons()
+            displayLogoutIcons();
         }
 
     }
@@ -73,7 +73,7 @@
         storage.get('settings').then(function (_settings) {
 
             if (!_settings || !_settings.hasOwnProperty('nextcloud_host')) {
-                return
+                return;
             }
 
             if (!master_password && _settings.hasOwnProperty('nextcloud_username') && _settings.hasOwnProperty('vault_password')) {
@@ -349,7 +349,7 @@
         API.browserAction.setTitle({
             title: 'Passman - ' + credentialAmount.toString() + ' '+ plural +' found for this page',
             tabId: tab.id
-        })
+        });
     }
 
     function displayLogoutIcons() {
@@ -378,7 +378,7 @@
         API.tabs.query({}).then(function (tabs) {
             for (var t = 0; t < tabs.length; t++) {
                 var tab = tabs[t];
-                createIconForTab(tab)
+                createIconForTab(tab);
             }
         })
     }
@@ -404,7 +404,7 @@
         getSettings();
     }).error(function (error) {
         if (error === "Data not found") {
-            getSettings()
+            getSettings();
         }
     })
 
