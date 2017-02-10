@@ -68,7 +68,7 @@ API.tabs = {
             return new C_Promise(function() {
                 API.api.tabs.executeScript(tabId, details, (function(result) {
                     this.call_then(result);
-                }).bind(this))
+                }).bind(this));
             });
         }
     },

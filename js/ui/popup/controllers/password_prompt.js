@@ -59,7 +59,7 @@
                         $scope.inValidPassword = true;
                     }
                     $scope.$apply();
-                })
+                });
 
             };
         }]);

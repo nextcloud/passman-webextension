@@ -13,7 +13,7 @@ $j(document).ready(function () {
         success: function (data) {
             // Firefox parsed data as a XMLDoc, revert that
             if (typeof data === 'object') {
-                data = '<div id="password_picker">' + data.documentElement.innerHTML + '</div>'
+                data = '<div id="password_picker">' + data.documentElement.innerHTML + '</div>';
             }
             password_picker_html = $j(data);
         }
@@ -154,7 +154,7 @@ $j(document).ready(function () {
 
             $j('.togglePwVis').click(function () {
                 toggleFieldType('#generated_password');
-                $j(this).find('.fa').toggleClass('fa-eye-slash').toggleClass('fa-eye')
+                $j(this).find('.fa').toggleClass('fa-eye-slash').toggleClass('fa-eye');
             });
 
             $j('.adv_opt').click(function () {
@@ -211,7 +211,7 @@ $j(document).ready(function () {
 
         var url = window.location.href;
         API.runtime.sendMessage(API.runtime.id, {method: "getCredentialsByUrl", args: [url]}).then(function (logins) {
-            if (logins.length != 0) {
+            if (logins.length !== 0) {
                 picker.find('.tab-list-content').html('');
             }
             for (var i = 0; i < logins.length; i++) {
@@ -220,7 +220,7 @@ $j(document).ready(function () {
                 row.click((function (login) {
                     return function () {
                         enterLoginDetails(login);
-                    }
+                    };
                 })(login));
 
                 picker.find('.tab-list-content').append(row);
@@ -253,7 +253,7 @@ $j(document).ready(function () {
         var pickerButton = $j('<span class="passwordPickerIcon" style="display: inline-block"> </span>');
         $j('body').append(pickerButton);
         if (el.find('.passwordPickerIcon').length > 0) {
-            pickerButton = el.find('.passwordPickerIcon')[0]
+            pickerButton = el.find('.passwordPickerIcon')[0];
         }
 
 
@@ -399,8 +399,8 @@ $j(document).ready(function () {
             var action = (args.updated) ? 'updated' : 'saved';
             $j('#password-toolbar').html('Credential ' + action + '!');
             setTimeout(function () {
-                closeToolbar()
-            }, 2500)
+                closeToolbar();
+            }, 2500);
         }
     }
 
@@ -421,7 +421,6 @@ $j(document).ready(function () {
             "font-weight: normal;",
             "font-style: normal;",
             "}"];
-        var browser = jQuery.browser;
         if (window.navigator.userAgent.indexOf('Firefox') !== -1) {
             fontCss[2] = "src: url('" + fontPath + "fonts/fontawesome-webfont.eot?v=4.7.0');";
             fontCss[3] = "src: url('" + fontPath + "fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('" + fontPath + "fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('" + fontPath + "fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('" + fontPath + "fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('" + fontPath + "fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');";
@@ -469,7 +468,7 @@ $j(document).ready(function () {
                 if (logins.length === 1) {
                     API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
                         if(isEnabled){
-                            enterLoginDetails(logins[0])
+                            enterLoginDetails(logins[0]);
                         }
                     });
                 }
@@ -479,9 +478,9 @@ $j(document).ready(function () {
         $j(document).click(togglePasswordPicker);
         $j(window).on('resize', function () {
             if (getLoginFields().length > 0) {
-                updatePositions()
+                updatePositions();
             }
-        })
+        });
     }
 
     var readyStateCheckInterval = setInterval(function () {

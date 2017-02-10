@@ -66,7 +66,7 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     if (ignorePort) {
         returnURL = returnURL.replace(':' + port, "");
     }
-    if (!ignorePath && path != null && path) {
+    if (!ignorePath && path !== null && path) {
         returnURL += path;
     }
     if (returnURL.slice(-1) === "/") {

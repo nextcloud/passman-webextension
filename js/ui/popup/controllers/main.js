@@ -71,7 +71,7 @@
                     getActiveTab();
                     $scope.refreshing_credentials = true;
                     setTimeout(function () {
-                        port.postMessage("credential_amount")
+                        port.postMessage("credential_amount");
                     }, 500);
                 });
             };
@@ -82,7 +82,7 @@
                 API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
                     setTimeout(function () {
                         port.postMessage("credential_amount");
-                    }, 2000)
+                    }, 2000);
                 });
             };
 
@@ -102,7 +102,7 @@
             $scope.lockExtension = function () {
                 API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: null}}).then(function () {
                     window.location = '#!/locked';
-                })
+                });
             };
 
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {

@@ -92,7 +92,7 @@ window.PAPI = (function () {
                 var fieldValue = credential[field];
                 credential[field] = this.encryptString(JSON.stringify(fieldValue), _key);
             }
-            return credential
+            return credential;
         },
         createCredential: function (credential, _key, callback) {
             credential = this.encryptCredential(credential, _key);
@@ -104,7 +104,7 @@ window.PAPI = (function () {
                 credential.credential_id = r.credential_id;
                 credential.guid = r.guid;
                 credential = _that.decryptCredential(credential, _key);
-                callback(credential)
+                callback(credential);
             });
         },
         updateCredential: function (credential, _key, callback) {
@@ -113,7 +113,7 @@ window.PAPI = (function () {
             credential.expire_time = new Date(angular.copy(credential.expire_time)).getTime() / 1000;
             api_request('/api/v2/credentials/' + credential.guid, 'PATCH', credential, function (r) {
                 r = _that.decryptCredential(r, _key);
-                callback(r)
+                callback(r);
             });
         }
     };
@@ -147,7 +147,7 @@ window.PAPI = (function () {
             if(contentType && contentType.indexOf("application/json") !== -1) {
                 return response.json().then(function(json) {
                     if(json){
-                        callback(json)
+                        callback(json);
                     } else {
                         callback({error: true, result: {statusText: 'Empty reply from server', status: 0}});
                     }
@@ -159,7 +159,7 @@ window.PAPI = (function () {
 
         }).catch(function (e) {
             callback({error: true, result: {statusText: e, status: 0}});
-        })
+        });
     };
 
     return _API;
