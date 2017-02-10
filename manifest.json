@@ -1,7 +1,7 @@
 {
   "name": "Passman",
   "short_name": "Passman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "author": "Sander Brand",
 
@@ -18,7 +18,7 @@
   },
   "background": {
     "scripts": [
-      "/js/vendor/jquery/dist/jquery.js",
+      "/js/vendor/jquery/jquery.js",
       "/js/lib/parseUrl.js",
       "/js/vendor/sjcl/sjcl.js",
       "/js/lib/promise.js",
@@ -61,7 +61,7 @@
         "/js/lib/API/extension.js",
         "/js/lib/API/cookies.js",
         "/js/lib/passwordgen.js",
-        "/js/vendor/jquery/dist/jquery.js",
+        "/js/vendor/jquery/jquery.js",
         "/js/lib/jQuerytoObject.js",
         "/js/lib/findForm.js",
         "/js/lib/domchanged.js",
