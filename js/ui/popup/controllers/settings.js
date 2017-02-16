@@ -119,7 +119,7 @@
                     $scope.errors.push('Invalid vault key!');
                     return;
                 }
-
+                settings.default_vault = v;
                 $scope.saving = true;
                 API.runtime.sendMessage(API.runtime.id, {method: "saveSettings", args: settings}).then(function () {
                     setTimeout(function () {
