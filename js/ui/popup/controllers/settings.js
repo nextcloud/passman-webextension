@@ -64,7 +64,6 @@
                 }
 
                 $scope.get_vaults = function () {
-
                     if (!$scope.settings.hasOwnProperty('nextcloud_host') || !$scope.settings.hasOwnProperty('nextcloud_password') || !$scope.settings.hasOwnProperty('nextcloud_username')) {
                         return;
                     }
@@ -113,7 +112,7 @@
             $scope.saveSettings = function () {
                 $scope.errors = [];
                 var settings = angular.copy($scope.settings);
-                var v = getVaultByGuid(settings.default_vault.guid);
+                var v = getVaultByGuid(settings.default_vault);
                 try{
                     PAPI.decryptString(v.challenge_password, settings.vault_password);
                 } catch (e){
