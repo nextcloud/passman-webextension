@@ -158,7 +158,7 @@
                 }
                 var usedKey = key;
                 //Shared credentials are not implemented yet
-                if (credential.hasOwnProperty('shared_key') && credential.shared_key !== null) {
+                if (credential.hasOwnProperty('shared_key') && credential.shared_key) {
                     usedKey = PAPI.decryptString(credential.shared_key, key);
 
                 }
