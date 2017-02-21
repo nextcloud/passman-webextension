@@ -41,7 +41,7 @@
         if (!auth_tries[requestDetails.requestId]) {
             auth_tries[requestDetails.requestId] = 0;
         }
-
+        /** global: background */
         var login = background.getCredentialForHTTPAuth(requestDetails);
 
         // If we have seen this request before, then
@@ -58,6 +58,7 @@
         } else {
             console.warn("bad credentials for: " + requestDetails.url + ', Showing login dialog');
             //return {cancel: true};
+            return undefined;
         }
 
     };

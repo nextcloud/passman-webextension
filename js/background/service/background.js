@@ -11,9 +11,6 @@ var background = (function () {
             if (msg === 'credential_amount') {
                 port.postMessage('credential_amount:' + local_credentials.length);
             }
-            if (msg === 'getByUrl') {
-
-            }
 
         });
 
