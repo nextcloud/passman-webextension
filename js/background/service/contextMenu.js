@@ -71,7 +71,15 @@ window.contextMenu = (function () {
         var action = menu_action.menu.split(':', 1)[0];
 
         if (action === 'copy') {
-            copyTextToClipboard(login[menu_action.field]);
+
+            API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
+                var text = login[menu_action.field];
+                if(menu_action.menu.indexOf('OTP') !== -1){
+                    window.OTP.secret = login.totp;
+                    text =  window.OTP.getOTP();
+                }
+                API.tabs.sendMessage(tabs[0].id, {method: "copyTextToClipboard", args: text});
+            });
             return;
         }
 
@@ -82,15 +90,7 @@ window.contextMenu = (function () {
         }
     }
 
-    function copyTextToClipboard(text) {
-        var copyFrom = document.createElement("textarea");
-        copyFrom.textContent = text;
-        var body = document.getElementsByTagName('body')[0];
-        body.appendChild(copyFrom);
-        copyFrom.select();
-        document.execCommand('copy');
-        body.removeChild(copyFrom);
-    }
+
     API.contextMenus.removeAll();
     initMenus();
 

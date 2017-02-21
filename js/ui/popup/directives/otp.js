@@ -85,17 +85,8 @@
                             if (!scope.secret) {
                                 return;
                             }
-                            var key = base32tohex(scope.secret);
-                            var epoch = Math.round(new Date().getTime() / 1000.0);
-                            var time = leftpad(dec2hex(Math.floor(epoch / 30)), 16, '0');
-                            /** global: jsSHA */
-                            var hmacObj = new jsSHA(time, 'HEX');
-                            var hmac = hmacObj.getHMAC(key, 'HEX', 'SHA-1', "HEX");
-                            var offset = hex2dec(hmac.substring(hmac.length - 1));
-                            var otp = (hex2dec(hmac.substr(offset * 2, 8)) & hex2dec('7fffffff')) + '';
-                            otp = (otp).substr(otp.length - 6, 6);
-                            scope.otp = otp;
-
+                            window.OTP.secret = scope.secret;
+                            scope.otp =  window.OTP.getOTP();
                         };
 
                         var transform_styles = ['-webkit-transform', '-ms-transform', 'transform'];

@@ -30,6 +30,8 @@
       "/js/lib/API/tabs.js",
       "/js/lib/API/contextmenus.js",
       "/js/lib/api.js",
+      "/js/vendor/sha/sha.js",
+      "/js/lib/otp.js",
       "/js/background/service/contextMenu.js",
       "/js/background/service/background.js"
     ]
@@ -43,6 +45,7 @@
     "*://*/*",
     "notifications",
     "tabs",
+    "clipboardWrite",
     "storage",
     "contextMenus",
     "cookies"

@@ -23,6 +23,17 @@ $j(document).ready(function () {
         $j('#password_picker').remove();
     }
 
+    function copyTextToClipboard(text) {
+        var copyFrom = document.createElement("textarea");
+        copyFrom.textContent = text;
+        var body = document.getElementsByTagName('body')[0];
+        body.appendChild(copyFrom);
+        copyFrom.select();
+        document.execCommand('copy');
+        body.removeChild(copyFrom);
+    }
+    _this.copyTextToClipboard = copyTextToClipboard;
+
     function enterLoginDetails(login) {
         var username = (login.username.trim() !== '' ) ? login.username : login.email;
 
