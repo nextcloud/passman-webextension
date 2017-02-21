@@ -138,7 +138,7 @@ window.PAPI = (function () {
         var request = new Request(_API.host + '/index.php/apps/passman' + endpoint, opts);
 
         fetch(request).then(function(response){
-            if(response.status != 200){
+            if(response.status !== 200){
                 callback({error: true, result: {statusText: response.statusText, status: response.status}});
                 return;
             }

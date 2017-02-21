@@ -348,7 +348,7 @@
             color: defaultColor,
             tabId: tab.id
         });
-        var plural = (credentialAmount == 1) ? 'credential' : 'credentials';
+        var plural = (credentialAmount === 1) ? 'credential' : 'credentials';
         API.browserAction.setTitle({
             title: 'Passman - ' + credentialAmount.toString() + ' '+ plural +' found for this page',
             tabId: tab.id
@@ -383,7 +383,7 @@
                 var tab = tabs[t];
                 createIconForTab(tab);
             }
-        })
+        });
     }
 
 
