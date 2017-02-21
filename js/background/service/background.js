@@ -195,7 +195,6 @@ var background = (function () {
 
 
     function getCredentialForHTTPAuth(req){
-        console.log(req)
         return getCredentialsByUrl(req.url)[0];
     }
 
