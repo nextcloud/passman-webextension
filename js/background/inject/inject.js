@@ -24,6 +24,7 @@ $j(document).ready(function () {
     }
 
     function enterLoginDetails(login) {
+        console.log('called', login)
         var username = (login.username.trim() !== '' ) ? login.username : login.email;
 
         fillPassword(username, login.password);
@@ -32,6 +33,7 @@ $j(document).ready(function () {
         }
     }
 
+    _this.enterLoginDetails = enterLoginDetails;
     function setupAddCredentialFields() {
         var labelfield = $j('#savepw-label');
         labelfield.val(document.title);
@@ -269,10 +271,10 @@ $j(document).ready(function () {
         pickerButton.css('box-sizing', 'content-box');
         pickerButton.css('position', 'absolute');
         /*
-        pickerButton.css('background-color', 'rgb(234, 234, 234)');
-        pickerButton.css('border-top-right-radius', el.css('border-top-right-radius'));
-        pickerButton.css('border-bottom-right-radius', el.css('border-bottom-right-radius'));
-        pickerButton.css('border-color', borderColor);*/
+         pickerButton.css('background-color', 'rgb(234, 234, 234)');
+         pickerButton.css('border-top-right-radius', el.css('border-top-right-radius'));
+         pickerButton.css('border-bottom-right-radius', el.css('border-bottom-right-radius'));
+         pickerButton.css('border-color', borderColor);*/
 
         pickerButton.css('z-index', '999');
         pickerButton.css('width', iconWidth);
@@ -283,8 +285,8 @@ $j(document).ready(function () {
         pickerButton.css('height', height);
         pickerButton.css('margin', margin);
         pickerButton.css('font-weight', el.css('font-weight'));
-        pickerButton.css('top',  Math.round((offset.top +  (height / 4) - margin/2 - padding/2 ) - (borderHeight / 2))+ 'px');
-        pickerButton.css('left', Math.round((offset.left + width*0.9) +  paddingRight - padding + borderWidth ) + 'px');
+        pickerButton.css('top', Math.round((offset.top + (height / 4) - margin / 2 - padding / 2 ) - (borderHeight / 2)) + 'px');
+        pickerButton.css('left', Math.round((offset.left + width * 0.9) + paddingRight - padding + borderWidth) + 'px');
 
 
         var onClick = function () {
@@ -342,7 +344,7 @@ $j(document).ready(function () {
             password: pass
         };
         //Disable password mining
-        $j(fields[1]).attr('type', 'hidden');
+        //$j(fields[1]).attr('type', 'hidden');
         API.runtime.sendMessage(API.runtime.id, {method: "minedForm", args: params});
 
     }
@@ -444,37 +446,44 @@ $j(document).ready(function () {
         insertFontCSS();
         $j(document).unbind('click', togglePasswordPicker);
         checkForMined();
-        var loginFields = getLoginFields();
-        if (loginFields.length > 0) {
-            //@TODO prevent chrome from captuting pw's: http://stackoverflow.com/questions/27280461/prevent-chrome-from-prompting-to-save-password-from-input-box
-            for (var i = 0; i < loginFields.length; i++) {
-                var form = getFormFromElement(loginFields[i][0]);
-                createPasswordPicker(loginFields[i], form);
+        API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
+            var disablePasswordPicker = result.disablePasswordPicker;
 
-                //Password miner
-                $j(form).submit((function (loginFields) {
-                    return function () {
-                        formSubmitted(loginFields);
+            var loginFields = getLoginFields();
+            if (loginFields.length > 0) {
+                //@TODO prevent chrome from captuting pw's: http://stackoverflow.com/questions/27280461/prevent-chrome-from-prompting-to-save-password-from-input-box
+                for (var i = 0; i < loginFields.length; i++) {
+                    if(!disablePasswordPicker) {
+                        var form = getFormFromElement(loginFields[i][0]);
+                        createPasswordPicker(loginFields[i], form);
                     }
-                })(loginFields[i]));
-            }
-
-            var url = window.location.href; //@TODO use a extension function
-            API.runtime.sendMessage(API.runtime.id, {
-                method: "getCredentialsByUrl",
-                args: [url]
-            }).then(function (logins) {
-                //console.log('Found ' + logins.length + ' logins for this site');
-                if (logins.length === 1) {
-                    API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
-                        if(isEnabled){
-                            enterLoginDetails(logins[0]);
+                    //Password miner
+                    $j(form).submit((function (loginFields) {
+                        return function () {
+                            formSubmitted(loginFields);
                         }
-                    });
+                    })(loginFields[i]));
                 }
 
-            });
-        }
+                var url = window.location.href; //@TODO use a extension function
+                API.runtime.sendMessage(API.runtime.id, {
+                    method: "getCredentialsByUrl",
+                    args: [url]
+                }).then(function (logins) {
+                    //console.log('Found ' + logins.length + ' logins for this site');
+                    if (logins.length === 1) {
+                        API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
+                            if (isEnabled) {
+                                enterLoginDetails(logins[0]);
+                            }
+                        });
+                    }
+
+                });
+            }
+
+        });
+
         $j(document).click(togglePasswordPicker);
         $j(window).on('resize', function () {
             if (getLoginFields().length > 0) {

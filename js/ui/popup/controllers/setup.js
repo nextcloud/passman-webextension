@@ -48,7 +48,8 @@
                 refreshTime: 60,
                 default_vault: {},
                 master_password: '',
-                disableAutoFill: false
+                disableAutoFill: false,
+                disablePasswordPicker: false
             };
             $scope.vaults = [];
 

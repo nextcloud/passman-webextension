@@ -28,7 +28,9 @@
       "/js/lib/API/cookies.js",
       "/js/lib/API/browser_action.js",
       "/js/lib/API/tabs.js",
+      "/js/lib/API/contextmenus.js",
       "/js/lib/api.js",
+      "/js/background/service/contextMenu.js",
       "/js/background/service/background.js"
     ]
   },
@@ -42,6 +44,7 @@
     "notifications",
     "tabs",
     "storage",
+    "contextMenus",
     "cookies"
   ],
   "content_scripts": [

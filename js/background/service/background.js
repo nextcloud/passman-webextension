@@ -335,9 +335,12 @@
             return;
         }
         var tabUrl = tab.url;
-        var credentialAmount = getCredentialsByUrl(tabUrl).length;
-
-        API.browserAction.setBadgeText({
+        var logins = getCredentialsByUrl(tabUrl);
+        if(tab.active) {
+            window.contextMenu.setContextItems(logins);
+        }
+        var credentialAmount = logins.length;
+            API.browserAction.setBadgeText({
             text: credentialAmount.toString(),
             tabId: tab.id
         });
@@ -390,6 +393,16 @@
         } else {
             displayLogoutIcons();
         }
+    });
+
+    API.tabs.onActivated.addListener(function () {
+        API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
+            if(master_password){
+                createIconForTab(tabs[0])
+            } else {
+                displayLogoutIcons();
+            }
+        });
     });
 
     displayLogoutIcons();

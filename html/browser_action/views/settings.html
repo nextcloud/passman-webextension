@@ -53,6 +53,9 @@
             <td colspan=2><input type="checkbox" id="disableAutoFill" ng-model="settings.disableAutoFill"><small>Disable auto fill of forms</small></td>
         </tr>
         <tr>
+            <td colspan=2><input type="checkbox" id="disablePasswordPicker" ng-model="settings.disablePasswordPicker"><small>Disable password picker</small></td>
+        </tr>
+        <tr>
             <td colspan=2 align="center">
                 <button class="btn btn-success" ng-click="saveSettings()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> Save</button>
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>

@@ -88,11 +88,7 @@
                         save_btn.show();
                         $scope.vaults = vaults;
                         $scope.$apply();
-                        setTimeout(function () {
-                            if($scope.settings.default_vault){
-                                jQuery('#defaultVault').find('[value="'+ $scope.settings.default_vault +'"]').attr('selected', 'selected');
-                            }
-                        });
+
                     });
                 };
 
@@ -112,14 +108,13 @@
             $scope.saveSettings = function () {
                 $scope.errors = [];
                 var settings = angular.copy($scope.settings);
-                var v = getVaultByGuid(settings.default_vault);
                 try{
-                    PAPI.decryptString(v.challenge_password, settings.vault_password);
+                    PAPI.decryptString(settings.default_vault.challenge_password, settings.vault_password);
                 } catch (e){
                     $scope.errors.push('Invalid vault key!');
                     return;
                 }
-                settings.default_vault = v;
+
                 $scope.saving = true;
                 API.runtime.sendMessage(API.runtime.id, {method: "saveSettings", args: settings}).then(function () {
                     setTimeout(function () {
