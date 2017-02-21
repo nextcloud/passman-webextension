@@ -6,7 +6,6 @@
 
 
 /* global API */
-'use strict';
 
 API.cookies = {
     get: function (details) {

@@ -5,6 +5,9 @@
     "angular": true,
     "PassmanImporter": true,
     "C_Promise": true,
-    "window": true
+    "window": true,
+    "PAPI": true,
+    "API": true,
+    "OTP": true
   }        // additional predefined global variables
 }

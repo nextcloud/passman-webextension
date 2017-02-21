@@ -112,16 +112,18 @@ window.contextMenu = (function () {
                 login.autoFill = (!login.hasOwnProperty('autoFill')) ? true : login.autoFill;
                 for (f = 0; f < fields.length; f++) {
                     field = fields[f];
-                    if (field['field'] === 'totp' && login.otp) {
+                    if (field.field === 'totp' && login.otp) {
                         login.totp = login.otp.secret;
                     }
-                    if (login[field['field']]) {
+                    if (login[field.field]) {
                         fields[f].found = true;
-                        createMenuItem(field['menu'], field['menu'] + ':' + login.guid, login.label, (function (field, login) {
+                        /* jshint ignore:start */
+                        createMenuItem(field.menu, field.menu + ':' + login.guid, login.label, (function (field, login) {
                             return function () {
                                 itemClickCallback(field, login);
                             };
                         })(field, login));
+                        /* jshint ignore:end */
                     }
                 }
             }

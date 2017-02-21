@@ -6,7 +6,6 @@
 
 
 /* global API */
-'use strict';
 
 API.browserAction = {
     setTitle: API.api.browserAction.setTitle,

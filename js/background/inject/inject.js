@@ -229,11 +229,13 @@ $j(document).ready(function () {
             for (var i = 0; i < logins.length; i++) {
                 var login = logins[i];
                 var row = $j('<div class="account">' + login.label + '<br /><small>' + login.username + '</small></div>');
+                /* jshint ignore:start */
                 row.click((function (login) {
                     return function () {
                         enterLoginDetails(login);
                     };
                 })(login));
+                /* jshint ignore:end*/
 
                 picker.find('.tab-list-content').append(row);
             }
@@ -336,10 +338,7 @@ $j(document).ready(function () {
             return;
         }
         var picker = $j('#password_picker');
-        if (!picker.is(e.target)
-            && picker.has(e.target).length === 0
-
-        ) {
+        if (!picker.is(e.target) && picker.has(e.target).length === 0) {
             if (picker) {
                 picker.remove();
             }
@@ -468,11 +467,13 @@ $j(document).ready(function () {
                         createPasswordPicker(loginFields[i], form);
                     }
                     //Password miner
+                    /* jshint ignore:start */
                     $j(form).submit((function (loginFields) {
                         return function () {
                             formSubmitted(loginFields);
                         };
                     })(loginFields[i]));
+                    /* jshint ignore:end */
                 }
 
                 var url = window.location.href; //@TODO use a extension function

@@ -419,7 +419,7 @@
         if (error === "Data not found") {
             getSettings();
         }
-    })
+    });
 
 }());
 

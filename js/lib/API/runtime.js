@@ -6,7 +6,6 @@
 
 /* global API */
 
-'use strict';
 API.runtime = {
     getBackgroundPage: function() {
         if (API.promise) {

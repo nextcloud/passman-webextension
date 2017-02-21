@@ -6,7 +6,6 @@
 
 
 /* global API */
-'use strict';
 
 API.tabs = {
     connect: function(tabId, connectInfo) {

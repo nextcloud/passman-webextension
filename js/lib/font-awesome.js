@@ -7,7 +7,6 @@ function insertFontCSS() {
         "font-weight: normal;",
         "font-style: normal;",
         "}"];
-    var browser = jQuery.browser;
     if (window.navigator.userAgent.indexOf('Firefox') !== -1) {
         fontCss[2] = "src: url('" + fontPath + "fonts/fontawesome-webfont.eot?v=4.7.0');";
         fontCss[3] = "src: url('" + fontPath + "fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('" + fontPath + "fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('" + fontPath + "fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('" + fontPath + "fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('" + fontPath + "fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');";

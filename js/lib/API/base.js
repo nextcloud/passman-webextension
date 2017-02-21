@@ -6,14 +6,13 @@
 
 
 /* global browser, chrome */
-
-'use strict';
 if (typeof API === "undefined") {
     var API = {};
 }
-
+/* jshint ignore:start */
 API.api;
 API.promise = true;     // Chrome does not return promises
+/* jshint ignore:end */
 
 // Workaround chrome's uniqueness
 if (typeof browser === 'undefined') {

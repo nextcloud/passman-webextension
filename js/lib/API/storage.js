@@ -1,6 +1,5 @@
 /* global browser, chrome */
 
-'use strict';
 if (typeof API === "undefined") {
     var API = {};
 }
@@ -19,9 +18,11 @@ API.Storage = function() {
             return new C_Promise(function(){
                 if (API.promise) {
                     localStorage.get(key).then((function(item){
+                        /* jshint ignore:start */
                         if (typeof key === "[object Array]") {
                             this.call_then(item);
                         }
+
                         else {
                             if (item[key] === undefined) {
                                 this.call_error("Data not found");
@@ -30,15 +31,18 @@ API.Storage = function() {
                                 this.call_then(item[key]);
                             }
                         }
+                        /* jshint ignore:end */
                     }).bind(this), (function(error){
                         this.call_error(error);
                     }).bind(this));
                 }
                 else{
                     localStorage.get(key, (function(item){
+                        /* jshint ignore:start */
                         if (typeof key === "[object Array]") {
                             this.call_then(item);
                         }
+
                         else {
                             if (item[key] === undefined) {
                                 this.call_error("Data not found");
@@ -47,6 +51,7 @@ API.Storage = function() {
                                 this.call_then(item[key]);
                             }
                         }
+                        /* jshint ignore:end */
                     }).bind(this));
                 }
             });

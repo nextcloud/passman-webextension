@@ -1,0 +1,26 @@
+{
+  "name": "passman-web-extension",
+  "version": "1.0.0",
+  "description": "Tested on:    - Chrome - Firefox - Safari",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cli": "~1.2.0",
+    "grunt-contrib-jshint": "^0.12.0",
+    "jshint-stylish": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextcloud/passman-webextension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nextcloud/passman-webextension/issues"
+  },
+  "homepage": "https://github.com/nextcloud/passman-webextension#readme"
+}
