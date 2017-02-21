@@ -28,32 +28,32 @@ window.contextMenu = (function () {
         API.contextMenus.create({
             id: 'autoFill:',
             title: 'Auto fill',
-            contexts: ['all']
+            contexts: ['page']
         });
 
         API.contextMenus.create({
             id: 'copy:User',
             title: 'Copy username',
-            contexts: ['all']
+            contexts: ['page']
         });
 
         API.contextMenus.create({
             id: 'copy:Pass',
             title: 'Copy password',
-            contexts: ['all']
+            contexts: ['page']
         });
 
 
         API.contextMenus.create({
             id: 'copy:Url',
             title: 'Copy URL',
-            contexts: ['all']
+            contexts: ['page']
         });
 
         API.contextMenus.create({
             id: 'copy:OTP',
             title: 'Copy OTP',
-            contexts: ['all']
+            contexts: ['page']
         });
     }
 
@@ -61,7 +61,7 @@ window.contextMenu = (function () {
         API.contextMenus.create({
             id: id,
             title: label,
-            contexts: ["all"],
+            contexts: ["page"],
             parentId: parentId,
             onclick: clickcb
         });
