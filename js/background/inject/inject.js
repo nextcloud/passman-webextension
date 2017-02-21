@@ -486,7 +486,7 @@ $j(document).ready(function () {
     var readyStateCheckInterval = setInterval(function () {
         if (document.readyState === "complete") {
             clearInterval(readyStateCheckInterval);
-            API.runtime.sendMessage(API.runtime.id, {method: 'isVaultKeySet'}).then(function (result) {
+            API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'}).then(function (result) {
                 if (result) {
                     init();
                 } else {
