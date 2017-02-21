@@ -1,14 +1,20 @@
 /* global API */
 
-(function () {
+var background = (function () {
     var storage = new API.Storage();
     var _self = this;
+    var _window = {};
     API.runtime.onConnect.addListener(function (port) {
 
         port.onMessage.addListener(function (msg) {
+
             if (msg === 'credential_amount') {
                 port.postMessage('credential_amount:' + local_credentials.length);
             }
+            if (msg === 'getByUrl') {
+
+            }
+
         });
 
     });
@@ -173,7 +179,6 @@
         if (!master_password) {
             return [];
         }
-
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
         var found_list = [];
         for (var i = 0; i < local_credentials.length; i++) {
@@ -187,6 +192,14 @@
     }
 
     _self.getCredentialsByUrl = getCredentialsByUrl;
+
+
+    function getCredentialForHTTPAuth(req){
+        console.log(req)
+        return getCredentialsByUrl(req.url)[0];
+    }
+
+    _window.getCredentialForHTTPAuth = getCredentialForHTTPAuth;
 
     var mined_data = [];
 
@@ -415,6 +428,6 @@
             getSettings();
         }
     });
-
+    return _window;
 }());
 
