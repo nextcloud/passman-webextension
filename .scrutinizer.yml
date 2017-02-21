@@ -4,3 +4,4 @@ filter:
         - 'js/lib/passwordgen.js'
         - 'l10n/'
         - 'tests/'
+        - 'js/lib/API/tabs.js'

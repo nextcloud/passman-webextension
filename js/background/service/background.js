@@ -6,14 +6,9 @@
     API.runtime.onConnect.addListener(function (port) {
 
         port.onMessage.addListener(function (msg) {
-
             if (msg === 'credential_amount') {
                 port.postMessage('credential_amount:' + local_credentials.length);
             }
-            if (msg === 'getByUrl') {
-
-            }
-
         });
 
     });
