@@ -371,9 +371,9 @@
                     API.browserAction.setTitle({
                         title: 'Passman - Locked',
                         tabId: tab.id
-                    })
+                    });
                 }
-            })
+            });
         }
     }
 
@@ -389,7 +389,7 @@
 
     API.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         if(master_password){
-            createIconForTab(tab)
+            createIconForTab(tab);
         } else {
             displayLogoutIcons();
         }
@@ -398,7 +398,7 @@
     API.tabs.onActivated.addListener(function () {
         API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
             if(master_password){
-                createIconForTab(tabs[0])
+                createIconForTab(tabs[0]);
             } else {
                 displayLogoutIcons();
             }

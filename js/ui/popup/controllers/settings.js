@@ -49,14 +49,6 @@
             };
             $scope.errors = [];
 
-            var getVaultByGuid = function (guid) {
-                for(var i = 0; i < $scope.vaults.length; i++){
-                    if($scope.vaults[i].guid === guid){
-                        return $scope.vaults[i];
-                    }
-                }
-            };
-
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
                 $scope.errors = [];
                 if (settings) {
@@ -109,6 +101,7 @@
                 $scope.errors = [];
                 var settings = angular.copy($scope.settings);
                 try{
+                    /** global: PAPI */
                     PAPI.decryptString(settings.default_vault.challenge_password, settings.vault_password);
                 } catch (e){
                     $scope.errors.push('Invalid vault key!');

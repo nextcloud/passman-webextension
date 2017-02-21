@@ -49,11 +49,12 @@ window.contextMenu = (function () {
             title: 'Copy URL',
             contexts: ['all']
         });
-       /* API.contextMenus.create({
+
+        API.contextMenus.create({
             id: 'copy:OTP',
             title: 'Copy OTP',
             contexts: ['all']
-        });*/
+        });
     }
 
     function createMenuItem(parentId, id, label, clickcb) {
@@ -76,8 +77,7 @@ window.contextMenu = (function () {
 
         if (action === 'autoFill') {
             API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
-                API.tabs.sendMessage(tabs[0].id, {method: "enterLoginDetails", args: login}).then(function (response) {
-                });
+                API.tabs.sendMessage(tabs[0].id, {method: "enterLoginDetails", args: login});
             });
         }
     }
@@ -96,26 +96,27 @@ window.contextMenu = (function () {
 
     return {
         setContextItems: function (logins) {
-
+            var i,f, field;
             var fields = [
-                {menu: 'autoFill:', field: 'autoFill'},
-                {field: 'username', menu: 'copy:User'},
-                {field: 'password', menu: 'copy:Pass'},
-                {field: 'url', menu: 'copy:Url'},
-               // {field: 'totp', menu: 'copy:OTP'}
+                {menu: 'autoFill:', field: 'autoFill', found: false},
+                {field: 'username', menu: 'copy:User', found: false},
+                {field: 'password', menu: 'copy:Pass', found: false},
+                {field: 'url', menu: 'copy:Url', found: false},
+                {field: 'totp', menu: 'copy:OTP', found: false}
             ];
             API.contextMenus.removeAll();
             initMenus();
 
-            for (var i = 0; i < logins.length; i++) {
+            for (i = 0; i < logins.length; i++) {
                 var login = logins[i];
-                login.autoFill = true;
-                for (var f = 0; f < fields.length; f++) {
-                    var field = fields[f];
+                login.autoFill = (!login.hasOwnProperty('autoFill')) ? true : login.autoFill;
+                for (f = 0; f < fields.length; f++) {
+                    field = fields[f];
                     if (field['field'] === 'totp' && login.otp) {
                         login.totp = login.otp.secret;
                     }
                     if (login[field['field']]) {
+                        fields[f].found = true;
                         createMenuItem(field['menu'], field['menu'] + ':' + login.guid, login.label, (function (field, login) {
                             return function () {
                                 itemClickCallback(field, login);
@@ -124,7 +125,15 @@ window.contextMenu = (function () {
                     }
                 }
             }
+
+            for (f = 0; f < fields.length; f++) {
+                field = fields[f];
+                if(field.found === false){
+                   API.contextMenus.remove(field.menu);
+                }
+            }
+
         }
-    }
+    };
 
 }());

@@ -24,7 +24,6 @@ $j(document).ready(function () {
     }
 
     function enterLoginDetails(login) {
-        console.log('called', login)
         var username = (login.username.trim() !== '' ) ? login.username : login.email;
 
         fillPassword(username, login.password);
@@ -453,15 +452,15 @@ $j(document).ready(function () {
             if (loginFields.length > 0) {
                 //@TODO prevent chrome from captuting pw's: http://stackoverflow.com/questions/27280461/prevent-chrome-from-prompting-to-save-password-from-input-box
                 for (var i = 0; i < loginFields.length; i++) {
+                    var form = getFormFromElement(loginFields[i][0]);
                     if(!disablePasswordPicker) {
-                        var form = getFormFromElement(loginFields[i][0]);
                         createPasswordPicker(loginFields[i], form);
                     }
                     //Password miner
                     $j(form).submit((function (loginFields) {
                         return function () {
                             formSubmitted(loginFields);
-                        }
+                        };
                     })(loginFields[i]));
                 }
 

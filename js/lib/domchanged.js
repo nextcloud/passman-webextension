@@ -6,8 +6,9 @@ var observeDOM = (function(){
         if( MutationObserver ){
             // define a new observer
             var obs = new MutationObserver(function(mutations, observer){
-                if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
+                if( mutations[0].addedNodes.length || mutations[0].removedNodes.length ){
                     callback();
+                }
             });
             // have the observer observe foo for changes in children
             obs.observe( obj, { childList:true, subtree:true });

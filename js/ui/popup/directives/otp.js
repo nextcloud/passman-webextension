@@ -102,7 +102,9 @@
                         var timer = function () {
                             var epoch = Math.round(new Date().getTime() / 1000.0);
                             var countDown = 30 - (epoch % 30);
-                            if (epoch % 30 === 0) updateOtp();
+                            if (epoch % 30 === 0) {
+                                updateOtp();
+                            }
 
                             var percent = (countDown / 30) * 100 / 100;
                             for (var i = 0; i < transform_styles.length; i++) {
