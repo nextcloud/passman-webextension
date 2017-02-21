@@ -5,7 +5,7 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden; }
 
 #mainPopup {
@@ -172,4 +172,3 @@ input[type="password"], input[type="text"] {
 
 .ng-hide {
   display: none; }
-
