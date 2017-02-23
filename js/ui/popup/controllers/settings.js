@@ -62,7 +62,7 @@
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.host = $scope.settings.nextcloud_host;
-
+                    $scope.extension = API.runtime.getManifest().name + ' extension ' +API.runtime.getManifest().version;
                     PAPI.getVaults(function (vaults) {
                         $scope.errors = [];
                         var save_btn = jQuery('#save'),

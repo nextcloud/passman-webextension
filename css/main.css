@@ -172,3 +172,7 @@ input[type="password"], input[type="text"] {
 
 .ng-hide {
   display: none; }
+
+.version {
+  font-size: 12px;
+  margin-right: 10px; }
