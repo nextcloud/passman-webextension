@@ -93,13 +93,7 @@
                         args: [tab[0].url]
                     }).then(function (_logins) {
                         //var url = backgroundPage.processURL(tab.url, $rootScope.app_settings.ignoreProtocol, $rootScope.app_settings.ignoreSubdomain, $rootScope.app_settings.ignorePath);
-                        var logins = [];
-                        for(var i = 0; i < _logins.length; i++){
-                            if(_logins[i].delete_time === 0){
-                                logins.push(_logins[i]);
-                            }
-                        }
-                        $scope.found_credentials = logins;
+                        $scope.found_credentials = _logins;
                         $scope.$apply();
                     });
                 });

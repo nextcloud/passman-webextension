@@ -7,7 +7,6 @@ var background = (function () {
     API.runtime.onConnect.addListener(function (port) {
 
         port.onMessage.addListener(function (msg) {
-
             if (msg === 'credential_amount') {
                 port.postMessage('credential_amount:' + local_credentials.length);
             }
@@ -161,7 +160,10 @@ var background = (function () {
 
                 }
                 credential = PAPI.decryptCredential(credential, usedKey);
-                tmpList.push(credential);
+                if(credential.delete_time === 0){
+                    tmpList.push(credential);
+                }
+
             }
             delete vault.credentials;
             local_vault = vault;
