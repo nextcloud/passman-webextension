@@ -9,7 +9,10 @@
     "grunt-contrib-jshint": "^0.12.0",
     "jshint-stylish": "^2.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-mkdir": "^1.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
