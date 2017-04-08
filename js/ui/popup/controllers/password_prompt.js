@@ -40,6 +40,7 @@
                 $scope.masterPwSet = isSet;
                 $scope.$apply();
             });
+            API.runtime.sendMessage(API.runtime.id, {method: "getSettings"});
 
             $scope.master_password = '';
             $scope.apply_settings = function() {
