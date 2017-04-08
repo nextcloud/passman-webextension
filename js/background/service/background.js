@@ -176,7 +176,7 @@ var background = (function () {
         if (!master_password) {
             return [];
         }
-        if(!_url || _url == '' ){
+        if(!_url || _url === '' ){
             return [];
         }
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
@@ -337,9 +337,9 @@ var background = (function () {
         if (!msg || !msg.hasOwnProperty('method')) {
             return;
         }
+        var result = false;
         if(_self[msg.method]) {
-            console.log('Method call', msg.method, 'args: ', msg.args);
-            var result = _self[msg.method](msg.args, sender);
+            result = _self[msg.method](msg.args, sender);
         } else {
             console.log('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);
         }

@@ -191,9 +191,7 @@ $(document).ready(function () {
         removePasswordPicker();
     });
 
-    var url = (window.location != window.parent.location)
-        ? document.referrer
-        : document.location.href;
+    var url = (window.location !== window.parent.location) ? document.referrer : document.location.href;
     API.runtime.sendMessage(API.runtime.id, {method: "getCredentialsByUrl", args: [url]}).then(function (logins) {
         if (logins.length !== 0) {
             picker.find('.tab-list-content').html('');
@@ -201,8 +199,8 @@ $(document).ready(function () {
         for (var i = 0; i < logins.length; i++) {
             var login = logins[i];
             var div = $('<div>', {class: 'account', text: login.label});
-            $('<br>').appendTo(div)
-            $('<small>').text(login.username).appendTo(div)
+            $('<br>').appendTo(div);
+            $('<small>').text(login.username).appendTo(div);
             /* jshint ignore:start */
             div.click((function (login) {
                 return function () {
