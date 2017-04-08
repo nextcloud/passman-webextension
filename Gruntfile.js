@@ -78,6 +78,9 @@ module.exports = function (grunt) {
                     {src: ['**'], dest: '.', cwd: 'dist/'}, // includes files in path
                 ]
             }
+        },
+        clean: {
+            dist: ['dist'],
         }
     });
 
@@ -85,11 +88,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
 
     grunt.registerTask('hint', ['jshint']);
-    grunt.registerTask('dist', ['jshint', 'mkdir:dist', 'copy:dist', 'compress:dist']);
+    grunt.registerTask('dist', ['jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
 
 };
