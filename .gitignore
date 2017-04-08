@@ -2,3 +2,4 @@
 .DS_Storecss/*.map
 node_modules
 dist
+extension.zip

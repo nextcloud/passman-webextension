@@ -29,16 +29,67 @@ module.exports = function (grunt) {
                     "oc_requesttoken": true
                 }
             },
-            all: ['js/*','!js/vendor']
+            all: ['js/*', '!js/vendor']
+        },
+        mkdir: {
+            dist: {
+                options: {
+                    mode: 0700,
+                    create: ['dist']
+                }
+            }
+        },
+        copy: {
+            dist: {
+                src: [
+                    '**',
+                    '!style/*/**/*',
+                    '!style/*',
+                    '!style',
+                    '!node_modules/*',
+                    '!node_modules/**',
+                    '!dist/**',
+                    '!dist/*',
+                    '!.drone.yml',
+                    '!.gitignore',
+                    '!.jshintrc',
+                    '!.scrutinizer.yml',
+                    '!.travis.yml',
+                    '!Gruntfile.js',
+                    '!karma.conf.js',
+                    '!launch_phpunit.sh',
+                    '!Makefile',
+                    '!package.json',
+                    '!phpunit.*',
+                    '!Dockerfile',
+                    '!*.md',
+                    '!*.zip',
+                    '!swagger.yaml'
+                ],
+                dest: 'dist/'
+            }
+        },
+        compress: {
+            dist: {
+                options: {
+                    archive: 'extension.zip'
+                },
+                files: [
+                    {src: ['**'], dest: '.', cwd: 'dist/'}, // includes files in path
+                ]
+            }
         }
-
     });
 
+    grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
 
     // Default task(s).
 
     grunt.registerTask('hint', ['jshint']);
+    grunt.registerTask('dist', ['jshint', 'mkdir:dist', 'copy:dist', 'compress:dist']);
 
 };
