@@ -64,6 +64,7 @@
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.getVaults(function (vaults) {
                         if (vaults.hasOwnProperty('error')) {
+                            console.log(vaults);
                             $scope.errors.push("Invalid server settings!");
 
                             callback(false);

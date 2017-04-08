@@ -66,20 +66,14 @@
         "/js/lib/promise.js",
         "/js/vendor/sjcl/sjcl.js",
         "/js/lib/API/base.js",
-        "/js/lib/API/storage.js",
         "/js/lib/API/runtime.js",
         "/js/lib/API/extension.js",
         "/js/lib/API/cookies.js",
-        "/js/lib/passwordgen.js",
         "/js/vendor/jquery/jquery.js",
         "/js/lib/jQuerytoObject.js",
         "/js/lib/findForm.js",
         "/js/lib/domchanged.js",
         "/js/background/inject/inject.js"
-      ],
-      "css": [
-        "/css/password_picker.css",
-        "/css/vendor/font-awesome.css"
       ]
     }
   ],

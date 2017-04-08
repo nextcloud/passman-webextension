@@ -176,6 +176,9 @@ var background = (function () {
         if (!master_password) {
             return [];
         }
+        if(!_url || _url == '' ){
+            return [];
+        }
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
         var found_list = [];
         for (var i = 0; i < local_credentials.length; i++) {
@@ -253,6 +256,12 @@ var background = (function () {
         });
     }
 
+    function passToParent(args,sender) {
+        API.tabs.sendMessage(sender.tab.id, {method: args.injectMethod, args: args.args}).then(function (response) {
+        });
+    }
+    self.passToParent = passToParent;
+
     function saveMined(args, sender) {
         var data = mined_data[sender.tab.id];
         var credential,
@@ -305,6 +314,7 @@ var background = (function () {
 
         });
     }
+    self.injectCreateCredential = injectCreateCredential;
 
     function isVaultKeySet() {
         return (_self.settings.vault_password !== null);
@@ -322,13 +332,17 @@ var background = (function () {
     _self.isAutoFillEnabled = isAutoFillEnabled;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-        //console.log('Method call', msg.method);
+        console.log('Method call', msg.method, 'args: ', msg.args);
 
         if (!msg || !msg.hasOwnProperty('method')) {
             return;
         }
-
-        var result = _self[msg.method](msg.args, sender);
+        if(_self[msg.method]) {
+            console.log('Method call', msg.method, 'args: ', msg.args);
+            var result = _self[msg.method](msg.args, sender);
+        } else {
+            console.log('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);
+        }
 
         sendResponse(result);
     });

@@ -72,7 +72,7 @@
         '$compileProvider',
         function( $compileProvider )
         {
-            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|moz-extension):/);
             // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
         }
     ]);

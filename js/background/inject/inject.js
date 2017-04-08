@@ -1,186 +1,24 @@
 /* global API */
 var $j = jQuery.noConflict();
 $j(document).ready(function () {
-    var storage = new API.Storage();
-
-    var password_picker_html = null;
     var _this = this;
 
-    $j.ajax({
-        url: API.extension.getURL('/html/inject/password_picker.html'),
-        contentType: 'text',
-        type: 'GET',
-        success: function (data) {
-            // Firefox parsed data as a XMLDoc, revert that
-            if (typeof data === 'object') {
-                data = '<div id="password_picker">' + data.documentElement.innerHTML + '</div>';
-            }
-            password_picker_html = $j(data);
-        }
-    });
-
     function removePasswordPicker() {
-        $j('#password_picker').remove();
+        $j('#passwordPickerIframe').remove();
     }
-
-    function copyTextToClipboard(text) {
-        var copyFrom = document.createElement("textarea");
-        copyFrom.textContent = text;
-        var body = document.getElementsByTagName('body')[0];
-        body.appendChild(copyFrom);
-        copyFrom.select();
-        document.execCommand('copy');
-        body.removeChild(copyFrom);
-    }
-    _this.copyTextToClipboard = copyTextToClipboard;
+    _this.removePasswordPicker = removePasswordPicker;
 
     function enterLoginDetails(login) {
         var username = (login.username.trim() !== '' ) ? login.username : login.email;
 
         fillPassword(username, login.password);
-        if ($j('#password_picker').is(':visible')) {
+        if ($j('#passwordPickerIframe').is(':visible')) {
             removePasswordPicker();
         }
     }
 
     _this.enterLoginDetails = enterLoginDetails;
-    function setupAddCredentialFields() {
-        var labelfield = $j('#savepw-label');
-        labelfield.val(document.title);
-        var userfield = $j('#savepw-username');
-        var pwfield = $j('#savepw-password');
-        $j('.togglePw').click(function () {
-            $j('.togglePw').toggleClass('fa-eye').toggleClass('fa-eye-slash');
-            if (pwfield.attr('type') === 'password') {
-                pwfield.attr('type', 'text');
-            } else {
-                pwfield.attr('type', 'password');
-            }
-        });
 
-        $j('#savepw-save').click(function (e) {
-            e.preventDefault();
-            API.runtime.sendMessage(API.runtime.id, {
-                method: "injectCreateCredential", args: {
-                    label: labelfield.val(),
-                    username: userfield.val(),
-                    password: pwfield.val()
-                }
-            });
-        });
-
-        $j('#savepw-cancel').click(function () {
-            labelfield.val(document.title);
-            userfield.val('');
-            pwfield.val('');
-            removePasswordPicker();
-        });
-
-    }
-
-    function toggleFieldType(field) {
-        if ($j(field).attr('type').toLowerCase() === 'text') {
-            $j(field).attr('type', 'password');
-        } else {
-            $j(field).attr('type', 'text');
-        }
-    }
-
-    function genPwd(settings) {
-        /* jshint ignore:start */
-        var password = generatePassword(settings['length'],
-            settings.useUppercase,
-            settings.useLowercase,
-            settings.useDigits,
-            settings.useSpecialChars,
-            settings.minimumDigitCount,
-            settings.avoidAmbiguousCharacters,
-            settings.requireEveryCharType);
-        /* jshint ignore:end */
-        return password;
-    }
-
-    function getPasswordGenerationSettings(cb) {
-        var default_settings = {
-            'length': 12,
-            'useUppercase': true,
-            'useLowercase': true,
-            'useDigits': true,
-            'useSpecialChars': true,
-            'minimumDigitCount': 3,
-            'avoidAmbiguousCharacters': false,
-            'requireEveryCharType': true
-        };
-        storage.get('password_generator_settings').then(function (_settings) {
-            if (!_settings) {
-                _settings = default_settings;
-            }
-
-            cb(_settings);
-        }).error(function () {
-            cb(default_settings);
-        });
-    }
-
-    function setupPasswordGenerator() {
-        //getPasswordGeneratorSettings
-        getPasswordGenerationSettings(function (settings) {
-            var round = 0;
-
-            function generate_pass() {
-                var new_password = genPwd(settings);
-                $j('#generated_password').val(new_password);
-                setTimeout(function () {
-                    if (round < 10) {
-                        generate_pass();
-                        round++;
-                    } else {
-                        round = 0;
-                    }
-                }, 10);
-            }
-
-            $j.each(settings, function (setting, val) {
-                if (typeof(val) === "boolean") {
-                    $j('[name="' + setting + '"]').prop('checked', val);
-                } else {
-                    $j('[name="' + setting + '"]').val(val);
-                }
-            });
-
-            $j('form[name="advancedSettings"]').change(function () {
-                var pw_settings_form = $j(this);
-                settings = pw_settings_form.serializeObject();
-                storage.set('password_generator_settings', settings);
-            });
-
-            $j('.renewpw').click(function () {
-                generate_pass();
-            });
-            $j('.renewpw').click();
-
-            $j('.usepwd').click(function () {
-                $j('#savepw-password').val($j('#generated_password').val());
-                $j('.tab.add').click();
-            });
-
-            $j('.togglePwVis').click(function () {
-                toggleFieldType('#generated_password');
-                $j(this).find('.fa').toggleClass('fa-eye-slash').toggleClass('fa-eye');
-            });
-
-            $j('.adv_opt').click(function () {
-
-                var adv_settings = $j('.pw-setting-advanced');
-                $j(this).find('i').toggleClass('fa-angle-right').toggleClass('fa-angle-down');
-                if (adv_settings.is(':visible')) {
-                    adv_settings.slideUp();
-                } else {
-                    adv_settings.slideDown();
-                }
-            });
-        });
-    }
 
     function showPasswordPicker(form) {
         var loginField = $j(form[0]);
@@ -201,53 +39,17 @@ $j(document).ready(function () {
         }
 
         var position = $j(form[1]).position();
-        $j(document.body).after($j(password_picker_html));
+        var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
-        var picker = $j('#password_picker');
+        $j(document.body).after('<iframe id="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="'+ pickerUrl +'"></iframe>');
+
+        var picker = $j('#passwordPickerIframe');
         picker.css('position', 'absolute');
         picker.css('left', left);
+        picker.css('z-index', 999);
         picker.css('top', top);
         // picker.css('width', $j(form).width());
-        picker.find('.tab').click(function () {
-            var target = $j(this).attr('class').replace('active', '').replace('tab', '').trim();
-            picker.find('.tab').removeClass('active');
-            picker.find('.tab-content').children().hide();
-            picker.find('.tab-' + target + '-content').show();
-            picker.find('.tab.' + target).addClass('active');
-        });
 
-        $j('.tab.close').click(function () {
-            picker.find('.tab-list-content').show();
-            removePasswordPicker();
-        });
-
-        var url = window.location.href;
-        API.runtime.sendMessage(API.runtime.id, {method: "getCredentialsByUrl", args: [url]}).then(function (logins) {
-            if (logins.length !== 0) {
-                picker.find('.tab-list-content').html('');
-            }
-            for (var i = 0; i < logins.length; i++) {
-                var login = logins[i];
-                var row = $j('<div class="account">' + login.label + '<br /><small>' + login.username + '</small></div>');
-                /* jshint ignore:start */
-                row.click((function (login) {
-                    return function () {
-                        enterLoginDetails(login);
-                    };
-                })(login));
-                /* jshint ignore:end*/
-
-                picker.find('.tab-list-content').append(row);
-            }
-        });
-        $j('.no-credentials .save').on('click', function () {
-            $j('.tab.add').click();
-        });
-        $j('.no-credentials .gen').on('click', function () {
-            $j('.tab.generate').click();
-        });
-        setupAddCredentialFields();
-        setupPasswordGenerator();
     }
 
     function createFormIcon(el, form) {
@@ -337,7 +139,7 @@ $j(document).ready(function () {
         if (e.target.className === "passwordPickerIcon" || e.target.className === "fa fa-key") {
             return;
         }
-        var picker = $j('#password_picker');
+        var picker = $j('#passwordPickerIframe');
         if (!picker.is(e.target) && picker.has(e.target).length === 0) {
             if (picker) {
                 picker.remove();
@@ -371,13 +173,17 @@ $j(document).ready(function () {
         if (inIframe()) {
             return;
         }
+        if(getLoginFields()){
+            return;
+        }
 
         API.runtime.sendMessage(API.runtime.id, {method: "getMinedData"}).then(function (data) {
             if (!data) {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var doorhanger = $j('<div id="password-toolbar" class="container" style="display: none;"><span class="toolbar-text">' + data.title + ' ' + data.username + ' at ' + data.url + '</span></div>');
+                var doorhanger = $j('<div id="password-toolbar" class="container" style="display: none;">' +
+                    '<span class="toolbar-text">' + data.title + ' ' + data.username + ' at ' + data.url + '</span></div>');
 
                 var btnText = (data.guid === null) ? 'Save' : 'Update';
                 var btnSave = $j('<button class="btn btn-success">' + btnText + '</button>');
@@ -514,14 +320,17 @@ $j(document).ready(function () {
                 }
             });
 
-            var body = document.getElementsByTagName('body')[0];
-            observeDOM(body, function () {
-                //init()
-            });
+            // var body = document.getElementsByTagName('body')[0];
+            // observeDOM(body, function () {
+            //     //init()
+            // });
         }
     }, 10);
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-        _this[msg.method](msg.args, sender);
+        console.log('Method call', msg.method);
+        if(_this[msg.method]) {
+            _this[msg.method](msg.args, sender);
+        }
     });
 });
