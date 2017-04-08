@@ -32,8 +32,7 @@ $j(document).ready(function () {
 
         var left = loginFieldPos.left;
         var top = loginFieldPos.top;
-        left = ($j(form[0]).parent().css('position') !== 'static') ? position.left : left;
-
+        
         if (passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
