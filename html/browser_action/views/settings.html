@@ -23,7 +23,7 @@
         </tr>
         <tr class="login-req"  ng-if="vaults">
             <td><small>Select default vault:</small></td>
-            <td><select id="defaultVault"  class="form-control input-sm" ng-model="settings.default_vault" required ng-options="vault.guid as vault.name for vault in vaults track by vault.guid"></select></td>
+            <td><select id="defaultVault"  class="form-control input-sm" ng-model="settings.default_vault" required ng-options="vault.name for vault in vaults track by vault.guid"></select></td>
         </tr>
         <tr class="login-req" id="vaultPassRow" ng-show="settings.default_vault != ''">
             <td valign="top">
@@ -45,9 +45,6 @@
         </tr>
         <tr>
             <td colspan=2><input type="checkbox" id="ignorePath" ng-model="settings.ignorePort"><small>Ignore port for site matching</small></td>
-        </tr>
-        <tr>
-            <td colspan=2><input type="checkbox" id="ignorePath" ng-model="settings.ignorePath"><small>Ignore path for site matching</small></td>
         </tr>
         <tr>
             <td colspan=2><input type="checkbox" id="disableAutoFill" ng-model="settings.disableAutoFill"><small>Disable auto fill of forms</small></td>

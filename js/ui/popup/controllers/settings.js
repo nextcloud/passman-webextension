@@ -79,6 +79,7 @@
                         }
                         login_required.show();
                         save_btn.show();
+                        console.log(vaults);
                         $scope.vaults = vaults;
                         $scope.$apply();
 

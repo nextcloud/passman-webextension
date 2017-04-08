@@ -55,62 +55,32 @@ $j(document).ready(function () {
     function createFormIcon(el, form) {
         var offset = el.offset();
         var width = el.width();
-        var height = el.height();
+        var height = el.height()*1;
         var margin = (el.css('margin')) ? parseInt(el.css('margin').replace('px', '')) : 0;
         var padding = (el.css('padding')) ? parseInt(el.css('padding').replace('px', '')) : 0;
-        var paddingRight = parseInt(el.css('padding-right').replace('px', ''));
-        var fontSize = el.css('font-size');
-        var borderh = (el.css('border-height')) ? el.css('border-height') : '2px';
-        var borderw = (el.css('border-width')) ? el.css('border-width') : '2px';
-        var borderColor = el.css('border-color');
-        var borderHeight = parseInt(borderh.replace('px', ''));
-        var borderWidth = parseInt(borderw.replace('px', ''));
-        var iconWidth = width * 0.1;
-        var pickerButton = $j('<span class="passwordPickerIcon" style="display: inline-block"> </span>');
-        $j('body').append(pickerButton);
-        if (el.find('.passwordPickerIcon').length > 0) {
-            pickerButton = el.find('.passwordPickerIcon')[0];
-        }
+
+        var pickerIcon = 'data:image/png;base64,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';
 
 
-        //pickerButton.css('background-image', 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC")');
-        pickerButton.css('background-image', 'url("data:image/png;base64,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")');
-        pickerButton.css('background-repeat', 'no-repeat');
-        pickerButton.css('background-attachment', 'scroll');
-        //pickerButton.css('background-size', '16px 18px');
-        pickerButton.css('background-size', 'contain');
-        pickerButton.css('background-position', '98% 50%');
-        pickerButton.css('cursor', 'pointer');
-        pickerButton.css('text-align', 'center');
-        pickerButton.css('box-sizing', 'content-box');
-        pickerButton.css('position', 'absolute');
-        /*
-         pickerButton.css('background-color', 'rgb(234, 234, 234)');
-         pickerButton.css('border-top-right-radius', el.css('border-top-right-radius'));
-         pickerButton.css('border-bottom-right-radius', el.css('border-bottom-right-radius'));
-         pickerButton.css('border-color', borderColor);*/
 
-        pickerButton.css('z-index', '999');
-        pickerButton.css('width', iconWidth);
+        $j(el).css('background-image', 'url("'+ pickerIcon +'")');
+        $j(el).css('background-size', 'contain');
+        $j(el).css('background-repeat', 'no-repeat');
+        $j(el).css('background-position-x', 'right');
 
-
-        pickerButton.css('padding', padding);
-        pickerButton.css('font-size', fontSize);
-        pickerButton.css('height', height);
-        pickerButton.css('margin', margin);
-        pickerButton.css('font-weight', el.css('font-weight'));
-        pickerButton.css('top', Math.round((offset.top + (height / 4) - margin / 2 - padding / 2 ) - (borderHeight / 2)) + 'px');
-        pickerButton.css('left', Math.round((offset.left + width * 0.9) + paddingRight - padding + borderWidth) + 'px');
-
+        $j(el).bind('click',function (e) {
+            var offsetX = e.offsetX;
+            var offsetRight = (width - offsetX);
+            if(offsetRight < height){
+                showPasswordPicker(form);
+            }
+        });
 
         var onClick = function () {
             showPasswordPicker(form);
         };
 
-        //$j('body').append(pickerButton);
-
-        pickerButton.find('fa-key').click(onClick);
-        $j(pickerButton).click(onClick);
+        $j(el).click(onClick);
 
     }
 
