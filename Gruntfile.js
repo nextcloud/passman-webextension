@@ -93,6 +93,6 @@ module.exports = function (grunt) {
     // Default task(s).
 
     grunt.registerTask('hint', ['jshint']);
-    grunt.registerTask('dist', ['jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
+    grunt.registerTask('build', ['jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
 
 };
