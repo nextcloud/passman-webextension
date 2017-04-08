@@ -12,6 +12,7 @@ $(document).ready(function () {
             }
         });
     }
+
     function removePasswordPicker(login) {
         API.runtime.sendMessage(API.runtime.id, {
             method: 'passToParent',
@@ -120,7 +121,7 @@ $(document).ready(function () {
 
             function generate_pass(inputId) {
                 var new_password = genPwd(settings);
-                $('#'+ inputId).val(new_password);
+                $('#' + inputId).val(new_password);
                 setTimeout(function () {
                     if (round < 10) {
                         generate_pass(inputId);
@@ -191,29 +192,38 @@ $(document).ready(function () {
         removePasswordPicker();
     });
 
-    var url = (window.location !== window.parent.location) ? document.referrer : document.location.href;
-    API.runtime.sendMessage(API.runtime.id, {method: "getCredentialsByUrl", args: [url]}).then(function (logins) {
-        if (logins.length !== 0) {
-            picker.find('.tab-list-content').html('');
-        }
-        for (var i = 0; i < logins.length; i++) {
-            var login = logins[i];
-            var div = $('<div>', {class: 'account', text: login.label});
-            $('<br>').appendTo(div);
-            $('<small>').text(login.username).appendTo(div);
-            /* jshint ignore:start */
-            div.click((function (login) {
-                return function () {
-                    //enterLoginDetails(login);
-                    //API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'})
-                    fillLogin(login)
-                };
-            })(login));
-            /* jshint ignore:end*/
 
-            picker.find('.tab-list-content').append(div);
-        }
-    });
+
+
+    API.runtime.sendMessage(API.runtime.id, {method: "getActiveTab", args: {returnFn: "returnActiveTab"}});
+
+    function returnActiveTab(tab) {
+        API.runtime.sendMessage(API.runtime.id, {method: "getCredentialsByUrl", args: [tab.url]}).then(function (logins) {
+            if (logins.length !== 0) {
+                picker.find('.tab-list-content').html('');
+            }
+            for (var i = 0; i < logins.length; i++) {
+                var login = logins[i];
+                var div = $('<div>', {class: 'account', text: login.label});
+                $('<br>').appendTo(div);
+                $('<small>').text(login.username).appendTo(div);
+                /* jshint ignore:start */
+                div.click((function (login) {
+                    return function () {
+                        //enterLoginDetails(login);
+                        //API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'})
+                        fillLogin(login)
+                    };
+                })(login));
+                /* jshint ignore:end*/
+
+                picker.find('.tab-list-content').append(div);
+            }
+        });
+    }
+    _this.returnActiveTab = returnActiveTab;
+
+
     $('.no-credentials .save').on('click', function () {
         $('.tab.add').click();
     });

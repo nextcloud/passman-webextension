@@ -262,7 +262,18 @@ var background = (function () {
         API.tabs.sendMessage(sender.tab.id, {method: args.injectMethod, args: args.args}).then(function (response) {
         });
     }
-    self.passToParent = passToParent;
+    _self.passToParent = passToParent;
+
+    function getActiveTab(opt) {
+        console.log(opt)
+        API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
+            console.log(tabs);
+            var tab = tabs[0];
+            API.tabs.sendMessage(tab.id, {method: opt.returnFn, args: tab}).then(function (response) {
+            });
+        });
+    }
+    _self.getActiveTab = getActiveTab;
 
     function saveMined(args, sender) {
         var data = mined_data[sender.tab.id];

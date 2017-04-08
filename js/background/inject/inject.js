@@ -4,7 +4,7 @@ $j(document).ready(function () {
     var _this = this;
 
     function removePasswordPicker() {
-        $j('#passwordPickerIframe').remove();
+        $j('.passwordPickerIframe').remove();
     }
     _this.removePasswordPicker = removePasswordPicker;
 
@@ -12,7 +12,7 @@ $j(document).ready(function () {
         var username = (login.username.trim() !== '' ) ? login.username : login.email;
 
         fillPassword(username, login.password);
-        if ($j('#passwordPickerIframe').is(':visible')) {
+        if ($j('.passwordPickerIframe').is(':visible')) {
             removePasswordPicker();
         }
     }
@@ -21,14 +21,19 @@ $j(document).ready(function () {
 
 
     function showPasswordPicker(form) {
+        if($j('.passwordPickerIframe').length > 1){
+            return;
+        }
         var loginField = $j(form[0]);
         var loginFieldPos = loginField.offset();
+        var position = $j(form[1]).position();
         var passwordField = $j(form[1]);
         var passwordFieldPos = passwordField.offset();
 
         var left = loginFieldPos.left;
         var top = loginFieldPos.top;
-
+        left = ($j(form[0]).parent().css('position') !== 'static') ? position.left : left;
+        
         if (passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
@@ -38,18 +43,17 @@ $j(document).ready(function () {
             top = top + loginField.height() + 10;
         }
 
-        var position = $j(form[1]).position();
+
         var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
-        $j(document.body).after('<iframe id="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="'+ pickerUrl +'"></iframe>');
-
-        var picker = $j('#passwordPickerIframe');
+        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="'+ pickerUrl+'"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
         picker.css('z-index', 999);
         picker.css('top', top);
+        $j('body').append($j(picker));
         // picker.css('width', $j(form).width());
-
+        $j('.passwordPickerIframe:not(:last)').remove();
     }
 
     function createFormIcon(el, form) {
@@ -61,25 +65,22 @@ $j(document).ready(function () {
 
         var pickerIcon = 'data:image/png;base64,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';
 
-
-
         $j(el).css('background-image', 'url("'+ pickerIcon +'")');
         $j(el).css('background-size', 'contain');
         $j(el).css('background-repeat', 'no-repeat');
         $j(el).css('background-position-x', 'right');
 
-        $j(el).bind('click',function (e) {
+
+        function onClick (e) {
+            e.preventDefault();
             var offsetX = e.offsetX;
             var offsetRight = (width - offsetX);
             if(offsetRight < height){
                 showPasswordPicker(form);
             }
-        });
+        }
 
-        var onClick = function () {
-            showPasswordPicker(form);
-        };
-
+       // $j(el).bind('click', onClick);
         $j(el).click(onClick);
 
     }
@@ -104,18 +105,6 @@ $j(document).ready(function () {
         }
     }
 
-
-    function togglePasswordPicker(e) {
-        if (e.target.className === "passwordPickerIcon" || e.target.className === "fa fa-key") {
-            return;
-        }
-        var picker = $j('#passwordPickerIframe');
-        if (!picker.is(e.target) && picker.has(e.target).length === 0) {
-            if (picker) {
-                picker.remove();
-            }
-        }
-    }
 
     function formSubmitted(fields) {
         var user = fields[0].value;
@@ -201,7 +190,6 @@ $j(document).ready(function () {
 
 
     function init() {
-        $j(document).unbind('click', togglePasswordPicker);
         checkForMined();
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
             var disablePasswordPicker = result.disablePasswordPicker;
@@ -243,12 +231,6 @@ $j(document).ready(function () {
 
         });
 
-        $j(document).click(togglePasswordPicker);
-        $j(window).on('resize', function () {
-            if (getLoginFields().length > 0) {
-                updatePositions();
-            }
-        });
     }
 
     var readyStateCheckInterval = setInterval(function () {
@@ -270,7 +252,7 @@ $j(document).ready(function () {
     }, 10);
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-        console.log('Method call', msg.method);
+        //console.log('Method call', msg.method);
         if(_this[msg.method]) {
             _this[msg.method](msg.args, sender);
         }
