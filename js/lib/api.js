@@ -44,6 +44,7 @@ window.PAPI = (function () {
                 try {
                     field_decrypted_value = this.decryptString(fieldValue, key);
                 } catch (e) {
+                    console.warn('Field' + field + ' in ' + credential.label + ' could not be parsed! Value:' + fieldValue);
                     throw e;
                 }
                 try {
@@ -110,10 +111,9 @@ window.PAPI = (function () {
         updateCredential: function (credential, _key, callback) {
             var _that = this;
             credential = this.encryptCredential(credential, _key);
-            credential.expire_time = new Date(angular.copy(credential.expire_time)).getTime() / 1000;
+            credential.expire_time = new Date(credential.expire_time).getTime() / 1000;
             api_request('/api/v2/credentials/' + credential.guid, 'PATCH', credential, function (r) {
-                r = _that.decryptCredential(r, _key);
-                callback(r);
+                callback(credential);
             });
         }
     };

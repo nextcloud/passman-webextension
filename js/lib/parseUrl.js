@@ -48,7 +48,7 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
         var result = host.match(/[^./]+\.[^./]+$/);
         var TLDlength = 0;
         if(result){
-            TLDlength = result[0].length; //@TODO get the tld length from URLobj
+            TLDlength = result[0].length;
         }
 
         baseHost = splittedURL.slice(-TLDlength - 1).join(".");

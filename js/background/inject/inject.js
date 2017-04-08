@@ -127,6 +127,8 @@ $j(document).ready(function () {
     }
 
     function showDoorhanger(data) {
+        var buttons = data.buttons;
+        data = data.data;
         if(inIframe()){
             return;
         }
@@ -136,32 +138,52 @@ $j(document).ready(function () {
             text: data.title + ' ' + data.username + ' at ' + data.url
         }).appendTo(doorhanger_div);
 
-        var btnText = (data.guid === null) ? 'Save' : 'Update';
-        var btnSave = $j('<button class="passman-btn passnman-btn-success">' + btnText + '</button>');
-        var btnCancel = $j('<button class="passman-btn passnman-btn-default">Cancel</button>');
-        btnSave.click(function () {
-            //closeToolbar();
-            API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
-            doorhanger_div.find('.toolbar-text').text('Saving...');
-            doorhanger_div.find('.passman-btn').hide();
+
+
+        $j.each(buttons, function (k, button) {
+            var html_button = $j('<button class="passman-btn passnman-btn-success"></button>').text(button.text);
+            html_button.click(button.onClickFn);
+            doorhanger_div.append(html_button);
         });
 
-        btnCancel.click(function () {
-            closeToolbar();
-            API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
-        });
 
-        doorhanger_div.append(btnCancel).append(btnSave);
         $j('#password-toolbar').remove();
         $j('body').append(doorhanger_div);
         $j('#password-toolbar').slideDown();
     }
+    _this.showDoorhanger = showDoorhanger;
+
+    function showUrlUpdateDoorhanger(data){
+        var buttons = [
+            {
+                text: 'Cancel',
+                onClickFn: function () {
+                    $j('#password-toolbar').slideUp();
+                }
+            },
+            {
+                text: 'Update',
+                onClickFn: function () {
+                    //closeToolbar();
+                    API.runtime.sendMessage(API.runtime.id, {method: "updateCredentialUrl", args: data.data});
+                    $j('#password-toolbar').find('.toolbar-text').text('Saving...');
+                    $j('#password-toolbar').find('.passman-btn').hide();
+                }
+            }
+        ];
+        showDoorhanger({
+            data: data.data,
+            buttons: buttons
+        });
+    }
+    _this.showUrlUpdateDoorhanger = showUrlUpdateDoorhanger;
 
     function checkForMined() {
         if (inIframe()) {
             return;
         }
         if(getLoginFields()){
+            API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
             return;
         }
 
@@ -170,7 +192,28 @@ $j(document).ready(function () {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                showDoorhanger(data);
+                var btnText = (data.guid === null) ? 'Save' : 'Update';
+
+                var buttons = [
+                    {
+                        text: 'Cancel',
+                        onClickFn: function () {
+                            closeToolbar();
+                            API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
+                        }
+                    },
+                    {
+                        text: btnText,
+                        onClickFn: function () {
+                            //closeToolbar();
+                            API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
+                            $j('#password-toolbar').find('.toolbar-text').text('Saving...');
+                            $j('#password-toolbar').find('.passman-btn').hide();
+                        }
+                    }
+
+                ];
+                showDoorhanger({data: data,buttons: buttons});
             }
         });
     }
@@ -200,13 +243,13 @@ $j(document).ready(function () {
 
 
     function init() {
+
         checkForMined();
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
             var disablePasswordPicker = result.disablePasswordPicker;
 
             var loginFields = getLoginFields();
             if (loginFields.length > 0) {
-                //@TODO prevent chrome from captuting pw's: http://stackoverflow.com/questions/27280461/prevent-chrome-from-prompting-to-save-password-from-input-box
                 for (var i = 0; i < loginFields.length; i++) {
                     var form = getFormFromElement(loginFields[i][0]);
                     if(!disablePasswordPicker) {

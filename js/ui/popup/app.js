@@ -45,6 +45,10 @@
                     templateUrl: 'views/main.html',
                     controller: 'MainCtrl'
                 })
+                .when('/search', {
+                    templateUrl: 'views/search.html',
+                    controller: 'SearchCtrl'
+                })
                 .when('/settings', {
                     templateUrl: 'views/settings.html',
                     controller: 'SettingsCtrl'

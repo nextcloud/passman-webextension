@@ -118,8 +118,13 @@
             });
 
 
+
             $scope.goto_settings = function () {
                 window.location = '#!/settings';
+            };
+
+            $scope.goto_search = function () {
+                window.location = '#!/search';
             };
 
 

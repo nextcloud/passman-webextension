@@ -227,6 +227,9 @@ $(document).ready(function () {
     $('.no-credentials .save').on('click', function () {
         $('.tab.add').click();
     });
+    $('.no-credentials .search').on('click', function () {
+        $('.tab.search').click();
+    });
     $('.no-credentials .gen').on('click', function () {
         $('.tab.generate').click();
     });
@@ -239,4 +242,45 @@ $(document).ready(function () {
             _this[msg.method](msg.args, sender);
         }
     });
+
+
+
+    $('#password_search').keypress(function(e) {
+        if(e.which === 13) {
+            searchCredentials();
+        }
+    });
+
+    function searchCredentials() {
+        $('#searchResults').html('');
+        var searchText =  $('#password_search').val();
+        if(searchText === ''){
+            return;
+        }
+        API.runtime.sendMessage(API.runtime.id, {'method': 'searchCredential', args: searchText}).then(function (result) {
+            if(result.length === 0){
+                $('#searchResults').html('No results');
+            }
+            for (var i = 0; i < result.length; i++) {
+                var login = result[i];
+                var div = $('<div>', {class: 'account', text: login.label});
+                $('<br>').appendTo(div);
+                $('<small>').text(login.username).appendTo(div);
+                /* jshint ignore:start */
+                div.click((function (login) {
+                    return function () {
+                        //enterLoginDetails(login);
+                        //API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'})
+                        fillLogin(login);
+                        //@TODO Ask to update the url of the login
+                        API.runtime.sendMessage(API.runtime.id, {'method': 'updateCredentialUrlDoorhanger', args: login})
+                    };
+                })(login));
+                /* jshint ignore:end*/
+
+                picker.find('#searchResults').append(div);
+            }
+        });
+    }
+
 });

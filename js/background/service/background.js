@@ -143,7 +143,7 @@ var background = (function () {
         //console.log('Loading vault with the following settings: ', settings);
         var tmpList = [];
         PAPI.getVault(_self.settings.default_vault.guid, function (vault) {
-            if(vault.hasOwnProperty('error')){
+            if (vault.hasOwnProperty('error')) {
                 return;
             }
             var _credentials = vault.credentials;
@@ -160,7 +160,7 @@ var background = (function () {
 
                 }
                 credential = PAPI.decryptCredential(credential, usedKey);
-                if(credential.delete_time === 0){
+                if (credential.delete_time === 0) {
                     tmpList.push(credential);
                 }
 
@@ -178,7 +178,7 @@ var background = (function () {
         if (!master_password) {
             return [];
         }
-        if(!_url || _url === '' ){
+        if (!_url || _url === '') {
             return [];
         }
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
@@ -196,7 +196,7 @@ var background = (function () {
     _self.getCredentialsByUrl = getCredentialsByUrl;
 
 
-    function getCredentialForHTTPAuth(req){
+    function getCredentialForHTTPAuth(req) {
         return getCredentialsByUrl(req.url)[0];
     }
 
@@ -258,10 +258,11 @@ var background = (function () {
         });
     }
 
-    function passToParent(args,sender) {
+    function passToParent(args, sender) {
         API.tabs.sendMessage(sender.tab.id, {method: args.injectMethod, args: args.args}).then(function (response) {
         });
     }
+
     _self.passToParent = passToParent;
 
     function getActiveTab(opt) {
@@ -271,7 +272,31 @@ var background = (function () {
             });
         });
     }
+
     _self.getActiveTab = getActiveTab;
+
+    function updateCredentialUrlDoorhanger(login) {
+        API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
+            var tab = tabs[0];
+            var data = login;
+            data.url = tab.url;
+            data.title = 'Detected changed url for: ';
+            API.tabs.sendMessage(tab.id, {
+                method: 'showUrlUpdateDoorhanger',
+                args: {data: data}
+            });
+        });
+    }
+
+    _self.updateCredentialUrlDoorhanger = updateCredentialUrlDoorhanger;
+
+    function updateCredentialUrl(data, sender) {
+        console.log(data);
+        mined_data[sender.tab.id] = data;
+        saveMined({}, sender);
+
+    }
+    _self.updateCredentialUrl = updateCredentialUrl;
 
     function saveMined(args, sender) {
         var data = mined_data[sender.tab.id];
@@ -285,7 +310,7 @@ var background = (function () {
                 if (local_credentials[i].guid === data.guid) {
                     credential = local_credentials[i];
                     credential_index = i;
-                    return;
+                    break;
                 }
             }
         }
@@ -311,6 +336,24 @@ var background = (function () {
 
     _self.saveMined = saveMined;
 
+    function searchCredential(searchText) {
+        var searchFields = ['label', 'username', 'email', 'url', 'description'];
+        var results = [];
+        for (var i = 0; i < local_credentials.length; i++) {
+            var credential = local_credentials[i];
+            for (var f = 0; f < searchFields.length; f++) {
+                var field = searchFields[f];
+                if (credential[field] && credential[field].indexOf(searchText) !== -1) {
+                    results.push(credential);
+                    break;
+                }
+            }
+        }
+        return results;
+    }
+
+    _self.searchCredential = searchCredential;
+
 
     function injectCreateCredential(args, sender) {
         var credential = PAPI.newCredential();
@@ -325,6 +368,7 @@ var background = (function () {
 
         });
     }
+
     self.injectCreateCredential = injectCreateCredential;
 
     function isVaultKeySet() {
@@ -334,7 +378,7 @@ var background = (function () {
     _self.isVaultKeySet = isVaultKeySet;
 
     function isAutoFillEnabled() {
-        if(!_self.settings.hasOwnProperty('disableAutoFill')){
+        if (!_self.settings.hasOwnProperty('disableAutoFill')) {
             return true;
         }
         return (_self.settings.disableAutoFill === false);
@@ -348,8 +392,8 @@ var background = (function () {
             return;
         }
         var result = false;
-        if(_self[msg.method]) {
-            //console.log('Method call', msg.method, 'args: ', msg.args);
+        if (_self[msg.method]) {
+            console.log('Method call', msg.method, 'args: ', msg.args);
             result = _self[msg.method](msg.args, sender);
         } else {
             console.log('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);
@@ -359,17 +403,18 @@ var background = (function () {
     });
 
     var defaultColor = '#0082c9';
+
     function createIconForTab(tab) {
         if (!master_password) {
             return;
         }
         var tabUrl = tab.url;
         var logins = getCredentialsByUrl(tabUrl);
-        if(tab.active) {
+        if (tab.active) {
             window.contextMenu.setContextItems(logins);
         }
         var credentialAmount = logins.length;
-            API.browserAction.setBadgeText({
+        API.browserAction.setBadgeText({
             text: credentialAmount.toString(),
             tabId: tab.id
         });
@@ -379,13 +424,13 @@ var background = (function () {
         });
         var plural = (credentialAmount === 1) ? 'credential' : 'credentials';
         API.browserAction.setTitle({
-            title: 'Passman - ' + credentialAmount.toString() + ' '+ plural +' found for this page',
+            title: 'Passman - ' + credentialAmount.toString() + ' ' + plural + ' found for this page',
             tabId: tab.id
         });
     }
 
     function displayLogoutIcons() {
-        if(_self.settings) {
+        if (_self.settings) {
             API.tabs.query({}).then(function (tabs) {
                 for (var t = 0; t < tabs.length; t++) {
                     var tab = tabs[t];
@@ -417,7 +462,7 @@ var background = (function () {
 
 
     API.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-        if(master_password){
+        if (master_password) {
             createIconForTab(tab);
         } else {
             displayLogoutIcons();
@@ -426,7 +471,7 @@ var background = (function () {
 
     API.tabs.onActivated.addListener(function () {
         API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
-            if(master_password){
+            if (master_password) {
                 createIconForTab(tabs[0]);
             } else {
                 displayLogoutIcons();
