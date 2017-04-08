@@ -126,6 +126,36 @@ $j(document).ready(function () {
         }
     }
 
+    function showDoorhanger(data) {
+        if(inIframe()){
+            return;
+        }
+        var doorhanger_div = $j('<div id="password-toolbar" style="display: none;">');
+        $j('<span>',{
+            class:'toolbar-text',
+            text: data.title + ' ' + data.username + ' at ' + data.url
+        }).appendTo(doorhanger_div);
+
+        var btnText = (data.guid === null) ? 'Save' : 'Update';
+        var btnSave = $j('<button class="passman-btn passnman-btn-success">' + btnText + '</button>');
+        var btnCancel = $j('<button class="passman-btn passnman-btn-default">Cancel</button>');
+        btnSave.click(function () {
+            //closeToolbar();
+            API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
+            doorhanger_div.find('.toolbar-text').text('Saving...');
+            doorhanger_div.find('.passman-btn').hide();
+        });
+
+        btnCancel.click(function () {
+            closeToolbar();
+            API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
+        });
+
+        doorhanger_div.append(btnCancel).append(btnSave);
+        $j('#password-toolbar').remove();
+        $j('body').append(doorhanger_div);
+        $j('#password-toolbar').slideDown();
+    }
 
     function checkForMined() {
         if (inIframe()) {
@@ -140,26 +170,7 @@ $j(document).ready(function () {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var doorhanger = $j('<div id="password-toolbar" class="container" style="display: none;">' +
-                    '<span class="toolbar-text">' + data.title + ' ' + data.username + ' at ' + data.url + '</span></div>');
-
-                var btnText = (data.guid === null) ? 'Save' : 'Update';
-                var btnSave = $j('<button class="btn btn-success">' + btnText + '</button>');
-                var btnCancel = $j('<button class="btn btn-default">Cancel</button>');
-                btnSave.click(function () {
-                    //closeToolbar();
-                    API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
-                });
-
-                btnCancel.click(function () {
-                    closeToolbar();
-                    API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
-                });
-
-                doorhanger.append(btnCancel).append(btnSave);
-                $j('#password-toolbar').remove();
-                $j('body').append(doorhanger);
-                $j('#password-toolbar').slideDown();
+                showDoorhanger(data);
             }
         });
     }

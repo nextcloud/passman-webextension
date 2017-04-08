@@ -343,13 +343,13 @@ var background = (function () {
     _self.isAutoFillEnabled = isAutoFillEnabled;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-        console.log('Method call', msg.method, 'args: ', msg.args);
 
         if (!msg || !msg.hasOwnProperty('method')) {
             return;
         }
         var result = false;
         if(_self[msg.method]) {
+            //console.log('Method call', msg.method, 'args: ', msg.args);
             result = _self[msg.method](msg.args, sender);
         } else {
             console.log('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);

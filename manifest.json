@@ -74,6 +74,9 @@
         "/js/lib/findForm.js",
         "/js/lib/domchanged.js",
         "/js/background/inject/inject.js"
+      ],
+      "css":[
+        "/css/toolbar.css"
       ]
     }
   ],
