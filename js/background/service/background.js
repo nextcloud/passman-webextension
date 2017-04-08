@@ -265,9 +265,7 @@ var background = (function () {
     _self.passToParent = passToParent;
 
     function getActiveTab(opt) {
-        console.log(opt)
         API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
-            console.log(tabs);
             var tab = tabs[0];
             API.tabs.sendMessage(tab.id, {method: opt.returnFn, args: tab}).then(function (response) {
             });
