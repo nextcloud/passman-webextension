@@ -27,6 +27,9 @@ Tell us what happens instead
    
    
 **Passman version**:    
+
+
+**Extension version**:    
        
        
 **Nextcloud version**:
