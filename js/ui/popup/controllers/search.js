@@ -33,7 +33,7 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SearchCtrl', ['$scope', 'Settings', '$location', '$rootScope', function ($scope, Settings, $window, $rootScope) {
+        .controller('SearchCtrl', ['$scope', function ($scope) {
             $scope.app = 'passman';
             var port = API.runtime.connect(null, {
                 name: "PassmanCommunication"
@@ -43,6 +43,7 @@
                 var e = message.split(':');
 
                 switch (e[0]) {
+                    default:
                     case "credential_amount":
                         $scope.credential_amount = e[1];
                         $scope.refreshing_credentials = false;

@@ -109,10 +109,9 @@ window.PAPI = (function () {
             });
         },
         updateCredential: function (credential, _key, callback) {
-            var _that = this;
             credential = this.encryptCredential(credential, _key);
             credential.expire_time = new Date(credential.expire_time).getTime() / 1000;
-            api_request('/api/v2/credentials/' + credential.guid, 'PATCH', credential, function (r) {
+            api_request('/api/v2/credentials/' + credential.guid, 'PATCH', credential, function () {
                 callback(credential);
             });
         }

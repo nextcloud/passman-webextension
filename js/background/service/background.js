@@ -291,7 +291,6 @@ var background = (function () {
     _self.updateCredentialUrlDoorhanger = updateCredentialUrlDoorhanger;
 
     function updateCredentialUrl(data, sender) {
-        console.log(data);
         mined_data[sender.tab.id] = data;
         saveMined({}, sender);
 
@@ -319,7 +318,9 @@ var background = (function () {
         credential.url = sender.tab.url;
         if (credential.guid !== null) {
             PAPI.updateCredential(credential, _self.settings.vault_password, function (updatedCredential) {
-                local_credentials[credential_index] = updatedCredential;
+                if(credential_index){
+                    local_credentials[credential_index] = updatedCredential;
+                }
                 saveMinedCallback({credential: credential, updated: true, sender: sender});
                 delete mined_data[sender.tab.id];
             });
@@ -393,10 +394,9 @@ var background = (function () {
         }
         var result = false;
         if (_self[msg.method]) {
-            console.log('Method call', msg.method, 'args: ', msg.args);
             result = _self[msg.method](msg.args, sender);
         } else {
-            console.log('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);
+            console.warn('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);
         }
 
         sendResponse(result);

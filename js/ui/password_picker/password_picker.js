@@ -51,6 +51,8 @@ $(document).ready(function () {
 
         $('#savepw-save').click(function (e) {
             e.preventDefault();
+            $(this).val('Saving...');
+            $(this).attr('disabled', true);
             API.runtime.sendMessage(API.runtime.id, {
                 method: "injectCreateCredential", args: {
                     label: labelfield.val(),
@@ -251,6 +253,12 @@ $(document).ready(function () {
         }
     });
 
+    function url_domain(data) {
+        var matches = data.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+        return matches && matches[1];  // domain will be null if no match is found
+    }
+
+
     function searchCredentials() {
         $('#searchResults').html('');
         var searchText =  $('#password_search').val();
@@ -266,6 +274,8 @@ $(document).ready(function () {
                 var div = $('<div>', {class: 'account', text: login.label});
                 $('<br>').appendTo(div);
                 $('<small>').text(login.username).appendTo(div);
+                $('<br>').appendTo(div);
+                $('<small>').text(url_domain(login.url)).appendTo(div);
                 /* jshint ignore:start */
                 div.click((function (login) {
                     return function () {

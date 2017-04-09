@@ -92,19 +92,6 @@ $j(document).ready(function () {
         }
     }
 
-    function updatePositions() {
-        $j('.passwordPickerIcon').remove();
-        var forms = getLoginFields();
-        for (var f = 0; f < forms.length; f++) {
-            var form = forms[f];
-            for (var i = 0; i < form.length; i++) {
-                var el = $j(form[i]);
-                createFormIcon(el, form);
-            }
-        }
-    }
-
-
     function formSubmitted(fields) {
         var user = fields[0].value;
         var pass = fields[1].value;
