@@ -1,7 +1,7 @@
 {
   "name": "Passman",
   "short_name": "Passman",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "manifest_version": 2,
   "author": "Sander Brand",
 
@@ -82,6 +82,6 @@
     }
   ],
   "web_accessible_resources": [
-    "html/inject/password_picker.html", "fonts/*"
+    "html/inject/password_picker.html", "fonts/*","icons/*"
   ]
 }
