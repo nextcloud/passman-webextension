@@ -167,10 +167,7 @@ $j(document).ready(function () {
         if (inIframe()) {
             return;
         }
-        if(getLoginFields()){
-            API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
-            return;
-        }
+        
 
         API.runtime.sendMessage(API.runtime.id, {method: "getMinedData"}).then(function (data) {
             if (!data) {
