@@ -263,6 +263,19 @@ var background = (function () {
         });
     }
 
+    function ignoreSite(_url) {
+        if(!_self.settings.hasOwnProperty('ignored_sites')){
+            _self.settings.ignored_sites = [];
+        }
+        var site = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+        if(_self.settings.ignored_sites.indexOf(site) === -1){
+            _self.settings.ignored_sites.push(site);
+            saveSettings(_self.settings);
+        }
+    }
+
+    _self.ignoreSite = ignoreSite;
+
     function passToParent(args, sender) {
         API.tabs.sendMessage(sender.tab.id, {method: args.injectMethod, args: args.args}).then(function (response) {
         });

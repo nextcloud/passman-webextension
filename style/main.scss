@@ -231,3 +231,17 @@ input[type="password"], input[type="text"] {
 .searchContainer{
   margin-bottom: 15px;
 }
+.ignored_sites{
+  padding: 0;
+  li{
+    list-style-type: none;
+    padding: 0;
+    .fa{
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .fa:hover{
+      color: #a94442;
+    }
+  }
+}

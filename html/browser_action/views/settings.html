@@ -33,6 +33,19 @@
                 <input type="password" class="form-control input-sm" id="vaultPassword" ng-model="settings.vault_password">
             </td>
         </tr>
+        <tr class="login-req">
+            <td valign="top">
+                <small>Ignored sites</small>
+            </td>
+            <td>
+
+               <ul class="ignored_sites">
+                   <li ng-repeat="site in settings.ignored_sites">{{site}} <i class="fa fa-trash pull-right" ng-click="removeSite(site)"></i></li>
+                   <li ng-show="settings.ignored_sites.length === 0">No sites ignored</li>
+                   <li><input type="text" class="form-control" placeholder="Enter a domain or tld" ng-model="ignoreSite" ng-enter="addSite(ignoreSite)"> </li>
+               </ul>
+            </td>
+        </tr>
         <tr>
             <td><small>Refresh timer [s]:</small></td>
             <td><input type="text" id="timer" class="form-control input-sm" ng-model="settings.refreshTime"></td>
