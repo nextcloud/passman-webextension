@@ -45,7 +45,8 @@
                 generatedPasswordLength: 12,
                 remember_password: true,
                 remember_vault_password: true,
-                refreshTime: 60
+                refreshTime: 60,
+                debug: false
             };
             $scope.errors = [];
 
@@ -79,7 +80,6 @@
                         }
                         login_required.show();
                         save_btn.show();
-                        console.log(vaults);
                         $scope.vaults = vaults;
                         $scope.$apply();
 

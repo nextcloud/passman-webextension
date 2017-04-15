@@ -118,6 +118,11 @@ var background = (function () {
 
     _self.getRuntimeSettings = getRuntimeSettings;
 
+    function getSetting(name) {
+        return _self.settings[name];
+    }
+    _self.getSetting = getSetting;
+
     function saveSettings(settings, cb) {
         for (var i = 0; i < encryptedFieldSettings.length; i++) {
             var field = encryptedFieldSettings[i];
