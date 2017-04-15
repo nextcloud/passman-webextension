@@ -1,11 +1,18 @@
 /* global API */
 var $j = jQuery.noConflict();
+
 $j(document).ready(function () {
     var _this = this;
+    Array.prototype.findUrl = function(match) {
+        return this.filter(function(item){
+            return typeof item === 'string' && item.indexOf(match) > -1;
+        });
+    };
 
     function removePasswordPicker() {
         $j('.passwordPickerIframe').remove();
     }
+
     _this.removePasswordPicker = removePasswordPicker;
 
     function enterLoginDetails(login) {
@@ -21,7 +28,7 @@ $j(document).ready(function () {
 
 
     function showPasswordPicker(form) {
-        if($j('.passwordPickerIframe').length > 1){
+        if ($j('.passwordPickerIframe').length > 1) {
             return;
         }
         var loginField = $j(form[0]);
@@ -32,7 +39,7 @@ $j(document).ready(function () {
 
         var left = loginFieldPos.left;
         var top = loginFieldPos.top;
-        
+
         if (passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
@@ -45,7 +52,7 @@ $j(document).ready(function () {
 
         var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
-        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="'+ pickerUrl+'"></iframe>');
+        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
         picker.css('z-index', 999);
@@ -58,26 +65,26 @@ $j(document).ready(function () {
     function createFormIcon(el, form) {
         var offset = el.offset();
         var width = el.width();
-        var height = el.height()*1;
+        var height = el.height() * 1;
         var margin = (el.css('margin')) ? parseInt(el.css('margin').replace('px', '')) : 0;
         var padding = (el.css('padding')) ? parseInt(el.css('padding').replace('px', '')) : 0;
 
         var pickerIcon = API.extension.getURL('/icons/icon.svg');
-        $j(el).css('background-image', 'url("'+ pickerIcon +'")');
+        $j(el).css('background-image', 'url("' + pickerIcon + '")');
         $j(el).css('background-repeat', 'no-repeat');
         $j(el).css('background-position', 'right 3px center');
 
 
-        function onClick (e) {
+        function onClick(e) {
             e.preventDefault();
             var offsetX = e.offsetX;
             var offsetRight = (width - offsetX);
-            if(offsetRight < height){
+            if (offsetRight < height) {
                 showPasswordPicker(form);
             }
         }
 
-       // $j(el).bind('click', onClick);
+        // $j(el).bind('click', onClick);
         $j(el).click(onClick);
 
     }
@@ -114,15 +121,14 @@ $j(document).ready(function () {
     function showDoorhanger(data) {
         var buttons = data.buttons;
         data = data.data;
-        if(inIframe()){
+        if (inIframe()) {
             return;
         }
         var doorhanger_div = $j('<div id="password-toolbar" style="display: none;">');
-        $j('<span>',{
-            class:'toolbar-text',
+        $j('<span>', {
+            class: 'toolbar-text',
             text: data.title + ' ' + data.username + ' at ' + data.url
         }).appendTo(doorhanger_div);
-
 
 
         $j.each(buttons, function (k, button) {
@@ -136,9 +142,10 @@ $j(document).ready(function () {
         $j('body').append(doorhanger_div);
         $j('#password-toolbar').slideDown();
     }
+
     _this.showDoorhanger = showDoorhanger;
 
-    function showUrlUpdateDoorhanger(data){
+    function showUrlUpdateDoorhanger(data) {
         var buttons = [
             {
                 text: 'Cancel',
@@ -161,6 +168,7 @@ $j(document).ready(function () {
             buttons: buttons
         });
     }
+
     _this.showUrlUpdateDoorhanger = showUrlUpdateDoorhanger;
 
     function checkForMined() {
@@ -192,10 +200,22 @@ $j(document).ready(function () {
                             $j('#password-toolbar').find('.toolbar-text').text('Saving...');
                             $j('#password-toolbar').find('.passman-btn').hide();
                         }
+                    },
+                    {
+                        text: 'Ignore site',
+                        onClickFn: function () {
+                            //closeToolbar();
+                            API.runtime.sendMessage(API.runtime.id, {method: "ignoreSite", args: window.location.href});
+                            $j('#password-toolbar').find('.toolbar-text').text('Site ignored');
+                            $j('#password-toolbar').find('.passman-btn').hide();
+                            setTimeout(function () {
+                                closeToolbar();
+                            }, 3000);
+                        }
                     }
 
                 ];
-                showDoorhanger({data: data,buttons: buttons});
+                showDoorhanger({data: data, buttons: buttons});
             }
         });
     }
@@ -223,31 +243,30 @@ $j(document).ready(function () {
         });
     }
 
-
-    function init() {
-
-        checkForMined();
+    function initForms(){
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
             var disablePasswordPicker = result.disablePasswordPicker;
+            var url = processURL(window.location.href);
 
             var loginFields = getLoginFields();
             if (loginFields.length > 0) {
                 for (var i = 0; i < loginFields.length; i++) {
                     var form = getFormFromElement(loginFields[i][0]);
-                    if(!disablePasswordPicker) {
+                    if (!disablePasswordPicker) {
                         createPasswordPicker(loginFields[i], form);
                     }
                     //Password miner
                     /* jshint ignore:start */
-                    $j(form).submit((function (loginFields) {
-                        return function () {
-                            formSubmitted(loginFields);
-                        };
-                    })(loginFields[i]));
+                    if(!result.hasOwnProperty('ignored_sites') || result.ignored_sites.findUrl(url) !== -1 ) {
+                        $j(form).submit((function (loginFields) {
+                            return function () {
+                                formSubmitted(loginFields);
+                            };
+                        })(loginFields[i]));
+                    }
                     /* jshint ignore:end */
                 }
 
-                var url = window.location.href; //@TODO use a extension function
                 API.runtime.sendMessage(API.runtime.id, {
                     method: "getCredentialsByUrl",
                     args: [url]
@@ -265,7 +284,11 @@ $j(document).ready(function () {
             }
 
         });
+    }
 
+    function init() {
+        checkForMined();
+        initForms();
     }
 
     var readyStateCheckInterval = setInterval(function () {
@@ -274,21 +297,20 @@ $j(document).ready(function () {
             API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'}).then(function (result) {
                 if (result) {
                     init();
+                    // var body = document.getElementsByTagName('body')[0];
+                    // observeDOM(body, function () {
+                    //     initForms();
+                    // });
                 } else {
                     console.log('[Passman extension] Stopping, vault key not set');
                 }
             });
-
-            // var body = document.getElementsByTagName('body')[0];
-            // observeDOM(body, function () {
-            //     //init()
-            // });
         }
     }, 10);
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         //console.log('Method call', msg.method);
-        if(_this[msg.method]) {
+        if (_this[msg.method]) {
             _this[msg.method](msg.args, sender);
         }
     });

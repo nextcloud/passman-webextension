@@ -37,10 +37,9 @@
     background-image: none;
     background: #3498db;
     color: #fff;
+    margin-right: 15px;
     border: 1px solid transparent;
     border-radius: 4px; }
-  #password-toolbar .passman-btn:last-child {
-    margin-right: 15px; }
   #password-toolbar .passman-btn:hover {
     background: #3cb0fd;
     text-decoration: none; }

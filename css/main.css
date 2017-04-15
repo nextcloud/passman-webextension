@@ -179,3 +179,14 @@ input[type="password"], input[type="text"] {
 
 .searchContainer {
   margin-bottom: 15px; }
+
+.ignored_sites {
+  padding: 0; }
+  .ignored_sites li {
+    list-style-type: none;
+    padding: 0; }
+    .ignored_sites li .fa {
+      margin-top: 2px;
+      cursor: pointer; }
+    .ignored_sites li .fa:hover {
+      color: #a94442; }

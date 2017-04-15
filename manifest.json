@@ -73,6 +73,7 @@
         "/js/vendor/jquery/jquery.js",
         "/js/lib/jQuerytoObject.js",
         "/js/lib/findForm.js",
+        "/js/lib/parseUrl.js",
         "/js/lib/domchanged.js",
         "/js/background/inject/inject.js"
       ],

@@ -63,14 +63,14 @@
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.host = $scope.settings.nextcloud_host;
-                    $scope.extension = API.runtime.getManifest().name + ' extension ' +API.runtime.getManifest().version;
+                    $scope.extension = API.runtime.getManifest().name + ' extension ' + API.runtime.getManifest().version;
                     PAPI.getVaults(function (vaults) {
                         $scope.errors = [];
                         var save_btn = jQuery('#save'),
-                            login_required =  jQuery('.login-req');
-                        if(vaults.hasOwnProperty('error')){
+                            login_required = jQuery('.login-req');
+                        if (vaults.hasOwnProperty('error')) {
                             console.log(vaults);
-                            var errors = 'Invalid response from server: ['+ vaults.result.status +'] '+ vaults.result.statusText;
+                            var errors = 'Invalid response from server: [' + vaults.result.status + '] ' + vaults.result.statusText;
                             $scope.errors.push(errors);
                             login_required.hide();
                             save_btn.hide();
@@ -86,7 +86,7 @@
                     });
                 };
 
-                $scope.$watch('[settings.nextcloud_host, settings.nextcloud_username, settings.nextcloud_password]', function(){
+                $scope.$watch('[settings.nextcloud_host, settings.nextcloud_username, settings.nextcloud_password]', function () {
                     if ($scope.settings.nextcloud_host && $scope.settings.nextcloud_username && $scope.settings.nextcloud_password) {
                         $scope.get_vaults();
                     }
@@ -102,10 +102,10 @@
             $scope.saveSettings = function () {
                 $scope.errors = [];
                 var settings = angular.copy($scope.settings);
-                try{
+                try {
                     /** global: PAPI */
                     PAPI.decryptString(settings.default_vault.challenge_password, settings.vault_password);
-                } catch (e){
+                } catch (e) {
                     $scope.errors.push('Invalid vault key!');
                     return;
                 }
@@ -115,8 +115,19 @@
                     setTimeout(function () {
                         window.location = '#!/';
                         $scope.saving = false;
-                    },750);
+                    }, 750);
                 });
+            };
+
+            $scope.removeSite = function (site) {
+                var idx = $scope.settings.ignored_sites.indexOf(site);
+                $scope.settings.ignored_sites.splice(idx, 1);
+            };
+
+            $scope.ignoreSite = '';
+            $scope.addSite = function (site) {
+                $scope.settings.ignored_sites.push(site);
+                $scope.ignoreSite = '';
             };
 
 
