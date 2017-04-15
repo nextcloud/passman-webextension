@@ -49,7 +49,8 @@
                 default_vault: {},
                 master_password: '',
                 disableAutoFill: false,
-                disablePasswordPicker: false
+                disablePasswordPicker: false,
+                debug: false
             };
             $scope.vaults = [];
 
