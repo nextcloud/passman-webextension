@@ -157,6 +157,7 @@ window.PAPI = (function () {
             }
 
         }).catch(function (e) {
+            API.notifications.create('Error', 'Error connecting to server');
             callback({error: true, result: {statusText: e, status: 0}});
         });
     };

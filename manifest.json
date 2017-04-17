@@ -26,6 +26,7 @@
       "/js/lib/API/base.js",
       "/js/lib/API/storage.js",
       "/js/lib/API/runtime.js",
+      "/js/lib/API/notifications.js",
       "/js/lib/API/cookies.js",
       "/js/lib/API/browser_action.js",
       "/js/lib/API/tabs.js",
