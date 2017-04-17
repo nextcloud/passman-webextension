@@ -93,7 +93,7 @@ var formManager = function(){
             // username. We might not find a username field if the user is
             // already logged in to the site.
             for (var i = pwFields[0].index - 1; i >= 0; i--) {
-                if (form.elements[i].type.toLowerCase() === "text") {
+                if (form.elements[i].type.toLowerCase() === "text" || form.elements[i].type.toLowerCase() === "email") {
                     usernameField = form.elements[i];
                     break;
                 }
@@ -183,11 +183,13 @@ function getLoginFields(isSubmission) {
 }
 
 function getFormFromElement(elem) {
-    while (elem.parentNode) {
-        if (elem.parentNode.nodeName.toLowerCase() === "form") {
-            return elem.parentNode;
+    if(elem) {
+        while (elem.parentNode) {
+            if (elem.parentNode.nodeName.toLowerCase() === "form") {
+                return elem.parentNode;
+            }
+            elem = elem.parentNode;
         }
-        elem = elem.parentNode;
     }
 }
 
