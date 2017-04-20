@@ -55,7 +55,7 @@ $j(document).ready(function () {
         var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
-        picker.css('z-index', 999);
+        picker.css('z-index', 99999);
         picker.css('top', top);
         $j('body').append($j(picker));
         // picker.css('width', $j(form).width());
