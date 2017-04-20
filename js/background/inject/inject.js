@@ -246,8 +246,7 @@ $j(document).ready(function () {
     function initForms(){
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
             var disablePasswordPicker = result.disablePasswordPicker;
-            var url = processURL(window.location.href);
-
+            var url = window.location.href;
             var loginFields = getLoginFields();
             if (loginFields.length > 0) {
                 for (var i = 0; i < loginFields.length; i++) {
@@ -269,9 +268,9 @@ $j(document).ready(function () {
 
                 API.runtime.sendMessage(API.runtime.id, {
                     method: "getCredentialsByUrl",
-                    args: [url]
+                    args: url
                 }).then(function (logins) {
-                    //console.log('Found ' + logins.length + ' logins for this site');
+                    console.log('Found ' + logins.length + ' logins for this site');
                     if (logins.length === 1) {
                         API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
                             if (isEnabled) {
