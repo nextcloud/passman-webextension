@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            dist: ['dist'],
+            dist: ['dist']
         }
     });
 
@@ -94,5 +94,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('hint', ['jshint']);
     grunt.registerTask('build', ['jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
+    grunt.registerTask('dist', ['']);
 
 };
