@@ -196,8 +196,12 @@ function getFormFromElement(elem) {
 function fillPassword(user, password) {
     var loginFields = getLoginFields();
     for (var i = 0; i < loginFields.length; i++) {
-        loginFields[i][0].value = user;
-        loginFields[i][1].value = password;
+        if(user){
+            loginFields[i][0].value = user;
+        }
+        if(password) {
+            loginFields[i][1].value = password;
+        }
     }
 }
 formManager._init_();

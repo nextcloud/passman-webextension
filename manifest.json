@@ -35,6 +35,8 @@
       "/js/lib/api.js",
       "/js/vendor/sha/sha.js",
       "/js/lib/otp.js",
+      "/js/lib/copyText.js",
+      "/js/lib/passwordgen.js",
       "/js/background/service/contextMenu.js",
       "/js/background/service/background.js",
       "/js/background/service/httpAuth.js"

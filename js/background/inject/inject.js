@@ -16,7 +16,11 @@ $j(document).ready(function () {
     _this.removePasswordPicker = removePasswordPicker;
 
     function enterLoginDetails(login) {
-        var username = (login.username.trim() !== '' ) ? login.username : login.email;
+        var username;
+
+        if(login.hasOwnProperty('username')){
+            username = (login.username.trim() !== '' ) ? login.username : login.email;
+        }
 
         fillPassword(username, login.password);
         if ($j('.passwordPickerIframe').is(':visible')) {
@@ -41,7 +45,7 @@ $j(document).ready(function () {
         var top = loginFieldPos.top;
         var maxZ = Math.max.apply(null,
             $j.map($j('body *'), function(e) {
-                if ($j(e).css('position') != 'static')
+                if ($j(e).css('position') !== 'static')
                     return parseInt($j(e).css('z-index')) || 1;
             }));
         if (passwordFieldPos.top > loginFieldPos.top) {
