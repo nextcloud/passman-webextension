@@ -39,7 +39,11 @@ $j(document).ready(function () {
 
         var left = loginFieldPos.left;
         var top = loginFieldPos.top;
-
+        var maxZ = Math.max.apply(null,
+            $j.map($j('body *'), function(e) {
+                if ($j(e).css('position') != 'static')
+                    return parseInt($j(e).css('z-index')) || 1;
+            }));
         if (passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
@@ -55,7 +59,7 @@ $j(document).ready(function () {
         var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
-        picker.css('z-index', 999);
+        picker.css('z-index', maxZ);
         picker.css('top', top);
         $j('body').append($j(picker));
         // picker.css('width', $j(form).width());
