@@ -294,7 +294,6 @@ $j(document).ready(function () {
     }
 
     function copyText(text) {
-        console.log('copt')
         var txtToCopy = document.createElement('input');
         txtToCopy.style.left = '-300px';
         txtToCopy.style.position = 'absolute';
