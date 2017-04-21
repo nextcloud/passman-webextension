@@ -70,7 +70,9 @@ window.contextMenu = (function () {
         addPasswordGenerator: function(){
             createMenuItem('generatePassword', 'copyGen', 'And copy to clipboard', function(){
                 generatePass(function (generated_password) {
-                    copyText(generated_password);
+                    API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
+                        API.tabs.sendMessage(tabs[0].id, {method: "copyText", args: generated_password});
+                    });
                 });
             });
 
