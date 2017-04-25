@@ -65,8 +65,8 @@
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.getVaults(function (vaults) {
                         if (vaults.hasOwnProperty('error')) {
-                            console.log(vaults);
-                            $scope.errors.push("Invalid server settings!");
+                            var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
+                            $scope.errors.push(errors);
 
                             callback(false);
                         }
@@ -83,7 +83,7 @@
                         callback(true);
                     }
                     catch (e) {
-                        $scope.errors.push("Invalid vault key!");
+                        $scope.errors.push(API.i18n.getMessage('invalid_vault_password'));
                         callback(false);
                     }
                 },
@@ -91,7 +91,7 @@
                     if ($scope.settings.master_password.trim() !== '') {
                         callback(true);
                     } else {
-                        $scope.errors.push("Empty master key!");
+                        $scope.errors.push(API.i18n.getMessage('empty_master_key'));
                         callback(false);
                     }
                 }

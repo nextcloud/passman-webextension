@@ -2,6 +2,23 @@ $(document).ready(function () {
     var _this = this;
     var storage = new API.Storage();
 
+    $('[t]').each(function () {
+        var string = $(this).attr('t');
+        var startChar = string[0];
+        var endChar = string[string.length - 1];
+        var attribute;
+        if(startChar === '[' && endChar === ']'){
+            var data = string.replace('[','').replace(']','').split(',');
+            attribute = data[1].trim();
+            string = data[0].trim();
+        }
+        var translated = API.i18n.getMessage(string);
+        if(attribute){
+            $(this).attr(attribute, translated);
+        } else {
+            $(this).text(translated);
+        }
+    });
 
     function fillLogin(login) {
         API.runtime.sendMessage(API.runtime.id, {
@@ -195,12 +212,13 @@ $(document).ready(function () {
     });
 
 
-
-
     API.runtime.sendMessage(API.runtime.id, {method: "getActiveTab", args: {returnFn: "returnActiveTab"}});
 
     function returnActiveTab(tab) {
-        API.runtime.sendMessage(API.runtime.id, {method: "getCredentialsByUrl", args: [tab.url]}).then(function (logins) {
+        API.runtime.sendMessage(API.runtime.id, {
+            method: "getCredentialsByUrl",
+            args: [tab.url]
+        }).then(function (logins) {
             if (logins.length !== 0) {
                 picker.find('.tab-list-content').html('');
             }
@@ -224,6 +242,7 @@ $(document).ready(function () {
             }
         });
     }
+
     _this.returnActiveTab = returnActiveTab;
 
 
@@ -247,9 +266,8 @@ $(document).ready(function () {
     });
 
 
-
-    $('#password_search').keypress(function(e) {
-        if(e.which === 13) {
+    $('#password_search').keypress(function (e) {
+        if (e.which === 13) {
             searchCredentials();
         }
     });
@@ -262,13 +280,16 @@ $(document).ready(function () {
 
     function searchCredentials() {
         $('#searchResults').html('');
-        var searchText =  $('#password_search').val();
-        if(searchText === ''){
+        var searchText = $('#password_search').val();
+        if (searchText === '') {
             return;
         }
-        API.runtime.sendMessage(API.runtime.id, {'method': 'searchCredential', args: searchText}).then(function (result) {
-            if(result.length === 0){
-                $('#searchResults').html('No results');
+        API.runtime.sendMessage(API.runtime.id, {
+            'method': 'searchCredential',
+            args: searchText
+        }).then(function (result) {
+            if (result.length === 0) {
+                $('#searchResults').html(API.i18n.getMessage('no_credentials_found'));
             }
             for (var i = 0; i < result.length; i++) {
                 var login = result[i];
@@ -285,7 +306,10 @@ $(document).ready(function () {
                         //API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'})
                         fillLogin(login);
                         //@TODO Ask to update the url of the login
-                        API.runtime.sendMessage(API.runtime.id, {'method': 'updateCredentialUrlDoorhanger', args: login})
+                        API.runtime.sendMessage(API.runtime.id, {
+                            'method': 'updateCredentialUrlDoorhanger',
+                            args: login
+                        })
                     };
                 })(login));
                 /* jshint ignore:end*/

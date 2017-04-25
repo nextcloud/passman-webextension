@@ -3,51 +3,50 @@
 </div>
 <steps on-finish="finished()" class="setup">
     <step class="step1" name="welcome">
-        <h2>Welcome to the Passman extension</h2>
-        This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!
-        <button class="btn btn-default stepNext" ng-click="next()">Let's begin!</button>
+        <h2>{{'welcome_to_passman' | translate}}</h2>
+        {{'intro_text' | translate}}
+        <button class="btn btn-default stepNext" ng-click="next()">{{'begin' | translate}}</button>
     </step>
     <step class="step2" name="server">
-        <h2>Nextcloud server settings</h2>
-        <label>Server url</label>
+        <h2>{{'nextcloud_settings' | translate}}</h2>
+        <label>{{'server_url' | translate}}</label>
         <input type="text" ng-model="settings.nextcloud_host"/>
-        <label>Username</label>
+        <label>{{'username' | translate}}</label>
         <input type="text" ng-model="settings.nextcloud_username"/>
-        <label>Password</label>
+        <label>{{'password' | translate}}</label>
         <input type="password" ng-model="settings.nextcloud_password" />
 
-        <button step-previous class="btn btn-default">Prev</button>
+        <button step-previous class="btn btn-default">{{'prev' | translate}}</button>
 
-        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> Next</button>
+        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'next' | translate}}</button>
     </step>
     <step class="step3" name="vault">
-        <h2>Default vault</h2>
-        <label>Select the vault that you want to keep in sync with the browser.</label>
+        <h2>{{'default_vault' | translate}}</h2>
+        <label>{{'default_vault_desc' | translate}}</label>
         <select id="defaultVault"  class="form-control input-sm" ng-model="settings.default_vault" required ng-options="vault.name for vault in vaults track by vault.guid">
         </select>
 
-        <label>Vault password</label>
+        <label>{{'vault_password' | translate}}</label>
         <input type="password" ng-change="" ng-model="settings.vault_password" />
 
-        <button step-previous class="btn btn-default">Prev</button>
-        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> Next</button>
+        <button step-previous class="btn btn-default">{{'prev' | translate}}</button>
+        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'next' | translate}}</button>
     </step>
     <step class="step4" name="master">
-        <h2>Enter master password</h2>
-        <div>This password will be used to encrypt all your settings in the extension. <br />
-            You can choose to save this password locally, but it will be saved in PLAIN TEXT.</div>
+        <h2>{{'enter_master_password' | translate}}</h2>
+        <div>{{'enter_master_password_desc' | translate}}</div>
         <br />
         <input type="password" ng-model="settings.master_password" />
         <br />
-        <label><input type="checkbox" ng-model="settings.master_password_remember">Remember master password</label>
+        <label><input type="checkbox" ng-model="settings.master_password_remember">{{'remember_master_password' | translate}}</label>
 
-        <button step-previous class="btn btn-default">Prev</button>
-        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> Next</button>
+        <button step-previous class="btn btn-default">{{'prev' | translate}}</button>
+        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'next' | translate}}</button>
     </step>
     <step class="step5" name="last">
-        <h1>Done!</h1>
-        <div>If you like, don't forget to donate</div>
+        <h1>{{'done' | translate}}!</h1>
+        <div>{{'done_donate' | translate}}</div>
 
-        <button step-finish class="btn btn-default" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> Finish</button>
+        <button step-finish class="btn btn-default" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'finish' | translate}}</button>
     </step>
 </steps>

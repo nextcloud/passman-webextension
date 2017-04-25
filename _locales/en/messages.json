@@ -1,0 +1,354 @@
+{
+  "extName": {
+    "message": "Passman",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Passman - The password manager for NextCloud / ownCloud",
+    "description": "Extension description"
+  },
+  "search_for": {
+    "message": "Search for",
+    "description": "No credentials found for the current site"
+  },
+  "no_credentials_found_for_site": {
+    "message": "No credentials found for this site!",
+    "description": "No credentials found for the current site"
+  },
+  "no_credentials_found": {
+    "message": "No credentials found",
+    "description": "No credentials found for the current site"
+  },
+  "invalid_response_from_server": {
+    "message": "Invalid response from server: [$STATUS_CODE] $STATUS_TEXT$",
+    "description": "No credentials found for the current site",
+    "placeholders": {
+      "statux_code": {
+        "content": "$1",
+        "example": "404"
+      },
+      "status_text": {
+        "content": "$2",
+        "example": "Page not found"
+      }
+    }
+  },
+  "please_enter_nextcloud_credentials": {
+    "message": "Please enter your Nextcloud / ownCloud credentials",
+    "description": "No credentials found for the current site"
+  },
+  "save_site": {
+    "message": "Save site",
+    "description": "Save site"
+  },
+  "password_generator": {
+    "message": "Password generator",
+    "description": "Password generator"
+  },
+  "generate_password": {
+    "message": "Generate password",
+    "description": "Generate password"
+  },
+  "toggle_visibility": {
+    "message": "Toggle visibility",
+    "description": "Toggle visibility"
+  },
+  "toggle_advanced": {
+    "message": "Toggle advanced options",
+    "description": "Toggle advanced options"
+  },
+  "use_generated_password": {
+    "message": "Use password",
+    "description": "Use password"
+  },
+  "add_hint": {
+    "message": "After creating you can edit the credential in passman",
+    "description": "After creating you can edit the credential in passman"
+  },
+  "pw_length": {
+    "message": "Password length",
+    "description": "Password length"
+  },
+  "min_digits": {
+    "message": "Minimum amount of digits",
+    "description": "Minimum amount of digits"
+  },
+  "avoid_ambiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Avoid ambiguous characters"
+  },
+  "require_every_character_type": {
+    "message": "Require every character type",
+    "description": "Require every character type"
+  },
+  "add_account": {
+    "message": "Add account",
+    "description": "Add account"
+  },
+  "accounts": {
+    "message": "Accounts",
+    "description": "Accounts"
+  },
+  "label": {
+    "message": "Label",
+    "description": "Label"
+  },
+  "username": {
+    "message": "Username",
+    "description": "Username"
+  },
+  "password": {
+    "message": "Password",
+    "description": "Password"
+  },
+  "detected_new_login": {
+    "message": "Detected new login",
+    "description": "Detected new login"
+  },
+  "detected_changed_login": {
+    "message": "Detected changed password for user",
+    "description": "Detected changed password for user"
+  },
+  "browser_action_title_login": {
+    "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+    "description": "String for the browser action",
+    "placeholders": {
+      "credential_amount": {
+        "content": "$1",
+        "example": "4"
+      },
+      "plural": {
+        "content": "$2",
+        "example": "credentials"
+      }
+    }
+  },
+  "browser_action_title_locked": {
+    "message": "Passman - Locked",
+    "description": "Browser extension title when the extension is locked"
+  },
+  "detected_changed_url": {
+    "message": "Detected changed url for",
+    "description": "Detected changed url for"
+  },
+  "credential": {
+    "message": "credential",
+    "description": "credential"
+  },
+  "credentials": {
+    "message": "credentials",
+    "description": "credentials"
+  },
+  "refresh_timer": {
+    "message": "Refresh timer [s]",
+    "description": "Password"
+  },
+  "ignore_protocol": {
+    "message": "Ignore protocol for site matching",
+    "description": "Ignore protocol for site matching"
+  },
+  "ignore_subdomain": {
+    "message": "Ignore subdomain for site matching",
+    "description": "Password"
+  },
+  "ignore_port": {
+    "message": "Ignore port for site matching",
+    "description": "Ignore port for site matching"
+  },
+  "disable_autofill": {
+    "message": "Disable auto fill of forms",
+    "description": "Disable auto fill of forms"
+  },
+  "disable_password_picker": {
+    "message": "Disable password picker",
+    "description": "Disable password picker"
+  },
+  "enable_debug": {
+    "message": "Enable debug mode",
+    "description": "Enable debug mode"
+  },
+  "save": {
+    "message": "Save",
+    "description": "Save"
+  },
+  "saving": {
+    "message": "Saving",
+    "description": "Saving"
+  },
+  "credential_saved": {
+    "message": "Credential saved",
+    "description": "saved, lowercase"
+  },
+  "credential_updated": {
+    "message": "Credential updated",
+    "description": "updated, lowercase"
+  },
+  "site_ignored": {
+    "message": "Site ignored",
+    "description": "Site ignored"
+  },
+  "update": {
+    "message": "Update",
+    "description": "Update"
+  },
+  "ignore_site": {
+    "message": "Ignore site",
+    "description": "Update"
+  },
+  "btn_save_site": {
+    "message": "Save credentials for this site",
+    "description": "Save credentials for this site"
+  },
+  "btn_search": {
+    "message": "Search credentials",
+    "description": "Search credentials"
+  },
+  "welcome_to_passman": {
+    "message": "Welcome to the Passman extension",
+    "description": "Intro at the setup"
+  },
+  "server_url": {
+    "message": "Server url",
+    "description": "Server url"
+  },
+  "begin": {
+    "message": "Let's begin!",
+    "description": "Let's begin!"
+  },
+  "intro_text": {
+    "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+    "description": "Cancel"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel"
+  },
+  "default_vault": {
+    "message": "Default vault",
+    "description": "Default vault"
+  },
+  "default_vault_desc": {
+    "message": "Select the vault that you want to keep in sync with the browser.",
+    "description": "Select the vault that you want to keep in sync with the browser."
+  },
+  "enter_master_password": {
+    "message": "Enter master password",
+    "description": "Enter master password"
+  },
+  "enter_master_password_desc": {
+    "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+    "description": "Enter master password"
+  },
+  "remember_master_password": {
+    "message": "Remember master password",
+    "description": "Remember master password"
+  },
+  "done": {
+    "message": "Done",
+    "description": "Done"
+  },
+  "finish": {
+    "message": "Finish",
+    "description": "Finish"
+  },
+  "done_donate": {
+    "message": "If you like, don't forget to donate",
+    "description": "If you like, don't forget to donate"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close"
+  },
+  "prev": {
+    "message": "Prev",
+    "description": "Previous"
+  },
+  "next": {
+    "message": "Next",
+    "description": "Next"
+  },
+  "nextcloud_settings": {
+    "message": "Nextcloud / ownCloud server settings",
+    "description": "Nextcloud / ownCloud server settings"
+  },
+  "select_default_vault": {
+    "message": "Select default vault",
+    "description": "Select default vault"
+  },
+  "ignored_sites": {
+    "message": "Ignored sites",
+    "description": "Ignored sites"
+  },
+  "no_sites_ignored": {
+    "message": "No sites ignored",
+    "description": "No sites ignored"
+  },
+  "vault_password": {
+    "message": "Vault password",
+    "description": "Vault password"
+  },
+  "invalid_vault_password": {
+    "message": "Invalid vault key!",
+    "description": "Vault password"
+  },
+  "empty_master_key": {
+    "message": "Empty master key!",
+    "description": "Empty master key!"
+  },
+  "one_time_password": {
+    "message": "OTP",
+    "description": "One time password"
+  },
+  "settings": {
+    "message": "settings",
+    "description": "Settings"
+  },
+  "search": {
+    "message": "Search",
+    "description": "Search"
+  },
+  "refresh_credential_list": {
+    "message": "Refresh credential list",
+    "description": "Refresh the credential list"
+  },
+  "donate_button_title": {
+    "message": "Developent depends on donations, please support us",
+    "description": "Title on the paypal button"
+  },
+  "lock_extension": {
+    "message": "Lock extension",
+    "description": "Title on the paypal button"
+  },
+  "extension_locked": {
+    "message": "Passman extension is locked, unlock to use it",
+    "description": "When the extension is locked, and requires an unlock to use it"
+  },
+  "invalid_master_password": {
+    "message": "Invalid master password!",
+    "description": "When the master password is invalid"
+  },
+  "unlock": {
+    "message": "Unlock",
+    "description": "Unlock"
+  },
+  "credentials_found_for_site": {
+    "message": "We've found $AMOUNT$ credentials for this site",
+    "description": "Amount of the credentials found for the current site",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "credentials_in_db": {
+    "message": "$AMOUNT$ credentials in the database",
+    "description": "Amount of the credentials in the database",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  }
+}
