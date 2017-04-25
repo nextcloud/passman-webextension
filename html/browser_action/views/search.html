@@ -1,9 +1,9 @@
 <div class="col-xs-12 nopadding pwcontainer">
     <div class="searchContainer">
-        <input type="text" ng-model="searchText" placeholder="Search for..." class="form-control" ng-enter="search()"/>
+        <input type="text" ng-model="searchText" placeholder="{{'search_for' | translate }}..." class="form-control" ng-enter="search()"/>
     </div>
     <div ng-show="found_credentials.length === 0">
-        No credentials found!
+        {{'no_credentials_found' | translate}}
     </div>
 
 
@@ -13,7 +13,7 @@
             <small>{{credential.email}}</small>
         </div>
         <div class="col-xs-5 OTP" ng-if="credential.otp.secret">
-            OTP: <div otp-generator secret="credential.otp.secret"></div>
+            {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>
         </div>
     </div>
 </div>
@@ -21,18 +21,18 @@
 <div class="footer">
     <div style="position: absolute; left: 50%; margin-top: -7px; width: 110px;">
         <div style="position: relative; left: -50%; margin-top: 1.3em;">
-            <small>{{credential_amount}} {{ credential_amount === 1 ? 'credential' : 'credentials'}} in the database</small>
+            <small>{{'credentials_in_db' | translate:credential_amount}}</small>
         </div>
     </div>
-    <div class="bottomBtn" ng-click="goto_settings()" title="Settings"><i class="fa fa-gears"></i></div>
-    <div class="bottomBtn" ng-click="goto_search()" title="Refresh credential list"><i class="fa fa-search"></i></div>
-    <div class="bottomBtn" ng-click="refresh()" title="Refresh credential list"><i class="fa fa-refresh" ng-class="{'fa-spin': refreshing_credentials}"></i></div>
+    <div class="bottomBtn" ng-click="goto_settings()" title="{{'settings' | translate}}"><i class="fa fa-gears"></i></div>
+    <div class="bottomBtn" ng-click="goto_search()" title="{{'search' | translate}}"><i class="fa fa-search"></i></div>
+    <div class="bottomBtn" ng-click="refresh()" title="{{'refresh_credential_list' | translate}}"><i class="fa fa-refresh" ng-class="{'fa-spin': refreshing_credentials}"></i></div>
     <div class="bottomBtn pull-right"> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"
-                                          title="Developent depends on donations, please support us"
+                                          title="{{'donate_button_title' | translate}}"
                                           rel="nofollow noopener noreferrer"
     ><i class="fa fa-paypal"></i> </a>
     </div>
-    <div class="bottomBtn pull-right" ng-click="lockExtension()" title="Lock extension"><i class="fa fa-lock"></i></div>
+    <div class="bottomBtn pull-right" ng-click="lockExtension()" title="{{'lock_extension' | translate}}"><i class="fa fa-lock"></i></div>
     <!-- <a class="btn btn-success pull-right"
        >Donate</a> -->
 </div>

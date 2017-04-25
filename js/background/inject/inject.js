@@ -3,8 +3,8 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function () {
     var _this = this;
-    Array.prototype.findUrl = function(match) {
-        return this.filter(function(item){
+    Array.prototype.findUrl = function (match) {
+        return this.filter(function (item) {
             return typeof item === 'string' && item.indexOf(match) > -1;
         });
     };
@@ -18,7 +18,7 @@ $j(document).ready(function () {
     function enterLoginDetails(login) {
         var username;
 
-        if(login.hasOwnProperty('username')){
+        if (login.hasOwnProperty('username')) {
             username = (login.username.trim() !== '' ) ? login.username : login.email;
         }
 
@@ -44,7 +44,7 @@ $j(document).ready(function () {
         var left = loginFieldPos.left;
         var top = loginFieldPos.top;
         var maxZ = Math.max.apply(null,
-            $j.map($j('body *'), function(e) {
+            $j.map($j('body *'), function (e) {
                 if ($j(e).css('position') !== 'static')
                     return parseInt($j(e).css('z-index')) || 1;
             }));
@@ -190,11 +190,13 @@ $j(document).ready(function () {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var btnText = (data.guid === null) ? 'Save' : 'Update';
+                var save = API.i18n.getMessage('save');
+                var update = API.i18n.getMessage('update');
+                var btnText = (data.guid === null) ? save : update;
 
                 var buttons = [
                     {
-                        text: 'Cancel',
+                        text: API.i18n.getMessage('cancel'),
                         onClickFn: function () {
                             closeToolbar();
                             API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
@@ -205,16 +207,16 @@ $j(document).ready(function () {
                         onClickFn: function () {
                             //closeToolbar();
                             API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
-                            $j('#password-toolbar').find('.toolbar-text').text('Saving...');
+                            $j('#password-toolbar').find('.toolbar-text').text(API.i18n.getMessage('saving')+'...');
                             $j('#password-toolbar').find('.passman-btn').hide();
                         }
                     },
                     {
-                        text: 'Ignore site',
+                        text: API.i18n.getMessage('ignore_site'),
                         onClickFn: function () {
                             //closeToolbar();
                             API.runtime.sendMessage(API.runtime.id, {method: "ignoreSite", args: window.location.href});
-                            $j('#password-toolbar').find('.toolbar-text').text('Site ignored');
+                            $j('#password-toolbar').find('.toolbar-text').text(API.i18n.getMessage('site_ignored'));
                             $j('#password-toolbar').find('.passman-btn').hide();
                             setTimeout(function () {
                                 closeToolbar();
@@ -235,8 +237,10 @@ $j(document).ready(function () {
             return;
         }
         if ($j('#password-toolbar').is(':visible')) {
-            var action = (args.updated) ? 'updated' : 'saved';
-            $j('#password-toolbar').html('Credential ' + action + '!');
+            var saved = API.i18n.getMessage('credential_saved');
+            var updated = API.i18n.getMessage('credential_updated');
+            var action = (args.updated) ? updated : saved;
+            $j('#password-toolbar').html(action + '!');
             setTimeout(function () {
                 closeToolbar();
             }, 2500);
@@ -251,7 +255,7 @@ $j(document).ready(function () {
         });
     }
 
-    function initForms(){
+    function initForms() {
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
             var disablePasswordPicker = result.disablePasswordPicker;
             var url = window.location.href;
@@ -264,7 +268,7 @@ $j(document).ready(function () {
                     }
                     //Password miner
                     /* jshint ignore:start */
-                    if(!result.hasOwnProperty('ignored_sites') || result.ignored_sites.findUrl(url) !== -1 ) {
+                    if (!result.hasOwnProperty('ignored_sites') || result.ignored_sites.findUrl(url) !== -1) {
                         $j(form).submit((function (loginFields) {
                             return function () {
                                 formSubmitted(loginFields);
@@ -303,6 +307,7 @@ $j(document).ready(function () {
         document.execCommand('copy');
         txtToCopy.parentNode.removeChild(txtToCopy);
     }
+
     _this.copyText = copyText;
 
     function init() {

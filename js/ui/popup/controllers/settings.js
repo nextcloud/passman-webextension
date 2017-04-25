@@ -69,8 +69,8 @@
                         var save_btn = jQuery('#save'),
                             login_required = jQuery('.login-req');
                         if (vaults.hasOwnProperty('error')) {
-                            console.log(vaults);
-                            var errors = 'Invalid response from server: [' + vaults.result.status + '] ' + vaults.result.statusText;
+
+                            var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
                             $scope.errors.push(errors);
                             login_required.hide();
                             save_btn.hide();
@@ -106,7 +106,7 @@
                     /** global: PAPI */
                     PAPI.decryptString(settings.default_vault.challenge_password, settings.vault_password);
                 } catch (e) {
-                    $scope.errors.push('Invalid vault key!');
+                    $scope.errors.push(API.i18n.getMessage('invalid_vault_password'));
                     return;
                 }
 

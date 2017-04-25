@@ -121,6 +121,7 @@ var background = (function () {
     function getSetting(name) {
         return _self.settings[name];
     }
+
     _self.getSetting = getSetting;
 
     function saveSettings(settings, cb) {
@@ -212,14 +213,14 @@ var background = (function () {
     function minedForm(data, sender) {
         var url = sender.url;
         var existingLogins = getCredentialsByUrl(sender.url);
-        var title = "Detected new login:";
+        var title = API.i18n.getMessage('detected_new_login') + ':';
         var minedMatchingID = null;
         for (var j = 0; j < existingLogins.length; j++) {
             var login = existingLogins[j];
             if (login.username === data.username) {
                 if (login.password !== data.password) {
                     minedMatchingID = login.guid;
-                    title = "Detected changed password for user:";
+                    title = API.i18n.getMessage('detected_changed_login') + ':';
                 }
                 else {
                     //console.log('No changes detected');
@@ -264,11 +265,11 @@ var background = (function () {
     }
 
     function ignoreSite(_url) {
-        if(!_self.settings.hasOwnProperty('ignored_sites')){
+        if (!_self.settings.hasOwnProperty('ignored_sites')) {
             _self.settings.ignored_sites = [];
         }
         var site = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
-        if(_self.settings.ignored_sites.indexOf(site) === -1){
+        if (_self.settings.ignored_sites.indexOf(site) === -1) {
             _self.settings.ignored_sites.push(site);
             saveSettings(_self.settings);
         }
@@ -298,7 +299,7 @@ var background = (function () {
             var tab = tabs[0];
             var data = login;
             data.url = tab.url;
-            data.title = 'Detected changed url for: ';
+            data.title = API.i18n.getMessage('detected_changed_url') + ':';
             API.tabs.sendMessage(tab.id, {
                 method: 'showUrlUpdateDoorhanger',
                 args: {data: data}
@@ -313,6 +314,7 @@ var background = (function () {
         saveMined({}, sender);
 
     }
+
     _self.updateCredentialUrl = updateCredentialUrl;
 
     function saveMined(args, sender) {
@@ -336,7 +338,7 @@ var background = (function () {
         credential.url = sender.tab.url;
         if (credential.guid !== null) {
             PAPI.updateCredential(credential, _self.settings.vault_password, function (updatedCredential) {
-                if(credential_index){
+                if (credential_index) {
                     local_credentials[credential_index] = updatedCredential;
                 }
                 saveMinedCallback({credential: credential, updated: true, sender: sender});
@@ -440,9 +442,10 @@ var background = (function () {
             color: defaultColor,
             tabId: tab.id
         });
-        var plural = (credentialAmount === 1) ? 'credential' : 'credentials';
+
+        var plural = (credentialAmount === 1) ? API.i18n.getMessage('credential') : API.i18n.getMessage('credentials');
         API.browserAction.setTitle({
-            title: 'Passman - ' + credentialAmount.toString() + ' ' + plural + ' found for this page',
+            title: API.i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString()]),
             tabId: tab.id
         });
     }
@@ -461,7 +464,7 @@ var background = (function () {
                         tabId: tab.id
                     });
                     API.browserAction.setTitle({
-                        title: 'Passman - Locked',
+                        title: API.i18n.getMessage('browser_action_title_locked'),
                         tabId: tab.id
                     });
                 }
