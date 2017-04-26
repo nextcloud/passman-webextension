@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
     var jsResources = [];
+
     // Project configuration.
     grunt.initConfig({
         jsResources: [],
@@ -64,7 +65,8 @@ module.exports = function (grunt) {
                     '!Dockerfile',
                     '!*.md',
                     '!*.zip',
-                    '!swagger.yaml'
+                    '!swagger.yaml',
+                    '!.tx'
                 ],
                 dest: 'dist/'
             }
