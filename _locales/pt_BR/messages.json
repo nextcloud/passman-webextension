@@ -44,7 +44,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "A extensao Passman está bloqueada. Desbloqueie para usar",
+        "message": "A extensão Passman está bloqueada, desbloqueie para usar",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -104,7 +104,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
-        "message": "O desenvolvimento depende de donativos. Por favor, considere ajudar-nos",
+        "message": "O desenvolvimento depende de doações. Por favor, ajude-nos.",
         "description": "Title on the paypal button"
     },
     "please_enter_nextcloud_credentials": {
@@ -120,7 +120,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Prév",
+        "message": "Anterior",
         "description": "Previous"
     },
     "add_hint": {
@@ -180,7 +180,7 @@
         "description": "Save site"
     },
     "next": {
-        "message": "Próx",
+        "message": "Próximo",
         "description": "Next"
     },
     "avoid_ambiguous": {
