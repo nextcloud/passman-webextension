@@ -4,6 +4,7 @@
 [![Build Status](https://img.passman.cc/assets/AMO-button_1.png)](https://releases.passman.cc/xpi/)
 
 
+![Build Status](https://passman.cc/webextension-version.php)
 [![Build Status](https://travis-ci.org/nextcloud/passman-webextension.svg?branch=master)](https://travis-ci.org/nextcloud/passman-webextension)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3dd62087e5e4d2488314dbad02336df)](https://www.codacy.com/app/brantje/passman-webextension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nextcloud/passman-webextension&amp;utm_campaign=Badge_Grade)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nextcloud/passman-webextension/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nextcloud/passman-webextension/?branch=master)
