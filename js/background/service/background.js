@@ -90,6 +90,9 @@ var background = (function () {
 
             _self.settings = _settings;
 
+            if(!_self.settings.hasOwnProperty('ignored_sites')){
+                _self.settings.ignored_sites = [];
+            }
 
             PAPI.host = _settings.nextcloud_host;
             PAPI.username = _settings.nextcloud_username;
@@ -135,8 +138,14 @@ var background = (function () {
         PAPI.host = settings.nextcloud_host;
         PAPI.username = settings.nextcloud_username;
         PAPI.password = settings.nextcloud_password;
+
+        if(!settings.hasOwnProperty('ignored_sites')){
+            settings.ignored_sites = [];
+        }
+
         //window.settings contains the run-time settings
         _self.settings = settings;
+
 
 
         storage.set('settings', settings).then(function () {
