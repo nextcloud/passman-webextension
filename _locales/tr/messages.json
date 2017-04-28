@@ -1,0 +1,322 @@
+{
+    "credentials_in_db": {
+        "message": "Veritabanında $AMOUNT$ kimlik doğrulama bilgisi var",
+        "description": "Amount of the credentials in the database"
+    },
+    "refresh_credential_list": {
+        "message": "Kimlik doğrulama bilgilerini yenile",
+        "description": "Refresh the credential list"
+    },
+    "extDescription": {
+        "message": "Passman - Nextcloud / OwnCloud için Parola Yönetimi",
+        "description": "Extension description"
+    },
+    "label": {
+        "message": "Etiket",
+        "description": "Label"
+    },
+    "ignore_protocol": {
+        "message": "Site eşleştirmesinde iletişim kuralı yoksayılsın",
+        "description": "Ignore protocol for site matching"
+    },
+    "settings": {
+        "message": "ayarlar",
+        "description": "Settings"
+    },
+    "finish": {
+        "message": "Bitir",
+        "description": "Finish"
+    },
+    "detected_changed_url": {
+        "message": "Şu adresin değiştiği algılandı",
+        "description": "Detected changed url for"
+    },
+    "credentials": {
+        "message": "kimlik doğrulama bilgisi",
+        "description": "credentials"
+    },
+    "search": {
+        "message": "Arama",
+        "description": "Search"
+    },
+    "toggle_advanced": {
+        "message": "Gelişmiş ayarları aç/kapat",
+        "description": "Toggle advanced options"
+    },
+    "extension_locked": {
+        "message": "Passman uygulaması kilitli, kullanabilmek için kilidi açın",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "update": {
+        "message": "Güncelle",
+        "description": "Update"
+    },
+    "unlock": {
+        "message": "Kilidi aç",
+        "description": "Unlock"
+    },
+    "invalid_vault_password": {
+        "message": "Kasa anahtarı geçersiz!",
+        "description": "Vault password"
+    },
+    "min_digits": {
+        "message": "En az rakam sayısı",
+        "description": "Minimum amount of digits"
+    },
+    "enter_master_password_desc": {
+        "message": "Parola, uygulama içindeki tüm ayarlarınızın şifrelenmesi için kullanılır. Bu parolayı yerel olarak kaydedilecek şekilde ayarlayabilirsiniz ancak bu durumda DÜZ METİN olarak kaydedilir ve görülebilir.",
+        "description": "Enter master password"
+    },
+    "add_account": {
+        "message": "Hesap ekle",
+        "description": "Add account"
+    },
+    "credential": {
+        "message": "kimlik doğrulama bilgisi",
+        "description": "credential"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / ownCloud sunucu ayarlari",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "use_generated_password": {
+        "message": "Parolayı kullan",
+        "description": "Use password"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "ignore_site": {
+        "message": "Site yoksayılsın",
+        "description": "Update"
+    },
+    "select_default_vault": {
+        "message": "Varsayılan kasayı seçin",
+        "description": "Select default vault"
+    },
+    "site_ignored": {
+        "message": "Site yoksayıldı",
+        "description": "Site ignored"
+    },
+    "credentials_found_for_site": {
+        "message": "Bu site için  $AMOUNT$ bulundu",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "donate_button_title": {
+        "message": "Geliştirmeyi bağışlar sayesinde sürdürebiliyoruz, lütfen destek olun",
+        "description": "Title on the paypal button"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Nextcloud / ownCloud kimlik doğrulama bilgilerinizi yazın",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_master_password": {
+        "message": "Ana parola geçersiz!",
+        "description": "When the master password is invalid"
+    },
+    "close": {
+        "message": "Kapat",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Önceki",
+        "description": "Previous"
+    },
+    "add_hint": {
+        "message": "Ekledikten sonra passman içinden kimlik doğrulama bilgilerini düzenleyebilirsiniz",
+        "description": "After creating you can edit the credential in passman"
+    },
+    "default_vault": {
+        "message": "Varsayılan kasa",
+        "description": "Default vault"
+    },
+    "ignore_port": {
+        "message": "Site eşleştirmesinde kapı numarası yoksayılsın",
+        "description": "Ignore port for site matching"
+    },
+    "password": {
+        "message": "Parola",
+        "description": "Password"
+    },
+    "begin": {
+        "message": "Haydi başlayalım!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Bu yardımcı uygulama ayarlarını yapmanızı ve tüm parolalarınızın eşitlenerek korunmasını sağlar.",
+        "description": "Cancel"
+    },
+    "ignored_sites": {
+        "message": "Yoksayılan siteler",
+        "description": "Ignored sites"
+    },
+    "toggle_visibility": {
+        "message": "Görünürlüğü Değiştir",
+        "description": "Toggle visibility"
+    },
+    "remember_master_password": {
+        "message": "Ana parola hatırlansın",
+        "description": "Remember master password"
+    },
+    "btn_save_site": {
+        "message": "Bu sitenin kimlik doğrulama bilgilerini kaydet",
+        "description": "Save credentials for this site"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Kilitlendi",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "enter_master_password": {
+        "message": "Ana parolayı yazın",
+        "description": "Enter master password"
+    },
+    "vault_password": {
+        "message": "Kasa parolası",
+        "description": "Vault password"
+    },
+    "save_site": {
+        "message": "Siteyi kaydet",
+        "description": "Save site"
+    },
+    "next": {
+        "message": "Sonraki",
+        "description": "Next"
+    },
+    "avoid_ambiguous": {
+        "message": "Şüpheli karakterler kullanılmasın",
+        "description": "Avoid ambiguous characters"
+    },
+    "default_vault_desc": {
+        "message": "Tarayıcı ile eşitlenmesini istediğiniz kasayı seçin.",
+        "description": "Select the vault that you want to keep in sync with the browser."
+    },
+    "detected_new_login": {
+        "message": "Yeni oturum açma algılandı",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Kullanıcı parolasının değiştiği algılandı",
+        "description": "Detected changed password for user"
+    },
+    "invalid_response_from_server": {
+        "message": "Sunucu yanıtı geçersiz: [$STATUS_CODE] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "save": {
+        "message": "Kaydet",
+        "description": "Save"
+    },
+    "generate_password": {
+        "message": "Parola üret",
+        "description": "Generate password"
+    },
+    "server_url": {
+        "message": "Sunucu adresi",
+        "description": "Server url"
+    },
+    "cancel": {
+        "message": "İptal",
+        "description": "Cancel"
+    },
+    "credential_updated": {
+        "message": "Kimlik doğrulama bilgileri güncellendi",
+        "description": "updated, lowercase"
+    },
+    "no_credentials_found": {
+        "message": "Herhangi bir kimlik doğrulama bilgisi bulunamadı",
+        "description": "No credentials found for the current site"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    },
+    "lock_extension": {
+        "message": "Uygulamayı Kilitle",
+        "description": "Title on the paypal button"
+    },
+    "search_for": {
+        "message": "Aranacak ifade",
+        "description": "No credentials found for the current site"
+    },
+    "credential_saved": {
+        "message": "Kimlik doğrulama bilgileri kaydedildi",
+        "description": "saved, lowercase"
+    },
+    "require_every_character_type": {
+        "message": "Her karakter türü istensin",
+        "description": "Require every character type"
+    },
+    "enable_debug": {
+        "message": "Hata ayıklama kipi kullanılsın",
+        "description": "Enable debug mode"
+    },
+    "welcome_to_passman": {
+        "message": "Passman uygulamasına hoşgeldiniz",
+        "description": "Intro at the setup"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - bu sayfa için  $CREDENTIAL_AMOUNT$ $PLURAL$ buldu",
+        "description": "String for the browser action"
+    },
+    "done": {
+        "message": "Tamam",
+        "description": "Done"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Bu sitenin kimlik doğrulama bilgileri bulunamadı!",
+        "description": "No credentials found for the current site"
+    },
+    "saving": {
+        "message": "Kaydediliyor",
+        "description": "Saving"
+    },
+    "disable_password_picker": {
+        "message": "Parola yakalama kullanılmasın",
+        "description": "Disable password picker"
+    },
+    "no_sites_ignored": {
+        "message": "Henüz bir site yoksayılmamış",
+        "description": "No sites ignored"
+    },
+    "done_donate": {
+        "message": "Beğendiyseniz bağış yapmayı unutmayın",
+        "description": "If you like, don't forget to donate"
+    },
+    "accounts": {
+        "message": "Hesaplar",
+        "description": "Accounts"
+    },
+    "password_generator": {
+        "message": "Parola üreticisi",
+        "description": "Password generator"
+    },
+    "empty_master_key": {
+        "message": "Ana parola boş!",
+        "description": "Empty master key!"
+    },
+    "ignore_subdomain": {
+        "message": "Site eşleştirmesinde alt etki alanı yoksayılsın",
+        "description": "Password"
+    },
+    "btn_search": {
+        "message": "Kimlik doğrulama bilgileri arama",
+        "description": "Search credentials"
+    },
+    "disable_autofill": {
+        "message": "Formlar otomatik doldurulmasın",
+        "description": "Disable auto fill of forms"
+    },
+    "username": {
+        "message": "Kullanıcı Adı",
+        "description": "Username"
+    },
+    "pw_length": {
+        "message": "Parola uzunluğu",
+        "description": "Password length"
+    },
+    "refresh_timer": {
+        "message": "Yenileme süresi [s]",
+        "description": "Password"
+    }
+}
