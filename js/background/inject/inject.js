@@ -127,50 +127,23 @@ $j(document).ready(function () {
     }
 
     function showDoorhanger(data) {
-        var buttons = data.buttons;
-        data = data.data;
         if (inIframe()) {
             return;
         }
-        var doorhanger_div = $j('<div id="password-toolbar" style="display: none;">');
-        $j('<span>', {
-            class: 'toolbar-text',
-            text: data.title + ' ' + data.username + ' at ' + data.url
-        }).appendTo(doorhanger_div);
+        data.data.currentLocation = window.location.href;
+        API.runtime.sendMessage(API.runtime.id, {method: "setDoorhangerData", args: data});
+        var pickerUrl = API.extension.getURL('/html/inject/doorhanger.html');
 
-
-        $j.each(buttons, function (k, button) {
-            var html_button = $j('<button class="passman-btn passnman-btn-success"></button>').text(button.text);
-            html_button.click(button.onClickFn);
-            doorhanger_div.append(html_button);
-        });
-
-
-        $j('#password-toolbar').remove();
-        $j('body').append(doorhanger_div);
-        $j('#password-toolbar').slideDown();
+        var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="80" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
+        $j('#password-toolbarIframe').remove();
+        $j('body').after(doorhanger);
+        $j('#password-toolbarIframe').slideDown();
     }
 
     _this.showDoorhanger = showDoorhanger;
 
     function showUrlUpdateDoorhanger(data) {
-        var buttons = [
-            {
-                text: 'Cancel',
-                onClickFn: function () {
-                    $j('#password-toolbar').slideUp();
-                }
-            },
-            {
-                text: 'Update',
-                onClickFn: function () {
-                    //closeToolbar();
-                    API.runtime.sendMessage(API.runtime.id, {method: "updateCredentialUrl", args: data.data});
-                    $j('#password-toolbar').find('.toolbar-text').text('Saving...');
-                    $j('#password-toolbar').find('.passman-btn').hide();
-                }
-            }
-        ];
+        var buttons = ['cancel', 'updateUrl'];
         showDoorhanger({
             data: data.data,
             buttons: buttons
@@ -184,76 +157,25 @@ $j(document).ready(function () {
             return;
         }
 
-
         API.runtime.sendMessage(API.runtime.id, {method: "getMinedData"}).then(function (data) {
             if (!data) {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var save = API.i18n.getMessage('save');
-                var update = API.i18n.getMessage('update');
-                var btnText = (data.guid === null) ? save : update;
-
-                var buttons = [
-                    {
-                        text: API.i18n.getMessage('cancel'),
-                        onClickFn: function () {
-                            closeToolbar();
-                            API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
-                        }
-                    },
-                    {
-                        text: btnText,
-                        onClickFn: function () {
-                            //closeToolbar();
-                            API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
-                            $j('#password-toolbar').find('.toolbar-text').text(API.i18n.getMessage('saving')+'...');
-                            $j('#password-toolbar').find('.passman-btn').hide();
-                        }
-                    },
-                    {
-                        text: API.i18n.getMessage('ignore_site'),
-                        onClickFn: function () {
-                            //closeToolbar();
-                            API.runtime.sendMessage(API.runtime.id, {method: "ignoreSite", args: window.location.href});
-                            $j('#password-toolbar').find('.toolbar-text').text(API.i18n.getMessage('site_ignored'));
-                            $j('#password-toolbar').find('.passman-btn').hide();
-                            setTimeout(function () {
-                                closeToolbar();
-                            }, 3000);
-                        }
-                    }
-
-                ];
+                var buttons = [ 'cancel', 'save', 'ignore'];
                 showDoorhanger({data: data, buttons: buttons});
             }
         });
     }
 
-    function minedLoginSaved(args) {
-        // If the login added by the user then this is true
-        if (args.selfAdded) {
-            enterLoginDetails(args.credential);
-            return;
-        }
-        if ($j('#password-toolbar').is(':visible')) {
-            var saved = API.i18n.getMessage('credential_saved');
-            var updated = API.i18n.getMessage('credential_updated');
-            var action = (args.updated) ? updated : saved;
-            $j('#password-toolbar').html(action + '!');
-            setTimeout(function () {
-                closeToolbar();
-            }, 2500);
-        }
-    }
 
-    _this.minedLoginSaved = minedLoginSaved;
 
-    function closeToolbar() {
-        $j('#password-toolbar').slideUp(400, function () {
-            $j('#password-toolbar').remove();
+    function closeDoorhanger() {
+        $j('#password-toolbarIframe').slideUp(400, function () {
+            $j('#password-toolbarIframe').remove();
         });
     }
+    _this.closeDoorhanger = closeDoorhanger;
 
     function initForms() {
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
@@ -297,6 +219,14 @@ $j(document).ready(function () {
         });
     }
 
+    function minedLoginSaved(args) {
+        // If the login added by the user then this is true
+        if (args.selfAdded) {
+            enterLoginDetails(args.credential);
+        }
+    }
+    _this.minedLoginSaved = minedLoginSaved;
+
     function copyText(text) {
         var txtToCopy = document.createElement('input');
         txtToCopy.style.left = '-300px';
@@ -332,7 +262,7 @@ $j(document).ready(function () {
         }
     }, 10);
 
-    API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    API.runtime.onMessage.addListener(function (msg, sender) {
         //console.log('Method call', msg.method);
         if (_this[msg.method]) {
             _this[msg.method](msg.args, sender);

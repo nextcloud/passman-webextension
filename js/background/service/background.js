@@ -4,6 +4,9 @@ var background = (function () {
     var storage = new API.Storage();
     var _self = this;
     var _window = {};
+
+
+
     API.runtime.onConnect.addListener(function (port) {
 
         port.onMessage.addListener(function (msg) {
@@ -245,6 +248,15 @@ var background = (function () {
 
     function getMinedData(args, sender) {
         //console.log('Fecthing  mined data for tab id', sender.tab.id)
+        var senderUrl = sender.tab.url;
+        var site = processURL(senderUrl, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+        var matches = _self.settings.ignored_sites.filter(function (item) {
+            return typeof item === 'string' && site.indexOf(item) > -1;
+        });
+
+        if(matches.length !== 0){
+            return null;
+        }
         return mined_data[sender.tab.id];
     }
 
@@ -380,7 +392,7 @@ var background = (function () {
         var credential = PAPI.newCredential();
         credential.label = args.label;
         credential.username = args.username;
-        credential.password = args.username;
+        credential.password = args.password;
         credential.vault_id = local_vault.vault_id;
         credential.url = sender.tab.url;
         PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
@@ -406,6 +418,17 @@ var background = (function () {
     }
 
     _self.isAutoFillEnabled = isAutoFillEnabled;
+
+    var doorhangerData = null;
+    function setDoorhangerData(data) {
+        doorhangerData = data;
+    }
+    _self.setDoorhangerData = setDoorhangerData;
+
+    function getDoorhangerData() {
+        return doorhangerData;
+    }
+    _self.getDoorhangerData = getDoorhangerData;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 

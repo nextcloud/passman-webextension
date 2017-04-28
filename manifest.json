@@ -82,11 +82,11 @@
         "/js/background/inject/inject.js"
       ],
       "css":[
-        "/css/toolbar.css"
+        "/css/doorhanger-iframe.css"
       ]
     }
   ],
   "web_accessible_resources": [
-    "html/inject/password_picker.html", "fonts/*","icons/*"
+    "html/inject/doorhanger.html", "html/inject/password_picker.html", "fonts/*","icons/*"
   ]
 }
