@@ -1,6 +1,7 @@
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif; }
 
 #password-toolbar {
   background-color: #f5e79e;
