@@ -1,22 +1,29 @@
+@import "bourbon/bourbon";
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
 #password-toolbar {
-  position: fixed;
-  z-index: 99999;
+
   background-color: #f5e79e;
   border-bottom: 1px;
   border-left: 1px;
   padding: 10px;
   border-right: 1px;
-  top: 0;
-  width: calc(100% - 20px);
   height: 30px;
   font-size: 14px;
   /*left: 50%;
-  margin-left: -150px;*/ }
-  #password-toolbar .toolbar-text {
+  margin-left: -150px;*/
+
+  .toolbar-text {
     float: left;
     display: inline-block;
-    margin-top: 5px; }
-  #password-toolbar .passman-btn {
+    margin-top: 5px;
+  }
+
+  .passman-btn {
     float: right;
     display: inline-block;
     padding: 6px 12px;
@@ -30,16 +37,17 @@
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    @include user-select(none);
     background-image: none;
     background: #3498db;
     color: #fff;
     margin-right: 15px;
     border: 1px solid transparent;
-    border-radius: 4px; }
-  #password-toolbar .passman-btn:hover {
+    border-radius: 4px;
+  }
+
+  .passman-btn:hover {
     background: #3cb0fd;
-    text-decoration: none; }
+    text-decoration: none;
+  }
+}
