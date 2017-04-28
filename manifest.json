@@ -1,7 +1,7 @@
 {
   "name": "__MSG_extName__",
   "short_name": "__MSG_extName__",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "manifest_version": 2,
   "author": "Sander Brand",
   "default_locale": "en",
