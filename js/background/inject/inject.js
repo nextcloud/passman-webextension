@@ -5,7 +5,7 @@ $j(document).ready(function () {
     var _this = this;
     Array.prototype.findUrl = function (match) {
         return this.filter(function (item) {
-            return typeof item === 'string' && match.indexOf(item) > -1;
+            return typeof item === 'string' && item.indexOf(match) > -1;
         });
     };
 
@@ -105,20 +105,17 @@ $j(document).ready(function () {
         }
     }
 
-    function formSubmitted(form, fields) {
+    function formSubmitted(fields) {
         var user = fields[0].value;
         var pass = fields[1].value;
         var params = {
             username: user,
             password: pass
         };
-        $j(form).attr('scraped', true);
         //Disable password mining
         //$j(fields[1]).attr('type', 'hidden');
         API.runtime.sendMessage(API.runtime.id, {method: "minedForm", args: params});
-        setTimeout(function () {
-            $j(form).submit();
-        }, 100);
+
     }
 
     function inIframe() {
@@ -193,17 +190,12 @@ $j(document).ready(function () {
                     }
                     //Password miner
                     /* jshint ignore:start */
-                    $j(form).submit(function (e) {
-                        if(!$j(this).attr('scraped')){
-                            e.preventDefault();
-                        }
-                    });
-                    if (!result.hasOwnProperty('ignored_sites') || result.ignored_sites.findUrl(url).length === 0) {
-                        $j(form).submit((function (form, loginFields) {
+                    if (!result.hasOwnProperty('ignored_sites') || result.ignored_sites.findUrl(url) !== -1) {
+                        $j(form).submit((function (loginFields) {
                             return function () {
-                                formSubmitted(form, loginFields);
+                                formSubmitted(loginFields);
                             };
-                        })(form, loginFields[i]));
+                        })(loginFields[i]));
                     }
                     /* jshint ignore:end */
                 }
@@ -223,8 +215,6 @@ $j(document).ready(function () {
 
                 });
             }
-
-
 
         });
     }
