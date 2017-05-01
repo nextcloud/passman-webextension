@@ -247,6 +247,10 @@
     "message": "Done",
     "description": "Done"
   },
+  "list": {
+    "message": "List",
+    "description": "List"
+  },
   "finish": {
     "message": "Finish",
     "description": "Finish"
@@ -262,6 +266,10 @@
   "prev": {
     "message": "Prev",
     "description": "Previous"
+  },
+  "copy": {
+    "message": "Copy",
+    "description": "Copy"
   },
   "next": {
     "message": "Next",
@@ -300,7 +308,7 @@
     "description": "One time password"
   },
   "settings": {
-    "message": "settings",
+    "message": "Settings",
     "description": "Settings"
   },
   "search": {

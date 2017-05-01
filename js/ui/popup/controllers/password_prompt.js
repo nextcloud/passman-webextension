@@ -38,6 +38,7 @@
 
             API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function(isSet) {
                 $scope.masterPwSet = isSet;
+                $rootScope.$broadcast('lockExtension');
                 $scope.$apply();
             });
             API.runtime.sendMessage(API.runtime.id, {method: "getSettings"});
@@ -51,6 +52,7 @@
                         API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: $scope.master_password, savePassword: $scope.master_password_remember} }).then(function () {
                             setTimeout(function () {
                                 window.location = '#!/';
+                                $rootScope.$emit('unlocked');
                                 $scope.saving = false;
                                 $scope.saving = false;
                             },1500);

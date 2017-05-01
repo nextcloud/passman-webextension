@@ -37,13 +37,14 @@
             'ngRoute',
             'ngSanitize',
             'pascalprecht.translate',
-            'angular-steps'
+            'angular-steps',
+            'ngMaterial'
         ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/main.html',
-                    controller: 'MainCtrl'
+                    controller: 'ListCtrl'
                 })
                 .when('/search', {
                     templateUrl: 'views/search.html',
@@ -79,6 +80,9 @@
             $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|moz-extension):/);
             // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
         }
-    ]);
+    ]).config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('blue');
+    });
 
 }());

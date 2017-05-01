@@ -1,0 +1,88 @@
+body, html {
+  min-height: 250px;
+  width: 450px; }
+
+.md-content {
+  height: 100%;
+  max-height: auto; }
+
+.addFab {
+  position: fixed;
+  right: 10px;
+  bottom: 10px; }
+
+.menu {
+  padding: 0; }
+  .menu ul {
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+    .menu ul li {
+      list-style-type: none;
+      width: 100%; }
+      .menu ul li md-icon {
+        margin-right: 16px;
+        min-width: 40px;
+        width: 40px; }
+      .menu ul li a {
+        color: #000;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        padding: 0;
+        padding-left: 16px;
+        padding-right: 56px;
+        text-decoration: none;
+        clear: both;
+        font-weight: 500;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+      .menu ul li a:hover {
+        background-color: #e0e0e0; }
+
+.password-list {
+  padding: 0; }
+
+/*/*/
+.radial-progress {
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background-color: #d6dadc;
+  border-radius: 50%; }
+  .radial-progress .circle .mask, .radial-progress .circle .fill {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .radial-progress .circle .mask {
+    clip: rect(0px, 12px, 12px, 6px); }
+    .radial-progress .circle .mask .fill {
+      clip: rect(0px, 6px, 12px, 0px);
+      background-color: #0277bd; }
+
+.ng-hide {
+  display: none; }
+
+.unlock-container {
+  height: 350px; }
+  .unlock-container .unlock {
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .unlock-container .unlock md-input-container {
+      margin-top: 0;
+      margin-bottom: 0; }
