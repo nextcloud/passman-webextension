@@ -1,66 +1,66 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ inloggegevens in de database",
+        "message": "$AMOUNT$ pověření v databázi",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Refresh credential list",
+        "message": "Obnovit seznam pověření",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - de wachtwoordbeheerder voor NextCloud / ownCloud",
+        "message": "Passman - The password manager for NextCloud / ownCloud",
         "description": "Extension description"
     },
     "label": {
-        "message": "Label",
+        "message": "Štítek",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Negeer protocol voor site matching",
+        "message": "Pro hledání stránek ignorovat protokol",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Instellingen",
+        "message": "Nastavení",
         "description": "Settings"
     },
     "finish": {
-        "message": "Afronden",
+        "message": "Dokončit",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Vond gewijzigde url voor",
+        "message": "Detekována změna url pro",
         "description": "Detected changed url for"
     },
     "credentials": {
-        "message": "Inloggegevens",
+        "message": "Pověření",
         "description": "credentials"
     },
     "search": {
-        "message": "Zoek",
+        "message": "Hledat",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Toggle advanced options",
+        "message": "Přepnout pokročilé možnosti",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman extensie is geblokkeerd, deblokkeer om te gebruiken",
+        "message": "Passman extension is locked, unlock to use it",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Bijwerken",
+        "message": "Aktualizovat",
         "description": "Update"
     },
     "unlock": {
-        "message": "Deblokkeren",
+        "message": "Odemknout",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "ongeldige kluissleutel!",
+        "message": "Neplatný klíč trezoru!",
         "description": "Vault password"
     },
     "min_digits": {
-        "message": "Minimum aantal cijfers",
+        "message": "Nejmenší počet číslic",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
@@ -68,19 +68,19 @@
         "description": "Enter master password"
     },
     "add_account": {
-        "message": "Account toevoegen",
+        "message": "Přidat účet",
         "description": "Add account"
     },
     "credential": {
-        "message": "Inloggegevens",
+        "message": "Pověření",
         "description": "credential"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud / owncloud server instellingen",
+        "message": "Nastavení Nextcloud / ownCloud serveru",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Gebruik wachtwoord",
+        "message": "Použít heslo",
         "description": "Use password"
     },
     "one_time_password": {
@@ -88,59 +88,59 @@
         "description": "One time password"
     },
     "ignore_site": {
-        "message": "Pagina negeren",
+        "message": "Ignorovat stránky",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Selecteer standaardkluis",
+        "message": "Vybrat výchozí trezor",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Site genegeerd",
+        "message": "Stránka ignorována",
         "description": "Site ignored"
     },
     "credentials_found_for_site": {
-        "message": "We vonden $AMOUNT$ inloggegevens van deze pagina",
+        "message": "Pro tuto stránku jsme našli $AMOUNT$ pověření",
         "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "Vývoj závisí na darech, podpořte nás",
         "description": "Title on the paypal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Voer je Nextcloud / owncloud inloggegevens in",
+        "message": "Please enter your Nextcloud / ownCloud credentials",
         "description": "No credentials found for the current site"
     },
     "invalid_master_password": {
-        "message": "Ongeldig hoofdwachtwoord!",
+        "message": "Neplatné hlavní heslo!",
         "description": "When the master password is invalid"
     },
     "close": {
-        "message": "Sluiten",
+        "message": "Zavřít",
         "description": "Close"
     },
     "prev": {
-        "message": "Vorig",
+        "message": "Zpět",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Na het aanmaken kan je je inloggegevens in Passman aanpassen",
+        "message": "After creating you can edit the credential in passman",
         "description": "After creating you can edit the credential in passman"
     },
     "default_vault": {
-        "message": "Standaardkluis",
+        "message": "Výchozí trezor",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Negeer poort voor site matching",
+        "message": "Pro hledání stránek ignorovat port",
         "description": "Ignore port for site matching"
     },
     "password": {
-        "message": "Wachtwoord",
+        "message": "Heslo",
         "description": "Password"
     },
     "begin": {
-        "message": "Laten we beginnen!",
+        "message": "Začněme!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -148,83 +148,83 @@
         "description": "Cancel"
     },
     "ignored_sites": {
-        "message": "Pagina negeren",
+        "message": "Ignorované stránky",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Omschakelen zichtbaarheid",
+        "message": "Přepnout viditelnost",
         "description": "Toggle visibility"
     },
     "remember_master_password": {
-        "message": "Hoofdwachtwoord onthouden",
+        "message": "Zapamatovat hlavní heslo",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Inloggegevens van deze pagina opslaan",
+        "message": "Uložit pověření pro tuto stránku",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - is op slot",
+        "message": "Passman - uzamčen",
         "description": "Browser extension title when the extension is locked"
     },
     "enter_master_password": {
-        "message": "Voer een hoofdwachtwoord in",
+        "message": "Zadejte hlavní heslo",
         "description": "Enter master password"
     },
     "vault_password": {
-        "message": "Kluiswachtwoord",
+        "message": "Heslo trezoru",
         "description": "Vault password"
     },
     "save_site": {
-        "message": "Pagina opslaan",
+        "message": "Uložit stránku",
         "description": "Save site"
     },
     "next": {
-        "message": "Volgende",
+        "message": "Další",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Voorkomen dubbelzinnige tekens",
+        "message": "Vyhnout se nejednoznačným znakům",
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Selecteer de kluis die je met je browser wil synchroniseren.",
+        "message": "Select the vault that you want to keep in sync with the browser.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "Nieuwe inlog gedetecteerd",
+        "message": "Detekováno nové přihlášení",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Een veranderd wachtwoord voor de gebruiker gevonden",
+        "message": "Detekováno změněné heslo uživatele",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Ongeldige reactie van de server: [$STATUS_CODE]$STATUS_TEXT$",
+        "message": "Neplatná odpověď ze serveru: [$STATUS_CODE] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Opslaan",
+        "message": "Uložit",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Genereer wachtwoord",
+        "message": "Generovat heslo",
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Server url",
+        "message": "Url serveru",
         "description": "Server url"
     },
     "cancel": {
-        "message": "Annuleren",
+        "message": "Zrušit",
         "description": "Cancel"
     },
     "credential_updated": {
-        "message": "Inloggegevens bijgewerkt",
+        "message": "Pověření aktualizováno",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "Geen inloggegevens gevonden",
+        "message": "Nebyla nalezena žádná pověření",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -232,91 +232,91 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Extensie op slot doen",
+        "message": "Zamknout rozšíření",
         "description": "Title on the paypal button"
     },
     "search_for": {
-        "message": "Zoek naar",
+        "message": "Hledat",
         "description": "No credentials found for the current site"
     },
     "credential_saved": {
-        "message": "Inloggegevens opgeslagen",
+        "message": "Pověření uloženo",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Vereis elk type teken",
+        "message": "Vyžadovat každý typ znaků",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Debugmodus inschakelen",
+        "message": "Povolit ladící režim",
         "description": "Enable debug mode"
     },
     "welcome_to_passman": {
-        "message": "Welkom bij de Passman extensie",
+        "message": "Vítejte v rozšíření Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ vond deze pagina",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "done": {
-        "message": "Gedaan",
+        "message": "Hotovo",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Geen inloggegevens gevonden van deze pagina!",
+        "message": "Pro tuto stránku nebyla nalezena žádná pověření!",
         "description": "No credentials found for the current site"
     },
     "saving": {
-        "message": "Opslaan",
+        "message": "Ukládání",
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Wachtwoord kiezer uitschakelen",
+        "message": "Disable password picker",
         "description": "Disable password picker"
     },
     "no_sites_ignored": {
-        "message": "Geen sites genegeerd",
+        "message": "Nejsou ignorovány žádné stránky",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Vergeet niet te doneren wanneer je Passman met plezier gebruikt ",
+        "message": "If you like, don't forget to donate",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Accounts",
+        "message": "Účty",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Wachtwoordgenerator",
+        "message": "Generátor hesel",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Hoofdsleutel  leeg maken!",
+        "message": "Prázdný hlavní klíč!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Negeer subdomein voor site matching",
+        "message": "Pro hledání stránek ignorovat poddoménu",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Zoek inloggegevens",
+        "message": "Prohledat pověření",
         "description": "Search credentials"
     },
     "disable_autofill": {
-        "message": "Automatisch formulier invullen uitschakelen",
+        "message": "Zakázat automatické vyplňování formulářů",
         "description": "Disable auto fill of forms"
     },
     "username": {
-        "message": "Gebruikersnaam",
+        "message": "Uživatelské jméno",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Wachtwoord lengte",
+        "message": "Délka hesla",
         "description": "Password length"
     },
     "refresh_timer": {
-        "message": "Ververs timer [s]",
+        "message": "Obnovit časovač [s]",
         "description": "Password"
     }
 }
