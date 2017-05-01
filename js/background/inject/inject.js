@@ -136,7 +136,7 @@ $j(document).ready(function () {
 
         var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="80" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
         $j('#password-toolbarIframe').remove();
-        $j('body').after(doorhanger);
+        $j('body').prepend(doorhanger);
         $j('#password-toolbarIframe').slideDown();
     }
 
