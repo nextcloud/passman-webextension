@@ -49,7 +49,7 @@
                             txtToCopy.select();
                             document.execCommand('copy');
                             txtToCopy.parentNode.removeChild(txtToCopy);
-                        }
+                        };
                     }
                 };
             }

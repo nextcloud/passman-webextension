@@ -123,7 +123,6 @@ window.PAPI = (function () {
         updateCredential: function (credential, key, callback) {
             var origKey = key;
             var _credential, _key;
-            console.log(credential)
             if (!credential.hasOwnProperty('acl') && credential.hasOwnProperty('shared_key')) {
                 if (credential.shared_key) {
                     _key = this.decryptString(credential.shared_key);
@@ -139,7 +138,6 @@ window.PAPI = (function () {
             } else {
                 _credential = credential;
             }
-            console.log(key, credential)
             delete _credential.shared_key;
             var regex = /(<([^>]+)>)/ig;
             if(_credential.description && _credential.description !== "") {

@@ -96,7 +96,7 @@
             $scope.addCustomField = function (_field) {
                 var field = angular.copy(_field);
                 if (!field.label || !field.value) {
-                    return
+                    return;
                 }
                 $scope.credential.custom_fields.push(field);
                 $scope.new_custom_field = angular.copy(custom_field);
@@ -138,7 +138,7 @@
                     return;
                 }
 
-                if ($scope.credential.password != $scope.credential.password_repeat) {
+                if ($scope.credential.password !== $scope.credential.password_repeat) {
                     $mdToast.showSimple(API.i18n.getMessage('no_password_match'));
                     return;
                 }
