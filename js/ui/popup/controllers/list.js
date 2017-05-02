@@ -101,10 +101,9 @@
 
             initApp();
 
-
-
-
-
+            $scope.edit = function (credential) {
+                window.location = '#!/edit/' + credential.guid;
+            };
         }]);
 }());
 

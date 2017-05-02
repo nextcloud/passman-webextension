@@ -97,8 +97,32 @@
     "message": "Username",
     "description": "Username"
   },
+  "email": {
+    "message": "E-mail",
+    "description": "E-mail"
+  },
+  "add": {
+    "message": "Add",
+    "description": "Add"
+  },
+  "credential_created": {
+    "message": "Credential created",
+    "description": "Credential created"
+  },
+  "url": {
+    "message": "URL",
+    "description": "URL"
+  },
+  "delete": {
+    "message": "Delete",
+    "description": "Delete"
+  },
   "password": {
     "message": "Password",
+    "description": "Password"
+  },
+  "password_repeat": {
+    "message": "Password (repeat)",
     "description": "Password"
   },
   "detected_new_login": {
@@ -251,6 +275,10 @@
     "message": "List",
     "description": "List"
   },
+  "edit": {
+    "message": "Edit",
+    "description": "Edit"
+  },
   "finish": {
     "message": "Finish",
     "description": "Finish"
@@ -294,6 +322,14 @@
   "vault_password": {
     "message": "Vault password",
     "description": "Vault password"
+  },
+  "label_required": {
+    "message": "Please fill in a label",
+    "description": "When comparing passwords"
+  },
+  "no_password_match": {
+    "message": "Passwords don't match",
+    "description": "When comparing passwords"
   },
   "invalid_vault_password": {
     "message": "Invalid vault key!",
