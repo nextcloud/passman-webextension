@@ -54,11 +54,8 @@
             port.onMessage.addListener(messageParser);
             port.postMessage("credential_amount");
 
-
-            $scope.lockExtension = function () {
-                API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: null}}).then(function () {
-                    window.location = '#!/locked';
-                });
+            $scope.edit = function (credential) {
+                window.location = '#!/edit/' + credential.guid;
             };
 
             $scope.found_credentials = false;
@@ -68,15 +65,6 @@
                     $scope.found_credentials = result;
                     $scope.$apply();
                 });
-            };
-
-
-            $scope.goto_settings = function () {
-                window.location = '#!/settings';
-            };
-
-            $scope.goto_search = function () {
-                window.location = '#!/search';
             };
 
 

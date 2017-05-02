@@ -11,6 +11,10 @@
                 <h4>{{credential.username}}</h4>
                 <p ng-if="credential.otp.secret">OTP: <span otp-generator secret="credential.otp.secret"></span></p>
             </div>
+            <md-button class="md-secondary md-icon-button" ng-click="edit(credential)"  aria-label="call">
+                <md-tooltip md-direction="left">{{'edit' | translate}}</md-tooltip>
+                <md-icon>edit</md-icon>
+            </md-button>
         </md-list-item>
     </md-list>
     <md-list-item ng-if="found_credentials.length === 0">

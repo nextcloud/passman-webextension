@@ -1,8 +1,11 @@
 @import "bourbon/bourbon";
 $height: auto;
 body,html {
-  min-height: 250px;
   width: 450px;
+}
+
+.pointer{
+  cursor: pointer;
 }
 
 .md-content {
