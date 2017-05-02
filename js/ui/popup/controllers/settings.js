@@ -104,7 +104,7 @@
                 var settings = angular.copy($scope.settings);
                 for (var i =0; i < $scope.vaults.length; i++){
                     var vault = $scope.vaults[i];
-                    if(vault.guid == settings.default_vault.guid){
+                    if(vault.guid === settings.default_vault.guid){
                         settings.default_vault = angular.copy(vault);
                         break;
                     }

@@ -115,7 +115,7 @@
                 vault: function (callback) {
                     for (var i = 0; i < $scope.vaults.length; i++) {
                         var vault = $scope.vaults[i];
-                        if (vault.guid == $scope.settings.default_vault.guid) {
+                        if (vault.guid === $scope.settings.default_vault.guid) {
                             $scope.settings.default_vault = angular.copy(vault);
                             break;
                         }
