@@ -1,8 +1,14 @@
 body, html {
-  width: 450px; }
+  min-width: 450px; }
+
+.server_settings md-input-container {
+  margin-bottom: 0; }
 
 .pointer {
   cursor: pointer; }
+
+.password-list {
+  min-height: 250px; }
 
 .md-content {
   height: 100%;

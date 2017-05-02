@@ -279,6 +279,18 @@
     "message": "Edit",
     "description": "Edit"
   },
+  "server_settings": {
+    "message": "Server settings",
+    "description": "Server Settings"
+  },
+  "vault_settings": {
+    "message": "Vault settings",
+    "description": "Vault settings"
+  },
+  "master_password": {
+    "message": "Set Master password",
+    "description": "Set a master password"
+  },
   "finish": {
     "message": "Finish",
     "description": "Finish"
@@ -295,6 +307,10 @@
     "message": "Prev",
     "description": "Previous"
   },
+  "back": {
+    "message": "Back",
+    "description": "Back"
+  },
   "copy": {
     "message": "Copy",
     "description": "Copy"
@@ -302,6 +318,14 @@
   "next": {
     "message": "Next",
     "description": "Next"
+  },
+  "continue": {
+    "message": "Continue",
+    "description": "Continue"
+  },
+  "donate": {
+    "message": "Donate",
+    "description": "Donate"
   },
   "nextcloud_settings": {
     "message": "Nextcloud / ownCloud server settings",
@@ -326,6 +350,10 @@
   "label_required": {
     "message": "Please fill in a label",
     "description": "When comparing passwords"
+  },
+  "invalid_host": {
+    "message": "Invalid server url",
+    "description": "Invalid server url"
   },
   "no_password_match": {
     "message": "Passwords don't match",

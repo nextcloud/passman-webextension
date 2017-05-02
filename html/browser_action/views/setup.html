@@ -1,52 +1,102 @@
 <div class="alerts alert alert-warning" ng-if="errors.length > 0">
     <li ng-repeat="error in errors">{{error}}</li>
 </div>
-<steps on-finish="finished()" class="setup">
-    <step class="step1" name="welcome">
-        <h2>{{'welcome_to_passman' | translate}}</h2>
-        {{'intro_text' | translate}}
-        <button class="btn btn-default stepNext" ng-click="next()">{{'begin' | translate}}</button>
-    </step>
-    <step class="step2" name="server">
-        <h2>{{'nextcloud_settings' | translate}}</h2>
-        <label>{{'server_url' | translate}}</label>
-        <input type="text" ng-model="settings.nextcloud_host"/>
-        <label>{{'username' | translate}}</label>
-        <input type="text" ng-model="settings.nextcloud_username"/>
-        <label>{{'password' | translate}}</label>
-        <input type="password" ng-model="settings.nextcloud_password" />
+<div layout-padding style="height: 520px; width: 500px;">
+    <md-stepper id="setup-stepper" md-linear="false" md-vertical="true">
+        <md-step md-label="{{'welcome_to_passman' | translate}}">
+            <md-step-body>
+                <p>{{'intro_text' | translate}}</p>
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="nextStep();">
+                    <i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i>
+                    Continue
+                </md-button>
+            </md-step-actions>
+        </md-step>
+        <md-step md-label="{{ 'server_settings' | translate}}" class="server_settings">
+            <md-step-body style="overflow: hidden;">
+                <md-input-container>
+                    <label>{{'server_url' | translate}}</label>
+                    <input ng-model="settings.nextcloud_host" required>
+                </md-input-container>
+                <md-input-container>
+                    <label>{{'username' | translate}}</label>
+                    <input ng-model="settings.nextcloud_username" required>
+                </md-input-container>
 
-        <button step-previous class="btn btn-default">{{'prev' | translate}}</button>
+                <md-input-container>
+                    <label>{{'password' | translate}}</label>
+                    <input type="password" ng-model="settings.nextcloud_password" required>
+                </md-input-container>
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="nextStep('server');">
+                    <i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i>
+                    {{ 'continue' | translate}}
+                </md-button>
+                <md-button class="md-primary" ng-click="previousStep();">{{ 'back' | translate}}</md-button>
+            </md-step-actions>
+        </md-step>
+        <md-step md-label="{{'vault_settings' | translate}}">
+            <md-step-body style="overflow: hidden;">
+                <md-input-container class="md-block" ng-if="vaults">
+                    <label>{{'select_default_vault' | translate}}</label>
+                    <md-select ng-model="settings.default_vault.guid">
+                        <md-option ng-repeat="vault in vaults" value="{{vault.guid}}"
+                                   ng-selected="settings.default_vault.vault_id === vault.vault_id">
+                            {{vault.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>{{'vault_password' | translate}}</label>
+                    <input type="password" ng-model="settings.vault_password" required>
+                </md-input-container>
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="nextStep('vault');">
+                    <i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i>
+                    {{ 'continue' | translate}}
+                </md-button>
+                <md-button class="md-primary" ng-click="previousStep();">{{ 'back' | translate}}</md-button>
+            </md-step-actions>
+        </md-step>
+        <md-step md-label="{{ 'master_password' | translate}}">
+            <md-step-body>
+                <p>
+                    {{'enter_master_password_desc' | translate}}
+                </p>
+                <md-input-container class="md-block">
+                    <input type="password" ng-model="settings.master_password" aria-label="Master password" />
+                </md-input-container>
+                <md-input-container>
+                    <md-checkbox class="md-primary" md-no-ink aria-label=" {{'remember_master_password'| translate}}" ng-model="settings.master_password_remember">
+                        {{'remember_master_password'| translate}}
+                    </md-checkbox>
+                </md-input-container>
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="nextStep('master');">
+                    <i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i>
+                    {{ 'continue' | translate}}
+                </md-button>
+                <md-button class="md-primary" ng-click="previousStep();">{{ 'back' | translate}}</md-button>
+            </md-step-actions>
+        </md-step>
 
-        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'next' | translate}}</button>
-    </step>
-    <step class="step3" name="vault">
-        <h2>{{'default_vault' | translate}}</h2>
-        <label>{{'default_vault_desc' | translate}}</label>
-        <select id="defaultVault"  class="form-control input-sm" ng-model="settings.default_vault" required ng-options="vault.name for vault in vaults track by vault.guid">
-        </select>
-
-        <label>{{'vault_password' | translate}}</label>
-        <input type="password" ng-change="" ng-model="settings.vault_password" />
-
-        <button step-previous class="btn btn-default">{{'prev' | translate}}</button>
-        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'next' | translate}}</button>
-    </step>
-    <step class="step4" name="master">
-        <h2>{{'enter_master_password' | translate}}</h2>
-        <div>{{'enter_master_password_desc' | translate}}</div>
-        <br />
-        <input type="password" ng-model="settings.master_password" />
-        <br />
-        <label><input type="checkbox" ng-model="settings.master_password_remember">{{'remember_master_password' | translate}}</label>
-
-        <button step-previous class="btn btn-default">{{'prev' | translate}}</button>
-        <button class="btn btn-default stepNext" ng-click="next()" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'next' | translate}}</button>
-    </step>
-    <step class="step5" name="last">
-        <h1>{{'done' | translate}}!</h1>
-        <div>{{'done_donate' | translate}}</div>
-
-        <button step-finish class="btn btn-default" ng-disabled="saving"><i ng-show="saving" ng-class="{'fa-spinner fa-spin': saving}" class="fa"></i> {{'finish' | translate}}</button>
-    </step>
-</steps>
+        <md-step md-label="{{'done' | translate}}">
+            <md-step-body>
+                <p>
+                    {{'done_donate' | translate}}
+                </p>
+            </md-step-body>
+            <md-step-actions>
+                <md-button class="md-primary md-raised" ng-click="finished();">{{'finish' | translate}}</md-button>
+                <md-button class="md-primary" ng-click="previousStep();">{{ 'back' | translate}}</md-button>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"><md-button class="md-primary md-raised">{{'donate' | translate}}</md-button></a>
+            </md-step-actions>
+        </md-step>
+        <!-- Other steps if needed ... -->
+    </md-stepper>
+</div>

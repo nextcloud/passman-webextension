@@ -57,17 +57,6 @@
             var initApp = function () {
                 port.onMessage.addListener(messageParser);
                 API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
-                    function redirectToPrompt() {
-                        window.location = '#!/locked';
-                        return;
-                    }
-
-                    //First check attributes
-                    if (!isPasswordSet) {
-                        redirectToPrompt();
-                        return;
-                    }
-
                     getActiveTab();
                     $scope.refreshing_credentials = true;
                     setTimeout(function () {
