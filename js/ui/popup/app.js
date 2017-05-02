@@ -37,8 +37,8 @@
             'ngRoute',
             'ngSanitize',
             'pascalprecht.translate',
-            'angular-steps',
-            'ngMaterial'
+            'ngMaterial',
+            'mdSteppers'
         ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider

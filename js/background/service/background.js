@@ -268,6 +268,9 @@ var background = (function () {
         //console.log('Fecthing  mined data for tab id', sender.tab.id)
         var senderUrl = sender.tab.url;
         var site = processURL(senderUrl, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+        if(!_self.settings.hasOwnProperty('ignored_sites')){
+            return mined_data[sender.tab.id];
+        }
         var matches = _self.settings.ignored_sites.filter(function (item) {
             return typeof item === 'string' && site.indexOf(item) > -1;
         });
