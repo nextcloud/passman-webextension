@@ -8,7 +8,7 @@
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "message": "Passman - správce hesel pro Nextcloud / ownCloud",
         "description": "Extension description"
     },
     "label": {
@@ -44,7 +44,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman extension is locked, unlock to use it",
+        "message": "Rozšíření Passman je uzamčeno, před použitím ho musíte odemknout",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -64,7 +64,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Toto heslo bude použito k zašifrování všech nastavení rozšíření. Můžete ho místně uložit, ale bude uloženo v podobě prostého textu.",
         "description": "Enter master password"
     },
     "add_account": {
@@ -108,7 +108,7 @@
         "description": "Title on the paypal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "message": "Prosím, zadejte své přístupové údaje k Nextcloudu / ownCloudu",
         "description": "No credentials found for the current site"
     },
     "invalid_master_password": {
@@ -124,7 +124,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating you can edit the credential in passman",
+        "message": "Po vytvoření můžete pověření upravit v Passmanu",
         "description": "After creating you can edit the credential in passman"
     },
     "default_vault": {
@@ -144,7 +144,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Tento průvodce vás provede všemi kroky nastavení a pomůže vám zachovat všechna hesla synchronizovaná!",
         "description": "Cancel"
     },
     "ignored_sites": {
@@ -188,7 +188,7 @@
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the browser.",
+        "message": "Zvolte trezor, který má být synchronizovaný s prohlížečem.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
@@ -256,7 +256,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passsman - pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
         "description": "String for the browser action"
     },
     "done": {
@@ -272,7 +272,7 @@
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Disable password picker",
+        "message": "Zakázat nástroj pro výběr hesla",
         "description": "Disable password picker"
     },
     "no_sites_ignored": {
@@ -280,7 +280,7 @@
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "If you like, don't forget to donate",
+        "message": "Pokud chcete,nezapomeňte na dar",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {

@@ -56,7 +56,7 @@
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "Invalid vault key!",
+        "message": "Clé du coffre-fort invalide !",
         "description": "Vault password"
     },
     "min_digits": {
