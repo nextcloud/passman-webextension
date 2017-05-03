@@ -64,7 +64,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Ce mot de passe sera utilisé pour chiffrer tous les paramètres dans l'extension. Vous pouvez choisir de le sauvegarder localement, mais il sera enregistré en texte clair.",
         "description": "Enter master password"
     },
     "add_account": {
@@ -144,7 +144,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Ce tutoriel vous accompagnera à travers les différentes étapes pour configurer l'extension et vous aidera à garder tous vos mots de passe synchronisés !",
         "description": "Cancel"
     },
     "ignored_sites": {
@@ -200,7 +200,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE] $STATUS_TEXT$",
+        "message": "Réponse du serveur invalide : [$STATUS_CODE] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -256,7 +256,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ trouvé pour cette page",
         "description": "String for the browser action"
     },
     "done": {
