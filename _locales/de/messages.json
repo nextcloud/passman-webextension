@@ -257,17 +257,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman -  $CREDENTIAL_AMOUNT$ $PLURAL$ Zugangsdaten für diese Seite gefunden",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Erledigt",
