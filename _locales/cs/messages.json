@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ pověření v databázi",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Obnovit seznam pověření",
@@ -101,7 +107,13 @@
     },
     "credentials_found_for_site": {
         "message": "Pro tuto stránku jsme našli $AMOUNT$ pověření",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "donate_button_title": {
         "message": "Vývoj závisí na darech, podpořte nás",
@@ -201,7 +213,17 @@
     },
     "invalid_response_from_server": {
         "message": "Neplatná odpověď ze serveru: [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "statux_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Uložit",
@@ -257,7 +279,17 @@
     },
     "browser_action_title_login": {
         "message": "Passsman - pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "done": {
         "message": "Hotovo",
