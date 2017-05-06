@@ -83,6 +83,11 @@ module.exports = function (grunt) {
         },
         clean: {
             dist: ['dist']
+        },
+        execute: {
+            fixLocale: {
+                src: ['fixLocale.js']
+            }
         }
     });
 
@@ -91,11 +96,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
-
+    grunt.loadNpmTasks('grunt-execute');
     // Default task(s).
 
     grunt.registerTask('hint', ['jshint']);
-    grunt.registerTask('build', ['jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
+    grunt.registerTask('build', ['execute:fixLocale','jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
     grunt.registerTask('dist', ['']);
 
 };
