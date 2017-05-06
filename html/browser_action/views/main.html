@@ -1,32 +1,39 @@
-<div class="col-xs-12 nopadding pwcontainer">
-    <div ng-show="found_credentials.length === 0">
-        {{ 'no_credentials_found_for_site' | translate}}
-    </div>
-    <div ng-show="found_credentials.length > 0">{{'credentials_found_for_site' | translate:found_credentials.length.toString() }}</div>
-    <div class="credential" ng-repeat="credential in found_credentials">
-        <div class="col-xs-7 nopadding">{{credential.label}}<br/>
-            <small>{{credential.username}}</small>
+<md-list class="password-list" flex>
+    <md-list-item class="md-3-line" ng-repeat="credential in found_credentials">
+        <!--<img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}"/>-->
+        <div class="md-list-item-text" layout="column">
+            <h3>{{credential.label}}</h3>
+            <h4>{{credential.username}}</h4>
+            <p ng-if="credential.otp.secret">OTP: <span otp-generator secret="credential.otp.secret"></span></p>
         </div>
-        <div class="col-xs-5 OTP" ng-if="credential.otp.secret">
-            {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>
+        <md-button class="md-secondary md-icon-button" ng-click="edit(credential)"  aria-label="call">
+            <md-tooltip md-direction="left">{{'edit' | translate}}</md-tooltip>
+            <md-icon>edit</md-icon>
+        </md-button>
+    </md-list-item>
+    <md-list-item ng-if="found_credentials.length === 0">
+        <div class="md-list-item-text" layout="column">
+            <h3>{{ 'no_credentials_found_for_site' | translate}}</h3>
         </div>
-    </div>
-</div>
-<div class="footer">
-    <div style="position: absolute; left: 50%; margin-top: -7px; width: 110px;">
-        <div style="position: relative; left: -50%; margin-top: 1.3em;">
-            <small>{{'credentials_in_db' | translate:credential_amount}}</small>
-        </div>
-    </div>
-    <div class="bottomBtn" ng-click="goto_settings()" title="{{'settings' | translate}}"><i class="fa fa-gears"></i></div>
-    <div class="bottomBtn" ng-click="goto_search()" title="{{'search' | translate}}"><i class="fa fa-search"></i></div>
-    <div class="bottomBtn" ng-click="refresh()" title="{{'refresh_credential_list' | translate}}"><i class="fa fa-refresh" ng-class="{'fa-spin': refreshing_credentials}"></i></div>
-    <div class="bottomBtn pull-right"> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"
-       title="{{'donate_button_title' | translate}}"
-       rel="nofollow noopener noreferrer"
-    ><i class="fa fa-paypal"></i> </a>
-    </div>
-    <div class="bottomBtn pull-right" ng-click="lockExtension()" title="{{'lock_extension' | translate}}"><i class="fa fa-lock"></i></div>
-    <!-- <a class="btn btn-success pull-right"
-       >Donate</a> -->
-</div>
+    </md-list-item>
+</md-list>
+
+<!--<div class="footer">-->
+<!--<div style="position: absolute; left: 50%; margin-top: -7px; width: 110px;">-->
+<!--<div style="position: relative; left: -50%; margin-top: 1.3em;">-->
+<!--<small>{{'credentials_in_db' | translate:credential_amount}}</small>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;-->
+<!--<div class="bottomBtn" ng-click="goto_settings()" title="{{'settings' | translate}}"><i class="fa fa-gears"></i></div>-->
+<!--<div class="bottomBtn" ng-click="goto_search()" title="{{'search' | translate}}"><i class="fa fa-search"></i></div>-->
+<!--<div class="bottomBtn" ng-click="refresh()" title="{{'refresh_credential_list' | translate}}"><i class="fa fa-refresh" ng-class="{'fa-spin': refreshing_credentials}"></i></div>-->
+<!--<div class="bottomBtn pull-right"> <a -->
+<!--title="{{'donate_button_title' | translate}}"-->
+<!--rel="nofollow noopener noreferrer"-->
+<!--&gt;<i class="fa fa-paypal"></i> </a>-->
+<!--</div>-->
+<!--<div class="bottomBtn pull-right" ng-click="lockExtension()" title="{{'lock_extension' | translate}}"><i class="fa fa-lock"></i></div>-->
+<!--&lt;!&ndash; <a class="btn btn-success pull-right"-->
+<!--&gt;Donate</a> &ndash;&gt;-->
+<!--</div>-->

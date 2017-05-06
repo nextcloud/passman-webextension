@@ -6,7 +6,6 @@ var background = (function () {
     var _window = {};
 
 
-
     API.runtime.onConnect.addListener(function (port) {
 
         port.onMessage.addListener(function (msg) {
@@ -90,7 +89,7 @@ var background = (function () {
 
             _self.settings = _settings;
 
-            if(!_self.settings.hasOwnProperty('ignored_sites')){
+            if (!_self.settings.hasOwnProperty('ignored_sites')) {
                 _self.settings.ignored_sites = [];
             }
 
@@ -139,13 +138,12 @@ var background = (function () {
         PAPI.username = settings.nextcloud_username;
         PAPI.password = settings.nextcloud_password;
 
-        if(!settings.hasOwnProperty('ignored_sites')){
+        if (!settings.hasOwnProperty('ignored_sites')) {
             settings.ignored_sites = [];
         }
 
         //window.settings contains the run-time settings
         _self.settings = settings;
-
 
 
         storage.set('settings', settings).then(function () {
@@ -191,6 +189,17 @@ var background = (function () {
     }
 
     _self.getCredentials = getCredentials;
+
+    function getCredentialByGuid(guid) {
+        for (var i = 0; i < local_credentials.length; i++) {
+            var credential = local_credentials[i];
+            if (credential.guid === guid) {
+                return credential;
+            }
+        }
+    }
+
+    _self.getCredentialByGuid = getCredentialByGuid;
 
     function getCredentialsByUrl(_url, sender) {
         if (!master_password) {
@@ -259,11 +268,14 @@ var background = (function () {
         //console.log('Fecthing  mined data for tab id', sender.tab.id)
         var senderUrl = sender.tab.url;
         var site = processURL(senderUrl, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+        if(!_self.settings.hasOwnProperty('ignored_sites')){
+            return mined_data[sender.tab.id];
+        }
         var matches = _self.settings.ignored_sites.filter(function (item) {
             return typeof item === 'string' && site.indexOf(item) > -1;
         });
 
-        if(matches.length !== 0){
+        if (matches.length !== 0) {
             return null;
         }
         return mined_data[sender.tab.id];
@@ -411,7 +423,31 @@ var background = (function () {
         });
     }
 
-    self.injectCreateCredential = injectCreateCredential;
+    _self.injectCreateCredential = injectCreateCredential;
+
+    function saveCredential(credential) {
+        if (!credential.credential_id) {
+            PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
+                local_credentials.push(createdCredential);
+            });
+        } else {
+            var credential_index;
+            for (var i = 0; i < local_credentials.length; i++) {
+                if (local_credentials[i].guid === credential.guid) {
+                    credential_index = i;
+                    break;
+                }
+            }
+
+            PAPI.updateCredential(credential, _self.settings.vault_password, function (updatedCredential) {
+                if (credential_index) {
+                    local_credentials[credential_index] = updatedCredential;
+                }
+            });
+        }
+    }
+
+    _self.saveCredential = saveCredential;
 
     function isVaultKeySet() {
         return (_self.settings.vault_password !== null);
@@ -429,14 +465,17 @@ var background = (function () {
     _self.isAutoFillEnabled = isAutoFillEnabled;
 
     var doorhangerData = null;
+
     function setDoorhangerData(data) {
         doorhangerData = data;
     }
+
     _self.setDoorhangerData = setDoorhangerData;
 
     function getDoorhangerData() {
         return doorhangerData;
     }
+
     _self.getDoorhangerData = getDoorhangerData;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {

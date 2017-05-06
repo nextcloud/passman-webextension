@@ -1,0 +1,124 @@
+@import "bourbon/bourbon";
+$height: auto;
+body,html {
+  min-width: 450px;
+}
+.server_settings{
+  md-input-container{
+    margin-bottom: 0;
+  }
+}
+.pointer{
+  cursor: pointer;
+}
+.password-list{
+  min-height: 250px;
+}
+.md-content {
+  height: 100%;
+  max-height: $height;
+}
+
+.addFab{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+.menu {
+  padding: 0;
+  ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+      list-style-type: none;
+      width: 100%;
+      md-icon {
+        margin-right: 16px;
+        min-width: 40px;
+        width: 40px;
+      }
+      a {
+        color: #000;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        padding: 0;
+        padding-left: 16px;
+        padding-right: 56px;
+        text-decoration: none;
+        clear: both;
+        font-weight: 500;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+      a:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+}
+
+.password-list {
+  padding: 0;
+}
+/*/*/
+
+
+.radial-progress {
+  $circle-size : 12px;
+  $circle-background : #d6dadc;
+  $circle-color : rgb(2,119,189);
+  $transition-length : 0.5s;
+  display: inline-block;
+
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+
+  background-color: $circle-background;
+  border-radius: 50%;
+  .circle {
+    .mask, .fill {
+      width: $circle-size;
+      height: $circle-size;
+      position: absolute;
+
+      border-radius: 50%;
+
+      @include transition(transform $transition-length);
+      @include backface-visibility(hidden);
+
+    }
+    .mask {
+      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+      .fill {
+        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        background-color: $circle-color;
+      }
+    }
+  }
+}
+.ng-hide{
+  display: none;
+}
+.unlock-container {
+  height: 350px;
+
+  .unlock {
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    md-input-container {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

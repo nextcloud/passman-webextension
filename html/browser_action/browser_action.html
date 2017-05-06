@@ -1,56 +1,134 @@
 <!doctype html>
 <html ng-app="passmanExtension" ng-csp>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Passman rules</title>
-        <script src="/js/vendor/jquery/jquery.js"></script>
-        <script src="/js/vendor/bootstrap/bootstrap.js"></script>
-        <script src="/js/vendor/angular/framework.js"></script>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Passman rules</title>
+    <script src="/js/vendor/jquery/jquery.js"></script>
+    <script src="/js/vendor/angular/framework.js"></script>
 
-        <script src="/js/lib/promise.js"></script>
-        <script src="/js/lib/API/base.js"></script>
-        <script src="/js/lib/API/storage.js"></script>
-        <script src="/js/lib/API/runtime.js"></script>
-        <script src="/js/lib/API/tabs.js"></script>
-        <script src="/js/lib/API/cookies.js"></script>
-        <script src="/js/lib/API/extension.js"></script>
-        <script src="/js/lib/API/i18n.js"></script>
-        <script src="/js/lib/otp.js"></script>
-        <script src="/js/lib/font-awesome.js"></script>
-        <script src="/js/vendor/sjcl/sjcl.js"></script>
-        <script src="/js/vendor/angular-resource/angular-resource.js"></script>
+    <script src="/js/lib/promise.js"></script>
+    <script src="/js/lib/API/base.js"></script>
+    <script src="/js/lib/API/storage.js"></script>
+    <script src="/js/lib/API/runtime.js"></script>
+    <script src="/js/lib/API/tabs.js"></script>
+    <script src="/js/lib/API/cookies.js"></script>
+    <script src="/js/lib/API/extension.js"></script>
+    <script src="/js/lib/API/i18n.js"></script>
+    <script src="/js/lib/otp.js"></script>
+    <script src="/js/lib/font-awesome.js"></script>
+    <script src="/js/lib/passwordgen.js"></script>
+    <script src="/js/vendor/sjcl/sjcl.js"></script>
+    <script src="/js/vendor/angular-resource/angular-resource.js"></script>
 
-        <script src="/js/vendor/angular-route/angular-route.js"></script>
-        <script src="/js/vendor/angular-sanitize/angular-sanitize.js"></script>
-        <script src="/js/vendor/angular-translate/angular-translate.js"></script>
-        <script src="/js/vendor/angular-steps/angular-steps.js"></script>
-        <script src="/js/vendor/sha/sha.js"></script>
+    <script src="/js/vendor/angular-route/angular-route.js"></script>
+    <script src="/js/vendor/angular-aria/angular-aria.js"></script>
+    <script src="/js/vendor/angular-messages/angular-messages.js"></script>
+    <script src="/js/vendor/angular-animate/angular-animate.js"></script>
+    <script src="/js/vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/js/vendor/angular-translate/angular-translate.js"></script>
+    <script src="/js/vendor/angular-material/angular-material.min.js"></script>
+    <script src="/js/vendor/sha/sha.js"></script>
+    <script src="/js/vendor/material-steppers/material-steppers.js"></script>
 
-        <script src="/js/lib/api.js"></script>
-        
-        <script src="/js/ui/popup/app.js"></script>
-        
-        <script src="/js/ui/popup/factories/storage.js"></script>
-        <script src="/js/ui/popup/factories/debounce.js"></script>
-        
-        <script src="/js/ui/popup/controllers/main.js"></script>
-        <script src="/js/ui/popup/controllers/settings.js"></script>
-        <script src="/js/ui/popup/controllers/password_prompt.js"></script>
-        <script src="/js/ui/popup/controllers/search.js"></script>
-        <script src="/js/ui/popup/controllers/setup.js"></script>
-        <script src="/js/ui/popup/directives/otp.js"></script>
-        <script src="/js/ui/popup/directives/ngenter.js"></script>
-        <script src="/js/ui/popup/filters/translate.js"></script>
+    <script src="/js/lib/api.js"></script>
 
-        
-        <link href="/css/vendor/bootstrap.css" media="all" rel="stylesheet" />
-        <link href="/css/vendor/bootstrap-theme.css" media="all" rel="stylesheet" />
-        <link href="/css/vendor/font-awesome.css" media="all" rel="stylesheet" />
-        <link href="/css/main.css" media="all" rel="stylesheet" />
-    </head>
-    <body>
-        <div id="mainPopup" ng-view>
+    <script src="/js/ui/popup/app.js"></script>
 
+    <script src="/js/ui/popup/factories/storage.js"></script>
+    <script src="/js/ui/popup/factories/debounce.js"></script>
+
+    <script src="/js/ui/popup/controllers/main.js"></script>
+    <script src="/js/ui/popup/controllers/list.js"></script>
+    <script src="/js/ui/popup/controllers/edit.js"></script>
+    <script src="/js/ui/popup/controllers/settings.js"></script>
+    <script src="/js/ui/popup/controllers/password_prompt.js"></script>
+    <script src="/js/ui/popup/controllers/search.js"></script>
+    <script src="/js/ui/popup/controllers/setup.js"></script>
+    <script src="/js/ui/popup/directives/otp.js"></script>
+    <script src="/js/ui/popup/directives/copyText.js"></script>
+    <script src="/js/ui/popup/directives/ngenter.js"></script>
+    <script src="/js/ui/popup/filters/translate.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/vendor/font-awesome.css" media="all" rel="stylesheet"/>
+    <link href="/css/vendor/angular-material.min.css" media="all" rel="stylesheet"/>
+    <link href="/css/vendor/material-steppers.css" media="all" rel="stylesheet"/>
+    <link href="/css/material.css" media="all" rel="stylesheet"/>
+    <!--<link href="/css/main.css" media="all" rel="stylesheet" /> -->
+</head>
+<body ng-controller="MainCtrl">
+<section layout="column" flex="">
+    <md-toolbar class="md-hue-2" ng-if="toolbarShown">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
+                <md-icon>menu</md-icon>
+            </md-button>
+            <h2>
+                <span>Passman</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Lock" ng-click="lockExtension()">
+                <md-tooltip md-direction="bottom">{{'lock_extension' | translate}}</md-tooltip>
+                <md-icon>lock</md-icon>
+            </md-button>
         </div>
-    </body>
+    </md-toolbar>
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ng-if="toolbarShown"
+                md-disable-backdrop="" md-whiteframe="4">
+
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Menu</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Close" ng-click="toggleLeft()">
+                    <md-icon>close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-content class="menu" layout-padding="">
+            <ul>
+                <li>
+                    <a ng-click="goto_list()">
+                        <md-icon>list</md-icon>
+                        {{'list' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="goto_search()">
+                        <md-icon>search</md-icon>
+                        {{'search' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="goto_settings()">
+                        <md-icon>settings</md-icon>
+                        {{'settings' | translate}}
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank">
+                        <md-icon>payment</md-icon>
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </md-content>
+
+    </md-sidenav>
+
+
+    <md-content layout="column" class="container" layout-fill>
+        <div ng-view></div>
+    </md-content>
+
+
+
+</section>
+
+</body>
 </html>
