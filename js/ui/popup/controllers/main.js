@@ -33,91 +33,19 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', function ($scope, Settings, $window, $rootScope) {
-            $scope.app = 'passman';
-            var port = API.runtime.connect(null, {
-                name: "PassmanCommunication"
-            });
+        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', function ($scope, Settings, $window, $rootScope, $timeout) {
 
-            var messageParser = function (message) {
-                var e = message.split(':');
 
-                switch (e[0]) {
-                    case "credential_amount":
-                        $scope.credential_amount = e[1];
-                        $scope.refreshing_credentials = false;
-                }
-
-                $scope.$apply();
+            $scope.menuIsOpen = false;
+            $scope.bodyOverflow = false;
+            $scope.toggleMenu = function () {
+                console.log('click');
+                $scope.menuIsOpen = !$scope.menuIsOpen;
+                $scope.bodyOverflow = true;
+                $timeout(function () {
+                    $scope.bodyOverflow = false;
+                }, 1500);
             };
-
-            /**
-             * Connect to the background service
-             */
-            var initApp = function () {
-                port.onMessage.addListener(messageParser);
-                API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
-                    function redirectToPrompt() {
-                        window.location = '#!/locked';
-                        return;
-                    }
-
-                    //First check attributes
-                    if (!isPasswordSet) {
-                        redirectToPrompt();
-                        return;
-                    }
-
-                    getActiveTab();
-                    $scope.refreshing_credentials = true;
-                    setTimeout(function () {
-                        port.postMessage("credential_amount");
-                    }, 500);
-                });
-            };
-
-            $scope.refreshing_credentials = false;
-            $scope.refresh = function () {
-                $scope.refreshing_credentials = true;
-                API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
-                    setTimeout(function () {
-                        port.postMessage("credential_amount");
-                    }, 2000);
-                });
-            };
-
-            var getActiveTab = function (cb) {
-                API.tabs.query({currentWindow: true, active: true}).then(function (tab) {
-                    API.runtime.sendMessage(API.runtime.id, {
-                        method: "getCredentialsByUrl",
-                        args: [tab[0].url]
-                    }).then(function (_logins) {
-                        //var url = backgroundPage.processURL(tab.url, $rootScope.app_settings.ignoreProtocol, $rootScope.app_settings.ignoreSubdomain, $rootScope.app_settings.ignorePath);
-                        $scope.found_credentials = _logins;
-                        $scope.$apply();
-                    });
-                });
-            };
-
-            $scope.lockExtension = function () {
-                API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: null}}).then(function () {
-                    window.location = '#!/locked';
-                });
-            };
-
-            API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
-
-                $rootScope.app_settings = settings;
-                if (!settings || Object.keys(settings).length === 0) {
-                    window.location = '#!/setup';
-                } else if (settings.hasOwnProperty('isInstalled')) {
-                    window.location = '#!/locked';
-                } else {
-                    initApp();
-                }
-            });
-
-
 
             $scope.goto_settings = function () {
                 window.location = '#!/settings';

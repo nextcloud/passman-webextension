@@ -43,7 +43,7 @@
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/main.html',
-                    controller: 'MainCtrl'
+                    controller: 'ListCtrl'
                 })
                 .when('/search', {
                     templateUrl: 'views/search.html',
