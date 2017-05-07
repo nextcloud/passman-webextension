@@ -178,8 +178,8 @@ $j(document).ready(function () {
     _this.closeDoorhanger = closeDoorhanger;
 
     function initForms() {
-        API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (result) {
-            var disablePasswordPicker = result.disablePasswordPicker;
+        API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (settings) {
+            var disablePasswordPicker = settings.disablePasswordPicker;
             var url = window.location.href;
             var loginFields = getLoginFields();
             if (loginFields.length > 0) {
@@ -188,9 +188,14 @@ $j(document).ready(function () {
                     if (!disablePasswordPicker) {
                         createPasswordPicker(loginFields[i], form);
                     }
+
+                    if(settings.disable_browser_autofill){
+                        $j(form).attr('autocomplete','off');
+                    }
+
                     //Password miner
                     /* jshint ignore:start */
-                    if (!result.hasOwnProperty('ignored_sites') || result.ignored_sites.findUrl(url) !== -1) {
+                    if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url) !== -1) {
                         $j(form).submit((function (loginFields) {
                             return function () {
                                 formSubmitted(loginFields);

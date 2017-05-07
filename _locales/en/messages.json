@@ -183,6 +183,10 @@
     "message": "Disable auto fill of forms",
     "description": "Disable auto fill of forms"
   },
+  "disable_browser_autofill": {
+    "message": "Disable browser auto fill",
+    "description": "Disable auto fill of forms"
+  },
   "disable_password_picker": {
     "message": "Disable password picker",
     "description": "Disable password picker"

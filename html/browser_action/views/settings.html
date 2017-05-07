@@ -62,6 +62,11 @@
             </md-switch>
         </md-input-container>
         <md-input-container class="md-block">
+            <md-switch class="md-primary" name="special" ng-model="settings.disable_browser_autofill">
+                {{'disable_browser_autofill' | translate}}
+            </md-switch>
+        </md-input-container>
+        <md-input-container class="md-block">
             <md-switch class="md-primary" name="special" ng-model="settings.debug">
                 {{'enable_debug' | translate}}
             </md-switch>

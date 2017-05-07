@@ -46,6 +46,7 @@
                 remember_password: true,
                 remember_vault_password: true,
                 refreshTime: 60,
+                disable_browser_autofill: true,
                 debug: false
             };
             $scope.errors = [];
