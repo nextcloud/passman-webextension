@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ записей в базе данных",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Обновить список записей",
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "настройки",
+        "message": "Settings",
         "description": "Settings"
     },
     "finish": {
@@ -36,6 +30,10 @@
     "detected_changed_url": {
         "message": "Определено изменение URL для",
         "description": "Detected changed url for"
+    },
+    "donate": {
+        "message": "Donate",
+        "description": "Donate"
     },
     "credentials": {
         "message": "записи",
@@ -65,6 +63,10 @@
         "message": "Неверный ключ хранилища!",
         "description": "Vault password"
     },
+    "edit": {
+        "message": "Edit",
+        "description": "Edit"
+    },
     "min_digits": {
         "message": "Минимальное число цифр",
         "description": "Minimum amount of digits"
@@ -77,9 +79,17 @@
         "message": "Добавить аккаунт",
         "description": "Add account"
     },
+    "back": {
+        "message": "Back",
+        "description": "Back"
+    },
     "credential": {
         "message": "запись",
         "description": "credential"
+    },
+    "delete": {
+        "message": "Delete",
+        "description": "Delete"
     },
     "nextcloud_settings": {
         "message": "Настройки сервера Nextcloud / ownCloud",
@@ -93,6 +103,10 @@
         "message": "OTP (одноразовый пароль)",
         "description": "One time password"
     },
+    "list": {
+        "message": "List",
+        "description": "List"
+    },
     "ignore_site": {
         "message": "Игнорировать сайт",
         "description": "Update"
@@ -105,15 +119,13 @@
         "message": "Сайт игнорируется",
         "description": "Site ignored"
     },
+    "continue": {
+        "message": "Continue",
+        "description": "Continue"
+    },
     "credentials_found_for_site": {
         "message": "Найдено  $AMOUNT$ записей для этого сайта",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
         "message": "Разработчики зависят от пожертвований, пожалуйста, поддержите нас",
@@ -123,9 +135,17 @@
         "message": "Введите свои данные для входа в Nextcloud или ownCloud",
         "description": "No credentials found for the current site"
     },
+    "invalid_host": {
+        "message": "Invalid server url",
+        "description": "Invalid server url"
+    },
     "invalid_master_password": {
         "message": "Неверный главный пароль!",
         "description": "When the master password is invalid"
+    },
+    "no_password_match": {
+        "message": "Passwords don't match",
+        "description": "When comparing passwords"
     },
     "close": {
         "message": "Закрыть",
@@ -147,9 +167,21 @@
         "message": "Игнорировать номер порта при поиске соответствий",
         "description": "Ignore port for site matching"
     },
+    "server_settings": {
+        "message": "Server settings",
+        "description": "Server Settings"
+    },
+    "master_password": {
+        "message": "Set Master password",
+        "description": "Set a master password"
+    },
     "password": {
         "message": "Пароль",
         "description": "Password"
+    },
+    "copy": {
+        "message": "Copy",
+        "description": "Copy"
     },
     "begin": {
         "message": "Начнём!",
@@ -179,9 +211,17 @@
         "message": "Passman — Заблокировано",
         "description": "Browser extension title when the extension is locked"
     },
+    "label_required": {
+        "message": "Please fill in a label",
+        "description": "When comparing passwords"
+    },
     "enter_master_password": {
         "message": "Введите главный пароль",
         "description": "Enter master password"
+    },
+    "vault_settings": {
+        "message": "Vault settings",
+        "description": "Vault settings"
     },
     "vault_password": {
         "message": "Пароль хранилища",
@@ -213,17 +253,7 @@
     },
     "invalid_response_from_server": {
         "message": "Неверный ответ сервера:  [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "statux_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Сохранить",
@@ -240,6 +270,10 @@
     "cancel": {
         "message": "Отмена",
         "description": "Cancel"
+    },
+    "add": {
+        "message": "Add",
+        "description": "Add"
     },
     "credential_updated": {
         "message": "Запись обновлена",
@@ -261,6 +295,10 @@
         "message": "Поиск",
         "description": "No credentials found for the current site"
     },
+    "password_repeat": {
+        "message": "Password (repeat)",
+        "description": "Password"
+    },
     "credential_saved": {
         "message": "Запись сохранена",
         "description": "saved, lowercase"
@@ -273,23 +311,17 @@
         "message": "Включить режим отладки",
         "description": "Enable debug mode"
     },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
     "welcome_to_passman": {
         "message": "Добро пожаловать в расширение Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ найдено для этой страницы",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Готово",
@@ -306,6 +338,10 @@
     "disable_password_picker": {
         "message": "Отключить сборщик паролей",
         "description": "Disable password picker"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
     },
     "no_sites_ignored": {
         "message": "Не найдено игнорируемых сайтов.",
@@ -338,6 +374,10 @@
     "disable_autofill": {
         "message": "Отключить автоматическое заполненеие форм",
         "description": "Disable auto fill of forms"
+    },
+    "credential_created": {
+        "message": "Credential created",
+        "description": "Credential created"
     },
     "username": {
         "message": "Имя пользователя",

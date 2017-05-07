@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ inloggegevens in de database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Refresh credential list",
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Instellingen",
+        "message": "Settings",
         "description": "Settings"
     },
     "finish": {
@@ -36,6 +30,10 @@
     "detected_changed_url": {
         "message": "Vond gewijzigde url voor",
         "description": "Detected changed url for"
+    },
+    "donate": {
+        "message": "Donate",
+        "description": "Donate"
     },
     "credentials": {
         "message": "Inloggegevens",
@@ -65,6 +63,10 @@
         "message": "ongeldige kluissleutel!",
         "description": "Vault password"
     },
+    "edit": {
+        "message": "Edit",
+        "description": "Edit"
+    },
     "min_digits": {
         "message": "Minimum aantal cijfers",
         "description": "Minimum amount of digits"
@@ -77,9 +79,17 @@
         "message": "Account toevoegen",
         "description": "Add account"
     },
+    "back": {
+        "message": "Back",
+        "description": "Back"
+    },
     "credential": {
         "message": "Inloggegevens",
         "description": "credential"
+    },
+    "delete": {
+        "message": "Delete",
+        "description": "Delete"
     },
     "nextcloud_settings": {
         "message": "Nextcloud / owncloud server instellingen",
@@ -93,6 +103,10 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "list": {
+        "message": "List",
+        "description": "List"
+    },
     "ignore_site": {
         "message": "Pagina negeren",
         "description": "Update"
@@ -105,15 +119,13 @@
         "message": "Site genegeerd",
         "description": "Site ignored"
     },
+    "continue": {
+        "message": "Continue",
+        "description": "Continue"
+    },
     "credentials_found_for_site": {
         "message": "We vonden $AMOUNT$ inloggegevens van deze pagina",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
         "message": "Developent depends on donations, please support us",
@@ -123,9 +135,17 @@
         "message": "Voer je Nextcloud / owncloud inloggegevens in",
         "description": "No credentials found for the current site"
     },
+    "invalid_host": {
+        "message": "Invalid server url",
+        "description": "Invalid server url"
+    },
     "invalid_master_password": {
         "message": "Ongeldig hoofdwachtwoord!",
         "description": "When the master password is invalid"
+    },
+    "no_password_match": {
+        "message": "Passwords don't match",
+        "description": "When comparing passwords"
     },
     "close": {
         "message": "Sluiten",
@@ -147,9 +167,21 @@
         "message": "Negeer poort voor site matching",
         "description": "Ignore port for site matching"
     },
+    "server_settings": {
+        "message": "Server settings",
+        "description": "Server Settings"
+    },
+    "master_password": {
+        "message": "Set Master password",
+        "description": "Set a master password"
+    },
     "password": {
         "message": "Wachtwoord",
         "description": "Password"
+    },
+    "copy": {
+        "message": "Copy",
+        "description": "Copy"
     },
     "begin": {
         "message": "Laten we beginnen!",
@@ -179,9 +211,17 @@
         "message": "Passman - is op slot",
         "description": "Browser extension title when the extension is locked"
     },
+    "label_required": {
+        "message": "Please fill in a label",
+        "description": "When comparing passwords"
+    },
     "enter_master_password": {
         "message": "Voer een hoofdwachtwoord in",
         "description": "Enter master password"
+    },
+    "vault_settings": {
+        "message": "Vault settings",
+        "description": "Vault settings"
     },
     "vault_password": {
         "message": "Kluiswachtwoord",
@@ -213,17 +253,7 @@
     },
     "invalid_response_from_server": {
         "message": "Ongeldige reactie van de server: [$STATUS_CODE]$STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "statux_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Opslaan",
@@ -240,6 +270,10 @@
     "cancel": {
         "message": "Annuleren",
         "description": "Cancel"
+    },
+    "add": {
+        "message": "Add",
+        "description": "Add"
     },
     "credential_updated": {
         "message": "Inloggegevens bijgewerkt",
@@ -261,6 +295,10 @@
         "message": "Zoek naar",
         "description": "No credentials found for the current site"
     },
+    "password_repeat": {
+        "message": "Password (repeat)",
+        "description": "Password"
+    },
     "credential_saved": {
         "message": "Inloggegevens opgeslagen",
         "description": "saved, lowercase"
@@ -273,23 +311,17 @@
         "message": "Debugmodus inschakelen",
         "description": "Enable debug mode"
     },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
     "welcome_to_passman": {
         "message": "Welkom bij de Passman extensie",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
         "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ vond deze pagina",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Gedaan",
@@ -306,6 +338,10 @@
     "disable_password_picker": {
         "message": "Wachtwoord kiezer uitschakelen",
         "description": "Disable password picker"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
     },
     "no_sites_ignored": {
         "message": "Geen sites genegeerd",
@@ -338,6 +374,10 @@
     "disable_autofill": {
         "message": "Automatisch formulier invullen uitschakelen",
         "description": "Disable auto fill of forms"
+    },
+    "credential_created": {
+        "message": "Credential created",
+        "description": "Credential created"
     },
     "username": {
         "message": "Gebruikersnaam",

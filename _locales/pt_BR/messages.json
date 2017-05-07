@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciais no banco de dados",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Atualizar lista de credenciais",
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "configurações",
+        "message": "Settings",
         "description": "Settings"
     },
     "finish": {
@@ -36,6 +30,10 @@
     "detected_changed_url": {
         "message": "Detectada mudança de URL para",
         "description": "Detected changed url for"
+    },
+    "donate": {
+        "message": "Donate",
+        "description": "Donate"
     },
     "credentials": {
         "message": "credenciais",
@@ -65,6 +63,10 @@
         "message": "Chave do cofre inválida!",
         "description": "Vault password"
     },
+    "edit": {
+        "message": "Edit",
+        "description": "Edit"
+    },
     "min_digits": {
         "message": "Quantidade mínima de dígitos",
         "description": "Minimum amount of digits"
@@ -77,9 +79,17 @@
         "message": "Adicionar conta",
         "description": "Add account"
     },
+    "back": {
+        "message": "Back",
+        "description": "Back"
+    },
     "credential": {
         "message": "credencial",
         "description": "credential"
+    },
+    "delete": {
+        "message": "Delete",
+        "description": "Delete"
     },
     "nextcloud_settings": {
         "message": "Configurações do servidor Nextcloud / ownCloud",
@@ -93,6 +103,10 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "list": {
+        "message": "List",
+        "description": "List"
+    },
     "ignore_site": {
         "message": "Ignorar site",
         "description": "Update"
@@ -105,15 +119,13 @@
         "message": "Site ignorado",
         "description": "Site ignored"
     },
+    "continue": {
+        "message": "Continue",
+        "description": "Continue"
+    },
     "credentials_found_for_site": {
         "message": "Foram encontradas $AMOUNT$ credenciais para este site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
         "message": "O desenvolvimento depende de doações. Por favor, ajude-nos.",
@@ -123,9 +135,17 @@
         "message": "Por favor entre suas credenciais Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
+    "invalid_host": {
+        "message": "Invalid server url",
+        "description": "Invalid server url"
+    },
     "invalid_master_password": {
         "message": "Senha mestra inválida!",
         "description": "When the master password is invalid"
+    },
+    "no_password_match": {
+        "message": "Passwords don't match",
+        "description": "When comparing passwords"
     },
     "close": {
         "message": "Fechar",
@@ -147,9 +167,21 @@
         "message": "Ignorar porta para sites coincidentes",
         "description": "Ignore port for site matching"
     },
+    "server_settings": {
+        "message": "Server settings",
+        "description": "Server Settings"
+    },
+    "master_password": {
+        "message": "Set Master password",
+        "description": "Set a master password"
+    },
     "password": {
         "message": "Senha",
         "description": "Password"
+    },
+    "copy": {
+        "message": "Copy",
+        "description": "Copy"
     },
     "begin": {
         "message": "Vamos começar!",
@@ -179,9 +211,17 @@
         "message": "Passman - Bloqueado",
         "description": "Browser extension title when the extension is locked"
     },
+    "label_required": {
+        "message": "Please fill in a label",
+        "description": "When comparing passwords"
+    },
     "enter_master_password": {
         "message": "Entre a senha mestra",
         "description": "Enter master password"
+    },
+    "vault_settings": {
+        "message": "Vault settings",
+        "description": "Vault settings"
     },
     "vault_password": {
         "message": "Senha do cofre",
@@ -213,17 +253,7 @@
     },
     "invalid_response_from_server": {
         "message": "Resposta inválida do servidor: [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "statux_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Salvar",
@@ -240,6 +270,10 @@
     "cancel": {
         "message": "Cancelar",
         "description": "Cancel"
+    },
+    "add": {
+        "message": "Add",
+        "description": "Add"
     },
     "credential_updated": {
         "message": "Credencial atualizada",
@@ -261,6 +295,10 @@
         "message": "Pesquisar por",
         "description": "No credentials found for the current site"
     },
+    "password_repeat": {
+        "message": "Password (repeat)",
+        "description": "Password"
+    },
     "credential_saved": {
         "message": "Credencial salva",
         "description": "saved, lowercase"
@@ -273,23 +311,17 @@
         "message": "Habilitar modo de depuração",
         "description": "Enable debug mode"
     },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
     "welcome_to_passman": {
         "message": "Bem-vindo à extensão Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Concluído",
@@ -306,6 +338,10 @@
     "disable_password_picker": {
         "message": "Desativar o seletor de senha",
         "description": "Disable password picker"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
     },
     "no_sites_ignored": {
         "message": "Nenhum site ignorado",
@@ -338,6 +374,10 @@
     "disable_autofill": {
         "message": "Desabilitar auto preenchimento de formulários",
         "description": "Disable auto fill of forms"
+    },
+    "credential_created": {
+        "message": "Credential created",
+        "description": "Credential created"
     },
     "username": {
         "message": "Nome de usuário",

@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ pověření v databázi",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Obnovit seznam pověření",
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Nastavení",
+        "message": "Settings",
         "description": "Settings"
     },
     "finish": {
@@ -36,6 +30,10 @@
     "detected_changed_url": {
         "message": "Detekována změna url pro",
         "description": "Detected changed url for"
+    },
+    "donate": {
+        "message": "Donate",
+        "description": "Donate"
     },
     "credentials": {
         "message": "Pověření",
@@ -65,6 +63,10 @@
         "message": "Neplatný klíč trezoru!",
         "description": "Vault password"
     },
+    "edit": {
+        "message": "Edit",
+        "description": "Edit"
+    },
     "min_digits": {
         "message": "Nejmenší počet číslic",
         "description": "Minimum amount of digits"
@@ -77,9 +79,17 @@
         "message": "Přidat účet",
         "description": "Add account"
     },
+    "back": {
+        "message": "Back",
+        "description": "Back"
+    },
     "credential": {
         "message": "Pověření",
         "description": "credential"
+    },
+    "delete": {
+        "message": "Delete",
+        "description": "Delete"
     },
     "nextcloud_settings": {
         "message": "Nastavení Nextcloud / ownCloud serveru",
@@ -93,6 +103,10 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "list": {
+        "message": "List",
+        "description": "List"
+    },
     "ignore_site": {
         "message": "Ignorovat stránky",
         "description": "Update"
@@ -105,15 +119,13 @@
         "message": "Stránka ignorována",
         "description": "Site ignored"
     },
+    "continue": {
+        "message": "Continue",
+        "description": "Continue"
+    },
     "credentials_found_for_site": {
         "message": "Pro tuto stránku jsme našli $AMOUNT$ pověření",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
         "message": "Vývoj závisí na darech, podpořte nás",
@@ -123,9 +135,17 @@
         "message": "Prosím, zadejte své přístupové údaje k Nextcloudu / ownCloudu",
         "description": "No credentials found for the current site"
     },
+    "invalid_host": {
+        "message": "Invalid server url",
+        "description": "Invalid server url"
+    },
     "invalid_master_password": {
         "message": "Neplatné hlavní heslo!",
         "description": "When the master password is invalid"
+    },
+    "no_password_match": {
+        "message": "Passwords don't match",
+        "description": "When comparing passwords"
     },
     "close": {
         "message": "Zavřít",
@@ -147,9 +167,21 @@
         "message": "Pro hledání stránek ignorovat port",
         "description": "Ignore port for site matching"
     },
+    "server_settings": {
+        "message": "Server settings",
+        "description": "Server Settings"
+    },
+    "master_password": {
+        "message": "Set Master password",
+        "description": "Set a master password"
+    },
     "password": {
         "message": "Heslo",
         "description": "Password"
+    },
+    "copy": {
+        "message": "Copy",
+        "description": "Copy"
     },
     "begin": {
         "message": "Začněme!",
@@ -179,9 +211,17 @@
         "message": "Passman - uzamčen",
         "description": "Browser extension title when the extension is locked"
     },
+    "label_required": {
+        "message": "Please fill in a label",
+        "description": "When comparing passwords"
+    },
     "enter_master_password": {
         "message": "Zadejte hlavní heslo",
         "description": "Enter master password"
+    },
+    "vault_settings": {
+        "message": "Vault settings",
+        "description": "Vault settings"
     },
     "vault_password": {
         "message": "Heslo trezoru",
@@ -213,17 +253,7 @@
     },
     "invalid_response_from_server": {
         "message": "Neplatná odpověď ze serveru: [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "statux_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Uložit",
@@ -240,6 +270,10 @@
     "cancel": {
         "message": "Zrušit",
         "description": "Cancel"
+    },
+    "add": {
+        "message": "Add",
+        "description": "Add"
     },
     "credential_updated": {
         "message": "Pověření aktualizováno",
@@ -261,6 +295,10 @@
         "message": "Hledat",
         "description": "No credentials found for the current site"
     },
+    "password_repeat": {
+        "message": "Password (repeat)",
+        "description": "Password"
+    },
     "credential_saved": {
         "message": "Pověření uloženo",
         "description": "saved, lowercase"
@@ -273,23 +311,17 @@
         "message": "Povolit ladící režim",
         "description": "Enable debug mode"
     },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
     "welcome_to_passman": {
         "message": "Vítejte v rozšíření Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
         "message": "Passsman - pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Hotovo",
@@ -306,6 +338,10 @@
     "disable_password_picker": {
         "message": "Zakázat nástroj pro výběr hesla",
         "description": "Disable password picker"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
     },
     "no_sites_ignored": {
         "message": "Nejsou ignorovány žádné stránky",
@@ -338,6 +374,10 @@
     "disable_autofill": {
         "message": "Zakázat automatické vyplňování formulářů",
         "description": "Disable auto fill of forms"
+    },
+    "credential_created": {
+        "message": "Credential created",
+        "description": "Credential created"
     },
     "username": {
         "message": "Uživatelské jméno",
