@@ -108,44 +108,8 @@ window.PAPI = (function () {
                 callback(credential);
             });
         },
-        encryptSharedCredential: function (credential, sharedKey, origKey) {
-            var _credential = credential;
-            _credential.shared_key = this.encryptString(sharedKey, origKey);
-            var encrypted_fields = _encryptedFields;
-            for (var i = 0; i < encrypted_fields.length; i++) {
-                var field = encrypted_fields[i];
-                var fieldValue = credential[field];
-                _credential[field] = this.encryptString(JSON.stringify(fieldValue), sharedKey);
-            }
-            return _credential;
-        },
-
-        updateCredential: function (credential, key, callback) {
-            var origKey = key;
-            var _credential, _key;
-            if (!credential.hasOwnProperty('acl') && credential.hasOwnProperty('shared_key')) {
-                if (credential.shared_key) {
-                    _key = this.decryptString(credential.shared_key);
-                }
-            }
-
-            if (credential.hasOwnProperty('acl')) {
-                _key = this.decryptString(credential.acl.shared_key);
-            }
-
-            if (_key) {
-                _credential = this.encryptSharedCredential(credential, _key, origKey);
-            } else {
-                _credential = credential;
-            }
-            delete _credential.shared_key;
-            var regex = /(<([^>]+)>)/ig;
-            if(_credential.description && _credential.description !== "") {
-                _credential.description = _credential.description.replace(regex, "");
-            }
-
-
-            credential = this.encryptCredential(_credential, key);
+        updateCredential: function (credential, _key, callback) {
+            credential = this.encryptCredential(credential, _key);
             credential.expire_time = new Date(credential.expire_time).getTime() / 1000;
             api_request('/api/v2/credentials/' + credential.guid, 'PATCH', credential, function () {
                 callback(credential);

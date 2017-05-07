@@ -97,32 +97,8 @@
     "message": "Username",
     "description": "Username"
   },
-  "email": {
-    "message": "E-mail",
-    "description": "E-mail"
-  },
-  "add": {
-    "message": "Add",
-    "description": "Add"
-  },
-  "credential_created": {
-    "message": "Credential created",
-    "description": "Credential created"
-  },
-  "url": {
-    "message": "URL",
-    "description": "URL"
-  },
-  "delete": {
-    "message": "Delete",
-    "description": "Delete"
-  },
   "password": {
     "message": "Password",
-    "description": "Password"
-  },
-  "password_repeat": {
-    "message": "Password (repeat)",
     "description": "Password"
   },
   "detected_new_login": {
@@ -275,26 +251,6 @@
     "message": "Done",
     "description": "Done"
   },
-  "list": {
-    "message": "List",
-    "description": "List"
-  },
-  "edit": {
-    "message": "Edit",
-    "description": "Edit"
-  },
-  "server_settings": {
-    "message": "Server settings",
-    "description": "Server Settings"
-  },
-  "vault_settings": {
-    "message": "Vault settings",
-    "description": "Vault settings"
-  },
-  "master_password": {
-    "message": "Set Master password",
-    "description": "Set a master password"
-  },
   "finish": {
     "message": "Finish",
     "description": "Finish"
@@ -311,25 +267,9 @@
     "message": "Prev",
     "description": "Previous"
   },
-  "back": {
-    "message": "Back",
-    "description": "Back"
-  },
-  "copy": {
-    "message": "Copy",
-    "description": "Copy"
-  },
   "next": {
     "message": "Next",
     "description": "Next"
-  },
-  "continue": {
-    "message": "Continue",
-    "description": "Continue"
-  },
-  "donate": {
-    "message": "Donate",
-    "description": "Donate"
   },
   "nextcloud_settings": {
     "message": "Nextcloud / ownCloud server settings",
@@ -351,18 +291,6 @@
     "message": "Vault password",
     "description": "Vault password"
   },
-  "label_required": {
-    "message": "Please fill in a label",
-    "description": "When comparing passwords"
-  },
-  "invalid_host": {
-    "message": "Invalid server url",
-    "description": "Invalid server url"
-  },
-  "no_password_match": {
-    "message": "Passwords don't match",
-    "description": "When comparing passwords"
-  },
   "invalid_vault_password": {
     "message": "Invalid vault key!",
     "description": "Vault password"
@@ -376,7 +304,7 @@
     "description": "One time password"
   },
   "settings": {
-    "message": "Settings",
+    "message": "settings",
     "description": "Settings"
   },
   "search": {

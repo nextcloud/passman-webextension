@@ -187,7 +187,7 @@ input[type="password"], input[type="text"] {
 
 
 .radial-progress {
-  $circle-size : 10px;
+  $circle-size : 25px;
   $circle-background : #d6dadc;
   $circle-color : #97a71d;
   $transition-length : 0.5s;
@@ -210,7 +210,7 @@ input[type="password"], input[type="text"] {
 
       @include transition(transform $transition-length);
       @include backface-visibility(hidden);
-
+      
     }
     .mask {
       clip: rect(0px, $circle-size, $circle-size, $circle-size/2);

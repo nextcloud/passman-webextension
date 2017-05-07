@@ -1,85 +1,10 @@
+
+<h4 align="center">{{'please_enter_nextcloud_credentials' | translate}}:</h4>
 <div class="alerts alert alert-warning" ng-if="errors.length > 0">
     <li ng-repeat="error in errors">{{error}}</li>
 </div>
-
-<h4 align="center">{{'please_enter_nextcloud_credentials' | translate}}:</h4>
-<md-content layout-padding>
-    <div layout-gt-sm="row">
-        <md-input-container class="md-block" flex-gt-sm>
-            <label>{{'server_url' | translate}}</label>
-            <input ng-model="settings.nextcloud_host" required ng-debounce="1000">
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>{{'username' | translate}}</label>
-            <input ng-model="settings.nextcloud_username" required ng-debounce="1000">
-        </md-input-container>
-
-        <md-input-container class="md-block">
-            <label>{{'password' | translate}}</label>
-            <input type="password" ng-model="settings.nextcloud_password" required ng-debounce="1000">
-        </md-input-container>
-
-        <md-input-container class="md-block" ng-if="vaults">
-            <label>{{'select_default_vault' | translate}}</label>
-            <md-select ng-model="settings.default_vault.guid">
-                <md-option ng-repeat="vault in vaults" value="{{vault.guid}}"
-                           ng-selected="settings.default_vault.vault_id === vault.vault_id">
-                    {{vault.name}}
-                </md-option>
-            </md-select>
-        </md-input-container>
-        <md-input-container class="md-block" ng-show="settings.default_vault != ''">
-            <label>{{'vault_password' | translate}}</label>
-            <input type="password" ng-model="settings.vault_password" required>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <label>{{'refresh_timer' | translate}}</label>
-            <input type="text" ng-model="settings.refreshTime" required>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.ignoreProtocol">
-                {{'ignore_protocol' | translate}}
-            </md-switch>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.ignoreSubdomain">
-                {{'ignore_subdomain' | translate}}
-            </md-switch>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.ignorePort">
-                {{'ignore_port' | translate}}
-            </md-switch>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.disableAutoFill">
-                {{'disable_autofill' | translate}}
-            </md-switch>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.disablePasswordPicker">
-                {{'disable_password_picker' | translate}}
-            </md-switch>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.disable_browser_autofill">
-                {{'disable_browser_autofill' | translate}}
-            </md-switch>
-        </md-input-container>
-        <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="settings.debug">
-                {{'enable_debug' | translate}}
-            </md-switch>
-        </md-input-container>
-        <div layout="row" layout-sm="column" layout-align="space-around">
-            <md-button class="md-raised md-primary" ng-click="saveSettings()" ng-disabled="saving"></span>{{'save' |
-                translate}}
-            </md-button>
-            <md-button class="md-raised" ng-click="cancel()">{{'cancel' | translate}}</md-button>
-        </div>
-    </div>
-</md-content>
-<!--    <table class="table">
+<div style="max-height: 350px; overflow-y: auto;">
+    <table class="table">
         <tr>
             <td><small>{{'server_url' | translate}}:</small></td>
             <td><input type="url" class="form-control input-sm" id="host" ng-model="settings.nextcloud_host" required ng-debounce="1000">
@@ -149,8 +74,8 @@
                 <button class="btn btn-warning" ng-click="cancel()">{{'cancel' | translate}}</button>
             </td>
         </tr>
-    </table> -->
-<div class="version">
-    {{extension}}
+    </table>
+    <div class="version">
+        {{extension}}
+    </div>
 </div>
-

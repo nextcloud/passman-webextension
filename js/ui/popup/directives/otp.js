@@ -68,12 +68,10 @@
                     return str;
                 }
 
-                var strCopy = API.i18n.getMessage('copy');
-
                 return {
                     restrict: 'A',
-                    //template: '<span class="otp_generator">{{otp}} <i class="fa fa-copy" ng-click="copyOTP(otp)"><md-tooltip md-direction="top">'+ strCopy +'</md-tooltip></i></md-button> </span>',
-                    template: '<span class="otp_generator"><span class="code">{{otp}}</span> <i class="fa fa-copy" ng-click="copyOTP(otp)"><md-tooltip md-direction="top">'+ strCopy +'</md-tooltip></i></md-button> <div class="radial-progress"><div class="circle"><div class="mask full"><div class="fill"></div></div><div class="mask half"><div class="fill"></div><div class="fill fix"></div></div></div></div></span>',
+                    // template: '<span class="otp_generator">{{otp}} <span ng-bind="timeleft"></span></span>',
+                    template: '<span class="otp_generator"><span class="code">{{otp}}</span> <div class="radial-progress"><div class="circle"><div class="mask full"><div class="fill"></div></div><div class="mask half"><div class="fill"></div><div class="fill fix"></div></div></div></div></span>',
                     transclude: false,
                     scope: {
                         secret: '='
@@ -129,16 +127,6 @@
                                 $timeout.cancel(scope.timer);
                             }
                         );
-
-                        scope.copyOTP = function (otp) {
-                            var txtToCopy = document.createElement('input');
-
-                            txtToCopy.value = otp;
-                            document.body.appendChild(txtToCopy);
-                            txtToCopy.select();
-                            document.execCommand('copy');
-                            txtToCopy.parentNode.removeChild(txtToCopy);
-                        };
                     }
                 };
             }

@@ -33,56 +33,100 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('MainCtrl', ['$scope', '$mdSidenav', '$rootScope', function ($scope,  $mdSidenav, $rootScope) {
-            function buildToggler(navID) {
-                return function() {
-                    // Component lookup should always be available since we are not using `ng-if`
-                    $mdSidenav(navID)
-                        .toggle();
-                };
-            }
-
-            $scope.toolbarShown = true;
-
-            $rootScope.$on('lockExtension', function () {
-                $scope.lockExtension();
+        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', function ($scope, Settings, $window, $rootScope) {
+            $scope.app = 'passman';
+            var port = API.runtime.connect(null, {
+                name: "PassmanCommunication"
             });
 
-            $rootScope.$on('unlocked', function () {
-                $scope.toolbarShown = true;
-            });
+            var messageParser = function (message) {
+                var e = message.split(':');
 
-            $scope.toggleLeft = buildToggler('left');
+                switch (e[0]) {
+                    case "credential_amount":
+                        $scope.credential_amount = e[1];
+                        $scope.refreshing_credentials = false;
+                }
+
+                $scope.$apply();
+            };
+
+            /**
+             * Connect to the background service
+             */
+            var initApp = function () {
+                port.onMessage.addListener(messageParser);
+                API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
+                    function redirectToPrompt() {
+                        window.location = '#!/locked';
+                        return;
+                    }
+
+                    //First check attributes
+                    if (!isPasswordSet) {
+                        redirectToPrompt();
+                        return;
+                    }
+
+                    getActiveTab();
+                    $scope.refreshing_credentials = true;
+                    setTimeout(function () {
+                        port.postMessage("credential_amount");
+                    }, 500);
+                });
+            };
+
+            $scope.refreshing_credentials = false;
+            $scope.refresh = function () {
+                $scope.refreshing_credentials = true;
+                API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
+                    setTimeout(function () {
+                        port.postMessage("credential_amount");
+                    }, 2000);
+                });
+            };
+
+            var getActiveTab = function (cb) {
+                API.tabs.query({currentWindow: true, active: true}).then(function (tab) {
+                    API.runtime.sendMessage(API.runtime.id, {
+                        method: "getCredentialsByUrl",
+                        args: [tab[0].url]
+                    }).then(function (_logins) {
+                        //var url = backgroundPage.processURL(tab.url, $rootScope.app_settings.ignoreProtocol, $rootScope.app_settings.ignoreSubdomain, $rootScope.app_settings.ignorePath);
+                        $scope.found_credentials = _logins;
+                        $scope.$apply();
+                    });
+                });
+            };
 
             $scope.lockExtension = function () {
-                $scope.toolbarShown = false;
                 API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: null}}).then(function () {
                     window.location = '#!/locked';
                 });
             };
 
-            $scope.goto_list = function () {
-                window.location = '#!/';
-                $mdSidenav('left').close();
-            };
-            $scope.goto_settings = function () {
-                window.location = '#!/settings';
-                $mdSidenav('left').close();
-            };
-
-            $scope.goto_search = function () {
-                window.location = '#!/search';
-                $mdSidenav('left').close();
-            };
-
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
+
                 $rootScope.app_settings = settings;
                 if (!settings || Object.keys(settings).length === 0) {
                     window.location = '#!/setup';
                 } else if (settings.hasOwnProperty('isInstalled')) {
-                    $scope.lockExtension();
+                    window.location = '#!/locked';
+                } else {
+                    initApp();
                 }
             });
+
+
+
+            $scope.goto_settings = function () {
+                window.location = '#!/settings';
+            };
+
+            $scope.goto_search = function () {
+                window.location = '#!/search';
+            };
+
 
         }]);
 }());

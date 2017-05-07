@@ -37,14 +37,13 @@
             'ngRoute',
             'ngSanitize',
             'pascalprecht.translate',
-            'ngMaterial',
-            'mdSteppers'
+            'angular-steps'
         ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/main.html',
-                    controller: 'ListCtrl'
+                    controller: 'MainCtrl'
                 })
                 .when('/search', {
                     templateUrl: 'views/search.html',
@@ -53,10 +52,6 @@
                 .when('/settings', {
                     templateUrl: 'views/settings.html',
                     controller: 'SettingsCtrl'
-                })
-                .when('/edit/:guid', {
-                    templateUrl: 'views/edit_credential.html',
-                    controller: 'EditCtrl'
                 })
                 .when('/locked', {
                     templateUrl: 'views/password_prompt.html',
@@ -84,9 +79,6 @@
             $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|moz-extension):/);
             // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
         }
-    ]).config(function($mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .primaryPalette('blue');
-    });
+    ]);
 
 }());

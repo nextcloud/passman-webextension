@@ -33,8 +33,7 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', '$mdStepper', '$mdToast',
-            function ($scope, $timeout, $location, $rootScope, $mdStepper, $mdToast) {
+        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', function ($scope, $timeout, $location, $rootScope, StepsService) {
             $scope.settings = {
                 nextcloud_host: '',
                 nextcloud_username: '',
@@ -56,54 +55,20 @@
             };
             $scope.vaults = [];
 
-            $scope.nextStep = function (stepName) {
-                var steppers = $mdStepper('setup-stepper');
-
-                $scope.saving = true;
-                $scope.errors = [];
-                $timeout(function () {
-                    var step = stepName;
-                    var check = $scope.check[step];
-                    if (typeof check === "function") {
-                        check(function (result) {
-                            $scope.saving = false;
-                            if (result) {
-                                $scope.errors = [];
-                                $scope.$apply();
-                                steppers.next();
-                            }
-                            $timeout(function () {
-                                $scope.errors = [];
-                                $scope.$apply();
-                            }, 5000);
-                        });
-                    }
-                    else {
-                        $scope.saving = false;
-                        steppers.next();
-                    }
-                }, 10);
-
-
-            };
-            $scope.previousStep = function () {
-                var steppers = $mdStepper('setup-stepper');
-                steppers.back();
+            $scope.gogo = function (to) {
+                StepsService.steps().goTo(to);
             };
 
             $scope.check = {
                 server: function (callback) {
-                    if(!$scope.settings.nextcloud_host){
-                        $mdToast.showSimple(API.i18n.getMessage('invalid_host'));
-                        callback(false);
-                        return;
-                    }
                     PAPI.host = $scope.settings.nextcloud_host;
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.getVaults(function (vaults) {
                         if (vaults.hasOwnProperty('error')) {
-                            $mdToast.showSimple(API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]));
+                            var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
+                            $scope.errors.push(errors);
+
                             callback(false);
                         }
                         else {
@@ -114,19 +79,12 @@
                     });
                 },
                 vault: function (callback) {
-                    for (var i = 0; i < $scope.vaults.length; i++) {
-                        var vault = $scope.vaults[i];
-                        if (vault.guid === $scope.settings.default_vault.guid) {
-                            $scope.settings.default_vault = angular.copy(vault);
-                            break;
-                        }
-                    }
                     try {
                         PAPI.decryptString($scope.settings.default_vault.challenge_password, $scope.settings.vault_password);
                         callback(true);
                     }
                     catch (e) {
-                        $mdToast.showSimple(API.i18n.getMessage('invalid_vault_password'));
+                        $scope.errors.push(API.i18n.getMessage('invalid_vault_password'));
                         callback(false);
                     }
                 },
@@ -134,13 +92,38 @@
                     if ($scope.settings.master_password.trim() !== '') {
                         callback(true);
                     } else {
-                        $mdToast.showSimple(API.i18n.getMessage('empty_master_key'));
+                        $scope.errors.push(API.i18n.getMessage('empty_master_key'));
                         callback(false);
                     }
                 }
             };
             $scope.saving = false;
-
+            $scope.next = function () {
+                $scope.saving = true;
+                $scope.errors = [];
+                $timeout(function () {
+                    var step = StepsService.getCurrent().name;
+                    var check = $scope.check[step];
+                    if (typeof check === "function") {
+                        check(function (result) {
+                            $scope.saving = false;
+                            if (result) {
+                                $scope.errors = [];
+                                $scope.$apply();
+                                StepsService.steps().next();
+                            }
+                            $timeout(function () {
+                                $scope.errors = [];
+                                $scope.$apply();
+                            }, 5000);
+                        });
+                    }
+                    else {
+                        $scope.saving = false;
+                        StepsService.steps().next();
+                    }
+                }, 10);
+            };
 
             $scope.finished = function () {
                 var settings = angular.copy($scope.settings);
