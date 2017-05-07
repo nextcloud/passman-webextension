@@ -223,6 +223,30 @@ var background = (function () {
     _self.getCredentialsByUrl = getCredentialsByUrl;
 
 
+    function saveCredential(credential) {
+        if (!credential.credential_id) {
+            PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
+                local_credentials.push(createdCredential);
+            });
+        } else {
+            var credential_index;
+            for (var i = 0; i < local_credentials.length; i++) {
+                if (local_credentials[i].guid === credential.guid) {
+                    credential_index = i;
+                    break;
+                }
+            }
+
+            PAPI.updateCredential(credential, _self.settings.vault_password, function (updatedCredential) {
+                if (credential_index) {
+                    local_credentials[credential_index] = updatedCredential;
+                }
+            });
+        }
+    }
+
+    _self.saveCredential = saveCredential;
+
     function getCredentialByGuid(guid) {
         for (var i = 0; i < local_credentials.length; i++) {
             var credential = local_credentials[i];
