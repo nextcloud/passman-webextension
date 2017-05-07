@@ -53,6 +53,10 @@
                     templateUrl: 'views/settings.html',
                     controller: 'SettingsCtrl'
                 })
+                .when('/edit/:guid', {
+                    templateUrl: 'views/edit_credential.html',
+                    controller: 'EditCtrl'
+                })
                 .when('/locked', {
                     templateUrl: 'views/password_prompt.html',
                     controller: 'PasswordPromptCtrl'

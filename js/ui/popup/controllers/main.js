@@ -127,7 +127,9 @@
                 window.location = '#!/search';
             };
 
-
+            $scope.editCredential = function (credential) {
+                window.location = '#!/edit/' + credential.guid;
+            };
         }]);
 }());
 

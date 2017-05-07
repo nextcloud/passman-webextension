@@ -4,11 +4,15 @@
     </div>
     <div ng-show="found_credentials.length > 0">{{'credentials_found_for_site' | translate:found_credentials.length.toString() }}</div>
     <div class="credential" ng-repeat="credential in found_credentials">
-        <div class="col-xs-7 nopadding">{{credential.label}}<br/>
-            <small>{{credential.username}}</small>
+        <div class="col-xs-10 nopadding">{{credential.label}}<br/>
+            <small>{{credential.username}}</small><br />
+            <small ng-if="credential.otp.secret"> {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div></small>
         </div>
-        <div class="col-xs-5 OTP" ng-if="credential.otp.secret">
-            {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>
+        <div class="edit" ng-click="editCredential(credential)">
+
+        </div>
+        <div class="col-xs-2">
+
         </div>
     </div>
 </div>

@@ -223,6 +223,17 @@ var background = (function () {
     _self.getCredentialsByUrl = getCredentialsByUrl;
 
 
+    function getCredentialByGuid(guid) {
+        for (var i = 0; i < local_credentials.length; i++) {
+            var credential = local_credentials[i];
+            if (credential.guid === guid) {
+                return credential;
+            }
+        }
+    }
+
+    _self.getCredentialByGuid = getCredentialByGuid;
+
     function getCredentialForHTTPAuth(req) {
         return getCredentialsByUrl(req.url)[0];
     }

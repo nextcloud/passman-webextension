@@ -65,7 +65,7 @@ $j(document).ready(function () {
         picker.css('left', left);
         picker.css('z-index', maxZ);
         picker.css('top', top);
-        $j('body').append($j(picker));
+        $j('body').prepend($j(picker));
         // picker.css('width', $j(form).width());
         $j('.passwordPickerIframe:not(:last)').remove();
     }

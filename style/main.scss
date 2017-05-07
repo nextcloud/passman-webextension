@@ -18,10 +18,12 @@ body {
   width: 400px;
   font-family: Helvetica, Ubuntu, Arial, sans-serif;
   .pwcontainer{
+
     max-height: 195px;
     overflow: auto;
     /*padding-right: 15px;*/
     .credential {
+      position: relative;
       border: 1px solid #fff;
       margin-bottom: 0.3em;
       float: left;
@@ -185,15 +187,18 @@ input[type="password"], input[type="text"] {
   padding: 0;
 }
 
+.pad5{
+  padding: 5px;
+}
 
 .radial-progress {
-  $circle-size : 25px;
+  $circle-size : 10px;
   $circle-background : #d6dadc;
   $circle-color : #97a71d;
   $transition-length : 0.5s;
   display: inline-block;
-  left: 10px;
-  top: 6px;
+  left: 5px;
+  top: 2px;
   position: relative;
   width: $circle-size;
   height: $circle-size;
@@ -244,4 +249,28 @@ input[type="password"], input[type="text"] {
       color: #a94442;
     }
   }
+}
+input{
+  color: #000;
+}
+.editCredential{
+  tr{
+    td{
+      padding: 5px;
+    }
+  }
+}
+.edit:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f0da";
+  height: 100%;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid white;
+  padding-left: 8px;
+  padding-top: 5%;
+  cursor: pointer;
 }

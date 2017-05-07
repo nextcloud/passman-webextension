@@ -71,7 +71,7 @@
                 return {
                     restrict: 'A',
                     // template: '<span class="otp_generator">{{otp}} <span ng-bind="timeleft"></span></span>',
-                    template: '<span class="otp_generator"><span class="code">{{otp}}</span> <div class="radial-progress"><div class="circle"><div class="mask full"><div class="fill"></div></div><div class="mask half"><div class="fill"></div><div class="fill fix"></div></div></div></div></span>',
+                    template: '<span class="otp_generator"><span class="code">{{otp}}</span>  <copy-text text="otp"></copy-text> <div class="radial-progress"><div class="circle"><div class="mask full"><div class="fill"></div></div><div class="mask half"><div class="fill"></div><div class="fill fix"></div></div></div></div></span>',
                     transclude: false,
                     scope: {
                         secret: '='

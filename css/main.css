@@ -19,6 +19,7 @@ body {
     overflow: auto;
     /*padding-right: 15px;*/ }
     #mainPopup .pwcontainer .credential {
+      position: relative;
       border: 1px solid #fff;
       margin-bottom: 0.3em;
       float: left;
@@ -145,18 +146,21 @@ input[type="password"], input[type="text"] {
 .nopadding {
   padding: 0; }
 
+.pad5 {
+  padding: 5px; }
+
 .radial-progress {
   display: inline-block;
-  left: 10px;
-  top: 6px;
+  left: 5px;
+  top: 2px;
   position: relative;
-  width: 25px;
-  height: 25px;
+  width: 10px;
+  height: 10px;
   background-color: #d6dadc;
   border-radius: 50%; }
   .radial-progress .circle .mask, .radial-progress .circle .fill {
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
     position: absolute;
     border-radius: 50%;
     -webkit-transition: -webkit-transform 0.5s;
@@ -165,9 +169,9 @@ input[type="password"], input[type="text"] {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
   .radial-progress .circle .mask {
-    clip: rect(0px, 25px, 25px, 12.5px); }
+    clip: rect(0px, 10px, 10px, 5px); }
     .radial-progress .circle .mask .fill {
-      clip: rect(0px, 12.5px, 25px, 0px);
+      clip: rect(0px, 5px, 10px, 0px);
       background-color: #97a71d; }
 
 .ng-hide {
@@ -190,3 +194,23 @@ input[type="password"], input[type="text"] {
       cursor: pointer; }
     .ignored_sites li .fa:hover {
       color: #a94442; }
+
+input {
+  color: #000; }
+
+.editCredential tr td {
+  padding: 5px; }
+
+.edit:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f0da";
+  height: 100%;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid white;
+  padding-left: 8px;
+  padding-top: 5%;
+  cursor: pointer; }
