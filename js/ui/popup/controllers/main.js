@@ -47,17 +47,11 @@
                 }, 1500);
             };
 
-            $scope.goto_settings = function () {
-                window.location = '#!/settings';
+            $scope.goto = function (page) {
+                window.location = '#!/'+page;
+                $scope.menuIsOpen = false;
             };
 
-            $scope.goto_search = function () {
-                window.location = '#!/search';
-            };
-
-            $scope.editCredential = function (credential) {
-                window.location = '#!/edit/' + credential.guid;
-            };
         }]);
 }());
 

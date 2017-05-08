@@ -1,25 +1,30 @@
-/* CSS used here will be applied after bootstrap.css */
 /* Header Footer Styles */
-body{
+@import "partials/cicle";
+@import "partials/list";
+@import "partials/material-input";
+@import "partials/buttons";
+$sidebarWidth: 250px;
+body {
   width: 450px;
   min-height: 350px;
+  font-family: 'Roboto', sans-serif;
 }
+
 header {
   width: 100%;
   height: 50px;
   background: #1565c0;
   position: fixed;
   top: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-header.toggled {
-  width: calc(100% - 250px);
+  z-index: 100;
+  -webkit-transition: all 0.250s ease;
+  -moz-transition: all 0.250s ease;
+  -o-transition: all 0.250s ease;
+  transition: all 0.250s ease;
+
 }
 
-body.toggled{
+body.toggled {
   overflow-x: hidden;
 }
 
@@ -27,48 +32,49 @@ body.toggled{
 
 #wrapper {
   padding-left: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-#wrapper.toggled {
-  padding-left: 250px;
+  -webkit-transition: all 0.250s ease;
+  -moz-transition: all 0.250s ease;
+  -o-transition: all 0.250s ease;
+  transition: all 0.250s ease;
+
 }
 
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
-  left: 250px;
+  left: $sidebarWidth;
   width: 0;
   height: 100%;
-  margin-left: -250px;
+  margin-left: -$sidebarWidth;
   overflow: hidden;
-  background: #000;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  background: #fff;
+  -webkit-transition: all 0.250s ease;
+  -moz-transition: all 0.250s ease;
+  -o-transition: all 0.250s ease;
+  transition: all 0.250s ease;
+  border-right: 1px solid #c9c9c9;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px;
+  width: $sidebarWidth;
   overflow-x: hidden;
 }
 
 #page-content-wrapper {
   width: 100%;
-  position: absolute;
-  margin-top:60px;
+  /*position: absolute;*/
+  padding-top: 50px;
   overflow-y: auto;
 }
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
-  margin-right: -250px;
-/*  width: calc(100% - 250px);*/
+  margin-right: -$sidebarWidth;
+  /*  width: calc(100% - 250px);*/
 }
-
+.ng-hide{
+  display: none;
+}
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -78,43 +84,68 @@ body.toggled{
   margin: 0;
   padding: 0;
   list-style: none;
-}
+  li {
+    line-height: 55px;
+    a {
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: #000;
+      .mdi{
+        padding-left: 15px;
+        padding-right: 15px;
+        color: $linkColor;
+        cursor: pointer;
+      }
 
-.sidebar-nav li {
-  text-indent: 20px;
-  line-height: 40px;
-}
+      &:hover {
+        text-decoration: none;
+        background-color: #e4e4e4;
 
-.sidebar-nav li a {
-  display: block;
-  text-decoration: none;
-  color: #999999;
-}
+      }
+      &:active, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+  > .sidebar-brand {
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-indent: 20px;
+    background-color: #1565c0;
+    border-right: 1px solid darken(#1565c0, 10%);
+    span {
 
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: #fff;
-  background: rgba(255,255,255,0.2);
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: #fff;
+        background: none;
+      }
+      .mdi{
+        padding-left: 15px;
+        padding-right: 15px;
+        float: right;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
 }
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-  text-decoration: none;
+.menuToggler{
+  position: absolute;
+  background-color: transparent;
+  width: calc(100% - 250px);
+  height: 350px;
+  z-index: 9999999;
+  right: 0;
 }
-
-.sidebar-nav > .sidebar-brand {
-  height: 65px;
-  font-size: 18px;
-  line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-  color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
-  background: none;
+.edit_credential{
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .menu-icon {

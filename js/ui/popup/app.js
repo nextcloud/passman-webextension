@@ -42,7 +42,7 @@
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl: 'views/main.html',
+                    templateUrl: 'views/list.html',
                     controller: 'ListCtrl'
                 })
                 .when('/search', {

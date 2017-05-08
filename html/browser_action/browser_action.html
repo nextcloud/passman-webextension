@@ -36,6 +36,7 @@
 
         <script src="/js/ui/popup/controllers/main.js"></script>
         <script src="/js/ui/popup/controllers/settings.js"></script>
+        <script src="/js/ui/popup/controllers/setup.js"></script>
         <script src="/js/ui/popup/controllers/password_prompt.js"></script>
         <script src="/js/ui/popup/controllers/list.js"></script>
         <script src="/js/ui/popup/controllers/search.js"></script>
@@ -46,11 +47,14 @@
         <script src="/js/ui/popup/directives/copyText.js"></script>
         <script src="/js/ui/popup/filters/translate.js"></script>
 
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
         <link href="/css/vendor/bootstrap.css" media="all" rel="stylesheet" />
         <link href="/css/vendor/bootstrap-theme.css" media="all" rel="stylesheet" />
         <link href="/css/vendor/font-awesome.css" media="all" rel="stylesheet" />
+        <link href="/css/vendor/materialdesignicons.min.css" media="all" rel="stylesheet" />
         <link href="/css/browser_action.css" media="all" rel="stylesheet" />
+
     </head>
     <body ng-controller="MainCtrl" ng-class="{'toggle': bodyOverflow}">
     <div id="wrapper" ng-class="{'toggled': menuIsOpen}">
@@ -58,30 +62,24 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
+                    <span>
+                        Passman
+                        <i class="mdi mdi-close" ng-click="toggleMenu()"></i>
+                    </span>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a ng-click="goto('list')"><i class="mdi mdi-format-list-bulleted"></i> List</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a ng-click="goto('search')" title="{{'search' | translate}}"><i class="mdi mdi-magnify"></i> Search</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a ng-click="goto('settings')" title="{{'settings' | translate}}"><i class="mdi mdi-settings"></i> {{'settings' | translate}}</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"
+                       title="{{'donate_button_title' | translate}}"
+                       rel="nofollow noopener noreferrer"><i class="mdi mdi-credit-card"></i> Donate</a>
                 </li>
             </ul>
         </div>
@@ -89,27 +87,14 @@
 
         <header class="header" ng-class="{'toggled': menuIsOpen}">
             <div class="menu-icon" ng-click="toggleMenu()">
-                <i class="fa fa-bars"></i>
+                <i class="mdi mdi-menu"></i>
             </div>
         </header>
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
+        <div id="page-content-wrapper" ng-view>
+        </div>
+        <div class="menuToggler" ng-click="toggleMenu()" ng-show="menuIsOpen">
 
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a class="btn btn-default" >Toggle Menu</a>
-                        <h2>content</h2>
-                        <h2>content</h2>
-                        <h2>content</h2>
-                        <h2>content</h2>
-
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- /#page-content-wrapper -->
     </div>

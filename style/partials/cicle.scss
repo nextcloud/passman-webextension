@@ -1,0 +1,36 @@
+@import "../bourbon/bourbon";
+.radial-progress {
+  $circle-size : 10px;
+  $circle-background : #d6dadc;
+  $circle-color : #1565c0;
+  $transition-length : 0.5s;
+  display: inline-block;
+  left: 5px;
+  top: 0px;
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+
+  background-color: $circle-background;
+  border-radius: 50%;
+  .circle {
+    .mask, .fill {
+      width: $circle-size;
+      height: $circle-size;
+      position: absolute;
+
+      border-radius: 50%;
+
+      @include transition(transform $transition-length);
+      @include backface-visibility(hidden);
+
+    }
+    .mask {
+      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+      .fill {
+        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        background-color: $circle-color;
+      }
+    }
+  }
+}

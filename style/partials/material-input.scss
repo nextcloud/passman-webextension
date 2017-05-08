@@ -1,0 +1,159 @@
+@import "../bourbon/bourbon";
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+input {
+  font-size: 14px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input.ng-valid:not(.ng-empty) ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #1565c0;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #1565c0;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+
+}
+.group .mdi-content-copy, .pwField .mdi{
+  /*position: absolute;
+  right: 0;*/
+  margin-top:5px;
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+  height: 32px;
+  padding-top: 6px;
+  padding-left: 9px;
+  width: 32px;
+  $border: 16px;
+  @include border-top-radius($border);
+  @include border-right-radius($border);
+  @include border-bottom-radius($border);
+  @include border-left-radius($border);
+  &:hover {
+    text-decoration: none;
+    background-color: #e4e4e4;
+
+  }
+}
+
+.pwField{
+
+  .mdi-content-copy ~ input{
+    width: calc(100% - 96px);
+  }
+}
+
+.mdi-content-copy ~ input{
+  width: calc(100% - 32px);
+}
+.mdi-content-copy ~ .bar{
+  width: calc(100% - 32px);
+}
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #1565c0;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #1565c0;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #1565c0;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}

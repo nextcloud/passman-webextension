@@ -1,0 +1,24 @@
+.radial-progress {
+  display: inline-block;
+  left: 5px;
+  top: 2px;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #d6dadc;
+  border-radius: 50%; }
+  .radial-progress .circle .mask, .radial-progress .circle .fill {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .radial-progress .circle .mask {
+    clip: rect(0px, 10px, 10px, 5px); }
+    .radial-progress .circle .mask .fill {
+      clip: rect(0px, 5px, 10px, 0px);
+      background-color: #97a71d; }
