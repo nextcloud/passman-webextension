@@ -1,16 +1,10 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ inloggegevens in de database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Refresh credential list",
+        "message": "Verversen lijst inloggegevens",
         "description": "Refresh the credential list"
     },
     "extDescription": {
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "Instellingen",
         "description": "Settings"
     },
     "finish": {
@@ -38,7 +32,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Doneren",
         "description": "Donate"
     },
     "credentials": {
@@ -50,7 +44,7 @@
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Toggle advanced options",
+        "message": "Geavanceerde opties omschakelen",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Bewerken",
         "description": "Edit"
     },
     "min_digits": {
@@ -78,7 +72,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Dit wachtwoord zal worden gebruikt voor het versleutelen van alle instellingen in de extensie. Je kunt ervoor kiezen om ze lokaal op te slaan, maar dan worden ze in LEESBARE TEKST opgeslagen.",
         "description": "Enter master password"
     },
     "add_account": {
@@ -86,7 +80,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "Terug",
         "description": "Back"
     },
     "credential": {
@@ -94,7 +88,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "Verwijderen",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -110,7 +104,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "Lijst",
         "description": "List"
     },
     "ignore_site": {
@@ -126,21 +120,15 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "Verder",
         "description": "Continue"
     },
     "credentials_found_for_site": {
         "message": "We vonden $AMOUNT$ inloggegevens van deze pagina",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "De ontwikkeling is mede afhankelijk van donaties, help ons",
         "description": "Title on the paypal button"
     },
     "please_enter_nextcloud_credentials": {
@@ -148,7 +136,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_host": {
-        "message": "Invalid server url",
+        "message": "Ongeldige server url",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
@@ -156,7 +144,7 @@
         "description": "When the master password is invalid"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Wachtwoorden komen niet overeen.",
         "description": "When comparing passwords"
     },
     "close": {
@@ -180,11 +168,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Serverinstellingen",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Instellen hoofdwachtwoord",
         "description": "Set a master password"
     },
     "password": {
@@ -192,7 +180,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "Kopiëren",
         "description": "Copy"
     },
     "begin": {
@@ -200,7 +188,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Deze wizard helpt u stap voor stap bij het instellen van de extensie en houdt al uw wachtwoorden gesynchroniseerd!",
         "description": "Cancel"
     },
     "ignored_sites": {
@@ -224,7 +212,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Voeg een label toe",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -232,7 +220,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Kluisinstellingen",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -265,17 +253,7 @@
     },
     "invalid_response_from_server": {
         "message": "Ongeldige reactie van de server: [$STATUS_CODE]$STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "statux_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Opslaan",
@@ -294,7 +272,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "Toevoegen",
         "description": "Add"
     },
     "credential_updated": {
@@ -318,7 +296,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Wachtwoord (herhaal)",
         "description": "Password"
     },
     "credential_saved": {
@@ -334,7 +312,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "E-mailadres",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -343,17 +321,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ vond deze pagina",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Gedaan",
@@ -408,7 +376,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Inloggegevens aangemaakt",
         "description": "Credential created"
     },
     "username": {
@@ -418,6 +386,10 @@
     "pw_length": {
         "message": "Wachtwoord lengte",
         "description": "Password length"
+    },
+    "disable_browser_autofill": {
+        "message": "Disable browser auto fill",
+        "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
         "message": "Ververs timer [s]",
