@@ -6,7 +6,7 @@
   margin-bottom: 45px;
 }
 
-input {
+input[type="text"], input[type="password"] {
   font-size: 14px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -20,7 +20,7 @@ input:focus {
 }
 
 /* LABEL ======================================= */
-label {
+.group label {
   color: #999;
   font-size: 14px;
   font-weight: normal;
