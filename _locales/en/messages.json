@@ -187,6 +187,10 @@
     "message": "Disable browser auto fill",
     "description": "Disable auto fill of forms"
   },
+  "ignore_site_placeholder": {
+    "message": "Enter a domain or tld to ignore and press enter",
+    "description": "Disable auto fill of forms"
+  },
   "disable_password_picker": {
     "message": "Disable password picker",
     "description": "Disable password picker"
@@ -269,6 +273,10 @@
   },
   "remember_master_password": {
     "message": "Remember master password",
+    "description": "Remember master password"
+  },
+  "master_pw_warning": {
+    "message": "Warning! Your master password will be stored in plain text",
     "description": "Remember master password"
   },
   "done": {

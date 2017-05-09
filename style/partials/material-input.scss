@@ -1,12 +1,18 @@
 @import "../bourbon/bourbon";
-
+/**
+  Source: https://codepen.io/sevilayha/pen/IdGKH
+  Edited to work with angular
+ */
 /* form starting stylings ------------------------------- */
 .group {
   position: relative;
   margin-bottom: 45px;
 }
+.group:last-child{
+  margin-bottom: 0;
+}
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], select.input-md {
   font-size: 14px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -15,10 +21,13 @@ input[type="text"], input[type="password"] {
   border-bottom: 1px solid #757575;
 }
 
-input:focus {
+input:focus, select.input-md:focus {
   outline: none;
 }
-
+select.input-md{
+  background-color: #fff;
+  cursor: pointer;
+}
 /* LABEL ======================================= */
 .group label {
   color: #999;
@@ -35,7 +44,9 @@ input:focus {
 }
 
 /* active state */
-input:focus ~ label, input.ng-valid:not(.ng-empty) ~ label {
+input[type="text"]:focus ~ label,input[type="password"]:focus ~ label,
+input[type="text"].ng-valid:not(.ng-empty) ~ label,input[type="password"].ng-valid:not(.ng-empty) ~ label,
+select.ng-valid:not(.ng-empty) ~ label {
   top: -20px;
   font-size: 14px;
   color: #1565c0;
@@ -69,7 +80,7 @@ input:focus ~ label, input.ng-valid:not(.ng-empty) ~ label {
 }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+input:focus ~ .bar:before, input:focus ~ .bar:after  {
   width: 50%;
 }
 
@@ -121,7 +132,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   width: calc(100% - 32px);
 }
 /* active state */
-input:focus ~ .highlight {
+input:focus ~ .highlight, select.input-md ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;

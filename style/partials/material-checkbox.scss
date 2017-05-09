@@ -1,55 +1,166 @@
-.label--checkbox {
-	position: relative;
-	font-family: Arial, sans-serif;
-	line-height: 135%;
-	cursor: pointer;
+/**
+  Source: https://codepen.io/anon/pen/PmEeyo
+ */
+// Checkbox Color
+$btn_lightBlue: #03a9f4;
+
+
+// KEYFRAMES
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
 }
 
-.checkbox {
-	position: relative;
-	margin: 0 1rem 0 0 ;
 
-	cursor: pointer;
+.md-checkbox {
+  color: #818181;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px;
 
-	&:before {
-		@include transition(all .800s ease-in-out);
+  .input-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+    vertical-align: -9px;
 
-		content: "";
+    input[type="checkbox"] {
+      visibility: hidden;
+      position: absolute;
+      left: 7px;
+      bottom: 7px;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
 
-		position: absolute;
-		left: 0;
-		z-index: 1;
+      & + .checkbox:before {
+        position: absolute;
+        left: 4px;
+        bottom: 8px;
+        width: 18px;
+        height: 18px;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        vertical-align: -6px;
 
-		width: 1rem;
-		height: 1rem;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
 
-		border: 2px solid #f2f2f2;
-	}
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
 
-	&:checked {
-		&:before {
-			@include transform(rotate(-45deg));
+        /* Support for IE. */
+        font-feature-settings: 'liga';
 
-			height: .5rem;
+        transition: all .2s ease;
+        z-index: 1;
+      }
 
-			border-color: $green;
-			border-top-style: none;
-			border-right-style: none;
-		}
-	}
+      & + .checkbox:before { content: "\e835"; color: #717171; }
 
-	&:after {
-		content: "";
+      &:checked + .checkbox:before { content: "\e834"; }
 
-		position: absolute;
-		top: rem(-2);
-		left: 0;
+      &:active:not(:disabled) + .checkbox:before { transform: scale3d(0.88, 0.88, 1); }
 
-		width: 1.1rem;
-		height: 1.1rem;
+      &:disabled + .checkbox:before { color: rgba(0,0,0,0.157) !important; }
+    }
+  }
 
-		background: #fff;
+  &.checkbox-light {
+    label, .label { color: #FFF; }
+    input[type="checkbox"] + .checkbox:before { color: #FFF; }
+    input[type="checkbox"]:disabled + .checkbox:before { color: #5d5d5d !important; }
 
-		cursor: pointer;
-	}
+    &.checkbox-rotate {
+      input[type="checkbox"] + .checkbox:before { border-color: #FFF; }
+      input[type="checkbox"]:disabled + .checkbox:before { border-color: #5d5d5d !important; }
+    }
+  }
+
+  label, .label { cursor: pointer; color: #797979 }
+}
+
+
+.md-checkbox {
+  &.checkbox-rotate {
+    .input-checkbox {
+      input[type="checkbox"] {
+        & + .checkbox {
+          cursor: pointer;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            bottom: 7px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #717171;
+            border-radius: 2px;
+            transition: all .2s ease;
+            z-index: 1;
+          }
+        }
+
+        &:checked + .checkbox:before {
+          left: 11px;
+          width: 12px;
+          height: 20px;
+          border-width: 2px;
+          border-style: solid;
+          border-top: transparent;
+          border-left: transparent;
+          transform: rotate(40deg);
+          border-radius: 1px;
+        }
+
+        &:disabled + .checkbox:before { border-color: rgba(0,0,0,0.157) !important; }
+      }
+    }
+  }
+}
+
+.md-checkbox {
+  &:not(.checkbox-rotate) {
+    .checkbox-lightBlue {
+      input[type="checkbox"]:checked + .checkbox:before { color: $btn_lightBlue; }
+    }
+  }
+}
+
+.md-checkbox {
+  &.checkbox-rotate {
+
+
+    .checkbox-lightBlue {
+      input[type="checkbox"]:checked + .checkbox:before { border-color: $btn_lightBlue; }
+    }
+  }
 }

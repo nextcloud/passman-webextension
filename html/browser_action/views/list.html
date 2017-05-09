@@ -1,8 +1,8 @@
 <div class="list">
-    <!-- <div ng-show="found_credentials.length === 0">
+    <div class="list-item no-hover"  ng-show="found_credentials.length === 0">
         {{ 'no_credentials_found_for_site' | translate}}
     </div>
-    <div ng-show="found_credentials.length > 0">{{'credentials_found_for_site' | translate:found_credentials.length.toString() }}</div> -->
+   <!-- <div ng-show="found_credentials.length > 0">{{'credentials_found_for_site' | translate:found_credentials.length.toString() }}</div> -->
     <div class="list-item" ng-repeat="credential in found_credentials">
         <div class="title">
             {{credential.label}}
@@ -19,21 +19,3 @@
 
     </div>
 </div>
-<!--
-<div class="footer">
-    <div style="position: absolute; left: 50%; margin-top: -7px; width: 110px;">
-        <div style="position: relative; left: -50%; margin-top: 1.3em;">
-            <small>{{'credentials_in_db' | translate:credential_amount}}</small>
-        </div>
-    </div>
-    <div class="bottomBtn" ng-click="goto_settings()" title="{{'settings' | translate}}"><i class="fa fa-gears"></i></div>
-    <div class="bottomBtn" ng-click="goto_search()" title="{{'search' | translate}}"><i class="fa fa-search"></i></div>
-    <div class="bottomBtn" ng-click="refresh()" title="{{'refresh_credential_list' | translate}}"><i class="fa fa-refresh" ng-class="{'fa-spin': refreshing_credentials}"></i></div>
-    <div class="bottomBtn pull-right"> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"
-       title="{{'donate_button_title' | translate}}"
-       rel="nofollow noopener noreferrer"
-    ><i class="fa fa-paypal"></i> </a>
-    </div>
-    <div class="bottomBtn pull-right" ng-click="lockExtension()" title="{{'lock_extension' | translate}}"><i class="fa fa-lock"></i></div>
-
-</div> -->

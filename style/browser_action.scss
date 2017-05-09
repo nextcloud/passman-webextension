@@ -2,7 +2,10 @@
 @import "partials/cicle";
 @import "partials/list";
 @import "partials/material-input";
-@import "partials/buttons";
+@import "partials/material-switch";
+@import "partials/material-checkbox";
+@import "partials/material-buttons";
+
 $sidebarWidth: 250px;
 body {
   width: 450px;
@@ -72,9 +75,11 @@ body.toggled {
   margin-right: -$sidebarWidth;
   /*  width: calc(100% - 250px);*/
 }
-.ng-hide{
+
+.ng-hide {
   display: none;
 }
+
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -91,7 +96,7 @@ body.toggled {
       display: block;
       text-decoration: none;
       color: #000;
-      .mdi{
+      .mdi {
         padding-left: 15px;
         padding-right: 15px;
         color: $linkColor;
@@ -124,7 +129,7 @@ body.toggled {
         color: #fff;
         background: none;
       }
-      .mdi{
+      .mdi {
         padding-left: 15px;
         padding-right: 15px;
         float: right;
@@ -134,7 +139,8 @@ body.toggled {
     }
   }
 }
-.menuToggler{
+
+.menuToggler {
   position: absolute;
   background-color: transparent;
   width: calc(100% - 250px);
@@ -142,7 +148,8 @@ body.toggled {
   z-index: 9999999;
   right: 0;
 }
-.edit_credential{
+
+.edit_credential {
   padding-top: 30px;
   padding-left: 15px;
   padding-right: 15px;
@@ -154,4 +161,66 @@ body.toggled {
   float: left;
   color: #fff;
   cursor: pointer;
+}
+
+label, .switch-label, label:not(.input-checkbox):not(.label) {
+  font-weight: normal;
+}
+
+.ignored_sites {
+  label {
+    font-size: 14px;
+    color: #1565c0;
+  }
+  padding: 0;
+  li {
+    list-style-type: none;
+    height: 25px;
+    padding: 5px 0;
+    .mdi {
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .mdi:hover {
+      color: #a94442;
+    }
+  }
+  .group {
+    margin-bottom: 45px;
+  }
+}
+.invisible{
+  visibility: hidden;
+}
+.master_pw_warning{
+  padding-left: 6px;
+  font-size: 10px;
+  color: #a94442;
+  margin-bottom: 15px;
+}
+.master_pw_warning.big{
+  font-size: 14px;
+  text-align: center;
+
+}
+.unlock {
+  width: 350px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin: -20px auto 10px;
+  padding: 20px;
+  .group{
+    margin-bottom: 25px;
+  }
+  img {
+    height: 50px;
+    margin: 15px auto;
+    display: block;
+  }
+  .md-checkbox {
+    margin: 15px 0;
+  }
+  .md-btn {
+    margin: 5px auto;
+    display: block;
+  }
 }

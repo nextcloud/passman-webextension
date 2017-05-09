@@ -57,14 +57,8 @@
             var initApp = function () {
                 port.onMessage.addListener(messageParser);
                 API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
-                    function redirectToPrompt() {
-                        window.location = '#!/locked';
-                        return;
-                    }
-
                     //First check attributes
                     if (!isPasswordSet) {
-                        redirectToPrompt();
                         return;
                     }
 
@@ -86,7 +80,7 @@
                 });
             };
 
-            var getActiveTab = function (cb) {
+            var getActiveTab = function () {
                 API.tabs.query({currentWindow: true, active: true}).then(function (tab) {
                     API.runtime.sendMessage(API.runtime.id, {
                         method: "getCredentialsByUrl",
@@ -99,24 +93,7 @@
                 });
             };
 
-            $scope.lockExtension = function () {
-                API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: null}}).then(function () {
-                    window.location = '#!/locked';
-                });
-            };
-
-            API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
-
-                $rootScope.app_settings = settings;
-                if (!settings || Object.keys(settings).length === 0) {
-                    window.location = '#!/setup';
-                } else if (settings.hasOwnProperty('isInstalled')) {
-                    window.location = '#!/locked';
-                } else {
-                    initApp();
-                }
-            });
-
+            initApp();
 
             $scope.editCredential = function (credential) {
                 window.location = '#!/edit/' + credential.guid;

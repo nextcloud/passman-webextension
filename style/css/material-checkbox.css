@@ -1,0 +1,115 @@
+/* ----------------------------------------------------------------------
+  Material Design Checkbox - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.md-checkbox {
+  color: #818181;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px; }
+  .md-checkbox .input-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: -9px; }
+    .md-checkbox .input-checkbox input[type="checkbox"] {
+      visibility: hidden;
+      position: absolute;
+      left: 7px;
+      bottom: 7px;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+      opacity: 0; }
+      .md-checkbox .input-checkbox input[type="checkbox"] + .checkbox:before {
+        position: absolute;
+        left: 4px;
+        bottom: 8px;
+        width: 18px;
+        height: 18px;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        vertical-align: -6px;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+        transition: all .2s ease;
+        z-index: 1; }
+      .md-checkbox .input-checkbox input[type="checkbox"] + .checkbox:before {
+        content: "\e835";
+        color: #717171; }
+      .md-checkbox .input-checkbox input[type="checkbox"]:checked + .checkbox:before {
+        content: "\e834"; }
+      .md-checkbox .input-checkbox input[type="checkbox"]:active:not(:disabled) + .checkbox:before {
+        transform: scale3d(0.88, 0.88, 1); }
+      .md-checkbox .input-checkbox input[type="checkbox"]:disabled + .checkbox:before {
+        color: rgba(0, 0, 0, 0.157) !important; }
+  .md-checkbox.checkbox-light label, .md-checkbox.checkbox-light .label {
+    color: #FFF; }
+  .md-checkbox.checkbox-light input[type="checkbox"] + .checkbox:before {
+    color: #FFF; }
+  .md-checkbox.checkbox-light input[type="checkbox"]:disabled + .checkbox:before {
+    color: #5d5d5d !important; }
+  .md-checkbox.checkbox-light.checkbox-rotate input[type="checkbox"] + .checkbox:before {
+    border-color: #FFF; }
+  .md-checkbox.checkbox-light.checkbox-rotate input[type="checkbox"]:disabled + .checkbox:before {
+    border-color: #5d5d5d !important; }
+  .md-checkbox label, .md-checkbox .label {
+    cursor: pointer; }
+
+/* ----------------------------------------------------------------------
+  Rotate Checkbox - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"] + .checkbox {
+  cursor: pointer; }
+  .md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"] + .checkbox:before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 7px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #717171;
+    border-radius: 2px;
+    transition: all .2s ease;
+    z-index: 1; }
+.md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"]:checked + .checkbox:before {
+  left: 11px;
+  width: 12px;
+  height: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-top: transparent;
+  border-left: transparent;
+  transform: rotate(40deg);
+  border-radius: 1px; }
+.md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"]:disabled + .checkbox:before {
+  border-color: rgba(0, 0, 0, 0.157) !important; }
+
+/* ----------------------------------------------------------------------
+  Normal Checkbox Color - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.md-checkbox:not(.checkbox-rotate) .checkbox-lightBlue input[type="checkbox"]:checked + .checkbox:before {
+  color: #03a9f4; }
+
+/* ----------------------------------------------------------------------
+  Rotate Checkbox Color - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.md-checkbox.checkbox-rotate .checkbox-lightBlue input[type="checkbox"]:checked + .checkbox:before {
+  border-color: #03a9f4; }

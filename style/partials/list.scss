@@ -37,4 +37,7 @@ $linkColor: #737373;
       cursor: pointer;
     }
   }
+  .list-item.no-hover:hover{
+    background-color: transparent;
+  }
 }

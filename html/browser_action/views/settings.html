@@ -1,167 +1,214 @@
 <div class="edit_credential">
-	<div class="group">
-		<input type="text" ng-model="settings.nextcloud_host"
-			   required ng-debounce="1000">
-		<span class="highlight"></span>
-		<span class="bar"></span>
-		<label>{{'server_url' | translate}}</label>
-	</div>
-	<div class="group">
-		<input type="text" ng-model="settings.nextcloud_username"
-			   required ng-debounce="1000">
-		<span class="highlight"></span>
-		<span class="bar"></span>
-		<label>{{'username' | translate}}</label>
-	</div>
-	<div class="group">
-		<input type="password" ng-model="settings.nextcloud_password"
-			   required ng-debounce="1000">
-		<span class="highlight"></span>
-		<span class="bar"></span>
-		<label>{{'password' | translate}}</label>
-	</div>
-	<div class="group">
-		<select id="defaultVault" class="form-control input-sm" ng-model="settings.default_vault" required
-				ng-options="vault.name for vault in vaults track by vault.guid"></select>
-		<span class="highlight"></span>
-		<span class="bar"></span>
-		<label>{{'select_default_vault' | translate}}</label>
-	</div>
-	<div class="group" ng-show="settings.default_vault != ''">
-		<input type="password" ng-model="settings.vault_password"
-			   required ng-debounce="1000">
-		<span class="highlight"></span>
-		<span class="bar"></span>
-		<label>{{'vault_password' | translate}}</label>
-	</div>
-	<!-- Ignored sites-->
+    <div class="group">
+        <input type="text" ng-model="settings.nextcloud_host"
+               required ng-debounce="1000">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'server_url' | translate}}</label>
+    </div>
+    <div class="group">
+        <input type="text" ng-model="settings.nextcloud_username"
+               required ng-debounce="1000">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'username' | translate}}</label>
+    </div>
+    <div class="group">
+        <input type="password" ng-model="settings.nextcloud_password"
+               required ng-debounce="1000">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'password' | translate}}</label>
+    </div>
+    <div class="group">
+        <select id="defaultVault" class="input-md" ng-model="settings.default_vault" required
+                ng-options="vault.name for vault in vaults track by vault.guid"></select>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'select_default_vault' | translate}}</label>
+    </div>
+    <div class="group" ng-show="settings.default_vault != ''">
+        <input type="password" ng-model="settings.vault_password"
+               required ng-debounce="1000">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'vault_password' | translate}}</label>
+    </div>
+    <div class="ignored_sites">
+        <label>{{'ignored_sites' | translate}}</label>
+        <ul class="ignored_sites">
+            <li ng-repeat="site in settings.ignored_sites">{{site}} <i class="mdi mdi-delete pull-right"
+                                                                       ng-click="removeSite(site)"></i></li>
+            <li ng-show="settings.ignored_sites.length === 0">{{'no_sites_ignored' | translate}}</li>
+        </ul>
+        <div class="group" ng-show="settings.default_vault != ''">
+            <input type="text"
+                   ng-model="ignoreSite" ng-enter="addSite(ignoreSite)" placeholder="{{'ignore_site_placeholder' | translate}}">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="ignore_protocol" ng-model="settings.ignoreProtocol" class="switch-input">
+        <label for="ignore_protocol" class="switch-label">{{'ignore_protocol' | translate}}</label>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="ignore_subdomain" ng-model="settings.ignoreSubdomain" class="switch-input">
+        <label for="ignore_subdomain" class="switch-label">{{'ignore_subdomain' | translate}}</label>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="ignore_port" ng-model="settings.ignorePort" class="switch-input">
+        <label for="ignore_port" class="switch-label">{{'ignore_port' | translate}}</label>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="disable_autofill" ng-model="settings.disableAutoFill" class="switch-input">
+        <label for="disable_autofill" class="switch-label">{{'disable_autofill' | translate}}</label>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="disable_browser_autofill" ng-model="settings.disable_browser_autofill" class="switch-input">
+        <label for="disable_browser_autofill" class="switch-label">{{'disable_browser_autofill' | translate}}</label>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="disable_password_picker" ng-model="settings.disablePasswordPicker" class="switch-input">
+        <label for="disable_password_picker" class="switch-label">{{'disable_password_picker' | translate}}</label>
+    </div>
+    <div class="switch-row">
+        <input type="checkbox" id="enable_debug" ng-model="settings.debug" class="switch-input">
+        <label for="enable_debug" class="switch-label">{{'enable_debug' | translate}}</label>
+    </div>
+    <div class="clearfix"></div>
+    <button class="md-btn default" ng-click="saveSettings()" ng-disabled="saving">
+        <span>
+            <i ng-show="saving"
+               ng-class="{'fa-spinner fa-spin': saving}"
+               class="fa"></i>
+            {{'save' | translate}}
+        </span>
+    </button>
+    <button class="md-btn" ng-click="cancel()">
+        <span>{{'cancel' | translate}}</span>
+    </button>
+    <!--
+    <h4 align="center">{{'please_enter_nextcloud_credentials' | translate}}:</h4>
+    <div class="alerts alert alert-warning" ng-if="errors.length > 0">
+        <li ng-repeat="error in errors">{{error}}</li>
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <td>
+                    <small>{{'server_url' | translate}}:</small>
+                </td>
+                <td><input type="url" class="form-control input-sm" id="host" ng-model="settings.nextcloud_host"
+                           required ng-debounce="1000">
+                </td>
+            </tr>
+            <tr ng-if="settings.nextcloud_host.indexOf('http://') == 0">
+                <td colspan=2>
+                    <div class="alert alert-warning">Warning: This connection is insecure!</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <small>{{'username' | translate}}:</small>
+                </td>
+                <td><input type="text" class="form-control input-sm" id="user" ng-model="settings.nextcloud_username"
+                           required ng-debounce="1000"></td>
+            </tr>
+            <tr>
+                <td>
+                    <small>{{'password' | translate}}:</small>
+                </td>
+                <td><input type="password" class="form-control input-sm" id="password"
+                           ng-model="settings.nextcloud_password" required ng-debounce="1000"></td>
+            </tr>
+            <tr class="login-req" ng-if="vaults">
+                <td>
+                    <small>{{'select_default_vault' | translate}}:</small>
+                </td>
+                <td><select id="defaultVault" class="form-control input-sm" ng-model="settings.default_vault" required
+                            ng-options="vault.name for vault in vaults track by vault.guid"></select></td>
+            </tr>
+            <tr class="login-req" id="vaultPassRow" ng-show="settings.default_vault != ''">
+                <td valign="top">
+                    <small>{{'vault_password' | translate}}</small>
+                </td>
+                <td>
+                    <input type="password" class="form-control input-sm" id="vaultPassword"
+                           ng-model="settings.vault_password">
+                </td>
+            </tr>
+            <tr class="login-req">
+                <td valign="top">
+                    <small>{{'ignored_sites' | translate}}</small>
+                </td>
+                <td>
 
-	<label class="label--checkbox">
-		<input type="checkbox" class="checkbox" checked>
-		Item 1
-	</label>
-
-	<!--
-	<h4 align="center">{{'please_enter_nextcloud_credentials' | translate}}:</h4>
-	<div class="alerts alert alert-warning" ng-if="errors.length > 0">
-		<li ng-repeat="error in errors">{{error}}</li>
-	</div>
-	<div>
-		<table class="table">
-			<tr>
-				<td>
-					<small>{{'server_url' | translate}}:</small>
-				</td>
-				<td><input type="url" class="form-control input-sm" id="host" ng-model="settings.nextcloud_host"
-						   required ng-debounce="1000">
-				</td>
-			</tr>
-			<tr ng-if="settings.nextcloud_host.indexOf('http://') == 0">
-				<td colspan=2>
-					<div class="alert alert-warning">Warning: This connection is insecure!</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<small>{{'username' | translate}}:</small>
-				</td>
-				<td><input type="text" class="form-control input-sm" id="user" ng-model="settings.nextcloud_username"
-						   required ng-debounce="1000"></td>
-			</tr>
-			<tr>
-				<td>
-					<small>{{'password' | translate}}:</small>
-				</td>
-				<td><input type="password" class="form-control input-sm" id="password"
-						   ng-model="settings.nextcloud_password" required ng-debounce="1000"></td>
-			</tr>
-			<tr class="login-req" ng-if="vaults">
-				<td>
-					<small>{{'select_default_vault' | translate}}:</small>
-				</td>
-				<td><select id="defaultVault" class="form-control input-sm" ng-model="settings.default_vault" required
-							ng-options="vault.name for vault in vaults track by vault.guid"></select></td>
-			</tr>
-			<tr class="login-req" id="vaultPassRow" ng-show="settings.default_vault != ''">
-				<td valign="top">
-					<small>{{'vault_password' | translate}}</small>
-				</td>
-				<td>
-					<input type="password" class="form-control input-sm" id="vaultPassword"
-						   ng-model="settings.vault_password">
-				</td>
-			</tr>
-			<tr class="login-req">
-				<td valign="top">
-					<small>{{'ignored_sites' | translate}}</small>
-				</td>
-				<td>
-
-					<ul class="ignored_sites">
-						<li ng-repeat="site in settings.ignored_sites">{{site}} <i class="fa fa-trash pull-right"
-																				   ng-click="removeSite(site)"></i></li>
-						<li ng-show="settings.ignored_sites.length === 0">{{'no_sites_ignored' | translate}}</li>
-						<li><input type="text" class="form-control" placeholder="Enter a domain or tld"
-								   ng-model="ignoreSite" ng-enter="addSite(ignoreSite)"></li>
-					</ul>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<small>{{'refresh_timer' | translate}}:</small>
-				</td>
-				<td><input type="text" id="timer" class="form-control input-sm" ng-model="settings.refreshTime"></td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="ignoreProtocol" ng-model="settings.ignoreProtocol">
-					<small>{{'ignore_protocol' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="ignoreSubdomain" ng-model="settings.ignoreSubdomain">
-					<small>{{'ignore_subdomain' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="ignorePath" ng-model="settings.ignorePort">
-					<small>{{'ignore_port' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="disableAutoFill" ng-model="settings.disableAutoFill">
-					<small>{{'disable_autofill' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="disableBrowserAutoFill"
-									 ng-model="settings.disable_browser_autofill">
-					<small>{{'disable_browser_autofill' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="disablePasswordPicker"
-									 ng-model="settings.disablePasswordPicker">
-					<small>{{'disable_password_picker' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2><input type="checkbox" id="enableDebug" ng-model="settings.debug">
-					<small>{{'enable_debug' | translate}}</small>
-				</td>
-			</tr>
-			<tr>
-				<td colspan=2 align="center">
-					<button class="btn btn-success" ng-click="saveSettings()" ng-disabled="saving"><i ng-show="saving"
-																									  ng-class="{'fa-spinner fa-spin': saving}"
-																									  class="fa"></i>
-						{{'save' | translate}}
-					</button>
-					<button class="btn btn-warning" ng-click="cancel()">{{'cancel' | translate}}</button>
-				</td>
-			</tr>
-		</table>
-		<div class="version">
-			{{extension}}
-		</div>
-	</div>-->
+                    <ul class="ignored_sites">
+                        <li ng-repeat="site in settings.ignored_sites">{{site}} <i class="fa fa-trash pull-right"
+                                                                                   ng-click="removeSite(site)"></i></li>
+                        <li ng-show="settings.ignored_sites.length === 0">{{'no_sites_ignored' | translate}}</li>
+                        <li><input type="text" class="form-control" placeholder="Enter a domain or tld"
+                                   ng-model="ignoreSite" ng-enter="addSite(ignoreSite)"></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <small>{{'refresh_timer' | translate}}:</small>
+                </td>
+                <td><input type="text" id="timer" class="form-control input-sm" ng-model="settings.refreshTime"></td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="ignoreProtocol" ng-model="settings.ignoreProtocol">
+                    <small>{{'ignore_protocol' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="ignoreSubdomain" ng-model="settings.ignoreSubdomain">
+                    <small>{{'ignore_subdomain' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="ignorePath" ng-model="settings.ignorePort">
+                    <small>{{'ignore_port' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="disableAutoFill" ng-model="settings.disableAutoFill">
+                    <small>{{'disable_autofill' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="disableBrowserAutoFill"
+                                     ng-model="settings.disable_browser_autofill">
+                    <small>{{'disable_browser_autofill' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="disablePasswordPicker"
+                                     ng-model="settings.disablePasswordPicker">
+                    <small>{{'disable_password_picker' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2><input type="checkbox" id="enableDebug" ng-model="settings.debug">
+                    <small>{{'enable_debug' | translate}}</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2 align="center">
+                    <button class="btn btn-success" ng-click="saveSettings()" ng-disabled="saving"><i ng-show="saving"
+                                                                                                      ng-class="{'fa-spinner fa-spin': saving}"
+                                                                                                      class="fa"></i>
+                        {{'save' | translate}}
+                    </button>
+                    <button class="btn btn-warning" ng-click="cancel()">{{'cancel' | translate}}</button>
+                </td>
+            </tr>
+        </table>
+        <div class="version">
+            {{extension}}
+        </div>
+    </div>-->
 </div>

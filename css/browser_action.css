@@ -50,13 +50,22 @@
       color: #737373; }
     .list .list-item .mdi {
       cursor: pointer; }
+  .list .list-item.no-hover:hover {
+    background-color: transparent; }
 
+/**
+  Source: https://codepen.io/sevilayha/pen/IdGKH
+  Edited to work with angular
+ */
 /* form starting stylings ------------------------------- */
 .group {
   position: relative;
   margin-bottom: 45px; }
 
-input[type="text"], input[type="password"] {
+.group:last-child {
+  margin-bottom: 0; }
+
+input[type="text"], input[type="password"], select.input-md {
   font-size: 14px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -64,8 +73,12 @@ input[type="text"], input[type="password"] {
   border: none;
   border-bottom: 1px solid #757575; }
 
-input:focus {
+input:focus, select.input-md:focus {
   outline: none; }
+
+select.input-md {
+  background-color: #fff;
+  cursor: pointer; }
 
 /* LABEL ======================================= */
 .group label {
@@ -81,7 +94,9 @@ input:focus {
   -webkit-transition: 0.2s ease all; }
 
 /* active state */
-input:focus ~ label, input.ng-valid:not(.ng-empty) ~ label {
+input[type="text"]:focus ~ label, input[type="password"]:focus ~ label,
+input[type="text"].ng-valid:not(.ng-empty) ~ label, input[type="password"].ng-valid:not(.ng-empty) ~ label,
+select.ng-valid:not(.ng-empty) ~ label {
   top: -20px;
   font-size: 14px;
   color: #1565c0; }
@@ -156,7 +171,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   width: calc(100% - 32px); }
 
 /* active state */
-input:focus ~ .highlight {
+input:focus ~ .highlight, select.input-md ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease; }
@@ -180,6 +195,179 @@ input:focus ~ .highlight {
   to {
     width: 0;
     background: transparent; } }
+/**
+  Source: https://codepen.io/guuslieben/pen/YyPRVP
+ */
+.switch-input {
+  display: none; }
+
+.switch-label {
+  position: relative;
+  display: inline-block;
+  min-width: 112px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  padding: 16px 0 16px 44px; }
+
+.switch-label:before, .switch-label:after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  outline: 0;
+  top: 50%;
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.switch-label:before {
+  left: 1px;
+  width: 34px;
+  height: 14px;
+  background-color: #9E9E9E;
+  border-radius: 8px; }
+
+.switch-label:after {
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #FAFAFA;
+  border-radius: 50%;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084); }
+
+.switch-label .toggle--on {
+  display: none; }
+
+.switch-label .toggle--off {
+  display: inline-block; }
+
+.switch-input:checked + .switch-label:before {
+  background-color: #4f98ec; }
+
+.switch-input:checked + .switch-label:after {
+  background-color: #1565c0;
+  -ms-transform: translate(80%, -50%);
+  -webkit-transform: translate(80%, -50%);
+  transform: translate(80%, -50%); }
+
+.switch-input:checked + .switch-label .toggle--on {
+  display: inline-block; }
+
+.switch-input:checked + .switch-label .toggle--off {
+  display: none; }
+
+/**
+  Source: https://codepen.io/anon/pen/PmEeyo
+ */
+.md-checkbox {
+  color: #818181;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .5px; }
+  .md-checkbox .input-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+    vertical-align: -9px; }
+    .md-checkbox .input-checkbox input[type="checkbox"] {
+      visibility: hidden;
+      position: absolute;
+      left: 7px;
+      bottom: 7px;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+      opacity: 0; }
+      .md-checkbox .input-checkbox input[type="checkbox"] + .checkbox:before {
+        position: absolute;
+        left: 4px;
+        bottom: 8px;
+        width: 18px;
+        height: 18px;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        vertical-align: -6px;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+        transition: all .2s ease;
+        z-index: 1; }
+      .md-checkbox .input-checkbox input[type="checkbox"] + .checkbox:before {
+        content: "\e835";
+        color: #717171; }
+      .md-checkbox .input-checkbox input[type="checkbox"]:checked + .checkbox:before {
+        content: "\e834"; }
+      .md-checkbox .input-checkbox input[type="checkbox"]:active:not(:disabled) + .checkbox:before {
+        transform: scale3d(0.88, 0.88, 1); }
+      .md-checkbox .input-checkbox input[type="checkbox"]:disabled + .checkbox:before {
+        color: rgba(0, 0, 0, 0.157) !important; }
+  .md-checkbox.checkbox-light label, .md-checkbox.checkbox-light .label {
+    color: #FFF; }
+  .md-checkbox.checkbox-light input[type="checkbox"] + .checkbox:before {
+    color: #FFF; }
+  .md-checkbox.checkbox-light input[type="checkbox"]:disabled + .checkbox:before {
+    color: #5d5d5d !important; }
+  .md-checkbox.checkbox-light.checkbox-rotate input[type="checkbox"] + .checkbox:before {
+    border-color: #FFF; }
+  .md-checkbox.checkbox-light.checkbox-rotate input[type="checkbox"]:disabled + .checkbox:before {
+    border-color: #5d5d5d !important; }
+  .md-checkbox label, .md-checkbox .label {
+    cursor: pointer;
+    color: #797979; }
+
+.md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"] + .checkbox {
+  cursor: pointer; }
+  .md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"] + .checkbox:before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 7px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #717171;
+    border-radius: 2px;
+    transition: all .2s ease;
+    z-index: 1; }
+.md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"]:checked + .checkbox:before {
+  left: 11px;
+  width: 12px;
+  height: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-top: transparent;
+  border-left: transparent;
+  transform: rotate(40deg);
+  border-radius: 1px; }
+.md-checkbox.checkbox-rotate .input-checkbox input[type="checkbox"]:disabled + .checkbox:before {
+  border-color: rgba(0, 0, 0, 0.157) !important; }
+
+.md-checkbox:not(.checkbox-rotate) .checkbox-lightBlue input[type="checkbox"]:checked + .checkbox:before {
+  color: #03a9f4; }
+
+.md-checkbox.checkbox-rotate .checkbox-lightBlue input[type="checkbox"]:checked + .checkbox:before {
+  border-color: #03a9f4; }
+
+/**
+ Source: https://codepen.io/sebj54/pen/oxluI
+ */
 .md-btn {
   position: relative;
   margin: 0 15px 15px 15px;
@@ -369,3 +557,53 @@ body.toggled {
   float: left;
   color: #fff;
   cursor: pointer; }
+
+label, .switch-label, label:not(.input-checkbox):not(.label) {
+  font-weight: normal; }
+
+.ignored_sites {
+  padding: 0; }
+  .ignored_sites label {
+    font-size: 14px;
+    color: #1565c0; }
+  .ignored_sites li {
+    list-style-type: none;
+    height: 25px;
+    padding: 5px 0; }
+    .ignored_sites li .mdi {
+      margin-top: 2px;
+      cursor: pointer; }
+    .ignored_sites li .mdi:hover {
+      color: #a94442; }
+  .ignored_sites .group {
+    margin-bottom: 45px; }
+
+.invisible {
+  visibility: hidden; }
+
+.master_pw_warning {
+  padding-left: 6px;
+  font-size: 10px;
+  color: #a94442;
+  margin-bottom: 15px; }
+
+.master_pw_warning.big {
+  font-size: 14px;
+  text-align: center; }
+
+.unlock {
+  width: 350px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin: -20px auto 10px;
+  padding: 20px; }
+  .unlock .group {
+    margin-bottom: 25px; }
+  .unlock img {
+    height: 50px;
+    margin: 15px auto;
+    display: block; }
+  .unlock .md-checkbox {
+    margin: 15px 0; }
+  .unlock .md-btn {
+    margin: 5px auto;
+    display: block; }

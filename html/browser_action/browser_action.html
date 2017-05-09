@@ -85,9 +85,12 @@
         </div>
         <!-- /#sidebar-wrapper -->
 
-        <header class="header" ng-class="{'toggled': menuIsOpen}">
+        <header class="header" ng-class="{'toggled': menuIsOpen}" ng-show="showHeader">
             <div class="menu-icon" ng-click="toggleMenu()">
                 <i class="mdi mdi-menu"></i>
+            </div>
+            <div class="menu-icon pull-right" ng-click="lockExtension()">
+                <i class="mdi mdi-lock"></i>
             </div>
         </header>
         <!-- Page Content -->

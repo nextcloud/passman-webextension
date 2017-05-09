@@ -38,6 +38,8 @@
 
             $scope.menuIsOpen = false;
             $scope.bodyOverflow = false;
+            $scope.showHeader = true;
+
             $scope.toggleMenu = function () {
                 console.log('click');
                 $scope.menuIsOpen = !$scope.menuIsOpen;
@@ -47,11 +49,41 @@
                 }, 1500);
             };
 
+            $rootScope.$on('hideHeader', function () {
+                $scope.showHeader = false;
+            });
+
+            $rootScope.$on('showHeader', function () {
+                $scope.showHeader = true;
+            });
+
+            API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
+
+                $rootScope.app_settings = settings;
+                if (!settings || Object.keys(settings).length === 0) {
+                    window.location = '#!/setup';
+                } else if (settings.hasOwnProperty('isInstalled')) {
+                    window.location = '#!/locked';
+                } else {
+                    //  initApp();
+                }
+            });
+
+
             $scope.goto = function (page) {
-                window.location = '#!/'+page;
+                window.location = '#!/' + page;
                 $scope.menuIsOpen = false;
             };
 
+
+            $scope.lockExtension = function () {
+                API.runtime.sendMessage(API.runtime.id, {
+                    method: "setMasterPassword",
+                    args: {password: null}
+                }).then(function () {
+                    window.location = '#!/locked';
+                });
+            };
         }]);
 }());
 
