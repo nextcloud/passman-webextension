@@ -388,7 +388,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Desativar preenchimento automático do navegador",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {

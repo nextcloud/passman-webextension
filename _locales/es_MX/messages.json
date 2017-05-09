@@ -20,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "Ajustes",
         "description": "Settings"
     },
     "finish": {
@@ -32,7 +32,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Donar",
         "description": "Donate"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Editar",
         "description": "Edit"
     },
     "min_digits": {
@@ -80,7 +80,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "Atrás",
         "description": "Back"
     },
     "credential": {
@@ -88,7 +88,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "Borrar",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -104,7 +104,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "Lista",
         "description": "List"
     },
     "ignore_site": {
@@ -120,7 +120,7 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "Continuar",
         "description": "Continue"
     },
     "credentials_found_for_site": {
@@ -136,7 +136,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_host": {
-        "message": "Invalid server url",
+        "message": "URL de servidor inválido",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
@@ -144,7 +144,7 @@
         "description": "When the master password is invalid"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Las contraseñas no coinciden",
         "description": "When comparing passwords"
     },
     "close": {
@@ -168,11 +168,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Ajustes del servidor",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Establecer la contraseña maestra",
         "description": "Set a master password"
     },
     "password": {
@@ -180,7 +180,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "Copiar",
         "description": "Copy"
     },
     "begin": {
@@ -212,7 +212,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Favor de llenar la etiqueta",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -220,7 +220,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Ajustes de la bóveda",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -272,7 +272,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "Agregar",
         "description": "Add"
     },
     "credential_updated": {
@@ -296,7 +296,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Contraseña (repetir)",
         "description": "Password"
     },
     "credential_saved": {
@@ -312,7 +312,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "Correo electrónico",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -376,7 +376,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Credencial creada",
         "description": "Credential created"
     },
     "username": {
@@ -388,7 +388,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Desactivar el autocompletado del navegador",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {

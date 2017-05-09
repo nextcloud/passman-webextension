@@ -28,7 +28,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed url for",
+        "message": "Changement d'URL détecté",
         "description": "Detected changed url for"
     },
     "donate": {
@@ -140,7 +140,7 @@
         "description": "Invalid server url"
     },
     "invalid_master_password": {
-        "message": "Mot de passe master incorrect",
+        "message": "Mot de passe maître incorrect",
         "description": "When the master password is invalid"
     },
     "no_password_match": {
@@ -172,7 +172,7 @@
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Configurez le mot de passe maître",
         "description": "Set a master password"
     },
     "password": {
@@ -200,7 +200,7 @@
         "description": "Toggle visibility"
     },
     "remember_master_password": {
-        "message": "Mémoriser le mot de passe master",
+        "message": "Mémoriser le mot de passe maître",
         "description": "Remember master password"
     },
     "btn_save_site": {
@@ -216,7 +216,7 @@
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Saisissez le mot de passe master",
+        "message": "Saisissez le mot de passe maître",
         "description": "Enter master password"
     },
     "vault_settings": {
@@ -360,7 +360,7 @@
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Empty master key!",
+        "message": "Aucun mot de passe maître !",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
@@ -388,7 +388,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Désactiver le remplissage automatique du navigateur",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
