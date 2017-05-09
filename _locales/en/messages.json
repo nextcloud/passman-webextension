@@ -283,6 +283,18 @@
     "message": "Done",
     "description": "Done"
   },
+  "custom_fields": {
+    "message": "Custom Fields",
+    "description": "Custom fields"
+  },
+  "general": {
+    "message": "General",
+    "description": "Custom fields"
+  },
+  "value": {
+    "message": "Value",
+    "description": "Custom fields"
+  },
   "list": {
     "message": "List",
     "description": "List"

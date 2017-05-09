@@ -5,6 +5,7 @@
 @import "partials/material-switch";
 @import "partials/material-checkbox";
 @import "partials/material-buttons";
+@import "partials/material-tabs";
 
 $sidebarWidth: 250px;
 body {
@@ -71,7 +72,7 @@ body.toggled {
 }
 
 #wrapper.toggled #page-content-wrapper {
-  position: absolute;
+  /*position: absolute;*/
   margin-right: -$sidebarWidth;
   /*  width: calc(100% - 250px);*/
 }
@@ -89,6 +90,7 @@ body.toggled {
   margin: 0;
   padding: 0;
   list-style: none;
+  height: 100%;
   li {
     line-height: 55px;
     a {
@@ -112,19 +114,31 @@ body.toggled {
         text-decoration: none;
       }
     }
+    &.bottom {
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 15px;
+      line-height: 0;
+    }
   }
   > .sidebar-brand {
     height: 50px;
     font-size: 18px;
     line-height: 50px;
-    text-indent: 20px;
+    text-align: center;
     background-color: #1565c0;
     border-right: 1px solid darken(#1565c0, 10%);
     span {
-
       display: block;
       text-decoration: none;
       color: #fff;
+      img {
+        height: 32px;
+        margin-right: 10px;
+      }
       &:hover {
         color: #fff;
         background: none;
@@ -144,9 +158,10 @@ body.toggled {
   position: absolute;
   background-color: transparent;
   width: calc(100% - 250px);
-  height: 350px;
+  height: 100%;
   z-index: 9999999;
   right: 0;
+  top: 0;
 }
 
 .edit_credential {
@@ -189,26 +204,30 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
     margin-bottom: 45px;
   }
 }
-.invisible{
+
+.invisible {
   visibility: hidden;
 }
-.master_pw_warning{
+
+.master_pw_warning {
   padding-left: 6px;
   font-size: 10px;
   color: #a94442;
   margin-bottom: 15px;
 }
-.master_pw_warning.big{
+
+.master_pw_warning.big {
   font-size: 14px;
   text-align: center;
 
 }
+
 .unlock {
   width: 350px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   margin: -20px auto 10px;
   padding: 20px;
-  .group{
+  .group {
     margin-bottom: 25px;
   }
   img {

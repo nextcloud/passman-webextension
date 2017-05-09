@@ -78,7 +78,8 @@ input:focus, select.input-md:focus {
 
 select.input-md {
   background-color: #fff;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-top: -3px; }
 
 /* LABEL ======================================= */
 .group label {
@@ -100,6 +101,14 @@ select.ng-valid:not(.ng-empty) ~ label {
   top: -20px;
   font-size: 14px;
   color: #1565c0; }
+
+.col33 {
+  width: 29%;
+  float: left; }
+  .col33:first-child {
+    padding-right: 10px; }
+  .col33:not(:first-child) {
+    padding-left: 10px; }
 
 /* BOTTOM BARS ================================= */
 .bar {
@@ -138,7 +147,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   pointer-events: none;
   opacity: 0.5; }
 
-.group .mdi-content-copy, .pwField .mdi {
+.group .mdi-content-copy, .pwField .mdi, .group .mdi-delete {
   /*position: absolute;
   right: 0;*/
   margin-top: 5px;
@@ -157,7 +166,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
   border-top-left-radius: 16px; }
-  .group .mdi-content-copy:hover, .pwField .mdi:hover {
+  .group .mdi-content-copy:hover, .pwField .mdi:hover, .group .mdi-delete:hover {
     text-decoration: none;
     background-color: #e4e4e4; }
 
@@ -167,7 +176,13 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .mdi-content-copy ~ input {
   width: calc(100% - 32px); }
 
+.mdi-delete ~ input {
+  width: calc(100% - 32px); }
+
 .mdi-content-copy ~ .bar {
+  width: calc(100% - 32px); }
+
+.mdi-delete ~ .bar {
   width: calc(100% - 32px); }
 
 /* active state */
@@ -431,6 +446,75 @@ input:focus ~ .highlight, select.input-md ~ .highlight {
 .md-btn.red:hover, .btn.red:focus {
   background-color: #f4511e; }
 
+.tab-wrap {
+  width: 100%;
+  height: 600px;
+  /*position: absolute;*/ }
+  .tab-wrap label:not(.ng-binding) {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    box-sizing: border-box;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 56px;
+    transition: color 0.2s ease;
+    width: 100%;
+    border-bottom: 1px solid #c9c9c9; }
+  .tab-wrap .slide {
+    background: #1565c0;
+    width: calc(100% / 2);
+    height: 4px;
+    position: relative;
+    left: 0;
+    top: 52px;
+    transition: left 0.3s ease-out; }
+  .tab-wrap .tab-label-content {
+    width: calc(100% / 2);
+    float: left; }
+    .tab-wrap .tab-label-content .tab-content {
+      position: absolute;
+      top: 100px;
+      left: 16px;
+      line-height: 130%;
+      display: none;
+      width: 100%;
+      padding-right: 20px; }
+      .tab-wrap .tab-label-content .tab-content .custom_field {
+        float: left;
+        margin-bottom: 15px; }
+        .tab-wrap .tab-label-content .tab-content .custom_field .field {
+          float: left;
+          width: 50%; }
+          .tab-wrap .tab-label-content .tab-content .custom_field .field:first-child {
+            padding-right: 10px; }
+          .tab-wrap .tab-label-content .tab-content .custom_field .field:not(:first-child) {
+            padding-left: 10px; }
+  @media screen and (max-width: 800px) {
+    .tab-wrap h1 {
+      padding: 40px 0 90px 10%; }
+    .tab-wrap .tab-wrap {
+      width: 80%;
+      margin-left: 10%;
+      top: -106px; } }
+
+input[type="radio"][name="tabs"] {
+  position: absolute;
+  z-index: -1; }
+  input[type="radio"][name="tabs"]:checked + .tab-label-content label:not(.ng-binding) {
+    color: rgba(0, 0, 0, 0.8); }
+  input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-content {
+    display: block;
+    margin-top: 40px; }
+  input[type="radio"][name="tabs"]:nth-of-type(1):checked ~ .slide {
+    left: calc((100% / 2) * 0); }
+  input[type="radio"][name="tabs"]:nth-of-type(2):checked ~ .slide {
+    left: calc((100% / 2) * 1); }
+  input[type="radio"][name="tabs"]:first-of-type:checked ~ .slide {
+    left: 0; }
+
 body {
   width: 450px;
   min-height: 350px;
@@ -485,7 +569,7 @@ body.toggled {
   overflow-y: auto; }
 
 #wrapper.toggled #page-content-wrapper {
-  position: absolute;
+  /*position: absolute;*/
   margin-right: -250px;
   /*  width: calc(100% - 250px);*/ }
 
@@ -499,7 +583,8 @@ body.toggled {
   width: 250px;
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  height: 100%; }
   .sidebar-nav li {
     line-height: 55px; }
     .sidebar-nav li a {
@@ -517,17 +602,28 @@ body.toggled {
         background-color: #e4e4e4; }
       .sidebar-nav li a:active, .sidebar-nav li a:focus {
         text-decoration: none; }
+    .sidebar-nav li.bottom {
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 15px;
+      line-height: 0; }
   .sidebar-nav > .sidebar-brand {
     height: 50px;
     font-size: 18px;
     line-height: 50px;
-    text-indent: 20px;
+    text-align: center;
     background-color: #1565c0;
     border-right: 1px solid #104d92; }
     .sidebar-nav > .sidebar-brand span {
       display: block;
       text-decoration: none;
       color: #fff; }
+      .sidebar-nav > .sidebar-brand span img {
+        height: 32px;
+        margin-right: 10px; }
       .sidebar-nav > .sidebar-brand span:hover {
         color: #fff;
         background: none; }
@@ -542,9 +638,10 @@ body.toggled {
   position: absolute;
   background-color: transparent;
   width: calc(100% - 250px);
-  height: 350px;
+  height: 100%;
   z-index: 9999999;
-  right: 0; }
+  right: 0;
+  top: 0; }
 
 .edit_credential {
   padding-top: 30px;

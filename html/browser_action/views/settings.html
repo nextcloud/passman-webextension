@@ -34,6 +34,13 @@
         <span class="bar"></span>
         <label>{{'vault_password' | translate}}</label>
     </div>
+    <div class="group">
+        <input type="text" ng-model="settings.refreshTime"
+               required ng-debounce="1000">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'refresh_timer' | translate}}</label>
+    </div>
     <div class="ignored_sites">
         <label>{{'ignored_sites' | translate}}</label>
         <ul class="ignored_sites">
@@ -88,6 +95,9 @@
     <button class="md-btn" ng-click="cancel()">
         <span>{{'cancel' | translate}}</span>
     </button>
+    <div class="version">
+        {{extension}}
+    </div>
     <!--
     <h4 align="center">{{'please_enter_nextcloud_credentials' | translate}}:</h4>
     <div class="alerts alert alert-warning" ng-if="errors.length > 0">

@@ -35,6 +35,49 @@
     angular.module('passmanExtension')
         .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', function ($scope, Settings, $window, $rootScope, $timeout) {
 
+            var port = API.runtime.connect(null, {
+                name: "PassmanCommunication"
+            });
+
+            var messageParser = function (message) {
+                var e = message.split(':');
+
+                switch (e[0]) {
+                    case "credential_amount":
+                        $scope.credential_amount = e[1];
+                        $scope.refreshing_credentials = false;
+                }
+
+                $scope.$apply();
+            };
+
+            /**
+             * Connect to the background service
+             */
+            var initApp = function () {
+                port.onMessage.addListener(messageParser);
+                API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
+                    //First check attributes
+                    if (!isPasswordSet) {
+                        return;
+                    }
+                    $scope.refreshing_credentials = true;
+                    setTimeout(function () {
+                        port.postMessage("credential_amount");
+                    }, 500);
+                });
+            };
+
+
+            $scope.refreshing_credentials = false;
+            $scope.refresh = function () {
+                $scope.refreshing_credentials = true;
+                API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
+                    setTimeout(function () {
+                        port.postMessage("credential_amount");
+                    }, 2000);
+                });
+            };
 
             $scope.menuIsOpen = false;
             $scope.bodyOverflow = false;
@@ -65,7 +108,7 @@
                 } else if (settings.hasOwnProperty('isInstalled')) {
                     window.location = '#!/locked';
                 } else {
-                    //  initApp();
+                    initApp();
                 }
             });
 
