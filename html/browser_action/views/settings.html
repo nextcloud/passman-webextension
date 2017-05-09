@@ -20,10 +20,12 @@
 		<span class="bar"></span>
 		<label>{{'password' | translate}}</label>
 	</div>
-	<div ng-if="vaults" style="margin-top: 15px; margin-bottom: 15px;">
-
+	<div class="group">
 		<select id="defaultVault" class="form-control input-sm" ng-model="settings.default_vault" required
 				ng-options="vault.name for vault in vaults track by vault.guid"></select>
+		<span class="highlight"></span>
+		<span class="bar"></span>
+		<label>{{'select_default_vault' | translate}}</label>
 	</div>
 	<div class="group" ng-show="settings.default_vault != ''">
 		<input type="password" ng-model="settings.vault_password"
