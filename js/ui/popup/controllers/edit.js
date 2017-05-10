@@ -127,8 +127,9 @@
                     }
                 }, 10);
             };
-
+            $scope.saving = false;
             $scope.saveCredential = function () {
+                $scope.saving = true;
                 if (!$scope.credential.label) {
                  //   $mdToast.showSimple(API.i18n.getMessage('label_required'));
                     return;
@@ -148,6 +149,7 @@
                     method: "saveCredential",
                     args: $scope.credential
                 }).then(function (credential) {
+                    $scope.saving = false;
                     if (!$scope.credential.credential_id) {
                        // $mdToast.showSimple(API.i18n.getMessage('credential_created'));
                     } else {
