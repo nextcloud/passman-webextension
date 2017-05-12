@@ -16,7 +16,7 @@
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
+        "message": "Ignorer le protocole pour la correspondance du site",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
@@ -164,7 +164,7 @@
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
+        "message": "Ignorer le port pour la correspondance du site",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
@@ -336,7 +336,7 @@
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Disable password picker",
+        "message": "Désactiver le sélecteur de mot de passe",
         "description": "Disable password picker"
     },
     "url": {
@@ -364,7 +364,7 @@
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignore subdomain for site matching",
+        "message": "Ignorer le sous-domaine pour la correspondance du site",
         "description": "Password"
     },
     "btn_search": {
@@ -392,7 +392,7 @@
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Minuterie de rafraîchissement [s]",
         "description": "Password"
     }
 }
