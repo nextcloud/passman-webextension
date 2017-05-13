@@ -34,26 +34,6 @@
      */
     angular.module('passmanExtension')
         .controller('SearchCtrl', ['$scope', function ($scope) {
-            $scope.app = 'passman';
-            var port = API.runtime.connect(null, {
-                name: "PassmanCommunication"
-            });
-
-            var messageParser = function (message) {
-                var e = message.split(':');
-
-                switch (e[0]) {
-                    default:
-                    case "credential_amount":
-                        $scope.credential_amount = e[1];
-                        $scope.refreshing_credentials = false;
-                }
-
-                $scope.$apply();
-            };
-            port.onMessage.addListener(messageParser);
-            port.postMessage("credential_amount");
-
             $scope.found_credentials = false;
             $scope.searchText = '';
             $scope.search = function () {
@@ -66,11 +46,9 @@
                 });
             };
 
-
             $scope.editCredential = function (credential) {
                 window.location = '#!/edit/' + credential.guid;
             };
-
 
         }]);
 }());

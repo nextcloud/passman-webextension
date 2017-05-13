@@ -33,7 +33,7 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SettingsCtrl', ['$scope', '$rootScope', 'Settings', '$location', function ($scope, $rootScope, Settings, $location) {
+        .controller('SettingsCtrl', ['$scope', 'notify', function ($scope, notify) {
             $scope.settings = {
                 nextcloud_host: '',
                 nextcloud_username: '',
@@ -72,9 +72,7 @@
                         if (vaults.hasOwnProperty('error')) {
 
                             var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
-                            $scope.errors.push(errors);
-                            login_required.hide();
-                            save_btn.hide();
+                            notify(errors);
                             $scope.$apply();
                             return;
 
@@ -107,7 +105,7 @@
                     /** global: PAPI */
                     PAPI.decryptString(settings.default_vault.challenge_password, settings.vault_password);
                 } catch (e) {
-                    $scope.errors.push(API.i18n.getMessage('invalid_vault_password'));
+                    notify(API.i18n.getMessage('invalid_vault_password'));
                     return;
                 }
 

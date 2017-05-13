@@ -6,7 +6,6 @@ var background = (function () {
     var _window = {};
 
 
-
     API.runtime.onConnect.addListener(function (port) {
 
         port.onMessage.addListener(function (msg) {
@@ -90,7 +89,7 @@ var background = (function () {
 
             _self.settings = _settings;
 
-            if(!_self.settings.hasOwnProperty('ignored_sites')){
+            if (!_self.settings.hasOwnProperty('ignored_sites')) {
                 _self.settings.ignored_sites = [];
             }
 
@@ -144,7 +143,7 @@ var background = (function () {
         PAPI.username = settings.nextcloud_username;
         PAPI.password = settings.nextcloud_password;
 
-        if(!settings.hasOwnProperty('ignored_sites')){
+        if (!settings.hasOwnProperty('ignored_sites')) {
             settings.ignored_sites = [];
         }
 
@@ -154,7 +153,6 @@ var background = (function () {
 
         //window.settings contains the run-time settings
         _self.settings = settings;
-
 
 
         storage.set('settings', settings).then(function () {
@@ -303,11 +301,17 @@ var background = (function () {
         //console.log('Fecthing  mined data for tab id', sender.tab.id)
         var senderUrl = sender.tab.url;
         var site = processURL(senderUrl, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+        if (!_self.settings) {
+            return null;
+        }
+        if (!_self.settings.hasOwnProperty('ignored_sites')) {
+            return mined_data[sender.tab.id];
+        }
         var matches = _self.settings.ignored_sites.filter(function (item) {
             return typeof item === 'string' && site.indexOf(item) > -1;
         });
 
-        if(matches.length !== 0){
+        if (matches.length !== 0) {
             return null;
         }
         return mined_data[sender.tab.id];
@@ -473,14 +477,17 @@ var background = (function () {
     _self.isAutoFillEnabled = isAutoFillEnabled;
 
     var doorhangerData = null;
+
     function setDoorhangerData(data) {
         doorhangerData = data;
     }
+
     _self.setDoorhangerData = setDoorhangerData;
 
     function getDoorhangerData() {
         return doorhangerData;
     }
+
     _self.getDoorhangerData = getDoorhangerData;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {

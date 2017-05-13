@@ -484,6 +484,9 @@ input:focus ~ .highlight, select.input-md ~ .highlight {
       display: none;
       width: 100%;
       padding-right: 20px; }
+      .tab-wrap .tab-label-content .tab-content.active {
+        display: block;
+        margin-top: 40px; }
       .tab-wrap .tab-label-content .tab-content .custom_field {
         float: left;
         margin-bottom: 15px; }
@@ -501,6 +504,9 @@ input:focus ~ .highlight, select.input-md ~ .highlight {
       width: 80%;
       margin-left: 10%;
       top: -106px; } }
+
+.slide.right {
+  left: 50%; }
 
 input[type="radio"][name="tabs"] {
   position: absolute;
@@ -520,7 +526,8 @@ input[type="radio"][name="tabs"] {
 body {
   width: 450px;
   min-height: 350px;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; }
 
 header {
   width: 100%;

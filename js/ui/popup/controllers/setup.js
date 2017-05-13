@@ -55,6 +55,7 @@
             };
             $scope.vaults = [];
 
+            $rootScope.$broadcast('hideHeader');
             $scope.gogo = function (to) {
                 StepsService.steps().goTo(to);
             };
@@ -146,10 +147,12 @@
                             method: "saveSettings",
                             args: settings
                         }).then(function () {
+
                             setTimeout(function () {
+                                $rootScope.$broadcast('showHeader');
                                 window.location = '#!/';
                                 $scope.saving = false;
-                            }, 1500);
+                            }, 750);
                         });
                     });
 

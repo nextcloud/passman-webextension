@@ -22,7 +22,7 @@ $num-of-tabs: 2;
   /*position: absolute;*/
   label:not(.ng-binding) {
     cursor: pointer;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
     background-color: $headerBgColor;
     box-sizing: border-box;
     display: inline-flex !important;
@@ -49,6 +49,10 @@ $num-of-tabs: 2;
     width: calc(100% / #{$num-of-tabs});
     float: left;
     .tab-content {
+      &.active {
+        display: block;
+        margin-top: 40px;
+      }
       position: absolute;
       top: 100px;
       left: 16px;
@@ -56,12 +60,12 @@ $num-of-tabs: 2;
       display: none;
       width: 100%;
       padding-right: 20px;
-      .custom_field{
-        .field{
-          &:first-child{
+      .custom_field {
+        .field {
+          &:first-child {
             padding-right: 10px;
           }
-          &:not(:first-child){
+          &:not(:first-child) {
             padding-left: 10px;
           }
           float: left;
@@ -84,14 +88,18 @@ $num-of-tabs: 2;
     }
   }
 }
-
+.slide{
+  &.right{
+    left: 50%;
+  }
+}
 input[type="radio"][name="tabs"] {
   position: absolute;
   z-index: -1;
   &:checked {
     + .tab-label-content {
       label:not(.ng-binding) {
-        color: rgba(0,0,0,0.8);
+        color: rgba(0, 0, 0, 0.8);
       }
       .tab-content {
         display: block;

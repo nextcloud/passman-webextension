@@ -97,6 +97,9 @@
             <div class="menu-icon pull-right" ng-click="lockExtension()">
                 <i class="mdi mdi-lock"></i>
             </div>
+            <div class="menu-icon pull-right" ng-click="refresh()">
+                <i class="mdi mdi-refresh" ng-class="{'fa fa-spin': refreshing_credentials}"></i>
+            </div>
         </header>
         <!-- Page Content -->
         <div id="page-content-wrapper" ng-view>

@@ -45,6 +45,8 @@
 
             var storage = new API.Storage();
 
+            $scope.tabActive = 1;
+
             function genPwd(settings) {
                 /* jshint ignore:start */
                 var password = generatePassword(settings['length'],

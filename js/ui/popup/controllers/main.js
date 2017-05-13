@@ -33,7 +33,7 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', 'notify', function ($scope, Settings, $window, $rootScope, $timeout, notify) {
+        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', function ($scope, Settings, $window, $rootScope, $timeout) {
 
             var port = API.runtime.connect(null, {
                 name: "PassmanCommunication"
@@ -76,7 +76,7 @@
                 API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
                     setTimeout(function () {
                         port.postMessage("credential_amount");
-                    }, 2000);
+                    }, 1900);
                 });
             };
 
@@ -85,7 +85,6 @@
             $scope.showHeader = true;
 
             $scope.toggleMenu = function () {
-                console.log('click');
                 $scope.menuIsOpen = !$scope.menuIsOpen;
                 $scope.bodyOverflow = true;
                 $timeout(function () {
