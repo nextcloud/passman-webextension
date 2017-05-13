@@ -6,8 +6,9 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     try {
         URLobj = new window.URL(URL);
     }
+
     catch (err) {
-        if (ignoreProtocol) {
+     if (ignoreProtocol) {
             try {
                 URLobj = new window.URL("http://" + URL);
             }
@@ -19,12 +20,15 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
             return URL;
         }
     }
+    var parser = document.createElement('a');
+    parser.href = URL;
 
-    var protocol = URLobj.scheme;
-    var host = URLobj.host;
-    var path = URLobj.path;
-    var port = URLobj.port;
 
+
+    var protocol = parser.protocol;
+    var host = parser.hostname;
+    var path = parser.pathname;
+    var port = parser.port;
     if (host === null || host === "") {
         return URL;
     }
@@ -55,13 +59,13 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     }
     var returnURL = "";
     if (!ignoreProtocol) {
-        returnURL += protocol + "://";
+        returnURL += protocol + "//";
     }
     if (!ignoreSubdomain) {
         returnURL += host;
     }
     else {
-        returnURL += baseHost;
+        returnURL += host;
     }
     if (ignorePort) {
         returnURL = returnURL.replace(':' + port, "");
