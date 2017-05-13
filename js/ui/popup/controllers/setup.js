@@ -35,7 +35,7 @@
     angular.module('passmanExtension')
         .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', function ($scope, $timeout, $location, $rootScope, StepsService, notify) {
             $scope.settings = {
-                nextcloud_host: 'https://ncdev.local',
+                nextcloud_host: '',
                 nextcloud_username: '',
                 nextcloud_password: '',
                 ignoreProtocol: true,
