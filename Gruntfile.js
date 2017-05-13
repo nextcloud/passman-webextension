@@ -106,7 +106,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-karma');
     // Default task(s).
 
-    grunt.registerTask('hint', ['jshint']);
+    grunt.registerTask('test', ['karma', 'jshint']);
     grunt.registerTask('build', ['execute:fixLocale','jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
     grunt.registerTask('dist', ['']);
 

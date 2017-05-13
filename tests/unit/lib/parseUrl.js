@@ -60,49 +60,49 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http//example.com"
-}, {
-    "url": "http://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": true,
-    "ignorePath": true,
-    "ignorePort": false,
     "expected": "http://example.com"
 }, {
     "url": "http://example.com",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
-    "ignorePath": false,
-    "ignorePort": true,
-    "expected": "http//example.com"
-}, {
-    "url": "http://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": true,
-    "ignorePath": false,
-    "ignorePort": false,
-    "expected": "http://example.com"
-}, {
-    "url": "http://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": false,
-    "ignorePath": true,
-    "ignorePort": true,
-    "expected": "http//example.com"
-}, {
-    "url": "http://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
     "expected": "http://example.com"
 }, {
     "url": "http://example.com",
     "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "http://example.com"
+}, {
+    "url": "http://example.com",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "http://example.com"
+}, {
+    "url": "http://example.com",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "http://example.com"
+}, {
+    "url": "http://example.com",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "http://example.com"
+}, {
+    "url": "http://example.com",
+    "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http//example.com"
+    "expected": "http://example.com"
 }, {
     "url": "http://example.com",
     "ignoreProtocol": false,
@@ -123,7 +123,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": true,
@@ -137,7 +137,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": true,
@@ -151,7 +151,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": true,
@@ -165,7 +165,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": false,
@@ -179,7 +179,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://example.com"
+    "expected": "http://example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": false,
@@ -193,7 +193,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://example.com"
+    "expected": "http://example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": false,
@@ -207,7 +207,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://example.com"
+    "expected": "http://example.com:8080"
 }, {
     "url": "http://example.com:8080",
     "ignoreProtocol": false,
@@ -221,7 +221,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://example.com"
+    "expected": "http://example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": true,
@@ -235,7 +235,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": true,
@@ -249,7 +249,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": true,
@@ -263,7 +263,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": true,
@@ -277,7 +277,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "example.com"
+    "expected": "example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": false,
@@ -291,7 +291,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://example.com"
+    "expected": "https://example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": false,
@@ -305,7 +305,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://example.com"
+    "expected": "https://example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": false,
@@ -319,7 +319,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://example.com"
+    "expected": "https://example.com:8080"
 }, {
     "url": "https://example.com:8080",
     "ignoreProtocol": false,
@@ -333,7 +333,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://example.com"
+    "expected": "https://example.com:8080"
 }, {
     "url": "https://example.com",
     "ignoreProtocol": true,
@@ -396,49 +396,49 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https//example.com"
-}, {
-    "url": "https://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": true,
-    "ignorePath": true,
-    "ignorePort": false,
     "expected": "https://example.com"
 }, {
     "url": "https://example.com",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
-    "ignorePath": false,
-    "ignorePort": true,
-    "expected": "https//example.com"
-}, {
-    "url": "https://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": true,
-    "ignorePath": false,
-    "ignorePort": false,
-    "expected": "https://example.com"
-}, {
-    "url": "https://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": false,
-    "ignorePath": true,
-    "ignorePort": true,
-    "expected": "https//example.com"
-}, {
-    "url": "https://example.com",
-    "ignoreProtocol": false,
-    "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
     "expected": "https://example.com"
 }, {
     "url": "https://example.com",
     "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "https://example.com"
+}, {
+    "url": "https://example.com",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "https://example.com"
+}, {
+    "url": "https://example.com",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "https://example.com"
+}, {
+    "url": "https://example.com",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "https://example.com"
+}, {
+    "url": "https://example.com",
+    "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https//example.com"
+    "expected": "https://example.com"
 }, {
     "url": "https://example.com",
     "ignoreProtocol": false,
@@ -508,7 +508,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http//example.com"
+    "expected": "http://example.com"
 }, {
     "url": "http://subdomain.example.com",
     "ignoreProtocol": false,
@@ -522,7 +522,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http//example.com"
+    "expected": "http://example.com"
 }, {
     "url": "http://subdomain.example.com",
     "ignoreProtocol": false,
@@ -536,7 +536,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http//subdomain.example.com"
+    "expected": "http://subdomain.example.com"
 }, {
     "url": "http://subdomain.example.com",
     "ignoreProtocol": false,
@@ -550,7 +550,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http//subdomain.example.com"
+    "expected": "http://subdomain.example.com"
 }, {
     "url": "http://subdomain.example.com",
     "ignoreProtocol": false,
@@ -662,7 +662,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://subdomain.example.com:8080"
+    "expected": "http://subdomain.example.com"
 }, {
     "url": "http://subdomain.example.com:8080",
     "ignoreProtocol": false,
@@ -704,7 +704,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "subdomain.example.com:8080"
+    "expected": "subdomain.example.com"
 }, {
     "url": "https://subdomain.example.com:8080",
     "ignoreProtocol": true,
@@ -767,7 +767,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://subdomain.example.com"
+    "expected": "https://subdomain.example.com:8080"
 }, {
     "url": "https://subdomain.example.com:8080",
     "ignoreProtocol": false,
@@ -844,7 +844,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https//example.com"
+    "expected": "https://example.com"
 }, {
     "url": "https://subdomain.example.com",
     "ignoreProtocol": false,
@@ -858,7 +858,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https//example.com"
+    "expected": "https://example.com"
 }, {
     "url": "https://subdomain.example.com",
     "ignoreProtocol": false,
@@ -872,7 +872,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https//subdomain.example.com"
+    "expected": "https://subdomain.example.com"
 }, {
     "url": "https://subdomain.example.com",
     "ignoreProtocol": false,
@@ -886,7 +886,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https//subdomain.example.com"
+    "expected": "https://subdomain.example.com"
 }, {
     "url": "https://subdomain.example.com",
     "ignoreProtocol": false,
@@ -956,7 +956,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http//example.com"
+    "expected": "http://example.com"
 }, {
     "url": "http://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -970,7 +970,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http//example.com/page/login"
+    "expected": "http://example.com/page/login"
 }, {
     "url": "http://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -984,7 +984,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http//subdomain.example.com"
+    "expected": "http://subdomain.example.com"
 }, {
     "url": "http://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -998,7 +998,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http//subdomain.example.com/page/login"
+    "expected": "http://subdomain.example.com/page/login"
 }, {
     "url": "http://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -1180,14 +1180,14 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://example.com:8080"
+    "expected": "https://example.com"
 }, {
     "url": "https://subdomain.example.com:8080/page/login",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://example.com"
+    "expected": "https://example.com:8080"
 }, {
     "url": "https://subdomain.example.com:8080/page/login",
     "ignoreProtocol": false,
@@ -1201,14 +1201,14 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://example.com/page/login"
+    "expected": "https://example.com:8080/page/login"
 }, {
     "url": "https://subdomain.example.com:8080/page/login",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://subdomain.example.com:8080"
+    "expected": "https://subdomain.example.com"
 }, {
     "url": "https://subdomain.example.com:8080/page/login",
     "ignoreProtocol": false,
@@ -1264,7 +1264,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "example.com"
+    "expected": "subdomain.example.com"
 }, {
     "url": "https://subdomain.example.com/page/login",
     "ignoreProtocol": true,
@@ -1292,7 +1292,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https//example.com"
+    "expected": "https://example.com"
 }, {
     "url": "https://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -1306,7 +1306,7 @@ var testCombinations = [{
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https//example.com/page/login"
+    "expected": "https://example.com/page/login"
 }, {
     "url": "https://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -1320,7 +1320,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https//subdomain.example.com"
+    "expected": "https://subdomain.example.com"
 }, {
     "url": "https://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -1334,7 +1334,7 @@ var testCombinations = [{
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https//subdomain.example.com/page/login"
+    "expected": "https://subdomain.example.com/page/login"
 }, {
     "url": "https://subdomain.example.com/page/login",
     "ignoreProtocol": false,
@@ -1348,18 +1348,14 @@ describe('Testing url parser', function () {
     for (var i = 0; i < testCombinations.length; i++) {
         var url = testCombinations[i];
         (function (url) {
-            var props = 'url: ' + url.url + ' ignoreProtocol: ' + url.ignoreProtocol + ' ignoreSubdomain:' + url.ignoreSubdomain + ' ignorePath: ' + url.ignorePath + ' ignorePort:' + url.ignorePort
+
+            var props = 'ignoreProtocol: ' + url.ignoreProtocol + ' ignoreSubdomain:' + url.ignoreSubdomain + ' ignorePath: ' + url.ignorePath + ' ignorePort:' + url.ignorePort
 
             it(props, function () {
                 var result = processURL(url.url, url.ignoreProtocol, url.ignoreSubdomain, url.ignorePath, url.ignorePort);
                 var parser = document.createElement('a');
                 parser.href = url.url;
-                try {
-                    expect(result).toEqual(url.expected)
-                } catch (e) {
-                    console.log(url);
-                    throw e
-                }
+                expect(url.url + '->' + result).toEqual(url.url + '->' + url.expected)
             });
         }(url));
 
