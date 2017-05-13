@@ -165,6 +165,9 @@ var background = (function () {
 
 
     function getCredentials() {
+        if (!master_password) {
+            return;
+        }
         //console.log('Loading vault with the following settings: ', settings);
         var tmpList = [];
         PAPI.getVault(_self.settings.default_vault.guid, function (vault) {
