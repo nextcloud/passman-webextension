@@ -20,10 +20,10 @@
     "description": "No credentials found for the current site"
   },
   "invalid_response_from_server": {
-    "message": "Invalid response from server: [$STATUS_CODE] $STATUS_TEXT$",
+    "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
     "description": "No credentials found for the current site",
     "placeholders": {
-      "statux_code": {
+      "status_code": {
         "content": "$1",
         "example": "404"
       },

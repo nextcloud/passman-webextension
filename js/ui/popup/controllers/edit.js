@@ -33,7 +33,7 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('EditCtrl', ['$scope', '$routeParams', '$timeout', function ($scope, $routeParams, $timeout) {
+        .controller('EditCtrl', ['$scope', '$routeParams', '$timeout', 'notify', function ($scope, $routeParams, $timeout, notify) {
             API.runtime.sendMessage(API.runtime.id, {
                 method: "getCredentialByGuid",
                 args: $routeParams.guid
@@ -131,12 +131,12 @@
             $scope.saveCredential = function () {
                 $scope.saving = true;
                 if (!$scope.credential.label) {
-                 //   $mdToast.showSimple(API.i18n.getMessage('label_required'));
+                    notify(API.i18n.getMessage('label_required'));
                     return;
                 }
 
                 if ($scope.credential.password !== $scope.credential.password_repeat) {
-                  //  $mdToast.showSimple(API.i18n.getMessage('no_password_match'));
+                    notify(API.i18n.getMessage('no_password_match'));
                     return;
                 }
 
@@ -151,9 +151,9 @@
                 }).then(function (credential) {
                     $scope.saving = false;
                     if (!$scope.credential.credential_id) {
-                       // $mdToast.showSimple(API.i18n.getMessage('credential_created'));
+                        notify(API.i18n.getMessage('credential_created'));
                     } else {
-                      //  $mdToast.showSimple(API.i18n.getMessage('credential_updated'));
+                        notify(API.i18n.getMessage('credential_updated'));
                     }
                     window.location = '#!/';
                 });

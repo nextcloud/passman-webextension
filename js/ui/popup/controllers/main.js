@@ -33,11 +33,12 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', function ($scope, Settings, $window, $rootScope, $timeout) {
+        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', 'notify', function ($scope, Settings, $window, $rootScope, $timeout, notify) {
 
             var port = API.runtime.connect(null, {
                 name: "PassmanCommunication"
             });
+
 
             var messageParser = function (message) {
                 var e = message.split(':');

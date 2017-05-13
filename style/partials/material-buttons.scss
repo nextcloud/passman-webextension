@@ -18,6 +18,9 @@
   cursor: pointer;
   display: inline-block;
   transition: background-color .3s;
+  &.margin5{
+    margin: 0 5px 5px 5px;
+  }
 }
 
 .md-btn.default, .btn:focus {

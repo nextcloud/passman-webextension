@@ -37,7 +37,8 @@
             'ngRoute',
             'ngSanitize',
             'pascalprecht.translate',
-            'angular-steps'
+            'angular-steps',
+            'cgNotify'
         ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider

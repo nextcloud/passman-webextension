@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciales en la base de datos",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Actualizar la lista de credenciales",
@@ -20,7 +26,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Ajustes",
+        "message": "Settings",
         "description": "Settings"
     },
     "finish": {
@@ -32,7 +38,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donar",
+        "message": "Donate",
         "description": "Donate"
     },
     "credentials": {
@@ -64,7 +70,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Editar",
+        "message": "Edit",
         "description": "Edit"
     },
     "min_digits": {
@@ -80,7 +86,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Atrás",
+        "message": "Back",
         "description": "Back"
     },
     "credential": {
@@ -88,7 +94,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Borrar",
+        "message": "Delete",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -104,7 +110,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Lista",
+        "message": "List",
         "description": "List"
     },
     "ignore_site": {
@@ -120,12 +126,18 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continuar",
+        "message": "Continue",
         "description": "Continue"
     },
     "credentials_found_for_site": {
         "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "donate_button_title": {
         "message": "El desarrollo depende de las donaciones, por favor apóyenos",
@@ -136,7 +148,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_host": {
-        "message": "URL de servidor inválido",
+        "message": "Invalid server url",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
@@ -144,7 +156,7 @@
         "description": "When the master password is invalid"
     },
     "no_password_match": {
-        "message": "Las contraseñas no coinciden",
+        "message": "Passwords don't match",
         "description": "When comparing passwords"
     },
     "close": {
@@ -168,11 +180,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Ajustes del servidor",
+        "message": "Server settings",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Establecer la contraseña maestra",
+        "message": "Set Master password",
         "description": "Set a master password"
     },
     "password": {
@@ -180,7 +192,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copiar",
+        "message": "Copy",
         "description": "Copy"
     },
     "begin": {
@@ -212,7 +224,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Favor de llenar la etiqueta",
+        "message": "Please fill in a label",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -220,7 +232,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Ajustes de la bóveda",
+        "message": "Vault settings",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -253,7 +265,17 @@
     },
     "invalid_response_from_server": {
         "message": "Respuesta del servidor inválida: [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Guardar",
@@ -272,7 +294,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Agregar",
+        "message": "Add",
         "description": "Add"
     },
     "credential_updated": {
@@ -296,7 +318,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Contraseña (repetir)",
+        "message": "Password (repeat)",
         "description": "Password"
     },
     "credential_saved": {
@@ -312,7 +334,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Correo electrónico",
+        "message": "E-mail",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -321,7 +343,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "done": {
         "message": "Terminado",
@@ -376,7 +408,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credencial creada",
+        "message": "Credential created",
         "description": "Credential created"
     },
     "username": {
@@ -386,10 +418,6 @@
     "pw_length": {
         "message": "Longitud de la contraseña",
         "description": "Password length"
-    },
-    "disable_browser_autofill": {
-        "message": "Desactivar el autocompletado del navegador",
-        "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
         "message": "Restablecer temporizador [s]",

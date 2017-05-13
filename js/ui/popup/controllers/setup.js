@@ -33,9 +33,9 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', function ($scope, $timeout, $location, $rootScope, StepsService) {
+        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', '$window', function ($scope, $timeout, $location, $rootScope, StepsService, notify, $window) {
             $scope.settings = {
-                nextcloud_host: '',
+                nextcloud_host: 'https://ncdev.local',
                 nextcloud_username: '',
                 nextcloud_password: '',
                 ignoreProtocol: true,
@@ -58,6 +58,10 @@
             $scope.gogo = function (to) {
                 StepsService.steps().goTo(to);
             };
+            notify.config({
+                'position': 'left',
+                'duration': 2500
+            });
 
             $scope.check = {
                 server: function (callback) {
@@ -68,7 +72,7 @@
                         if (vaults.hasOwnProperty('error')) {
                             var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
                             $scope.errors.push(errors);
-
+                            notify(errors);
                             callback(false);
                         }
                         else {
@@ -84,7 +88,8 @@
                         callback(true);
                     }
                     catch (e) {
-                        $scope.errors.push(API.i18n.getMessage('invalid_vault_password'));
+                        $scope.errors.push();
+                        notify(API.i18n.getMessage('invalid_vault_password'));
                         callback(false);
                     }
                 },
@@ -92,7 +97,7 @@
                     if ($scope.settings.master_password.trim() !== '') {
                         callback(true);
                     } else {
-                        $scope.errors.push(API.i18n.getMessage('empty_master_key'));
+                        notify(API.i18n.getMessage('empty_master_key'));
                         callback(false);
                     }
                 }

@@ -57,14 +57,19 @@
             $scope.found_credentials = false;
             $scope.searchText = '';
             $scope.search = function () {
-                API.runtime.sendMessage(API.runtime.id, {'method': 'searchCredential', args: $scope.searchText }).then(function (result) {
+                API.runtime.sendMessage(API.runtime.id, {
+                    'method': 'searchCredential',
+                    args: $scope.searchText
+                }).then(function (result) {
                     $scope.found_credentials = result;
                     $scope.$apply();
                 });
             };
 
 
-
+            $scope.editCredential = function (credential) {
+                window.location = '#!/edit/' + credential.guid;
+            };
 
 
         }]);

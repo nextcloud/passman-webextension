@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ записей в базе данных",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Обновить список записей",
@@ -20,7 +26,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Настройки",
+        "message": "Settings",
         "description": "Settings"
     },
     "finish": {
@@ -32,7 +38,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Пожертвовать",
+        "message": "Donate",
         "description": "Donate"
     },
     "credentials": {
@@ -64,7 +70,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Править",
+        "message": "Edit",
         "description": "Edit"
     },
     "min_digits": {
@@ -80,7 +86,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Назад",
+        "message": "Back",
         "description": "Back"
     },
     "credential": {
@@ -88,7 +94,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Удалить",
+        "message": "Delete",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -104,7 +110,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Список",
+        "message": "List",
         "description": "List"
     },
     "ignore_site": {
@@ -120,12 +126,18 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Продолжить",
+        "message": "Continue",
         "description": "Continue"
     },
     "credentials_found_for_site": {
         "message": "Найдено  $AMOUNT$ записей для этого сайта",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "donate_button_title": {
         "message": "Разработчики зависят от пожертвований, пожалуйста, поддержите нас",
@@ -136,7 +148,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_host": {
-        "message": "Неверный URL-адрес сервера",
+        "message": "Invalid server url",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
@@ -144,7 +156,7 @@
         "description": "When the master password is invalid"
     },
     "no_password_match": {
-        "message": "Пароли не совпадают",
+        "message": "Passwords don't match",
         "description": "When comparing passwords"
     },
     "close": {
@@ -168,11 +180,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Настройки сервера",
+        "message": "Server settings",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Установить главный пароль",
+        "message": "Set Master password",
         "description": "Set a master password"
     },
     "password": {
@@ -180,7 +192,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Копировать",
+        "message": "Copy",
         "description": "Copy"
     },
     "begin": {
@@ -212,7 +224,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Заполните название!",
+        "message": "Please fill in a label",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -220,7 +232,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Настройки хранилища",
+        "message": "Vault settings",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -253,7 +265,17 @@
     },
     "invalid_response_from_server": {
         "message": "Неверный ответ сервера:  [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Сохранить",
@@ -272,7 +294,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Добавить",
+        "message": "Add",
         "description": "Add"
     },
     "credential_updated": {
@@ -296,7 +318,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Повторите пароль",
+        "message": "Password (repeat)",
         "description": "Password"
     },
     "credential_saved": {
@@ -312,7 +334,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Email",
+        "message": "E-mail",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -321,7 +343,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ найдено для этой страницы",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "done": {
         "message": "Готово",
@@ -360,7 +392,7 @@
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Пустой главный ключ!",
+        "message": "Пуской главный ключ!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
@@ -376,7 +408,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Запись создана",
+        "message": "Credential created",
         "description": "Credential created"
     },
     "username": {
@@ -386,10 +418,6 @@
     "pw_length": {
         "message": "Длина пароля",
         "description": "Password length"
-    },
-    "disable_browser_autofill": {
-        "message": "Отключить автоматическое заполненеие форм в браузере",
-        "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
         "message": "Таймер обновления [s]",
