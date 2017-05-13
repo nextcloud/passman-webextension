@@ -39,7 +39,7 @@
                     scope:{
                         text: '='
                     },
-                    template: '<i class="pointer fa fa-copy" ng-click="copyText()"></i>',
+                    template: '<i class="pointer mdi mdi-content-copy" ng-click="copyText()"></i>',
                     replace: true,
                     link: function (scope, el) {
                         scope.copyText = function () {

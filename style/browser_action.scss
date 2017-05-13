@@ -1,0 +1,254 @@
+/* Header Footer Styles */
+@import "partials/cicle";
+@import "partials/list";
+@import "partials/material-input";
+@import "partials/material-switch";
+@import "partials/material-checkbox";
+@import "partials/material-buttons";
+@import "partials/material-tabs";
+
+$sidebarWidth: 250px;
+body {
+  width: 450px;
+  min-height: 350px;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background: #1565c0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  -webkit-transition: all 0.250s ease;
+  -moz-transition: all 0.250s ease;
+  -o-transition: all 0.250s ease;
+  transition: all 0.250s ease;
+
+}
+
+body.toggled {
+  overflow-x: hidden;
+}
+
+/* Toggle Styles */
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.250s ease;
+  -moz-transition: all 0.250s ease;
+  -o-transition: all 0.250s ease;
+  transition: all 0.250s ease;
+
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: $sidebarWidth;
+  width: 0;
+  height: 100%;
+  margin-left: -$sidebarWidth;
+  overflow: hidden;
+  background: #fff;
+  -webkit-transition: all 0.250s ease;
+  -moz-transition: all 0.250s ease;
+  -o-transition: all 0.250s ease;
+  transition: all 0.250s ease;
+  border-right: 1px solid #c9c9c9;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: $sidebarWidth;
+  overflow-x: hidden;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  /*position: absolute;*/
+  padding-top: 50px;
+  overflow-y: auto;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  /*position: absolute;*/
+  margin-right: -$sidebarWidth;
+  /*  width: calc(100% - 250px);*/
+}
+
+.ng-hide {
+  display: none;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  li {
+    line-height: 55px;
+    a {
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: #000;
+      .mdi {
+        padding-left: 15px;
+        padding-right: 15px;
+        color: $linkColor;
+        cursor: pointer;
+      }
+
+      &:hover {
+        text-decoration: none;
+        background-color: #e4e4e4;
+
+      }
+      &:active, &:focus {
+        text-decoration: none;
+      }
+    }
+    &.bottom {
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 15px;
+      line-height: 0;
+    }
+  }
+  > .sidebar-brand {
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #1565c0;
+    border-right: 1px solid darken(#1565c0, 10%);
+    span {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      img {
+        height: 32px;
+        margin-right: 10px;
+      }
+      &:hover {
+        color: #fff;
+        background: none;
+      }
+      .mdi {
+        padding-left: 15px;
+        padding-right: 15px;
+        float: right;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.menuToggler {
+  position: absolute;
+  background-color: transparent;
+  width: calc(100% - 250px);
+  height: 100%;
+  z-index: 9999999;
+  right: 0;
+  top: 0;
+}
+
+.edit_credential {
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.menu-icon {
+  padding: 8px 15px;
+  font-size: 24px;
+  float: left;
+  color: #fff;
+  cursor: pointer;
+}
+
+label, .switch-label, label:not(.input-checkbox):not(.label) {
+  font-weight: normal;
+}
+
+.ignored_sites {
+  label {
+    font-size: 14px;
+    color: #1565c0;
+  }
+  padding: 0;
+  li {
+    list-style-type: none;
+    height: 25px;
+    padding: 5px 0;
+    .mdi {
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .mdi:hover {
+      color: #a94442;
+    }
+  }
+  .group {
+    margin-bottom: 45px;
+  }
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.master_pw_warning {
+  padding-left: 6px;
+  font-size: 10px;
+  color: #a94442;
+  margin-bottom: 15px;
+}
+
+.master_pw_warning.big {
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.unlock {
+  width: 350px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin: -20px auto 10px;
+  padding: 20px;
+  .group {
+    margin-bottom: 25px;
+  }
+  img {
+    height: 50px;
+    margin: 15px auto;
+    display: block;
+  }
+  .md-checkbox {
+    margin: 15px 0;
+  }
+  .md-btn {
+    margin: 5px auto;
+    display: block;
+  }
+}
+
+.setup {
+  padding: 15px;
+  h3 {
+    margin-bottom: 35px;
+    padding-left: 5px;
+  }
+}

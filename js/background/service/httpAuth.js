@@ -50,7 +50,7 @@
             pendingRequests.push(requestDetails.requestId);
             return {
                 authCredentials: {
-                    username: login.username,
+                    username: (login.username) ? login.username : login.email ,
                     password: login.password
                 }
             };

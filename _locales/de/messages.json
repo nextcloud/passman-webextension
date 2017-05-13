@@ -267,7 +267,7 @@
         "message": "Ungültige Antwort vom Server: [$STATUS_CODE] $STATUS_TEXT$",
         "description": "No credentials found for the current site",
         "placeholders": {
-            "statux_code": {
+            "status_code": {
                 "content": "$1",
                 "example": "404"
             },

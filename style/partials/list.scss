@@ -1,0 +1,43 @@
+
+$linkColor: #737373;
+.list {
+  width: 100%;
+
+  .list-item {
+    &:hover{
+      background-color: #e4e4e4;
+    }
+    position: relative;
+    padding: 12px 15px;
+    .title {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .info {
+      font-size: 13px;
+    }
+
+    .extra {
+      font-size: 13px;
+      color: $linkColor;
+    }
+
+    .edit {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-size: 25px;
+      color: $linkColor;
+    }
+    .mdi{
+      cursor: pointer;
+    }
+  }
+  .list-item.no-hover:hover{
+    background-color: transparent;
+  }
+}

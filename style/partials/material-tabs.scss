@@ -1,0 +1,120 @@
+$headerBgColor: #fff;
+$sliderColor: #1565c0;
+$grey: #9e9e9e;
+
+$num-of-tabs: 2;
+
+@mixin tabs {
+  @for $i from 1 through $num-of-tabs {
+    &:nth-of-type(#{$i}) {
+      &:checked {
+        ~ .slide {
+          left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+        }
+      }
+    }
+  }
+}
+
+.tab-wrap {
+  width: 100%;
+  height: 600px;
+  /*position: absolute;*/
+  label:not(.ng-binding) {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: $headerBgColor;
+    box-sizing: border-box;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 56px;
+    transition: color 0.2s ease;
+    width: 100%;
+    border-bottom: 1px solid #c9c9c9;
+  }
+
+  .slide {
+    background: $sliderColor;
+    width: calc(100% / #{$num-of-tabs});
+    height: 4px;
+    position: relative;
+    left: 0;
+    top: 52px;
+    transition: left 0.3s ease-out;
+  }
+
+  .tab-label-content {
+    width: calc(100% / #{$num-of-tabs});
+    float: left;
+    .tab-content {
+      &.active {
+        display: block;
+        margin-top: 40px;
+      }
+      position: absolute;
+      top: 100px;
+      left: 16px;
+      line-height: 130%;
+      display: none;
+      width: 100%;
+      padding-right: 20px;
+      .custom_field {
+        .field {
+          &:first-child {
+            padding-right: 10px;
+          }
+          &:not(:first-child) {
+            padding-left: 10px;
+          }
+          float: left;
+          width: 50%;
+        }
+        float: left;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    h1 {
+      padding: 40px 0 90px 10%;
+    }
+    .tab-wrap {
+      width: 80%;
+      margin-left: 10%;
+      top: -106px;
+    }
+  }
+}
+.slide{
+  &.right{
+    left: 50%;
+  }
+}
+input[type="radio"][name="tabs"] {
+  position: absolute;
+  z-index: -1;
+  &:checked {
+    + .tab-label-content {
+      label:not(.ng-binding) {
+        color: rgba(0, 0, 0, 0.8);
+      }
+      .tab-content {
+        display: block;
+        margin-top: 40px;
+      }
+    }
+  }
+  @include tabs;
+  &:first-of-type {
+    &:checked {
+      ~ .slide {
+        left: 0;
+      }
+    }
+  }
+}
+
+

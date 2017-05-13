@@ -37,13 +37,14 @@
             'ngRoute',
             'ngSanitize',
             'pascalprecht.translate',
-            'angular-steps'
+            'angular-steps',
+            'cgNotify'
         ])
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl: 'views/main.html',
-                    controller: 'MainCtrl'
+                    templateUrl: 'views/list.html',
+                    controller: 'ListCtrl'
                 })
                 .when('/search', {
                     templateUrl: 'views/search.html',

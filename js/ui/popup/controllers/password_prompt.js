@@ -42,6 +42,8 @@
             });
             API.runtime.sendMessage(API.runtime.id, {method: "getSettings"});
 
+            $rootScope.$broadcast('hideHeader');
+            $scope.master_password_remember = false;
             $scope.master_password = '';
             $scope.apply_settings = function() {
                 $scope.saving = true;
@@ -52,8 +54,9 @@
                             setTimeout(function () {
                                 window.location = '#!/';
                                 $scope.saving = false;
-                                $scope.saving = false;
-                            },1500);
+                                $rootScope.$broadcast('showHeader');
+
+                            },750);
                         });
                     } else {
                         $scope.saving = false;

@@ -33,23 +33,44 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SearchCtrl', ['$scope', function ($scope) {
-            $scope.found_credentials = false;
-            $scope.searchText = '';
-            $scope.search = function () {
-                API.runtime.sendMessage(API.runtime.id, {
-                    'method': 'searchCredential',
-                    args: $scope.searchText
-                }).then(function (result) {
-                    $scope.found_credentials = result;
-                    $scope.$apply();
+        .controller('ListCtrl', ['$scope', function ($scope) {
+            $scope.app = 'passman';
+
+
+            /**
+             * Connect to the background service
+             */
+            var initApp = function () {
+                API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
+                    //First check attributes
+                    if (!isPasswordSet) {
+                        return;
+                    }
+
+                    getActiveTab();
                 });
             };
+
+
+
+            var getActiveTab = function () {
+                API.tabs.query({currentWindow: true, active: true}).then(function (tab) {
+                    API.runtime.sendMessage(API.runtime.id, {
+                        method: "getCredentialsByUrl",
+                        args: [tab[0].url]
+                    }).then(function (_logins) {
+                        //var url = backgroundPage.processURL(tab.url, $rootScope.app_settings.ignoreProtocol, $rootScope.app_settings.ignoreSubdomain, $rootScope.app_settings.ignorePath);
+                        $scope.found_credentials = _logins;
+                        $scope.$apply();
+                    });
+                });
+            };
+
+            initApp();
 
             $scope.editCredential = function (credential) {
                 window.location = '#!/edit/' + credential.guid;
             };
-
         }]);
 }());
 

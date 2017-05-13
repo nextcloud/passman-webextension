@@ -1,0 +1,62 @@
+.md-btn {
+  position: relative;
+  margin: 0 15px 15px 15px;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  color: #212121;
+  background-color: #fafafa;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color .3s; }
+
+.md-btn.default, .btn:focus {
+  background-color: #106cc8;
+  color: rgba(255, 255, 255, 0.87); }
+
+.md-btn.default:hover, .btn:focus {
+  background-color: #0159a2; }
+
+.md-btn > * {
+  position: relative; }
+
+.md-btn span {
+  display: inline-block;
+  padding: 12px 24px; }
+
+.md-btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, 0.3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.md-btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width .2s ease-out, padding-top .2s ease-out; }
+
+.md-btn.orange {
+  background-color: #e67e22; }
+
+.md-btn.orange:hover, .btn.orange:focus {
+  background-color: #d35400; }
+
+.md-btn.red {
+  background-color: #ff5722;
+  color: rgba(255, 255, 255, 0.87); }
+
+.md-btn.red:hover, .btn.red:focus {
+  background-color: #f4511e; }

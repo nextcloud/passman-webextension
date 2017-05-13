@@ -33,11 +33,12 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', function ($scope, Settings, $window, $rootScope) {
-            $scope.app = 'passman';
+        .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', function ($scope, Settings, $window, $rootScope, $timeout) {
+
             var port = API.runtime.connect(null, {
                 name: "PassmanCommunication"
             });
+
 
             var messageParser = function (message) {
                 var e = message.split(':');
@@ -57,18 +58,10 @@
             var initApp = function () {
                 port.onMessage.addListener(messageParser);
                 API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
-                    function redirectToPrompt() {
-                        window.location = '#!/locked';
-                        return;
-                    }
-
                     //First check attributes
                     if (!isPasswordSet) {
-                        redirectToPrompt();
                         return;
                     }
-
-                    getActiveTab();
                     $scope.refreshing_credentials = true;
                     setTimeout(function () {
                         port.postMessage("credential_amount");
@@ -76,34 +69,36 @@
                 });
             };
 
+
             $scope.refreshing_credentials = false;
             $scope.refresh = function () {
                 $scope.refreshing_credentials = true;
                 API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
                     setTimeout(function () {
                         port.postMessage("credential_amount");
-                    }, 2000);
+                    }, 1900);
                 });
             };
 
-            var getActiveTab = function (cb) {
-                API.tabs.query({currentWindow: true, active: true}).then(function (tab) {
-                    API.runtime.sendMessage(API.runtime.id, {
-                        method: "getCredentialsByUrl",
-                        args: [tab[0].url]
-                    }).then(function (_logins) {
-                        //var url = backgroundPage.processURL(tab.url, $rootScope.app_settings.ignoreProtocol, $rootScope.app_settings.ignoreSubdomain, $rootScope.app_settings.ignorePath);
-                        $scope.found_credentials = _logins;
-                        $scope.$apply();
-                    });
-                });
+            $scope.menuIsOpen = false;
+            $scope.bodyOverflow = false;
+            $scope.showHeader = true;
+
+            $scope.toggleMenu = function () {
+                $scope.menuIsOpen = !$scope.menuIsOpen;
+                $scope.bodyOverflow = true;
+                $timeout(function () {
+                    $scope.bodyOverflow = false;
+                }, 1500);
             };
 
-            $scope.lockExtension = function () {
-                API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: null}}).then(function () {
-                    window.location = '#!/locked';
-                });
-            };
+            $rootScope.$on('hideHeader', function () {
+                $scope.showHeader = false;
+            });
+
+            $rootScope.$on('showHeader', function () {
+                $scope.showHeader = true;
+            });
 
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
 
@@ -118,17 +113,19 @@
             });
 
 
-
-            $scope.goto_settings = function () {
-                window.location = '#!/settings';
+            $scope.goto = function (page) {
+                window.location = '#!/' + page;
+                $scope.menuIsOpen = false;
             };
 
-            $scope.goto_search = function () {
-                window.location = '#!/search';
-            };
 
-            $scope.editCredential = function (credential) {
-                window.location = '#!/edit/' + credential.guid;
+            $scope.lockExtension = function () {
+                API.runtime.sendMessage(API.runtime.id, {
+                    method: "setMasterPassword",
+                    args: {password: null}
+                }).then(function () {
+                    window.location = '#!/locked';
+                });
             };
         }]);
 }());

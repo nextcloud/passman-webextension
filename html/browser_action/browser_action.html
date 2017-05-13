@@ -26,34 +26,94 @@
         <script src="/js/vendor/angular-translate/angular-translate.js"></script>
         <script src="/js/vendor/angular-steps/angular-steps.js"></script>
         <script src="/js/vendor/sha/sha.js"></script>
+        <script src="/js/vendor/angular-notify/angular-notify.min.js"></script>
 
         <script src="/js/lib/api.js"></script>
-        
+
         <script src="/js/ui/popup/app.js"></script>
-        
+
         <script src="/js/ui/popup/factories/storage.js"></script>
         <script src="/js/ui/popup/factories/debounce.js"></script>
-        
+
         <script src="/js/ui/popup/controllers/main.js"></script>
         <script src="/js/ui/popup/controllers/settings.js"></script>
+        <script src="/js/ui/popup/controllers/setup.js"></script>
         <script src="/js/ui/popup/controllers/password_prompt.js"></script>
+        <script src="/js/ui/popup/controllers/list.js"></script>
         <script src="/js/ui/popup/controllers/search.js"></script>
-        <script src="/js/ui/popup/controllers/search.js"></script>
+        <script src="/js/ui/popup/controllers/setup.js"></script>
         <script src="/js/ui/popup/controllers/edit.js"></script>
         <script src="/js/ui/popup/directives/otp.js"></script>
         <script src="/js/ui/popup/directives/ngenter.js"></script>
         <script src="/js/ui/popup/directives/copyText.js"></script>
         <script src="/js/ui/popup/filters/translate.js"></script>
 
-        
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
         <link href="/css/vendor/bootstrap.css" media="all" rel="stylesheet" />
         <link href="/css/vendor/bootstrap-theme.css" media="all" rel="stylesheet" />
         <link href="/css/vendor/font-awesome.css" media="all" rel="stylesheet" />
-        <link href="/css/main.css" media="all" rel="stylesheet" />
+        <link href="/css/vendor/angular-notify.min.css" media="all" rel="stylesheet" />
+        <link href="/css/vendor/materialdesignicons.min.css" media="all" rel="stylesheet" />
+        <link href="/css/browser_action.css" media="all" rel="stylesheet" />
+
+
+
     </head>
-    <body>
-        <div id="mainPopup" ng-view>
+    <body ng-controller="MainCtrl" ng-class="{'toggle': bodyOverflow}">
+    <div id="wrapper" ng-class="{'toggled': menuIsOpen}">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <span>
+                        <img src="/icons/icon_white.svg" /> Passman
+                        <i class="mdi mdi-close" ng-click="toggleMenu()"></i>
+                    </span>
+                </li>
+                <li>
+                    <a ng-click="goto('list')"><i class="mdi mdi-format-list-bulleted"></i> List</a>
+                </li>
+                <li>
+                    <a ng-click="goto('search')" title="{{'search' | translate}}"><i class="mdi mdi-magnify"></i> Search</a>
+                </li>
+                <li>
+                    <a ng-click="goto('settings')" title="{{'settings' | translate}}"><i class="mdi mdi-settings"></i> {{'settings' | translate}}</a>
+                </li>
+                <li>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2" target="_blank"
+                       title="{{'donate_button_title' | translate}}"
+                       rel="nofollow noopener noreferrer"><i class="mdi mdi-credit-card"></i> Donate</a>
+                </li>
+                <li class="bottom">{{'credentials_in_db' | translate:credential_amount}}</li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <header class="header" ng-class="{'toggled': menuIsOpen}" ng-show="showHeader">
+            <div class="menu-icon" ng-click="toggleMenu()">
+                <i class="mdi mdi-menu"></i>
+            </div>
+            <div class="menu-icon pull-right" ng-click="lockExtension()">
+                <i class="mdi mdi-lock"></i>
+            </div>
+            <div class="menu-icon pull-right" ng-click="refresh()">
+                <i class="mdi mdi-refresh" ng-class="{'fa fa-spin': refreshing_credentials}"></i>
+            </div>
+        </header>
+        <!-- Page Content -->
+        <div id="page-content-wrapper" ng-view>
+        </div>
+        <div class="menuToggler" ng-click="toggleMenu()" ng-show="menuIsOpen">
 
         </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+       <!--
+
+
+        -->
+
     </body>
 </html>

@@ -1,19 +1,8 @@
-<div class="edit_credential">
-    <div class="searchContainer">
-        <div class="group">
-            <input type="text" ng-enter="search()" ng-model="searchText">
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>{{'search_for' | translate }}</label>
-        </div>
-
-    </div>
-</div>
-<div class="list" style="padding-right: 15px;">
+<div class="list">
     <div class="list-item no-hover"  ng-show="found_credentials.length === 0">
-        {{'no_credentials_found' | translate}}
+        {{ 'no_credentials_found_for_site' | translate}}
     </div>
-
+   <!-- <div ng-show="found_credentials.length > 0">{{'credentials_found_for_site' | translate:found_credentials.length.toString() }}</div> -->
     <div class="list-item" ng-repeat="credential in found_credentials">
         <div class="title">
             {{credential.label}}
