@@ -33,7 +33,7 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('ListCtrl', ['$scope', 'Settings', '$location', '$rootScope', function ($scope, Settings, $window, $rootScope) {
+        .controller('ListCtrl', ['$scope', function ($scope) {
             $scope.app = 'passman';
 
 
