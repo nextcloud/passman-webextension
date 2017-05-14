@@ -44,6 +44,9 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     '**',
+                    '!tests/*/**/*',
+                    '!tests/*',
+                    '!tests',
                     '!style/*/**/*',
                     '!style/*',
                     '!style',
