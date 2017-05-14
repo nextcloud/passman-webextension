@@ -71,6 +71,12 @@ module.exports = function (grunt) {
                 dest: 'dist/'
             }
         },
+        karma: {
+            unit: {
+                configFile: './karma.conf.js',
+                background: false
+            }
+        },
         compress: {
             dist: {
                 options: {
@@ -97,9 +103,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-execute');
+    grunt.loadNpmTasks('grunt-karma');
     // Default task(s).
 
-    grunt.registerTask('hint', ['jshint']);
+    grunt.registerTask('test', ['karma', 'jshint']);
     grunt.registerTask('build', ['execute:fixLocale','jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
     grunt.registerTask('dist', ['']);
 
