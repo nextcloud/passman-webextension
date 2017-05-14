@@ -1349,13 +1349,13 @@ describe('Testing url parser', function () {
         var url = testCombinations[i];
         (function (url) {
 
-            var props = 'ignoreProtocol: ' + url.ignoreProtocol + ' ignoreSubdomain:' + url.ignoreSubdomain + ' ignorePath: ' + url.ignorePath + ' ignorePort:' + url.ignorePort
+            var props = 'ignoreProtocol: ' + url.ignoreProtocol + ' ignoreSubdomain:' + url.ignoreSubdomain + ' ignorePath: ' + url.ignorePath + ' ignorePort:' + url.ignorePort;
 
             it(props, function () {
                 var result = processURL(url.url, url.ignoreProtocol, url.ignoreSubdomain, url.ignorePath, url.ignorePort);
                 var parser = document.createElement('a');
                 parser.href = url.url;
-                expect(url.url + '->' + result).toEqual(url.url + '->' + url.expected)
+                expect(url.url + '->' + result).toEqual(url.url + '->' + url.expected);
             });
         }(url));
 

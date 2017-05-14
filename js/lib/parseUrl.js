@@ -2,13 +2,14 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     if (URL === null || URL === "") {
         return URL;
     }
+
     var URLobj = null;
     try {
         URLobj = new window.URL(URL);
     }
 
     catch (err) {
-     if (ignoreProtocol) {
+        if (ignoreProtocol) {
             try {
                 URLobj = new window.URL("http://" + URL);
             }
@@ -20,9 +21,9 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
             return URL;
         }
     }
+
     var parser = document.createElement('a');
     parser.href = URL;
-
 
 
     var protocol = parser.protocol;
@@ -50,21 +51,30 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     }
     else {
         var result = host.match(/[^./]+\.[^./]+$/); // catch the two last parts, it's de hostname and the tld
-        baseHost=result[0];
+        baseHost = result[0];
     }
     var returnURL = "";
     if (!ignoreProtocol) {
         returnURL += protocol + "//";
     }
+
     if (!ignoreSubdomain) {
         returnURL += host;
     }
     else {
         returnURL += baseHost;//return the hostname and the tld of the website if ignoreSubdomain is check
     }
+
     if (ignorePort) {
-        returnURL = returnURL.replace(':' + port, "");
+        if (port) {
+            returnURL = returnURL.replace(':' + port, '');
+        }
+    } else {
+        if (port) {
+            returnURL += ':' + port;
+        }
     }
+
     if (!ignorePath && path !== null && path) {
         returnURL += path;
     }
