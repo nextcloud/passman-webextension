@@ -1,102 +1,102 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ påloggingsdetaljer i databasen",
+        "message": "$AMOUNT$ credentials in the database",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Gjenoppfrisk liste over påloggingsdetaljer",
+        "message": "刷新凭据列表",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - Passordbehandleren for NextCloud / ownCloud",
+        "message": "Passman - NextCloud / ownCloud的密码管理器",
         "description": "Extension description"
     },
     "label": {
-        "message": "Etikett",
+        "message": "标签",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorer protokoll for sjekk av sider mot hverandre",
+        "message": "Ignore protocol for site matching",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "设置",
         "description": "Settings"
     },
     "finish": {
-        "message": "Fullfør",
+        "message": "完成",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Fant endret nettadresse for",
+        "message": "Detected changed url for",
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "捐助",
         "description": "Donate"
     },
     "credentials": {
-        "message": "påloggingsdetaljer",
+        "message": "凭据",
         "description": "credentials"
     },
     "search": {
-        "message": "Søk",
+        "message": "搜索",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Veksle avanserte alternativer",
+        "message": "切换到高级选项",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman-tillegget er låst. Lås det opp for å bruke det",
+        "message": "Passman拓展已锁定，解锁以使用",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Oppdater",
+        "message": "更新",
         "description": "Update"
     },
     "unlock": {
-        "message": "Lås opp",
+        "message": "解锁",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "Ugyldig hvelv-nøkkel!",
+        "message": "无效的保险箱密钥",
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "编辑",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Minste antall siffer",
+        "message": "最小数字位数",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Dette passordet brukes til å kryptere alle dine innstillinger i tillegget. Du kan velge å lagre dette passordet lokalt, men det vil bli lagret i KLARTEKST.",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
         "description": "Enter master password"
     },
     "add_account": {
-        "message": "Legg til en konto",
+        "message": "添加账户",
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "返回",
         "description": "Back"
     },
     "credential": {
-        "message": "påloggingsdetalj",
+        "message": "凭据",
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "删除",
         "description": "Delete"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud- / ownCloud -tjenerinnstillinger",
+        "message": "Nextcloud/ownCloud服务器设置",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Bruk passord",
+        "message": "使用密码",
         "description": "Use password"
     },
     "one_time_password": {
@@ -104,27 +104,27 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "列表",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorer side",
+        "message": "忽略站点",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Velg forvalgt hvelv",
+        "message": "选择默认保险箱",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Side ignorert",
+        "message": "已忽略的站点",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "继续",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Vi har funnet $AMOUNT$ påloggingsdetaljer for denne siden",
+        "message": "We've found $AMOUNT$ credentials for this site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -132,11 +132,11 @@
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "Utviklingen avhenger av kronerulling, støtt opp",
+        "message": "项目发展取决于捐款，请支持我们",
         "description": "Title on the paypal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Skriv inn dine Nextcloud / ownCloud -påloggingsdetaljer",
+        "message": "请输入你的Nextcloud / ownCloud凭证",
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
@@ -144,11 +144,11 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server url",
+        "message": "无效的服务器链接 url",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
-        "message": "Ugyldig hoved-passord!",
+        "message": "无效的主密码",
         "description": "When the master password is invalid"
     },
     "general": {
@@ -156,51 +156,51 @@
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "密码不匹配",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Lukk",
+        "message": "关闭",
         "description": "Close"
     },
     "prev": {
-        "message": "Forrige",
+        "message": "Prev",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Etter opprettelse kan du endre påloggingsdetaljene i Passman",
+        "message": "After creating you can edit the credential in passman",
         "description": "After creating you can edit the credential in passman"
     },
     "default_vault": {
-        "message": "Forvalgt hvelv",
+        "message": "默认保险箱",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorer port for sjekk av sider mot hverandre",
+        "message": "Ignore port for site matching",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "服务器设置",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "设置主密码",
         "description": "Set a master password"
     },
     "password": {
-        "message": "Passord",
+        "message": "密码",
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "复制",
         "description": "Copy"
     },
     "begin": {
-        "message": "La oss komme igang!",
+        "message": "让我们开始吧！",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Veiviseren tar deg gjennom stegene for å sette opp utvidelsen og holde alle passordene dine synkronisert!",
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
@@ -208,11 +208,11 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignorerte sider",
+        "message": "已忽略的站点",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Veksle synlighet",
+        "message": "切换可见性",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
@@ -220,55 +220,55 @@
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Husk hoved-passord",
+        "message": "忘记主密码",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Lagre påloggingsdetaljer for denne siden",
+        "message": "为此站点保存凭证",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Låst",
+        "message": "Passman - Locked",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "请填写一个标签",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Skriv inn hoved-passord",
+        "message": "输入主密码",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "保险箱设置",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Hvelv-passord",
+        "message": "保险箱密码",
         "description": "Vault password"
     },
     "save_site": {
-        "message": "Lagre side",
+        "message": "保存站点",
         "description": "Save site"
     },
     "next": {
-        "message": "Neste",
+        "message": "下一个",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Unngå tvetydige tegn",
+        "message": "避免模糊字符",
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
+        "message": "Select the vault that you want to keep in sync with the browser.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "Fant ny innlogging",
+        "message": "检测到新登录",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Oppdaget at brukeren har endret passord",
+        "message": "检测到用户更改了密码",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
@@ -276,31 +276,31 @@
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Lagre",
+        "message": "保存",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Generer passord",
+        "message": "生成密码",
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Tjener-URL",
+        "message": "服务器地址",
         "description": "Server url"
     },
     "cancel": {
-        "message": "Avbryt",
+        "message": "取消",
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "添加",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Legitimasjon oppdatert",
+        "message": "凭据已更新",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "Fant ingen påloggingsdetaljer",
+        "message": "未找到凭据",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -308,27 +308,27 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Lås utvidelse",
+        "message": "Lock extension",
         "description": "Title on the paypal button"
     },
     "search_for": {
-        "message": "Søk etter",
+        "message": "Search for",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "密码(重复)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Påloggingsdetalj lagret",
+        "message": "凭据已保存",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Krev hver type tegn",
+        "message": "Require every character type",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Skru på feilrettingsmodus",
+        "message": "启用调试模式",
         "description": "Enable debug mode"
     },
     "email": {
@@ -336,27 +336,27 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Velkommen til Passman-tillegget",
+        "message": "欢迎来到Passman拓展",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ funnet for denne siden",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "done": {
-        "message": "Ferdig",
+        "message": "已完成",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Ingen påloggingsdetaljer for denne siden!",
+        "message": "未找到此站点的凭据",
         "description": "No credentials found for the current site"
     },
     "saving": {
-        "message": "Lagrer",
+        "message": "保存中",
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Skru av passordvelger",
+        "message": "Disable password picker",
         "description": "Disable password picker"
     },
     "url": {
@@ -364,55 +364,55 @@
         "description": "URL"
     },
     "no_sites_ignored": {
-        "message": "Ingen sider ignorert",
+        "message": "无已忽略的站点",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Hvis du har glede av, ikke glem å donere",
+        "message": "如果你喜欢，别忘了捐助我们",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Kontoer",
+        "message": "账户",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Passordgenerator",
+        "message": "密码生成器",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Tom hoved-nøkkel!",
+        "message": "主密码为空！",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignorer subdomene for sjekk av sider mot hverandre",
+        "message": "Ignore subdomain for site matching",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Søk etter påloggingsdetaljer",
+        "message": "搜索凭据",
         "description": "Search credentials"
     },
     "disable_autofill": {
-        "message": "Skru av automatisk utfylling av skjema",
+        "message": "禁用自动填写表单",
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "创建凭证",
         "description": "Credential created"
     },
     "username": {
-        "message": "Brukernavn",
+        "message": "用户名",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Passordlengde",
+        "message": "密码长度",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "禁用自动填写表单",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Gjenoppfriskningstidtaker [s]",
+        "message": "刷新计时器(S)",
         "description": "Password"
     }
 }

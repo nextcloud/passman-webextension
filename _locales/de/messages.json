@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ Zugangsdaten in der Datenbank",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Liste der Zugangsdaten aktualisieren",
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "Einstellungen",
         "description": "Settings"
     },
     "finish": {
@@ -38,7 +32,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Spenden",
         "description": "Donate"
     },
     "credentials": {
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Bearbeiten",
         "description": "Edit"
     },
     "min_digits": {
@@ -86,7 +80,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "Zurück",
         "description": "Back"
     },
     "credential": {
@@ -94,7 +88,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "Löschen",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -110,7 +104,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "Liste",
         "description": "List"
     },
     "ignore_site": {
@@ -126,18 +120,16 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "Fortsetzen",
         "description": "Continue"
     },
     "credentials_found_for_site": {
         "message": "Wir haben $AMOUNT$ Zugangsdaten für diese Seite gefunde",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
+    },
+    "value": {
+        "message": "Value",
+        "description": "Custom fields"
     },
     "donate_button_title": {
         "message": "Entwicklugn abhängig von Spenden, bitte unterstützen Sie uns",
@@ -147,16 +139,24 @@
         "message": "Bitte geben Sie Ihre Zugangsdaten zu Nextcloud / ownCloud ein",
         "description": "No credentials found for the current site"
     },
+    "custom_fields": {
+        "message": "Custom Fields",
+        "description": "Custom fields"
+    },
     "invalid_host": {
-        "message": "Invalid server url",
+        "message": "Ungültige Server-URL",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
         "message": "Falsches Masterpasswort",
         "description": "When the master password is invalid"
     },
+    "general": {
+        "message": "General",
+        "description": "Custom fields"
+    },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Passwörter stimmen nicht überein",
         "description": "When comparing passwords"
     },
     "close": {
@@ -180,11 +180,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Servereinstellungen",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Masterpasswort eingeben",
         "description": "Set a master password"
     },
     "password": {
@@ -192,7 +192,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "Kopieren",
         "description": "Copy"
     },
     "begin": {
@@ -203,6 +203,10 @@
         "message": "Dieser Einrichtungsassistent leitet Sie durch die notwendigen Schritte um die Browserextension aufzusetzen und alle Passwörter zu synchronisieren!",
         "description": "Cancel"
     },
+    "ignore_site_placeholder": {
+        "message": "Enter a domain or tld to ignore and press enter",
+        "description": "Disable auto fill of forms"
+    },
     "ignored_sites": {
         "message": "Ignorierte Seiten",
         "description": "Ignored sites"
@@ -210,6 +214,10 @@
     "toggle_visibility": {
         "message": "Sichtbarkeit umschalten",
         "description": "Toggle visibility"
+    },
+    "master_pw_warning": {
+        "message": "Warning! Your master password will be stored in plain text",
+        "description": "Remember master password"
     },
     "remember_master_password": {
         "message": "Masterpasswort speichern",
@@ -224,7 +232,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Bitte eine Beschriftung hinzufügen",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -232,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Tresor-Einstellungen",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -264,18 +272,8 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Ungültige Antwort vom Server: [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Speichern",
@@ -294,7 +292,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "Hinzufügen",
         "description": "Add"
     },
     "credential_updated": {
@@ -318,7 +316,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Passwort (wiederholen)",
         "description": "Password"
     },
     "credential_saved": {
@@ -334,7 +332,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "E-Mail",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -343,17 +341,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman -  $CREDENTIAL_AMOUNT$ $PLURAL$ Zugangsdaten für diese Seite gefunden",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Erledigt",
@@ -408,7 +396,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Anmeldeinformation erstellt",
         "description": "Credential created"
     },
     "username": {
@@ -418,6 +406,10 @@
     "pw_length": {
         "message": "Passwortlänge",
         "description": "Password length"
+    },
+    "disable_browser_autofill": {
+        "message": "Autovervollständigung im Browser deaktivieren",
+        "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
         "message": "Aktualisierungstimer",
