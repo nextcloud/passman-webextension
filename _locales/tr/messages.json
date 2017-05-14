@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "Veritabanında $AMOUNT$ kimlik doğrulama bilgisi var",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Kimlik doğrulama bilgilerini yenile",
@@ -26,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "Ayarlar",
         "description": "Settings"
     },
     "finish": {
@@ -38,7 +32,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Bağış Yapın",
         "description": "Donate"
     },
     "credentials": {
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Düzenle",
         "description": "Edit"
     },
     "min_digits": {
@@ -86,7 +80,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "Geri",
         "description": "Back"
     },
     "credential": {
@@ -94,7 +88,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "Sil",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -110,7 +104,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "Listele",
         "description": "List"
     },
     "ignore_site": {
@@ -126,18 +120,16 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "Devam",
         "description": "Continue"
     },
     "credentials_found_for_site": {
         "message": "Bu site için  $AMOUNT$ bulundu",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
+    },
+    "value": {
+        "message": "Value",
+        "description": "Custom fields"
     },
     "donate_button_title": {
         "message": "Geliştirmeyi bağışlar sayesinde sürdürebiliyoruz, lütfen destek olun",
@@ -147,16 +139,24 @@
         "message": "Nextcloud / ownCloud kimlik doğrulama bilgilerinizi yazın",
         "description": "No credentials found for the current site"
     },
+    "custom_fields": {
+        "message": "Custom Fields",
+        "description": "Custom fields"
+    },
     "invalid_host": {
-        "message": "Invalid server url",
+        "message": "Sunucu adresi geçersiz",
         "description": "Invalid server url"
     },
     "invalid_master_password": {
         "message": "Ana parola geçersiz!",
         "description": "When the master password is invalid"
     },
+    "general": {
+        "message": "General",
+        "description": "Custom fields"
+    },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Parola ile onayı aynı değil",
         "description": "When comparing passwords"
     },
     "close": {
@@ -180,11 +180,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Sunucu Ayarları",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Ana Parolayı Ayarlayın",
         "description": "Set a master password"
     },
     "password": {
@@ -192,7 +192,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "Kopyala",
         "description": "Copy"
     },
     "begin": {
@@ -203,6 +203,10 @@
         "message": "Bu yardımcı uygulama ayarlarını yapmanızı ve tüm parolalarınızın eşitlenerek korunmasını sağlar.",
         "description": "Cancel"
     },
+    "ignore_site_placeholder": {
+        "message": "Enter a domain or tld to ignore and press enter",
+        "description": "Disable auto fill of forms"
+    },
     "ignored_sites": {
         "message": "Yoksayılan siteler",
         "description": "Ignored sites"
@@ -210,6 +214,10 @@
     "toggle_visibility": {
         "message": "Görünürlüğü Değiştir",
         "description": "Toggle visibility"
+    },
+    "master_pw_warning": {
+        "message": "Warning! Your master password will be stored in plain text",
+        "description": "Remember master password"
     },
     "remember_master_password": {
         "message": "Ana parola hatırlansın",
@@ -224,7 +232,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Lütfen bir etiket yazın",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -232,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Kasa Ayarları",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -264,18 +272,8 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Sunucu yanıtı geçersiz: [$STATUS_CODE] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Kaydet",
@@ -294,7 +292,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "Ekle",
         "description": "Add"
     },
     "credential_updated": {
@@ -318,7 +316,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Parola (onay)",
         "description": "Password"
     },
     "credential_saved": {
@@ -334,7 +332,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "E-posta",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -343,17 +341,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - bu sayfa için  $CREDENTIAL_AMOUNT$ $PLURAL$ buldu",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Tamam",
@@ -372,7 +360,7 @@
         "description": "Disable password picker"
     },
     "url": {
-        "message": "URL",
+        "message": "Adres",
         "description": "URL"
     },
     "no_sites_ignored": {
@@ -408,7 +396,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Kimlik doğrulama bilgileri oluşturuldu",
         "description": "Credential created"
     },
     "username": {
@@ -418,6 +406,10 @@
     "pw_length": {
         "message": "Parola uzunluğu",
         "description": "Password length"
+    },
+    "disable_browser_autofill": {
+        "message": "Tarayıcı otomatik doldurmasını devre dışı bırak",
+        "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
         "message": "Yenileme süresi [s]",
