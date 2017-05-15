@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciais no banco de dados",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Atualizar lista de credenciais",
@@ -131,16 +125,10 @@
     },
     "credentials_found_for_site": {
         "message": "Foram encontradas $AMOUNT$ credenciais para este site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Valor",
         "description": "Custom fields"
     },
     "donate_button_title": {
@@ -152,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Campos personalizados",
         "description": "Custom fields"
     },
     "invalid_host": {
@@ -164,7 +152,7 @@
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Geral",
         "description": "Custom fields"
     },
     "no_password_match": {
@@ -216,7 +204,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or tld to ignore and press enter",
+        "message": "Entre um domínio ou tld a ignorar e pressione enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -228,7 +216,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "Aviso: Sua senha mestra será armanezada em modo não criptografado",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -284,18 +272,8 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "message": "Resposta inválida do servidor: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Salvar",
@@ -363,17 +341,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Concluído",

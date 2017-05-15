@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ poświadczeń w bazie danych",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Odśwież listę poświadczeń",
@@ -131,16 +125,10 @@
     },
     "credentials_found_for_site": {
         "message": "Znaleziono  $AMOUNT$ poświadczeń dla tej strony",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Wartość",
         "description": "Custom fields"
     },
     "donate_button_title": {
@@ -152,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "NIestandardowe pola",
         "description": "Custom fields"
     },
     "invalid_host": {
@@ -164,7 +152,7 @@
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Ogólne",
         "description": "Custom fields"
     },
     "no_password_match": {
@@ -285,17 +273,7 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Zapisz",
@@ -363,17 +341,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - znaleziono  $CREDENTIAL_AMOUNT$ $PLURAL$ dla tej strony",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Zrobione",
