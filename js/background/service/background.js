@@ -430,13 +430,15 @@ var background = (function () {
     _self.saveMined = saveMined;
 
     function searchCredential(searchText) {
+        searchText = searchText.toLowerCase();
         var searchFields = ['label', 'username', 'email', 'url', 'description'];
         var results = [];
         for (var i = 0; i < local_credentials.length; i++) {
             var credential = local_credentials[i];
             for (var f = 0; f < searchFields.length; f++) {
                 var field = searchFields[f];
-                if (credential[field] && credential[field].indexOf(searchText) !== -1) {
+                var field_value = credential[field].toLowerCase();
+                if (field_value && field_value.indexOf(searchText) !== -1) {
                     results.push(credential);
                     break;
                 }
