@@ -240,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Stillingar lykilorðageymslu",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -260,7 +260,7 @@
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the browser.",
+        "message": "Veldu lykilorðageymsluna sem þú vilt halda samstilltri við vafrann.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {

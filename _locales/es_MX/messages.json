@@ -128,7 +128,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Valor",
         "description": "Custom fields"
     },
     "donate_button_title": {
@@ -140,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Campos personalizados",
         "description": "Custom fields"
     },
     "invalid_host": {
@@ -204,7 +204,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or tld to ignore and press enter",
+        "message": "Ingrese el dominio o el tld a ignorar y presione enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -216,7 +216,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "¡Advertencia! Su contraseña maestra será almacenada en texto plano",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -272,7 +272,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Respuesta del servidor inválida :[$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
