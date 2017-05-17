@@ -20,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "Innstillinger",
         "description": "Settings"
     },
     "finish": {
@@ -32,7 +32,7 @@
         "description": "Detected changed url for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Doner",
         "description": "Donate"
     },
     "credentials": {
@@ -80,7 +80,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "Tilbake",
         "description": "Back"
     },
     "credential": {
@@ -88,7 +88,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "Slett",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -120,7 +120,7 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "Fortsett",
         "description": "Continue"
     },
     "credentials_found_for_site": {
@@ -128,7 +128,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Verdi",
         "description": "Custom fields"
     },
     "donate_button_title": {
@@ -180,7 +180,7 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Tjenerinnstillinger",
         "description": "Server Settings"
     },
     "master_password": {
@@ -192,7 +192,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "Kopier",
         "description": "Copy"
     },
     "begin": {
@@ -292,7 +292,7 @@
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "Legg til",
         "description": "Add"
     },
     "credential_updated": {
@@ -316,7 +316,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Passord (gjenta)",
         "description": "Password"
     },
     "credential_saved": {
@@ -332,7 +332,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "E-post",
         "description": "E-mail"
     },
     "welcome_to_passman": {
