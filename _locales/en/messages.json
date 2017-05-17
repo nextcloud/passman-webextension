@@ -62,8 +62,8 @@
     "description": "Use password"
   },
   "add_hint": {
-    "message": "After creating you can edit the credential in passman",
-    "description": "After creating you can edit the credential in passman"
+    "message": "After creating it, you can edit the credential in Passman",
+    "description": "After creating it, you can edit the credential in Passman"
   },
   "pw_length": {
     "message": "Password length",
@@ -152,8 +152,8 @@
     "description": "Browser extension title when the extension is locked"
   },
   "detected_changed_url": {
-    "message": "Detected changed url for",
-    "description": "Detected changed url for"
+    "message": "Detected changed URL for",
+    "description": "Detected changed URL for"
   },
   "credential": {
     "message": "credential",
@@ -240,8 +240,8 @@
     "description": "Intro at the setup"
   },
   "server_url": {
-    "message": "Server url",
-    "description": "Server url"
+    "message": "Server URL",
+    "description": "Server URL"
   },
   "begin": {
     "message": "Let's begin!",
@@ -376,8 +376,8 @@
     "description": "When comparing passwords"
   },
   "invalid_host": {
-    "message": "Invalid server url",
-    "description": "Invalid server url"
+    "message": "Invalid server URL",
+    "description": "Invalid server URL"
   },
   "no_password_match": {
     "message": "Passwords don't match",
@@ -409,11 +409,11 @@
   },
   "donate_button_title": {
     "message": "Developent depends on donations, please support us",
-    "description": "Title on the paypal button"
+    "description": "Title on the PayPal button"
   },
   "lock_extension": {
     "message": "Lock extension",
-    "description": "Title on the paypal button"
+    "description": "Title on the PayPal button"
   },
   "extension_locked": {
     "message": "Passman extension is locked, unlock to use it",
