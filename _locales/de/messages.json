@@ -28,8 +28,8 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "geänderte URL entdeckt für",
-        "description": "Detected changed url for"
+        "message": "Detected changed URL for",
+        "description": "Detected changed URL for"
     },
     "donate": {
         "message": "Spenden",
@@ -133,7 +133,7 @@
     },
     "donate_button_title": {
         "message": "Entwicklugn abhängig von Spenden, bitte unterstützen Sie uns",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Bitte geben Sie Ihre Zugangsdaten zu Nextcloud / ownCloud ein",
@@ -144,8 +144,8 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Ungültige Server-URL",
-        "description": "Invalid server url"
+        "message": "Invalid server URL",
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Falsches Masterpasswort",
@@ -168,8 +168,8 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Nach dem Erstellen können Sie die Zugangsdaten in Passman editieren",
-        "description": "After creating you can edit the credential in passman"
+        "message": "After creating it, you can edit the credential in Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Standardtresor",
@@ -285,7 +285,7 @@
     },
     "server_url": {
         "message": "Server URL",
-        "description": "Server url"
+        "description": "Server URL"
     },
     "cancel": {
         "message": "Abbrechen",
@@ -309,7 +309,7 @@
     },
     "lock_extension": {
         "message": "Browser-extension sperren",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Suchen nach",

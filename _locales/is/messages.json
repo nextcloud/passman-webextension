@@ -28,8 +28,8 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed url for",
-        "description": "Detected changed url for"
+        "message": "Detected changed URL for",
+        "description": "Detected changed URL for"
     },
     "donate": {
         "message": "Styrkja",
@@ -133,7 +133,7 @@
     },
     "donate_button_title": {
         "message": "Hugbúnaðarþróunin byggist á styrkjum, styddu við okkur",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Settu inn auðkenni þín á Nextcloud / ownCloud",
@@ -144,8 +144,8 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Ógild URL-slóð vefþjóns",
-        "description": "Invalid server url"
+        "message": "Invalid server URL",
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Ógilt aðallykilorð!",
@@ -168,8 +168,8 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating you can edit the credential in passman",
-        "description": "After creating you can edit the credential in passman"
+        "message": "After creating it, you can edit the credential in Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Sjálfgefin lykilorðageymsla",
@@ -284,8 +284,8 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Slóð á þjón",
-        "description": "Server url"
+        "message": "Server URL",
+        "description": "Server URL"
     },
     "cancel": {
         "message": "Hætta við",
@@ -309,7 +309,7 @@
     },
     "lock_extension": {
         "message": "Læsa viðbót",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Leita að",
