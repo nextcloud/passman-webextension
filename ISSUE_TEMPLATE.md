@@ -4,6 +4,9 @@ This is the bug tracker for the WebExtension. Find passman at https://github.com
 
 
 To make it possible for us to help you please fill out below information carefully.
+
+Read if you are reporting an bug / issue:
+Failure to follow this issue template will result in a direct close of the issue.
 --> 
 ### Steps to reproduce
 1.
