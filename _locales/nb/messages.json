@@ -28,7 +28,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Oppdaget ny URL for",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Rediger",
         "description": "Edit"
     },
     "min_digits": {
@@ -140,11 +140,11 @@
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Brukervalgte felter",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "Ugyldig tjener-URL",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
@@ -156,7 +156,7 @@
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Passordene samsvarer ikke",
         "description": "When comparing passwords"
     },
     "close": {
@@ -184,7 +184,7 @@
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Sett hoved-passord",
         "description": "Set a master password"
     },
     "password": {
@@ -232,7 +232,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Fyll inn en merkelapp",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -240,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Hvelvinnstillinger",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -284,7 +284,7 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "Tjener-URL",
         "description": "Server URL"
     },
     "cancel": {
@@ -396,7 +396,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Påloggingsdetalj laget",
         "description": "Credential created"
     },
     "username": {

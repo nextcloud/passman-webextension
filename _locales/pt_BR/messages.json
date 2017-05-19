@@ -28,7 +28,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Foi detectada uma mudança de URL para",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -144,7 +144,7 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "URL do servidor inválida",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
@@ -168,7 +168,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Após criá-lo, você pode editar a credencial no Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
@@ -284,7 +284,7 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "URL do servidor",
         "description": "Server URL"
     },
     "cancel": {

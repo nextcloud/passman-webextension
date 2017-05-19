@@ -144,7 +144,7 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "Ógild URI-slóð vefþjóns",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
@@ -272,7 +272,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ógilt svar frá þjóni: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -284,7 +284,7 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "URL-slóð vefþjóns",
         "description": "Server URL"
     },
     "cancel": {
@@ -368,7 +368,7 @@
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "If you like, don't forget to donate",
+        "message": "Ef þér líkar þetta, ekki gleyma að styrkja verkefnið",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
