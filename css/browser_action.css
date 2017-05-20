@@ -645,7 +645,7 @@ body.toggled {
 
 .menuToggler {
   position: absolute;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   width: calc(100% - 250px);
   height: 100%;
   z-index: 9999999;
