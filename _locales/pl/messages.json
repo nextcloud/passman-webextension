@@ -28,7 +28,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Wykryto zmianę URL dla",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -168,7 +168,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Po utworzeniu możesz zmienić poświadczenia w Passmanie.",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
@@ -216,7 +216,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "Uwaga! Twoje hasło główne będzie przechowywane w jawnej postaci.",
         "description": "Remember master password"
     },
     "remember_master_password": {
