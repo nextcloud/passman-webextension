@@ -158,7 +158,7 @@
                         <li ng-repeat="site in settings.ignored_sites">{{site}} <i class="fa fa-trash pull-right"
                                                                                    ng-click="removeSite(site)"></i></li>
                         <li ng-show="settings.ignored_sites.length === 0">{{'no_sites_ignored' | translate}}</li>
-                        <li><input type="text" class="form-control" placeholder="Enter a domain or tld"
+                        <li><input type="text" class="form-control" placeholder="Enter a domain or TLD"
                                    ng-model="ignoreSite" ng-enter="addSite(ignoreSite)"></li>
                     </ul>
                 </td>
