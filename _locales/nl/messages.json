@@ -144,7 +144,7 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "Ongeldig server URL",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
