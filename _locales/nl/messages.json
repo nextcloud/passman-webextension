@@ -28,7 +28,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Gewijzigde URL gevonden voor",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -168,7 +168,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Na het aanmaken kun je de inloggegevens bewerken in Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
