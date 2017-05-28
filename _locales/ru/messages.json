@@ -204,7 +204,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Введите домен или домен вернего уровня, который следует игнорировать и нажмите «enter»",
+        "message": "Введите домен или домен верхнего уровня, который следует игнорировать и нажмите «enter»",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
