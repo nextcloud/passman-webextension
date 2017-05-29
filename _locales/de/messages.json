@@ -264,7 +264,7 @@
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "Neues Login erkannt",
+        "message": "Neue Anmeldung erkannt",
         "description": "Detected new login"
     },
     "detected_changed_login": {
