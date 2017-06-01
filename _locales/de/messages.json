@@ -280,7 +280,7 @@
         "description": "Save"
     },
     "generate_password": {
-        "message": "Passwort generieren",
+        "message": "Passwort erzeugen",
         "description": "Generate password"
     },
     "server_url": {

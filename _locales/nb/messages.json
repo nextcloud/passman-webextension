@@ -104,7 +104,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "Liste",
         "description": "List"
     },
     "ignore_site": {
@@ -152,7 +152,7 @@
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Generelt",
         "description": "Custom fields"
     },
     "no_password_match": {
@@ -408,7 +408,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Skru av auto-utfylling i nettleser",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
