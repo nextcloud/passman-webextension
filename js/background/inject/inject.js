@@ -256,10 +256,10 @@ $j(document).ready(function () {
             API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'}).then(function (result) {
                 if (result) {
                     init();
-                    // var body = document.getElementsByTagName('body')[0];
-                    // observeDOM(body, function () {
-                    //     initForms();
-                    // });
+                    var body = document.getElementsByTagName('body')[0];
+                    observeDOM(body, function () {
+                        initForms();
+                    });
                 } else {
                     console.log('[Passman extension] Stopping, vault key not set');
                 }
