@@ -205,11 +205,11 @@ function fillPassword(user, password) {
     for (var i = 0; i < loginFields.length; i++) {
         if(user){
             loginFields[i][0].value = user;
-            dispatchEvents(loginFields[i][0])
+            dispatchEvents(loginFields[i][0]);
         }
         if(password) {
             loginFields[i][1].value = password;
-            dispatchEvents(loginFields[i][1])
+            dispatchEvents(loginFields[i][1]);
         }
     }
 
