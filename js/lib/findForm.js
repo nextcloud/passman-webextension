@@ -193,15 +193,25 @@ function getFormFromElement(elem) {
     }
 }
 
+function dispatchEvents(element){
+    var eventNames = [ 'click', 'focus', 'keypress', 'keydown', 'keyup', 'input', 'blur', 'change' ];
+    eventNames.forEach(function(eventName) {
+        element.dispatchEvent(new Event(eventName, {"bubbles":true}));
+    });
+}
+
 function fillPassword(user, password) {
     var loginFields = getLoginFields();
     for (var i = 0; i < loginFields.length; i++) {
         if(user){
             loginFields[i][0].value = user;
+            dispatchEvents(loginFields[i][0])
         }
         if(password) {
             loginFields[i][1].value = password;
+            dispatchEvents(loginFields[i][1])
         }
     }
+
 }
 formManager._init_();
