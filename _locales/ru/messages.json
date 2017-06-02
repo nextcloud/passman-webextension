@@ -29,7 +29,7 @@
     },
     "detected_changed_url": {
         "message": "Определено изменение URL для",
-        "description": "Detected changed url for"
+        "description": "Detected changed URL for"
     },
     "donate": {
         "message": "Пожертвовать",
@@ -133,7 +133,7 @@
     },
     "donate_button_title": {
         "message": "Разработчики зависят от пожертвований, пожалуйста, поддержите нас",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Введите свои данные для входа в Nextcloud или ownCloud",
@@ -144,8 +144,8 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Неверный URL-адрес сервера",
-        "description": "Invalid server url"
+        "message": "Неверный URL сервера",
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Неверный главный пароль!",
@@ -168,8 +168,8 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Запись может быть изменена после создания",
-        "description": "After creating you can edit the credential in passman"
+        "message": "После создания вы сможете редактировать записи  в Passman.",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Хранилище по умолчанию",
@@ -204,7 +204,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Введите домен или домен вернего уровня, который следует игнорировать и нажмите «enter»",
+        "message": "Введите домен или домен верхнего уровня, который следует игнорировать и нажмите «enter»",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -285,7 +285,7 @@
     },
     "server_url": {
         "message": "URL сервера",
-        "description": "Server url"
+        "description": "Server URL"
     },
     "cancel": {
         "message": "Отмена",
@@ -309,7 +309,7 @@
     },
     "lock_extension": {
         "message": "Заблокировать расширение",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Поиск",

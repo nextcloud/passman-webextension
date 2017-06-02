@@ -1,6 +1,6 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
+        "message": "$AMOUNT$ auðkenni í gagnagrunninum\n        ",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
@@ -16,7 +16,7 @@
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
+        "message": "Hunsa samskiptamáta við samanburð vefsvæða",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
@@ -28,8 +28,8 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed url for",
-        "description": "Detected changed url for"
+        "message": "Fann breytta URL-slóð fyrir",
+        "description": "Detected changed URL for"
     },
     "donate": {
         "message": "Styrkja",
@@ -48,7 +48,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman extension is locked, unlock to use it",
+        "message": "Passman-viðaukinn er læstur, aflæstu til að nota hann",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -72,7 +72,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Þetta lykilorð mun verða notað til að dulrita allar stillingarnar þínar í viðaukanum. Þú getur valið að vista lykilorðið á tölvuna þína, en það verður þá vistað sem HREINN TEXTI.",
         "description": "Enter master password"
     },
     "add_account": {
@@ -124,7 +124,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "We've found $AMOUNT$ credentials for this site",
+        "message": "Við fundum $AMOUNT$ auðkenni fyrir þetta vefsvæði",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -133,7 +133,7 @@
     },
     "donate_button_title": {
         "message": "Hugbúnaðarþróunin byggist á styrkjum, styddu við okkur",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Settu inn auðkenni þín á Nextcloud / ownCloud",
@@ -144,8 +144,8 @@
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Ógild URL-slóð vefþjóns",
-        "description": "Invalid server url"
+        "message": "Ógild URI-slóð vefþjóns",
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Ógilt aðallykilorð!",
@@ -168,15 +168,15 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating you can edit the credential in passman",
-        "description": "After creating you can edit the credential in passman"
+        "message": "Eftir að þú hefur útbúið þau, geturðu breytt auðkennunum í Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Sjálfgefin lykilorðageymsla",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
+        "message": "Hunsa gáttir við samanburð vefsvæða",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
@@ -200,11 +200,11 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Þessi leiðarvísir hjálpar þér í gegnum skrefin við að setja upp viðaukann og að halda öllum lykilorðunum þínum samstilltum!",
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or tld to ignore and press enter",
+        "message": "Settu inn lén eða tld sem á að hunsa og ýttu svo á 'Enter'",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -224,7 +224,7 @@
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Save credentials for this site",
+        "message": "Vista auðkenni fyrir þetta vefsvæði",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
@@ -240,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Stillingar lykilorðageymslu",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -260,7 +260,7 @@
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the browser.",
+        "message": "Veldu lykilorðageymsluna sem þú vilt halda samstilltri við vafrann.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
@@ -272,7 +272,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ógilt svar frá þjóni: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -284,8 +284,8 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Slóð á þjón",
-        "description": "Server url"
+        "message": "URL-slóð vefþjóns",
+        "description": "Server URL"
     },
     "cancel": {
         "message": "Hætta við",
@@ -308,8 +308,8 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Læsa viðbót",
-        "description": "Title on the paypal button"
+        "message": "Læsa viðauka",
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Leita að",
@@ -324,11 +324,11 @@
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Require every character type",
+        "message": "Krefjast allra stafagerða",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "Virkja villuskráningarham",
         "description": "Enable debug mode"
     },
     "email": {
@@ -336,11 +336,11 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman extension",
+        "message": "Velkomin í Passman-viðaukann",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - fann $CREDENTIAL_AMOUNT$ $PLURAL$ fyrir þessa síðu",
         "description": "String for the browser action"
     },
     "done": {
@@ -348,7 +348,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site!",
+        "message": "Engin persónuauðkenni fundust fyrir þetta vefsvæði!",
         "description": "No credentials found for the current site"
     },
     "saving": {
@@ -356,7 +356,7 @@
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Disable password picker",
+        "message": "Gera lykilorðaveljara óvirkan",
         "description": "Disable password picker"
     },
     "url": {
@@ -368,7 +368,7 @@
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "If you like, don't forget to donate",
+        "message": "Ef þér líkar þetta, ekki gleyma að styrkja verkefnið",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
@@ -384,7 +384,7 @@
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignore subdomain for site matching",
+        "message": "Hunsa undirlén við samanburð vefsvæða",
         "description": "Password"
     },
     "btn_search": {
@@ -412,7 +412,7 @@
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Endurlesa tímamælingu [sek]",
         "description": "Password"
     }
 }

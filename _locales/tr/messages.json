@@ -29,7 +29,7 @@
     },
     "detected_changed_url": {
         "message": "Şu adresin değiştiği algılandı",
-        "description": "Detected changed url for"
+        "description": "Detected changed URL for"
     },
     "donate": {
         "message": "Bağış Yapın",
@@ -133,7 +133,7 @@
     },
     "donate_button_title": {
         "message": "Geliştirmeyi bağışlar sayesinde sürdürebiliyoruz, lütfen destek olun",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Nextcloud / ownCloud kimlik doğrulama bilgilerinizi yazın",
@@ -145,7 +145,7 @@
     },
     "invalid_host": {
         "message": "Sunucu adresi geçersiz",
-        "description": "Invalid server url"
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Ana parola geçersiz!",
@@ -168,8 +168,8 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Ekledikten sonra passman içinden kimlik doğrulama bilgilerini düzenleyebilirsiniz",
-        "description": "After creating you can edit the credential in passman"
+        "message": "Ekledikten sonra kimlik doğrulama bilgilerini Passman içinden düzenleyebilirsiniz",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Varsayılan kasa",
@@ -285,7 +285,7 @@
     },
     "server_url": {
         "message": "Sunucu adresi",
-        "description": "Server url"
+        "description": "Server URL"
     },
     "cancel": {
         "message": "İptal",
@@ -309,7 +309,7 @@
     },
     "lock_extension": {
         "message": "Uygulamayı Kilitle",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Aranacak ifade",

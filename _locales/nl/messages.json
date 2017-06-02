@@ -28,8 +28,8 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Vond gewijzigde url voor",
-        "description": "Detected changed url for"
+        "message": "Gewijzigde URL gevonden voor",
+        "description": "Detected changed URL for"
     },
     "donate": {
         "message": "Doneren",
@@ -128,31 +128,31 @@
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Waarde",
         "description": "Custom fields"
     },
     "donate_button_title": {
         "message": "De ontwikkeling is mede afhankelijk van donaties, help ons",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Voer je Nextcloud / owncloud inloggegevens in",
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Maatwerk velden",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Ongeldige server url",
-        "description": "Invalid server url"
+        "message": "Ongeldig server URL",
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Ongeldig hoofdwachtwoord!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Algemeen",
         "description": "Custom fields"
     },
     "no_password_match": {
@@ -168,8 +168,8 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Na het aanmaken kan je je inloggegevens in Passman aanpassen",
-        "description": "After creating you can edit the credential in passman"
+        "message": "Na het aanmaken kun je de inloggegevens bewerken in Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Standaardkluis",
@@ -204,7 +204,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or tld to ignore and press enter",
+        "message": "Typ een domein of titel om te negeren en druk op enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -216,7 +216,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "Waarschuwing! Je hoofd wachtwoord wordt in tekst formaat opgeslagen",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -272,7 +272,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Foute reactie van de server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -284,8 +284,8 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Server url",
-        "description": "Server url"
+        "message": "Server URL",
+        "description": "Server URL"
     },
     "cancel": {
         "message": "Annuleren",
@@ -309,7 +309,7 @@
     },
     "lock_extension": {
         "message": "Extensie op slot doen",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Zoek naar",
@@ -408,7 +408,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Automatisch aanvullen in de browser uitschakelen",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {

@@ -20,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Settings",
+        "message": "Innstillinger",
         "description": "Settings"
     },
     "finish": {
@@ -28,11 +28,11 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Fant endret nettadresse for",
-        "description": "Detected changed url for"
+        "message": "Oppdaget ny URL for",
+        "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Doner",
         "description": "Donate"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "edit": {
-        "message": "Edit",
+        "message": "Rediger",
         "description": "Edit"
     },
     "min_digits": {
@@ -80,7 +80,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "Back",
+        "message": "Tilbake",
         "description": "Back"
     },
     "credential": {
@@ -88,7 +88,7 @@
         "description": "credential"
     },
     "delete": {
-        "message": "Delete",
+        "message": "Slett",
         "description": "Delete"
     },
     "nextcloud_settings": {
@@ -104,7 +104,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "List",
+        "message": "Liste",
         "description": "List"
     },
     "ignore_site": {
@@ -120,7 +120,7 @@
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continue",
+        "message": "Fortsett",
         "description": "Continue"
     },
     "credentials_found_for_site": {
@@ -128,35 +128,35 @@
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Verdi",
         "description": "Custom fields"
     },
     "donate_button_title": {
         "message": "Utviklingen avhenger av kronerulling, støtt opp",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Skriv inn dine Nextcloud / ownCloud -påloggingsdetaljer",
         "description": "No credentials found for the current site"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Brukervalgte felter",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server url",
-        "description": "Invalid server url"
+        "message": "Ugyldig tjener-URL",
+        "description": "Invalid server URL"
     },
     "invalid_master_password": {
         "message": "Ugyldig hoved-passord!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Generelt",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Passordene samsvarer ikke",
         "description": "When comparing passwords"
     },
     "close": {
@@ -168,8 +168,8 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Etter opprettelse kan du endre påloggingsdetaljene i Passman",
-        "description": "After creating you can edit the credential in passman"
+        "message": "Etter å ha opprettet den, kan du redigere identitetsdetaljen i Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
         "message": "Forvalgt hvelv",
@@ -180,11 +180,11 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Tjenerinnstillinger",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Sett hoved-passord",
         "description": "Set a master password"
     },
     "password": {
@@ -192,7 +192,7 @@
         "description": "Password"
     },
     "copy": {
-        "message": "Copy",
+        "message": "Kopier",
         "description": "Copy"
     },
     "begin": {
@@ -204,7 +204,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or tld to ignore and press enter",
+        "message": "Skriv inn domene eller TLD å ignorere og trykk Enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -216,7 +216,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "Advarsel! Hovedpassordet ditt vil bli lagret i klartekst",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -232,7 +232,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Fyll inn en merkelapp",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -240,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Hvelvinnstillinger",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -272,7 +272,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -285,14 +285,14 @@
     },
     "server_url": {
         "message": "Tjener-URL",
-        "description": "Server url"
+        "description": "Server URL"
     },
     "cancel": {
         "message": "Avbryt",
         "description": "Cancel"
     },
     "add": {
-        "message": "Add",
+        "message": "Legg til",
         "description": "Add"
     },
     "credential_updated": {
@@ -309,14 +309,14 @@
     },
     "lock_extension": {
         "message": "Lås utvidelse",
-        "description": "Title on the paypal button"
+        "description": "Title on the PayPal button"
     },
     "search_for": {
         "message": "Søk etter",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Passord (gjenta)",
         "description": "Password"
     },
     "credential_saved": {
@@ -332,7 +332,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "E-post",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -396,7 +396,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Påloggingsdetalj laget",
         "description": "Credential created"
     },
     "username": {
@@ -408,7 +408,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Skru av auto-utfylling i nettleser",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
