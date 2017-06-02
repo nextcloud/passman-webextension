@@ -20,7 +20,7 @@
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Ajustes",
+        "message": "Configuraciones ",
         "description": "Settings"
     },
     "finish": {
@@ -72,7 +72,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Esta contaseña de usará para encriptar todos sus ajustes de la extensión. Puede optar por guardar sus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
+        "message": "Esta contaseña de usará para encriptar todas sus configuraciones de la extensión. Puede optar por guardar sus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
         "description": "Enter master password"
     },
     "add_account": {
@@ -92,7 +92,7 @@
         "description": "Delete"
     },
     "nextcloud_settings": {
-        "message": "Ajustes del servidor Nextcloud / ownCloud",
+        "message": "Configuraciones del servidor Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
@@ -180,7 +180,7 @@
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Ajustes del servidor",
+        "message": "Configuraciones del servidor",
         "description": "Server Settings"
     },
     "master_password": {
@@ -240,7 +240,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Ajustes de la bóveda",
+        "message": "Configuraciones de la bóveda",
         "description": "Vault settings"
     },
     "vault_password": {
