@@ -1,7 +1,7 @@
 # Passman Webextension
 
-[![Build Status](https://img.passman.cc/assets/chromewebstore.png)](https://chrome.google.com/webstore/detail/passman/hlpjhlifkgmoibhollggngbbhbejecph)
-[![Build Status](https://img.passman.cc/assets/AMO-button_1.png)](https://releases.passman.cc/xpi/)
+[![Chrome webstore](https://img.passman.cc/assets/chromewebstore.png)](https://chrome.google.com/webstore/detail/passman/hlpjhlifkgmoibhollggngbbhbejecph)
+[![AMO](https://img.passman.cc/assets/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/passman/)
 
 
 ![Build Status](https://passman.cc/webextension-version.php)
