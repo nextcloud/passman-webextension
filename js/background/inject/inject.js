@@ -162,12 +162,11 @@ $j(document).ready(function () {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var buttons = [ 'cancel', 'save', 'ignore'];
+                var buttons = ['cancel', 'save', 'ignore'];
                 showDoorhanger({data: data, buttons: buttons});
             }
         });
     }
-
 
 
     function closeDoorhanger() {
@@ -175,6 +174,7 @@ $j(document).ready(function () {
             $j('#password-toolbarIframe').remove();
         });
     }
+
     _this.closeDoorhanger = closeDoorhanger;
 
     function initForms() {
@@ -189,8 +189,8 @@ $j(document).ready(function () {
                         createPasswordPicker(loginFields[i], form);
                     }
 
-                    if(settings.disable_browser_autofill){
-                        $j(form).attr('autocomplete','off');
+                    if (settings.disable_browser_autofill) {
+                        $j(form).attr('autocomplete', 'off');
                     }
 
                     //Password miner
@@ -230,6 +230,7 @@ $j(document).ready(function () {
             enterLoginDetails(args.credential);
         }
     }
+
     _this.minedLoginSaved = minedLoginSaved;
 
     function copyText(text) {
@@ -257,9 +258,9 @@ $j(document).ready(function () {
                 if (result) {
                     init();
                     var body = document.getElementsByTagName('body')[0];
-                    observeDOM(body, function () {
-                        initForms();
-                    });
+                    // observeDOM(body, function () {
+                    //     initForms();
+                    // });
                 } else {
                     console.log('[Passman extension] Stopping, vault key not set');
                 }
