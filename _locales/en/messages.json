@@ -179,6 +179,10 @@
     "message": "Ignore port for site matching",
     "description": "Ignore port for site matching"
   },
+  "ignore_path": {
+    "message": "Ignore path for site matching",
+    "description": "Ignore path for site matching"
+  },
   "disable_autofill": {
     "message": "Disable auto fill of forms",
     "description": "Disable auto fill of forms"
