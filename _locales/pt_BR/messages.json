@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciais no banco de dados",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Atualizar lista de credenciais",
@@ -131,13 +125,7 @@
     },
     "credentials_found_for_site": {
         "message": "Foram encontradas $AMOUNT$ credenciais para este site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Valor",
@@ -150,6 +138,10 @@
     "please_enter_nextcloud_credentials": {
         "message": "Por favor entre suas credenciais Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
+    },
+    "ignore_path": {
+        "message": "Ignore path for site matching",
+        "description": "Ignore path for site matching"
     },
     "custom_fields": {
         "message": "Campos personalizados",
@@ -285,17 +277,7 @@
     },
     "invalid_response_from_server": {
         "message": "Resposta inválida do servidor: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Salvar",
@@ -363,17 +345,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Concluído",
