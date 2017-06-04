@@ -28,7 +28,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Se ha detectado una URL cambiada en ",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -128,7 +128,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Valor",
         "description": "Custom fields"
     },
     "donate_button_title": {
@@ -140,15 +140,15 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Ignorar la ruta para las coincidencias de grupos",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Campos adicionales",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "URL del servidor inválida",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
@@ -172,7 +172,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Tras crearla, puedes editar la credencial en Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
@@ -208,7 +208,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or tld to ignore and press enter",
+        "message": "Introduce un dominio o TLD que ignorar y acepta",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -220,7 +220,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "¡Cuidado! Tu contraseña maestra se almacenará en texto plano",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -276,7 +276,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Respuesta inválida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -288,7 +288,7 @@
         "description": "Generate password"
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "URL del servidor",
         "description": "Server URL"
     },
     "cancel": {
@@ -412,7 +412,7 @@
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Desactivar el autorrellenado en el navegador",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {

@@ -92,7 +92,7 @@
         "description": "Delete"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud / ownCloud sunucu ayarlari",
+        "message": "Nextcloud / ownCloud sunucu ayarları",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
@@ -140,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Site eşleştirmesinde yol yok sayılsın",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
