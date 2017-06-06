@@ -51,7 +51,14 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     }
     else {
         var result = host.match(/[^./]+\.[^./]+$/); // catch the two last parts, it's de hostname and the tld
-        baseHost = result[0];
+        //@TODO Implement known list of TLDs
+        //@url https://github.com/131/node-tld/blob/master/effective_tld_names.json
+
+        if(result) {
+            baseHost = result[0];
+        } else {
+            baseHost = host;
+        }
     }
     var returnURL = "";
     if (!ignoreProtocol) {
