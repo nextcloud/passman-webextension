@@ -140,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Ignorar la ruta para la conicidencia de sitios",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
