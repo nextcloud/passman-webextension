@@ -20,6 +20,8 @@
   "background": {
     "scripts": [
       "/js/vendor/jquery/jquery.js",
+      "/js/lib/data/tlds.js",
+      "/js/lib/parseTLD.js",
       "/js/lib/parseUrl.js",
       "/js/vendor/sjcl/sjcl.js",
       "/js/lib/promise.js",
