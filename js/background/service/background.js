@@ -437,8 +437,12 @@ var background = (function () {
             var credential = local_credentials[i];
             for (var f = 0; f < searchFields.length; f++) {
                 var field = searchFields[f];
+                if(!credential[field]){
+                    continue;
+                }
+
                 var field_value = credential[field].toLowerCase();
-                if (field_value && field_value.indexOf(searchText) !== -1) {
+                if (field_value.indexOf(searchText) !== -1) {
                     results.push(credential);
                     break;
                 }

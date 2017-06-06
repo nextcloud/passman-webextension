@@ -1343,901 +1343,1349 @@ var testCombinations = [{
     "ignorePort": false,
     "expected": "https://subdomain.example.com/page/login"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1",
+    "url": "http://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080"
+    "expected": "http://example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080"
+    "expected": "http://example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080"
+    "expected": "http://example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080",
+    "url": "http://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080"
+    "expected": "http://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080"
+    "expected": "https://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080"
+    "expected": "https://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080"
+    "expected": "https://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080",
+    "url": "https://example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080"
+    "expected": "https://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1.com"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1.com",
+    "url": "https://example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1.com"
+    "expected": "https://example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1/page/login"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1/page/login"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1/page/login"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1/page/login"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1"
+    "expected": "http://subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1/page/login"
+    "expected": "http://subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1/page/login",
+    "url": "http://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1/page/login"
+    "expected": "http://subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080/page/login"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "subdomain.example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080/page/login"
+    "expected": "subdomain.example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080"
+    "expected": "http://example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1/page/login"
+    "expected": "http://example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080/page/login"
+    "expected": "http://example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "http://192.168.1.1"
+    "expected": "http://subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080"
+    "expected": "http://subdomain.example.com.br:8080"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "http://192.168.1.1/page/login"
+    "expected": "http://subdomain.example.com.br"
 }, {
-    "url": "http://192.168.1.1:8080/page/login",
+    "url": "http://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "http://192.168.1.1:8080/page/login"
+    "expected": "http://subdomain.example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080/page/login"
+    "expected": "example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080"
+    "expected": "subdomain.example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1:8080/page/login"
+    "expected": "subdomain.example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080"
+    "expected": "https://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1/page/login"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080/page/login"
+    "expected": "https://example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080"
+    "expected": "https://subdomain.example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1/page/login"
+    "expected": "https://subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1:8080/page/login",
+    "url": "https://subdomain.example.com.br:8080",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1:8080/page/login"
+    "expected": "https://subdomain.example.com.br:8080"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1/page/login"
+    "expected": "example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "192.168.1.1"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "192.168.1.1"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "192.168.1.1/page/login"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": true,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "192.168.1.1/page/login"
+    "expected": "subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1/page/login"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": true,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1/page/login"
+    "expected": "https://example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": true,
-    "expected": "https://192.168.1.1"
+    "expected": "https://subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": true,
     "ignorePort": false,
-    "expected": "https://192.168.1.1"
+    "expected": "https://subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": true,
-    "expected": "https://192.168.1.1/page/login"
+    "expected": "https://subdomain.example.com.br"
 }, {
-    "url": "https://192.168.1.1/page/login",
+    "url": "https://subdomain.example.com.br",
     "ignoreProtocol": false,
     "ignoreSubdomain": false,
     "ignorePath": false,
     "ignorePort": false,
-    "expected": "https://192.168.1.1/page/login"
+    "expected": "https://subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "http://example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "http://example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "http://example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "http://example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "http://subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "http://subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "http://subdomain.example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "http://subdomain.example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "example.com.br:8080"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "example.com.br:8080/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br:8080"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br:8080/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "http://example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "http://example.com.br:8080"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "http://example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "http://example.com.br:8080/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "http://subdomain.example.com.br"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "http://subdomain.example.com.br:8080"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "http://subdomain.example.com.br/page/login"
+}, {
+    "url": "http://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "http://subdomain.example.com.br:8080/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "example.com.br:8080"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "example.com.br:8080/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br:8080"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br:8080/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "https://example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "https://example.com.br:8080"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "https://example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "https://example.com.br:8080/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "https://subdomain.example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "https://subdomain.example.com.br:8080"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "https://subdomain.example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br:8080/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "https://subdomain.example.com.br:8080/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "subdomain.example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": true,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "subdomain.example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "https://example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "https://example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "https://example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": true,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "https://example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": true,
+    "expected": "https://subdomain.example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": true,
+    "ignorePort": false,
+    "expected": "https://subdomain.example.com.br"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": true,
+    "expected": "https://subdomain.example.com.br/page/login"
+}, {
+    "url": "https://subdomain.example.com.br/page/login",
+    "ignoreProtocol": false,
+    "ignoreSubdomain": false,
+    "ignorePath": false,
+    "ignorePort": false,
+    "expected": "https://subdomain.example.com.br/page/login"
 }];
 
 describe('Testing url parser', function () {

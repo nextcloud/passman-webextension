@@ -288,7 +288,7 @@ $(document).ready(function () {
             'method': 'searchCredential',
             args: searchText
         }).then(function (result) {
-            if (result.length === 0) {
+            if (result.length === 0 || !result) {
                 $('#searchResults').html(API.i18n.getMessage('no_credentials_found'));
             }
             for (var i = 0; i < result.length; i++) {

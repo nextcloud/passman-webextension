@@ -19,6 +19,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
+            'js/lib/data/tlds.js',
+            'js/lib/parseTLD.js',
             'js/lib/parseUrl.js',
             { pattern: 'tests/**/*.js', included: true }
         ],

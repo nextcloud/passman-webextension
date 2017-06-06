@@ -3,25 +3,6 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
         return URL;
     }
 
-    var URLobj = null;
-    try {
-        URLobj = new window.URL(URL);
-    }
-
-    catch (err) {
-        if (ignoreProtocol) {
-            try {
-                URLobj = new window.URL("http://" + URL);
-            }
-            catch (err2) {
-                return URL;
-            }
-        }
-        else {
-            return URL;
-        }
-    }
-
     var parser = document.createElement('a');
     parser.href = URL;
 
@@ -50,8 +31,10 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
         baseHost = host;
     }
     else {
-        var result = host.match(/[^./]+\.[^./]+$/); // catch the two last parts, it's de hostname and the tld
-        baseHost = result[0];
+        var tld = parse_host(host);
+        if(tld) {
+            baseHost = tld.domain;
+        }
     }
     var returnURL = "";
     if (!ignoreProtocol) {
