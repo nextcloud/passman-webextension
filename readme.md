@@ -26,5 +26,13 @@ Features
 Make sure the credential has an url set, otherwise the extension won't be able to find accounts.
 
 
+## Support Passman
+Passman is open source, but we would gladly accept a beer (or pizza!)   
+Please consider donating via
+- [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6YS8F97PETVU2)
+- [Patreon](https://www.patreon.com/user?u=4833592)
+- Bitcoin: 1H2c5tkGX54n48yEtM4Wm4UrAGTW85jQpe
+
+
 
 If you want to use this extension as a base for your own extension, please do so =).   
