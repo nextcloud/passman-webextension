@@ -2,7 +2,7 @@ function processURL(URL, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort
     if (URL === null || URL === "") {
         return URL;
     }
-    
+
     var parser = document.createElement('a');
     parser.href = URL;
 
