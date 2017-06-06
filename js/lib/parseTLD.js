@@ -1,5 +1,5 @@
 var parse_host = function(host){
-    if(!tlds){
+    if(typeof tlds === "undefined"){
         throw new Error('No TLDs!');
     }
 
