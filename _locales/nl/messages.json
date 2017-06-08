@@ -16,7 +16,7 @@
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Negeer protocol voor site matching",
+        "message": "Negeer protocol voor bijpassende site",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
@@ -48,7 +48,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman extensie is geblokkeerd, deblokkeer om te gebruiken",
+        "message": "Passman uitbreiding is geblokkeerd, deblokkeer om te gebruiken",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -108,7 +108,7 @@
         "description": "List"
     },
     "ignore_site": {
-        "message": "Pagina negeren",
+        "message": "Site negeren",
         "description": "Update"
     },
     "select_default_vault": {
@@ -124,7 +124,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "We vonden $AMOUNT$ inloggegevens van deze pagina",
+        "message": "We vonden $AMOUNT$ inloggegevens van deze site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -140,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Negeer pad voor bijpassende site",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
@@ -180,7 +180,7 @@
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Negeer poort voor site matching",
+        "message": "Negeer poort voor bijpassende site",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
@@ -212,7 +212,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Pagina negeren",
+        "message": "Genegeerde sites",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -228,11 +228,11 @@
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Inloggegevens van deze pagina opslaan",
+        "message": "Inloggegevens van deze site opslaan",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - is op slot",
+        "message": "Passman - is opgesloten",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
@@ -252,7 +252,7 @@
         "description": "Vault password"
     },
     "save_site": {
-        "message": "Pagina opslaan",
+        "message": "Site opslaan",
         "description": "Save site"
     },
     "next": {
@@ -312,7 +312,7 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Extensie op slot doen",
+        "message": "Slot uitbreiding",
         "description": "Title on the PayPal button"
     },
     "search_for": {
@@ -352,7 +352,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Geen inloggegevens gevonden van deze pagina!",
+        "message": "Geen inloggegevens gevonden van deze site!",
         "description": "No credentials found for the current site"
     },
     "saving": {
@@ -388,7 +388,7 @@
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Negeer subdomein voor site matching",
+        "message": "Negeer subdomein voor bijpassende site",
         "description": "Password"
     },
     "btn_search": {
