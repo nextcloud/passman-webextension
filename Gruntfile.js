@@ -44,6 +44,8 @@ module.exports = function (grunt) {
             dist: {
                 src: [
                     '**',
+                    '*.xpi',
+		    '!fixLocale.js',
                     '!tests/*/**/*',
                     '!tests/*',
                     '!tests',
