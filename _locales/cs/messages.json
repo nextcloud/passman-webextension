@@ -140,7 +140,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Pro hledání stránek ignorovat cestu",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
