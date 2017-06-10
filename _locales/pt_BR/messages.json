@@ -72,7 +72,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Esta senha será usada para criptografar todas as configurações na extensão. Você pode escolher salvar a senha localmente mas ela será salva em texto puro.",
+        "message": "Esta senha será usada para criptografar todas as configurações na extensão. Você pode escolher salvar a senha localmente mas ela será salva em TEXTO NORMAL .",
         "description": "Enter master password"
     },
     "add_account": {
