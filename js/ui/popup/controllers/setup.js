@@ -153,10 +153,13 @@
                             method: "saveSettings",
                             args: settings
                         }).then(function () {
-
                             setTimeout(function () {
-                                $rootScope.$broadcast('showHeader');
-                                window.location = '#!/';
+                                $rootScope.setup = false;
+                                // $rootScope.$broadcast('showHeader');
+                                // window.location = '#!/';
+                                API.runtime.sendMessage(API.runtime.id, {
+                                    method: "closeSetupTab"
+                                });
                                 $scope.saving = false;
                             }, 750);
                         });

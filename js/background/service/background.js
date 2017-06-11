@@ -71,8 +71,7 @@ var background = (function () {
 
         storage.get('settings').then(function (_settings) {
 
-            if (!_settings || !_settings.hasOwnProperty('nextcloud_host')) {
-
+            if ((!_settings || !_settings.hasOwnProperty('nextcloud_host')) && !master_password) {
                 API.tabs.create({
                     url: '/html/browser_action/browser_action.html'
                 });
@@ -503,6 +502,15 @@ var background = (function () {
     }
 
     _self.getDoorhangerData = getDoorhangerData;
+
+    function closeSetupTab() {
+        API.tabs.query({url: 'chrome-extension://'+ API.runtime.id +'/html/browser_action/browser_action.html'}).then(function (tabs) {
+           if(tabs) {
+               API.tabs.remove(tabs[0].id);
+           }
+        });
+    }
+    _self.closeSetupTab = closeSetupTab;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
