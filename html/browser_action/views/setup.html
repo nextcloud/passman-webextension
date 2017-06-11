@@ -17,21 +17,21 @@
         <h3>{{'nextcloud_settings' | translate}}</h3>
         <div class="group">
             <input type="text" ng-model="settings.nextcloud_host"
-                   required ng-debounce="1000">
+                   required>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'server_url' | translate}}</label>
         </div>
         <div class="group">
             <input type="text" ng-model="settings.nextcloud_username"
-                   required ng-debounce="1000">
+                   required >
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'username' | translate}}</label>
         </div>
         <div class="group">
             <input type="password" ng-model="settings.nextcloud_password"
-                   required ng-debounce="1000" ng-enter="next()">
+                   required ng-enter="next()">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'password' | translate}}</label>
@@ -68,7 +68,7 @@
 
         <div class="group" ng-if="vaults.length > 0">
             <input type="password" ng-model="settings.vault_password" ng-enter="next()"
-                   required ng-debounce="1000">
+                   required>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'vault_password' | translate}}</label>
@@ -93,7 +93,7 @@
         <br/>
         <div class="group" style="margin-bottom: 20px;">
             <input type="password" ng-model="settings.master_password" ng-enter="next()"
-                   required ng-debounce="1000">
+                   required>
             <span class="highlight"></span>
             <span class="bar"></span>
         </div>
