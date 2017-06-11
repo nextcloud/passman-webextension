@@ -3,6 +3,7 @@
         <h3>{{'welcome_to_passman' | translate}}</h3>
         <div style="padding-left: 5px; margin-bottom: 20px;">{{'intro_text' | translate}}</div>
         <button class="md-btn default margin5" ng-click="next()" ng-disabled="saving">
+
         <span>
             <i ng-show="saving"
                ng-class="{'fa-spinner fa-spin': saving}"
@@ -35,7 +36,7 @@
             <span class="bar"></span>
             <label>{{'password' | translate}}</label>
         </div>
-
+        <div ng-include="'error_template.html'"></div>
         <button step-previous class="md-btn margin5">
             <span>{{'prev' | translate}}</span>
         </button>
@@ -139,3 +140,9 @@
         </button>
     </step>
 </steps>
+
+<script type="text/ng-template" id="error_template.html">
+    <div class="alert alert-warning" ng-show="errors.length > 0">
+        <div ng-repeat="error in errors">{{error}}</div>
+    </div>
+</script>

@@ -56,6 +56,7 @@
             $scope.vaults = [];
 
             $rootScope.$broadcast('hideHeader');
+            $rootScope.setup = true;
             $scope.gogo = function (to) {
                 StepsService.steps().goTo(to);
             };
@@ -66,6 +67,11 @@
 
             $scope.check = {
                 server: function (callback) {
+                    if(!$scope.settings.nextcloud_host || !$scope.settings.nextcloud_username || !$scope.settings.nextcloud_password){
+                        $scope.errors.push(API.i18n.getMessage('invalid_server_settings'));
+                        callback(false);
+                        return
+                    }
                     PAPI.host = $scope.settings.nextcloud_host;
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;

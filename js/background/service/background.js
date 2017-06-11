@@ -594,6 +594,12 @@ var background = (function () {
 
     displayLogoutIcons();
 
+    if (!getRuntimeSettings() || Object.keys(getRuntimeSettings()).length === 0) {
+        chrome.tabs.create({
+            url: '/html/browser_action/browser_action.html'
+        });
+    }
+
     storage.get('master_password').then(function (password) {
         if (password) {
             master_password = password;
