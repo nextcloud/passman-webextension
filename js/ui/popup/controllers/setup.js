@@ -70,7 +70,7 @@
                     if(!$scope.settings.nextcloud_host || !$scope.settings.nextcloud_username || !$scope.settings.nextcloud_password){
                         $scope.errors.push(API.i18n.getMessage('invalid_server_settings'));
                         callback(false);
-                        return
+                        return;
                     }
                     PAPI.host = $scope.settings.nextcloud_host;
                     PAPI.username = $scope.settings.nextcloud_username;
