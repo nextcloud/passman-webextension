@@ -52,7 +52,10 @@
     <step class="step3" name="vault">
         <h3>{{'default_vault' | translate}}</h3>
         <div style="margin-bottom: 35px; padding-left: 5px">{{'default_vault_desc' | translate}}</div>
-        <div class="group">
+        <div class="group" ng-if="vaults.length === 0">
+            {{'no_vaults' | translate}}
+        </div>
+        <div class="group" ng-if="vaults.length > 0">
             <select id="defaultVault" class="input-md" ng-model="settings.default_vault" required
                     ng-options="vault.name for vault in vaults track by vault.guid"></select>
             <span class="highlight"></span>
@@ -61,7 +64,8 @@
         </div>
 
 
-        <div class="group">
+
+        <div class="group" ng-if="vaults.length > 0">
             <input type="password" ng-model="settings.vault_password"
                    required ng-debounce="1000">
             <span class="highlight"></span>

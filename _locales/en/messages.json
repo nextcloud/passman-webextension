@@ -407,6 +407,10 @@
     "message": "Search",
     "description": "Search"
   },
+  "no_vaults": {
+    "message": "Sorry, the extension din't find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
+    "description": "Search"
+  },
   "refresh_credential_list": {
     "message": "Refresh credential list",
     "description": "Refresh the credential list"
