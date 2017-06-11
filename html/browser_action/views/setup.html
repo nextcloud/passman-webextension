@@ -31,7 +31,7 @@
         </div>
         <div class="group">
             <input type="password" ng-model="settings.nextcloud_password"
-                   required ng-debounce="1000">
+                   required ng-debounce="1000" ng-enter="next()">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'password' | translate}}</label>
@@ -67,7 +67,7 @@
 
 
         <div class="group" ng-if="vaults.length > 0">
-            <input type="password" ng-model="settings.vault_password"
+            <input type="password" ng-model="settings.vault_password" ng-enter="next()"
                    required ng-debounce="1000">
             <span class="highlight"></span>
             <span class="bar"></span>
@@ -92,7 +92,7 @@
         <div style="padding-left: 5px">{{'enter_master_password_desc' | translate}}</div>
         <br/>
         <div class="group" style="margin-bottom: 20px;">
-            <input type="password" ng-model="settings.master_password"
+            <input type="password" ng-model="settings.master_password" ng-enter="next()"
                    required ng-debounce="1000">
             <span class="highlight"></span>
             <span class="bar"></span>

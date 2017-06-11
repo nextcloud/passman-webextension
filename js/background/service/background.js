@@ -72,6 +72,11 @@ var background = (function () {
         storage.get('settings').then(function (_settings) {
 
             if (!_settings || !_settings.hasOwnProperty('nextcloud_host')) {
+
+                API.tabs.create({
+                    url: '/html/browser_action/browser_action.html'
+                });
+
                 return;
             }
 
@@ -594,11 +599,7 @@ var background = (function () {
 
     displayLogoutIcons();
 
-    if (!getRuntimeSettings() || Object.keys(getRuntimeSettings()).length === 0) {
-        chrome.tabs.create({
-            url: '/html/browser_action/browser_action.html'
-        });
-    }
+
 
     storage.get('master_password').then(function (password) {
         if (password) {
