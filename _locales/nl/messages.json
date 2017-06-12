@@ -63,6 +63,10 @@
         "message": "ongeldige kluissleutel!",
         "description": "Vault password"
     },
+    "no_vaults": {
+        "message": "Sorry, the extension din't find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
+        "description": "Search"
+    },
     "edit": {
         "message": "Bewerken",
         "description": "Edit"
@@ -90,6 +94,10 @@
     "delete": {
         "message": "Verwijderen",
         "description": "Delete"
+    },
+    "invalid_server_settings": {
+        "message": "Invalid server settings",
+        "description": "Search"
     },
     "nextcloud_settings": {
         "message": "Nextcloud / owncloud server instellingen",

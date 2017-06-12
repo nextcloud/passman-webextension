@@ -63,6 +63,10 @@
         "message": "Неверный ключ хранилища!",
         "description": "Vault password"
     },
+    "no_vaults": {
+        "message": "Sorry, the extension din't find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
+        "description": "Search"
+    },
     "edit": {
         "message": "Править",
         "description": "Edit"
@@ -90,6 +94,10 @@
     "delete": {
         "message": "Удалить",
         "description": "Delete"
+    },
+    "invalid_server_settings": {
+        "message": "Invalid server settings",
+        "description": "Search"
     },
     "nextcloud_settings": {
         "message": "Настройки сервера Nextcloud / ownCloud",
