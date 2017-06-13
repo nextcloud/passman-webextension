@@ -96,7 +96,7 @@
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Configuraciones del servidor inválidas",
         "description": "Search"
     },
     "nextcloud_settings": {

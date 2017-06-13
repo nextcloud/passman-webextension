@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry, the extension din't find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
+        "message": "A extensão não encontrou nenhum cofre. Crie um através do aplicativo Nextcloud/ ownCloud e tente novamente.",
         "description": "Search"
     },
     "edit": {
@@ -96,7 +96,7 @@
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Configuração inválida do servidor",
         "description": "Search"
     },
     "nextcloud_settings": {
