@@ -60,6 +60,9 @@ $(document).ready(function () {
 
 
     API.runtime.sendMessage(API.runtime.id, {method: "getDoorhangerData"}).then(function (data) {
+        if(!data){
+            return;
+        }
         var buttons = data.buttons;
         data = data.data;
 
