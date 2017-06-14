@@ -96,7 +96,7 @@
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Ugyldige tjenerinnstillinger",
         "description": "Search"
     },
     "nextcloud_settings": {
@@ -148,7 +148,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Ignorer sti for sjekk av sider mot hverandre",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
