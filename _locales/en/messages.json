@@ -192,7 +192,7 @@
     "description": "Disable auto fill of forms"
   },
   "ignore_site_placeholder": {
-    "message": "Enter a domain or tld to ignore and press enter",
+    "message": "Enter a domain or TLD to ignore and press enter",
     "description": "Disable auto fill of forms"
   },
   "disable_password_picker": {
@@ -408,7 +408,7 @@
     "description": "Search"
   },
   "no_vaults": {
-    "message": "Sorry, the extension din't find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
+    "message": "Sorry, the extension didn\'t find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
     "description": "Search"
   },
   "invalid_server_settings": {
