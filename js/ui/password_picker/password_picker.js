@@ -199,12 +199,27 @@ $(document).ready(function () {
     }
 
     var picker = $('#password_picker');
-    picker.find('.tab').click(function () {
-        var target = $(this).attr('class').replace('active', '').replace('tab', '').trim();
+    var makeTabActive = function (name) {
         picker.find('.tab').removeClass('active');
         picker.find('.tab-content').children().hide();
-        picker.find('.tab-' + target + '-content').show();
-        picker.find('.tab.' + target).addClass('active');
+        picker.find('.tab-' + name + '-content').show();
+        picker.find('.tab.' + name).addClass('active');
+    };
+
+    picker.find('.tab').click(function () {
+        var name = $(this).attr('data-name');
+        storage.set('activeTab', name).then(function (r) {
+            makeTabActive(name)
+        });
+
+    });
+
+    storage.get('activeTab').then(function (name) {
+        if(name) {
+            makeTabActive(name);
+        } else {
+            makeTabActive('list');
+        }
     });
 
     $('.tab.close').click(function () {
