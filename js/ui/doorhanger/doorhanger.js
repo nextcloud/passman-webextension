@@ -66,16 +66,11 @@ $(document).ready(function () {
         }
         var buttons = data.buttons;
         data = data.data;
-        var displayUrl = data.url;
-        console.log(displayUrl.substring(0, 8))
-        if (displayUrl.length > 250) {
-            displayUrl = displayUrl.substring(0, 150) + '...';
-        }
         var username = (data.username) ? data.username : data.email;
         var doorhanger_div = $('<div id="password-toolbar">');
         $('<span>', {
             class: 'toolbar-text',
-            text: data.title + ' ' + username + ' at ' + displayUrl
+            text: data.title + ' ' + username + ' at ' + data.url
         }).appendTo(doorhanger_div);
 
 

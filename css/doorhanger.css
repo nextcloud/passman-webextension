@@ -16,7 +16,11 @@ body {
   #password-toolbar .toolbar-text {
     float: left;
     display: inline-block;
-    margin-top: 5px; }
+    margin-top: 5px;
+    width: calc(100% - 180px );
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   #password-toolbar .passman-btn {
     float: right;
     display: inline-block;
