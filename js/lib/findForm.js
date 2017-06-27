@@ -203,11 +203,11 @@ function dispatchEvents(element){
 function fillPassword(user, password) {
     var loginFields = getLoginFields();
     for (var i = 0; i < loginFields.length; i++) {
-        if(user){
+        if(user && loginFields[i][0]){
             loginFields[i][0].value = user;
             dispatchEvents(loginFields[i][0]);
         }
-        if(password) {
+        if(password && loginFields[i][1]) {
             loginFields[i][1].value = password;
             dispatchEvents(loginFields[i][1]);
         }
