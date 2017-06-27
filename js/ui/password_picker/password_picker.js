@@ -320,7 +320,8 @@ $(document).ready(function () {
                 var login = result[i];
                 var div = $('<div>', {class: 'account', text: login.label});
                 $('<br>').appendTo(div);
-                var username = (login.username.trim() !== '' ) ? login.username : login.email;
+
+                var username = (login.username !== '' ) ? login.username : login.email;
                 $('<small>').text(username).appendTo(div);
                 $('<br>').appendTo(div);
                 $('<small>').text(url_domain(login.url)).appendTo(div);
