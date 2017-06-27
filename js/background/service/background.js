@@ -100,6 +100,9 @@ var background = (function () {
             if (!_self.settings.hasOwnProperty('disable_browser_autofill')) {
                 _self.settings.disable_browser_autofill = true;
             }
+            if (!_self.settings.hasOwnProperty('no_results_found_tab')) {
+                _self.settings.no_results_found_tab = 'list';
+            }
 
 
             PAPI.host = _settings.nextcloud_host;
@@ -153,6 +156,10 @@ var background = (function () {
 
         if (!settings.hasOwnProperty('disable_browser_autofill')) {
             settings.disable_browser_autofill = true;
+        }
+
+        if (!_self.settings.hasOwnProperty('password_picker_first_tab')) {
+            _self.settings.disable_browser_autofill = 'list';
         }
 
         //window.settings contains the run-time settings

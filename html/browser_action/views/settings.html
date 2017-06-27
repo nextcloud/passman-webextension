@@ -55,6 +55,17 @@
             <span class="bar"></span>
         </div>
     </div>
+    <div class="group">
+        <select id="firstTab" class="input-md" ng-model="settings.no_results_found_tab">
+            <option value="list">List</option>
+            <option value="search">Search</option>
+            <option value="add">Add</option>
+            <option value="generate">Generate</option>
+        </select>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>{{'select_password_picker_default_tab' | translate}}</label>
+    </div>
     <div class="switch-row">
         <input type="checkbox" id="ignore_protocol" ng-model="settings.ignoreProtocol" class="switch-input">
         <label for="ignore_protocol" class="switch-label">{{'ignore_protocol' | translate}}</label>

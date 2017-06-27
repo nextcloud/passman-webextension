@@ -234,6 +234,15 @@ $(document).ready(function () {
             method: "getCredentialsByUrl",
             args: [tab.url]
         }).then(function (logins) {
+            if(logins.length === 0){
+                API.runtime.sendMessage(API.runtime.id, {
+                    'method': 'getSetting',
+                    args: 'no_results_found_tab'
+                }).then(function (value) {
+                    makeTabActive(value);
+                });
+                return;
+            }
             if (logins.length !== 0) {
                 picker.find('.tab-list-content').html('');
             }
@@ -291,6 +300,7 @@ $(document).ready(function () {
         var matches = data.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
         return matches && matches[1];  // domain will be null if no match is found
     }
+
 
 
     function searchCredentials() {
