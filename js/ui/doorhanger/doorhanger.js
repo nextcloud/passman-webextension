@@ -36,7 +36,7 @@ $(document).ready(function () {
             return {
                 text: 'Update',
                 onClickFn: function () {
-                    API.runtime.sendMessage(API.runtime.id, {method: "updateCredentialUrl", args: data.data});
+                    API.runtime.sendMessage(API.runtime.id, {method: "updateCredentialUrl", args: data});
                     dh.find('.toolbar-text').text('Saving...');
                     dh.find('.passman-btn').hide();
                 }
@@ -86,16 +86,16 @@ $(document).ready(function () {
 
     function minedLoginSaved(args) {
         // If the login added by the user then this is true
-        if ($('#password-doorhanger').is(':visible')) {
-            var saved = API.i18n.getMessage('credential_saved');
-            var updated = API.i18n.getMessage('credential_updated');
-            var action = (args.updated) ? updated : saved;
-            $('#password-toolbar').html(action + '!');
-            //@TODO update
-            setTimeout(function () {
-                closeDoorhanger();
-            }, 2500);
-        }
+
+        var saved = API.i18n.getMessage('credential_saved');
+        var updated = API.i18n.getMessage('credential_updated');
+        var action = (args.updated) ? updated : saved;
+        $('#password-toolbar').html(action + '!');
+        //@TODO update
+        setTimeout(function () {
+            closeDoorhanger();
+        }, 2500);
+
     }
 
     _this.minedLoginSaved = minedLoginSaved;
