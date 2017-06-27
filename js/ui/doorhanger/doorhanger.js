@@ -65,11 +65,14 @@ $(document).ready(function () {
         }
         var buttons = data.buttons;
         data = data.data;
-
+        var displayUrl = data.url;
+        if(displayUrl.length > 512){
+            displayUrl = displayUrl.substring(0,8);
+        }
         var doorhanger_div = $('<div id="password-toolbar">');
         $('<span>', {
             class: 'toolbar-text',
-            text: data.title + ' ' + data.username + ' at ' + data.url
+            text: data.title + ' ' + data.username + ' at ' + displayUrl
         }).appendTo(doorhanger_div);
 
 
