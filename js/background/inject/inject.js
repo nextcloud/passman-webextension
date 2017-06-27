@@ -19,7 +19,10 @@ $j(document).ready(function () {
         var username;
 
         if (login.hasOwnProperty('username')) {
-            username = (login.username.trim() !== '' ) ? login.username : login.email;
+            username = (login.username !== '' ) ? login.username : login.email;
+        }
+        if(!username){
+            username = null;
         }
 
         fillPassword(username, login.password);

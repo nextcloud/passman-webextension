@@ -5,6 +5,7 @@ $(document).ready(function () {
             args: {'injectMethod': 'closeDoorhanger'}
         });
     }
+
     var dh = $('#password-doorhanger');
     var btn_config = {
         'cancel': function () {
@@ -60,19 +61,21 @@ $(document).ready(function () {
 
 
     API.runtime.sendMessage(API.runtime.id, {method: "getDoorhangerData"}).then(function (data) {
-        if(!data){
+        if (!data) {
             return;
         }
         var buttons = data.buttons;
         data = data.data;
         var displayUrl = data.url;
-        if(displayUrl.length > 512){
-            displayUrl = displayUrl.substring(0,8);
+        console.log(displayUrl.substring(0, 8))
+        if (displayUrl.length > 250) {
+            displayUrl = displayUrl.substring(0, 150) + '...';
         }
+        var username = (data.username) ? data.username : data.email;
         var doorhanger_div = $('<div id="password-toolbar">');
         $('<span>', {
             class: 'toolbar-text',
-            text: data.title + ' ' + data.username + ' at ' + displayUrl
+            text: data.title + ' ' + username + ' at ' + displayUrl
         }).appendTo(doorhanger_div);
 
 
