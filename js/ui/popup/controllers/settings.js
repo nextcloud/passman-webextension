@@ -61,6 +61,7 @@
                     if (!$scope.settings.hasOwnProperty('nextcloud_host') || !$scope.settings.hasOwnProperty('nextcloud_password') || !$scope.settings.hasOwnProperty('nextcloud_username')) {
                         return;
                     }
+
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.host = $scope.settings.nextcloud_host;
@@ -87,6 +88,7 @@
 
                 $scope.$watch('[settings.nextcloud_host, settings.nextcloud_username, settings.nextcloud_password]', function () {
                     if ($scope.settings.nextcloud_host && $scope.settings.nextcloud_username && $scope.settings.nextcloud_password) {
+                        $scope.settings.nextcloud_host = $scope.settings.nextcloud_host.replace(/\/$/, "");
                         $scope.get_vaults();
                     }
                 }, true);

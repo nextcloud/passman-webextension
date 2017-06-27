@@ -72,6 +72,7 @@
                         callback(false);
                         return;
                     }
+                    $scope.settings.nextcloud_host = $scope.settings.nextcloud_host.replace(/\/$/, "");
                     PAPI.host = $scope.settings.nextcloud_host;
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;
