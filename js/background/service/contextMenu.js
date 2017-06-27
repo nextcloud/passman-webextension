@@ -194,7 +194,7 @@ window.contextMenu = (function () {
                     window.OTP.secret = login.totp;
                     text =  window.OTP.getOTP();
                 }
-                API.tabs.sendMessage(tabs[0].id, {method: "copyTextToClipboard", args: text});
+                API.tabs.sendMessage(tabs[0].id, {method: "copyText", args: text});
             });
             return;
         }
