@@ -209,7 +209,7 @@ $(document).ready(function () {
     picker.find('.tab').click(function () {
         var name = $(this).attr('data-name');
         storage.set('activeTab', name).then(function (r) {
-            makeTabActive(name)
+            makeTabActive(name);
         });
 
     });
