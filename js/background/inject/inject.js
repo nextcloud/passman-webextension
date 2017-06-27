@@ -41,26 +41,29 @@ $j(document).ready(function () {
         var passwordField = $j(form[1]);
         var passwordFieldPos = passwordField.offset();
 
-        var left = loginFieldPos.left;
-        var top = loginFieldPos.top;
+        var left = (loginFieldPos) ? loginFieldPos.left : passwordFieldPos.left;
+        var top = (loginFieldPos) ? loginFieldPos.top : passwordFieldPos.top;
         var maxZ = Math.max.apply(null,
             $j.map($j('body *'), function (e) {
                 if ($j(e).css('position') !== 'static')
                     return parseInt($j(e).css('z-index')) || 1;
             }));
-        if (passwordFieldPos.top > loginFieldPos.top) {
+        if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
-
         } else {
             // console.log('login fields next to each other')
-            top = top + loginField.height() + 10;
+            if(loginFieldPos){
+                top =  top + loginField.height() + 10;
+            } else {
+                top =  top + passwordField.height() + 10;
+            }
         }
 
 
         var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
-        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="400" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
+        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="385" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
         picker.css('z-index', maxZ + 10);
@@ -80,7 +83,8 @@ $j(document).ready(function () {
         var pickerIcon = API.extension.getURL('/icons/icon.svg');
         $j(el).css('background-image', 'url("' + pickerIcon + '")');
         $j(el).css('background-repeat', 'no-repeat');
-        $j(el).css('background-position', 'right 3px center');
+        //$j(el).css('background-position', '');
+        $j(el).css('cssText', el.attr('style')+' background-position: right 3px center !important;');
 
 
         function onClick(e) {
