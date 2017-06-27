@@ -236,6 +236,10 @@ var background = (function () {
 
 
     function saveCredential(credential) {
+        //@TODO save shared password
+        if(credential.shared_key){
+            return;
+        }
         if (!credential.credential_id) {
             PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
                 local_credentials.push(createdCredential);
