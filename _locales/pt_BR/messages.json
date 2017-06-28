@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciais no banco de dados",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Atualizar lista de credenciais",
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "A extensão não encontrou nenhum cofre. Crie um através do aplicativo Nextcloud/ ownCloud e tente novamente.",
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
         "description": "Search"
     },
     "edit": {
@@ -139,13 +133,7 @@
     },
     "credentials_found_for_site": {
         "message": "Foram encontradas $AMOUNT$ credenciais para este site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Valor",
@@ -200,7 +188,7 @@
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorar porta para sites coincidentes",
+        "message": "Ignorar porto para sites coincidentes",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
@@ -228,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Entre um domínio ou tld a ignorar e pressione enter",
+        "message": "Enter a domain or TLD to ignore and press enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -271,6 +259,10 @@
         "message": "Senha do cofre",
         "description": "Vault password"
     },
+    "select_password_picker_default_tab": {
+        "message": "Password picker: When no credentials found go to:",
+        "description": "Select password picker default tab"
+    },
     "save_site": {
         "message": "Salvar site",
         "description": "Save site"
@@ -297,17 +289,7 @@
     },
     "invalid_response_from_server": {
         "message": "Resposta inválida do servidor: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Salvar",
@@ -375,17 +357,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Concluído",

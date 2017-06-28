@@ -1,66 +1,66 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credenciales en la base de datos",
+        "message": "$AMOUNT$ credentials in the database",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Actualizar la lista de credenciales",
+        "message": "Refresh credential list",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
+        "message": "Passman - Die wagwoordbestuurder vir NextCloud / ownCloud",
         "description": "Extension description"
     },
     "label": {
-        "message": "Etiqueta",
+        "message": "Etiket",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorar el protocolo para las coincidencias de sitios",
+        "message": "Ignoteer protokol vir werfpassing",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Configuraciones ",
+        "message": "Instellings",
         "description": "Settings"
     },
     "finish": {
-        "message": "Terminar",
+        "message": "Finish",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Se detecó un cambio en la URL de",
+        "message": "Detected changed URL for",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donar",
+        "message": "Skenk",
         "description": "Donate"
     },
     "credentials": {
-        "message": "credenciales",
+        "message": "credentials",
         "description": "credentials"
     },
     "search": {
-        "message": "Buscar",
+        "message": "Soek",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Alternar opciones avanzadas",
+        "message": "Tokkel gevorderde opsies",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
+        "message": "Passman-uitbreiding is vergrendel, ontgrendel om te gebruik",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Actualizar",
+        "message": "Werk By",
         "description": "Update"
     },
     "unlock": {
-        "message": "Desbloquear",
+        "message": "Ontgrendel",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "¡La llave de la bóveda es inválida!",
+        "message": "Ongeldige kluissleutel!",
         "description": "Vault password"
     },
     "no_vaults": {
@@ -68,43 +68,43 @@
         "description": "Search"
     },
     "edit": {
-        "message": "Editar",
+        "message": "Wysig",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Número mínimo de dígitos",
+        "message": "Minimum aantal syfers",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Esta contaseña de usará para encriptar todas sus configuraciones de la extensión. Puede optar por guardar sus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
         "description": "Enter master password"
     },
     "add_account": {
-        "message": "Agregar cuenta",
+        "message": "Voeg rekening toe",
         "description": "Add account"
     },
     "back": {
-        "message": "Atrás",
+        "message": "Terug",
         "description": "Back"
     },
     "credential": {
-        "message": "credencial",
+        "message": "credential",
         "description": "credential"
     },
     "delete": {
-        "message": "Borrar",
+        "message": "Skrap",
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Configuraciones del servidor inválidas",
+        "message": "Ongeldige bedienerinstellings",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Configuraciones del servidor Nextcloud / ownCloud",
+        "message": "Nextcloud / ownCloud-bedienerinstellings",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Usar contraseña",
+        "message": "Gebruik wagwoord",
         "description": "Use password"
     },
     "one_time_password": {
@@ -112,107 +112,107 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Lista",
+        "message": "Lys",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorar sitio",
+        "message": "Ignoreer werf",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Seleccionar bóveda predeterminada",
+        "message": "Kies verstekkluis",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Sitio ignorado",
+        "message": "Werf geïgnoreer",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continuar",
+        "message": "Gaan Voort",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
+        "message": "We've found $AMOUNT$ credentials for this site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Valor",
+        "message": "Waarde",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "El desarrollo depende de las donaciones, por favor apóyenos",
+        "message": "Ontwikkeling is van skenkings afhanklik, ondersteun ons asb.",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Favor de ingresas sus credenciales de Nextcloud / ownCloud",
+        "message": "Please enter your Nextcloud / ownCloud credentials",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignorar la ruta para la conicidencia de sitios",
+        "message": "Ignoreer pad vir werfpassing",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Campos personalizados",
+        "message": "Pasgemaakte Velde",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "URL del servidor inválida",
+        "message": "Ongeldige bedienerbronadres",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "¡La contraseña maestra es inválida!",
+        "message": "Ongeldige hoofwagwoord!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Algemeen",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Las contraseñas no coinciden",
+        "message": "Wagwoorde stem nie ooreen nie",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Cerrar",
+        "message": "Sluit",
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "Vorige",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Después de crearlas, usted puede editar las credenciales en Passman",
+        "message": "After creating it, you can edit the credential in Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
-        "message": "Bóveda predeterminada",
+        "message": "Verstekkluis",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorar el puerto en las coincidencias de sitios",
+        "message": "Ignoreer poort vir werfpassing",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Configuraciones del servidor",
+        "message": "Bedienerinstellings",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Establecer la contraseña maestra",
+        "message": "Stel Hoofwagwoord",
         "description": "Set a master password"
     },
     "password": {
-        "message": "Contraseña",
+        "message": "Wagwoord",
         "description": "Password"
     },
     "copy": {
-        "message": "Copiar",
+        "message": "Kopieer",
         "description": "Copy"
     },
     "begin": {
-        "message": "¡Comencemos!",
+        "message": "Kom ons begin!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "¡Este asistente de instalación lo guiará en los pasos para configurar la extensióny mantener todas sus contraseñas sincronizadas!",
+        "message": "Hierdie slimmerd sal u deur die stappe neem om die uitbreiding op te stel en al u wagwoorde gesinchroniseerd te hou!",
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
@@ -220,43 +220,43 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Sitios ignorados",
+        "message": "Geïgnoreerde werwe",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Alternar visibilidad",
+        "message": "Tokkel sigbaarheid",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "¡Advertencia! Su contraseña maestra será almacenada en texto plano",
+        "message": "Waarskuwing! U hoofwagwoord sal in skoonteks bewaar word",
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Recordar la contraseña maestra",
+        "message": "Onthou hoofwagwoord",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Guardar las credenciales para este sitio",
+        "message": "Save credentials for this site",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Bloqueado",
+        "message": "Passman - Vergrendeld",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Favor de llenar la etiqueta",
+        "message": "Vul asb. ’n etiket in",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Introduzca la contraseña maestra",
+        "message": "Voer hoofwagwoord in",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Configuraciones de la bóveda",
+        "message": "Kluisinstellings",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Bóveda de contraseñas",
+        "message": "Kluiswagwoord",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
@@ -264,59 +264,59 @@
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Guardar sitio",
+        "message": "Bewaar werf",
         "description": "Save site"
     },
     "next": {
-        "message": "Siguiente",
+        "message": "Volgende",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Evitar caracteres ambiguos",
+        "message": "Vermy dubbelsinnige karakters",
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Seleccione la bóveda que desee mantener sincronizada con el navegador. ",
+        "message": "Kies die kluis wat u met die blaaier gesinchroniseerd wil hou.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "Se detectó un nuevo inicio de sesión",
+        "message": "Bespeur nuwe aantekening",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Se detectó un cambio en la contraseña para el usuario",
+        "message": "Detected changed password for user",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Respuesta inválida del servidor : [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ongeldige respons van bediener: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Guardar",
+        "message": "Bewaar",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Generar contraseña",
+        "message": "Genereer wagwoord",
         "description": "Generate password"
     },
     "server_url": {
-        "message": "URL del servidor",
+        "message": "Server URL",
         "description": "Server URL"
     },
     "cancel": {
-        "message": "Cancelar",
+        "message": "Kanselleer",
         "description": "Cancel"
     },
     "add": {
-        "message": "Agregar",
+        "message": "Voeg Toe",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Credencial actualizada",
+        "message": "Credential updated",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "No se encontraron credenciales",
+        "message": "No credentials found",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -324,111 +324,111 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Bloquear extensión",
+        "message": "Vergrendel uitbreiding",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "Buscar a",
+        "message": "Soek na",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Contraseña (repetir)",
+        "message": "Wagwoord (herhaal)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Credenciales guardadas",
+        "message": "Credential saved",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Requerir todos los tipos de caracteres",
+        "message": "Vereis elke karaktertipe",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Habilitar el modo de depuración",
+        "message": "Aktiveer ontfoutmodus",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Correo electrónico",
+        "message": "E-pos",
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Bienvenido a la extensión Passman",
+        "message": "Welkom by die Passman-uitbreiding",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "done": {
-        "message": "Terminado",
+        "message": "Gereed",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "¡No se encontraron credenciales para este sitio!",
+        "message": "No credentials found for this site!",
         "description": "No credentials found for the current site"
     },
     "saving": {
-        "message": "Guardando",
+        "message": "Saving",
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Deshabilitar el seleccionador de contraseñas",
+        "message": "Deaktiveer wagwoordkieser",
         "description": "Disable password picker"
     },
     "url": {
-        "message": "URL",
+        "message": "Bronadres",
         "description": "URL"
     },
     "no_sites_ignored": {
-        "message": "No se han ignorado sitios",
+        "message": "Geen werwe geïgnoreer",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Si le agrada, no olvide donar",
+        "message": "Onthou om te sken as u hiervan hou",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Cuentas",
+        "message": "Rekeninge",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Generador de contraseñas",
+        "message": "Wagwoordgenereerder",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "¡La llave maestra está vacía!",
+        "message": "Leë meestersleutel!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignorar el subdominio para las coincidencias de sitios",
+        "message": "Ignoreer subdomein vir werfpassing",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Buscar credenciales",
+        "message": "Search credentials",
         "description": "Search credentials"
     },
     "disable_autofill": {
-        "message": "Deshabilitar auto-llenar de formas",
+        "message": "Disable auto fill of forms",
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credencial creada",
+        "message": "Credential created",
         "description": "Credential created"
     },
     "username": {
-        "message": "Nombre de usuario",
+        "message": "Gebruikersnaam",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Longitud de la contraseña",
+        "message": "Wagwoordlengte",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Desactivar el autocompletado del navegador",
+        "message": "Deaktiveer blaaieroutoïnvul",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Restablecer temporizador [s]",
+        "message": "Verfris tydhouer [s]",
         "description": "Password"
     }
 }

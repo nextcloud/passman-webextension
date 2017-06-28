@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ inloggegevens in de database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Verversen lijst inloggegevens",
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry, the extension din't find any vaults. Please create a vault via the Nextcloud/ ownCloud app and try again.",
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
         "description": "Search"
     },
     "edit": {
@@ -102,7 +96,7 @@
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Ongeldige serverinstellingen",
         "description": "Search"
     },
     "nextcloud_settings": {
@@ -139,13 +133,7 @@
     },
     "credentials_found_for_site": {
         "message": "We vonden $AMOUNT$ inloggegevens van deze site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Waarde",
@@ -156,7 +144,7 @@
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Voer je Nextcloud / owncloud inloggegevens in",
+        "message": "Voer je Nextcloud / ownCloud inloggegevens in",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
@@ -228,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Typ een domein of titel om te negeren en druk op enter",
+        "message": "Enter a domain or TLD to ignore and press enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -271,6 +259,10 @@
         "message": "Kluiswachtwoord",
         "description": "Vault password"
     },
+    "select_password_picker_default_tab": {
+        "message": "Password picker: When no credentials found go to:",
+        "description": "Select password picker default tab"
+    },
     "save_site": {
         "message": "Site opslaan",
         "description": "Save site"
@@ -297,17 +289,7 @@
     },
     "invalid_response_from_server": {
         "message": "Foute reactie van de server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Opslaan",
@@ -375,17 +357,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ vond deze pagina",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Gedaan",
@@ -448,7 +420,7 @@
         "description": "Username"
     },
     "pw_length": {
-        "message": "Wachtwoord lengte",
+        "message": "Wachtwoordlengte",
         "description": "Password length"
     },
     "disable_browser_autofill": {

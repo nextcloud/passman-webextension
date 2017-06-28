@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "Veritabanında $AMOUNT$ kimlik doğrulama bilgisi var",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Kimlik doğrulama bilgilerini yenile",
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Maalesef, uygulama herhangi bir kasa bulamadı. Lütfen Nextcloud/ownCloud uygulaması ile bir kasa oluşturup yeniden deneyin.",
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
         "description": "Search"
     },
     "edit": {
@@ -139,13 +133,7 @@
     },
     "credentials_found_for_site": {
         "message": "Bu site için  $AMOUNT$ bulundu",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Değer",
@@ -228,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Bir etki alanı ya da yoksaymak için tld yazın ve enter tuşuna basın",
+        "message": "Enter a domain or TLD to ignore and press enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -271,6 +259,10 @@
         "message": "Kasa parolası",
         "description": "Vault password"
     },
+    "select_password_picker_default_tab": {
+        "message": "Password picker: When no credentials found go to:",
+        "description": "Select password picker default tab"
+    },
     "save_site": {
         "message": "Siteyi kaydet",
         "description": "Save site"
@@ -297,17 +289,7 @@
     },
     "invalid_response_from_server": {
         "message": "Sunucudan alınan yanıt geçersiz: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Kaydet",
@@ -375,17 +357,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - bu sayfa için  $CREDENTIAL_AMOUNT$ $PLURAL$ buldu",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Tamam",

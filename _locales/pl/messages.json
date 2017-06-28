@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ poświadczeń w bazie danych",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Odśwież listę poświadczeń",
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Przepraszamy, dodatek nie znalazł żadnych sejfów. Utwórz sejf w aplikacji Nextcloud/ownCloud i spróbuj ponownie.",
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
         "description": "Search"
     },
     "edit": {
@@ -139,13 +133,7 @@
     },
     "credentials_found_for_site": {
         "message": "Znaleziono  $AMOUNT$ poświadczeń dla tej strony",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Wartość",
@@ -160,7 +148,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Ignoruj ścieżkę dla przyporządkowania stron",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
@@ -228,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Wpisz domenę lub TLD aby pominąć i naciśnij enter",
+        "message": "Enter a domain or TLD to ignore and press enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -271,6 +259,10 @@
         "message": "Hasło do sejfu",
         "description": "Vault password"
     },
+    "select_password_picker_default_tab": {
+        "message": "Password picker: When no credentials found go to:",
+        "description": "Select password picker default tab"
+    },
     "save_site": {
         "message": "Zapisz stronę",
         "description": "Save site"
@@ -297,17 +289,7 @@
     },
     "invalid_response_from_server": {
         "message": "Nieprawidłowa odpowiedź serwera: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Zapisz",
@@ -375,17 +357,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - znaleziono  $CREDENTIAL_AMOUNT$ $PLURAL$ dla tej strony",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Zrobione",
