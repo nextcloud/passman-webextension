@@ -17,7 +17,7 @@ body {
     float: left;
     display: inline-block;
     margin-top: 5px;
-    width: calc(100% - 180px );
+    width: calc(100% - 350px );
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
