@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ записей в базе данных",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Обновить список записей",
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Не удалось найти ни одного хранилища. Создайте новое хранилище, используя приложение для Nextcloud/ownCloud, и попробуйте снова.",
         "description": "Search"
     },
     "edit": {
@@ -139,13 +133,7 @@
     },
     "credentials_found_for_site": {
         "message": "Найдено  $AMOUNT$ записей для этого сайта",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Значение",
@@ -228,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Введите домен или домен верхнего уровня, который следует игнорировать и нажмите «enter»",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -272,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Подбор паролей: Если не найдено ни одной записи, переходить:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -301,17 +289,7 @@
     },
     "invalid_response_from_server": {
         "message": "Неверный ответ сервера:  [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Сохранить",
@@ -379,17 +357,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ найдено для этой страницы",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Готово",

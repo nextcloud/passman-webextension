@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ informations d'identification dans la base",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Rafraîchir la liste des informations d'identification",
@@ -70,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Désolé, aucun coffre-fort trouvé. Veuillez créer un coffre-fort via l'app Nextcloud/ownCloud et réessayez.",
         "description": "Search"
     },
     "edit": {
@@ -139,13 +133,7 @@
     },
     "credentials_found_for_site": {
         "message": "Il y a  $AMOUNT$ informations d'identification pour ce site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Valeur",
@@ -228,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Entrez un domaine ou un TLD à ignorer et appuyez sur Entrée",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -272,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Sélecteur de mot de passe: Lorsqu'aucune information d'identification n'a été trouvée, aller à:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -301,17 +289,7 @@
     },
     "invalid_response_from_server": {
         "message": "Réponse du serveur invalide : [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Enregistrer",
@@ -379,17 +357,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ trouvé pour cette page",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Terminé",
