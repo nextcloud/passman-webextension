@@ -7,13 +7,13 @@ $(document).ready(function () {
         var startChar = string[0];
         var endChar = string[string.length - 1];
         var attribute;
-        if(startChar === '[' && endChar === ']'){
-            var data = string.replace('[','').replace(']','').split(',');
+        if (startChar === '[' && endChar === ']') {
+            var data = string.replace('[', '').replace(']', '').split(',');
             attribute = data[1].trim();
             string = data[0].trim();
         }
         var translated = API.i18n.getMessage(string);
-        if(attribute){
+        if (attribute) {
             $(this).attr(attribute, translated);
         } else {
             $(this).text(translated);
@@ -213,12 +213,11 @@ $(document).ready(function () {
         });
 
     });
-
+    
+    makeTabActive('list');
     storage.get('activeTab').then(function (name) {
-        if(name) {
+        if (name) {
             makeTabActive(name);
-        } else {
-            makeTabActive('list');
         }
     });
 
@@ -234,7 +233,7 @@ $(document).ready(function () {
             method: "getCredentialsByUrl",
             args: [tab.url]
         }).then(function (logins) {
-            if(logins.length === 0){
+            if (logins.length === 0) {
                 API.runtime.sendMessage(API.runtime.id, {
                     'method': 'getSetting',
                     args: 'no_results_found_tab'
@@ -300,7 +299,6 @@ $(document).ready(function () {
         var matches = data.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
         return matches && matches[1];  // domain will be null if no match is found
     }
-
 
 
     function searchCredentials() {
