@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Je nám líto, nebyly nalezeny žádné trezory. Vytvořte trezor pomocí aplikace Nextcloud / ownCloud a zkuste to znovu.",
         "description": "Search"
     },
     "edit": {
@@ -216,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Zadejte doménu nebo TLD, kterou chcete ignorovat, a stiskněte klávesu enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {

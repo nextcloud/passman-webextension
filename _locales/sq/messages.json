@@ -1,110 +1,110 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credenciales en la base de datos",
+        "message": "$AMOUNT$ credentials in the database",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Actualizar la lista de credenciales",
+        "message": "Rifresko listën e kredencialeve",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
+        "message": "Passman - The password manager for NextCloud / ownCloud",
         "description": "Extension description"
     },
     "label": {
-        "message": "Etiqueta",
+        "message": "Etiketa",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorar el protocolo para las coincidencias de sitios",
+        "message": "Ignore protocol for site matching",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Configuraciones ",
+        "message": "Konfigurimet",
         "description": "Settings"
     },
     "finish": {
-        "message": "Terminar",
+        "message": "Mbaro",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Se detecó un cambio en la URL de",
+        "message": "Detected changed URL for",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donar",
+        "message": "Dhuro",
         "description": "Donate"
     },
     "credentials": {
-        "message": "credenciales",
+        "message": "kredenciale",
         "description": "credentials"
     },
     "search": {
-        "message": "Buscar",
+        "message": "Kërko",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Alternar opciones avanzadas",
+        "message": "Toggle advanced options",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
+        "message": "Passman extension is locked, unlock to use it",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Actualizar",
+        "message": "Përditëso",
         "description": "Update"
     },
     "unlock": {
-        "message": "Desbloquear",
+        "message": "Çkyç",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "¡La llave de la bóveda es inválida!",
+        "message": "Çelës kasaforte jo i vlefshëm!",
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Lo sentimos, no se encontraron bóvedas. Por favor crea una bóveda a través de la aplicación Nextcloud / ownCloud y vuelve a intentar.",
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
         "description": "Search"
     },
     "edit": {
-        "message": "Editar",
+        "message": "Modifiko",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Número mínimo de dígitos",
+        "message": "Sasi minimale të shifrave",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Esta contaseña de usará para encriptar todas sus configuraciones de la extensión. Puede optar por guardar sus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
         "description": "Enter master password"
     },
     "add_account": {
-        "message": "Agregar cuenta",
+        "message": "Shto llogari",
         "description": "Add account"
     },
     "back": {
-        "message": "Atrás",
+        "message": "Prapa",
         "description": "Back"
     },
     "credential": {
-        "message": "credencial",
+        "message": "kredencial",
         "description": "credential"
     },
     "delete": {
-        "message": "Borrar",
+        "message": "Fshij",
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Configuraciones del servidor inválidas",
+        "message": "Konfigurime të serverit të papranueshme ",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Configuraciones del servidor Nextcloud / ownCloud",
+        "message": "Konfigurimet e serverit Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Usar contraseña",
+        "message": "Përdor fjalëkalim",
         "description": "Use password"
     },
     "one_time_password": {
@@ -112,211 +112,211 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Lista",
+        "message": "List",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorar sitio",
+        "message": "Injoro faqen",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Seleccionar bóveda predeterminada",
+        "message": "Selekto kasafortën e parazgjedhur",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Sitio ignorado",
+        "message": "Faqja u injorua",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continuar",
+        "message": "Vazhdo",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
+        "message": "We've found $AMOUNT$ credentials for this site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Valor",
+        "message": "Vlerë",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "El desarrollo depende de las donaciones, por favor apóyenos",
+        "message": "Developent depends on donations, please support us",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Favor de ingresas sus credenciales de Nextcloud / ownCloud",
+        "message": "Please enter your Nextcloud / ownCloud credentials",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignorar la ruta para la conicidencia de sitios",
+        "message": "Injoro rrugën e lokazionit për përputhje të faqes",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Campos personalizados",
+        "message": "Custom Fields",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "URL del servidor inválida",
+        "message": "URL serveri i pavlefshëm",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "¡La contraseña maestra es inválida!",
+        "message": "Fjalëkalim master i pavlefshëm!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "I përgjithshëm",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Las contraseñas no coinciden",
+        "message": "Fjalëkalimet nuk përputhen",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Cerrar",
+        "message": "Mbyll",
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "I mëparshëm",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Después de crearlas, usted puede editar las credenciales en Passman",
+        "message": "After creating it, you can edit the credential in Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
-        "message": "Bóveda predeterminada",
+        "message": "Kasafortë e parazgjedhur",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorar el puerto en las coincidencias de sitios",
+        "message": "Ignore port for site matching",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Configuraciones del servidor",
+        "message": "Konfigurimet e serverit",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Establecer la contraseña maestra",
+        "message": "Vendos fjalëkalimin Master",
         "description": "Set a master password"
     },
     "password": {
-        "message": "Contraseña",
+        "message": "Fjalëkalim",
         "description": "Password"
     },
     "copy": {
-        "message": "Copiar",
+        "message": "Kopjo",
         "description": "Copy"
     },
     "begin": {
-        "message": "¡Comencemos!",
+        "message": "Le të fillojmë!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "¡Este asistente de instalación lo guiará en los pasos para configurar la extensióny mantener todas sus contraseñas sincronizadas!",
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Ingresa un dominio o TLD a ignorar y presiona Intro",
+        "message": "Fut një domain ose TLD për të injoruar dhe shtyp enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Sitios ignorados",
+        "message": "Faqe të injoruara",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Alternar visibilidad",
+        "message": "Aktivizo dukshmërinë",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "¡Advertencia! Su contraseña maestra será almacenada en texto plano",
+        "message": "Paralajmërim! Fjalëkalimi juaj master do të ruhet ne tekst të thjeshtë",
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Recordar la contraseña maestra",
+        "message": "Mbaj mend fjalëkalimin master",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Guardar las credenciales para este sitio",
+        "message": "Ruaj kredencialet për këtë faqe",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Bloqueado",
+        "message": "Passman - I kyçur",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Favor de llenar la etiqueta",
+        "message": "Ju lutemi plotësoni një etiketë",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Introduzca la contraseña maestra",
+        "message": "Fut fjalëkalimin master",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Configuraciones de la bóveda",
+        "message": "Konfigurimet e kasafortës",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Bóveda de contraseñas",
+        "message": "Fjalëkalim kasaforte",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Mbledhës fjalëkalimi: Kur nuk gjenden kredencialet:",
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Guardar sitio",
+        "message": "Ruaj faqen",
         "description": "Save site"
     },
     "next": {
-        "message": "Siguiente",
+        "message": "I/E rradhës",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Evitar caracteres ambiguos",
+        "message": "Avoid ambiguous characters",
         "description": "Avoid ambiguous characters"
     },
     "default_vault_desc": {
-        "message": "Seleccione la bóveda que desee mantener sincronizada con el navegador. ",
+        "message": "Select the vault that you want to keep in sync with the browser.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "Se detectó un nuevo inicio de sesión",
+        "message": "Hyrje e re e spikatur",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Se detectó un cambio en la contraseña para el usuario",
+        "message": "Pikasje e fjalëkalimit të ndryshuar për përdoruesin",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Respuesta inválida del servidor : [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Guardar",
+        "message": "Ruaj",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Generar contraseña",
+        "message": "Gjenero fjalëkalim",
         "description": "Generate password"
     },
     "server_url": {
-        "message": "URL del servidor",
+        "message": "URL e serverit",
         "description": "Server URL"
     },
     "cancel": {
-        "message": "Cancelar",
+        "message": "Anulo",
         "description": "Cancel"
     },
     "add": {
-        "message": "Agregar",
+        "message": "Shto",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Credencial actualizada",
+        "message": "Kredencialet u përditësuan",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "No se encontraron credenciales",
+        "message": "Jo kredenciale të gjetura",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -324,55 +324,55 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Bloquear extensión",
+        "message": "Kyç zgjerimin",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "Buscar a",
+        "message": "Kërko për",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Contraseña (repetir)",
+        "message": "Fjalëkalim (përsërit)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Credenciales guardadas",
+        "message": "Kredencialet u ruajten",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Requerir todos los tipos de caracteres",
+        "message": "Require every character type",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Habilitar el modo de depuración",
+        "message": "Enable debug mode",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Correo electrónico",
+        "message": "E-mail",
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Bienvenido a la extensión Passman",
+        "message": "Welcome to the Passman extension",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "done": {
-        "message": "Terminado",
+        "message": "U krye",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "¡No se encontraron credenciales para este sitio!",
+        "message": "Jo kredenciale të gjetura për këtë faqe!",
         "description": "No credentials found for the current site"
     },
     "saving": {
-        "message": "Guardando",
+        "message": "Duke u ruajtur",
         "description": "Saving"
     },
     "disable_password_picker": {
-        "message": "Deshabilitar el seleccionador de contraseñas",
+        "message": "Çaktivizo grumbulluesin e fjalëkalimeve",
         "description": "Disable password picker"
     },
     "url": {
@@ -380,55 +380,55 @@
         "description": "URL"
     },
     "no_sites_ignored": {
-        "message": "No se han ignorado sitios",
+        "message": "Asnjë faqe e injoruar",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Si le agrada, no olvide donar",
+        "message": "Nqs e pëlqen, mos harro të dhurosh",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Cuentas",
+        "message": "Llogaritë",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Generador de contraseñas",
+        "message": "Gjenerues fjalëkalimesh",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "¡La llave maestra está vacía!",
+        "message": "Çelësi master bosh!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignorar el subdominio para las coincidencias de sitios",
+        "message": "Ignore subdomain for site matching",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Buscar credenciales",
+        "message": "Kërko kredenciale",
         "description": "Search credentials"
     },
     "disable_autofill": {
-        "message": "Deshabilitar auto-llenar de formas",
+        "message": "Çaktivizo mbyshjen automatike të formave",
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credencial creada",
+        "message": "Kredencialet u krijuan",
         "description": "Credential created"
     },
     "username": {
-        "message": "Nombre de usuario",
+        "message": "Emër përdoruesi",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Longitud de la contraseña",
+        "message": "Gjatësia e fjalëkalimit",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Desactivar el autocompletado del navegador",
+        "message": "Çaktivizo mbushjen automatike të shfletuesit",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Restablecer temporizador [s]",
+        "message": "Refresh timer [s]",
         "description": "Password"
     }
 }
