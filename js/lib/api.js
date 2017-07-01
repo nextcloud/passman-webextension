@@ -45,7 +45,7 @@ window.PAPI = (function () {
                     field_decrypted_value = this.decryptString(fieldValue, key);
                 } catch (e) {
                     console.warn('Field' + field + ' in ' + credential.label + ' could not be parsed! Value:' + fieldValue);
-                    throw e;
+                    //throw e;
                 }
                 try {
                     credential[field] = JSON.parse(field_decrypted_value);
@@ -119,7 +119,32 @@ window.PAPI = (function () {
             }
             return _credential;
         },
-
+        getCredendialsSharedWithUs: function (vault_guid, callback) {
+            api_request('/api/v2/sharing/vault/' + vault_guid + '/get', 'GET', null, callback);
+        },
+        decryptSharedCredential: function (credential, sharedKey) {
+            var encrypted_fields = _encryptedFields;
+            for (var i = 0; i < encrypted_fields.length; i++) {
+                var field = encrypted_fields[i];
+                var fieldValue = credential[field];
+                var field_decrypted_value;
+                if (credential.hasOwnProperty(field)) {
+                    try {
+                        field_decrypted_value = this.decryptString(fieldValue, sharedKey);
+                    } catch (e) {
+                        throw e;
+                    }
+                    try {
+                        credential[field] = JSON.parse(field_decrypted_value);
+                    } catch (e) {
+                        console.warn('Field' + field + ' in ' + _credential.label + ' could not be parsed! Value:' + fieldValue);
+                        throw e;
+                    }
+                }
+            }
+            return credential;
+            //console.log(this.decryptCredential(credental, decrypted_key));
+        },
         updateCredential: function (credential, key, callback) {
             var origKey = key;
             var _credential, _key;

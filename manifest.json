@@ -36,6 +36,7 @@
       "/js/lib/API/contextmenus.js",
       "/js/lib/API/web_request.js",
       "/js/lib/api.js",
+      "/js/lib/sharingAcl.js",
       "/js/vendor/sha/sha.js",
       "/js/lib/otp.js",
       "/js/lib/passwordgen.js",

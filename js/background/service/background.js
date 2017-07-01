@@ -207,11 +207,36 @@ var background = (function () {
             delete vault.credentials;
             local_vault = vault;
             local_credentials = tmpList;
-            updateTabsIcon();
+            getSharedCredentials();
+
         });
     }
 
     _self.getCredentials = getCredentials;
+
+    function getSharedCredentials() {
+        PAPI.getCredendialsSharedWithUs(_self.settings.default_vault.guid, function (credentials) {
+            for (var i = 0; i < credentials.length; i++) {
+                var _shared_credential = credentials[i];
+                var _shared_credential_data;
+                var sharedKey = PAPI.decryptString(_shared_credential.shared_key, _self.settings.vault_password);
+                try {
+                    _shared_credential_data = PAPI.decryptSharedCredential(_shared_credential.credential_data, sharedKey);
+                } catch (e) {
+
+                }
+                if (_shared_credential_data) {
+                    delete _shared_credential.credential_data;
+                    _shared_credential_data.acl = _shared_credential;
+                    _shared_credential_data.acl.permissions = new SharingACL(_shared_credential_data.acl.permissions);
+                    _shared_credential_data.tags_raw = _shared_credential_data.tags;
+                    local_credentials.push(_shared_credential_data);
+                }
+            }
+            updateTabsIcon();
+        });
+    }
+
 
     function getCredentialsByUrl(_url, sender) {
         if (!master_password) {
@@ -237,7 +262,7 @@ var background = (function () {
 
     function saveCredential(credential) {
         //@TODO save shared password
-        if(credential.shared_key){
+        if (credential.shared_key) {
             return;
         }
         if (!credential.credential_id) {
@@ -452,7 +477,7 @@ var background = (function () {
             var credential = local_credentials[i];
             for (var f = 0; f < searchFields.length; f++) {
                 var field = searchFields[f];
-                if(!credential[field]){
+                if (!credential[field]) {
                     continue;
                 }
 
@@ -515,12 +540,13 @@ var background = (function () {
     _self.getDoorhangerData = getDoorhangerData;
 
     function closeSetupTab() {
-        API.tabs.query({url: 'chrome-extension://'+ API.runtime.id +'/html/browser_action/browser_action.html'}).then(function (tabs) {
-           if(tabs) {
-               API.tabs.remove(tabs[0].id);
-           }
+        API.tabs.query({url: 'chrome-extension://' + API.runtime.id + '/html/browser_action/browser_action.html'}).then(function (tabs) {
+            if (tabs) {
+                API.tabs.remove(tabs[0].id);
+            }
         });
     }
+
     _self.closeSetupTab = closeSetupTab;
 
     API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
@@ -617,7 +643,6 @@ var background = (function () {
     });
 
     displayLogoutIcons();
-
 
 
     storage.get('master_password').then(function (password) {
