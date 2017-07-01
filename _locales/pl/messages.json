@@ -216,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Wpisz domenę lub domena najwyższego poziomu aby zignorować lub wciśnij enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {

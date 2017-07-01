@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Sorry, geen kluis gevonden. Creëer een kluis via de Nextcloud / ownCloud app en probeer het opnieuw.",
         "description": "Search"
     },
     "edit": {
@@ -216,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Voer een domein of TLD (om te negeren) in en druk op enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -260,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Wachtwoord plukker: Als er geen referenties gevonden zijn, ga naar:",
         "description": "Select password picker default tab"
     },
     "save_site": {
