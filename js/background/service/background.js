@@ -262,9 +262,6 @@ var background = (function () {
 
     function saveCredential(credential) {
         //@TODO save shared password
-        if (credential.shared_key) {
-            return;
-        }
         if (!credential.credential_id) {
             PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
                 local_credentials.push(createdCredential);
@@ -275,6 +272,13 @@ var background = (function () {
                 if (local_credentials[i].guid === credential.guid) {
                     credential_index = i;
                     break;
+                }
+            }
+
+            if(credential.hasOwnProperty('acl')){
+                var permissons = new SharingACL(credential.acl.permissions.permission);
+                if(!permissons.hasPermission(0x02)){
+                    return;
                 }
             }
 

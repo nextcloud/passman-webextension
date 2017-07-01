@@ -38,6 +38,12 @@
                 method: "getCredentialByGuid",
                 args: $routeParams.guid
             }).then(function (credential) {
+                $scope.canEdit = true;
+                if(credential.hasOwnProperty('acl')) {
+                    var permissions = new SharingACL(credential.acl.permissions.permission);
+                    $scope.canEdit = permissions.hasPermission(0x02);
+                }
+                console.log(credential)
                 $scope.credential = credential;
                 $scope.credential.password_repeat = angular.copy(credential.password);
                 $scope.$apply();
@@ -131,6 +137,9 @@
             };
             $scope.saving = false;
             $scope.saveCredential = function () {
+                if(!$scope.canEdit){
+                    return;
+                }
                 $scope.saving = true;
                 if (!$scope.credential.label) {
                     notify(API.i18n.getMessage('label_required'));
@@ -150,7 +159,7 @@
                 API.runtime.sendMessage(API.runtime.id, {
                     method: "saveCredential",
                     args: $scope.credential
-                }).then(function (credential) {
+                }).then(function () {
                     $scope.saving = false;
                     if (!$scope.credential.credential_id) {
                         notify(API.i18n.getMessage('credential_created'));

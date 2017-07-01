@@ -415,6 +415,10 @@
     "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
     "description": "Search"
   },
+  "edit_insufficient_permissions": {
+    "message": "You don't have permissions to edit this credential.",
+    "description": "You don't have permissions to edit this credential."
+  },
   "invalid_server_settings": {
     "message": "Invalid server settings",
     "description": "Search"

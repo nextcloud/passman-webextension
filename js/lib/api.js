@@ -148,31 +148,34 @@ window.PAPI = (function () {
         updateCredential: function (credential, key, callback) {
             var origKey = key;
             var _credential, _key;
+
             if (!credential.hasOwnProperty('acl') && credential.hasOwnProperty('shared_key')) {
                 if (credential.shared_key) {
-                    _key = this.decryptString(credential.shared_key);
+                    _key = this.decryptString(credential.shared_key, key);
                 }
             }
 
             if (credential.hasOwnProperty('acl')) {
-                _key = this.decryptString(credential.acl.shared_key);
+                _key = this.decryptString(credential.acl.shared_key, key);
             }
+
+            var regex = /(<([^>]+)>)/ig;
+            if(credential.description && credential.description !== "") {
+                credential.description = credential.description.replace(regex, "");
+            }
+
 
             if (_key) {
-                _credential = this.encryptSharedCredential(credential, _key, origKey);
+                _credential = this.encryptSharedCredential(JSON.parse(JSON.stringify(credential)), _key, origKey);
             } else {
-                _credential = credential;
+                _credential = this.encryptCredential(JSON.parse(JSON.stringify(credential)), key);
             }
             delete _credential.shared_key;
-            var regex = /(<([^>]+)>)/ig;
-            if(_credential.description && _credential.description !== "") {
-                _credential.description = _credential.description.replace(regex, "");
-            }
 
 
-            credential = this.encryptCredential(_credential, key);
             credential.expire_time = new Date(credential.expire_time).getTime() / 1000;
-            api_request('/api/v2/credentials/' + credential.guid, 'PATCH', credential, function () {
+
+            api_request('/api/v2/credentials/' + credential.guid, 'PATCH', _credential, function () {
                 callback(credential);
             });
         }
