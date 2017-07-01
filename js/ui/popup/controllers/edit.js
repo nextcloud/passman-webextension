@@ -43,7 +43,6 @@
                     var permissions = new SharingACL(credential.acl.permissions.permission);
                     $scope.canEdit = permissions.hasPermission(0x02);
                 }
-                console.log(credential)
                 $scope.credential = credential;
                 $scope.credential.password_repeat = angular.copy(credential.password);
                 $scope.$apply();
