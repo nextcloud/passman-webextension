@@ -40,10 +40,12 @@ $j(document).ready(function () {
         }
         var loginField = $j(form[0]);
         var loginFieldPos = loginField.offset();
+        var loginFieldVisible = loginField.is(':visible');
+
         var position = $j(form[1]).position();
         var passwordField = $j(form[1]);
         var passwordFieldPos = passwordField.offset();
-
+        var passwordFieldVisible = loginField.is(':visible');
         var left = (loginFieldPos) ? loginFieldPos.left : passwordFieldPos.left;
         var top = (loginFieldPos) ? loginFieldPos.top : passwordFieldPos.top;
         var maxZ = Math.max.apply(null,
@@ -51,6 +53,7 @@ $j(document).ready(function () {
                 if ($j(e).css('position') !== 'static')
                     return parseInt($j(e).css('z-index')) || 1;
             }));
+
         if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
@@ -62,7 +65,9 @@ $j(document).ready(function () {
                 top =  top + passwordField.height() + 10;
             }
         }
-
+        if(!loginFieldVisible){
+            left = passwordFieldPos.left;
+        }
 
         var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
