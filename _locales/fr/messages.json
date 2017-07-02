@@ -299,6 +299,10 @@
         "message": "Générer le mot de passe",
         "description": "Generate password"
     },
+    "edit_insufficient_permissions": {
+        "message": "You don't have permissions to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
+    },
     "server_url": {
         "message": "URL du serveur",
         "description": "Server URL"

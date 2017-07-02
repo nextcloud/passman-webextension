@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Beklager, tillegget fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
         "description": "Search"
     },
     "edit": {
@@ -244,7 +244,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Fyll inn en merkelapp",
+        "message": "Fyll inn en etikett",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
@@ -260,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Passordvelger: Når ingen identitetsdetaljer finnes, gå til:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -298,6 +298,10 @@
     "generate_password": {
         "message": "Generer passord",
         "description": "Generate password"
+    },
+    "edit_insufficient_permissions": {
+        "message": "You don't have permissions to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
         "message": "Tjener-URL",

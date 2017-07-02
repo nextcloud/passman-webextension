@@ -299,6 +299,10 @@
         "message": "Framleiða lykilorð",
         "description": "Generate password"
     },
+    "edit_insufficient_permissions": {
+        "message": "You don't have permissions to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
+    },
     "server_url": {
         "message": "URL-slóð vefþjóns",
         "description": "Server URL"
