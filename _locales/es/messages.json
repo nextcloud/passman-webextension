@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Lo sentimos, no se han  encontrado bóvedas. Por favor, crea una bóveda a través de la app e Nextcloud / ownCloud y vuelve a intentarlo.",
         "description": "Search"
     },
     "edit": {
@@ -216,7 +216,7 @@
         "description": "Cancel"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Introduce un dominio o TLD para ignorar y pulsa Enter",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -260,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Selector de contraseñas: cuando no se encuentren credenciales, ir a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -300,7 +300,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have permissions to edit this credential.",
+        "message": "No tienes permisos para editar esta credencial.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
