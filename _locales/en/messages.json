@@ -412,7 +412,7 @@
     "description": "Select password picker default tab"
   },
   "no_vaults": {
-    "message": "Sorry, no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+    "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
     "description": "Search"
   },
   "edit_insufficient_permissions": {
