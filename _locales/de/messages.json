@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Entschuldigung, keine Tresore gefunden. Bitte erstelle Einen über die Nextcloud / Owncloud App und versuche es nochmal.",
+        "message": "Entschuldigung, keine Tresore gefunden. Bitte erstelle einen über die Nextcloud/ownCloud-App und versuche es nochmal.",
         "description": "Search"
     },
     "edit": {

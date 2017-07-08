@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Przepraszamy, nie znaleziono sejfów. Utwórz sejf poprzez Nextcloud / ownCloud i spróbuj ponownie.",
         "description": "Search"
     },
     "edit": {
@@ -260,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Zbieranie haseł: Jeśli nie znaleziono żadnych poświadczeń przejdź do:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -300,7 +300,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have permissions to edit this credential.",
+        "message": "Nie masz uprawnień do edycji tych poświadczeń.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
