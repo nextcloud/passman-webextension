@@ -180,7 +180,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Después de crearlas, usted puede editar las credenciales en Passman",
+        "message": "Después de crearlas, puedes editar las credenciales en Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "default_vault": {
@@ -212,7 +212,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "¡Este asistente de instalación lo guiará en los pasos para configurar la extensióny mantener todas sus contraseñas sincronizadas!",
+        "message": "¡Este asistente de instalación te guiará en los pasos para configurar la extensióny mantener todas tus contraseñas sincronizadas!",
         "description": "Cancel"
     },
     "ignore_site_placeholder": {

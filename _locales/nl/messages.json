@@ -300,7 +300,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have permissions to edit this credential.",
+        "message": "Je hebt niet de autorisatie om dit document te bewerken.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
