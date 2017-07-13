@@ -156,8 +156,8 @@
                         }).then(function () {
                             setTimeout(function () {
                                 $rootScope.setup = false;
-                                // $rootScope.$broadcast('showHeader');
-                                // window.location = '#!/';
+                                $rootScope.$broadcast('showHeader');
+                                window.location = '#!/';
                                 API.runtime.sendMessage(API.runtime.id, {
                                     method: "closeSetupTab"
                                 });
