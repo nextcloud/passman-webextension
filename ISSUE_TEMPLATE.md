@@ -9,9 +9,9 @@ Read if you are reporting an bug / issue:
 Failure to follow this issue template will result in a direct close of the issue.
 --> 
 ### Steps to reproduce
-1.
-2.
-3.
+1. 
+2. 
+3. 
 
 ### Expected behaviour
 Tell us what should happen
@@ -20,22 +20,17 @@ Tell us what should happen
 Tell us what happens instead
 
 ### Configuration
-**Operating system**:   
+**Operating system**: 
 
-   
-**Browser**:   
-   
-   
-**Extensions that might cause interference**:   
-   
-   
-**Passman version**:    
+**Browser**: 
 
+**Extensions that might cause interference**: 
 
-**Extension version**:    
-       
-       
-**Nextcloud version**:
+**Passman version**: 
+
+**Extension version**: 
+
+**Nextcloud version**: 
    
 #### Browser log
 <details>
