@@ -32,7 +32,7 @@
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donar",
+        "message": "Dona",
         "description": "Donate"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Lo sentimos, no se encontraron bóvedas. Por favor crea una bóveda a través de la aplicación Nextcloud / ownCloud y vuelve a intentar.",
+        "message": "Lo sentimos, no se encontraron bóvedas. Por favor crea una bóveda a través de la aplicación Nextcloud / ownCloud y vuelve a intentarlo.",
         "description": "Search"
     },
     "edit": {
@@ -76,7 +76,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Esta contaseña de usará para encriptar todas sus configuraciones de la extensión. Puede optar por guardar sus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
+        "message": "Esta contaseña de usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar tus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
         "description": "Enter master password"
     },
     "add_account": {
@@ -260,7 +260,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Seleccionador de contraseñas: Cuando no se encuentran contraseñas ir a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -416,7 +416,7 @@
         "description": "Disable auto fill of forms"
     },
     "credential_created": {
-        "message": "Credencial creada",
+        "message": "Credenciales creadas",
         "description": "Credential created"
     },
     "username": {
