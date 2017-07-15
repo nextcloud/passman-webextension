@@ -249,7 +249,7 @@ $(document).ready(function () {
                 var login = logins[i];
                 var div = $('<div>', {class: 'account', text: login.label});
                 $('<br>').appendTo(div);
-                var username = (login.username.trim() !== '' ) ? login.username : login.email;
+                var username = (login.username !== '' ) ? login.username : login.email;
                 $('<small>').text(username).appendTo(div);
                 /* jshint ignore:start */
                 div.click((function (login) {

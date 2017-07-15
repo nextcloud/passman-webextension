@@ -238,7 +238,7 @@ var background = (function () {
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
         var found_list = [];
         for (var i = 0; i < local_credentials.length; i++) {
-            if (local_credentials[i].url && local_credentials[i].username && local_credentials[i].password) {
+            if (local_credentials[i].url) {
                 if (local_credentials[i].url.indexOf(url) !== -1) {
                     found_list.push(local_credentials[i]);
                 }

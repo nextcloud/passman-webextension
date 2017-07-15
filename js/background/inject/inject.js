@@ -71,7 +71,7 @@ $j(document).ready(function () {
 
         var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
-        var picker = $j('<iframe class="passwordPickerIframe" style="pointer-events: none;" scrolling="no" height="385" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
+        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="385" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
         picker.css('z-index', maxZ + 10);
