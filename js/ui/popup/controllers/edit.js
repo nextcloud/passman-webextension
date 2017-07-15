@@ -170,6 +170,22 @@
 
             };
 
+            $scope.deleteCredential = function () {
+                $scope.credential.delete_time = new Date().getTime() / 1000;
+                API.runtime.sendMessage(API.runtime.id, {
+                    method: "saveCredential",
+                    args: $scope.credential
+                }).then(function () {
+                    notify(API.i18n.getMessage('credential_deleted'));
+                    API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
+                        setTimeout(function () {
+                            window.location = '#!/';
+                        }, 1900);
+                    });
+
+                });
+            };
+
             $scope.cancel = function () {
                 window.location = '#!/';
             };

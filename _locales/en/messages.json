@@ -415,9 +415,17 @@
     "message": "Select vault",
     "description": "Search"
   },
+  "delete": {
+    "message": "Delete",
+    "description": "Delete"
+  },
   "search": {
     "message": "Search",
     "description": "Search"
+  },
+  "credential_deleted": {
+    "message": "Credential deleted",
+    "description": "Credential deleted"
   },
   "select_password_picker_default_tab": {
     "message": "Password picker: When no credentials found go to:",
