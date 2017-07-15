@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif; }
+  font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif !important; }
 
 #password-toolbar {
   background-color: #f5e79e;
@@ -53,7 +53,7 @@ body {
     top: 45px;
     color: #000;
     width: 160px;
-    right: 58px;
+    right: 75px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

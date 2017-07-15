@@ -35,7 +35,7 @@ $(document).ready(function () {
                 text: btnText,
                 onClickFn: function (account) {
                     API.runtime.sendMessage(API.runtime.id, {method: "saveMined", args: {account: account}});
-                    dh.find('.toolbar-text').text(API.i18n.getMessage('saving') + '...');
+                    dh.find('.toolbar-text').text(API.i18n.getMessage('saving_to', [account.vault.name]) + '...');
                     dh.find('.passman-btn').hide();
                 },
                 isCreate: (data.guid === null)
@@ -46,7 +46,7 @@ $(document).ready(function () {
                 text: 'Update',
                 onClickFn: function () {
                     API.runtime.sendMessage(API.runtime.id, {method: "updateCredentialUrl", args: data});
-                    dh.find('.toolbar-text').text('Saving...');
+                    dh.find('.toolbar-text').text(API.i18n.getMessage('saving'));
                     dh.find('.passman-btn').hide();
                 }
             };
@@ -99,7 +99,7 @@ $(document).ready(function () {
                         html_button.append(caret);
                         for (var i = 1; i < accounts.length; i++) {
                             var a = accounts[i];
-                            var item = $('<div class="account">Save to ' + a.vault.name + '</div>');
+                            var item = $('<div class="account"></div>').text(API.i18n.getMessage('save_to', [a.vault.name]));
                             /* jshint ignore:start */
                             (function (account, item) {
                                 item.click(function (e) {
@@ -131,7 +131,7 @@ $(document).ready(function () {
                         button.onClickFn(default_account);
                     });
                 } else {
-                    html_button = $('<button class="passman-btn passnman-btn-success btn-' + btn + '"></button>').text(button.text);
+                    html_button = $('<button class="passman-btn passnman-btn-success"></button>').text(button.text);
                     html_button.click(function () {
                         button.onClickFn();
                     });
