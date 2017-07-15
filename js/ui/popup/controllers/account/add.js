@@ -35,9 +35,9 @@
     angular.module('passmanExtension')
         .controller('AddAccountCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', function ($scope, $timeout, $location, $rootScope, StepsService, notify) {
             $scope.settings = {
-                nextcloud_host: 'https://ncdev.local',
-                nextcloud_username: 'sander',
-                nextcloud_password: 'test',
+                nextcloud_host: '',
+                nextcloud_username: '',
+                nextcloud_password: '',
             };
 
 
