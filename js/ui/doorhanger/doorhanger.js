@@ -88,14 +88,16 @@ $(document).ready(function () {
                 var btn = button;
 
                 button = btn_config[btn](data);
-                var html_button = $('<button class="passman-btn passnman-btn-success btn-' + btn + '"></button>').text(button.text);
+                var html_button;
 
                 if (btn === 'save') {
+                    var btn_text = API.i18n.getMessage('save_to', [default_account.vault.name]);
+                    html_button = $('<button class="passman-btn passnman-btn-success btn-' + btn + '"></button>').text(btn_text);
                     if (button.isCreate && accounts.length > 1) {
                         var caret = $('<span class="fa fa-caret-down" style="margin-left: 5px; cursor: pointer;"></span>');
                         var menu = $('<div class="select_account" style="display: none;"></div>');
                         html_button.append(caret);
-                        for (var i = 0; i < accounts.length; i++) {
+                        for (var i = 1; i < accounts.length; i++) {
                             var a = accounts[i];
                             var item = $('<div class="account">Save to ' + a.vault.name + '</div>');
                             /* jshint ignore:start */
@@ -129,6 +131,7 @@ $(document).ready(function () {
                         button.onClickFn(default_account);
                     });
                 } else {
+                    html_button = $('<button class="passman-btn passnman-btn-success btn-' + btn + '"></button>').text(button.text);
                     html_button.click(function () {
                         button.onClickFn();
                     });
