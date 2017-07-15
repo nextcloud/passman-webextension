@@ -1,0 +1,87 @@
+<steps on-finish="finished()" class="setup">
+    <step class="step1" name="server">
+        <h3>{{'nextcloud_settings' | translate}}</h3>
+        <div class="group">
+            <input type="text" ng-model="settings.nextcloud_host"
+                   required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>{{'server_url' | translate}}</label>
+        </div>
+        <div class="group">
+            <input type="text" ng-model="settings.nextcloud_username"
+                   required >
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>{{'username' | translate}}</label>
+        </div>
+        <div class="group">
+            <input type="password" ng-model="settings.nextcloud_password"
+                   required ng-enter="next()">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>{{'password' | translate}}</label>
+        </div>
+        <div ng-include="'error_template.html'"></div>
+
+        <button class="md-btn default margin5" ng-click="next()" ng-disabled="saving">
+        <span>
+            <i ng-show="saving"
+               ng-class="{'fa-spinner fa-spin': saving}"
+               class="fa"></i>
+            {{'next' | translate}}
+        </span>
+        </button>
+
+        <button class="md-btn margin5 pull-right" ng-click="cancelAdd()">
+            <span>{{'cancel' | translate}}</span>
+        </button>
+    </step>
+    <step class="step2" name="vault">
+        <h3>{{'default_vault' | translate}}</h3>
+        <div style="margin-bottom: 35px; padding-left: 5px">{{'default_vault_desc' | translate}}</div>
+        <div class="group" ng-if="vaults.length === 0">
+            {{'no_vaults' | translate}}
+        </div>
+        <div class="group" ng-if="vaults.length > 0">
+            <select id="defaultVault" class="input-md" ng-model="settings.default_vault" required
+                    ng-options="vault.name for vault in vaults track by vault.guid"></select>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>{{'select_vault' | translate}}</label>
+        </div>
+
+
+
+        <div class="group" ng-if="vaults.length > 0">
+            <input type="password" ng-model="settings.vault_password" ng-enter="next()"
+                   required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>{{'vault_password' | translate}}</label>
+        </div>
+
+        <button step-previous class="md-btn margin5">
+            <span>{{'prev' | translate}}</span>
+        </button>
+
+        <button class="md-btn default margin5" ng-click="next()" ng-disabled="saving">
+        <span>
+            <i ng-show="saving"
+               ng-class="{'fa-spinner fa-spin': saving}"
+               class="fa"></i>
+            {{'finish' | translate}}
+        </span>
+        </button>
+
+        <button class="md-btn margin5 pull-right" ng-click="cancelAdd()">
+            <span>{{'cancel' | translate}}</span>
+        </button>
+    </step>
+</steps>
+
+<script type="text/ng-template" id="error_template.html">
+    <div class="alert alert-warning" ng-show="errors.length > 0">
+        <div ng-repeat="error in errors">{{error}}</div>
+    </div>
+</script>

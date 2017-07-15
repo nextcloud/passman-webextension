@@ -50,7 +50,7 @@
                     templateUrl: 'views/search.html',
                     controller: 'SearchCtrl'
                 })
-                .when('/settings', {
+                .when('/settings/:tab?', {
                     templateUrl: 'views/settings.html',
                     controller: 'SettingsCtrl'
                 })
@@ -62,9 +62,13 @@
                     templateUrl: 'views/password_prompt.html',
                     controller: 'PasswordPromptCtrl'
                 })
-                .when('/setup', {
+                .when('/setup/', {
                     templateUrl: 'views/setup.html',
                     controller: 'SetupCtrl'
+                })
+                .when('/accounts/add', {
+                    templateUrl: 'views/account/add.html',
+                    controller: 'AddAccountCtrl'
                 })
                 .otherwise({
                     redirectTo: '/'

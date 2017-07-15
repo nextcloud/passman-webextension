@@ -1,21 +1,28 @@
 $(document).ready(function () {
     function closeDoorhanger() {
-        API.runtime.sendMessage(API.runtime.id, {
-            method: "passToParent",
-            args: {'injectMethod': 'closeDoorhanger'}
+        $('#password-doorhanger').slideUp(function () {
+            API.runtime.sendMessage(API.runtime.id, {
+                method: "passToParent",
+                args: {'injectMethod': 'closeDoorhanger'}
+            });
         });
     }
 
+    function resizeIframe(height) {
+        API.runtime.sendMessage(API.runtime.id, {
+            method: "passToParent",
+            args: {'injectMethod': 'resizeIframe', args: height}
+        });
+    }
+
+    var default_account;
     var dh = $('#password-doorhanger');
     var btn_config = {
         'cancel': function () {
             return {
                 text: API.i18n.getMessage('cancel'),
                 onClickFn: function () {
-                    API.runtime.sendMessage(API.runtime.id, {
-                        method: "passToParent",
-                        args: {'injectMethod': 'closeDoorhanger'}
-                    });
+                    closeDoorhanger();
                     API.runtime.sendMessage(API.runtime.id, {method: "clearMined"});
                 }
             };
@@ -26,11 +33,12 @@ $(document).ready(function () {
             var btnText = (data.guid === null) ? save : update;
             return {
                 text: btnText,
-                onClickFn: function () {
-                    API.runtime.sendMessage(API.runtime.id, {method: "saveMined"});
+                onClickFn: function (account) {
+                    API.runtime.sendMessage(API.runtime.id, {method: "saveMined", args: {account: account}});
                     dh.find('.toolbar-text').text(API.i18n.getMessage('saving') + '...');
                     dh.find('.passman-btn').hide();
-                }
+                },
+                isCreate: (data.guid === null)
             };
         },
         'updateUrl': function (data) {
@@ -59,30 +67,79 @@ $(document).ready(function () {
         }
     };
 
+    API.runtime.sendMessage(API.runtime.id, {method: "getRuntimeSettings"}).then(function (settings) {
+        var accounts = settings.accounts;
+        default_account = accounts[0];
+        API.runtime.sendMessage(API.runtime.id, {method: "getDoorhangerData"}).then(function (data) {
+            if (!data) {
+                return;
+            }
+            var buttons = data.buttons;
+            data = data.data;
+            var username = (data.username) ? data.username : data.email;
+            var doorhanger_div = $('<div id="password-toolbar" style="display: none;">');
+            $('<span>', {
+                class: 'toolbar-text',
+                text: data.title + ' ' + username + ' at ' + data.url
+            }).appendTo(doorhanger_div);
 
-    API.runtime.sendMessage(API.runtime.id, {method: "getDoorhangerData"}).then(function (data) {
-        if (!data) {
-            return;
-        }
-        var buttons = data.buttons;
-        data = data.data;
-        var username = (data.username) ? data.username : data.email;
-        var doorhanger_div = $('<div id="password-toolbar">');
-        $('<span>', {
-            class: 'toolbar-text',
-            text: data.title + ' ' + username + ' at ' + data.url
-        }).appendTo(doorhanger_div);
 
+            $.each(buttons, function (k, button) {
+                var btn = button;
 
-        $.each(buttons, function (k, button) {
-            button = btn_config[button](data);
-            var html_button = $('<button class="passman-btn passnman-btn-success"></button>').text(button.text);
-            html_button.click(button.onClickFn);
-            doorhanger_div.append(html_button);
+                button = btn_config[btn](data);
+                var html_button = $('<button class="passman-btn passnman-btn-success btn-' + btn + '"></button>').text(button.text);
+
+                if (btn === 'save') {
+                    if (button.isCreate && accounts.length > 1) {
+                        var caret = $('<span class="fa fa-caret-down" style="margin-left: 5px; cursor: pointer;"></span>');
+                        var menu = $('<div class="select_account" style="display: none;"></div>');
+                        html_button.append(caret);
+                        for (var i = 0; i < accounts.length; i++) {
+                            var a = accounts[i];
+                            var item = $('<div class="account">Save to ' + a.vault.name + '</div>');
+                            /* jshint ignore:start */
+                            (function (account, item) {
+                                item.click(function (e) {
+                                    e.stopPropagation();
+                                    e.preventDefault();
+                                    button.onClickFn(account);
+                                });
+                            })(a, item);
+                            /* jshint ignore:end */
+                            menu.append(item);
+                        }
+                        caret.click(function (e) {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            var isVisible = ($('.select_account').is(':visible'));
+                            var height = (isVisible) ? 0 : accounts.length * 29;
+                            if (!isVisible) {
+                                resizeIframe(height);
+                            }
+                            menu.slideToggle(function () {
+                                if(isVisible){
+                                    resizeIframe(height);
+                                }
+                            });
+                        });
+                        caret.after(menu);
+                    }
+                    html_button.click(function () {
+                        button.onClickFn(default_account);
+                    });
+                } else {
+                    html_button.click(function () {
+                        button.onClickFn();
+                    });
+                }
+
+                doorhanger_div.append(html_button);
+            });
+            dh.html(doorhanger_div);
+            doorhanger_div.slideDown();
         });
-        dh.html(doorhanger_div);
     });
-
     var _this = {};
 
     function minedLoginSaved(args) {
@@ -92,7 +149,6 @@ $(document).ready(function () {
         var updated = API.i18n.getMessage('credential_updated');
         var action = (args.updated) ? updated : saved;
         $('#password-toolbar').html(action + '!');
-        //@TODO update
         setTimeout(function () {
             closeDoorhanger();
         }, 2500);

@@ -33,88 +33,41 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SettingsCtrl', ['$scope', 'notify', function ($scope, notify) {
+        .controller('SettingsCtrl', ['$scope', 'notify', '$routeParams', function ($scope, notify, $routeParams) {
             $scope.settings = {
-                nextcloud_host: '',
-                nextcloud_username: '',
-                nextcloud_password: '',
+                accounts: [],
                 ignoreProtocol: true,
                 ignoreSubdomain: true,
                 ignorePort: true,
                 ignorePath: true,
                 generatedPasswordLength: 12,
                 remember_password: true,
-                remember_vault_password: true,
                 refreshTime: 60,
                 disable_browser_autofill: true,
                 debug: false
             };
             $scope.errors = [];
 
+            $scope.tabActive =  ($routeParams.tab) ? parseInt($routeParams.tab) : 1;
+
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
                 $scope.errors = [];
                 if (settings) {
                     $scope.settings = angular.copy(settings);
                 }
-
-                $scope.get_vaults = function () {
-                    if (!$scope.settings.hasOwnProperty('nextcloud_host') || !$scope.settings.hasOwnProperty('nextcloud_password') || !$scope.settings.hasOwnProperty('nextcloud_username')) {
-                        return;
-                    }
-
-                    PAPI.username = $scope.settings.nextcloud_username;
-                    PAPI.password = $scope.settings.nextcloud_password;
-                    PAPI.host = $scope.settings.nextcloud_host;
-                    $scope.extension = API.runtime.getManifest().name + ' extension ' + API.runtime.getManifest().version;
-                    PAPI.getVaults(function (vaults) {
-                        $scope.errors = [];
-                        var save_btn = jQuery('#save'),
-                            login_required = jQuery('.login-req');
-                        if (vaults.hasOwnProperty('error')) {
-
-                            var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
-                            notify(errors);
-                            $scope.$apply();
-                            return;
-
-                        }
-                        login_required.show();
-                        save_btn.show();
-                        $scope.vaults = vaults;
-                        $scope.$apply();
-
-                    });
-                };
-
-                $scope.$watch('[settings.nextcloud_host, settings.nextcloud_username, settings.nextcloud_password]', function () {
-                    if ($scope.settings.nextcloud_host && $scope.settings.nextcloud_username && $scope.settings.nextcloud_password) {
-                        $scope.settings.nextcloud_host = $scope.settings.nextcloud_host.replace(/\/$/, "");
-                        $scope.get_vaults();
-                    }
-                }, true);
-
-                if ($scope.settings.nextcloud_host && $scope.settings.nextcloud_username && $scope.settings.nextcloud_password) {
-                    $scope.get_vaults();
-                }
                 $scope.$apply();
             });
 
             $scope.saving = false;
-            $scope.saveSettings = function () {
+            $scope.saveSettings = function (redirect) {
                 $scope.errors = [];
                 var settings = angular.copy($scope.settings);
-                try {
-                    /** global: PAPI */
-                    PAPI.decryptString(settings.default_vault.challenge_password, settings.vault_password);
-                } catch (e) {
-                    notify(API.i18n.getMessage('invalid_vault_password'));
-                    return;
-                }
-
                 $scope.saving = true;
                 API.runtime.sendMessage(API.runtime.id, {method: "saveSettings", args: settings}).then(function () {
                     setTimeout(function () {
-                        window.location = '#!/';
+                        if(redirect) {
+                            window.location = '#!/';
+                        }
                         $scope.saving = false;
                     }, 750);
                 });
@@ -131,9 +84,17 @@
                 $scope.ignoreSite = '';
             };
 
+            $scope.removeAccount = function (account) {
+                var idx = $scope.settings.accounts.indexOf(account);
+                $scope.settings.accounts.splice(idx, 1);
+                $scope.saveSettings(false);
+            };
 
             $scope.cancel = function () {
                 window.location = '#!/';
+            };
+            $scope.addAccount = function () {
+                window.location = '#!/accounts/add';
             };
         }]);
 }());

@@ -15,10 +15,10 @@ window.PAPI = (function () {
         host: '',
 
         getVaults: function (callback) {
-            api_request('/api/v2/vaults', 'GET', null, callback);
+            api_request({}, '/api/v2/vaults', 'GET', null, callback);
         },
-        getVault: function (vault_guid, callback) {
-            api_request('/api/v2/vaults/' + vault_guid, 'GET', null, callback);
+        getVault: function (account, callback) {
+            api_request(account, '/api/v2/vaults/' + account.vault.guid, 'GET', null, callback);
         },
         credentialsSet: function () {
             var hostSet = (typeof this.host !== 'undefined');
@@ -95,13 +95,13 @@ window.PAPI = (function () {
             }
             return credential;
         },
-        createCredential: function (credential, _key, callback) {
+        createCredential: function (account, credential, _key, callback) {
             credential = this.encryptCredential(credential, _key);
 
             credential.expire_time = new Date(credential.expire_time).getTime() / 1000;
             var _that = this;
 
-            api_request('/api/v2/credentials', 'POST', credential, function (r) {
+            api_request(account, '/api/v2/credentials', 'POST', credential, function (r) {
                 credential.credential_id = r.credential_id;
                 credential.guid = r.guid;
                 credential = _that.decryptCredential(credential, _key);
@@ -119,8 +119,8 @@ window.PAPI = (function () {
             }
             return _credential;
         },
-        getCredendialsSharedWithUs: function (vault_guid, callback) {
-            api_request('/api/v2/sharing/vault/' + vault_guid + '/get', 'GET', null, callback);
+        getCredendialsSharedWithUs: function (account, vault_guid, callback) {
+            api_request(account, '/api/v2/sharing/vault/' + vault_guid + '/get', 'GET', null, callback);
         },
         decryptSharedCredential: function (credential, sharedKey) {
             var encrypted_fields = _encryptedFields;
@@ -145,7 +145,7 @@ window.PAPI = (function () {
             return credential;
             //console.log(this.decryptCredential(credental, decrypted_key));
         },
-        updateCredential: function (credential, key, callback) {
+        updateCredential: function (account, credential, key, callback) {
             var origKey = key;
             var _credential, _key;
 
@@ -175,14 +175,19 @@ window.PAPI = (function () {
 
             credential.expire_time = new Date(credential.expire_time).getTime() / 1000;
 
-            api_request('/api/v2/credentials/' + credential.guid, 'PATCH', _credential, function () {
+            api_request(account, '/api/v2/credentials/' + credential.guid, 'PATCH', _credential, function () {
                 callback(credential);
             });
         }
     };
 
-    var api_request = function (endpoint, method, data, callback) {
-        var encodedLogin = btoa(_API.username + ":" + _API.password);
+    var api_request = function (account, endpoint, method, data, callback) {
+
+        var host = (account.hasOwnProperty('nextcloud_host')) ? account.nextcloud_host : _API.host;
+        var username = (account.hasOwnProperty('nextcloud_username')) ? account.nextcloud_username : _API.username;
+        var password = (account.hasOwnProperty('nextcloud_password')) ? account.nextcloud_password : _API.password;
+
+        var encodedLogin = btoa(username + ":" + password);
 
         var headers = new Headers();
         headers.append('Authorization', 'Basic ' + encodedLogin);
@@ -193,12 +198,19 @@ window.PAPI = (function () {
 
         };
 
+        if(data){
+            // Prevent leakage of account data;
+            if(data.hasOwnProperty('account')){
+                delete data.account;
+            }
+        }
+
         if(method.toLowerCase() !== 'get'){
             headers.append('content-type','application/json;charset=UTF-8');
             opts.body = JSON.stringify(data);
         }
 
-        var request = new Request(_API.host + '/index.php/apps/passman' + endpoint, opts);
+        var request = new Request(host + '/index.php/apps/passman' + endpoint, opts);
 
         fetch(request).then(function(response){
             if(response.status !== 200){
