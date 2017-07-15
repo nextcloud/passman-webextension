@@ -49,7 +49,6 @@ var background = (function () {
     var testMasterPasswordAgainst;
 
     function isMasterPasswordValid(password) {
-        //return true;
         try {
             PAPI.decryptString(testMasterPasswordAgainst, password);
             return true;
@@ -63,25 +62,20 @@ var background = (function () {
 
     var local_credentials = [];
     var local_vault = [];
-    var encryptedFieldSettings = ['default_vault', 'nextcloud_host', 'nextcloud_username', 'nextcloud_password', 'vault_password'];
+    var encryptedFieldSettings = ['accounts'];
     _self.settings = {};
     _self.ticker = null;
     _self.running = false;
     function getSettings() {
 
         storage.get('settings').then(function (_settings) {
-
-            if ((!_settings || !_settings.hasOwnProperty('nextcloud_host')) && !master_password) {
-                API.tabs.create({
-                    url: '/html/browser_action/browser_action.html'
-                });
-
+            if ((!_settings || Object.keys(_settings).length === 0 || !_settings.hasOwnProperty('accounts')) && !master_password) {
                 return;
             }
 
-            if (!master_password && _settings.hasOwnProperty('nextcloud_username') && _settings.hasOwnProperty('vault_password')) {
+            if (!master_password && _settings.hasOwnProperty('accounts') && _settings.accounts.length > 0) {
                 _self.settings.isInstalled = 1;
-                testMasterPasswordAgainst = _settings.nextcloud_username;
+                testMasterPasswordAgainst = _settings.accounts;
                 return;
             }
 
@@ -89,7 +83,6 @@ var background = (function () {
                 var field = encryptedFieldSettings[i];
                 _settings[field] = JSON.parse(PAPI.decryptString(_settings[field], master_password));
             }
-
 
             _self.settings = _settings;
 
@@ -103,27 +96,15 @@ var background = (function () {
             if (!_self.settings.hasOwnProperty('no_results_found_tab')) {
                 _self.settings.no_results_found_tab = 'list';
             }
-
-
-            PAPI.host = _settings.nextcloud_host;
-            PAPI.username = _settings.nextcloud_username;
-            PAPI.password = _settings.nextcloud_password;
-            if (!_settings.vault_password) {
-                return;
+            getCredentials();
+            if (_self.running) {
+                clearInterval(_self.ticker);
             }
-            if (PAPI.credentialsSet()) {
-                getCredentials();
-                if (_self.running) {
-                    clearInterval(_self.ticker);
-                }
+            _self.running = true;
+            _self.ticker = setInterval(function () {
 
-                _self.running = true;
-                _self.ticker = setInterval(function () {
-                    getCredentials();
-                }, _self.settings.refreshTime * 1000);
-            } else {
-                console.log('Login details are missing!');
-            }
+            }, _self.settings.refreshTime * 1000);
+
         });
     }
 
@@ -146,9 +127,6 @@ var background = (function () {
             var field = encryptedFieldSettings[i];
             settings[field] = PAPI.encryptString(JSON.stringify(settings[field]), master_password);
         }
-        PAPI.host = settings.nextcloud_host;
-        PAPI.username = settings.nextcloud_username;
-        PAPI.password = settings.nextcloud_password;
 
         if (!settings.hasOwnProperty('ignored_sites')) {
             settings.ignored_sites = [];
@@ -181,45 +159,56 @@ var background = (function () {
         }
         //console.log('Loading vault with the following settings: ', settings);
         var tmpList = [];
-        PAPI.getVault(_self.settings.default_vault.guid, function (vault) {
-            if (vault.hasOwnProperty('error')) {
-                return;
-            }
-            var _credentials = vault.credentials;
-            for (var i = 0; i < _credentials.length; i++) {
-                var key = _self.settings.vault_password;
-                var credential = _credentials[i];
-                if (credential.hidden === 1) {
-                    continue;
-                }
-                var usedKey = key;
-                //Shared credentials are not implemented yet
-                if (credential.hasOwnProperty('shared_key') && credential.shared_key) {
-                    usedKey = PAPI.decryptString(credential.shared_key, key);
 
-                }
-                credential = PAPI.decryptCredential(credential, usedKey);
-                if (credential.delete_time === 0) {
-                    tmpList.push(credential);
-                }
+        for (var i = 0; i < _self.settings.accounts.length; i++) {
+            var account = _self.settings.accounts[i];
+            /* jshint ignore:start */
+            (function (inner_account) {
+                PAPI.getVault(inner_account, function (vault) {
+                    if (vault.hasOwnProperty('error')) {
+                        return;
+                    }
+                    var _credentials = vault.credentials;
+                    for (var i = 0; i < _credentials.length; i++) {
+                        var key = inner_account.vault_password;
+                        var credential = _credentials[i];
+                        if (credential.hidden === 1) {
+                            continue;
+                        }
+                        var usedKey = key;
+                        //Shared credentials are not implemented yet
+                        if (credential.hasOwnProperty('shared_key') && credential.shared_key) {
+                            usedKey = PAPI.decryptString(credential.shared_key, key);
 
-            }
-            delete vault.credentials;
-            local_vault = vault;
-            local_credentials = tmpList;
-            getSharedCredentials();
+                        }
+                        credential = PAPI.decryptCredential(credential, usedKey);
+                        credential.account = inner_account;
+                        if (credential.delete_time === 0) {
+                            tmpList.push(credential);
+                        }
 
-        });
+                    }
+                    delete vault.credentials;
+                    local_vault = vault;
+                    local_credentials = tmpList;
+
+                    getSharedCredentials(inner_account);
+
+
+                });
+            }(account));
+            /* jshint ignore:end */
+        }
     }
 
     _self.getCredentials = getCredentials;
 
-    function getSharedCredentials() {
-        PAPI.getCredendialsSharedWithUs(_self.settings.default_vault.guid, function (credentials) {
+    function getSharedCredentials(account) {
+        PAPI.getCredendialsSharedWithUs(account, account.vault.guid, function (credentials) {
             for (var i = 0; i < credentials.length; i++) {
                 var _shared_credential = credentials[i];
                 var _shared_credential_data;
-                var sharedKey = PAPI.decryptString(_shared_credential.shared_key, _self.settings.vault_password);
+                var sharedKey = PAPI.decryptString(_shared_credential.shared_key, account.vault_password);
                 try {
                     _shared_credential_data = PAPI.decryptSharedCredential(_shared_credential.credential_data, sharedKey);
                 } catch (e) {
@@ -230,6 +219,7 @@ var background = (function () {
                     _shared_credential_data.acl = _shared_credential;
                     _shared_credential_data.acl.permissions = new SharingACL(_shared_credential_data.acl.permissions);
                     _shared_credential_data.tags_raw = _shared_credential_data.tags;
+                    _shared_credential_data.account = account;
                     local_credentials.push(_shared_credential_data);
                 }
             }
@@ -263,7 +253,7 @@ var background = (function () {
     function saveCredential(credential) {
         //@TODO save shared password
         if (!credential.credential_id) {
-            PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
+            PAPI.createCredential(credential.account, credential, credential.account.vault_password, function (createdCredential) {
                 local_credentials.push(createdCredential);
             });
         } else {
@@ -275,14 +265,14 @@ var background = (function () {
                 }
             }
 
-            if(credential.hasOwnProperty('acl')){
+            if (credential.hasOwnProperty('acl')) {
                 var permissons = new SharingACL(credential.acl.permissions.permission);
-                if(!permissons.hasPermission(0x02)){
+                if (!permissons.hasPermission(0x02)) {
                     return;
                 }
             }
 
-            PAPI.updateCredential(credential, _self.settings.vault_password, function (updatedCredential) {
+            PAPI.updateCredential(credential.account, credential, credential.account.vault_password, function (updatedCredential) {
                 if (credential_index) {
                     local_credentials[credential_index] = updatedCredential;
                 }
@@ -435,7 +425,7 @@ var background = (function () {
 
     function saveMined(args, sender) {
         var data = mined_data[sender.tab.id];
-        var credential,
+        var credential = {},
             credential_index;
 
         if (data.guid === null) {
@@ -449,11 +439,15 @@ var background = (function () {
                 }
             }
         }
+        if (!credential.hasOwnProperty('account')) {
+            credential.account = args.account;
+        }
         credential.username = data.username;
         credential.password = data.password;
         credential.url = sender.tab.url;
         if (credential.guid !== null) {
-            PAPI.updateCredential(credential, _self.settings.vault_password, function (updatedCredential) {
+            PAPI.updateCredential(credential.account, credential,  credential.account.vault_password, function (updatedCredential) {
+                updatedCredential.account = credential.account;
                 if (credential_index) {
                     local_credentials[credential_index] = updatedCredential;
                 }
@@ -462,8 +456,9 @@ var background = (function () {
             });
         } else {
             credential.label = sender.tab.title;
-            credential.vault_id = local_vault.vault_id;
-            PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
+            credential.vault_id =  credential.account.vault.vault_id;
+            PAPI.createCredential(credential.account, credential, credential.account.vault_password, function (createdCredential) {
+                createdCredential.account = credential.account;
                 saveMinedCallback({credential: credential, updated: false, sender: sender});
                 local_credentials.push(createdCredential);
                 delete mined_data[sender.tab.id];

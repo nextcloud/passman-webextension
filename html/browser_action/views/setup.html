@@ -1,7 +1,9 @@
 <steps on-finish="finished()" class="setup">
     <step class="step1" name="welcome">
         <h3>{{'welcome_to_passman' | translate}}</h3>
-        <div style="padding-left: 5px; margin-bottom: 20px;">{{'intro_text' | translate}}</div>
+        <div style="padding-left: 5px;">{{'intro_text' | translate}}</div>
+        <div style="padding-left: 5px; margin-bottom: 20px;"><b>{{'extra_accounts' | translate}}</b></div>
+
         <button class="md-btn default margin5" ng-click="next()" ng-disabled="saving">
 
         <span>

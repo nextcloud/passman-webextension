@@ -403,6 +403,18 @@
     "message": "Settings",
     "description": "Settings"
   },
+  "extra_accounts": {
+    "message": "After the setup process is complete, you can add more accounts.",
+    "description": "Search"
+  },
+  "account_added": {
+    "message": "Account added!",
+    "description": "Search"
+  },
+  "select_vault": {
+    "message": "Select vault",
+    "description": "Search"
+  },
   "search": {
     "message": "Search",
     "description": "Search"

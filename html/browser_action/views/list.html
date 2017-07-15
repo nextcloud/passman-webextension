@@ -8,7 +8,7 @@
             {{credential.label}}
         </div>
         <div class="info">
-            {{credential.username}}
+            {{credential.username}} in {{ credential.account.vault.name}}
         </div>
         <div class="extra" ng-if="credential.otp.secret">
             {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>

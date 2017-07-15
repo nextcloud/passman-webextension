@@ -33,33 +33,21 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', function ($scope, $timeout, $location, $rootScope, StepsService, notify) {
+        .controller('AddAccountCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', function ($scope, $timeout, $location, $rootScope, StepsService, notify) {
             $scope.settings = {
-                nextcloud_host: '',
-                nextcloud_username: '',
-                nextcloud_password: '',
-                ignoreProtocol: true,
-                ignoreSubdomain: true,
-                ignorePath: true,
-                generatedPasswordLength: 12,
-                remember_password: true,
-                vault_password: '',
-                refreshTime: 60,
-                default_vault: {},
-                master_password: '',
-                disableAutoFill: false,
-                disablePasswordPicker: false,
-                disable_browser_autofill: true,
-                debug: false,
-                accounts: []
+                nextcloud_host: 'https://ncdev.local',
+                nextcloud_username: 'sander',
+                nextcloud_password: 'test',
             };
+
+
             $scope.vaults = [];
 
-            $rootScope.$broadcast('hideHeader');
-            $rootScope.setup = true;
             $scope.gogo = function (to) {
                 StepsService.steps().goTo(to);
             };
+
+
             notify.config({
                 'position': 'left',
                 'duration': 2500
@@ -67,7 +55,7 @@
 
             $scope.check = {
                 server: function (callback) {
-                    if(!$scope.settings.nextcloud_host || !$scope.settings.nextcloud_username || !$scope.settings.nextcloud_password){
+                    if (!$scope.settings.nextcloud_host || !$scope.settings.nextcloud_username || !$scope.settings.nextcloud_password) {
                         $scope.errors.push(API.i18n.getMessage('invalid_server_settings'));
                         callback(false);
                         return;
@@ -100,14 +88,6 @@
                         notify(API.i18n.getMessage('invalid_vault_password'));
                         callback(false);
                     }
-                },
-                master: function (callback) {
-                    if ($scope.settings.master_password.trim() !== '') {
-                        callback(true);
-                    } else {
-                        notify(API.i18n.getMessage('empty_master_key'));
-                        callback(false);
-                    }
                 }
             };
             $scope.saving = false;
@@ -138,50 +118,35 @@
                 }, 10);
             };
 
+            $scope.cancelAdd = function () {
+                window.location = '#!/settings/2';
+            };
+
             $scope.finished = function () {
-                var settings = angular.copy($scope.settings);
-                var master_password = settings.master_password;
-                var master_password_remember = settings.master_password_remember;
+                var _settings = angular.copy($scope.settings);
+
                 var account = {
-                    nextcloud_host: settings.nextcloud_host,
-                    nextcloud_username: settings.nextcloud_username,
-                    nextcloud_password: settings.nextcloud_password,
-                    vault: settings.default_vault,
-                    vault_password: settings.vault_password,
+                    nextcloud_host: _settings.nextcloud_host,
+                    nextcloud_username: _settings.nextcloud_username,
+                    nextcloud_password: _settings.nextcloud_password,
+                    vault: _settings.default_vault,
+                    vault_password: _settings.vault_password
                 };
-                settings.accounts.push(account);
-                delete settings.master_password;
-                delete settings.master_password_remember;
-                delete settings.nextcloud_host;
-                delete settings.nextcloud_username;
-                delete settings.nextcloud_password;
-                delete settings.vault_password;
-                delete settings.default_vault;
-
                 $scope.saving = true;
-
-                API.runtime.sendMessage(API.runtime.id, {
-                    method: "setMasterPassword",
-                    args: {password: master_password, savePassword: master_password_remember}
-                })
-                    .then(function () {
-                        API.runtime.sendMessage(API.runtime.id, {
-                            method: "saveSettings",
-                            args: settings
-                        }).then(function () {
-                            setTimeout(function () {
-                                $rootScope.setup = false;
-                                $rootScope.$broadcast('showHeader');
-                                window.location = '#!/';
-                                API.runtime.sendMessage(API.runtime.id, {
-                                    method: "closeSetupTab"
-                                });
-                                $scope.saving = false;
-                            }, 750);
-                        });
+                API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
+                    settings.accounts.push(account);
+                    API.runtime.sendMessage(API.runtime.id, {
+                        method: "saveSettings",
+                        args: settings
+                    }).then(function () {
+                        setTimeout(function () {
+                            notify(API.i18n.getMessage('account_added'));
+                            $scope.saving = false;
+                            window.location = '#!/settings/2';
+                        }, 750);
                     });
 
-
+                });
             };
         }]);
 }());

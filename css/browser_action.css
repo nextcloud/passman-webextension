@@ -646,7 +646,7 @@ body.toggled {
         cursor: pointer; }
 
 .menuToggler {
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.6);
   width: calc(100% - 250px);
   height: 100%;
@@ -723,3 +723,43 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
   .setup h3 {
     margin-bottom: 35px;
     padding-left: 5px; }
+
+.tab-wrap .tab-label-content.account .tab-content.active {
+  margin-top: 10px; }
+
+.btn-floating {
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  background-color: #1565c0;
+  border-radius: 50%;
+  transition: .3s;
+  cursor: pointer;
+  vertical-align: middle; }
+
+.btn, .btn-large {
+  text-decoration: none;
+  color: #fff;
+  background-color: #1565c0;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  line-height: 54px; }
+
+.btn:hover, .btn-large:hover {
+  background-color: #4f98ec; }
+
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }

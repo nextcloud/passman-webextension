@@ -71,7 +71,7 @@ $j(document).ready(function () {
 
         var pickerUrl = API.extension.getURL('/html/inject/password_picker.html');
 
-        var picker = $j('<iframe class="passwordPickerIframe" scrolling="no" height="385" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
+        var picker = $j('<iframe class="passwordPickerIframe" style="pointer-events: none;" scrolling="no" height="385" width="350" frameborder="0" src="' + pickerUrl + '"></iframe>');
         picker.css('position', 'absolute');
         picker.css('left', left);
         picker.css('z-index', maxZ + 10);
@@ -146,7 +146,7 @@ $j(document).ready(function () {
         API.runtime.sendMessage(API.runtime.id, {method: "setDoorhangerData", args: data});
         var pickerUrl = API.extension.getURL('/html/inject/doorhanger.html');
 
-        var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="80" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
+        var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="50" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
         $j('#password-toolbarIframe').remove();
         $j('body').prepend(doorhanger);
         $j('#password-toolbarIframe').fadeIn();
@@ -182,9 +182,8 @@ $j(document).ready(function () {
 
 
     function closeDoorhanger() {
-        $j('#password-toolbarIframe').slideUp(400, function () {
-            $j('#password-toolbarIframe').remove();
-        });
+        $j('#password-toolbarIframe').hide(400);
+        $j('#password-toolbarIframe').remove();
     }
 
     _this.closeDoorhanger = closeDoorhanger;
@@ -244,6 +243,12 @@ $j(document).ready(function () {
     }
 
     _this.minedLoginSaved = minedLoginSaved;
+
+    function resizeIframe(height) {
+        $j('#password-toolbarIframe').height(50 + height);
+    }
+
+    _this.resizeIframe = resizeIframe;
 
     function copyText(text) {
         var txtToCopy = document.createElement('input');
