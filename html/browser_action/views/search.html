@@ -15,7 +15,10 @@
     </div>
 
     <div class="list-item" ng-repeat="credential in found_credentials">
-        <div class="title">
+        <a href="{{credential.url}}" target="_blank" class="title" ng-if="credential.url">
+            {{credential.label}}
+        </a>
+        <div href="{{credential.url}}" target="_blank" class="title" ng-if="!credential.url">
             {{credential.label}}
         </div>
         <div class="info">
