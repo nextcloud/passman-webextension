@@ -113,10 +113,6 @@
     "message": "URL",
     "description": "URL"
   },
-  "delete": {
-    "message": "Delete",
-    "description": "Delete"
-  },
   "password": {
     "message": "Password",
     "description": "Password"
