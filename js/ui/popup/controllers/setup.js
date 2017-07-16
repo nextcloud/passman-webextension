@@ -49,7 +49,6 @@
                 master_password: '',
                 disableAutoFill: false,
                 disablePasswordPicker: false,
-                disable_browser_autofill: true,
                 debug: false,
                 accounts: []
             };

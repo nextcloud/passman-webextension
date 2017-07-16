@@ -43,7 +43,6 @@
                 generatedPasswordLength: 12,
                 remember_password: true,
                 refreshTime: 60,
-                disable_browser_autofill: true,
                 debug: false
             };
             $scope.errors = [];

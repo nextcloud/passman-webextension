@@ -199,11 +199,6 @@ $j(document).ready(function () {
                     if (!disablePasswordPicker) {
                         createPasswordPicker(loginFields[i], form);
                     }
-
-                    if (settings.disable_browser_autofill) {
-                        $j(form).attr('autocomplete', 'off');
-                    }
-
                     //Password miner
                     /* jshint ignore:start */
                     if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url) !== -1) {

@@ -90,13 +90,12 @@ var background = (function () {
                 _self.settings.ignored_sites = [];
             }
 
-            if (!_self.settings.hasOwnProperty('disable_browser_autofill')) {
-                _self.settings.disable_browser_autofill = true;
-            }
             if (!_self.settings.hasOwnProperty('no_results_found_tab')) {
                 _self.settings.no_results_found_tab = 'list';
             }
+
             getCredentials();
+
             if (_self.running) {
                 clearInterval(_self.ticker);
             }
@@ -130,10 +129,6 @@ var background = (function () {
 
         if (!settings.hasOwnProperty('ignored_sites')) {
             settings.ignored_sites = [];
-        }
-
-        if (!settings.hasOwnProperty('disable_browser_autofill')) {
-            settings.disable_browser_autofill = true;
         }
 
         if (!_self.settings.hasOwnProperty('password_picker_first_tab')) {
