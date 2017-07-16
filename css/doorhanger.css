@@ -22,10 +22,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis; }
   #password-toolbar .passman-btn {
+    outline: none;
     float: right;
     display: inline-block;
     padding: 0 12px;
-    line-height: 42px;
+    line-height: 41px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: normal;
@@ -44,8 +45,6 @@ body {
     color: #000;
     /*margin-right: 15px;*/
     border: 0px solid transparent; }
-    #password-toolbar .passman-btn:focus {
-      outline: none; }
     #password-toolbar .passman-btn:hover {
       background-color: #c9c9c9; }
     #password-toolbar .passman-btn.btn-success {

@@ -30,9 +30,7 @@ body {
   }
 
   .passman-btn {
-    &:focus{
-      outline: none;
-    }
+    outline: none;
     &:hover{
       background-color: #c9c9c9;
     }
@@ -52,7 +50,7 @@ body {
     float: right;
     display: inline-block;
     padding: 0 12px;
-    line-height: 42px;
+    line-height: 41px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: normal;
