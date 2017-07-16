@@ -1,6 +1,6 @@
 @import "bourbon/bourbon";
 
-body{
+body {
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', Frutiger, Calibri, 'Myriad Pro', Myriad, sans-serif !important;
@@ -8,33 +8,53 @@ body{
 
 #password-toolbar {
 
-  background-color: #f5e79e;
+  background-color: #fff;
   border-bottom: 1px;
   border-left: 1px;
-  padding: 10px;
   border-right: 1px;
-  height: 30px;
+  height: 41px;
   font-size: 14px;
-  /*left: 50%;
-  margin-left: -150px;*/
+  line-height: 30px;
+  border-bottom: 1px solid #c9c9c9;
+
 
   .toolbar-text {
     float: left;
     display: inline-block;
     margin-top: 5px;
-    width: calc(100% - 350px );
+    padding-left: 10px;
+    width: calc(100% - 400px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .passman-btn {
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      background-color: #c9c9c9;
+    }
+    &.btn-success {
+      background: #3498db;
+      color: #fff;
+    }
+    &.btn-cancel {
+      color: #a8353c;
+    }
+    &.btn-save {
+      .btn-txt {
+        padding-right: 5px;
+      }
+    }
+
     float: right;
     display: inline-block;
     padding: 0 12px;
-    line-height: 30px;
+    line-height: 42px;
     margin-bottom: 0;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     text-align: center;
     white-space: nowrap;
@@ -44,38 +64,44 @@ body{
     cursor: pointer;
     @include user-select(none);
     background-image: none;
-    background: #3498db;
-    color: #fff;
-    margin-right: 15px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    .caret-container{
-      border-bottom: 1px #fff dashed;
+    background-color: #fff;
+    color: #000;
+    /*margin-right: 15px;*/
+    border: 0px solid transparent;
+
+    .caret-container {
+      &:hover{
+        background-color: #c9c9c9;
+      }
+      > .caret-container-txt {
+        border-bottom: 1px dashed #fff;
+      }
+      height: 100%;
+      display: inline-block;
+      padding: 0 5px;
+      width: 50%;
+      background-color: white;
+      color: #000;
     }
   }
 
-  .passman-btn:hover {
-    background: #3cb0fd;
-    text-decoration: none;
-  }
-  .select_account{
+  .select_account {
     position: absolute;
     top: 45px;
     color: #333;
     width: 160px;
-    right: 49px;
+    right: 93px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     background-color: #fff;
     border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: 1px solid rgba(0, 0, 0, .15);
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     padding: 5px 0;
-    .account{
-      &:hover{
+    .account {
+      &:hover {
         color: #262626;
         text-decoration: none;
         background-color: #f5f5f5;

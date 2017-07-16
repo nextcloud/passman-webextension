@@ -146,7 +146,7 @@ $j(document).ready(function () {
         API.runtime.sendMessage(API.runtime.id, {method: "setDoorhangerData", args: data});
         var pickerUrl = API.extension.getURL('/html/inject/doorhanger.html');
 
-        var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="50" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
+        var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="60" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
         $j('#password-toolbarIframe').remove();
         $j('body').prepend(doorhanger);
         $j('#password-toolbarIframe').fadeIn();
@@ -174,7 +174,7 @@ $j(document).ready(function () {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var buttons = ['cancel', 'save', 'ignore'];
+                var buttons = [ 'cancel', 'ignore', 'save' ];
                 showDoorhanger({data: data, buttons: buttons});
             }
         });
@@ -245,7 +245,7 @@ $j(document).ready(function () {
     _this.minedLoginSaved = minedLoginSaved;
 
     function resizeIframe(height) {
-        $j('#password-toolbarIframe').height(50 + height);
+        $j('#password-toolbarIframe').height(60 + height);
     }
 
     _this.resizeIframe = resizeIframe;
