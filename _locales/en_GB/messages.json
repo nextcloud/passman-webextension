@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Refresh credential list",
@@ -16,6 +10,14 @@
     "extDescription": {
         "message": "Passman - The password manager for NextCloud / ownCloud",
         "description": "Extension description"
+    },
+    "save_to": {
+        "message": "Save to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "account_added": {
+        "message": "Account added!",
+        "description": "Search"
     },
     "label": {
         "message": "Label",
@@ -85,6 +87,10 @@
         "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
         "description": "Enter master password"
     },
+    "select_vault": {
+        "message": "Select vault",
+        "description": "Search"
+    },
     "add_account": {
         "message": "Add account",
         "description": "Add account"
@@ -139,13 +145,7 @@
     },
     "credentials_found_for_site": {
         "message": "We've found $AMOUNT$ credentials for this site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Value",
@@ -227,6 +227,10 @@
         "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronised!",
         "description": "Cancel"
     },
+    "credential_deleted": {
+        "message": "Credential deleted",
+        "description": "Credential deleted"
+    },
     "ignore_site_placeholder": {
         "message": "Enter a domain or TLD to ignore and press enter",
         "description": "Disable auto fill of forms"
@@ -279,6 +283,10 @@
         "message": "Save site",
         "description": "Save site"
     },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
     "next": {
         "message": "Next",
         "description": "Next"
@@ -286,6 +294,10 @@
     "avoid_ambiguous": {
         "message": "Avoid ambiguous characters",
         "description": "Avoid ambiguous characters"
+    },
+    "saving_to": {
+        "message": "Saving to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {
         "message": "Select the vault that you want to keep in sync with the browser.",
@@ -301,17 +313,7 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Save",
@@ -383,17 +385,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Done",

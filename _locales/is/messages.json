@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ auðkenni í gagnagrunninum\n        ",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Endurlesa lista yfir auðkenni",
@@ -16,6 +10,14 @@
     "extDescription": {
         "message": "Passman - Lykilorðastýring fyrir NextCloud / ownCloud",
         "description": "Extension description"
+    },
+    "save_to": {
+        "message": "Save to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "account_added": {
+        "message": "Account added!",
+        "description": "Search"
     },
     "label": {
         "message": "Skýring",
@@ -85,6 +87,10 @@
         "message": "Þetta lykilorð mun verða notað til að dulrita allar stillingarnar þínar í viðaukanum. Þú getur valið að vista lykilorðið á tölvuna þína, en það verður þá vistað sem HREINN TEXTI.",
         "description": "Enter master password"
     },
+    "select_vault": {
+        "message": "Select vault",
+        "description": "Search"
+    },
     "add_account": {
         "message": "Bæta við notandaaðgangi",
         "description": "Add account"
@@ -139,13 +145,7 @@
     },
     "credentials_found_for_site": {
         "message": "Við fundum $AMOUNT$ auðkenni fyrir þetta vefsvæði",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Gildi",
@@ -227,6 +227,10 @@
         "message": "Þessi leiðarvísir hjálpar þér í gegnum skrefin við að setja upp viðaukann og að halda öllum lykilorðunum þínum samstilltum!",
         "description": "Cancel"
     },
+    "credential_deleted": {
+        "message": "Credential deleted",
+        "description": "Credential deleted"
+    },
     "ignore_site_placeholder": {
         "message": "Settu inn lén eða TLD til að hunsa og ýttu svo á Enter",
         "description": "Disable auto fill of forms"
@@ -279,6 +283,10 @@
         "message": "Vista vefsvæðið",
         "description": "Save site"
     },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
     "next": {
         "message": "Næsta",
         "description": "Next"
@@ -286,6 +294,10 @@
     "avoid_ambiguous": {
         "message": "Forðast vafasama stafi",
         "description": "Avoid ambiguous characters"
+    },
+    "saving_to": {
+        "message": "Saving to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {
         "message": "Veldu lykilorðageymsluna sem þú vilt halda samstilltri við vafrann.",
@@ -301,17 +313,7 @@
     },
     "invalid_response_from_server": {
         "message": "Ógilt svar frá þjóni: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Vista",
@@ -383,17 +385,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - fann $CREDENTIAL_AMOUNT$ $PLURAL$ fyrir þessa síðu",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Lokið",

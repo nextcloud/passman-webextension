@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "Veritabanında $AMOUNT$ kimlik doğrulama bilgisi var",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Kimlik doğrulama bilgilerini yenile",
@@ -16,6 +10,14 @@
     "extDescription": {
         "message": "Passman - Nextcloud / OwnCloud için Parola Yönetimi",
         "description": "Extension description"
+    },
+    "save_to": {
+        "message": "Save to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "account_added": {
+        "message": "Account added!",
+        "description": "Search"
     },
     "label": {
         "message": "Etiket",
@@ -85,6 +87,10 @@
         "message": "Parola, uygulama içindeki tüm ayarlarınızın şifrelenmesi için kullanılır. Bu parolayı yerel olarak kaydedilecek şekilde ayarlayabilirsiniz ancak bu durumda DÜZ METİN olarak kaydedilir ve görülebilir.",
         "description": "Enter master password"
     },
+    "select_vault": {
+        "message": "Select vault",
+        "description": "Search"
+    },
     "add_account": {
         "message": "Hesap ekle",
         "description": "Add account"
@@ -139,13 +145,7 @@
     },
     "credentials_found_for_site": {
         "message": "Bu site için  $AMOUNT$ bulundu",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Değer",
@@ -227,6 +227,10 @@
         "message": "Bu yardımcı uygulama ayarlarını yapmanızı ve tüm parolalarınızın eşitlenerek korunmasını sağlar.",
         "description": "Cancel"
     },
+    "credential_deleted": {
+        "message": "Credential deleted",
+        "description": "Credential deleted"
+    },
     "ignore_site_placeholder": {
         "message": "Yoksaymak için bir etki alanı ya da TLD yazın ve enter tuşuna basın",
         "description": "Disable auto fill of forms"
@@ -279,6 +283,10 @@
         "message": "Siteyi kaydet",
         "description": "Save site"
     },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
     "next": {
         "message": "Sonraki",
         "description": "Next"
@@ -286,6 +294,10 @@
     "avoid_ambiguous": {
         "message": "Şüpheli karakterler kullanılmasın",
         "description": "Avoid ambiguous characters"
+    },
+    "saving_to": {
+        "message": "Saving to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {
         "message": "Tarayıcı ile eşitlenmesini istediğiniz kasayı seçin.",
@@ -301,17 +313,7 @@
     },
     "invalid_response_from_server": {
         "message": "Sunucudan alınan yanıt geçersiz: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Kaydet",
@@ -383,17 +385,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - bu sayfa için  $CREDENTIAL_AMOUNT$ $PLURAL$ buldu",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Tamam",

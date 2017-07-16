@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ påloggingsdetaljer i databasen",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Gjenoppfrisk liste over påloggingsdetaljer",
@@ -16,6 +10,14 @@
     "extDescription": {
         "message": "Passman - Passordbehandleren for NextCloud / ownCloud",
         "description": "Extension description"
+    },
+    "save_to": {
+        "message": "Save to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "account_added": {
+        "message": "Account added!",
+        "description": "Search"
     },
     "label": {
         "message": "Etikett",
@@ -85,6 +87,10 @@
         "message": "Dette passordet brukes til å kryptere alle dine innstillinger i tillegget. Du kan velge å lagre dette passordet lokalt, men det vil bli lagret i KLARTEKST.",
         "description": "Enter master password"
     },
+    "select_vault": {
+        "message": "Select vault",
+        "description": "Search"
+    },
     "add_account": {
         "message": "Legg til en konto",
         "description": "Add account"
@@ -139,13 +145,7 @@
     },
     "credentials_found_for_site": {
         "message": "Vi har funnet $AMOUNT$ påloggingsdetaljer for denne siden",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Verdi",
@@ -227,6 +227,10 @@
         "message": "Veiviseren tar deg gjennom stegene for å sette opp utvidelsen og holde alle passordene dine synkronisert!",
         "description": "Cancel"
     },
+    "credential_deleted": {
+        "message": "Credential deleted",
+        "description": "Credential deleted"
+    },
     "ignore_site_placeholder": {
         "message": "Skriv inn et domene eller toppnivådomene og trykk Enter",
         "description": "Disable auto fill of forms"
@@ -279,6 +283,10 @@
         "message": "Lagre side",
         "description": "Save site"
     },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
     "next": {
         "message": "Neste",
         "description": "Next"
@@ -286,6 +294,10 @@
     "avoid_ambiguous": {
         "message": "Unngå tvetydige tegn",
         "description": "Avoid ambiguous characters"
+    },
+    "saving_to": {
+        "message": "Saving to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {
         "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
@@ -301,17 +313,7 @@
     },
     "invalid_response_from_server": {
         "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Lagre",
@@ -383,17 +385,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ funnet for denne siden",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Ferdig",
