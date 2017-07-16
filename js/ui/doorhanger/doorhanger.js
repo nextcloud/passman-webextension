@@ -91,12 +91,15 @@ $(document).ready(function () {
                 var html_button;
 
                 if (btn === 'save') {
-                    var btn_text = API.i18n.getMessage('save_to', [default_account.vault.name]);
-                    html_button = $('<button class="passman-btn passnman-btn-success btn-' + btn + '"></button>').text(btn_text);
+                    var btn_text = (button.isCreate && accounts.length > 1) ? API.i18n.getMessage('save_to','') : API.i18n.getMessage('save');
+                    btn_text = (!button.isCreate) ? API.i18n.getMessage('update') : btn_text;
+                    html_button = $('<button class="passman-btn passnman-btn-success"></button>').text(btn_text);
                     if (button.isCreate && accounts.length > 1) {
+                        var caret_container =  $('<span class="caret-container"></span>').text(default_account.vault.name);
                         var caret = $('<span class="fa fa-caret-down" style="margin-left: 5px; cursor: pointer;"></span>');
                         var menu = $('<div class="select_account" style="display: none;"></div>');
-                        html_button.append(caret);
+                        caret_container.append(caret);
+                        html_button.append(caret_container);
                         for (var i = 1; i < accounts.length; i++) {
                             var a = accounts[i];
                             var item = $('<div class="account"></div>').text(API.i18n.getMessage('save_to', [a.vault.name]));
@@ -111,7 +114,7 @@ $(document).ready(function () {
                             /* jshint ignore:end */
                             menu.append(item);
                         }
-                        caret.click(function (e) {
+                        caret_container.click(function (e) {
                             e.stopPropagation();
                             e.preventDefault();
                             var isVisible = ($('.select_account').is(':visible'));

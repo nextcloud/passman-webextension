@@ -24,11 +24,11 @@ body {
   #password-toolbar .passman-btn {
     float: right;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 0 12px;
+    line-height: 30px;
     margin-bottom: 0;
     font-size: 13px;
     font-weight: normal;
-    line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -45,15 +45,17 @@ body {
     margin-right: 15px;
     border: 1px solid transparent;
     border-radius: 4px; }
+    #password-toolbar .passman-btn .caret-container {
+      border-bottom: 1px #fff dashed; }
   #password-toolbar .passman-btn:hover {
     background: #3cb0fd;
     text-decoration: none; }
   #password-toolbar .select_account {
     position: absolute;
     top: 45px;
-    color: #000;
+    color: #333;
     width: 160px;
-    right: 75px;
+    right: 49px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,12 +68,13 @@ body {
     padding: 5px 0; }
     #password-toolbar .select_account .account {
       display: block;
-      padding: 3px 20px;
+      padding: 3px 5px 3px 10px;
       clear: both;
       font-weight: 400;
       line-height: 1.42857143;
       color: #333;
-      white-space: nowrap; }
+      white-space: nowrap;
+      text-align: left; }
       #password-toolbar .select_account .account:hover {
         color: #262626;
         text-decoration: none;
