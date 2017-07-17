@@ -270,9 +270,7 @@ $j(document).ready(function () {
                 if (result) {
                     init();
                     var body = document.getElementsByTagName('body')[0];
-                    // observeDOM(body, function () {
-                    //     initForms();
-                    // });
+                    observeDOM(body, initForms);
                 } else {
                     console.log('[Passman extension] Stopping, vault key not set');
                 }
