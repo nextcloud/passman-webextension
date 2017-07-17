@@ -95,13 +95,17 @@ $(document).ready(function () {
                     btn_text = (!button.isCreate) ? API.i18n.getMessage('update') : btn_text;
                     html_button = $('<button class="passman-btn btn-save btn-success"></button>').append('<span class="btn-txt"></span>');
                     html_button.find('.btn-txt').text(btn_text);
+                    html_button.click(function () {
+                        button.onClickFn(default_account);
+                    });
+
                     if (button.isCreate && accounts.length > 1) {
-                        var caret_container =  $('<span class="caret-container"></span>').append('<span class="caret-container-txt"></span>');
+                        var caret_container =  $('<span class="passman-btn caret-container"></span>').append('<span class="caret-container-txt"></span>');
                         caret_container.find('.caret-container-txt').text(default_account.vault.name);
                         var caret = $('<span class="fa fa-caret-down" style="margin-left: 5px; cursor: pointer;"></span>');
                         var menu = $('<div class="select_account" style="display: none;"></div>');
                         caret_container.append(caret);
-                        html_button.append(caret_container);
+                        doorhanger_div.append(caret_container);
                         for (var i = 1; i < accounts.length; i++) {
                             var a = accounts[i];
                             var item = $('<div class="account"></div>').text(API.i18n.getMessage('save_to', [a.vault.name]));
@@ -132,9 +136,7 @@ $(document).ready(function () {
                         });
                         caret.after(menu);
                     }
-                    html_button.click(function () {
-                        button.onClickFn(default_account);
-                    });
+
                 } else {
                     html_button = $('<button></button>',
                         {
@@ -145,9 +147,10 @@ $(document).ready(function () {
                     html_button.click(function () {
                         button.onClickFn();
                     });
-                }
 
+                }
                 doorhanger_div.append(html_button);
+
             });
             dh.html(doorhanger_div);
             doorhanger_div.slideDown();
