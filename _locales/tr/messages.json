@@ -12,11 +12,11 @@
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "$VAULT_NAME$ üzerine kaydet",
         "description": "Amount of the credentials found for the current site"
     },
     "account_added": {
-        "message": "Account added!",
+        "message": "Hesap eklendi!",
         "description": "Search"
     },
     "label": {
@@ -88,7 +88,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Kasayı seçin",
         "description": "Search"
     },
     "add_account": {
@@ -228,7 +228,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Kimlik doğrulama bilgileri silindi",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -284,7 +284,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Kurulum işlemi tamamlandıktan sonra başka hesaplar da ekleyebilirsiniz.",
         "description": "Search"
     },
     "next": {
@@ -296,7 +296,7 @@
         "description": "Avoid ambiguous characters"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "$VAULT_NAME$ üzerine kaydediliyor",
         "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {

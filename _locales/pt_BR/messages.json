@@ -12,11 +12,11 @@
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Salvo em $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "account_added": {
-        "message": "Account added!",
+        "message": "Conta adicionada!",
         "description": "Search"
     },
     "label": {
@@ -88,7 +88,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Selecionar cofre",
         "description": "Search"
     },
     "add_account": {
@@ -228,7 +228,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Credencial excluída",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -284,7 +284,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Após a instalação, você pode adicionar mais contas.",
         "description": "Search"
     },
     "next": {
@@ -296,7 +296,7 @@
         "description": "Avoid ambiguous characters"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Salvando em $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {

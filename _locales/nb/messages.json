@@ -12,11 +12,11 @@
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Lagre til $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "account_added": {
-        "message": "Account added!",
+        "message": "Konto lagt til!",
         "description": "Search"
     },
     "label": {
@@ -88,7 +88,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Velg hvelv",
         "description": "Search"
     },
     "add_account": {
@@ -228,7 +228,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Identitetsdetalj slettet",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -284,7 +284,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Etter oppsettsprosessen er fullført, kan du legge til flere kontoer.",
         "description": "Search"
     },
     "next": {
@@ -296,7 +296,7 @@
         "description": "Avoid ambiguous characters"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Lagrer til $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {
