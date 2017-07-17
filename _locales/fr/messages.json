@@ -108,7 +108,7 @@
         "description": "Delete"
     },
     "invalid_server_settings": {
-        "message": "Paramètres du serveur invalide",
+        "message": "Paramètres du serveur invalides",
         "description": "Search"
     },
     "nextcloud_settings": {
@@ -144,7 +144,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Il y a  $AMOUNT$ informations d'identification pour ce site",
+        "message": "Il y a $AMOUNT$ informations d'identification pour ce site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -252,7 +252,7 @@
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Sauvegarder les informations d'identification trouvé pour ce site",
+        "message": "Sauvegarder les informations d'identification trouvées pour ce site",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
@@ -284,7 +284,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "Après que le processus d'installation soit terminé, vous pouvez ajouté plusieurs compte.",
+        "message": "Une fois le processus d'installation terminé, vous pourrez ajouter plusieurs comptes.",
         "description": "Search"
     },
     "next": {
