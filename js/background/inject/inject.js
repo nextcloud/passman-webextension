@@ -103,8 +103,7 @@ $j(document).ready(function () {
                 showPasswordPicker(form);
             }
         }
-
-        // $j(el).bind('click', onClick);
+        $j(el).unbind('click');
         $j(el).click(onClick);
 
     }
