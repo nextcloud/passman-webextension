@@ -33,6 +33,13 @@ $j(document).ready(function () {
 
     _this.enterLoginDetails = enterLoginDetails;
 
+    function getMaxZ() {
+        return Math.max.apply(null,
+            $j.map($j('body *'), function (e) {
+                if ($j(e).css('position') !== 'static')
+                    return parseInt($j(e).css('z-index')) || 1;
+            }));
+    }
 
     function showPasswordPicker(form) {
         if ($j('.passwordPickerIframe').length > 1) {
@@ -48,11 +55,7 @@ $j(document).ready(function () {
         var passwordFieldVisible = loginField.is(':visible');
         var left = (loginFieldPos) ? loginFieldPos.left : passwordFieldPos.left;
         var top = (loginFieldPos) ? loginFieldPos.top : passwordFieldPos.top;
-        var maxZ = Math.max.apply(null,
-            $j.map($j('body *'), function (e) {
-                if ($j(e).css('position') !== 'static')
-                    return parseInt($j(e).css('z-index')) || 1;
-            }));
+        var maxZ = getMaxZ();
 
         if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
@@ -148,6 +151,7 @@ $j(document).ready(function () {
 
         var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="60" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
         $j('#password-toolbarIframe').remove();
+        doorhanger.css('z-index',  getMaxZ() + 1);
         $j('body').prepend(doorhanger);
         $j('#password-toolbarIframe').fadeIn();
     }
