@@ -5,7 +5,6 @@ $j(document).click(function(event) {
     var passwordPickerRef = '.passwordPickerIframe'
     if(!$j(event.target).closest(passwordPickerRef).length) {
         if($j(passwordPickerRef).is(":visible")) {
-            console.log('Hide');
             $j(passwordPickerRef).hide();
         }
     }
@@ -52,7 +51,6 @@ $j(document).ready(function () {
     }
 
     function showPasswordPicker(form) {
-        console.log('show');
         var jPasswordPicker = $j('.passwordPickerIframe');
         if (jPasswordPicker.length > 1) {
             return;
