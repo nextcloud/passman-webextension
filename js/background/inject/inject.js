@@ -2,7 +2,7 @@
 var $j = jQuery.noConflict();
 
 $j(document).click(function(event) {
-    var passwordPickerRef = '.passwordPickerIframe'
+    var passwordPickerRef = '.passwordPickerIframe';
     if(!$j(event.target).closest(passwordPickerRef).length) {
         if($j(passwordPickerRef).is(":visible")) {
             $j(passwordPickerRef).hide();
