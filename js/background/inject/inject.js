@@ -1,6 +1,16 @@
 /* global API */
 var $j = jQuery.noConflict();
 
+$j(document).click(function(event) {
+    var passwordPickerRef = '.passwordPickerIframe'
+    if(!$j(event.target).closest(passwordPickerRef).length) {
+        if($j(passwordPickerRef).is(":visible")) {
+            console.log('Hide');
+            $j(passwordPickerRef).hide();
+        }
+    }
+});
+
 $j(document).ready(function () {
     var _this = this;
     Array.prototype.findUrl = function (match) {
@@ -42,8 +52,14 @@ $j(document).ready(function () {
     }
 
     function showPasswordPicker(form) {
-        if ($j('.passwordPickerIframe').length > 1) {
+        console.log('show');
+        var jPasswordPicker = $j('.passwordPickerIframe');
+        if (jPasswordPicker.length > 1) {
             return;
+        }
+        if (jPasswordPicker.length === 1 && !jPasswordPicker.is(":visible")) {
+           jPasswordPicker.show();
+           return;
         }
         var loginField = $j(form[0]);
         var loginFieldPos = loginField.offset();
