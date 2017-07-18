@@ -84,6 +84,16 @@ $j(document).ready(function () {
         $j('.passwordPickerIframe:not(:last)').remove();
     }
 
+    function onFormIconClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var offsetX = e.offsetX;
+        var offsetRight = ($j(this).width() - offsetX);
+        if (offsetRight < $j(this).height()) {
+            showPasswordPicker(form);
+        }
+    }
+
     function createFormIcon(el, form) {
         var offset = el.offset();
         var width = el.width();
@@ -97,18 +107,8 @@ $j(document).ready(function () {
         //$j(el).css('background-position', '');
         $j(el).css('cssText', el.attr('style')+' background-position: right 3px center !important;');
 
-
-        function onClick(e) {
-            e.preventDefault();
-            var offsetX = e.offsetX;
-            var offsetRight = (width - offsetX);
-            if (offsetRight < height) {
-                showPasswordPicker(form);
-            }
-        }
-        $j(el).unbind('click');
-        $j(el).click(onClick);
-
+        $j(el).unbind('click', onFormIconClick);
+        $j(el).click(onFormIconClick);
     }
 
     function createPasswordPicker(form) {
