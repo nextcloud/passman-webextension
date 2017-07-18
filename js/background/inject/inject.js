@@ -102,9 +102,9 @@ $j(document).ready(function () {
         e.preventDefault();
         e.stopPropagation();
         var offsetX = e.offsetX;
-        var offsetRight = ($j(this).width() - offsetX);
-        if (offsetRight < $j(this).height()) {
-            showPasswordPicker(form);
+        var offsetRight = (e.data.width - offsetX);
+        if (offsetRight < e.data.height) {
+            showPasswordPicker(e.data.form);
         }
     }
 
@@ -122,7 +122,7 @@ $j(document).ready(function () {
         $j(el).css('cssText', el.attr('style')+' background-position: right 3px center !important;');
 
         $j(el).unbind('click', onFormIconClick);
-        $j(el).click(onFormIconClick);
+        $j(el).click({width: width, height: height, form: form}, onFormIconClick);
     }
 
     function createPasswordPicker(form) {
