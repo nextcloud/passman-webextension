@@ -106,8 +106,7 @@ $j(document).ready(function () {
                 showPasswordPicker(form);
             }
         }
-
-        // $j(el).bind('click', onClick);
+        $j(el).unbind('click');
         $j(el).click(onClick);
 
     }
@@ -274,9 +273,7 @@ $j(document).ready(function () {
                 if (result) {
                     init();
                     var body = document.getElementsByTagName('body')[0];
-                    // observeDOM(body, function () {
-                    //     initForms();
-                    // });
+                    observeDOM(body, initForms);
                 } else {
                     console.log('[Passman extension] Stopping, vault key not set');
                 }
