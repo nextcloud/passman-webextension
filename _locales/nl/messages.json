@@ -12,7 +12,7 @@
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Opslaan in $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "account_added": {
@@ -56,7 +56,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman uitbreiding is geblokkeerd, deblokkeer om te gebruiken",
+        "message": "Passman uitbreiding is vergrendeld, ontgrendel om te gebruiken",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -64,7 +64,7 @@
         "description": "Update"
     },
     "unlock": {
-        "message": "Deblokkeren",
+        "message": "Ontgrendel",
         "description": "Unlock"
     },
     "invalid_vault_password": {
@@ -88,7 +88,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Selecteer kluis",
         "description": "Search"
     },
     "add_account": {
@@ -144,7 +144,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "We vonden $AMOUNT$ inloggegevens van deze site",
+        "message": "We vonden $AMOUNT$ inloggegevens voor deze site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -256,7 +256,7 @@
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - is opgesloten",
+        "message": "Passman - Vergrendeld",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
@@ -284,7 +284,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Na het installeren kunt u meer accounts toevoegen.",
         "description": "Search"
     },
     "next": {
@@ -296,7 +296,7 @@
         "description": "Avoid ambiguous characters"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Opgeslagen in $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {
@@ -384,7 +384,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ vond deze pagina",
+        "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ gevonden voor deze pagina",
         "description": "String for the browser action"
     },
     "done": {
