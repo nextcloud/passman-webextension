@@ -164,7 +164,7 @@ $(document).ready(function () {
         var saved = API.i18n.getMessage('credential_saved');
         var updated = API.i18n.getMessage('credential_updated');
         var action = (args.updated) ? updated : saved;
-        $('#password-toolbar').html(action + '!');
+        $('#password-toolbar').find('.toolbar-text').text(action + '!');
         setTimeout(function () {
             closeDoorhanger();
         }, 2500);
