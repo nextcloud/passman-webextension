@@ -2,6 +2,16 @@
 var $j = jQuery.noConflict();
 
 $j(document).ready(function () {
+
+    $j(document).click(function(event) {
+        var passwordPickerRef = '.passwordPickerIframe';
+        if(!$j(event.target).closest(passwordPickerRef).length) {
+            if($j(passwordPickerRef).is(":visible")) {
+                removePasswordPicker();
+            }
+        }
+    });
+
     var _this = this;
     Array.prototype.findUrl = function (match) {
         return this.filter(function (item) {
@@ -42,7 +52,8 @@ $j(document).ready(function () {
     }
 
     function showPasswordPicker(form) {
-        if ($j('.passwordPickerIframe').length > 1) {
+        var jPasswordPicker = $j('.passwordPickerIframe');
+        if (jPasswordPicker.length > 1) {
             return;
         }
         var loginField = $j(form[0]);
@@ -84,6 +95,16 @@ $j(document).ready(function () {
         $j('.passwordPickerIframe:not(:last)').remove();
     }
 
+    function onFormIconClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var offsetX = e.offsetX;
+        var offsetRight = (e.data.width - offsetX);
+        if (offsetRight < e.data.height) {
+            showPasswordPicker(e.data.form);
+        }
+    }
+
     function createFormIcon(el, form) {
         var offset = el.offset();
         var width = el.width();
@@ -97,18 +118,8 @@ $j(document).ready(function () {
         //$j(el).css('background-position', '');
         $j(el).css('cssText', el.attr('style')+' background-position: right 3px center !important;');
 
-
-        function onClick(e) {
-            e.preventDefault();
-            var offsetX = e.offsetX;
-            var offsetRight = (width - offsetX);
-            if (offsetRight < height) {
-                showPasswordPicker(form);
-            }
-        }
-        $j(el).unbind('click');
-        $j(el).click(onClick);
-
+        $j(el).unbind('click', onFormIconClick);
+        $j(el).click({width: width, height: height, form: form}, onFormIconClick);
     }
 
     function createPasswordPicker(form) {
