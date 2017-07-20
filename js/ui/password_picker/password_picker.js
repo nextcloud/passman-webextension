@@ -57,6 +57,7 @@ $(document).ready(function () {
         labelfield.val(document.title);
         var userfield = $('#savepw-username');
         var pwfield = $('#savepw-password');
+        var vaultfield = $('#savepw-vault');
         $('.togglePw').click(function () {
             $('.togglePw').find('.fa').toggleClass('fa-eye').toggleClass('fa-eye-slash');
             if (pwfield.attr('type') === 'password') {
@@ -74,7 +75,8 @@ $(document).ready(function () {
                 method: "injectCreateCredential", args: {
                     label: labelfield.val(),
                     username: userfield.val(),
-                    password: pwfield.val()
+                    password: pwfield.val(),
+                    vaultIndex: vaultfield.val()
                 }
             });
         });
@@ -343,4 +345,10 @@ $(document).ready(function () {
         });
     }
 
+    API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
+        var accounts = settings.accounts;
+        for(var i = 0; i < accounts.length; i++) {
+            $('#savepw-vault').append('<option value=' + i + '>' + accounts[i].vault.name + '</option>');
+        }
+    });
 });
