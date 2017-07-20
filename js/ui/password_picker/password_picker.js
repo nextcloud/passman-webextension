@@ -86,7 +86,6 @@ $(document).ready(function () {
             userfield.val('');
             pwfield.val('');
             removePasswordPicker();
-            //removePasswordPicker();
         });
 
     }
