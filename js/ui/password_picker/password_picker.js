@@ -69,10 +69,11 @@ $(document).ready(function () {
 
         $('#savepw-save').click(function (e) {
             e.preventDefault();
-            $(this).val('Saving...');
+            $(this).text('Saving...');
             $(this).attr('disabled', true);
             API.runtime.sendMessage(API.runtime.id, {
-                method: "injectCreateCredential", args: {
+                method: "injectCreateCredential",
+                args: {
                     label: labelfield.val(),
                     username: userfield.val(),
                     password: pwfield.val(),
