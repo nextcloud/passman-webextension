@@ -85,7 +85,7 @@ API.runtime = {
         }
         else {
             return new C_Promise(function(){
-                API.api.runtime.sendMessage(message, options, (function(response) {
+                API.api.runtime.sendMessage(extensionId, message, options, (function(response) {
                     this.call_then(response);
                 }).bind(this));
             });
