@@ -441,7 +441,7 @@ var background = (function () {
         credential.password = data.password;
         credential.url = sender.tab.url;
         if (credential.guid !== null) {
-            PAPI.updateCredential(credential.account, credential,  credential.account.vault_password, function (updatedCredential) {
+            PAPI.updateCredential(credential.account, credential, credential.account.vault_password, function (updatedCredential) {
                 updatedCredential.account = credential.account;
                 if (credential_index) {
                     local_credentials[credential_index] = updatedCredential;
@@ -489,13 +489,14 @@ var background = (function () {
 
 
     function injectCreateCredential(args, sender) {
+        var account = getRuntimeSettings().accounts[args.vaultIndex];
         var credential = PAPI.newCredential();
         credential.label = args.label;
         credential.username = args.username;
         credential.password = args.password;
         credential.vault_id = local_vault.vault_id;
         credential.url = sender.tab.url;
-        PAPI.createCredential(credential, _self.settings.vault_password, function (createdCredential) {
+        PAPI.createCredential(account, credential, account.vault_password, function (createdCredential) {
             saveMinedCallback({credential: credential, updated: false, sender: sender, selfAdded: true});
             local_credentials.push(createdCredential);
 

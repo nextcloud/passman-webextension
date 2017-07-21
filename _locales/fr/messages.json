@@ -458,5 +458,9 @@
     "refresh_timer": {
         "message": "Minuterie de rafraîchissement [s]",
         "description": "Password"
+    },
+    "vault": {
+        "message": "Coffre-fort",
+        "description": "Vault"
     }
 }

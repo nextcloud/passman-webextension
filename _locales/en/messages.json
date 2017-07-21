@@ -502,5 +502,9 @@
         "example": "2"
       }
     }
+  },
+  "vault": {
+    "message": "Vault",
+    "description": "Vault"
   }
 }

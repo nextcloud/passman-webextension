@@ -139,7 +139,6 @@
                 if(!$scope.canEdit){
                     return;
                 }
-                $scope.saving = true;
                 if (!$scope.credential.label) {
                     notify(API.i18n.getMessage('label_required'));
                     return;
@@ -150,6 +149,7 @@
                     return;
                 }
 
+                $scope.saving = true;
                 if ($scope.new_custom_field.label && $scope.new_custom_field.value) {
                     $scope.credential.custom_fields.push(angular.copy($scope.new_custom_field));
                 }
