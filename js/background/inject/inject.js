@@ -36,9 +36,6 @@ $j(document).ready(function () {
         }
 
         fillPassword(username, login.password);
-        if ($j('.passwordPickerIframe').is(':visible')) {
-            removePasswordPicker();
-        }
     }
 
     _this.enterLoginDetails = enterLoginDetails;
