@@ -441,7 +441,7 @@ var background = (function () {
         credential.password = data.password;
         credential.url = sender.tab.url;
         if (credential.guid !== null) {
-            PAPI.updateCredential(credential.account, credential,  credential.account.vault_password, function (updatedCredential) {
+            PAPI.updateCredential(credential.account, credential, credential.account.vault_password, function (updatedCredential) {
                 updatedCredential.account = credential.account;
                 if (credential_index) {
                     local_credentials[credential_index] = updatedCredential;
