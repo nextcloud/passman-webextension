@@ -94,6 +94,14 @@ var background = (function () {
                 _self.settings.no_results_found_tab = 'list';
             }
 
+            if (!_self.settings.hasOwnProperty('enablePasswordPicker')) {
+                _self.settings.enablePasswordPicker = !_self.settings.disablePasswordPicker ;
+            }
+            
+            if (!_self.settings.hasOwnProperty('enableAutoFill')) {
+                _self.settings.enableAutoFill = !_self.settings.disableAutoFill;
+            }
+
             getCredentials();
 
             if (_self.running) {
@@ -522,10 +530,10 @@ var background = (function () {
     _self.isVaultKeySet = isVaultKeySet;
 
     function isAutoFillEnabled() {
-        if (!_self.settings.hasOwnProperty('disableAutoFill')) {
+        if (!_self.settings.hasOwnProperty('enableAutoFill')) {
             return true;
         }
-        return (_self.settings.disableAutoFill === false);
+        return _self.settings.enableAutoFill;
     }
 
     _self.isAutoFillEnabled = isAutoFillEnabled;
