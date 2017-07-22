@@ -12,11 +12,15 @@
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Uložit do $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
+    "vault": {
+        "message": "Vault",
+        "description": "Vault"
+    },
     "account_added": {
-        "message": "Account added!",
+        "message": "Účet přidán!",
         "description": "Search"
     },
     "label": {
@@ -88,7 +92,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Vybrat trezor",
         "description": "Search"
     },
     "add_account": {
@@ -228,7 +232,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Pověření smazáno",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -276,7 +280,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Vyhledávač hesel: Pokud není nalezeno žádné pověření, přejdi na:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -284,7 +288,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Po dokončení procesu nastavení můžete přidat další účty.",
         "description": "Search"
     },
     "next": {
@@ -296,7 +300,7 @@
         "description": "Avoid ambiguous characters"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Ukládám do $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "default_vault_desc": {

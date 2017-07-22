@@ -15,6 +15,10 @@
         "message": "Guardar en $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
+    "vault": {
+        "message": "Vault",
+        "description": "Vault"
+    },
     "account_added": {
         "message": "¡Cuenta agregada!",
         "description": "Search"
