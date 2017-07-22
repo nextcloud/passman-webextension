@@ -1,9 +1,12 @@
 $(document).ready(function () {
     API.runtime.onMessage.addListener(function (msg) {
-        $('.container').show();
+        var $container = $('.container');
+        $container.fadeIn();
+
         //console.log('Method call', msg.method);
-        if(msg.hasOwnProperty('setIframeUsername')){
-            $('.username').text(msg.setIframeUsername);
+        if (msg.hasOwnProperty('setIframeUsername')) {
+            var text = API.i18n.getMessage('auto_login', [msg.setIframeUsername]);
+            $container.text(text);
         }
     });
 });

@@ -26,7 +26,7 @@ $j(document).ready(function () {
 
     _this.removePasswordPicker = removePasswordPicker;
 
-    function enterLoginDetails(login) {
+    function enterLoginDetails(login, allowSubmit) {
         var username;
 
         if (login.hasOwnProperty('username')) {
@@ -40,7 +40,7 @@ $j(document).ready(function () {
 
         if (activeForm) {
             API.runtime.sendMessage(API.runtime.id, {method: 'isAutoSubmitEnabled'}).then(function (isEnabled) {
-                if (isEnabled) {
+                if (isEnabled && allowSubmit) {
                     submitLoginForm(username);
                 }
             });
@@ -166,7 +166,6 @@ $j(document).ready(function () {
         for (var i = 0; i < form.length; i++) {
             var el = $j(form[i]);
             createFormIcon(el, form);
-
         }
     }
 
@@ -273,7 +272,7 @@ $j(document).ready(function () {
                     if (logins.length === 1) {
                         API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
                             if (isEnabled) {
-                                enterLoginDetails(logins[0]);
+                                enterLoginDetails(logins[0], false);
                             }
                         });
                     }
@@ -287,7 +286,7 @@ $j(document).ready(function () {
     function minedLoginSaved(args) {
         // If the login added by the user then this is true
         if (args.selfAdded) {
-            enterLoginDetails(args.credential);
+            enterLoginDetails(args.credential, false);
         }
     }
 

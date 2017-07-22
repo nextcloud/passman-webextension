@@ -507,6 +507,16 @@
       }
     }
   },
+  "auto_login": {
+    "message": "Passman is logging you in as $USERNAME$",
+    "description": "Amount of the credentials in the database",
+    "placeholders": {
+      "username": {
+        "content": "$1",
+        "example": "MyUsername"
+      }
+    }
+  },
   "vault": {
     "message": "Vault",
     "description": "Vault"
