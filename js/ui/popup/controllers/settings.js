@@ -48,6 +48,7 @@
             $scope.errors = [];
 
             $scope.tabActive =  ($routeParams.tab) ? parseInt($routeParams.tab) : 1;
+            $scope.extension = API.runtime.getManifest().name + ' extension ' + API.runtime.getManifest().version;
 
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
                 $scope.errors = [];
