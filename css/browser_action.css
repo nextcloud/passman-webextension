@@ -769,3 +769,7 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
 
 .cg-notify-message-center {
   left: 112px !important; }
+
+.version {
+  padding-bottom: 10px;
+  padding-left: 15px; }
