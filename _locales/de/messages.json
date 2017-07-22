@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ Zugangsdaten in der Datenbank",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Liste der Zugangsdaten aktualisieren",
@@ -13,7 +19,13 @@
     },
     "save_to": {
         "message": "Speichern in $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "vault": {
         "message": "Vault",
@@ -149,7 +161,13 @@
     },
     "credentials_found_for_site": {
         "message": "Wir haben $AMOUNT$ Zugangsdaten für diese Seite gefunde",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "value": {
         "message": "Wert",
@@ -301,7 +319,13 @@
     },
     "saving_to": {
         "message": "Speichere in $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "default_vault_desc": {
         "message": "Wähle den Tresor aus, den Du mit dem Browser synchronisieren möchten.",
@@ -317,7 +341,17 @@
     },
     "invalid_response_from_server": {
         "message": "Ungültige Antwort des Servers: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Speichern",
@@ -389,7 +423,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman -  $CREDENTIAL_AMOUNT$ $PLURAL$ Zugangsdaten für diese Seite gefunden",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "done": {
         "message": "Erledigt",

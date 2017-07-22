@@ -25,7 +25,7 @@ for (var i = 0; i < language_files.length; i++) {
     }
     var json_data = JSON.parse(fs.readFileSync(file, 'utf8'));
     for (var translate_key in json_data) {
-        if (!translate_key.hasOwnProperty('placeholders') && en[translate_key].hasOwnProperty('placeholders')) {
+        if (en[translate_key] && !translate_key.hasOwnProperty('placeholders') && en[translate_key].hasOwnProperty('placeholders')) {
             console.log('Fixed ' + file + ' translate key: ' + translate_key);
             json_data[translate_key].placeholders = en[translate_key].placeholders;
         }

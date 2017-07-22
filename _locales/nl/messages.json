@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ inloggegevens in de database",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Verversen lijst inloggegevens",
@@ -13,7 +19,13 @@
     },
     "save_to": {
         "message": "Opslaan in $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "vault": {
         "message": "Vault",
@@ -149,7 +161,13 @@
     },
     "credentials_found_for_site": {
         "message": "We vonden $AMOUNT$ inloggegevens voor deze site",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "value": {
         "message": "Waarde",
@@ -301,7 +319,13 @@
     },
     "saving_to": {
         "message": "Opgeslagen in $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "default_vault_desc": {
         "message": "Selecteer de kluis die je met je browser wil synchroniseren.",
@@ -317,7 +341,17 @@
     },
     "invalid_response_from_server": {
         "message": "Foute reactie van de server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Opslaan",
@@ -389,7 +423,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ gevonden voor deze pagina",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "done": {
         "message": "Gedaan",
