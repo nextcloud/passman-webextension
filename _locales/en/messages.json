@@ -180,8 +180,12 @@
     "description": "Ignore path for site matching"
   },
   "enable_autofill": {
-    "message": "Enable form autofill",
+    "message": "Enable form auto fill",
     "description": "Disable auto fill of forms"
+  },
+  "enable_autosubmit": {
+    "message": "Enable form auto submit after picking account",
+    "description": "Enable form auto submit"
   },
   "disable_browser_autofill": {
     "message": "Disable browser auto fill",

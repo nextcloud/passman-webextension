@@ -49,6 +49,7 @@
                 master_password: '',
                 enableAutoFill: true,
                 enablePasswordPickerr: true,
+                enableAutoSubmit: false,
                 debug: false,
                 accounts: []
             };

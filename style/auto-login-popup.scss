@@ -1,0 +1,24 @@
+/* Header Footer Styles */
+@import "partials/cicle";
+@import "partials/list";
+@import "partials/material-input";
+@import "partials/material-switch";
+@import "partials/material-checkbox";
+@import "partials/material-buttons";
+@import "partials/material-tabs";
+
+body{
+ background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
