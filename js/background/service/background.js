@@ -538,6 +538,15 @@ var background = (function () {
 
     _self.isAutoFillEnabled = isAutoFillEnabled;
 
+    function isAutoSubmitEnabled() {
+        if (!_self.settings.hasOwnProperty('enableAutoSubmit')) {
+            return false;
+        }
+        return _self.settings.enableAutoSubmit;
+    }
+
+    _self.isAutoSubmitEnabled = isAutoSubmitEnabled;
+
     var doorhangerData = null;
 
     function setDoorhangerData(data) {

@@ -89,6 +89,6 @@
     }
   ],
   "web_accessible_resources": [
-    "html/inject/doorhanger.html", "html/inject/password_picker.html", "fonts/*","icons/*"
+    "html/inject/doorhanger.html", "html/inject/password_picker.html", "html/inject/auto_login.html", "fonts/*","icons/*"
   ]
 }

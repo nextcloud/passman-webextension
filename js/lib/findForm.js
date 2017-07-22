@@ -174,7 +174,7 @@ function getLoginFields(isSubmission) {
         var usernameField = result[0];
         var passwordField = result[1];
         // Need a valid password field to do anything.
-        if (passwordField == null){
+        if (passwordField === null){
             continue;
         }
         loginForms.push([usernameField, passwordField]);

@@ -3,10 +3,10 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function () {
 
-    $j(document).click(function(event) {
+    $j(document).click(function (event) {
         var passwordPickerRef = '.passwordPickerIframe';
-        if(!$j(event.target).closest(passwordPickerRef).length) {
-            if($j(passwordPickerRef).is(":visible")) {
+        if (!$j(event.target).closest(passwordPickerRef).length) {
+            if ($j(passwordPickerRef).is(":visible")) {
                 removePasswordPicker();
             }
         }
@@ -20,6 +20,7 @@ $j(document).ready(function () {
     };
 
     function removePasswordPicker() {
+        activeForm = undefined;
         $j('.passwordPickerIframe').remove();
     }
 
@@ -31,14 +32,53 @@ $j(document).ready(function () {
         if (login.hasOwnProperty('username')) {
             username = (login.username !== '' ) ? login.username : login.email;
         }
-        if(!username){
+        if (!username) {
             username = null;
         }
 
         fillPassword(username, login.password);
+
+        if (activeForm) {
+            API.runtime.sendMessage(API.runtime.id, {method: 'isAutoSubmitEnabled'}).then(function (isEnabled) {
+                if (isEnabled) {
+                    submitLoginForm(username);
+                }
+            });
+        }
     }
 
     _this.enterLoginDetails = enterLoginDetails;
+
+    function submitLoginForm(username) {
+        if (!activeForm) {
+            // @TODO detect login form on the current page
+            return;
+        }
+
+        var formEl = $j(activeForm).closest('form');
+        var iframeUrl = API.extension.getURL('/html/inject/auto_login.html');
+        $j('#loginPopupIframe').remove();
+        var loginPopup = $j('<iframe class="loginPopupIframe" scrolling="no" frameborder="0" src="' + iframeUrl + '"></iframe>');
+        var padding = parseInt($j(formEl).css('padding').replace('px', ''));
+        var margin = parseInt($j(formEl).css('margin').replace('px', ''));
+        var height = Math.round($j(formEl).height() + (padding * 2) + (margin * 2));
+        var width = Math.round($j(formEl).width() + (padding * 2) + (margin * 2));
+        loginPopup.attr('height', height);
+        loginPopup.attr('width', width);
+        loginPopup.css('position', 'absolute');
+        loginPopup.css('z-index', getMaxZ() + 1);
+        loginPopup.css('background-color', 'rgba(0, 0, 0, 0.73)');
+        loginPopup.css('left', Math.floor($j(formEl).offset().left - padding - margin));
+        loginPopup.css('top', Math.floor($j(formEl).offset().top - padding - margin));
+        removePasswordPicker();
+        $j(document.body).prepend(loginPopup);
+        API.runtime.sendMessage(API.runtime.id, {'setIframeUsername': username}).then(function () {
+            $j(formEl).submit();
+            setTimeout(function () {
+                loginPopup.remove();
+            }, 2000);
+        });
+    }
 
     function getMaxZ() {
         return Math.max.apply(null,
@@ -47,6 +87,8 @@ $j(document).ready(function () {
                     return parseInt($j(e).css('z-index')) || 1;
             }));
     }
+
+    var activeForm;
 
     function showPasswordPicker(form) {
         var jPasswordPicker = $j('.passwordPickerIframe');
@@ -70,13 +112,13 @@ $j(document).ready(function () {
             top = passwordFieldPos.top + passwordField.height() + 10;
         } else {
             // console.log('login fields next to each other')
-            if(loginFieldPos){
-                top =  top + loginField.height() + 10;
+            if (loginFieldPos) {
+                top = top + loginField.height() + 10;
             } else {
-                top =  top + passwordField.height() + 10;
+                top = top + passwordField.height() + 10;
             }
         }
-        if(!loginFieldVisible){
+        if (!loginFieldVisible) {
             left = passwordFieldPos.left;
         }
 
@@ -88,6 +130,7 @@ $j(document).ready(function () {
         picker.css('z-index', maxZ + 10);
         picker.css('top', top);
         $j('body').prepend($j(picker));
+        activeForm = form;
         // picker.css('width', $j(form).width());
         $j('.passwordPickerIframe:not(:last)').remove();
     }
@@ -113,7 +156,7 @@ $j(document).ready(function () {
         $j(el).css('background-image', 'url("' + pickerIcon + '")');
         $j(el).css('background-repeat', 'no-repeat');
         //$j(el).css('background-position', '');
-        $j(el).css('cssText', el.attr('style')+' background-position: right 3px center !important;');
+        $j(el).css('cssText', el.attr('style') + ' background-position: right 3px center !important;');
 
         $j(el).unbind('click', onFormIconClick);
         $j(el).click({width: width, height: height, form: form}, onFormIconClick);
@@ -158,7 +201,7 @@ $j(document).ready(function () {
 
         var doorhanger = $j('<iframe id="password-toolbarIframe" style="display: none;" scrolling="no" height="60" width="100%" frameborder="0" src="' + pickerUrl + '"></iframe>');
         $j('#password-toolbarIframe').remove();
-        doorhanger.css('z-index',  getMaxZ() + 1);
+        doorhanger.css('z-index', getMaxZ() + 1);
         $j('body').prepend(doorhanger);
         $j('#password-toolbarIframe').fadeIn();
     }
@@ -185,7 +228,7 @@ $j(document).ready(function () {
                 return;
             }
             if (data.hasOwnProperty('username') && data.hasOwnProperty('password') && data.hasOwnProperty('url')) {
-                var buttons = [ 'cancel', 'ignore', 'save' ];
+                var buttons = ['cancel', 'ignore', 'save'];
                 showDoorhanger({data: data, buttons: buttons});
             }
         });
