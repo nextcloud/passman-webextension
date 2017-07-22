@@ -222,7 +222,6 @@ var background = (function () {
         });
     }
 
-
     function getCredentialsByUrl(_url, sender) {
         if (!master_password) {
             return [];
@@ -233,11 +232,22 @@ var background = (function () {
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
         var found_list = [];
         for (var i = 0; i < local_credentials.length; i++) {
-            if (local_credentials[i].url) {
-                if (local_credentials[i].url.indexOf(url) !== -1) {
+            var credential_url = local_credentials[i].url;
+            if (!/^(ht)tps?:\/\//i.test(credential_url) && credential_url !== '' && _url) {
+                try {
+                    var protocol = _url.split('://').shift();
+                    credential_url = protocol + "://" + credential_url;
+                } catch (e){
+                    //ignore
+                }
+            }
+            credential_url = processURL(credential_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+            if (credential_url) {
+                if (credential_url.indexOf(url) !== -1) {
                     found_list.push(local_credentials[i]);
                 }
             }
+
         }
         return found_list;
     }

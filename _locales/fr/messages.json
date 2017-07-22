@@ -15,6 +15,10 @@
         "message": "Sauvegarder dans $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
+    "vault": {
+        "message": "Vault",
+        "description": "Vault"
+    },
     "account_added": {
         "message": "Compte ajouté !",
         "description": "Search"
@@ -458,9 +462,5 @@
     "refresh_timer": {
         "message": "Minuterie de rafraîchissement [s]",
         "description": "Password"
-    },
-    "vault": {
-        "message": "Coffre-fort",
-        "description": "Vault"
     }
 }
