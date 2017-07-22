@@ -201,13 +201,13 @@ $j(document).ready(function () {
 
     function initForms() {
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (settings) {
-            var disablePasswordPicker = settings.disablePasswordPicker;
+            var enablePasswordPicker = settings.enablePasswordPicker;
             var url = window.location.href;
             var loginFields = getLoginFields();
             if (loginFields.length > 0) {
                 for (var i = 0; i < loginFields.length; i++) {
                     var form = getFormFromElement(loginFields[i][0]);
-                    if (!disablePasswordPicker) {
+                    if (enablePasswordPicker) {
                         createPasswordPicker(loginFields[i], form);
                     }
                     //Password miner

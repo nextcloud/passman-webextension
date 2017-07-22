@@ -179,8 +179,8 @@
     "message": "Ignore path for site matching",
     "description": "Ignore path for site matching"
   },
-  "disable_autofill": {
-    "message": "Disable auto fill of forms",
+  "enable_autofill": {
+    "message": "Enable form autofill",
     "description": "Disable auto fill of forms"
   },
   "disable_browser_autofill": {
@@ -191,8 +191,8 @@
     "message": "Enter a domain or TLD to ignore and press enter",
     "description": "Disable auto fill of forms"
   },
-  "disable_password_picker": {
-    "message": "Disable password picker",
+  "enable_password_picker": {
+    "message": "Enable password picker",
     "description": "Disable password picker"
   },
   "enable_debug": {

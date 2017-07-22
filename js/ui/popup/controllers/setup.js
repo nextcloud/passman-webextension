@@ -47,8 +47,8 @@
                 refreshTime: 60,
                 default_vault: {},
                 master_password: '',
-                disableAutoFill: false,
-                disablePasswordPicker: false,
+                enableAutoFill: true,
+                enablePasswordPickerr: true,
                 debug: false,
                 accounts: []
             };
