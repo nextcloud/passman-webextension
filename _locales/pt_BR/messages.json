@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciais no banco de dados",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Atualizar lista de credenciais",
@@ -19,16 +13,10 @@
     },
     "save_to": {
         "message": "Salvo em $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Cofre",
         "description": "Vault"
     },
     "account_added": {
@@ -107,6 +95,10 @@
         "message": "Selecionar cofre",
         "description": "Search"
     },
+    "enable_autofill": {
+        "message": "Enable form auto fill",
+        "description": "Disable auto fill of forms"
+    },
     "add_account": {
         "message": "Adicionar conta",
         "description": "Add account"
@@ -161,13 +153,7 @@
     },
     "credentials_found_for_site": {
         "message": "Foram encontradas $AMOUNT$ credenciais para este site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Valor",
@@ -319,13 +305,15 @@
     },
     "saving_to": {
         "message": "Salvando em $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
+    },
+    "enable_password_picker": {
+        "message": "Enable password picker",
+        "description": "Disable password picker"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Selecionar o cofre que você quer manter sincronizado com o navegador.",
@@ -341,17 +329,7 @@
     },
     "invalid_response_from_server": {
         "message": "Resposta inválida do servidor: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Salvar",
@@ -423,17 +401,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Concluído",
@@ -443,13 +411,13 @@
         "message": "Nenhuma credencial encontrada para este site!",
         "description": "No credentials found for the current site"
     },
+    "enable_autosubmit": {
+        "message": "Enable form auto submit after picking account",
+        "description": "Enable form auto submit"
+    },
     "saving": {
         "message": "Salvando",
         "description": "Saving"
-    },
-    "disable_password_picker": {
-        "message": "Desativar o seletor de senha",
-        "description": "Disable password picker"
     },
     "url": {
         "message": "URL",
@@ -482,10 +450,6 @@
     "btn_search": {
         "message": "Procurar credenciais",
         "description": "Search credentials"
-    },
-    "disable_autofill": {
-        "message": "Desabilitar auto preenchimento de formulários",
-        "description": "Disable auto fill of forms"
     },
     "credential_created": {
         "message": "Credencial criada",

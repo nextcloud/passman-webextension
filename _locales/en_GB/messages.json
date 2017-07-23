@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Refresh credential list",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Save to $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Vault",
@@ -107,6 +95,10 @@
         "message": "Select vault",
         "description": "Search"
     },
+    "enable_autofill": {
+        "message": "Enable form auto fill",
+        "description": "Disable auto fill of forms"
+    },
     "add_account": {
         "message": "Add account",
         "description": "Add account"
@@ -161,13 +153,7 @@
     },
     "credentials_found_for_site": {
         "message": "We've found $AMOUNT$ credentials for this site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Value",
@@ -319,13 +305,15 @@
     },
     "saving_to": {
         "message": "Saving to $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
+    },
+    "enable_password_picker": {
+        "message": "Enable password picker",
+        "description": "Disable password picker"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Select the vault that you want to keep in sync with the browser.",
@@ -341,17 +329,7 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Save",
@@ -423,17 +401,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Done",
@@ -443,13 +411,13 @@
         "message": "No credentials found for this site!",
         "description": "No credentials found for the current site"
     },
+    "enable_autosubmit": {
+        "message": "Enable form auto submit after picking account",
+        "description": "Enable form auto submit"
+    },
     "saving": {
         "message": "Saving",
         "description": "Saving"
-    },
-    "disable_password_picker": {
-        "message": "Disable password picker",
-        "description": "Disable password picker"
     },
     "url": {
         "message": "URL",
@@ -482,10 +450,6 @@
     "btn_search": {
         "message": "Search credentials",
         "description": "Search credentials"
-    },
-    "disable_autofill": {
-        "message": "Disable auto fill of forms",
-        "description": "Disable auto fill of forms"
     },
     "credential_created": {
         "message": "Credential created",

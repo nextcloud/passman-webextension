@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "Veritabanında $AMOUNT$ kimlik doğrulama bilgisi var",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Kimlik doğrulama bilgilerini yenile",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "$VAULT_NAME$ üzerine kaydet",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Vault",
@@ -107,6 +95,10 @@
         "message": "Kasayı seçin",
         "description": "Search"
     },
+    "enable_autofill": {
+        "message": "Enable form auto fill",
+        "description": "Disable auto fill of forms"
+    },
     "add_account": {
         "message": "Hesap ekle",
         "description": "Add account"
@@ -161,13 +153,7 @@
     },
     "credentials_found_for_site": {
         "message": "Bu site için  $AMOUNT$ bulundu",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Değer",
@@ -319,13 +305,15 @@
     },
     "saving_to": {
         "message": "$VAULT_NAME$ üzerine kaydediliyor",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
+    },
+    "enable_password_picker": {
+        "message": "Enable password picker",
+        "description": "Disable password picker"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Tarayıcı ile eşitlenmesini istediğiniz kasayı seçin.",
@@ -341,17 +329,7 @@
     },
     "invalid_response_from_server": {
         "message": "Sunucudan alınan yanıt geçersiz: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Kaydet",
@@ -423,17 +401,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - bu sayfa için  $CREDENTIAL_AMOUNT$ $PLURAL$ buldu",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "Tamam",
@@ -443,13 +411,13 @@
         "message": "Bu sitenin kimlik doğrulama bilgileri bulunamadı!",
         "description": "No credentials found for the current site"
     },
+    "enable_autosubmit": {
+        "message": "Enable form auto submit after picking account",
+        "description": "Enable form auto submit"
+    },
     "saving": {
         "message": "Kaydediliyor",
         "description": "Saving"
-    },
-    "disable_password_picker": {
-        "message": "Parola yakalama kullanılmasın",
-        "description": "Disable password picker"
     },
     "url": {
         "message": "Adres",
@@ -482,10 +450,6 @@
     "btn_search": {
         "message": "Kimlik doğrulama bilgileri arama",
         "description": "Search credentials"
-    },
-    "disable_autofill": {
-        "message": "Formlar otomatik doldurulmasın",
-        "description": "Disable auto fill of forms"
     },
     "credential_created": {
         "message": "Kimlik doğrulama bilgileri oluşturuldu",
