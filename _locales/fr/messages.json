@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Activer le remplissage automatique du formulaire",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
@@ -308,11 +308,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Activer le sélecteur de mot de passe",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman vous connecte en tant que $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
@@ -412,7 +412,7 @@
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Activer l'envoi automatique du formulaire après la sélection du compte",
         "description": "Enable form auto submit"
     },
     "saving": {
