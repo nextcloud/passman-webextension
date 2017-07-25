@@ -16,11 +16,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Kluis",
         "description": "Vault"
     },
     "account_added": {
-        "message": "Account added!",
+        "message": "Account toegevoegd!",
         "description": "Search"
     },
     "label": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Automatisch aanvullen inschakelen",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
@@ -236,7 +236,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Referentie verwijderd",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -308,11 +308,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Wachtwoord kiezer uitschakelen",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman logt je in als $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
@@ -412,7 +412,7 @@
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Automatisch aanvullen na het kiezen van een account",
         "description": "Enable form auto submit"
     },
     "saving": {

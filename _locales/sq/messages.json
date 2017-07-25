@@ -1,28 +1,34 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "message": "$AMOUNT$kredenciale në databazë",
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Rifresko listën e kredencialeve",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "message": "Passman - Manaxheri i fjalëkalimeve për NextCloud/ownCloud",
         "description": "Extension description"
+    },
+    "save_to": {
+        "message": "Ruaje tek $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "vault": {
+        "message": "Kasafortë",
+        "description": "Vault"
+    },
+    "account_added": {
+        "message": "Llogaria u shtua!",
+        "description": "Search"
     },
     "label": {
         "message": "Etiketa",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
+        "message": "Injoro protokollin për koordinim të faqeve",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
@@ -34,7 +40,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "URL e kapur e ndryshuar për",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -70,7 +76,7 @@
         "description": "Vault password"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Më vjen keq, nuk ka kasafortë të zgjedhur. Të lutem krijo një kasafortë me aplikacionin e Nextcloud/ownCloud dhe provo përsëri.",
         "description": "Search"
     },
     "edit": {
@@ -84,6 +90,14 @@
     "enter_master_password_desc": {
         "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
         "description": "Enter master password"
+    },
+    "select_vault": {
+        "message": "Selekto kasafortën",
+        "description": "Search"
+    },
+    "enable_autofill": {
+        "message": "Mundëso plotësimin automatik të formës",
+        "description": "Disable auto fill of forms"
     },
     "add_account": {
         "message": "Shto llogari",
@@ -138,25 +152,19 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "We've found $AMOUNT$ credentials for this site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "message": "Kemi gjetur $AMOUNT$ kredenciale për këtë faqe",
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Vlerë",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "Zhvillimi varet nga donacionet, ju lutem na suportoni.",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "message": "Ju lutem futni kredencialet tuaja të Nextcloud/ownCloud",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
@@ -164,7 +172,7 @@
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Fusha të kastomizuara",
         "description": "Custom fields"
     },
     "invalid_host": {
@@ -200,7 +208,7 @@
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
+        "message": "Injoro portin për koordinim të faqeve",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
@@ -226,6 +234,10 @@
     "intro_text": {
         "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
         "description": "Cancel"
+    },
+    "credential_deleted": {
+        "message": "Kredencialet u fshinë",
+        "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
         "message": "Fut një domain ose TLD për të injoruar dhe shtyp enter",
@@ -279,13 +291,29 @@
         "message": "Ruaj faqen",
         "description": "Save site"
     },
+    "extra_accounts": {
+        "message": "Kur proçesi i ndërtimit të mbarojë, ju mund të shtoni më shumë llogari.",
+        "description": "Search"
+    },
     "next": {
         "message": "I/E rradhës",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Avoid ambiguous characters",
+        "message": "Shmag karaktere të paqarta",
         "description": "Avoid ambiguous characters"
+    },
+    "saving_to": {
+        "message": "Dua u ruajtur tek $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "enable_password_picker": {
+        "message": "Mundëso zgjedhësin e fjalëkalimit",
+        "description": "Disable password picker"
+    },
+    "auto_login": {
+        "message": "Passman po ju lidh brenda si $USERNAME$",
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Select the vault that you want to keep in sync with the browser.",
@@ -301,17 +329,7 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Ruaj",
@@ -322,7 +340,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have permissions to edit this credential.",
+        "message": "Ju nuk keni leje të editoni këtë kredencial.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -366,11 +384,11 @@
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Require every character type",
+        "message": "Kërkohet çdo tip karakteri",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "Aktivizo gjendjen debug",
         "description": "Enable debug mode"
     },
     "email": {
@@ -378,22 +396,12 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman extension",
+        "message": "Mirë se vini në zgjerimin e Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "done": {
         "message": "U krye",
@@ -403,13 +411,13 @@
         "message": "Jo kredenciale të gjetura për këtë faqe!",
         "description": "No credentials found for the current site"
     },
+    "enable_autosubmit": {
+        "message": "Mundëso dërgimin automatik të formës pas zgjedhjes së llogarisë",
+        "description": "Enable form auto submit"
+    },
     "saving": {
         "message": "Duke u ruajtur",
         "description": "Saving"
-    },
-    "disable_password_picker": {
-        "message": "Çaktivizo grumbulluesin e fjalëkalimeve",
-        "description": "Disable password picker"
     },
     "url": {
         "message": "URL",
@@ -436,16 +444,12 @@
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignore subdomain for site matching",
+        "message": "Injoro nëndomain-ët për koordinim të faqeve",
         "description": "Password"
     },
     "btn_search": {
         "message": "Kërko kredenciale",
         "description": "Search credentials"
-    },
-    "disable_autofill": {
-        "message": "Çaktivizo mbyshjen automatike të formave",
-        "description": "Disable auto fill of forms"
     },
     "credential_created": {
         "message": "Kredencialet u krijuan",
