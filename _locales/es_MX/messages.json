@@ -16,7 +16,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Bóveda",
         "description": "Vault"
     },
     "account_added": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Habilitar autocompletar de formas",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
@@ -308,11 +308,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Habilitar la selección de contraseñas",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman te está registrando como $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
