@@ -220,7 +220,7 @@ $(document).ready(function () {
     
     makeTabActive('list');
     storage.get('activeTab').then(function (name) {
-        if (name) {
+        if (name && name !== '') {
             makeTabActive(name);
         }
     });
@@ -300,6 +300,9 @@ $(document).ready(function () {
     });
 
     function url_domain(data) {
+        if(!data){
+            return '';
+        }
         var matches = data.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
         return matches && matches[1];  // domain will be null if no match is found
     }
