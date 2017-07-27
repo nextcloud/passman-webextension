@@ -27,6 +27,8 @@ $(document).ready(function () {
                 injectMethod: 'enterLoginDetails',
                 args: login
             }
+        }).then(function () {
+            removePasswordPicker();
         });
     }
 

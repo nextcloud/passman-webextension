@@ -205,11 +205,15 @@ function fillPassword(user, password) {
     for (var i = 0; i < loginFields.length; i++) {
         if(user && loginFields[i][0]){
             loginFields[i][0].value = user;
-            dispatchEvents(loginFields[i][0]);
+            if(loginFields[i][0].offsetParent) {
+                dispatchEvents(loginFields[i][0]);
+            }
         }
         if(password && loginFields[i][1]) {
             loginFields[i][1].value = password;
-            dispatchEvents(loginFields[i][1]);
+            if(loginFields[i][1].offsetParent) {
+                dispatchEvents(loginFields[i][1]);
+            }
         }
     }
 
