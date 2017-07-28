@@ -1,7 +1,7 @@
 <div class="edit_credential">
     <div class="searchContainer">
         <div class="group">
-            <input type="text" ng-enter="search()" ng-model="searchText">
+            <input type="text" ng-keypress="search()" ng-model="searchText">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'search_for' | translate }}</label>
