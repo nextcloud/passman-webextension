@@ -72,7 +72,6 @@ var background = (function () {
             if ((!_settings || Object.keys(_settings).length === 0 || !_settings.hasOwnProperty('accounts')) && !master_password) {
                 return;
             }
-
             if (!master_password && _settings.hasOwnProperty('accounts') && _settings.accounts.length > 0) {
                 _self.settings.isInstalled = 1;
                 testMasterPasswordAgainst = _settings.accounts;
@@ -154,6 +153,13 @@ var background = (function () {
     }
 
     _self.saveSettings = saveSettings;
+
+    function resetSettings(){
+        storage.set('settings', {});
+        _self.settings = {};
+    }
+
+    _self.resetSettings = resetSettings;
 
 
     function getCredentials() {
@@ -563,7 +569,7 @@ var background = (function () {
 
     function closeSetupTab() {
         API.tabs.query({url: 'chrome-extension://' + API.runtime.id + '/html/browser_action/browser_action.html'}).then(function (tabs) {
-            if (tabs) {
+            if (tabs && tabs[0]) {
                 API.tabs.remove(tabs[0].id);
             }
         });

@@ -36,27 +36,31 @@
         .controller('PasswordPromptCtrl', ['$scope', 'Settings', '$location', '$rootScope', function ($scope, Settings, $window, $rootScope) {
             $scope.settings = {};
 
-            API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function(isSet) {
+            API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isSet) {
                 $scope.masterPwSet = isSet;
                 $scope.$apply();
             });
-            API.runtime.sendMessage(API.runtime.id, {method: "getSettings"});
-
             $rootScope.$broadcast('hideHeader');
             $scope.master_password_remember = false;
             $scope.master_password = '';
-            $scope.apply_settings = function() {
+            $scope.apply_settings = function () {
                 $scope.saving = true;
                 $scope.inValidPassword = false;
-                API.runtime.sendMessage(API.runtime.id, {method: 'isMasterPasswordValid', args: $scope.master_password }).then(function (isValid) {
-                    if(isValid){
-                        API.runtime.sendMessage(API.runtime.id, {method: "setMasterPassword", args: {password: $scope.master_password, savePassword: $scope.master_password_remember} }).then(function () {
+                API.runtime.sendMessage(API.runtime.id, {
+                    method: 'isMasterPasswordValid',
+                    args: $scope.master_password
+                }).then(function (isValid) {
+                    if (isValid) {
+                        API.runtime.sendMessage(API.runtime.id, {
+                            method: "setMasterPassword",
+                            args: {password: $scope.master_password, savePassword: $scope.master_password_remember}
+                        }).then(function () {
                             setTimeout(function () {
                                 window.location = '#!/';
                                 $scope.saving = false;
                                 $rootScope.$broadcast('showHeader');
 
-                            },750);
+                            }, 750);
                         });
                     } else {
                         $scope.saving = false;
@@ -66,6 +70,22 @@
                 });
 
             };
+            $scope.showResetPassword = function () {
+                $scope.resetPassword = true;
+            };
+
+            $scope.resetExtension = function () {
+                $scope.confirmReset = true;
+            };
+
+            $scope.confirmedResetExtension = function () {
+                API.runtime.sendMessage(API.runtime.id, {method: 'resetSettings'}).then(function () {
+                    setTimeout(function () {
+                        window.close();
+                    }, 500);
+                });
+            };
+
         }]);
 }());
 

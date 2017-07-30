@@ -34,7 +34,6 @@
      */
     angular.module('passmanExtension')
         .controller('MainCtrl', ['$scope', 'Settings', '$location', '$rootScope', '$timeout', function ($scope, Settings, $window, $rootScope, $timeout) {
-
             var port = API.runtime.connect(null, {
                 name: "PassmanCommunication"
             });
@@ -101,7 +100,6 @@
             });
 
             API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
-
                 $rootScope.app_settings = settings;
                 if (!settings || Object.keys(settings).length === 0) {
                     window.location = '#!/setup';
