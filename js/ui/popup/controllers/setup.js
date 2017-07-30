@@ -47,6 +47,7 @@
                 refreshTime: 60,
                 default_vault: {},
                 master_password: '',
+                master_password_repeat: '',
                 enableAutoFill: true,
                 enablePasswordPickerr: true,
                 enableAutoSubmit: false,
@@ -102,6 +103,12 @@
                     }
                 },
                 master: function (callback) {
+                    if($scope.settings.master_password !== $scope.settings.master_password_repeat){
+                        notify(API.i18n.getMessage('no_password_match'));
+                        callback(false);
+                        return;
+                    }
+
                     if ($scope.settings.master_password.trim() !== '') {
                         callback(true);
                     } else {
@@ -147,7 +154,7 @@
                     nextcloud_username: settings.nextcloud_username,
                     nextcloud_password: settings.nextcloud_password,
                     vault: settings.default_vault,
-                    vault_password: settings.vault_password,
+                    vault_password: settings.vault_password
                 };
                 settings.accounts.push(account);
                 delete settings.master_password;
@@ -156,6 +163,7 @@
                 delete settings.nextcloud_username;
                 delete settings.nextcloud_password;
                 delete settings.vault_password;
+                delete settings.master_password_repeat;
                 delete settings.default_vault;
 
                 $scope.saving = true;
