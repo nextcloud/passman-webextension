@@ -94,7 +94,14 @@
         <div style="padding-left: 5px">{{'enter_master_password_desc' | translate}}</div>
         <br/>
         <div class="group" style="margin-bottom: 20px;">
-            <input type="password" ng-model="settings.master_password" ng-enter="next()"
+            <input type="password" ng-model="settings.master_password"
+                   required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+        </div>
+        <br/>
+        <div class="group" style="margin-bottom: 20px;">
+            <input type="password" ng-model="settings.master_password_repeat" ng-enter="next()"
                    required>
             <span class="highlight"></span>
             <span class="bar"></span>
