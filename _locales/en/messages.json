@@ -435,6 +435,22 @@
     "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
     "description": "Search"
   },
+  "msg_reset_extension": {
+    "message": "You can reset your password. This will reset the extension to its default state.",
+    "description": "Search"
+  },
+  "forgot_password": {
+    "message": "Forgot password?",
+    "description": "Search"
+  },
+  "reset_extension": {
+    "message": "Reset extension",
+    "description": "Search"
+  },
+  "iam_sure": {
+    "message": "Yes, i'm sure!",
+    "description": "Search"
+  },
   "edit_insufficient_permissions": {
     "message": "You don't have permissions to edit this credential.",
     "description": "You don't have permissions to edit this credential."

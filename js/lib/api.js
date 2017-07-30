@@ -27,6 +27,9 @@ window.PAPI = (function () {
             return (hostSet && usernameSet && passwordSet);
         },
         decryptString: function (ciphertext, _key) {
+            if(!ciphertext || !_key){
+                return '';
+            }
             ciphertext = window.atob(ciphertext);
             var rp = {};
             try {
