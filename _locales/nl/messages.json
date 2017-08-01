@@ -75,6 +75,10 @@
         "message": "ongeldige kluissleutel!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Sorry, geen kluis gevonden. Creëer een kluis via de Nextcloud / ownCloud app en probeer het opnieuw.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Verwijderen",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Wachtwoord vergeten?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Ongeldige serverinstellingen",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Na het aanmaken kun je de inloggegevens bewerken in Passman",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Standaardkluis",
@@ -422,6 +434,10 @@
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Ja, ik weet het zeker!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Geen sites genegeerd",

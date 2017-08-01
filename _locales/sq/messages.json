@@ -24,7 +24,7 @@
         "description": "Search"
     },
     "label": {
-        "message": "Etiketa",
+        "message": "Etiketa.",
         "description": "Label"
     },
     "ignore_protocol": {
@@ -36,7 +36,7 @@
         "description": "Settings"
     },
     "finish": {
-        "message": "Mbaro",
+        "message": "Përfundo!",
         "description": "Finish"
     },
     "detected_changed_url": {
@@ -56,11 +56,11 @@
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Toggle advanced options",
+        "message": "Shfaq ose fshih opsionet e avancuara!",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman extension is locked, unlock to use it",
+        "message": "Zgjerimi i Passman është i kyçur, çkyç për ta përdorur atë",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -75,6 +75,10 @@
         "message": "Çelës kasaforte jo i vlefshëm!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "Ju mund të ndryshoni fjalëkalimin tuaj. Kjo do te rivendosë shtesën në gjendjen e saj fillestare.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Më vjen keq, nuk ka kasafortë të zgjedhur. Të lutem krijo një kasafortë me aplikacionin e Nextcloud/ownCloud dhe provo përsëri.",
         "description": "Search"
@@ -88,7 +92,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Ky fjalëkalim do të përdoret për të enkriptuar të gjitha cilësimet tuaja në zgjerim. Ju mund të zgjidhni për të ruajtur këtë fjalëkalim në nivel lokal, por ai do të ruhet në TEKST TË THJESHTË.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -115,12 +119,16 @@
         "message": "Fshij",
         "description": "Delete"
     },
+    "forgot_password": {
+        "message": "Keni harruar fjalëkalimin?",
+        "description": "Search"
+    },
     "invalid_server_settings": {
         "message": "Konfigurime të serverit të papranueshme ",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Konfigurimet e serverit Nextcloud / ownCloud",
+        "message": "Konfigurimet e serverit Nextcloud / ownCloud!",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
@@ -192,7 +200,7 @@
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Mbyll",
+        "message": "Mbyll.",
         "description": "Close"
     },
     "prev": {
@@ -200,11 +208,15 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Pas ta krijoni, ju mund të modifikoni kredencialin në Passman!",
         "description": "After creating it, you can edit the credential in Passman"
     },
+    "reset_extension": {
+        "message": "Rihapni shtesën",
+        "description": "Search"
+    },
     "default_vault": {
-        "message": "Kasafortë e parazgjedhur",
+        "message": "Kasaforta fillestare.",
         "description": "Default vault"
     },
     "ignore_port": {
@@ -220,7 +232,7 @@
         "description": "Set a master password"
     },
     "password": {
-        "message": "Fjalëkalim",
+        "message": "Fjalëkalim.",
         "description": "Password"
     },
     "copy": {
@@ -232,7 +244,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Ky magjistar do t'ju udhëheqë përmes hapave për të vendosur zgjerimin dhe të mbajë të gjitha fjalëkalimet tuaja të sinkronizuara!",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -272,7 +284,7 @@
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Fut fjalëkalimin master",
+        "message": "Vendos fjalëkalimin kryesor!",
         "description": "Enter master password"
     },
     "vault_settings": {
@@ -280,7 +292,7 @@
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Fjalëkalim kasaforte",
+        "message": "Fjalëkalim kasaforte.",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
@@ -300,7 +312,7 @@
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Shmag karaktere të paqarta",
+        "message": "Shmag karaktere të paqarta!",
         "description": "Avoid ambiguous characters"
     },
     "saving_to": {
@@ -316,7 +328,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the browser.",
+        "message": "Zgjidh kasafortën që doni ta mbani në sinkronizim me shfletuesin.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
@@ -328,7 +340,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Përgjigja e pavlefshme nga serveri: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -356,7 +368,7 @@
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Kredencialet u përditësuan",
+        "message": "Kredencialet u përditësuan!",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
@@ -380,7 +392,7 @@
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Kredencialet u ruajten",
+        "message": "Kredencialet u ruajten!",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
@@ -400,7 +412,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ të gjetur në këtë faqe",
         "description": "String for the browser action"
     },
     "done": {
@@ -416,19 +428,23 @@
         "description": "Enable form auto submit"
     },
     "saving": {
-        "message": "Duke u ruajtur",
+        "message": "Duke u ruajtur!",
         "description": "Saving"
     },
     "url": {
         "message": "URL",
         "description": "URL"
     },
+    "iam_sure": {
+        "message": "Po, jam i sigurt!",
+        "description": "Search"
+    },
     "no_sites_ignored": {
         "message": "Asnjë faqe e injoruar",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Nqs e pëlqen, mos harro të dhurosh",
+        "message": "Nëse të pëlqen, mos harro të dhurosh!",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
@@ -436,11 +452,11 @@
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Gjenerues fjalëkalimesh",
+        "message": "Krijues fjalëkalimesh!",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Çelësi master bosh!",
+        "message": "Çelësi kryesor është bosh!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
@@ -460,7 +476,7 @@
         "description": "Username"
     },
     "pw_length": {
-        "message": "Gjatësia e fjalëkalimit",
+        "message": "Gjatësia e fjalëkalimit.",
         "description": "Password length"
     },
     "disable_browser_autofill": {
@@ -468,7 +484,7 @@
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Kohëmatës i rifreskimit",
         "description": "Password"
     }
 }

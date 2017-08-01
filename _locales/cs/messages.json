@@ -16,7 +16,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Trezor",
         "description": "Vault"
     },
     "account_added": {
@@ -75,6 +75,10 @@
         "message": "Neplatný klíč trezoru!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "Můžete resetovat vaše heslo. To resetuje rozšíření do výchozího stavu.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Je nám líto, nebyly nalezeny žádné trezory. Vytvořte trezor pomocí aplikace Nextcloud / ownCloud a zkuste to znovu.",
         "description": "Search"
@@ -96,7 +100,7 @@
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Povolit automatické vyplňování formulářů",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Smazat",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Zapomněli jste heslo?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Neplatné nastavení serveru",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Po vytvoření můžete pověření spravovat přes Passman",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Resetovat rozšíření",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Výchozí trezor",
@@ -308,11 +320,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Povolit výběr hesla",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman vás přihlašuje jako $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
@@ -412,7 +424,7 @@
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Povolit automatické odeslání formuláře po výběru účtu",
         "description": "Enable form auto submit"
     },
     "saving": {
@@ -422,6 +434,10 @@
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Ano, jsem si jistý!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Nejsou ignorovány žádné stránky",

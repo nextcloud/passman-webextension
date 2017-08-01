@@ -75,6 +75,10 @@
         "message": "¡La llave de la bóveda es inválida!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Borrar",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Forgot password?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Invalid server settings",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Después de crearlas, usted puede editar las credenciales en Passman",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Bóveda predeterminada",
@@ -422,6 +434,10 @@
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Yes, i'm sure!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "No se han ignorado sitios",

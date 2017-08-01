@@ -75,6 +75,10 @@
         "message": "Ógildur lykill að lykilorðageymslu!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Því miður, engar lykilorðageymslur fundust. Útbúðu lykilorðageymslu í Nextcloud / ownCloud forritinu og prófaðu svo aftur.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Eyða",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Forgot password?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Ógildar stillingar þjóns",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Eftir að þú hefur útbúið þau, geturðu breytt auðkennunum í Passman",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Sjálfgefin lykilorðageymsla",
@@ -422,6 +434,10 @@
     "url": {
         "message": "Slóð (URL)",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Yes, i'm sure!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Engin vefsvæði hunsuð",

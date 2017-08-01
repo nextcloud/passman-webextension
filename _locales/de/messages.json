@@ -75,6 +75,10 @@
         "message": "Falsches Tresorpasswort",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "Du kannst dein Passwort zurücksetzen. Dies setzt die Erweiterung auf die Standarteinstellungen zurück.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Entschuldigung, keine Tresore gefunden. Bitte erstelle einen über die Nextcloud/ownCloud-App und versuche es nochmal.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Löschen",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Passwort vergessen?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Ungültige Servereinstellungen",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Nach der Erstellung können die Anmeldedaten mit Passmann bearbeitet werden",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Erweiterung zurücksetzen",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Standardtresor",
@@ -422,6 +434,10 @@
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Ja, ich bin mir sicher!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Keine Seiten werden ignoriert",

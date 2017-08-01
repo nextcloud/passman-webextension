@@ -75,6 +75,10 @@
         "message": "Kasa anahtarı geçersiz!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Maalesef herhangi bir kasa bulunamadı. Lütfen Nextcloud/ownCloud uygulaması ile bir kasa oluşturup yeniden deneyin.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Sil",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Forgot password?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Sunucu ayarları geçersiz",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Ekledikten sonra kimlik doğrulama bilgilerini Passman içinden düzenleyebilirsiniz",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Varsayılan kasa",
@@ -422,6 +434,10 @@
     "url": {
         "message": "Adres",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Yes, i'm sure!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Henüz bir site yoksayılmamış",

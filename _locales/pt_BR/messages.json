@@ -75,6 +75,10 @@
         "message": "Chave do cofre inválida!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "Você pode resetar sua senha. Isso colocará a configuração padrão na extensão.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Desculpe, não foram encontrados cofres. Crie um cofre através do aplicativo Nextcloud / ownCloud e tente novamente.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Excluir",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Esqueceu a senha?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Configuração inválida do servidor",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "Após criá-lo, você pode editar a credencial no Passman",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Resetar extensão",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Cofre padrão",
@@ -422,6 +434,10 @@
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Sim, estou certo disso!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Nenhum site ignorado",

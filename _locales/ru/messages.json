@@ -75,6 +75,10 @@
         "message": "Неверный ключ хранилища!",
         "description": "Vault password"
     },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
     "no_vaults": {
         "message": "Не удалось найти ни одного хранилища. Создайте новое хранилище, используя приложение для Nextcloud/ownCloud, и попробуйте снова.",
         "description": "Search"
@@ -114,6 +118,10 @@
     "delete": {
         "message": "Удалить",
         "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "Forgot password?",
+        "description": "Search"
     },
     "invalid_server_settings": {
         "message": "Неверные настройки сервера",
@@ -202,6 +210,10 @@
     "add_hint": {
         "message": "После создания вы сможете редактировать записи  в Passman.",
         "description": "After creating it, you can edit the credential in Passman"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
     },
     "default_vault": {
         "message": "Хранилище по умолчанию",
@@ -422,6 +434,10 @@
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "iam_sure": {
+        "message": "Yes, i'm sure!",
+        "description": "Search"
     },
     "no_sites_ignored": {
         "message": "Не найдено игнорируемых сайтов.",
