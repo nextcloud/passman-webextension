@@ -94,9 +94,9 @@ var background = (function () {
             }
 
             if (!_self.settings.hasOwnProperty('enablePasswordPicker')) {
-                _self.settings.enablePasswordPicker = !_self.settings.disablePasswordPicker ;
+                _self.settings.enablePasswordPicker = !_self.settings.disablePasswordPicker;
             }
-            
+
             if (!_self.settings.hasOwnProperty('enableAutoFill')) {
                 _self.settings.enableAutoFill = !_self.settings.disableAutoFill;
             }
@@ -154,7 +154,7 @@ var background = (function () {
 
     _self.saveSettings = saveSettings;
 
-    function resetSettings(){
+    function resetSettings() {
         storage.set('settings', {});
         _self.settings = {};
     }
@@ -243,16 +243,16 @@ var background = (function () {
         if (!_url || _url === '') {
             return [];
         }
-        if(Array.isArray(_url)){
+        if (Array.isArray(_url)) {
             _url = _url.pop();
         }
 
         var p = document.createElement('a');
         p.href = _url;
-        if(p.pathname) {
+        if (p.pathname) {
             //_url = _url.substring(0, _url.lastIndexOf("/"));
         }
-        
+
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
         var found_list = [];
         for (var i = 0; i < local_credentials.length; i++) {
@@ -261,7 +261,7 @@ var background = (function () {
                 try {
                     var protocol = _url.split('://').shift();
                     credential_url = protocol + "://" + credential_url;
-                } catch (e){
+                } catch (e) {
                     //ignore
                 }
             }
@@ -403,7 +403,7 @@ var background = (function () {
         if (!_self.settings.hasOwnProperty('ignored_sites')) {
             _self.settings.ignored_sites = [];
         }
-        var site = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
+        var site = processURL(_url, false, false, true, false);
         if (_self.settings.ignored_sites.indexOf(site) === -1) {
             _self.settings.ignored_sites.push(site);
             saveSettings(_self.settings);
@@ -411,6 +411,18 @@ var background = (function () {
     }
 
     _self.ignoreSite = ignoreSite;
+
+    function ignoreURL(url) {
+        if (!_self.settings.hasOwnProperty('ignored_sites')) {
+            _self.settings.ignored_sites = [];
+        }
+        if (_self.settings.ignored_sites.indexOf(url) === -1) {
+            _self.settings.ignored_sites.push(url);
+            saveSettings(_self.settings);
+        }
+    }
+
+    _self.ignoreURL = ignoreURL;
 
     function passToParent(args, sender) {
         API.tabs.sendMessage(sender.tab.id, {method: args.injectMethod, args: args.args}).then(function (response) {
@@ -485,7 +497,7 @@ var background = (function () {
             });
         } else {
             credential.label = sender.tab.title;
-            credential.vault_id =  credential.account.vault.vault_id;
+            credential.vault_id = credential.account.vault.vault_id;
             PAPI.createCredential(credential.account, credential, credential.account.vault_password, function (createdCredential) {
                 createdCredential.account = credential.account;
                 saveMinedCallback({credential: credential, updated: false, sender: sender});
