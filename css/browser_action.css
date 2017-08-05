@@ -560,7 +560,7 @@ body.toggled {
   left: 250px;
   width: 0;
   height: 100%;
-  margin-left: -249px;
+  margin-left: -251px;
   overflow: hidden;
   background: #fff;
   -webkit-transition: all 0.250s ease;
@@ -583,6 +583,8 @@ body.toggled {
   /*position: absolute;*/
   margin-right: -250px;
   /*  width: calc(100% - 250px);*/ }
+
+
 
 /* Sidebar Styles */
 .sidebar-nav {
@@ -652,11 +654,11 @@ body.toggled {
   top: 0;
   visibility: visible;
   opacity: 1;
-  transition: visibility 250ms, opacity 250ms ease; }
+  transition: visibility 250ms, opacity 250ms ease;}
 
 .ng-hide {
   visibility: hidden;
-  opacity: 0; }
+  opacity: 0;}
 
 .edit_credential {
   padding-top: 30px;
