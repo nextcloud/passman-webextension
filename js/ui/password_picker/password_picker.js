@@ -230,9 +230,32 @@ $(document).ready(function () {
     });
 
 
+    function disablePassman(where, url){
+        var whereFn = (where === 'site') ? 'Site' : 'URL';
+        API.runtime.sendMessage(API.runtime.id, {
+            method: "ignore"+ whereFn,
+            args: url
+        }).then(function () {
+            var text = (where === 'site') ? 'site_ignored' : 'url_ignored';
+            $('.tab-ignore-content').find('.text').text(API.i18n.getMessage(text));
+            setTimeout(function () {
+                removePasswordPicker();
+            }, 2500);
+        });
+    }
+
     API.runtime.sendMessage(API.runtime.id, {method: "getActiveTab", args: {returnFn: "returnActiveTab"}});
 
     function returnActiveTab(tab) {
+
+        $('.disable-site').on('click', function () {
+            disablePassman('site', tab.url);
+        });
+
+        $('.disable-page').on('click', function () {
+            disablePassman('url', tab.url);
+        });
+
         API.runtime.sendMessage(API.runtime.id, {
             method: "getCredentialsByUrl",
             args: [tab.url]

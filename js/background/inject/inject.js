@@ -246,23 +246,27 @@ $j(document).ready(function () {
             var enablePasswordPicker = settings.enablePasswordPicker;
             var url = window.location.href;
             var loginFields = getLoginFields();
+            if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url).length !== 0) {
+                return;
+            }
+
             if (loginFields.length > 0) {
                 for (var i = 0; i < loginFields.length; i++) {
                     var form = getFormFromElement(loginFields[i][0]);
-                    if (enablePasswordPicker) {
-                        createPasswordPicker(loginFields[i], form);
-                    }
-                    //Password miner
-                    /* jshint ignore:start */
-                    if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url) !== -1) {
+                        if (enablePasswordPicker) {
+                            createPasswordPicker(loginFields[i], form);
+                        }
+
+                        //Password miner
+                        /* jshint ignore:start */
                         $j(form).submit((function (loginFields) {
                             return function () {
                                 formSubmitted(loginFields);
                             };
                         })(loginFields[i]));
-                    }
-                    /* jshint ignore:end */
+                        /* jshint ignore:end */
                 }
+
 
                 API.runtime.sendMessage(API.runtime.id, {
                     method: "getCredentialsByUrl",

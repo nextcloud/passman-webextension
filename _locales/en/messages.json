@@ -223,6 +223,10 @@
     "message": "Site ignored",
     "description": "Site ignored"
   },
+  "url_ignored": {
+    "message": "URL ignored",
+    "description": "URL ignored"
+  },
   "update": {
     "message": "Update",
     "description": "Update"
@@ -364,8 +368,20 @@
     "description": "Select default vault"
   },
   "ignored_sites": {
-    "message": "Ignored sites",
+    "message": "Ignored sites / urls",
     "description": "Ignored sites"
+  },
+  "disable_page": {
+    "message": "Disable page",
+    "description": "Disable page"
+  },
+  "disable_site": {
+    "message": "Disable site",
+    "description": "Disable site"
+  },
+  "disable_picker_text": {
+    "message": "Would you like to disable Passman for the current page, or for the entire website?",
+    "description": "Would you like to disable Passman for the current page, or for the entire website?"
   },
   "no_sites_ignored": {
     "message": "No sites ignored",
@@ -381,6 +397,10 @@
   },
   "invalid_host": {
     "message": "Invalid server URL",
+    "description": "Invalid server URL"
+  },
+  "ignore_site_tab": {
+    "message": "Ignore site / page",
     "description": "Invalid server URL"
   },
   "no_password_match": {
