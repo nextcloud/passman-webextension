@@ -1,5 +1,5 @@
 <div class="list">
-    <div class="list-item no-hover"  ng-show="found_credentials.length === 0">
+    <div class="list-item no-hover"  ng-if="found_credentials.length === 0">
         {{ 'no_credentials_found_for_site' | translate}}
     </div>
    <!-- <div ng-show="found_credentials.length > 0">{{'credentials_found_for_site' | translate:found_credentials.length.toString() }}</div> -->

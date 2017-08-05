@@ -243,6 +243,16 @@ var background = (function () {
         if (!_url || _url === '') {
             return [];
         }
+        if(Array.isArray(_url)){
+            _url = _url.pop();
+        }
+
+        var p = document.createElement('a');
+        p.href = _url;
+        if(p.pathname) {
+            //_url = _url.substring(0, _url.lastIndexOf("/"));
+        }
+        
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
         var found_list = [];
         for (var i = 0; i < local_credentials.length; i++) {
