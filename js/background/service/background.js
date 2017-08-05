@@ -250,7 +250,7 @@ var background = (function () {
         var p = document.createElement('a');
         p.href = _url;
         if(p.pathname) {
-            _url = _url.substring(0, _url.lastIndexOf("/"));
+            //_url = _url.substring(0, _url.lastIndexOf("/"));
         }
         
         var url = processURL(_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
