@@ -215,6 +215,12 @@ function fillPassword(user, password) {
                 dispatchEvents(loginFields[i][1]);
             }
         }
+        if(password && loginFields[i][2]) {
+            loginFields[i][2].value = password;
+            if(loginFields[i][2].offsetParent) {
+                dispatchEvents(loginFields[i][2]);
+            }
+        }
     }
 
 }
