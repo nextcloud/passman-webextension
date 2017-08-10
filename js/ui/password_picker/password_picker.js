@@ -81,7 +81,7 @@ $(document).ready(function () {
                     password: pwfield.val(),
                     vaultIndex: vaultfield.val()
                 }
-            });
+            }).then(removePasswordPicker);
         });
 
         $('#savepw-cancel').click(function () {
