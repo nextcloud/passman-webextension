@@ -196,6 +196,13 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
     list-style-type: none;
     height: 25px;
     padding: 5px 0;
+    .site{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      max-width: calc( 100% - 20px);
+    }
     .mdi {
       margin-top: 2px;
       cursor: pointer;

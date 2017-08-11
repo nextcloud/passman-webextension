@@ -47,8 +47,10 @@
             <div class="ignored_sites">
                 <label>{{'ignored_sites' | translate}}</label>
                 <ul class="ignored_sites">
-                    <li ng-repeat="site in settings.ignored_sites">{{site}} <i class="mdi mdi-delete pull-right"
-                                                                               ng-click="removeSite(site)"></i></li>
+                    <li ng-repeat="site in settings.ignored_sites">
+                        <span class="site">{{site}}</span>
+                        <i class="mdi mdi-delete pull-right" ng-click="removeSite(site)"></i>
+                    </li>
                     <li ng-show="settings.ignored_sites.length === 0">{{'no_sites_ignored' | translate}}</li>
                 </ul>
                 <div class="group" ng-show="settings.default_vault != ''">
