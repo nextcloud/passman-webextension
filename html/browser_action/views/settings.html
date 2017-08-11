@@ -2,41 +2,6 @@
     <div class="tab-label-content" id="tab1-content">
         <label ng-click="tabActive = 1;" class="tab-title">{{ 'general' | translate }}</label>
         <div class="tab-content" ng-class="{'active': tabActive === 1}">
-            <!--<div class="group">
-                <input type="text" ng-model="settings.nextcloud_host"
-                       required ng-debounce="1000">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>{{'server_url' | translate}}</label>
-            </div>
-            <div class="group">
-                <input type="text" ng-model="settings.nextcloud_username"
-                       required ng-debounce="1000">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>{{'username' | translate}}</label>
-            </div>
-            <div class="group">
-                <input type="password" ng-model="settings.nextcloud_password"
-                       required ng-debounce="1000">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>{{'password' | translate}}</label>
-            </div>
-            <div class="group">
-                <select id="defaultVault" class="input-md" ng-model="settings.default_vault" required
-                        ng-options="vault.name for vault in vaults track by vault.guid"></select>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>{{'select_default_vault' | translate}}</label>
-            </div>
-            <div class="group" ng-show="settings.default_vault != ''">
-                <input type="password" ng-model="settings.vault_password"
-                       required ng-debounce="1000">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>{{'vault_password' | translate}}</label>
-            </div>-->
             <div class="group">
                 <input type="text" ng-model="settings.refreshTime"
                        required ng-debounce="1000">
