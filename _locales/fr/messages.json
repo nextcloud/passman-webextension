@@ -486,5 +486,13 @@
     "refresh_timer": {
         "message": "Minuterie de rafraîchissement [s]",
         "description": "Password"
+    },
+    "add_custom_field": {
+        "message": "Ajouter un champ personnalisé",
+        "description": "Add a custom field"
+    },
+    "text": {
+      "message": "Texte",
+      "description": "To describe a textual input field"
     }
 }

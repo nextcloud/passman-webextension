@@ -560,5 +560,13 @@
   "vault": {
     "message": "Vault",
     "description": "Vault"
+  },
+  "add_custom_field": {
+    "message": "Add a custom field",
+    "description": "Add a custom field"
+  },
+  "text": {
+    "message": "text",
+    "description": "To describe a textual input field"
   }
 }

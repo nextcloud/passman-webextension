@@ -1,6 +1,6 @@
 <div class="tab-wrap">
     <div class="tab-label-content" id="tab1-content">
-        <label ng-click="tabActive = 1;">General</label>
+        <label ng-click="tabActive = 1;" class="tab-title">{{ 'general' | translate }}</label>
         <div class="tab-content" ng-class="{'active': tabActive === 1}">
             <!--<div class="group">
                 <input type="text" ng-model="settings.nextcloud_host"
@@ -125,7 +125,7 @@
     </div>
 
     <div class="tab-label-content account" id="tab2-content">
-        <label ng-click="tabActive = 2;">Accounts</label>
+        <label ng-click="tabActive = 2;" class="tab-title">{{ 'accounts' | translate }}</label>
         <div class="tab-content" ng-class="{'active': tabActive === 2}">
             <div class="list">
                 <div class="list-item" ng-repeat="account in settings.accounts" style="padding-left: 0;">
