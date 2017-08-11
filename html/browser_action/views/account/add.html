@@ -2,11 +2,12 @@
     <step class="step1" name="server">
         <h3>{{'nextcloud_settings' | translate}}</h3>
         <div class="group">
-            <input type="text" ng-model="settings.nextcloud_host"
+            <input type="text" ng-model="settings.nextcloud_host" ng-blur="checkHost()"
                    required>
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>{{'server_url' | translate}}</label>
+            <div class="text-danger" ng-if="settings.nextcloud_host.substr(0,5) == 'http:'" style="margin-top: 5px;">{{ 'http_warning' | translate}}</div>
         </div>
         <div class="group">
             <input type="text" ng-model="settings.nextcloud_username"
