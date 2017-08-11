@@ -175,6 +175,10 @@
     "message": "Ignore port for site matching",
     "description": "Ignore port for site matching"
   },
+  "http_warning": {
+    "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+    "description": "Warning for http connections"
+  },
   "ignore_path": {
     "message": "Ignore path for site matching",
     "description": "Ignore path for site matching"
