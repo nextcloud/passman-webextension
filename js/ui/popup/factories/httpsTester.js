@@ -12,7 +12,7 @@
         var tester = {};
         tester.test = function (url) {
             var deferred = $q.defer();
-            if(url.match(/https?/)){
+            if(url.match(/^https?/)){
                 deferred.resolve(url);
                 return deferred.promise;
             }
@@ -35,6 +35,10 @@
                     deferred.reject(protocol + url);
                 });
             return deferred.promise;
+        };
+
+        tester.isHTTP = function (url) {
+            return url.substr(0,5) == 'http:'
         };
 
         return tester;
