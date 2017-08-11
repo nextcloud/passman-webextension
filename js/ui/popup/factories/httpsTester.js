@@ -12,7 +12,7 @@
         var tester = {};
         tester.test = function (url) {
             var deferred = $q.defer();
-            if(url.match(/^https?/)){
+            if(url.match(/^https?:\/\//)){
                 deferred.resolve(url);
                 return deferred.promise;
             }
