@@ -78,11 +78,11 @@ $(document).ready(function () {
             data = data.data;
             var username = (data.username) ? data.username : data.email;
             var doorhanger_div = $('<div id="password-toolbar" style="display: none;">');
+            var text = data.selfAdded ? API.i18n.getMessage('credential_saved') : data.title + ' ' + username + ' at ' + data.url;
             $('<span>', {
                 class: 'toolbar-text',
-                text: data.title + ' ' + username + ' at ' + data.url
+                text: text
             }).appendTo(doorhanger_div);
-
 
             $.each(buttons, function (k, button) {
                 var btn = button;
