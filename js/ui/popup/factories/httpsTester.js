@@ -38,7 +38,7 @@
         };
 
         tester.isHTTP = function (url) {
-            return url.substr(0,5) == 'http:'
+            return url.substr(0,5) === 'http:';
         };
 
         return tester;

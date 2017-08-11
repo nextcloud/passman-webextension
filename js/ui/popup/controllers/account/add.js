@@ -123,6 +123,10 @@
                 $scope.settings.nextcloud_host = resultUrl;
             };
 
+            $scope.isHTTP = function (url) {
+                return HttpsTest.isHTTP(url);
+            };
+
             $scope.checkHost = function () {
                 HttpsTest.test($scope.settings.nextcloud_host).then(handleCheck, handleCheck);
             };

@@ -33,7 +33,8 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', function ($scope, $timeout, $location, $rootScope, StepsService, notify) {
+        .controller('SetupCtrl', ['$scope', '$timeout', '$location', '$rootScope', 'StepsService', 'notify', 'HttpsTest',
+            function ($scope, $timeout, $location, $rootScope, StepsService, notify, HttpsTest) {
             $scope.settings = {
                 nextcloud_host: '',
                 nextcloud_username: '',
@@ -143,6 +144,18 @@
                         StepsService.steps().next();
                     }
                 }, 10);
+            };
+
+            var handleCheck = function (resultUrl) {
+                $scope.settings.nextcloud_host = resultUrl;
+            };
+
+            $scope.isHTTP = function (url) {
+                return HttpsTest.isHTTP(url);
+            };
+
+            $scope.checkHost = function () {
+                HttpsTest.test($scope.settings.nextcloud_host).then(handleCheck, handleCheck);
             };
 
             $scope.finished = function () {
