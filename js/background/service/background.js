@@ -540,9 +540,10 @@ var background = (function () {
         credential.label = args.label;
         credential.username = args.username;
         credential.password = args.password;
-        credential.vault_id = local_vault.vault_id;
+        credential.vault_id = account.vault_id;
         credential.url = sender.tab.url;
         PAPI.createCredential(account, credential, account.vault_password, function (createdCredential) {
+            credential.account = account;
             saveMinedCallback({credential: credential, updated: false, sender: sender, selfAdded: true});
             local_credentials.push(createdCredential);
 
