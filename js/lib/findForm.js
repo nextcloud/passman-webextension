@@ -104,12 +104,17 @@ var formManager = function(){
             }
 
 
-
             // If we're not submitting a form (it's a page load), there are no
             // password field values for us to use for identifying fields. So,
             // just assume the first password field is the one to be filled in.
             if (!isSubmission || pwFields.length === 1){
-                return [usernameField, pwFields[0].element, null];
+                var res = [usernameField, pwFields[0].element];
+                if(pwFields[1]){
+                    res.push(pwFields[1].element);
+                } else {
+                    res.push(null);
+                }
+                return res;
             }
 
 
@@ -177,7 +182,14 @@ function getLoginFields(isSubmission) {
         if (passwordField === null){
             continue;
         }
-        loginForms.push([usernameField, passwordField]);
+
+        var res = [usernameField, passwordField];
+        if(result[2]){
+            res.push(result[2]);
+        } else {
+            res.push(null);
+        }
+        loginForms.push(res);
     }
     return loginForms;
 }
