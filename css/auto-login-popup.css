@@ -71,7 +71,8 @@ input[type="text"], input[type="password"], select.input-md {
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #757575; }
+  border-bottom: 1px solid #757575;
+  background: #fff !important; }
 
 input:focus, select.input-md:focus {
   outline: none; }
