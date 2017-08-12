@@ -267,7 +267,7 @@ var background = (function () {
             }
             credential_url = processURL(credential_url, _self.settings.ignoreProtocol, _self.settings.ignoreSubdomain, _self.settings.ignorePath, _self.settings.ignorePort);
             if (credential_url) {
-                if (credential_url.indexOf(url) !== -1) {
+                if (credential_url.split("\n").indexOf(url) !== -1) {
                     found_list.push(local_credentials[i]);
                 }
             }
