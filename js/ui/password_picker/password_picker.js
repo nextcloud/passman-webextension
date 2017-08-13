@@ -71,7 +71,7 @@ $(document).ready(function () {
 
         $('#savepw-save').click(function (e) {
             e.preventDefault();
-            $(this).text('Saving...');
+            $(this).text(API.i18n.getMessage("saving"));
             $(this).attr('disabled', true);
             API.runtime.sendMessage(API.runtime.id, {
                 method: "injectCreateCredential",
@@ -81,7 +81,7 @@ $(document).ready(function () {
                     password: pwfield.val(),
                     vaultIndex: vaultfield.val()
                 }
-            });
+            }).then(removePasswordPicker);
         });
 
         $('#savepw-cancel').click(function () {

@@ -290,6 +290,10 @@ $j(document).ready(function () {
     function minedLoginSaved(args) {
         // If the login added by the user then this is true
         if (args.selfAdded) {
+            showDoorhanger({
+                data: args,
+                buttons: ['cancel']
+            });
             enterLoginDetails(args.credential, false);
         }
     }
