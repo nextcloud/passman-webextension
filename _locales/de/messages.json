@@ -19,6 +19,10 @@
         "message": "Tresor",
         "description": "Vault"
     },
+    "ignore_site_tab": {
+        "message": "Ignoriere Seite / Gesamte Seite",
+        "description": "Invalid server URL"
+    },
     "account_added": {
         "message": "Konto hinzugefügt",
         "description": "Search"
@@ -46,6 +50,10 @@
     "donate": {
         "message": "Spenden",
         "description": "Donate"
+    },
+    "add_custom_field": {
+        "message": "Ein benutzerdefiniertes Feld hinzufügen",
+        "description": "Add a custom field"
     },
     "credentials": {
         "message": "Zugangsdaten",
@@ -211,6 +219,10 @@
         "message": "Nach der Erstellung können die Anmeldedaten mit Passmann bearbeitet werden",
         "description": "After creating it, you can edit the credential in Passman"
     },
+    "text": {
+        "message": "Text",
+        "description": "To describe a textual input field"
+    },
     "reset_extension": {
         "message": "Erweiterung zurücksetzen",
         "description": "Search"
@@ -230,6 +242,10 @@
     "master_password": {
         "message": "Masterpasswort eingeben",
         "description": "Set a master password"
+    },
+    "disable_picker_text": {
+        "message": "Möchtest Du Passman für die aktuelle Seite oder den gesamten Webauftritt deaktivieren?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
         "message": "Passwort",
@@ -256,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignorierte Seiten",
+        "message": "Ignorierte Seiten / URLs",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -315,6 +331,14 @@
         "message": "Unklare Zeichen vermeiden",
         "description": "Avoid ambiguous characters"
     },
+    "disable_site": {
+        "message": "Webauftritt deaktivieren",
+        "description": "Disable site"
+    },
+    "url_ignored": {
+        "message": "URL ignorieren",
+        "description": "URL ignored"
+    },
     "saving_to": {
         "message": "Speichere in $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
@@ -352,12 +376,16 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "Du hast  nicht die erforderlichen Rechte, diese Anmeldedaten zu ändern.",
+        "message": "Du hast nicht die erforderlichen Rechte, diese Anmeldedaten zu ändern.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
         "message": "Server-URL",
         "description": "Server URL"
+    },
+    "disable_page": {
+        "message": "Deaktiviere Seite",
+        "description": "Disable page"
     },
     "cancel": {
         "message": "Abbrechen",
@@ -414,6 +442,10 @@
     "browser_action_title_login": {
         "message": "Passman -  $CREDENTIAL_AMOUNT$ $PLURAL$ Zugangsdaten für diese Seite gefunden",
         "description": "String for the browser action"
+    },
+    "http_warning": {
+        "message": "Du nutzt HTTP! Deine Anmeldedaten werden als Klartext übertragen. Deine Passmann-Zugangsdaten sind verschlüsselt.",
+        "description": "Warning for http connections"
     },
     "done": {
         "message": "Erledigt",

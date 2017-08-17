@@ -19,6 +19,10 @@
         "message": "Kluis",
         "description": "Vault"
     },
+    "ignore_site_tab": {
+        "message": "Ignore site / page",
+        "description": "Invalid server URL"
+    },
     "account_added": {
         "message": "Account toegevoegd!",
         "description": "Search"
@@ -46,6 +50,10 @@
     "donate": {
         "message": "Doneren",
         "description": "Donate"
+    },
+    "add_custom_field": {
+        "message": "Add a custom field",
+        "description": "Add a custom field"
     },
     "credentials": {
         "message": "Inloggegevens",
@@ -211,6 +219,10 @@
         "message": "Na het aanmaken kun je de inloggegevens bewerken in Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
+    "text": {
+        "message": "text",
+        "description": "To describe a textual input field"
+    },
     "reset_extension": {
         "message": "Reset extension",
         "description": "Search"
@@ -230,6 +242,10 @@
     "master_password": {
         "message": "Instellen hoofdwachtwoord",
         "description": "Set a master password"
+    },
+    "disable_picker_text": {
+        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
         "message": "Wachtwoord",
@@ -256,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Genegeerde sites",
+        "message": "Ignored sites / urls",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -315,6 +331,14 @@
         "message": "Voorkomen dubbelzinnige tekens",
         "description": "Avoid ambiguous characters"
     },
+    "disable_site": {
+        "message": "Disable site",
+        "description": "Disable site"
+    },
+    "url_ignored": {
+        "message": "URL ignored",
+        "description": "URL ignored"
+    },
     "saving_to": {
         "message": "Opgeslagen in $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
@@ -358,6 +382,10 @@
     "server_url": {
         "message": "Server URL",
         "description": "Server URL"
+    },
+    "disable_page": {
+        "message": "Disable page",
+        "description": "Disable page"
     },
     "cancel": {
         "message": "Annuleren",
@@ -414,6 +442,10 @@
     "browser_action_title_login": {
         "message": "Passman -$CREDENTIAL_AMOUNT$ $PLURAL$ gevonden voor deze pagina",
         "description": "String for the browser action"
+    },
+    "http_warning": {
+        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "description": "Warning for http connections"
     },
     "done": {
         "message": "Gedaan",

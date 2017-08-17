@@ -19,6 +19,10 @@
         "message": "Coffre-fort",
         "description": "Vault"
     },
+    "ignore_site_tab": {
+        "message": "Ignorer site / page",
+        "description": "Invalid server URL"
+    },
     "account_added": {
         "message": "Compte ajouté !",
         "description": "Search"
@@ -46,6 +50,10 @@
     "donate": {
         "message": "Donner",
         "description": "Donate"
+    },
+    "add_custom_field": {
+        "message": "Ajouter un champ personnalisé",
+        "description": "Add a custom field"
     },
     "credentials": {
         "message": "Informations d'identification",
@@ -76,7 +84,7 @@
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Vous pouvez réinitialiser votre mot de passe. Cela restaurera l'état par défaut de l'extension.",
         "description": "Search"
     },
     "no_vaults": {
@@ -211,6 +219,10 @@
         "message": "Après création, il est possible de modifier les informations d'identfication dans Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
+    "text": {
+        "message": "texte",
+        "description": "To describe a textual input field"
+    },
     "reset_extension": {
         "message": "Réinitialiser l'extension",
         "description": "Search"
@@ -230,6 +242,10 @@
     "master_password": {
         "message": "Configurez le mot de passe maître",
         "description": "Set a master password"
+    },
+    "disable_picker_text": {
+        "message": "Voulez-vous désactiver Passman uniquement pour la page actuelle ou pour l’intégralité du site ?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
         "message": "Mot de passe",
@@ -256,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": " Sites ignorés",
+        "message": "Sites / urls ignorés",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -315,6 +331,14 @@
         "message": "Éviter les caractères ambigus",
         "description": "Avoid ambiguous characters"
     },
+    "disable_site": {
+        "message": "Désactiver le site",
+        "description": "Disable site"
+    },
+    "url_ignored": {
+        "message": "URL ignorée",
+        "description": "URL ignored"
+    },
     "saving_to": {
         "message": "Sauvegarder dans $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
@@ -358,6 +382,10 @@
     "server_url": {
         "message": "URL du serveur",
         "description": "Server URL"
+    },
+    "disable_page": {
+        "message": "Désactiver la page",
+        "description": "Disable page"
     },
     "cancel": {
         "message": "Annuler",
@@ -414,6 +442,10 @@
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ trouvé pour cette page",
         "description": "String for the browser action"
+    },
+    "http_warning": {
+        "message": "Vous utilisez HTTP ! Vos informations d'identification seront envoyées en clair. Vos identifiants Passman sont tout de même chiffrés.",
+        "description": "Warning for http connections"
     },
     "done": {
         "message": "Terminé",
@@ -486,13 +518,5 @@
     "refresh_timer": {
         "message": "Minuterie de rafraîchissement [s]",
         "description": "Password"
-    },
-    "add_custom_field": {
-        "message": "Ajouter un champ personnalisé",
-        "description": "Add a custom field"
-    },
-    "text": {
-      "message": "Texte",
-      "description": "To describe a textual input field"
     }
 }

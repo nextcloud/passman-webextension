@@ -19,6 +19,10 @@
         "message": "Cofre",
         "description": "Vault"
     },
+    "ignore_site_tab": {
+        "message": "Ignorar site / página",
+        "description": "Invalid server URL"
+    },
     "account_added": {
         "message": "Conta adicionada!",
         "description": "Search"
@@ -46,6 +50,10 @@
     "donate": {
         "message": "Doar",
         "description": "Donate"
+    },
+    "add_custom_field": {
+        "message": "Adicionar um campo personalizado",
+        "description": "Add a custom field"
     },
     "credentials": {
         "message": "credenciais",
@@ -211,6 +219,10 @@
         "message": "Após criá-lo, você pode editar a credencial no Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
+    "text": {
+        "message": "texto",
+        "description": "To describe a textual input field"
+    },
     "reset_extension": {
         "message": "Resetar extensão",
         "description": "Search"
@@ -230,6 +242,10 @@
     "master_password": {
         "message": "Definir senha Mestra",
         "description": "Set a master password"
+    },
+    "disable_picker_text": {
+        "message": "Gostaria de desativar o Passman para a página atual ou para todo o site?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
         "message": "Senha",
@@ -256,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Sites ignorados",
+        "message": "Sites / URLs ignoradas",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -315,6 +331,14 @@
         "message": "Evitar caracteres ambíguos",
         "description": "Avoid ambiguous characters"
     },
+    "disable_site": {
+        "message": "Desabilitar site",
+        "description": "Disable site"
+    },
+    "url_ignored": {
+        "message": "URL ignorada",
+        "description": "URL ignored"
+    },
     "saving_to": {
         "message": "Salvando em $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
@@ -358,6 +382,10 @@
     "server_url": {
         "message": "URL do servidor",
         "description": "Server URL"
+    },
+    "disable_page": {
+        "message": "Desabilitar página",
+        "description": "Disable page"
     },
     "cancel": {
         "message": "Cancelar",
@@ -414,6 +442,10 @@
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
         "description": "String for the browser action"
+    },
+    "http_warning": {
+        "message": "Você está usando HTTP! Os dados de login serão enviados sem criptografia. Seus dados no Passman estão ainda criptografados.",
+        "description": "Warning for http connections"
     },
     "done": {
         "message": "Concluído",
