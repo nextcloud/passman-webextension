@@ -20,7 +20,7 @@
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Ignorer side",
         "description": "Invalid server URL"
     },
     "account_added": {
@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Ønsker du å slå av Passman for den nåværende siden, eller for hele domenet?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -332,7 +332,7 @@
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Slå av side",
         "description": "Disable site"
     },
     "url_ignored": {
@@ -384,7 +384,7 @@
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Skru av side",
         "description": "Disable page"
     },
     "cancel": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Du bruker HTTP! Innloggingsdetaljer vil bli sendt i klartekst. Dine Passman-identitetsdetaljer er fremdeles krypterte.",
         "description": "Warning for http connections"
     },
     "done": {

@@ -68,7 +68,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman extension is locked, unlock to use it",
+        "message": "L'estensione Passman è bloccata, sbloccala per utilizzarla",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -100,7 +100,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Questa password sarà utilizzata per cifrare tutte le tue impostazioni nell'estensione. Puoi scegliere di salvare questa password localmente, ma sarà salvata in CHIARO.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -260,7 +260,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Questa procedura ti guiderà attraverso le fasi di configurazione dell'estensione, per mantenere sincronizzate tutte le tue password!",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -268,7 +268,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press enter",
+        "message": "Digita un dominio o un TLD da ignorare e premi Invio",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -312,7 +312,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "Selettore delle password: se non vengono trovate credenziali vai a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -320,7 +320,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Dopo aver completato il processo di configurazione, puoi aggiungere altri account.",
         "description": "Search"
     },
     "next": {
@@ -348,7 +348,7 @@
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman sta eseguendo il tuo accesso come $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
@@ -408,7 +408,7 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Lock extension",
+        "message": "Blocca estensione",
         "description": "Title on the PayPal button"
     },
     "search_for": {
@@ -440,7 +440,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ trovate per questa pagina",
         "description": "String for the browser action"
     },
     "http_warning": {
@@ -456,7 +456,7 @@
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Abilita l'invio automatico del modulo dopo la selezione dell'account",
         "description": "Enable form auto submit"
     },
     "saving": {
