@@ -372,7 +372,7 @@
     "description": "Select default vault"
   },
   "ignored_sites": {
-    "message": "Ignored sites / urls",
+    "message": "Ignored sites / URLs",
     "description": "Ignored sites"
   },
   "disable_page": {
