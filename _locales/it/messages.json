@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Siti / URL ignorati",
+        "message": "Ignored sites / URLs",
         "description": "Ignored sites"
     },
     "toggle_visibility": {

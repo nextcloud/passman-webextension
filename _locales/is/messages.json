@@ -20,7 +20,7 @@
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Hunsa vefsvæði / síðu",
         "description": "Invalid server URL"
     },
     "account_added": {
@@ -52,7 +52,7 @@
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Bæta við sérsniðnu gagnasviði",
         "description": "Add a custom field"
     },
     "credentials": {
@@ -220,7 +220,7 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "text",
+        "message": "texti",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / urls",
+        "message": "Ignored sites / URLs",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -332,11 +332,11 @@
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Gera vefsvæði óvirkt",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "Slóð hunsuð",
         "description": "URL ignored"
     },
     "saving_to": {
@@ -384,7 +384,7 @@
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Gera síðu óvirka",
         "description": "Disable page"
     },
     "cancel": {
