@@ -1,6 +1,6 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
+        "message": "$AMOUNT$ uppgifter i databasen",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
@@ -168,7 +168,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "We've found $AMOUNT$ credentials for this site",
+        "message": "Vi hittade $AMOUNT$ uppgifter för denna site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Vill du inaktivera Passman för denna sida eller för hela webbplatsen?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Ignorera sites / URLs",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -352,7 +352,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the browser.",
+        "message": "Välj valv som du vill synkronisera med webbläsaren.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
@@ -364,7 +364,7 @@
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ogiltigt svar från server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
@@ -440,7 +440,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ hittades för denna sida",
         "description": "String for the browser action"
     },
     "http_warning": {
