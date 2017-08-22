@@ -52,7 +52,7 @@
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Lägg till ett anpassat fält",
         "description": "Add a custom field"
     },
     "credentials": {
@@ -100,7 +100,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+        "message": "Detta lösenord kommer användas för att kryptera alla dina inställningar i tillägget. Du kan välja att spara lösenordet lokal, men det kommer sparas i REN TEXT.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -188,7 +188,7 @@
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Anpassade Fält",
         "description": "Custom fields"
     },
     "invalid_host": {
@@ -260,7 +260,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "Guiden kommer visa dig igenom steget för att sätta upp ditt tillägg och behålla alla dina lösenord synkroniserade!",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -408,7 +408,7 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Lock extension",
+        "message": "Lås tillägg",
         "description": "Title on the PayPal button"
     },
     "search_for": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Du använder HTTP! Inloggningsuppgifter kommer sändas som ren text. Dina Passman-uppgifter är fortfarande krypterade.",
         "description": "Warning for http connections"
     },
     "done": {
