@@ -20,7 +20,7 @@
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignorera sajt / sida",
+        "message": "Ignorera webbplats / sida",
         "description": "Invalid server URL"
     },
     "account_added": {
@@ -32,7 +32,7 @@
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorera protokoll för sidmatchning",
+        "message": "Ignorera protokoll för webbplatsmatchning",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
@@ -144,7 +144,7 @@
         "description": "Use password"
     },
     "one_time_password": {
-        "message": "OTP",
+        "message": "Engångslösenord",
         "description": "One time password"
     },
     "list": {
@@ -152,7 +152,7 @@
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorera sida",
+        "message": "Ignorera webbplats",
         "description": "Update"
     },
     "select_default_vault": {
@@ -160,7 +160,7 @@
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Sida ignorerad",
+        "message": "Webbplats ignorerad",
         "description": "Site ignored"
     },
     "continue": {
@@ -168,7 +168,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Vi hittade $AMOUNT$ uppgifter för denna site",
+        "message": "Vi hittade $AMOUNT$ uppgifter för denna plats",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -176,7 +176,7 @@
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "Utveckling är beroende av donationer, var god stödj oss",
+        "message": "Utveckling är beroende av donationer, var god stöd oss",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
@@ -184,7 +184,7 @@
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignorera plats för sidmatchning",
+        "message": "Ignorera sökväg för webbplatsmatchning",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
@@ -232,7 +232,7 @@
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorera port för sidmatchning",
+        "message": "Ignorera port för webbplatsmatchning",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignorera sites / URLs",
+        "message": "Ignorera webbplatser / URLs",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -288,7 +288,7 @@
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Spara uppgifter för denna sida",
+        "message": "Spara uppgifter för denna webbplats",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
@@ -316,7 +316,7 @@
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Spara sida",
+        "message": "Spara webbplats",
         "description": "Save site"
     },
     "extra_accounts": {
@@ -332,7 +332,7 @@
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Inaktivera site",
+        "message": "Inaktivera webbplats",
         "description": "Disable site"
     },
     "url_ignored": {
@@ -380,7 +380,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "Server-URL",
         "description": "Server URL"
     },
     "disable_page": {
@@ -432,7 +432,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "E-post",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -452,7 +452,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Inga uppgifter hittade för denna sida!",
+        "message": "Inga uppgifter hittade för denna webbplats!",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "Inga sidor ignorerade",
+        "message": "Inga webbplatser ignorerade",
         "description": "No sites ignored"
     },
     "done_donate": {
@@ -492,7 +492,7 @@
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ingorera subdomän för sidmatchning",
+        "message": "Ignorera subdomän för webbplatsmatchning",
         "description": "Password"
     },
     "btn_search": {
