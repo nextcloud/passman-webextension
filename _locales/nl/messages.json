@@ -84,7 +84,7 @@
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Je kunt alleen je wachtwoord resetten. Dit zal de extensie terugzetten naar de standaard waarde.",
         "description": "Search"
     },
     "no_vaults": {
@@ -224,7 +224,7 @@
         "description": "To describe a textual input field"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Herstel extensie",
         "description": "Search"
     },
     "default_vault": {
@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Wil je Passman uitzeten voor de gehele pagina of voor de gehele website?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Genegeerde websites/hyperlinks.",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Je gebruikt HTTP! Inlog gegevens zullen worden verzonden in platte tekst. Je Passman inlog gegevens hebben nog encryptie.",
         "description": "Warning for http connections"
     },
     "done": {
