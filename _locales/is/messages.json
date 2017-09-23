@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Myndirðu vilja gera Passman óvirkt á þessari síðu, eða fyrir allt vefsvæðið?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Hunsa vefsvæði / síður",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Þú ert að nota HTTP! Innskráningarauðkenni verða send sem hreinn texti. Passman auðkennin þín eru samt dulrituð.",
         "description": "Warning for http connections"
     },
     "done": {

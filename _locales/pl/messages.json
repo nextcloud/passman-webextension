@@ -12,19 +12,19 @@
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Zapisz do $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Sejf",
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Ignoruj stronę / witrynę",
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added!",
+        "message": "Konto dodane!",
         "description": "Search"
     },
     "label": {
@@ -52,7 +52,7 @@
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Dodaj własne pole",
         "description": "Add a custom field"
     },
     "credentials": {
@@ -84,7 +84,7 @@
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Możesz zresetować swoje hasło. Operacja zresetuje również rozszerzenie do wartości domyślnych.",
         "description": "Search"
     },
     "no_vaults": {
@@ -104,11 +104,11 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Wybierz sejf",
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Włącz auto-uzupełnianie formularza",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
@@ -128,7 +128,7 @@
         "description": "Delete"
     },
     "forgot_password": {
-        "message": "Forgot password?",
+        "message": "Zapomniano hasła?",
         "description": "Search"
     },
     "invalid_server_settings": {
@@ -220,11 +220,11 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "text",
+        "message": "tekst",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Zresetuj rozszerzenie",
         "description": "Search"
     },
     "default_vault": {
@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Czy chcesz wyłączyć Passman tylko dla aktualnej strony, czy dla całej witryny?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -264,7 +264,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Poświadczenia usunięte",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Ignorowane łącza / URLe",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -320,7 +320,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Po zakończeniu procesu instalacji będzie można dodawać więcej kont.",
         "description": "Search"
     },
     "next": {
@@ -332,23 +332,23 @@
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Wyłącz witrynę",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "Zignorowany URL",
         "description": "URL ignored"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Zapisywanie do $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Włącz selektor haseł",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman loguje Cię jako $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
@@ -384,7 +384,7 @@
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Wyłącz stronę",
         "description": "Disable page"
     },
     "cancel": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Używasz HTTP! Twoje poświadczenia wysyłane są zwykłym tekstem. Poświadczenia w Passman pozostają nadal zaszyfrowane.",
         "description": "Warning for http connections"
     },
     "done": {
@@ -456,7 +456,7 @@
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Włącz automatyczne wysyłanie formularza po wybraniu konta",
         "description": "Enable form auto submit"
     },
     "saving": {
@@ -468,7 +468,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, i'm sure!",
+        "message": "Tak, jestem pewien!",
         "description": "Search"
     },
     "no_sites_ignored": {
