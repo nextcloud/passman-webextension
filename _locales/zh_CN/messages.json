@@ -20,7 +20,7 @@
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "忽略站点/页面",
         "description": "Invalid server URL"
     },
     "account_added": {
@@ -52,7 +52,7 @@
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "添加自定义字段",
         "description": "Add a custom field"
     },
     "credentials": {
@@ -84,7 +84,7 @@
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "您可以重置密码。 这将将扩展名重置为其默认状态。",
         "description": "Search"
     },
     "no_vaults": {
@@ -128,7 +128,7 @@
         "description": "Delete"
     },
     "forgot_password": {
-        "message": "Forgot password?",
+        "message": "忘记密码？",
         "description": "Search"
     },
     "invalid_server_settings": {
@@ -220,11 +220,11 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "text",
+        "message": "文本",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "重置扩展",
         "description": "Search"
     },
     "default_vault": {
@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "你想禁用Passman的当前页面，还是整个网站？",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "忽略的网站/网址",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -332,11 +332,11 @@
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "禁用网址",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "网址被忽略",
         "description": "URL ignored"
     },
     "saving_to": {
@@ -384,7 +384,7 @@
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "禁用页面",
         "description": "Disable page"
     },
     "cancel": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "你正在使用HTTP！ 登录凭证将以纯文本形式发送。 您的Passman凭证仍然加密。",
         "description": "Warning for http connections"
     },
     "done": {
@@ -468,7 +468,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, i'm sure!",
+        "message": "是，我确定！",
         "description": "Search"
     },
     "no_sites_ignored": {
