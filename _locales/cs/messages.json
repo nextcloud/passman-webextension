@@ -20,7 +20,7 @@
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Ignorovat stránku / stránky",
         "description": "Invalid server URL"
     },
     "account_added": {
@@ -244,7 +244,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Chcete passman zakázat pouze pro tuto stránku, nebo pro celé webové stránky?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -272,7 +272,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Vynechané stránky / URL",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
@@ -332,11 +332,11 @@
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Zakázat stránky",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "URL vynechána",
         "description": "URL ignored"
     },
     "saving_to": {
@@ -384,7 +384,7 @@
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Zakázat stránku",
         "description": "Disable page"
     },
     "cancel": {
@@ -444,7 +444,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Používáte HTTP! Přihlašovací údaje budou poslány v čistém textu. Přihlašovací údaje do Passmanu jsou stále chráněnay",
         "description": "Warning for http connections"
     },
     "done": {
