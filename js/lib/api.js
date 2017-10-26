@@ -215,7 +215,13 @@ window.PAPI = (function () {
 
         var request = new Request(host + '/index.php/apps/passman' + endpoint, opts);
 
+        var timeoutTimer = setTimeout(function () {
+            API.notifications.create('Error', 'Error connecting to server (Error: Connection timeout)');
+            callback({error: true, result: {statusText: 'Connection timeout', status: 0}});
+        }, 10000);
+
         fetch(request).then(function(response){
+            clearTimeout(timeoutTimer);
             if(response.status !== 200){
                 callback({error: true, result: {statusText: response.statusText, status: response.status}});
                 return;
@@ -236,6 +242,7 @@ window.PAPI = (function () {
             }
 
         }).catch(function (e) {
+            clearTimeout(timeoutTimer);
             API.notifications.create('Error', 'Error connecting to server (Error: '+ e +')');
             callback({error: true, result: {statusText: e, status: 0}});
         });
