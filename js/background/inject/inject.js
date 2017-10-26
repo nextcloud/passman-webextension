@@ -76,7 +76,7 @@ $j(document).ready(function () {
 							element=false;
 						}
 						/* if we have an element and it is type text, number or password, lets auto fill it */
-						if(element&&(element[0].type=='text'||element[0].type=='number'||element[0].type=='password')){
+						if(element&&(element[0].type==='text'||element[0].type==='number'||element[0].type==='password')){
 							element.val(login.custom_fields[i].value);
 						}
 					}
