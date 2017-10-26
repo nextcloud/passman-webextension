@@ -1,146 +1,146 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ 凭据在数据库中",
+        "message": "$AMOUNT$ акредитива у бази",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "刷新凭据列表",
+        "message": "Освежи листу акредитива",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - NextCloud / ownCloud的密码管理器",
+        "message": "Менаџер Лозинки - управљање лозинкама за Некстклауд / Оунклауд",
         "description": "Extension description"
     },
     "save_to": {
-        "message": "保存$VAULT_NAME$",
+        "message": "Сними у сеф $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "保管库",
+        "message": "Сеф",
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "忽略站点/页面",
+        "message": "Игнориши сајт / страну",
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "账户已添加",
+        "message": "Налог додат!",
         "description": "Search"
     },
     "label": {
-        "message": "标签",
+        "message": "Ознака",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "忽略站点匹配协议",
+        "message": "Игнориши тип протокола за поклапање са сајтом",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "设置",
+        "message": "Поставке",
         "description": "Settings"
     },
     "finish": {
-        "message": "完成",
+        "message": "Заврши",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "检测到的已更改的URL",
+        "message": "Примећена промена адресе за",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "捐助",
+        "message": "Донирајте",
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "添加自定义字段",
+        "message": "Додај произвољно поље",
         "description": "Add a custom field"
     },
     "credentials": {
-        "message": "凭据",
+        "message": "акредитиви",
         "description": "credentials"
     },
     "search": {
-        "message": "搜索",
+        "message": "Претражи",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "切换到高级选项",
+        "message": "Укључи/искључи напредне опције",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman拓展已锁定，解锁以使用",
+        "message": "Екстензија Менаџера Лозинки је закључана, откључајте је да је користите",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "更新",
+        "message": "Ажурирај",
         "description": "Update"
     },
     "unlock": {
-        "message": "解锁",
+        "message": "Откључај",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "无效的保险箱密钥",
+        "message": "Неисправан кључ сефа!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "您可以重置密码。 这将将扩展名重置为其默认状态。",
+        "message": "Можете ресетовати лозинку. Ово ће ресетовати екстензију на почетно стање.",
         "description": "Search"
     },
     "no_vaults": {
-        "message": "对不起，没有找到保管库。 请通过Nextcloud / ownCloud应用程序创建一个保管库，然后重试。",
+        "message": "Извињавамо се, ниједан сеф није нађен. Направите сеф кроз Некстклауд / Оунклауд апликацију и покушајте поново.",
         "description": "Search"
     },
     "edit": {
-        "message": "编辑",
+        "message": "Измени",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "最小数字位数",
+        "message": "Минимални број цифара",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "该密码将用于加密扩展中的所有设置。 您可以选择在本地保存此密码，但会保存在PLAIN TEXT中。",
+        "message": "Ова лозинка ће се користити да шифрује све Ваше поставке у екстензији. Можете одабрати да је сачувате локално, али ће бити сачувана као ОБИЧАН НЕШИФРОВАНИ ТЕКСТ.",
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "选择保管库",
+        "message": "Одаберите сеф",
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "启用表单自动填充",
+        "message": "Укључи аутоматско попуњавање формулара",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
-        "message": "添加账户",
+        "message": "Додај налог",
         "description": "Add account"
     },
     "back": {
-        "message": "返回",
+        "message": "Назад",
         "description": "Back"
     },
     "credential": {
-        "message": "凭据",
+        "message": "акредитив",
         "description": "credential"
     },
     "delete": {
-        "message": "删除",
+        "message": "Обриши",
         "description": "Delete"
     },
     "forgot_password": {
-        "message": "忘记密码？",
+        "message": "Заборавили сте лозинку?",
         "description": "Search"
     },
     "invalid_server_settings": {
-        "message": "服务器设置无效",
+        "message": "Неисправне поставке сервера",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud/ownCloud服务器设置",
+        "message": "Поставке Некстклауд/Оунклауд сервера",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "使用密码",
+        "message": "Користи лозинку",
         "description": "Use password"
     },
     "one_time_password": {
@@ -148,375 +148,375 @@
         "description": "One time password"
     },
     "list": {
-        "message": "列表",
+        "message": "Излистај",
         "description": "List"
     },
     "ignore_site": {
-        "message": "忽略站点",
+        "message": "Игнориши сајт",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "选择默认保险箱",
+        "message": "Одаберите подразумевани сеф",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "已忽略的站点",
+        "message": "Сајт се игнорише",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "继续",
+        "message": "Настави",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "我们已经找到了$AMOUNT$这个网站的凭据",
+        "message": "Нашли смо $AMOUNT$ акредитива за овај сајт",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "价值",
+        "message": "Вредност",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "项目发展取决于捐款，请支持我们",
+        "message": "Развој зависи од донација, подржите нас",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "请输入你的Nextcloud / ownCloud凭证",
+        "message": "Унесите Ваше Некстлауд / Оунклауд акредитиве",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "忽略站点匹配的路径",
+        "message": "Игнориши путању за поклапање са сајтом",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "自定义字段",
+        "message": "Произвољна поља",
         "description": "Custom fields"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "Неисправна адреса сервера",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "无效的主密码",
+        "message": "Неисправна главна лозинка!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "普通",
+        "message": "Опште",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "密码不匹配",
+        "message": "Лозинке се не поклапају",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "关闭",
+        "message": "Затвори",
         "description": "Close"
     },
     "prev": {
-        "message": "上一页",
+        "message": "Претходни",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "创建后，您可以编辑Passman中的凭据",
+        "message": "Пошто се налог направи, можете измени акредитиве у Менаџеру Лозинки",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "文本",
+        "message": "текст",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
-        "message": "重置扩展",
+        "message": "Ресетуј екстензију",
         "description": "Search"
     },
     "default_vault": {
-        "message": "默认保险箱",
+        "message": "Подразумевани сеф",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "忽略站点匹配的端口",
+        "message": "Игнориши порт за поклапање са сајтом",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "服务器设置",
+        "message": "Поставке сервера",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "设置主密码",
+        "message": "Поставите главну лозинку",
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "你想禁用Passman的当前页面，还是整个网站？",
+        "message": "Да ли желите да искључите Менаџер Лозинки за тренутну страну, или за цео сајт?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
-        "message": "密码",
+        "message": "Лозинка",
         "description": "Password"
     },
     "copy": {
-        "message": "复制",
+        "message": "Копирај",
         "description": "Copy"
     },
     "begin": {
-        "message": "让我们开始吧！",
+        "message": "Хајде да почнемо!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "该向导将引导您完成设置扩展程序并保持所有密码同步的步骤！",
+        "message": "Чаробњак ће Вас провести кроз кораке да подесите екстензију и држите све лозинке синхронизованим!",
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "证书已删除",
+        "message": "Акредитив обрисан",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "输入要忽略的域或TLD，然后按Enter键",
+        "message": "Унесите домен или TLD који треба да се игнорише и притисните Ентер",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "忽略的网站/网址",
+        "message": "Игнорисани сајтови / УРЛ адресе",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "切换可见性",
+        "message": "Укључи/искључи видљивост",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "警告！ 您的主密码将以纯文本形式存储",
+        "message": "Упозорење! Ваша главна лозинка ће бити ускладиштена нешифрована",
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "忘记主密码",
+        "message": "Запамти главну лозинку",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "为此站点保存凭证",
+        "message": "Сними акредитиве за овај сајт",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - 锁定",
+        "message": "Менаџер Лозинки - откључан",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "请填写一个标签",
+        "message": "Унесите ознаку",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "输入主密码",
+        "message": "Унеси главну лозинку",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "保险箱设置",
+        "message": "Поставке сефа",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "保险箱密码",
+        "message": "Лозинка за сеф",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "密码选择器：找不到凭证时：",
+        "message": "Бирач лозинке: Када се не нађе ниједан акредитив, иди на:",
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "保存站点",
+        "message": "Сачувај сајт",
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "安装过程完成后，您可以添加更多帐户。",
+        "message": "Након што се заврши процес подешавања, моћи ћете додати још налога.",
         "description": "Search"
     },
     "next": {
-        "message": "下一个",
+        "message": "Следеће",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "避免模糊字符",
+        "message": "Избегавај двосмислене карактере",
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "禁用网址",
+        "message": "Искључи за цео сајт",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "网址被忽略",
+        "message": "Адреса се игнорише",
         "description": "URL ignored"
     },
     "saving_to": {
-        "message": "保存$VAULT_NAME$",
+        "message": "Снимам у $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "启用密码选择器",
+        "message": "Укључи бирач лозинке",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman 正在登录 $USERNAME$",
+        "message": "Менаџер Лозинки ће Вас пријавити као $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "选择要与浏览器同步的保管库。",
+        "message": "Одаберите сеф који желите да синхронизујете са веб читачем.",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "检测到新登录",
+        "message": "Примећена нова пријава",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "检测到用户更改了密码",
+        "message": "Примећено да се лозинка за корисника променила",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "服务器响应无效：[$STATUS_CODE$]$STATUS_TEXT$",
+        "message": "Неисправан одговор са сервера: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "保存",
+        "message": "Сачувај",
         "description": "Save"
     },
     "generate_password": {
-        "message": "生成密码",
+        "message": "Генериши лозинку",
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "您没有权限编辑此凭据。",
+        "message": "Немате дозволе да измените овај акредитив.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "服务器URL",
+        "message": "Адреса сервера",
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "禁用页面",
+        "message": "Искључи страну",
         "description": "Disable page"
     },
     "cancel": {
-        "message": "取消",
+        "message": "Откажи",
         "description": "Cancel"
     },
     "add": {
-        "message": "添加",
+        "message": "Додај",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "凭据已更新",
+        "message": "Акредитиви ажурирани",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "未找到凭据",
+        "message": "Није пронађен ниједан акредитив",
         "description": "No credentials found for the current site"
     },
     "extName": {
-        "message": "Passman",
+        "message": "Менаџер Лозинки",
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "锁定延伸",
+        "message": "Закључај екстензију",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "搜索",
+        "message": "Претрага за",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "密码(重复)",
+        "message": "Лозинка (поново)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "凭据已保存",
+        "message": "Акредитив снимљени",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "要求每个字符类型",
+        "message": "Захтевај све типове карактера",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "启用调试模式",
+        "message": "Омогући режим исправљања грешака",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "Адреса е-поште",
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "欢迎来到Passman拓展",
+        "message": "Добродошли у екстензију Менаџера Лозинки",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ 找到这个页面",
+        "message": "Менаџер Лозинки - $CREDENTIAL_AMOUNT$ $PLURAL$ нађено за ову страну",
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "你正在使用HTTP！ 登录凭证将以纯文本形式发送。 您的Passman凭证仍然加密。",
+        "message": "Користите HTTP  несигурну везу! Акредитиви за пријаву ће бити послати као обичан, нешифровани текст. Акредитиви Менаџера Лозинки су и даље шифровани.",
         "description": "Warning for http connections"
     },
     "done": {
-        "message": "已完成",
+        "message": "Готово",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "未找到此站点的凭据",
+        "message": "Нема акредитива за овај сајт!",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "选择帐户后，启用表单自动提交",
+        "message": "Укључи аутоматско слање формулара после одабира налога",
         "description": "Enable form auto submit"
     },
     "saving": {
-        "message": "保存中",
+        "message": "Чувам",
         "description": "Saving"
     },
     "url": {
-        "message": "URL",
+        "message": "УРЛ",
         "description": "URL"
     },
     "iam_sure": {
-        "message": "是，我确定！",
+        "message": "Да, сигуран сам!",
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "无已忽略的站点",
+        "message": "Ниједан сајт се не игнорише",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "如果你喜欢，别忘了捐助我们",
+        "message": "Ако Вам се свиђа, не заборавите да донирате",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "账户",
+        "message": "Налози",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "密码生成器",
+        "message": "Генератор лозинки",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "主密码为空！",
+        "message": "Празна главна лозинка!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "忽略网站匹配的子域名",
+        "message": "Игнориши поддомене за поклапање са сајтом",
         "description": "Password"
     },
     "btn_search": {
-        "message": "搜索凭据",
+        "message": "Претражи акредитиве",
         "description": "Search credentials"
     },
     "credential_created": {
-        "message": "创建凭证",
+        "message": "Направљени акредитив",
         "description": "Credential created"
     },
     "username": {
-        "message": "用户名",
+        "message": "Корисничко име",
         "description": "Username"
     },
     "pw_length": {
-        "message": "密码长度",
+        "message": "Дужина лозинке",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "禁用自动填写表单",
+        "message": "Искључи аутоматско попуњавање из веб читача",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "刷新计时器(S)",
+        "message": "Период освежавања [s]",
         "description": "Password"
     }
 }
