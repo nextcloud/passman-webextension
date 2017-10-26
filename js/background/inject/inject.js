@@ -60,9 +60,7 @@ $j(document).ready(function () {
 		try{
 			/* do we have custom_fields for this entry */
 			if(login.hasOwnProperty('custom_fields')&&login.custom_fields.length){
-				/* yes we do */
-				customfields=login.custom_fields;
-				/* iterate over all the custom_fields values */
+				/* yes we do, iterate over all the custom_fields values */
 				for(var i=0,len=login.custom_fields.length;i<len;i++){
 					/* does this custom field label begin with a hash? */
 					if(customfieldpattern.test(login.custom_fields[i].label)){
