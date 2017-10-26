@@ -80,6 +80,8 @@
         "/js/lib/jQuerytoObject.js",
         "/js/lib/findForm.js",
         "/js/lib/parseUrl.js",
+        "/js/lib/parseTLD.js",
+        "/js/lib/data/tlds.js",
         "/js/lib/domchanged.js",
         "/js/background/inject/inject.js"
       ],

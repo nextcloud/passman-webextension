@@ -15,7 +15,8 @@ $j(document).ready(function () {
     var _this = this;
     Array.prototype.findUrl = function (match) {
         return this.filter(function (item) {
-            return typeof item === 'string' && item.indexOf(match) > -1;
+            var matchParse = processURL(match, false, false, true, false);
+            return typeof item === 'string' && item.indexOf(matchParse) > -1;
         });
     };
 
