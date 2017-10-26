@@ -50,6 +50,46 @@ $j(document).ready(function () {
 
     _this.enterLoginDetails = enterLoginDetails;
 
+    function enterCustomFields(login,settings) {
+		var customfieldpattern=/^\#(.*)$/;
+		var elementid;
+		var element=false;
+		
+		/* parhaps wise to try / catch this as this is non essential and no reason to abort previous processing */
+		try{
+			/* do we have custom_fields for this entry */
+			if(login.hasOwnProperty('custom_fields')&&login.custom_fields.length){
+				/* yes we do, iterate over all the custom_fields values */
+				for(var i=0,len=login.custom_fields.length;i<len;i++){
+					/* does this custom field label begin with a hash? */
+					if(customfieldpattern.test(login.custom_fields[i].label)){
+						/* set variable elementid to whatever element we are trying to auto fill */
+						elementid=customfieldpattern.exec(login.custom_fields[i].label)[1];
+						/* check to see if element id exist */
+						if($j('#'+elementid).length){
+							element=$j('#'+elementid);
+						}
+						else if($j('input[name$="'+elementid+'"]').length){ /* maybe element name exist */
+							element=$j('input[name$="'+elementid+'"]');
+						}
+						else{ /* neither element id or name exist */
+							element=false;
+						}
+						/* if we have an element and it is type text, number or password, lets auto fill it */
+						if(element&&(element[0].type==='text'||element[0].type==='number'||element[0].type==='password')){
+							element.val(login.custom_fields[i].value);
+						}
+					}
+				}
+			}
+		}
+		catch(e){
+			if(settings.debug){
+                console.log('While attempting to auto fill custom fields the following exception was thrown: '+e);
+			}
+		}
+	}
+    
     function submitLoginForm(username) {
         if (!activeForm) {
             // @TODO detect login form on the current page
@@ -268,7 +308,6 @@ $j(document).ready(function () {
                         /* jshint ignore:end */
                 }
 
-
                 API.runtime.sendMessage(API.runtime.id, {
                     method: "getCredentialsByUrl",
                     args: url
@@ -281,10 +320,22 @@ $j(document).ready(function () {
                             }
                         });
                     }
-
                 });
             }
 
+            API.runtime.sendMessage(API.runtime.id, {
+                method: "getCredentialsByUrl",
+                args: url
+            }).then(function (logins) {
+                if (logins.length === 1) {
+                    API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
+                        if (isEnabled) {
+                            enterCustomFields(logins[0], settings);
+                        }
+                    });
+                    }
+            });
+            
         });
     }
 
