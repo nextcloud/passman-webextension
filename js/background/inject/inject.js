@@ -51,7 +51,6 @@ $j(document).ready(function () {
     _this.enterLoginDetails = enterLoginDetails;
 
     function enterCustomFields(login,settings) {
-		var customfields;
 		var customfieldpattern=/^\#(.*)$/;
 		var elementid;
 		var element=false;
