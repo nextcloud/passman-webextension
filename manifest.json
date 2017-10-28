@@ -53,10 +53,10 @@
   "commands":{
     "_execute_browser_action": {
       "suggested_key": {
-        "windows": "Alt+Down Arrow",
-        "mac": "Alt+Down Arrow",
-        "chromeos": "Alt+Down Arrow",
-        "linux": "Alt+Down Arrow"
+        "windows": "Alt+Down",
+        "mac": "Alt+Down",
+        "chromeos": "Alt+Down",
+        "linux": "Alt+Down"
       }
     }
   },
