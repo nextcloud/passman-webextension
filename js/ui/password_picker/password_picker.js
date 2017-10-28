@@ -1,6 +1,22 @@
 $(document).ready(function () {
     var _this = this;
     var storage = new API.Storage();
+    var runtimeSettings = {};
+
+    API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
+        var accounts = settings.accounts;
+        runtimeSettings = settings;
+        for(var i = 0; i < accounts.length; i++) {
+            $('#savepw-vault').append('<option value=' + i + '>' + accounts[i].vault.name + '</option>');
+        }
+        storage.get('activeTab').then(function (name) {
+            if (name && name !== '') {
+                makeTabActive(name);
+                API.runtime.sendMessage(API.runtime.id, {method: "getActiveTab", args: {returnFn: "returnActiveTab"}});
+            }
+        });
+
+    });
 
     $('[t]').each(function () {
         var string = $(this).attr('t');
@@ -215,15 +231,9 @@ $(document).ready(function () {
         storage.set('activeTab', name).then(function (r) {
             makeTabActive(name);
         });
-
     });
     
-    makeTabActive('list');
-    storage.get('activeTab').then(function (name) {
-        if (name && name !== '') {
-            makeTabActive(name);
-        }
-    });
+
 
     $('.tab.close').click(function () {
         removePasswordPicker();
@@ -244,7 +254,7 @@ $(document).ready(function () {
         });
     }
 
-    API.runtime.sendMessage(API.runtime.id, {method: "getActiveTab", args: {returnFn: "returnActiveTab"}});
+
 
     function returnActiveTab(tab) {
 
@@ -271,6 +281,9 @@ $(document).ready(function () {
             }
             if (logins.length !== 0) {
                 picker.find('.tab-list-content').html('');
+                if(runtimeSettings.passwordPickerGotoList){
+                    makeTabActive('list');
+                }
             }
             for (var i = 0; i < logins.length; i++) {
                 var login = logins[i];
@@ -373,10 +386,4 @@ $(document).ready(function () {
         });
     }
 
-    API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
-        var accounts = settings.accounts;
-        for(var i = 0; i < accounts.length; i++) {
-            $('#savepw-vault').append('<option value=' + i + '>' + accounts[i].vault.name + '</option>');
-        }
-    });
 });

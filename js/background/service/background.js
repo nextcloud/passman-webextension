@@ -104,6 +104,9 @@ var background = (function () {
             if (!_self.settings.hasOwnProperty('enableUpdateUrl')) {
                 _self.settings.enableUpdateUrl = true;
             }
+            if (!_self.settings.hasOwnProperty('passwordPickerGotoList')) {
+                _self.settings.passwordPickerGotoList = false;
+            }
 
             getCredentials();
 
