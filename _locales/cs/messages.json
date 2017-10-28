@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ pověření v databázi",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Obnovit seznam pověření",
@@ -13,7 +19,13 @@
     },
     "save_to": {
         "message": "Uložit do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "vault": {
         "message": "Trezor",
@@ -169,7 +181,13 @@
     },
     "credentials_found_for_site": {
         "message": "Pro tuto stránku jsme našli $AMOUNT$ pověření",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "value": {
         "message": "Hodnota",
@@ -341,7 +359,13 @@
     },
     "saving_to": {
         "message": "Ukládám do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "enable_password_picker": {
         "message": "Povolit výběr hesla",
@@ -349,7 +373,13 @@
     },
     "auto_login": {
         "message": "Passman vás přihlašuje jako $USERNAME$",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "default_vault_desc": {
         "message": "Zvolte trezor, který má být synchronizovaný s prohlížečem.",
@@ -365,7 +395,17 @@
     },
     "invalid_response_from_server": {
         "message": "Neplatná odpověď serveru: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Uložit",
@@ -441,7 +481,17 @@
     },
     "browser_action_title_login": {
         "message": "Passsman - pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "http_warning": {
         "message": "Používáte HTTP! Přihlašovací údaje budou poslány v čistém textu. Přihlašovací údaje do Passmanu jsou stále chráněnay",

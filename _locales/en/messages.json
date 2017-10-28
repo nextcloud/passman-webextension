@@ -191,6 +191,10 @@
     "message": "Enable form auto submit after picking account",
     "description": "Enable form auto submit"
   },
+  "enable_update_url": {
+    "message": "Ask to update credential url if doesn't match current url",
+    "description": "Enable form auto submit"
+  },
   "disable_browser_autofill": {
     "message": "Disable browser auto fill",
     "description": "Disable auto fill of forms"
