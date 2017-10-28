@@ -731,6 +731,13 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
     margin-bottom: 35px;
     padding-left: 5px; }
 
+#tab1-content {
+  border-right: 1px solid #333333; }
+
+.tab-wrap .tab-label-content label.tab-title {
+  padding: 16px 90px;
+  margin-bottom: 0; }
+
 .tab-wrap .tab-label-content.account .tab-content.active {
   margin-top: 10px; }
 
