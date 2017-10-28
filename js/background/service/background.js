@@ -101,6 +101,10 @@ var background = (function () {
                 _self.settings.enableAutoFill = !_self.settings.disableAutoFill;
             }
 
+            if (!_self.settings.hasOwnProperty('enableUpdateUrl')) {
+                _self.settings.enableUpdateUrl = true;
+            }
+
             getCredentials();
 
             if (_self.running) {
@@ -442,6 +446,10 @@ var background = (function () {
     _self.getActiveTab = getActiveTab;
 
     function updateCredentialUrlDoorhanger(login) {
+        if(!_self.settings.enableUpdateUrl){
+            return;
+        }
+
         API.tabs.query({active: true, currentWindow: true}).then(function (tabs) {
             var tab = tabs[0];
             var data = login;

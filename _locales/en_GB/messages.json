@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Refresh credential list",
@@ -13,7 +19,13 @@
     },
     "save_to": {
         "message": "Save to $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "vault": {
         "message": "Vault",
@@ -169,7 +181,13 @@
     },
     "credentials_found_for_site": {
         "message": "We've found $AMOUNT$ credentials for this site",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "value": {
         "message": "Value",
@@ -341,7 +359,13 @@
     },
     "saving_to": {
         "message": "Saving to $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "enable_password_picker": {
         "message": "Enable password picker",
@@ -349,7 +373,13 @@
     },
     "auto_login": {
         "message": "Passman is logging you in as $USERNAME$",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "default_vault_desc": {
         "message": "Select the vault that you want to keep in sync with the browser.",
@@ -365,7 +395,17 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Save",
@@ -441,7 +481,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "http_warning": {
         "message": "You are using HTTP! Login credentials will be sent in plain text. Your Passman credentials are still encrypted.",

@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credencials a la base de dades",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Actualitza la llista de credencials",
@@ -13,7 +19,13 @@
     },
     "save_to": {
         "message": "Desa a $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "vault": {
         "message": "cripta",
@@ -169,7 +181,13 @@
     },
     "credentials_found_for_site": {
         "message": "Hem trobat $AMOUNT$ credencials per a aquest lloc",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "value": {
         "message": "Valor",
@@ -341,7 +359,13 @@
     },
     "saving_to": {
         "message": "S'està desant a $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "enable_password_picker": {
         "message": "Activa el selector de contrasenya",
@@ -349,7 +373,13 @@
     },
     "auto_login": {
         "message": "Passman t'està iniciant la sessió $USERNAME$",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "default_vault_desc": {
         "message": "Seleccioneu la bóveda que voleu mantenir en sincronia amb el navegador.",
@@ -365,7 +395,17 @@
     },
     "invalid_response_from_server": {
         "message": "Resposta no vàlida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Desa",
@@ -441,7 +481,17 @@
     },
     "browser_action_title_login": {
         "message": "Contrasenya - $CREDENTIAL_AMOUNT$ $PLURAL$ trobat per a aquesta pàgina",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "http_warning": {
         "message": "Esteu utilitzant HTTP! Les credencials d'inici de sessió es publicaran en text sense format. Les vostres credencials de Passman segueixen xifrades.",

@@ -1,7 +1,13 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ påloggingsdetaljer i databasen",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "refresh_credential_list": {
         "message": "Gjenoppfrisk liste over påloggingsdetaljer",
@@ -13,7 +19,13 @@
     },
     "save_to": {
         "message": "Lagre til $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "vault": {
         "message": "Hvelv",
@@ -169,7 +181,13 @@
     },
     "credentials_found_for_site": {
         "message": "Vi har funnet $AMOUNT$ påloggingsdetaljer for denne siden",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "value": {
         "message": "Verdi",
@@ -341,7 +359,13 @@
     },
     "saving_to": {
         "message": "Lagrer til $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "enable_password_picker": {
         "message": "Skru på passordvelger",
@@ -349,7 +373,13 @@
     },
     "auto_login": {
         "message": "Passman logger deg inn som $USERNAME$",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "default_vault_desc": {
         "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
@@ -365,7 +395,17 @@
     },
     "invalid_response_from_server": {
         "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "save": {
         "message": "Lagre",
@@ -441,7 +481,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ funnet for denne siden",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "http_warning": {
         "message": "Du bruker HTTP! Innloggingsdetaljer vil bli sendt i klartekst. Dine Passman-identitetsdetaljer er fremdeles krypterte.",
