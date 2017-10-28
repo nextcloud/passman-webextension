@@ -211,6 +211,14 @@
     "message": "When passwords found, go to list rather than last active tab",
     "description": "Disable password picker"
   },
+  "hide_adv": {
+    "message": "Hide advanced options",
+    "description": "Disable password picker"
+  },
+  "show_adv": {
+    "message": "Show advanced options",
+    "description": "Disable password picker"
+  },
   "enable_debug": {
     "message": "Enable debug mode",
     "description": "Enable debug mode"

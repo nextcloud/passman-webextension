@@ -37,52 +37,59 @@
                 <span class="bar"></span>
                 <label>{{'select_password_picker_default_tab' | translate}}</label>
             </div>
-            <div class="switch-row">
-                <input type="checkbox" id="ignore_protocol" ng-model="settings.ignoreProtocol" class="switch-input">
-                <label for="ignore_protocol" class="switch-label">{{'ignore_protocol' | translate}}</label>
+            <div ng-init="showAdvanced = false" ng-click="showAdvanced = !showAdvanced" style="margin-bottom: 10px; cursor: pointer">
+                <i class="fa" ng-class="{'fa-caret-down': showAdvanced, 'fa-caret-right': !showAdvanced}"></i>
+                    <span ng-show="showAdvanced">{{ 'hide_adv' | translate}}</span>
+                    <span ng-show="!showAdvanced">{{ 'show_adv' | translate }}</span>
             </div>
-            <div class="switch-row">
-                <input type="checkbox" id="ignore_subdomain" ng-model="settings.ignoreSubdomain" class="switch-input">
-                <label for="ignore_subdomain" class="switch-label">{{'ignore_subdomain' | translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="ignore_port" ng-model="settings.ignorePort" class="switch-input">
-                <label for="ignore_port" class="switch-label">{{'ignore_port' | translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="ignore_path" ng-model="settings.ignorePath" class="switch-input">
-                <label for="ignore_path" class="switch-label">{{'ignore_path' | translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="enable_autofill" ng-model="settings.enableAutoFill" class="switch-input">
-                <label for="enable_autofill" class="switch-label">{{'enable_autofill' | translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="enable_autosubmit" ng-model="settings.enableAutoSubmit" class="switch-input">
-                <label for="enable_autosubmit" class="switch-label">{{'enable_autosubmit' | translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="enable_update_url" ng-model="settings.enableUpdateUrl" class="switch-input">
-                <label for="enable_update_url" class="switch-label">{{'enable_update_url' | translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="enable_password_picker" ng-model="settings.enablePasswordPicker"
-                       class="switch-input">
-                <label for="enable_password_picker" class="switch-label">{{'enable_password_picker' |
-                    translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="password_picker_gotolist" ng-model="settings.passwordPickerGotoList"
-                       class="switch-input">
-                <label for="password_picker_gotolist" class="switch-label">{{'password_picker_gotolist' |
-                    translate}}</label>
-            </div>
-            <div class="switch-row">
-                <input type="checkbox" id="enable_debug" ng-model="settings.debug" class="switch-input">
-                <label for="enable_debug" class="switch-label">{{'enable_debug' | translate}}</label>
+            <div ng-show="showAdvanced">
+                <div class="switch-row">
+                    <input type="checkbox" id="ignore_protocol" ng-model="settings.ignoreProtocol" class="switch-input">
+                    <label for="ignore_protocol" class="switch-label">{{'ignore_protocol' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="ignore_subdomain" ng-model="settings.ignoreSubdomain" class="switch-input">
+                    <label for="ignore_subdomain" class="switch-label">{{'ignore_subdomain' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="ignore_port" ng-model="settings.ignorePort" class="switch-input">
+                    <label for="ignore_port" class="switch-label">{{'ignore_port' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="ignore_path" ng-model="settings.ignorePath" class="switch-input">
+                    <label for="ignore_path" class="switch-label">{{'ignore_path' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="enable_autofill" ng-model="settings.enableAutoFill" class="switch-input">
+                    <label for="enable_autofill" class="switch-label">{{'enable_autofill' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="enable_autosubmit" ng-model="settings.enableAutoSubmit" class="switch-input">
+                    <label for="enable_autosubmit" class="switch-label">{{'enable_autosubmit' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="enable_update_url" ng-model="settings.enableUpdateUrl" class="switch-input">
+                    <label for="enable_update_url" class="switch-label">{{'enable_update_url' | translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="enable_password_picker" ng-model="settings.enablePasswordPicker"
+                           class="switch-input">
+                    <label for="enable_password_picker" class="switch-label">{{'enable_password_picker' |
+                        translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="password_picker_gotolist" ng-model="settings.passwordPickerGotoList"
+                           class="switch-input">
+                    <label for="password_picker_gotolist" class="switch-label">{{'password_picker_gotolist' |
+                        translate}}</label>
+                </div>
+                <div class="switch-row">
+                    <input type="checkbox" id="enable_debug" ng-model="settings.debug" class="switch-input">
+                    <label for="enable_debug" class="switch-label">{{'enable_debug' | translate}}</label>
+                </div>
             </div>
             <div class="clearfix"></div>
-            <button class="md-btn default" ng-click="saveSettings(true)" ng-disabled="saving">
+            <button class="md-btn default" ng-click="saveSettings(true)" ng-disabled="saving" style="margin-left: 0;">
         <span>
             <i ng-show="saving"
                ng-class="{'fa-spinner fa-spin': saving}"
