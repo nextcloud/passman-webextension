@@ -11,7 +11,8 @@ var formManager = function(){
                 settings.debug = (result);
             });
         },
-        /*
+        /**
+         *
          * _isAutoCompleteDisabled
          *
          * Returns true if the page requests autocomplete be disabled for the
@@ -20,8 +21,15 @@ var formManager = function(){
         isAutocompleteDisabled: function (element) {
             return !!(element && element.hasAttribute("autocomplete") && element.getAttribute("autocomplete").toLowerCase() === "off");
         },
-
-        /*
+        /**
+         * Check if if an element is visible
+         * @param element
+         * @returns {boolean}
+         */
+        isElementVisible: function (element) {
+            return !!( element.offsetWidth || element.offsetHeight || element.getClientRects().length );
+        },
+        /**
          * _getPasswordFields
          *
          * Returns an array of password field elements for the specified form.
@@ -34,18 +42,22 @@ var formManager = function(){
             // Locate the password fields in the form.
             var pwFields = [];
             for (var i = 0; i < form.elements.length; i++) {
-                if (form.elements[i].type !== "password"){
+                var elem = form.elements[i];
+                if (elem.type !== "password"){
                     continue;
                 }
 
+                if(!this.isElementVisible(elem)){
+                    continue;
+                }
 
-                if (skipEmptyFields && !form.elements[i].value){
+                if (skipEmptyFields && !elem.value){
                     continue;
                 }
 
                 pwFields[pwFields.length] = {
                     index: i,
-                    element: form.elements[i]
+                    element: elem
                 };
             }
 
@@ -88,11 +100,15 @@ var formManager = function(){
             }
 
 
+
             // Locate the username field in the form by searching backwards
             // from the first passwordfield, assume the first text field is the
             // username. We might not find a username field if the user is
             // already logged in to the site.
             for (var i = pwFields[0].index - 1; i >= 0; i--) {
+                if(!this.isElementVisible(form.elements[i])){
+                    continue;
+                }
                 if (form.elements[i].type.toLowerCase() === "text" || form.elements[i].type.toLowerCase() === "email") {
                     usernameField = form.elements[i];
                     break;
