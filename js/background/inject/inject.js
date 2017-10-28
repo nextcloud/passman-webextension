@@ -51,8 +51,8 @@ $j(document).ready(function () {
     _this.enterLoginDetails = enterLoginDetails;
 
     function enterCustomFields(login,settings) {
-		var customfieldpattern=/^\#(.*)$/;
-		var elementid;
+		var customFieldPattern=/^\#(.*)$/;
+		var elementId;
 		var element=false;
 		
 		/* parhaps wise to try / catch this as this is non essential and no reason to abort previous processing */
@@ -62,15 +62,15 @@ $j(document).ready(function () {
 				/* yes we do, iterate over all the custom_fields values */
 				for(var i=0,len=login.custom_fields.length;i<len;i++){
 					/* does this custom field label begin with a hash? */
-					if(customfieldpattern.test(login.custom_fields[i].label)){
+					if(customFieldPattern.test(login.custom_fields[i].label)){
 						/* set variable elementid to whatever element we are trying to auto fill */
-						elementid=customfieldpattern.exec(login.custom_fields[i].label)[1];
+						elementId=customFieldPattern.exec(login.custom_fields[i].label)[1];
 						/* check to see if element id exist */
-						if($j('#'+elementid).length){
-							element=$j('#'+elementid);
+						if($j('#'+elementId).length){
+							element=$j('#'+elementId);
 						}
-						else if($j('input[name$="'+elementid+'"]').length){ /* maybe element name exist */
-							element=$j('input[name$="'+elementid+'"]');
+						else if($j('input[name$="'+elementId+'"]').length){ /* maybe element name exist */
+							element=$j('input[name$="'+elementId+'"]');
 						}
 						else{ /* neither element id or name exist */
 							element=false;
