@@ -510,7 +510,7 @@ var background = (function () {
             credential.label = sender.tab.title;
             credential.vault_id = credential.account.vault.vault_id;
             PAPI.createCredential(credential.account, credential, credential.account.vault_password, function (createdCredential) {
-                createdCredential.account = credential.account;
+                createdCredential.account = args.account;
                 saveMinedCallback({credential: credential, updated: false, sender: sender});
                 local_credentials.push(createdCredential);
                 delete mined_data[sender.tab.id];
