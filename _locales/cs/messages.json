@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ pověření v databázi",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Obnovit seznam pověření",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Uložit do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Trezor",
@@ -67,9 +55,17 @@
         "message": "Přidat vlastní pole",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential url if doesn't match current url",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "Pověření",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When passwords found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Hledat",
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "Pro tuto stránku jsme našli $AMOUNT$ pověření",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Hodnota",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Vlastní pole",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "Neplatná URL serveru",
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "Ukládám do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Povolit výběr hesla",
@@ -373,13 +361,7 @@
     },
     "auto_login": {
         "message": "Passman vás přihlašuje jako $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Zvolte trezor, který má být synchronizovaný s prohlížečem.",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Neplatná odpověď serveru: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Uložit",
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Zakázat stránku",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Zrušit",
@@ -481,17 +457,7 @@
     },
     "browser_action_title_login": {
         "message": "Passsman - pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "Používáte HTTP! Přihlašovací údaje budou poslány v čistém textu. Přihlašovací údaje do Passmanu jsou stále chráněnay",

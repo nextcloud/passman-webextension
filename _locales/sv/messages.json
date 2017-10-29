@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ uppgifter i databasen",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Uppdatera uppgiftslista",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Spara till $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Valv",
@@ -67,9 +55,17 @@
         "message": "Lägg till ett anpassat fält",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential url if doesn't match current url",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "uppgifter",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When passwords found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Sök",
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "Vi hittade $AMOUNT$ uppgifter för denna plats",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Värde",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Anpassade Fält",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "Ogiltig server-URL",
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "Sparar till $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Aktivera lösenordsväljare",
@@ -373,13 +361,7 @@
     },
     "auto_login": {
         "message": "Passman loggar in dig som $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Välj valv som du vill synkronisera med webbläsaren.",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Ogiltigt svar från server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Spara",
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Inaktivera sida",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Avbryt",
@@ -481,17 +457,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ hittades för denna sida",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "Du använder HTTP! Inloggningsuppgifter kommer sändas som ren text. Dina Passman-uppgifter är fortfarande krypterade.",

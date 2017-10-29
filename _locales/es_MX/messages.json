@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credenciales en la base de datos",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Actualizar la lista de credenciales",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Guardar en $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Bóveda",
@@ -67,9 +55,17 @@
         "message": "Agregar un campo personalizado",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential url if doesn't match current url",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "credenciales",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When passwords found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Buscar",
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Valor",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Campos personalizados",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "URL del servidor inválida",
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "Guardando en $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Habilitar la selección de contraseñas",
@@ -373,13 +361,7 @@
     },
     "auto_login": {
         "message": "Passman te está registrando como $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Selecciona la bóveda que deseas mantener sincronizada con el navegador. ",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Respuesta inválida del servidor : [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Guardar",
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Dehabilitar página",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Cancelar",
@@ -481,17 +457,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "¡Estas usando HTTP! Las credenciales de inicio de sesión serán enviadas en texto plano. Tus credenciales de Passman aún están encriptadas. ",

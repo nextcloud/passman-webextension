@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Refresh credential list",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Save to $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Vault",
@@ -67,9 +55,17 @@
         "message": "Add a custom field",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential url if doesn't match current url",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "credentials",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When passwords found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Search",
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "We've found $AMOUNT$ credentials for this site",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Value",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Custom Fields",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "Invalid server URL",
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "Saving to $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Enable password picker",
@@ -373,13 +361,7 @@
     },
     "auto_login": {
         "message": "Passman is logging you in as $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Select the vault that you want to keep in sync with the browser.",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Save",
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Disable page",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Cancel",
@@ -481,17 +457,7 @@
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "You are using HTTP! Login credentials will be sent in plain text. Your Passman credentials are still encrypted.",

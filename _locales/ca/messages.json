@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credencials a la base de dades",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Actualitza la llista de credencials",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Desa a $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "cripta",
@@ -67,9 +55,17 @@
         "message": "Afegiu un camp personalitzat",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential url if doesn't match current url",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "credencials",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When passwords found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Cerca",
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "Hem trobat $AMOUNT$ credencials per a aquest lloc",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Valor",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Camps personalitzats",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "Direcció del servidor invàlida",
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "S'està desant a $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Activa el selector de contrasenya",
@@ -373,13 +361,7 @@
     },
     "auto_login": {
         "message": "Passman t'està iniciant la sessió $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Seleccioneu la bóveda que voleu mantenir en sincronia amb el navegador.",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Resposta no vàlida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Desa",
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Desactiva la pàgina",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Cancel·la",
@@ -481,17 +457,7 @@
     },
     "browser_action_title_login": {
         "message": "Contrasenya - $CREDENTIAL_AMOUNT$ $PLURAL$ trobat per a aquesta pàgina",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "Esteu utilitzant HTTP! Les credencials d'inici de sessió es publicaran en text sense format. Les vostres credencials de Passman segueixen xifrades.",

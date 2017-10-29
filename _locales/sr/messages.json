@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ акредитива у бази",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Освежи листу акредитива",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Сними у сеф $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Сеф",
@@ -67,9 +55,17 @@
         "message": "Додај произвољно поље",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential url if doesn't match current url",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "акредитиви",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When passwords found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Претражи",
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "Нашли смо $AMOUNT$ акредитива за овај сајт",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Вредност",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Произвољна поља",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "Неисправна адреса сервера",
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "Снимам у $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Укључи бирач лозинке",
@@ -373,13 +361,7 @@
     },
     "auto_login": {
         "message": "Менаџер Лозинки ће Вас пријавити као $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
         "message": "Одаберите сеф који желите да синхронизујете са веб читачем.",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Неисправан одговор са сервера: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Сачувај",
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Искључи страну",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Откажи",
@@ -481,17 +457,7 @@
     },
     "browser_action_title_login": {
         "message": "Менаџер Лозинки - $CREDENTIAL_AMOUNT$ $PLURAL$ нађено за ову страну",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "Користите HTTP  несигурну везу! Акредитиви за пријаву ће бити послати као обичан, нешифровани текст. Акредитиви Менаџера Лозинки су и даље шифровани.",
