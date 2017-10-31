@@ -200,7 +200,7 @@
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Montrer les options avancées",
         "description": "Disable password picker"
     },
     "invalid_host": {
@@ -400,7 +400,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Cacher les options avancées",
         "description": "Disable password picker"
     },
     "cancel": {
