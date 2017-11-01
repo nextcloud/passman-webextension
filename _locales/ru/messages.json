@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential url if doesn't match current url",
+        "message": "Запрашивать обновление URL записи, если он не отличается от сохранённого",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When passwords found, go to list rather than last active tab",
+        "message": "Переключаться в предпоследнюю активную вкладку при нахождении пароля",
         "description": "Disable password picker"
     },
     "search": {
@@ -200,7 +200,7 @@
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Показать расширенные настройки",
         "description": "Disable password picker"
     },
     "invalid_host": {
@@ -400,7 +400,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Скрыть расширенные настройки",
         "description": "Disable password picker"
     },
     "cancel": {
@@ -448,7 +448,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Email",
+        "message": "Эл. почта",
         "description": "E-mail"
     },
     "welcome_to_passman": {
