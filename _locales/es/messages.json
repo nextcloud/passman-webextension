@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential url if doesn't match current url",
+        "message": "Pedir una actualización de la URL de la credencial si no concuerda con la URL actual",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When passwords found, go to list rather than last active tab",
+        "message": "Cuando se encuentran contraseñas, ir a la lista en lugar de la última pestaña activa",
         "description": "Disable password picker"
     },
     "search": {
@@ -200,7 +200,7 @@
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Mostrar opciones avanzadas",
         "description": "Disable password picker"
     },
     "invalid_host": {
@@ -400,7 +400,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Ocultar opciones avanzadas",
         "description": "Disable password picker"
     },
     "cancel": {
