@@ -86,7 +86,19 @@ $(document).ready(function () {
         });
 
         $('#savepw-save').click(function (e) {
+            var fields = [labelfield, pwfield];
+            var hasErrors = false;
+            $.each(fields, function (k, field) {
+               field.removeClass('error');
+                if(!$(field).val()){
+                   field.addClass('error');
+                   hasErrors = true;
+                }
+            });
             e.preventDefault();
+            if(hasErrors){
+                return;
+            }
             $(this).text(API.i18n.getMessage("saving"));
             $(this).attr('disabled', true);
             API.runtime.sendMessage(API.runtime.id, {
