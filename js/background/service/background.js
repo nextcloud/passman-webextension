@@ -546,13 +546,13 @@ var background = (function () {
 
 
     function injectCreateCredential(args, sender) {
-        var account = getRuntimeSettings().accounts[args.vaultIndex];
+        var account = getRuntimeSettings().accounts[parseInt(args.vaultIndex)];
         var credential = PAPI.newCredential();
         credential.label = args.label;
         credential.username = args.username;
         credential.password = args.password;
-        credential.vault_id = account.vault_id;
         credential.url = sender.tab.url;
+        credential.vault_id = account.vault.vault_id;
         PAPI.createCredential(account, credential, account.vault_password, function (createdCredential) {
             credential.account = account;
             saveMinedCallback({credential: credential, updated: false, sender: sender, selfAdded: true});
