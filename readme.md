@@ -1,13 +1,20 @@
 # Passman Webextension
-
-[![Chrome webstore](https://img.passman.cc/assets/chromewebstore.png)](https://chrome.google.com/webstore/detail/passman/hlpjhlifkgmoibhollggngbbhbejecph)
-[![AMO](https://img.passman.cc/assets/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/passman/)
-
-
 ![Build Status](https://passman.cc/webextension-version.php)
 [![Build Status](https://travis-ci.org/nextcloud/passman-webextension.svg?branch=master)](https://travis-ci.org/nextcloud/passman-webextension)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3dd62087e5e4d2488314dbad02336df)](https://www.codacy.com/app/brantje/passman-webextension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nextcloud/passman-webextension&amp;utm_campaign=Badge_Grade)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nextcloud/passman-webextension/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nextcloud/passman-webextension/?branch=master)
+
+
+[![Chrome webstore](https://img.passman.cc/assets/chromewebstore.png)](https://chrome.google.com/webstore/detail/passman/hlpjhlifkgmoibhollggngbbhbejecph) | [![AMO](https://img.passman.cc/assets/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/passman/)    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+<img align="left" src="https://img.shields.io/chrome-web-store/users/hlpjhlifkgmoibhollggngbbhbejecph.svg"> <img align="right" src="https://img.shields.io/chrome-web-store/rating/hlpjhlifkgmoibhollggngbbhbejecph.svg">| <img align="left" src="https://img.shields.io/amo/users/passman.svg"> <img align="right" src="https://img.shields.io/amo/rating/passman.svg">
+
+
+
+
+
+
+
 
 Tested on:   
 - Chrome
