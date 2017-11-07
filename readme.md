@@ -23,7 +23,9 @@ Tested on:
 
 This extension aims to provide you with your passwords in your browser.   
 The passwords will be provided by [passman](https://github.com/nextcloud/passman).   
-Features
+
+
+## Features
 - Add multiple accounts
 - List accounts for the current site 
 - Detect new logins and save them to passman
