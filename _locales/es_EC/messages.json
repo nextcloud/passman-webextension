@@ -1,154 +1,154 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ påloggingsdetaljer i databasen",
+        "message": "$AMOUNT$ credenciales en la base de datos",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Gjenoppfrisk liste over påloggingsdetaljer",
+        "message": "Actualizar la lista de credenciales",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - Passordbehandleren for NextCloud / ownCloud",
+        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Lagre til $VAULT_NAME$",
+        "message": "Guardar en $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Hvelv",
+        "message": "Bóveda",
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignorer side",
+        "message": "Ignorar página / sitio",
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Konto lagt til!",
+        "message": "¡Cuenta agregada!",
         "description": "Search"
     },
     "label": {
-        "message": "Etikett",
+        "message": "Etiqueta",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorer protokoll for sjekk av sider mot hverandre",
+        "message": "Ignorar el protocolo para las coincidencias de sitios",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Innstillinger",
+        "message": "Configuraciones ",
         "description": "Settings"
     },
     "finish": {
-        "message": "Fullfør",
+        "message": "Terminar",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Oppdaget ny URL for",
+        "message": "Se detecó un cambio en la URL de",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Doner",
+        "message": "Dona",
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Legg til egendefinert felt",
+        "message": "Agregar un campo personalizado",
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential url if doesn't match current url",
+        "message": "Solicitar actualizar la url de credenciales si no conicide con la url actual ",
         "description": "Enable form auto submit"
     },
     "credentials": {
-        "message": "påloggingsdetaljer",
+        "message": "credenciales",
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When passwords found, go to list rather than last active tab",
+        "message": "Cuando se encuentren contraseñas, ir a la lista en lugar de la última pestaña activa",
         "description": "Disable password picker"
     },
     "search": {
-        "message": "Søk",
+        "message": "Buscar",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Veksle avanserte alternativer",
+        "message": "Alternar opciones avanzadas",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman-tillegget er låst. Lås det opp for å bruke det",
+        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Oppdater",
+        "message": "Actualizar",
         "description": "Update"
     },
     "unlock": {
-        "message": "Lås opp",
+        "message": "Desbloquear",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "Ugyldig hvelv-nøkkel!",
+        "message": "¡La llave de la bóveda es inválida!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "Du kan tilbakestille passordet ditt. Dette vil tilbakestille utvidelsen til forvalgt tilstand.",
+        "message": "Puedes restablecer tu contraseña. Esto restablecerá la extensión a su estado predeterminado.",
         "description": "Search"
     },
     "no_vaults": {
-        "message": "Beklager, tillegget fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
+        "message": "Lo sentimos, no se encontraron bóvedas. Por favor crea una bóveda a través de la aplicación Nextcloud / ownCloud y vuelve a intentarlo.",
         "description": "Search"
     },
     "edit": {
-        "message": "Rediger",
+        "message": "Editar",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Minste antall siffer",
+        "message": "Número mínimo de dígitos",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Dette passordet brukes til å kryptere alle dine innstillinger i tillegget. Du kan velge å lagre dette passordet lokalt, men det vil bli lagret i KLARTEKST.",
+        "message": "Esta contaseña de usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar tus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Velg hvelv",
+        "message": "Seleccionar bóveda",
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Skru på auto-utfylling av skjemaer",
+        "message": "Habilitar autocompletar de formas",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
-        "message": "Legg til en konto",
+        "message": "Agregar cuenta",
         "description": "Add account"
     },
     "back": {
-        "message": "Tilbake",
+        "message": "Atrás",
         "description": "Back"
     },
     "credential": {
-        "message": "påloggingsdetalj",
+        "message": "credencial",
         "description": "credential"
     },
     "delete": {
-        "message": "Slett",
+        "message": "Borrar",
         "description": "Delete"
     },
     "forgot_password": {
-        "message": "Glemt passordet?",
+        "message": "¿Olvidaste tu contraseña?",
         "description": "Search"
     },
     "invalid_server_settings": {
-        "message": "Ugyldige tjenerinnstillinger",
+        "message": "Configuraciones del servidor inválidas",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud- / ownCloud -tjenerinnstillinger",
+        "message": "Configuraciones del servidor Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Bruk passord",
+        "message": "Usar contraseña",
         "description": "Use password"
     },
     "one_time_password": {
@@ -156,267 +156,267 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Liste",
+        "message": "Lista",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorer side",
+        "message": "Ignorar sitio",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Velg forvalgt hvelv",
+        "message": "Seleccionar bóveda predeterminada",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Side ignorert",
+        "message": "Sitio ignorado",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Fortsett",
+        "message": "Continuar",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Vi har funnet $AMOUNT$ påloggingsdetaljer for denne siden",
+        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Verdi",
+        "message": "Valor",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "Utviklingen avhenger av kronerulling, støtt opp",
+        "message": "El desarrollo depende de las donaciones, por favor apóyanos",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Skriv inn dine Nextcloud / ownCloud -påloggingsdetaljer",
+        "message": "Por favor ingresa tus credenciales de Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignorer sti for sjekk av sider mot hverandre",
+        "message": "Ignorar la ruta para la conicidencia de sitios",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Brukervalgte felter",
+        "message": "Campos personalizados",
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Vis avanserte valg",
+        "message": "Mostrar opciones avanzadas",
         "description": "Disable password picker"
     },
     "invalid_host": {
-        "message": "Ugyldig tjener-URL",
+        "message": "URL del servidor inválida",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "Ugyldig hoved-passord!",
+        "message": "¡La contraseña maestra es inválida!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "Generelt",
+        "message": "General",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Passordene samsvarer ikke",
+        "message": "Las contraseñas no coinciden",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Lukk",
+        "message": "Cerrar",
         "description": "Close"
     },
     "prev": {
-        "message": "Forrige",
+        "message": "Prev",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Etter å ha opprettet den, kan du redigere identitetsdetaljen i Passman",
+        "message": "Después de crearlas, puedes editar las credenciales en Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "tekst",
+        "message": "texto",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
-        "message": "Tilbakestill utvidelsen",
+        "message": "Reiniciar extensión",
         "description": "Search"
     },
     "default_vault": {
-        "message": "Forvalgt hvelv",
+        "message": "Bóveda predeterminada",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorer port for sjekk av sider mot hverandre",
+        "message": "Ignorar el puerto en las coincidencias de sitios",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Tjenerinnstillinger",
+        "message": "Configuraciones del servidor",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Sett hoved-passord",
+        "message": "Establecer la contraseña maestra",
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Ønsker du å slå av Passman for den nåværende siden, eller for hele domenet?",
+        "message": "¿Deseas deshabilitar Passman para la página actual o para el sitio completo?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
-        "message": "Passord",
+        "message": "Contraseña",
         "description": "Password"
     },
     "copy": {
-        "message": "Kopier",
+        "message": "Copiar",
         "description": "Copy"
     },
     "begin": {
-        "message": "La oss komme igang!",
+        "message": "¡Comencemos!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Veiviseren tar deg gjennom stegene for å sette opp utvidelsen og holde alle passordene dine synkronisert!",
+        "message": "¡Este asistente de instalación te guiará en los pasos para configurar la extensióny mantener todas tus contraseñas sincronizadas!",
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Identitetsdetalj slettet",
+        "message": "Credenciales borradas",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Skriv inn et domene eller toppnivådomene og trykk Enter",
+        "message": "Ingresa un dominio o TLD a ignorar y presiona Intro",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Ignorerte sider / nettadresser",
+        "message": "Sitios / URLs ignorados",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Veksle synlighet",
+        "message": "Alternar visibilidad",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Advarsel! Hovedpassordet ditt vil bli lagret i klartekst",
+        "message": "¡Advertencia! Tu contraseña maestra será almacenada en texto plano",
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Husk hoved-passord",
+        "message": "Recordar la contraseña maestra",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Lagre påloggingsdetaljer for denne siden",
+        "message": "Guardar las credenciales para este sitio",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Låst",
+        "message": "Passman - Bloqueado",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Fyll inn en etikett",
+        "message": "Por favor llena la etiqueta",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Skriv inn hoved-passord",
+        "message": "Introduce la contraseña maestra",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Hvelvinnstillinger",
+        "message": "Configuraciones de la bóveda",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Hvelv-passord",
+        "message": "Bóveda de contraseñas",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Passordvelger: Når ingen identitetsdetaljer finnes, gå til:",
+        "message": "Seleccionador de contraseñas: Cuando no se encuentran contraseñas ir a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Lagre side",
+        "message": "Guardar sitio",
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "Etter oppsettsprosessen er fullført, kan du legge til flere kontoer.",
+        "message": "Después de que el proceso de configuración termine, puedes agregar más cuentas. ",
         "description": "Search"
     },
     "next": {
-        "message": "Neste",
+        "message": "Siguiente",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Unngå tvetydige tegn",
+        "message": "Evitar caracteres ambiguos",
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Slå av side",
+        "message": "Deshabilitar sitio",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "URL ignorert",
+        "message": "URL ignorado",
         "description": "URL ignored"
     },
     "saving_to": {
-        "message": "Lagrer til $VAULT_NAME$",
+        "message": "Guardando en $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Skru på passordvelger",
+        "message": "Habilitar la selección de contraseñas",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman logger deg inn som $USERNAME$",
+        "message": "Passman te está registrando como $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
+        "message": "Selecciona la bóveda que deseas mantener sincronizada con el navegador. ",
         "description": "Select the vault that you want to keep in sync with the browser."
     },
     "detected_new_login": {
-        "message": "Fant ny innlogging",
+        "message": "Se detectó un nuevo inicio de sesión",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Oppdaget at brukeren har endret passord",
+        "message": "Se detectó un cambio en la contraseña para el usuario",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Respuesta inválida del servidor : [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Lagre",
+        "message": "Guardar",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Generer passord",
+        "message": "Generar contraseña",
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "Du har ikke tilgang til å redigere denne identitetsdetaljen.",
+        "message": "No tienes permisos para editar estas credenciales.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "Tjener-URL",
+        "message": "URL del servidor",
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Skru av side",
+        "message": "Dehabilitar página",
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Skjul avanserte valg",
+        "message": "Ocultar opciones avanzadas",
         "description": "Disable password picker"
     },
     "cancel": {
-        "message": "Avbryt",
+        "message": "Cancelar",
         "description": "Cancel"
     },
     "add": {
-        "message": "Legg til",
+        "message": "Agregar",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Legitimasjon oppdatert",
+        "message": "Credencial actualizada",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "Fant ingen påloggingsdetaljer",
+        "message": "No se encontraron credenciales",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -424,59 +424,59 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Lås utvidelse",
+        "message": "Bloquear extensión",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "Søk etter",
+        "message": "Buscar a",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Passord (gjenta)",
+        "message": "Contraseña (repetir)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Påloggingsdetalj lagret",
+        "message": "Credenciales guardadas",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Krev hver type tegn",
+        "message": "Requerir todos los tipos de caracteres",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Skru på feilrettingsmodus",
+        "message": "Habilitar el modo de depuración",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-post",
+        "message": "Correo electrónico",
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Velkommen til Passman-tillegget",
+        "message": "Bienvenido a la extensión Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ funnet for denne siden",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "Du bruker HTTP! Innloggingsdetaljer vil bli sendt i klartekst. Dine Passman-identitetsdetaljer er fremdeles krypterte.",
+        "message": "¡Estas usando HTTP! Las credenciales de inicio de sesión serán enviadas en texto plano. Tus credenciales de Passman aún están encriptadas. ",
         "description": "Warning for http connections"
     },
     "done": {
-        "message": "Ferdig",
+        "message": "Terminado",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Ingen påloggingsdetaljer for denne siden!",
+        "message": "¡No se encontraron credenciales para este sitio!",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Skru på automatisk skjemainnsendelse etter å ha valgt konto",
+        "message": "Habilita el auto enviado de formularios después de seleccionar una cuenta",
         "description": "Enable form auto submit"
     },
     "saving": {
-        "message": "Lagrer",
+        "message": "Guardando",
         "description": "Saving"
     },
     "url": {
@@ -484,55 +484,55 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Ja, jeg er sikker!",
+        "message": "Sí, estoy seguro",
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "Ingen sider ignorert",
+        "message": "No se han ignorado sitios",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Hvis du har glede av, ikke glem å donere",
+        "message": "Si te agrada, no olvides donar",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Kontoer",
+        "message": "Cuentas",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Passordgenerator",
+        "message": "Generador de contraseñas",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Tom hoved-nøkkel!",
+        "message": "¡La llave maestra está vacía!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignorer subdomene for sjekk av sider mot hverandre",
+        "message": "Ignorar el subdominio para las coincidencias de sitios",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Søk etter påloggingsdetaljer",
+        "message": "Buscar credenciales",
         "description": "Search credentials"
     },
     "credential_created": {
-        "message": "Påloggingsdetalj laget",
+        "message": "Credenciales creadas",
         "description": "Credential created"
     },
     "username": {
-        "message": "Brukernavn",
+        "message": "Usuario",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Passordlengde",
+        "message": "Longitud de la contraseña",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Skru av auto-utfylling i nettleser",
+        "message": "Desactivar el autocompletado del navegador",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Gjenoppfriskningstidtaker [s]",
+        "message": "Restablecer temporizador [s]",
         "description": "Password"
     }
 }
