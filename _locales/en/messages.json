@@ -12,7 +12,7 @@
     "description": "No credentials found for the current site"
   },
   "no_credentials_found_for_site": {
-    "message": "No credentials found for this site!",
+    "message": "No credentials found for this site.",
     "description": "No credentials found for the current site"
   },
   "no_credentials_found": {
@@ -192,7 +192,7 @@
     "description": "Enable form auto submit"
   },
   "enable_update_url": {
-    "message": "Ask to update credential url if doesn't match current url",
+    "message": "Ask to update credential URL if it doesn't match the current URL",
     "description": "Enable form auto submit"
   },
   "disable_browser_autofill": {
@@ -200,7 +200,7 @@
     "description": "Disable auto fill of forms"
   },
   "ignore_site_placeholder": {
-    "message": "Enter a domain or TLD to ignore and press enter",
+    "message": "Enter a domain or TLD to ignore and press ↵",
     "description": "Disable auto fill of forms"
   },
   "enable_password_picker": {
@@ -208,7 +208,7 @@
     "description": "Disable password picker"
   },
   "password_picker_gotolist": {
-    "message": "When passwords found, go to list rather than last active tab",
+    "message": "When a password is found, go to list rather than last active tab",
     "description": "Disable password picker"
   },
   "hide_adv": {
@@ -264,7 +264,7 @@
     "description": "Search credentials"
   },
   "welcome_to_passman": {
-    "message": "Welcome to the Passman extension",
+    "message": "Welcome to the Passman webextension",
     "description": "Intro at the setup"
   },
   "server_url": {
@@ -276,7 +276,7 @@
     "description": "Let's begin!"
   },
   "intro_text": {
-    "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+    "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
     "description": "Cancel"
   },
   "cancel": {
@@ -288,15 +288,15 @@
     "description": "Default vault"
   },
   "default_vault_desc": {
-    "message": "Select the vault that you want to keep in sync with the browser.",
-    "description": "Select the vault that you want to keep in sync with the browser."
+    "message": "Select the vault that you want to keep in sync with the webbrowser.",
+    "description": "Select the vault that you want to keep in sync with the webbrowser."
   },
   "enter_master_password": {
     "message": "Enter master password",
     "description": "Enter master password"
   },
   "enter_master_password_desc": {
-    "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAIN TEXT.",
+    "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
     "description": "Enter master password"
   },
   "remember_master_password": {
@@ -304,7 +304,7 @@
     "description": "Remember master password"
   },
   "master_pw_warning": {
-    "message": "Warning! Your master password will be stored in plain text",
+    "message": "Warning! Your master password will be stored in plaintext.",
     "description": "Remember master password"
   },
   "done": {
@@ -448,7 +448,7 @@
     "description": "Search"
   },
   "account_added": {
-    "message": "Account added!",
+    "message": "Account added.",
     "description": "Search"
   },
   "select_vault": {
@@ -468,7 +468,7 @@
     "description": "Credential deleted"
   },
   "select_password_picker_default_tab": {
-    "message": "Password picker: When no credentials found go to:",
+    "message": "When the Password picker is unable to find any credentials, it will go to:",
     "description": "Select password picker default tab"
   },
   "no_vaults": {
@@ -488,11 +488,11 @@
     "description": "Search"
   },
   "iam_sure": {
-    "message": "Yes, i'm sure!",
+    "message": "Yes, I'm sure!",
     "description": "Search"
   },
   "edit_insufficient_permissions": {
-    "message": "You don't have permissions to edit this credential.",
+    "message": "You don't have the permission to edit this credential.",
     "description": "You don't have permissions to edit this credential."
   },
   "invalid_server_settings": {
