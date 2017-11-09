@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Konto tillagt!",
+        "message": "Account added.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential url if doesn't match current url",
+        "message": "Ask to update credential URL if it doesn't match the current URL",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When passwords found, go to list rather than last active tab",
+        "message": "When a password is found, go to list rather than last active tab",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Detta lösenord kommer användas för att kryptera alla dina inställningar i tillägget. Du kan välja att spara lösenordet lokal, men det kommer sparas i REN TEXT.",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Guiden kommer visa dig igenom steget för att sätta upp ditt tillägg och behålla alla dina lösenord synkroniserade!",
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Ange en domän eller TLD att ignorera och tryck enter",
+        "message": "Enter a domain or TLD to ignore and press ↵",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Varning! Ditt Huvudlösenord kommer att sparas i ren text",
+        "message": "Warning! Your master password will be stored in plaintext.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Lösenordsväljare: När inga uppgifter hittades gå till:",
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,8 +364,8 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Välj valv som du vill synkronisera med webbläsaren.",
-        "description": "Select the vault that you want to keep in sync with the browser."
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
         "message": "Upptäckte ny inloggning",
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "Du har inte tillstånd att ändra denna uppgift.",
+        "message": "You don't have the permission to edit this credential.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Välkommen till Passman",
+        "message": "Welcome to the Passman webextension",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Inga uppgifter hittade för denna webbplats!",
+        "message": "No credentials found for this site.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Ja, jag är säker!",
+        "message": "Yes, I'm sure!",
         "description": "Search"
     },
     "no_sites_ignored": {

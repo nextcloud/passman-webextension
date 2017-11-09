@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Aðgangi bætt við!",
+        "message": "Account added.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Spyrja hvort eigi að uppfæra slóð á auðkenni ef hún samsvarar ekki núverandi slóð",
+        "message": "Ask to update credential URL if it doesn't match the current URL",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "Þegar lykilorð finnast, fara í lista fremur en á síðasta virka flipa",
+        "message": "When a password is found, go to list rather than last active tab",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Þetta lykilorð mun verða notað til að dulrita allar stillingarnar þínar í viðaukanum. Þú getur valið að vista lykilorðið á tölvuna þína, en það verður þá vistað sem HREINN TEXTI.",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Þessi leiðarvísir hjálpar þér í gegnum skrefin við að setja upp viðaukann og að halda öllum lykilorðunum þínum samstilltum!",
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Settu inn lén eða TLD til að hunsa og ýttu svo á Enter",
+        "message": "Enter a domain or TLD to ignore and press ↵",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Aðvörun! Aðallykilorðið þitt verður geymt sem hreinn texti",
+        "message": "Warning! Your master password will be stored in plaintext.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Lykilorðaveljari: Þegar ekki finnast nein auðkenni, fara þá í:",
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,8 +364,8 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Veldu lykilorðageymsluna sem þú vilt halda samstilltri við vafrann.",
-        "description": "Select the vault that you want to keep in sync with the browser."
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
         "message": "Fann nýja innskráningu",
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "Þú hefur ekki heimild til að breyta þessum auðkennum.",
+        "message": "You don't have the permission to edit this credential.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Velkomin í Passman-viðaukann",
+        "message": "Welcome to the Passman webextension",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Engin persónuauðkenni fundust fyrir þetta vefsvæði!",
+        "message": "No credentials found for this site.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Já, ég er viss!",
+        "message": "Yes, I'm sure!",
         "description": "Search"
     },
     "no_sites_ignored": {

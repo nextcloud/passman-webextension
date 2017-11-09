@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Llogaria u shtua!",
+        "message": "Account added.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential url if doesn't match current url",
+        "message": "Ask to update credential URL if it doesn't match the current URL",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When passwords found, go to list rather than last active tab",
+        "message": "When a password is found, go to list rather than last active tab",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Ky fjalëkalim do të përdoret për të enkriptuar të gjitha cilësimet tuaja në zgjerim. Ju mund të zgjidhni për të ruajtur këtë fjalëkalim në nivel lokal, por ai do të ruhet në TEKST TË THJESHTË.",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Ky magjistar do t'ju udhëheqë përmes hapave për të vendosur zgjerimin dhe të mbajë të gjitha fjalëkalimet tuaja të sinkronizuara!",
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Fut një domain ose TLD për të injoruar dhe shtyp enter",
+        "message": "Enter a domain or TLD to ignore and press ↵",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Paralajmërim! Fjalëkalimi juaj master do të ruhet ne tekst të thjeshtë",
+        "message": "Warning! Your master password will be stored in plaintext.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Mbledhës fjalëkalimi: Kur nuk gjenden kredencialet:",
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,8 +364,8 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Zgjidh kasafortën që doni ta mbani në sinkronizim me shfletuesin.",
-        "description": "Select the vault that you want to keep in sync with the browser."
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
         "message": "Hyrje e re e spikatur",
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "Ju nuk keni leje të editoni këtë kredencial.",
+        "message": "You don't have the permission to edit this credential.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Mirë se vini në zgjerimin e Passman",
+        "message": "Welcome to the Passman webextension",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Jo kredenciale të gjetura për këtë faqe!",
+        "message": "No credentials found for this site.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Po, jam i sigurt!",
+        "message": "Yes, I'm sure!",
         "description": "Search"
     },
     "no_sites_ignored": {
