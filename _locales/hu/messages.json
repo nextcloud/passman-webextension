@@ -1,154 +1,154 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credenziali nel database",
+        "message": "$AMOUNT$ hitelesítőadat az adatbázisban",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Aggiorna elenco credenziali",
+        "message": "Hitelesítőadat lista frissítése",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - Il gestore delle password per NextCloud / ownCloud",
+        "message": "Passman - A NextCloud /ownCloud jelszókezelője",
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Salva in $VAULT_NAME$",
+        "message": "Mentés ide: $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Cassaforte",
+        "message": "Széf",
         "description": "Vault"
     },
     "ignore_site_tab": {
-        "message": "Ignora sito / pagina",
+        "message": "Oldal figyelmen kívül hagyása",
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account aggiunto.",
+        "message": "Fiók hozzáadva.",
         "description": "Search"
     },
     "label": {
-        "message": "Etichetta",
+        "message": "Címke",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignora il protocollo per la verifica del sito",
+        "message": "Protokoll figyelmen kívül hagyása oldal kereséshez",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Impostazioni",
+        "message": "Beállítások",
         "description": "Settings"
     },
     "finish": {
-        "message": "Fine",
+        "message": "Befejezés",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Rilevato URL modificato per",
+        "message": "Változott URL érzékelve ehhez",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donazione",
+        "message": "Támogatás",
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Aggiungi un campo personalizzato",
+        "message": "Egyedi mező hozzáadása",
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Kérdezzen rá az URL frissítésére, ha az nem egyezik meg a jelenlegivel",
         "description": "Enable form auto submit"
     },
     "credentials": {
-        "message": "credenziali",
+        "message": "hitelesítőadatok",
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Ha egy jelszó megvan, inkább a listához menjen, mint az utoljára aktív ablakhoz",
         "description": "Disable password picker"
     },
     "search": {
-        "message": "Ricerca",
+        "message": "Keresés",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Commuta opzioni avanzate",
+        "message": "Részletes beállítások bekapcsolása",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "L'estensione Passman è bloccata, sbloccala per utilizzarla",
+        "message": "Passman bővítmény zárolva, oldd fel a használathoz",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Aggiorna",
+        "message": "Frissítés",
         "description": "Update"
     },
     "unlock": {
-        "message": "Sblocca",
+        "message": "Feloldás",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "Chiave della cassaforte non valida!",
+        "message": "Érvénytelen széfkulcs!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "Puoi reimpostare la tua password. Ciò ripristinerà l'estensione al suo stato predefinito.",
+        "message": "Visszaállíthatod a jelszavadat. Ez a bővítményt is alaphelyzetbe állítja.",
         "description": "Search"
     },
     "no_vaults": {
-        "message": "Spiacenti, nessuna cassaforte trovata. Crea una cassaforte tramite l'applicazione di Nextcloud / ownCloud  e prova ancora.",
+        "message": "Bocs, nincsenek széfek. Kérlek hozz létre egyet a Netcloud / ownCloud appban és próbáld meg újra.",
         "description": "Search"
     },
     "edit": {
-        "message": "Modifica",
+        "message": "Szerkesztés",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Numero minimo di cifre",
+        "message": "Minimum digit szám",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Ezt a jelszót használjuk a beállítások és adatok titkosítására. Választhatod a helyben történő mentését, de sima szövegként lesz tárolva.",
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Seleziona cassaforte",
+        "message": "Széf választása",
         "description": "Search"
     },
     "enable_autofill": {
-        "message": "Abilita auto-compilazione dei moduli",
+        "message": "Automata űrlapkitöltő engedélyezése",
         "description": "Disable auto fill of forms"
     },
     "add_account": {
-        "message": "Aggiungi account",
+        "message": "Fiók hozzáadása",
         "description": "Add account"
     },
     "back": {
-        "message": "Indietro",
+        "message": "Vissza",
         "description": "Back"
     },
     "credential": {
-        "message": "credenziali",
+        "message": "hitelesítőadatok",
         "description": "credential"
     },
     "delete": {
-        "message": "Elimina",
+        "message": "Törlés",
         "description": "Delete"
     },
     "forgot_password": {
-        "message": "Hai dimenticato la password?",
+        "message": "Elfelejtetted a jelszavad?",
         "description": "Search"
     },
     "invalid_server_settings": {
-        "message": "Impostazioni server non valide",
+        "message": "Érvénytelen szerverbeállítások",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Impostazioni server Nextcloud / ownCloud",
+        "message": "Nextcloud / ownCloud szerverbeállítások",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Usa password",
+        "message": "Jelszó használata",
         "description": "Use password"
     },
     "one_time_password": {
@@ -156,267 +156,267 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Elenca",
+        "message": "Lista",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignora sito",
+        "message": "Oldal figyelmen kívül hagyása",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Seleziona cassaforte predefinita",
+        "message": "Alapérték választása",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Sito ignorato",
+        "message": "Oldal figyelmen kívül hagyva",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continua",
+        "message": "Folytatás",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Abbiamo trovato $AMOUNT$ credenziali per questo sito",
+        "message": "Összesen $AMOUNT$ hitelesítőadatot találtunk az oldalhoz",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Valore",
+        "message": "Érték",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "Lo sviluppo dipende dalle donazioni, supportaci",
+        "message": "A fejlesztés az adományoktól függ, kérünk támogass minket",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Digita le tue credenziali di Nextcloud / ownCloud",
+        "message": "Kérlek add meg a Nextcloud / ownCloud hozzáférésed",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignora il percorso per la verifica del sito",
+        "message": "Útvonal figyelmen kívül hagyása az oldalkereséshez",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Campi personalizzati",
+        "message": "Egyedi mezők",
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Mostra le opzioni avanzate",
+        "message": "Részletes beállítások mutatása",
         "description": "Disable password picker"
     },
     "invalid_host": {
-        "message": "URL del server non valido",
+        "message": "Érvénytelen szerver URL",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "Password principale non valida!",
+        "message": "Érvénytelen mesterjelszó!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "Generale",
+        "message": "Általános",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Le password non corrispondono",
+        "message": "Jelszavak nem egyeznek",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Chiudi",
+        "message": "Bezárás",
         "description": "Close"
     },
     "prev": {
-        "message": "Prec.",
+        "message": "Előző",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Dopo averle create, puoi modificare le credenziali in Passman",
+        "message": "Létrehozás után szerkesztheted a hitelesítési adatokat a Passman-ban",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "testo",
+        "message": "szöveg",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
-        "message": "Ripristina estensione",
+        "message": "Bővítmény alaphelyzetbe állítása.",
         "description": "Search"
     },
     "default_vault": {
-        "message": "Cassaforte predefinita",
+        "message": "Alapértelezett széf",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignora la porta per la verifica del sito",
+        "message": "Port figyelmen kívül hagyása az oldalkereséshez",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Impostazioni server",
+        "message": "Szerver beállítások",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Imposta password principale",
+        "message": "Mesterjelszó beállítása",
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "Vuoi disabilitare Passman per la pagina attuale o per l'intero sito?",
+        "message": "Csak az adott oldalra, vagy az egész site-ra ki akarod kapcsolni a Passman-t?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
-        "message": "Password",
+        "message": "Jelszó",
         "description": "Password"
     },
     "copy": {
-        "message": "Copia",
+        "message": "Másolás",
         "description": "Copy"
     },
     "begin": {
-        "message": "Iniziamo",
+        "message": "Kezdjük!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "A varázsló végigvezet a bővítmény beállításain, hogy szinkronban tarthasd a jelszavaiat.",
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credenziali eliminate",
+        "message": "Hitelesítőadat törölve",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Digita un dominio o TLD da ignorare e premi  ",
+        "message": "Adj meg egy domain-t vagy TLD-t a figyelmen kívül hagyáshoz majd nyomd meg az  -t",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
-        "message": "Siti / URL ignorati",
+        "message": "Figyelmen kívül hagyott oldalak / URL-ek",
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Commuta visibilità",
+        "message": "Láthatóság kapcsolása",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Figyelem! A mesterjelszavadat sima szövegként tároljuk.",
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Ricorda la password principale",
+        "message": "Mesterjelszó megjegyzése",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Salva le credenziali per questo sito",
+        "message": "Hitelesítőadatok mentése az oldalhoz",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Bloccato",
+        "message": "Passman - zárolva",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Aggiungi un'etichetta",
+        "message": "Kérlek töltsd ki a címkét",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Digita password principale",
+        "message": "Mester jelszó megadása",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Impostazioni cassaforte",
+        "message": "Széf beállításai",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Password della cassaforte",
+        "message": "Széf jelszó",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Ha a jelszóválasztó nem talál hitelesítőadatokat, ide megy:",
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Salva sito",
+        "message": "Oldal mentése",
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "Dopo aver completato il processo di configurazione, puoi aggiungere altri account.",
+        "message": "A beállítási folyamat végeztével hozzáadhatsz több hitelesítőadatot is.",
         "description": "Search"
     },
     "next": {
-        "message": "Succ.",
+        "message": "Következő",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Evita caratteri ambigui",
+        "message": "Kerüld a kétértelmű karaktereket",
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
-        "message": "Disabilitata sito",
+        "message": "Site kikapcsolása",
         "description": "Disable site"
     },
     "url_ignored": {
-        "message": "URL ignorato",
+        "message": "URL figyelmen kívül hagyva",
         "description": "URL ignored"
     },
     "saving_to": {
-        "message": "Salvataggio in $VAULT_NAME$",
+        "message": "Mentés ide: $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
-        "message": "Abilita selettore della password",
+        "message": "Jelszóválasztó beágyazása",
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman sta eseguendo il tuo accesso come $USERNAME$",
+        "message": "A Passman $USERNAME$ néven jelentkeztet be.",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Válaszd ki a széfet amit a böngésződdel szeretnél szinkronizálni",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
-        "message": "Nuovo accesso rilevato",
+        "message": "Új belépés érzékelve",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Rilevata password modificata per l'utente",
+        "message": "Felhasználói jelszómódosítás érzékelve",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Risposta non valida dal server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Érvénytelen szerverválasz: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Salva",
+        "message": "Mentés",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Genera password",
+        "message": "Általános jelszó",
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "Non hai i permessi per modificare queste credenziali.",
+        "message": "Nincs jogod ezt a hitelesítőadatot szerkeszteni.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "URL del server",
+        "message": "Szerver URL",
         "description": "Server URL"
     },
     "disable_page": {
-        "message": "Disabilita pagina",
+        "message": "Oldal kikapcsolása",
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Nascondi le opzioni avanzate",
+        "message": "Részletes beállítások elrejtése",
         "description": "Disable password picker"
     },
     "cancel": {
-        "message": "Annulla",
+        "message": "Mégsem",
         "description": "Cancel"
     },
     "add": {
-        "message": "Aggiungi",
+        "message": "Hozzáadás",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Credenziali aggiornate",
+        "message": "Hitelesítő adatok frissítve",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "Credenziali non trovate",
+        "message": "Nem található hitelesítőadat",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -424,59 +424,59 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Blocca estensione",
+        "message": "Kiegészítő zárolása",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "Cerca",
+        "message": "Keress",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (ripeti)",
+        "message": "Jelszó (ismét)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Credenziali salvate",
+        "message": "Hitelesítőadatok elmentve",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Richiedi ogni tipo di carattere",
+        "message": "Minden karaktertípus elvárás",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Abilita modalità debug",
+        "message": "Debug mód bekapcsolása",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Email",
+        "message": "E-mail",
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Benvenuto nell'estensione web Passman",
+        "message": "Üdv a Passman webbővítményben",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ trovate per questa pagina",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ megtalálva az oldalhoz",
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "Stai utilizzando HTTP! Le credenziali di accesso saranno inviate in chiaro. Le tue credenziali di Passman sono sempre cifrate.",
+        "message": "HTTP-t használsz! A hitelesítőadataid sima szövegként lesznek továbbítva. A Passman adatok továbbra is titkosítva maradnak.",
         "description": "Warning for http connections"
     },
     "done": {
-        "message": "Fatto",
+        "message": "Kész",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Nincsenek hitelesítőadatok az oldalhoz.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "Abilita l'invio automatico del modulo dopo la selezione dell'account",
+        "message": "Automatikus űrlapküldő engedélyezése fiókválasztás után",
         "description": "Enable form auto submit"
     },
     "saving": {
-        "message": "Salvataggio",
+        "message": "Mentés",
         "description": "Saving"
     },
     "url": {
@@ -484,55 +484,55 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Sì, sono sicuro!",
+        "message": "Igen, biztos!",
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "Nessun sito ignorato",
+        "message": "Nincs figyelmen kívül hagyott oldal",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Se ti va, non dimenticarti di fare una donazione",
+        "message": "Ha tetszett, ne feledj adakozni",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Account",
+        "message": "Fiókok",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Generatore di password",
+        "message": "Jelszógenerátor",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Chiave principale vuota!",
+        "message": "Üres mesterjelszó!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignora il sottodominio per la verifica del sito",
+        "message": "Al-domainek figyelmen kívül hagyása az oldalkereséshez",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Cerca credenziali",
+        "message": "Hitelesítő adatok keresése",
         "description": "Search credentials"
     },
     "credential_created": {
-        "message": "Credenziali create",
+        "message": "Hozzáférésiadat létrehozva",
         "description": "Credential created"
     },
     "username": {
-        "message": "Nome utente",
+        "message": "Felhasználónév",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Lunghezza della password",
+        "message": "Jelszó hossz",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Disabilita auto-compilazione del browser",
+        "message": "Böngésző automatakitöltésének letiltása",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Tempo di aggiornamento [s]",
+        "message": "Frissítési időzítő [s]",
         "description": "Password"
     }
 }

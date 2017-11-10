@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Compte ajouté.",
         "description": "Search"
     },
     "label": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Vous n'avez pas les droits suffisants pour modifier cette information d'identification.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Oui, je suis sûr !",
         "description": "Search"
     },
     "no_sites_ignored": {

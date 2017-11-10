@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "ანგარიში დაემატა.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "თუ URL არ ემთხვევა ამჟამინდელ URL-ს გამოვჩნდეს უფლებამოსილებების განახლების შეკითხვა",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "როდესაც პაროლი ნაპოვნია, აქტიური ტაბულის ნაცვლად ლისტზე გადასვლა",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "ეს პაროლი გამოეყენბულ იქნება გაფართოებაში ყველა თქვენი პარამეტრის დასაშიფრად. შეგიძლიათ პაროლი შეინახოთ ლოკალურად, მაგრამ ის შენახულ იქნება პირდაპირ ტექსტის სახით.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "ეს ოსტატი დაგეხმარებათ დააყენოთ გაფართოება და სინქრონიზირებულად იქონიოთ თქვენი პასკოდები.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "იგნორირებისთვის შეიყვანთ TLD ან დომენი და დააჭირეთ  -ს",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "გაფრთხილება! თქვენი მთავარი პაროლი შენახულ იქნება ჩვეულებრივი ტექსტის სახით.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "როდესაც პაროლის ამომრჩევი ვერ პოულობს უფლებამოსილებებს, ის გადადის:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "აირჩიეთ სარდაფი რომლის ვებ-ბრაუზერთან სინქრონიზირებულად შენახვა გსურთ.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "ამ უფლებამოსილების გამოყენების უფლება არ გაქვთ.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "კეთილი იყოს თქვენი მობრძანება Passman ვებ-გაფართოებაში",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "ამ საიტისთვის უფლებამოსილებები ვერ მოიძებნა.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "კი, დარწმუნებული ვარ!",
         "description": "Search"
     },
     "no_sites_ignored": {

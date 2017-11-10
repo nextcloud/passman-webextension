@@ -4,11 +4,11 @@
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Anmeldeinformations-Liste aktualisieren",
+        "message": "Anmeldeinformationsliste aktualisieren",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passmann - Der Passwort-Manager für NextCloud / ownCloud",
+        "message": "Passman - Der Passwort-Manager für NextCloud / ownCloud",
         "description": "Extension description"
     },
     "save_to": {
@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Konto hinzugefügt.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Nach der Aktualisierung der Zugangsdaten-URL fragen, wenn sie nicht zur aktuellen URL passt",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Bei gefundenen Passwörtern zur Liste gehen anstatt zum zuletzt aktiven Tab",
         "description": "Disable password picker"
     },
     "search": {
@@ -88,7 +88,7 @@
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "Falscher Tresor-Schlüssel!",
+        "message": "Falscher Tresorschlüssel!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "no_vaults": {
-        "message": "Entschuldigung, keine Tresore gefunden. Bitte erstellen Sie Einen über die Nextcloud/ownCloud-App und versuchen Sie es nochmal.",
+        "message": "Entschuldigung, es wurden keine Tresore gefunden. Bitte erstellen Sie Einen über die Nextcloud/ownCloud-App und versuchen Sie es erneut.",
         "description": "Search"
     },
     "edit": {
@@ -104,11 +104,11 @@
         "description": "Edit"
     },
     "min_digits": {
-        "message": " Minimale Anzahl an Zeichen ",
+        "message": " Minimale Anzahl von Ziffern",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Dieses Passwort wird benutzt um alle Ihre Einstellungen in der Erweiterung zu verschlüsseln. Sie können sich für eine lokale Speicherung des Passwort entscheiden, aber dann wird es im KLARTEXT gespeichert.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -164,7 +164,7 @@
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Standard-Tresor auswählen",
+        "message": "Standardtesor auswählen",
         "description": "Select default vault"
     },
     "site_ignored": {
@@ -184,7 +184,7 @@
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "Weiterentwicklung hängt von Zuwendungen ab. Bitte unterstützen Sie uns",
+        "message": "Die Weiterentwicklung hängt von Spenden ab. Bitte unterstützen Sie uns",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
@@ -216,7 +216,7 @@
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Passwörter stimmen nicht überein",
+        "message": "Die Passwörter stimmen nicht überein",
         "description": "When comparing passwords"
     },
     "close": {
@@ -228,7 +228,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Nach der Erstellung können die Anmeldedaten mit Passmann bearbeitet werden",
+        "message": "Nach der Erstellung können die Anmeldedaten mit Passman bearbeitet werden",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
@@ -240,7 +240,7 @@
         "description": "Search"
     },
     "default_vault": {
-        "message": "Standard-Tresor",
+        "message": "Standardtresor",
         "description": "Default vault"
     },
     "ignore_port": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Dieser Assistent wird Sie durch die Konfiguration dieser Erweiterung führen und sicher stellen, dass alle Ihre Kennwörter synchron gehalten werden.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Geben Sie eine Domäne oder eine TLD ein die ignoriert werden soll und drücken  ",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Warnung! Ihr Masterpasswort wird im Klartext gespeichert.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -304,7 +304,7 @@
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passmann - Geschlossen",
+        "message": "Passman - Gesperrt",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
@@ -316,7 +316,7 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Tresor-Einstellungen",
+        "message": "Tresoreinstellungen",
         "description": "Vault settings"
     },
     "vault_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Wenn keine Anmeldeinformationen gefunden wurden, wechseln zu:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Wählen Sie den Tresor den Sie mit dem Webbrowser synchronisieren wollen.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Sie sind nicht berechtigt die Anmeldeinformationen zu bearbeiten.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -416,11 +416,11 @@
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "Keine ANmeldeinformationen gefunden",
+        "message": "Keine Anmeldeinformationen gefunden",
         "description": "No credentials found for the current site"
     },
     "extName": {
-        "message": "Passmann",
+        "message": "Passman",
         "description": "Extension name"
     },
     "lock_extension": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Willkommen zu der Passman-Erweiterung",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Keine Anmeldeinformationen für diese Seite gefunden.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,11 +484,11 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Ja, ich bin sicher!",
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "Keine Seiten ignoriert",
+        "message": "Keine Seiten werden ignoriert",
         "description": "No sites ignored"
     },
     "done_donate": {
@@ -500,11 +500,11 @@
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Passwort-Generator",
+        "message": "Passwortgenerator",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "Lehrer Master-Schlüssel!",
+        "message": "Leerer Master-Schlüssel!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
