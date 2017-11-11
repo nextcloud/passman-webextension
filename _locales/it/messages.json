@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Chiedi di aggiornare l'URL delle credenziali se non corrisponde all'URL attuale",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Quando le password sono trovate, vai all'elenco invece che all'ultima scheda attiva",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Questa password sarà utilizzata per cifrare tutte le tue impostazioni nell'estensione. Puoi scegliere di salvare questa password localmente, ma sarà salvata in CHIARO.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Questa procedura ti guiderà attraverso le fasi di configurazione dell'estensione, per mantenere sincronizzate tutte le tue password.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Avviso! La tua password principale sarà memorizzata in chiaro.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Se il selettore delle password: non trova credenziali, andrà a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Seleziona la cassaforte che vuoi sincronizzare con il browser.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Credenzial non trovatei per questo sito.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {

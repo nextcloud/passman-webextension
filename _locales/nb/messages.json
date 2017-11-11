@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Konto lagt til.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Spør om å oppdatere nettadresse for påloggingsdetalj hvis den ikke samsvarer med gjeldende nettadresse",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Når et nytt passord blir funnet, gå til liste snarere enn forrige aktive fane",
         "description": "Disable password picker"
     },
     "search": {
@@ -76,7 +76,7 @@
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "Passman-tillegget er låst. Lås det opp for å bruke det",
+        "message": "Passman-utvidelsen er låst. Lås det opp for å bruke det",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "no_vaults": {
-        "message": "Beklager, tillegget fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
+        "message": "Beklager, utvidelsen fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
         "description": "Search"
     },
     "edit": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Dette passordet brukes til å kryptere alle dine innstillinger i utvidelsen. Du kan velge å lagre dette passordet lokalt, men det vil bli lagret i KLARTEKST.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Veiviseren tar deg gjennom stegene for å sette opp utvidelsen og holde alle passordene dine synkronisert.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Skriv inn et domene eller toppnivådomene og trykk  ",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Advarsel! Hovedpassordet ditt vil bli lagret i klartekst.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Når passordvelgeren ikke klarer å finne noen påloggingsdetaljer, vil den gå til:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Du har ikke tilgang til å endre denne identitetsdetaljen.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Velkommen til Passman-utvidelsen",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Ingen påloggingsdetaljer funnet for denne siden.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Ja, jeg er sikker!",
         "description": "Search"
     },
     "no_sites_ignored": {

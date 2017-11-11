@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Налог додат.",
         "description": "Search"
     },
     "label": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Лозинка ће се користити да шифрује све Ваше поставке у екстензији. Можете одабрати да сачувате ову лозинку локално, али ће онда бити сачувана као ОБИЧАН ТЕКСТ.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Чаробњак ће Вас спровести кроз кораке да подесите екстензију и да држите све лозинке синхронизованим.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Унесите домен или TLD који треба игнорисати и притисните  ",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Упозорење! Ваша главна лозинка ће бити ускладиштена као обичан текст.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Одаберите сеф који желите да синхронизујете са веб читачом.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Добродошли у екстензију Менаџер Лозинки",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Нема пронађених акредитива за овај сајт.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Да, сигуран сам!",
         "description": "Search"
     },
     "no_sites_ignored": {
