@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Питај да отпремиш адресу акредитива ако се не слаже са тренутном адресом",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Када се лозинка нађе, иди пре на листу него на последњи активни језичак",
         "description": "Disable password picker"
     },
     "search": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Када бирач лозинке не може да нађе ниједан акредитив, ићи ће на:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Немате дозволе да измените овај акредитив.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {

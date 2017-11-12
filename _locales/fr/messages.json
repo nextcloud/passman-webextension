@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Ce tutoriel vous accompagnera à travers les différentes étapes pour configurer l'extension et vous aidera à garder tous vos mots de passe synchronisés.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Aucune information d'identification trouvée pour ce site.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {

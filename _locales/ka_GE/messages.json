@@ -16,7 +16,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "სარდაფი",
+        "message": "სეიფი",
         "description": "Vault"
     },
     "ignore_site_tab": {
@@ -28,7 +28,7 @@
         "description": "Search"
     },
     "label": {
-        "message": "ლეიბლ",
+        "message": "ლეიბლი",
         "description": "Label"
     },
     "ignore_protocol": {
@@ -48,7 +48,7 @@
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "დონაცია",
+        "message": "შემოწირულობა",
         "description": "Donate"
     },
     "add_custom_field": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "თუ URL არ ემთხვევა ამჟამინდელ URL-ს გამოვჩნდეს უფლებამოსილებების განახლების შეკითხვა",
+        "message": "თუ URL არ ემთხვევა ამჟამინდელ URL-ს გამოჩნდეს უფლებამოსილებების განახლების შეკითხვა",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "როდესაც პაროლი ნაპოვნია, აქტიური ტაბულის ნაცვლად ლისტზე გადასვლა",
+        "message": "პაროლის პოვნის შემთხვევაში, აქტიური ტაბულის ნაცვლად გადასვლა ჩამონათვალზე",
         "description": "Disable password picker"
     },
     "search": {
@@ -88,7 +88,7 @@
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "არასწორი სარდაფის გასაღები!",
+        "message": "სეიფის არასწორი გასაღები!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "no_vaults": {
-        "message": "ბოდიში, სარდეფები ვერ მოიძებნა. გთხოვთ შექმნათ სარდაფი Nextcloud / ownCloud აპლიკაციით და სცადოთ ახლიდან.",
+        "message": "ბოდიში, სეიფები ვერ მოიძებნა. გთხოვთ სეიფი შექმნათ Nextcloud / ownCloud აპლიკაციით და სცადოთ ახლიდან.",
         "description": "Search"
     },
     "edit": {
@@ -108,11 +108,11 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "ეს პაროლი გამოეყენბულ იქნება გაფართოებაში ყველა თქვენი პარამეტრის დასაშიფრად. შეგიძლიათ პაროლი შეინახოთ ლოკალურად, მაგრამ ის შენახულ იქნება პირდაპირ ტექსტის სახით.",
+        "message": "ეს პაროლი გამოყენებულ იქნება, თქვენს გაფართოებაში არსებული ყველა პარაოლის დასაშიფრად. შესაძლებელია პაროლის ლოკალურად დამახსოვრება, მაგრამ ის შენახულ იქნება ჩვეულებრივი ტექსტის სახით.",
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "სარდაფის არჩევა",
+        "message": "სეიფის არჩევა",
         "description": "Search"
     },
     "enable_autofill": {
@@ -124,7 +124,7 @@
         "description": "Add account"
     },
     "back": {
-        "message": "უკვან",
+        "message": "უკან",
         "description": "Back"
     },
     "credential": {
@@ -156,7 +156,7 @@
         "description": "One time password"
     },
     "list": {
-        "message": "სია",
+        "message": "ჩამონათვალი",
         "description": "List"
     },
     "ignore_site": {
@@ -184,7 +184,7 @@
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "განვითარება დამოკიდებულია დონაციებზე, გთხოვთ მხარი დაგვიჭიროთ",
+        "message": "განვითარება დამოკიდებულია შემოწირულობებზე, გთხოვთ მხარი დაგვიჭიროთ",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
@@ -208,7 +208,7 @@
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "მთავარი პარლი არასწორია!",
+        "message": "მთავარი პაროლი არასწორია!",
         "description": "When the master password is invalid"
     },
     "general": {
@@ -228,7 +228,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "შექმნის შემდეგ შეძლებთ უფლებამოსილებების შეცვლას Passman-ით",
+        "message": "შექმნის შემდეგ, შეძლებთ უფლებამოსილებების შეცვლას Passman-ით",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
@@ -240,7 +240,7 @@
         "description": "Search"
     },
     "default_vault": {
-        "message": "საწყისი სარდაფი",
+        "message": "საწყისი სეიფი",
         "description": "Default vault"
     },
     "ignore_port": {
@@ -256,7 +256,7 @@
         "description": "Set a master password"
     },
     "disable_picker_text": {
-        "message": "მთელი საიტისთვის გსურთ Passman-ის გათიშვა თუ მხოლოდ ამ გვერდისთვის?",
+        "message": "მთელი საიტისთვის გსურთ Passman-ის გათიშვა, თუ მხოლოდ ამ გვერდისთვის?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
@@ -312,15 +312,15 @@
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "შეიყვანეთ მთავარი პაროლ",
+        "message": "შეიყვანეთ მთავარი პაროლი",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "სარდაფის პარამეტრები",
+        "message": "სეიფის პარამეტრები",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "სარდაფის პაროლი",
+        "message": "სეიფის პაროლი",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
@@ -332,7 +332,7 @@
         "description": "Save site"
     },
     "extra_accounts": {
-        "message": "დაყენების პროცესის დასრულების შემდეგ შეძლებთ სხვა ანგარიშების დამატებასაც.",
+        "message": "დაყენების პროცესის დასრულების შემდეგ, შეძლებთ სხვა ანგარიშების დამატებასაც.",
         "description": "Search"
     },
     "next": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "აირჩიეთ სარდაფი რომლის ვებ-ბრაუზერთან სინქრონიზირებულად შენახვა გსურთ.",
+        "message": "აირჩიეთ სეიფი, რომლის სინქრონიზირებლად შენარჩუნება გსურთ ვებ-ბრაუზერთან.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -372,7 +372,7 @@
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "აღმოჩენილია პაროლის ცვლილება მომხმარებელზე",
+        "message": "მომხმარებელზე დაფიქრსირდა პაროლის ცვლილება",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
@@ -460,7 +460,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "თქვენ იყენებთ HTTP-ს! ლოგინის უფლებამოსილებები გაიგზავნება პირდაპირ ტექსტურ ფორმატში. თქვენი Passman-ის რწმუნებულებები ისევ დაშიფრულია.",
+        "message": "თქვენ იყენებთ HTTP-ს! ლოგინის უფლებამოსილებები გაიგზავნება ჩვეულებრივი ტექსტური ფორმატით. თქვენი Passman-ის რწმუნებულებები ისევ დაშიფრულია.",
         "description": "Warning for http connections"
     },
     "done": {
@@ -472,7 +472,7 @@
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
-        "message": "დართეთ ფორმას ავტომატური გადაცემის ნება",
+        "message": "დართეთ ფორმას ავტომატური გადაცემის უფლება",
         "description": "Enable form auto submit"
     },
     "saving": {
