@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Esta contraseña se usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar esta contraseña localmente pero será almacenada en TEXTO PLAN. ",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Este asistente te guiará a través de los pasos para configurar la extension y mantener todas tus contraseñas sincronizadas. ",
         "description": "Cancel"
     },
     "credential_deleted": {
