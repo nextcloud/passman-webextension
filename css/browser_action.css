@@ -724,7 +724,7 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
     display: block; }
 
 .setup {
-  width: 420px;
+  max-width: 420px;
   margin: 0 auto;
   padding: 15px; }
   .setup h3 {
