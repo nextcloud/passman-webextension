@@ -525,7 +525,7 @@ input[type="radio"][name="tabs"] {
     left: 0; }
 
 body {
-  width: 450px;
+  max-width: 450px;
   min-height: 350px;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden; }
