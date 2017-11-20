@@ -12,7 +12,7 @@ body {
   &.setup{
     width: 100%;
   }
-  width: 450px;
+  max-width: 450px;
   min-height: 350px;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
@@ -256,7 +256,7 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
 }
 
 .setup {
-  width: 420px;
+  max-width: 420px;
   margin: 0 auto;
   padding: 15px;
   h3 {
