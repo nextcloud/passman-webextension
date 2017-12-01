@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Požádat o obnovu URL s údaji, pokud není stejné jako aktuální URL",
         "description": "Enable form auto submit"
     },
     "credentials": {
