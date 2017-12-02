@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Account toegevoegd.",
         "description": "Search"
     },
     "label": {
@@ -200,7 +200,7 @@
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Toon geavanceerde opties",
         "description": "Disable password picker"
     },
     "invalid_host": {
@@ -400,7 +400,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Verberg geavanceerde opties",
         "description": "Disable password picker"
     },
     "cancel": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Ja, ik weet het zeker!",
         "description": "Search"
     },
     "no_sites_ignored": {
