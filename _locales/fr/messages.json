@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Demander de mettre à jour l'URL des informations d'identification si elle ne correspond pas à l'URL en cours",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Lorsqu'un mot de passe est trouvé, aller sur la liste plutôt que sur le dernier onglet actif",
         "description": "Disable password picker"
     },
     "search": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Lorsque le sélecteur de mot de passe ne peut trouver une information d'identification, il doit aller à:",
         "description": "Select password picker default tab"
     },
     "save_site": {
