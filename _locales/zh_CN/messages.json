@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "账户已添加",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "如果不符合当前URL就请求更新凭据的URL",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "当发现一个密码后，弹出的控件显示凭据列表而不是上一个标签",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "这个密码将会用于加密扩展中所有的配置。您可以选择本地存储，但是请注意这种方式存储的密码是明文的！",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -200,7 +200,7 @@
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "显示高级选项",
         "description": "Disable password picker"
     },
     "invalid_host": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "这个向导将会按步骤指引您配置扩展并使您的密钥处于同步状态",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "请输入要忽略的一个域名或者顶级域名并确认",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "警告！您的主密码将会被明文存储！",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "当密码选择器找不到任何凭据时，它应该：",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "请选择您想与浏览器同步的密码箱",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "您没有权限修改该凭据",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -400,7 +400,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "隐藏高级选项",
         "description": "Disable password picker"
     },
     "cancel": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "欢迎使用PASSMAN扩展",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "未找到此页面的凭据",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "是的，我确定！",
         "description": "Search"
     },
     "no_sites_ignored": {

@@ -1,22 +1,22 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credenciales en la base de datos",
+        "message": "$AMOUNT$ credentials in the database",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Actualizar la lista de credenciales",
+        "message": "Päivitä tilitietolista",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
+        "message": "Passman - Salasanojen hallinta NextCloudille / ownCloudille",
         "description": "Extension description"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Tallenna holviin $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Holvi",
         "description": "Vault"
     },
     "ignore_site_tab": {
@@ -28,31 +28,31 @@
         "description": "Search"
     },
     "label": {
-        "message": "Etiqueta",
+        "message": "Label",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorar el protocolo para las coincidencias de sitios",
+        "message": "Ignore protocol for site matching",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Configuraciones ",
+        "message": "Asetukset",
         "description": "Settings"
     },
     "finish": {
-        "message": "Terminar",
+        "message": "Valmis",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Se detecó un cambio en la URL de",
+        "message": "Detected changed URL for",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donar",
+        "message": "Lahjoita",
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Lisää mukautettu kenttä",
         "description": "Add a custom field"
     },
     "enable_update_url": {
@@ -60,7 +60,7 @@
         "description": "Enable form auto submit"
     },
     "credentials": {
-        "message": "credenciales",
+        "message": "credentials",
         "description": "credentials"
     },
     "password_picker_gotolist": {
@@ -68,27 +68,27 @@
         "description": "Disable password picker"
     },
     "search": {
-        "message": "Buscar",
+        "message": "Etsi",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Alternar opciones avanzadas",
+        "message": "Näytä/piilota lisäasetukset",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
+        "message": "Passman-laajennus on lukittu. Avaa lukitus käyttääksesi.",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Actualizar",
+        "message": "Päivitä",
         "description": "Update"
     },
     "unlock": {
-        "message": "Desbloquear",
+        "message": "Avaa lukitus",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "¡La llave de la bóveda es inválida!",
+        "message": "Virheellinen holvin avain!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
@@ -100,11 +100,11 @@
         "description": "Search"
     },
     "edit": {
-        "message": "Editar",
+        "message": "Muokkaa",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Número mínimo de dígitos",
+        "message": "Numeroiden vähimmäismäärä",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
@@ -112,7 +112,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Valitse holvi",
         "description": "Search"
     },
     "enable_autofill": {
@@ -120,35 +120,35 @@
         "description": "Disable auto fill of forms"
     },
     "add_account": {
-        "message": "Agregar cuenta",
+        "message": "Lisää tili",
         "description": "Add account"
     },
     "back": {
-        "message": "Atrás",
+        "message": "Takaisin",
         "description": "Back"
     },
     "credential": {
-        "message": "credencial",
+        "message": "credential",
         "description": "credential"
     },
     "delete": {
-        "message": "Borrar",
+        "message": "Poista",
         "description": "Delete"
     },
     "forgot_password": {
-        "message": "Forgot password?",
+        "message": "Unohditko salasanan?",
         "description": "Search"
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Virheelliset palvelinasetukset",
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Configuraciones del servidor Nextcloud / ownCloud",
+        "message": "Nextcloudin / ownCloudin palvelinasetukset",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Usar contraseña",
+        "message": "Käytä salasanaa",
         "description": "Use password"
     },
     "one_time_password": {
@@ -156,47 +156,47 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Lista",
+        "message": "List",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorar sitio",
+        "message": "Ohita sivusto",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Seleccionar bóveda predeterminada",
+        "message": "Valitse oletusholvi",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Sitio ignorado",
+        "message": "Sivusto ohitettu",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continuar",
+        "message": "Jatka",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
+        "message": "We've found $AMOUNT$ credentials for this site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Valor",
+        "message": "Arvo",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "El desarrollo depende de las donaciones, por favor apóyenos",
+        "message": "Developent depends on donations, please support us",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Favor de ingresas sus credenciales de Nextcloud / ownCloud",
+        "message": "Anna Nextcloudin / ownCloudin tilitietosi",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignorar la ruta para la conicidencia de sitios",
+        "message": "Ignore path for site matching",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Campos personalizados",
+        "message": "Omavalintaiset kentät",
         "description": "Custom fields"
     },
     "show_adv": {
@@ -204,23 +204,23 @@
         "description": "Disable password picker"
     },
     "invalid_host": {
-        "message": "URL del servidor inválida",
+        "message": "Virheellinen palvelimen URL-osoite",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "¡La contraseña maestra es inválida!",
+        "message": "Virheellinen pääsalasana!",
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Yleiset",
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Las contraseñas no coinciden",
+        "message": "Salasanat eivät täsmää",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Cerrar",
+        "message": "Sulje",
         "description": "Close"
     },
     "prev": {
@@ -228,7 +228,7 @@
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Después de crearlas, usted puede editar las credenciales en Passman",
+        "message": "After creating it, you can edit the credential in Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
@@ -240,19 +240,19 @@
         "description": "Search"
     },
     "default_vault": {
-        "message": "Bóveda predeterminada",
+        "message": "Oletusholvi",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorar el puerto en las coincidencias de sitios",
+        "message": "Ignore port for site matching",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Configuraciones del servidor",
+        "message": "Palvelinasetukset",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Establecer la contraseña maestra",
+        "message": "Set Master password",
         "description": "Set a master password"
     },
     "disable_picker_text": {
@@ -260,15 +260,15 @@
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
-        "message": "Contraseña",
+        "message": "Salasana",
         "description": "Password"
     },
     "copy": {
-        "message": "Copiar",
+        "message": "Kopioi",
         "description": "Copy"
     },
     "begin": {
-        "message": "¡Comencemos!",
+        "message": "Aloitetaan!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -276,7 +276,7 @@
         "description": "Cancel"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Tilitiedot poistettu",
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
@@ -288,7 +288,7 @@
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Alternar visibilidad",
+        "message": "Toggle visibility",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
@@ -296,31 +296,31 @@
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Recordar la contraseña maestra",
+        "message": "Muista pääsalasana",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Guardar las credenciales para este sitio",
+        "message": "Tallenna tämän sivuston tilitiedot",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Bloqueado",
+        "message": "Passman - Lukittu",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Favor de llenar la etiqueta",
+        "message": "Please fill in a label",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Introduzca la contraseña maestra",
+        "message": "Anna pääsalasana",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Configuraciones de la bóveda",
+        "message": "Holvin asetukset",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Bóveda de contraseñas",
+        "message": "Säilön salasana",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
@@ -328,7 +328,7 @@
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Guardar sitio",
+        "message": "Tallenna sivusto",
         "description": "Save site"
     },
     "extra_accounts": {
@@ -336,11 +336,11 @@
         "description": "Search"
     },
     "next": {
-        "message": "Siguiente",
+        "message": "Seuraava",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Evitar caracteres ambiguos",
+        "message": "Avoid ambiguous characters",
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
@@ -352,7 +352,7 @@
         "description": "URL ignored"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Tallennetaan holviin $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
@@ -368,23 +368,23 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
-        "message": "Se detectó un nuevo inicio de sesión",
+        "message": "Havaittu uusi kirjautuminen",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Se detectó un cambio en la contraseña para el usuario",
+        "message": "Havaittiin muuttunut salasana käyttäjälle",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Respuesta del servidor inválida :[$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Guardar",
+        "message": "Tallenna",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Generar contraseña",
+        "message": "Luo salasana",
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
@@ -392,7 +392,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "URL del servidor",
+        "message": "Palvelimen URL-osoite",
         "description": "Server URL"
     },
     "disable_page": {
@@ -404,19 +404,19 @@
         "description": "Disable password picker"
     },
     "cancel": {
-        "message": "Cancelar",
+        "message": "Peru",
         "description": "Cancel"
     },
     "add": {
-        "message": "Agregar",
+        "message": "Lisää",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Credencial actualizada",
+        "message": "Tilitieto päivitetty",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "No se encontraron credenciales",
+        "message": "Tilitietoja ei löytynyt",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -424,31 +424,31 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Bloquear extensión",
+        "message": "Lukitse laajennus",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "Buscar a",
+        "message": "Search for",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Contraseña (repetir)",
+        "message": "Password (repeat)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Credenciales guardadas",
+        "message": "Tilitieto tallennettu",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Requerir todos los tipos de caracteres",
+        "message": "Require every character type",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Habilitar el modo de depuración",
+        "message": "Käytä vianjäljitystilaa",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Correo electrónico",
+        "message": "Sähköposti",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -456,7 +456,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "http_warning": {
@@ -464,7 +464,7 @@
         "description": "Warning for http connections"
     },
     "done": {
-        "message": "Terminado",
+        "message": "Valmis",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
@@ -476,11 +476,11 @@
         "description": "Enable form auto submit"
     },
     "saving": {
-        "message": "Guardando",
+        "message": "Tallennetaan",
         "description": "Saving"
     },
     "url": {
-        "message": "URL",
+        "message": "Verkko-osoite",
         "description": "URL"
     },
     "iam_sure": {
@@ -488,51 +488,51 @@
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "No se han ignorado sitios",
+        "message": "Ei ohitettuja sivustoja",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Si le agrada, no olvide donar",
+        "message": "If you like, don't forget to donate",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Cuentas",
+        "message": "Tilit",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Generador de contraseñas",
+        "message": "Salasanageneraattori",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "¡La llave maestra está vacía!",
+        "message": "Tyhjä pääsalasana!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignorar el subdominio para las coincidencias de sitios",
+        "message": "Ignore subdomain for site matching",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Buscar credenciales",
+        "message": "Etsi tilitietoja",
         "description": "Search credentials"
     },
     "credential_created": {
-        "message": "Credencial creada",
+        "message": "Credential created",
         "description": "Credential created"
     },
     "username": {
-        "message": "Nombre de usuario",
+        "message": "Käyttäjätunnus",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Longitud de la contraseña",
+        "message": "Salasanan pituus",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Desactivar el autocompletado del navegador",
+        "message": "Poista käytöstä lomakkeiden automaattinen täyttö",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Restablecer temporizador [s]",
+        "message": "Refresh timer [s]",
         "description": "Password"
     }
 }

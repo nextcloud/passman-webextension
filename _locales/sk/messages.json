@@ -1,13 +1,7 @@
 {
     "credentials_in_db": {
         "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
         "message": "Obnoviť zoznam prihlasovacích údajov",
@@ -19,13 +13,7 @@
     },
     "save_to": {
         "message": "Uložiť do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "vault": {
         "message": "Trezor",
@@ -36,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Účet pridaný",
+        "message": "Účet pridaný.",
         "description": "Search"
     },
     "label": {
@@ -67,9 +55,17 @@
         "message": "Add a custom field",
         "description": "Add a custom field"
     },
+    "enable_update_url": {
+        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "description": "Enable form auto submit"
+    },
     "credentials": {
         "message": "prihlasovacie údaje",
         "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "When a password is found, go to list rather than last active tab",
+        "description": "Disable password picker"
     },
     "search": {
         "message": "Hľadať",
@@ -112,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Všetky vaše nastavenia pre doplnok budú zašifrované pomocou tohto hesla. Môžete si zvoliť uloženie tohto hesla lokálne, avšak v tom prípade bude uložené ako OBYČAJNÝ TEXT.",
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -181,13 +177,7 @@
     },
     "credentials_found_for_site": {
         "message": "Pre túto stránku boli nájdené  $AMOUNT$ prístupové údaje",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "amount": {
-                "content": "$1",
-                "example": "2"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "value": {
         "message": "Hodnota",
@@ -208,6 +198,10 @@
     "custom_fields": {
         "message": "Vlastné polia",
         "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "Zobraziť pokročilé možnosti",
+        "description": "Disable password picker"
     },
     "invalid_host": {
         "message": "Neplatná url servera",
@@ -278,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized!",
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -286,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Zadajte ignorovanú doménu alebo TLD a stlačte enter",
+        "message": "Enter a domain or TLD to ignore and press ↵",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -298,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plain text",
+        "message": "Warning! Your master password will be stored in plaintext.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -330,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Password picker: When no credentials found go to:",
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -359,13 +353,7 @@
     },
     "saving_to": {
         "message": "Ukladá sa do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site",
-        "placeholders": {
-            "vault_name": {
-                "content": "$1",
-                "example": "Main vault"
-            }
-        }
+        "description": "Amount of the credentials found for the current site"
     },
     "enable_password_picker": {
         "message": "Povoliť vyberač hesla",
@@ -373,17 +361,11 @@
     },
     "auto_login": {
         "message": "Passman vás prihlasuje ako $USERNAME$",
-        "description": "Amount of the credentials in the database",
-        "placeholders": {
-            "username": {
-                "content": "$1",
-                "example": "MyUsername"
-            }
-        }
+        "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Vyberte si trezor, ktorý chcete udržiavať synchronizovaný s prehliadačom.",
-        "description": "Select the vault that you want to keep in sync with the browser."
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
         "message": "Zistené nové prihlasovacie meno",
@@ -395,17 +377,7 @@
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site",
-        "placeholders": {
-            "status_code": {
-                "content": "$1",
-                "example": "404"
-            },
-            "status_text": {
-                "content": "$2",
-                "example": "Page not found"
-            }
-        }
+        "description": "No credentials found for the current site"
     },
     "save": {
         "message": "Uložiť",
@@ -416,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have permissions to edit this credential.",
+        "message": "You don't have the permission to edit this credential.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -426,6 +398,10 @@
     "disable_page": {
         "message": "Disable page",
         "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "Schovať pokročilé možnosti",
+        "description": "Disable password picker"
     },
     "cancel": {
         "message": "Zrušiť",
@@ -476,22 +452,12 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Víta Vás doplnok Passman",
+        "message": "Welcome to the Passman webextension",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
-        "description": "String for the browser action",
-        "placeholders": {
-            "credential_amount": {
-                "content": "$1",
-                "example": "4"
-            },
-            "plural": {
-                "content": "$2",
-                "example": "credentials"
-            }
-        }
+        "description": "String for the browser action"
     },
     "http_warning": {
         "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
@@ -502,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Pre túto stránku neboli nájdené žiadne prístupové údaje",
+        "message": "No credentials found for this site.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -518,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Áno, som si istý",
+        "message": "Áno, som si istý!",
         "description": "Search"
     },
     "no_sites_ignored": {

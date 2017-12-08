@@ -1,14 +1,14 @@
 {
     "credentials_in_db": {
-        "message": "$AMOUNT$ credenciales en la base de datos",
+        "message": "$AMOUNT$ credentials in the database",
         "description": "Amount of the credentials in the database"
     },
     "refresh_credential_list": {
-        "message": "Actualizar la lista de credenciales",
+        "message": "Ανανέωση της λίστας διαπιστευτηρίων",
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
+        "message": "Passman - Ο διαχειριστής συνθηματικών για το NextCloud / ownCloud",
         "description": "Extension description"
     },
     "save_to": {
@@ -28,27 +28,27 @@
         "description": "Search"
     },
     "label": {
-        "message": "Etiqueta",
+        "message": "Ετικέτα",
         "description": "Label"
     },
     "ignore_protocol": {
-        "message": "Ignorar el protocolo para las coincidencias de sitios",
+        "message": "Αγνόηση πρωτοκόλλου για αντιστοίχιση ιστότοπου",
         "description": "Ignore protocol for site matching"
     },
     "settings": {
-        "message": "Configuraciones ",
+        "message": "Ρυθμίσεις",
         "description": "Settings"
     },
     "finish": {
-        "message": "Terminar",
+        "message": "Ολοκλήρωση",
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Se detecó un cambio en la URL de",
+        "message": "Detected changed URL for",
         "description": "Detected changed URL for"
     },
     "donate": {
-        "message": "Donar",
+        "message": "Δωρεά",
         "description": "Donate"
     },
     "add_custom_field": {
@@ -60,7 +60,7 @@
         "description": "Enable form auto submit"
     },
     "credentials": {
-        "message": "credenciales",
+        "message": "διαπιστευτήρια",
         "description": "credentials"
     },
     "password_picker_gotolist": {
@@ -68,27 +68,27 @@
         "description": "Disable password picker"
     },
     "search": {
-        "message": "Buscar",
+        "message": "Αναζήτηση",
         "description": "Search"
     },
     "toggle_advanced": {
-        "message": "Alternar opciones avanzadas",
+        "message": "Toggle advanced options",
         "description": "Toggle advanced options"
     },
     "extension_locked": {
-        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
+        "message": "Το πρόσθετο Passman κλειδώθηκε και πρέπει να το ξεκλειδώσετε για να το χρησιμοποιήσετε",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "update": {
-        "message": "Actualizar",
+        "message": "Ενημέρωση",
         "description": "Update"
     },
     "unlock": {
-        "message": "Desbloquear",
+        "message": "Ξεκλείδωμα",
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "¡La llave de la bóveda es inválida!",
+        "message": "Invalid vault key!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
@@ -100,11 +100,11 @@
         "description": "Search"
     },
     "edit": {
-        "message": "Editar",
+        "message": "Επεξεργασία",
         "description": "Edit"
     },
     "min_digits": {
-        "message": "Número mínimo de dígitos",
+        "message": "Ελάχιστη ποσότητα ψηφίων",
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
@@ -120,19 +120,19 @@
         "description": "Disable auto fill of forms"
     },
     "add_account": {
-        "message": "Agregar cuenta",
+        "message": "Προσθήκη λογαριασμού",
         "description": "Add account"
     },
     "back": {
-        "message": "Atrás",
+        "message": "Πίσω",
         "description": "Back"
     },
     "credential": {
-        "message": "credencial",
+        "message": "διαπιστευτήρια",
         "description": "credential"
     },
     "delete": {
-        "message": "Borrar",
+        "message": "Διαγραφή",
         "description": "Delete"
     },
     "forgot_password": {
@@ -144,11 +144,11 @@
         "description": "Search"
     },
     "nextcloud_settings": {
-        "message": "Configuraciones del servidor Nextcloud / ownCloud",
+        "message": "Ρυθμίσεις διακομιστή Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "use_generated_password": {
-        "message": "Usar contraseña",
+        "message": "Χρήση συνθηματικού",
         "description": "Use password"
     },
     "one_time_password": {
@@ -156,47 +156,47 @@
         "description": "One time password"
     },
     "list": {
-        "message": "Lista",
+        "message": "Λίστα",
         "description": "List"
     },
     "ignore_site": {
-        "message": "Ignorar sitio",
+        "message": "Ignore site",
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Seleccionar bóveda predeterminada",
+        "message": "Select default vault",
         "description": "Select default vault"
     },
     "site_ignored": {
-        "message": "Sitio ignorado",
+        "message": "Αγνόηση ιστότοπου",
         "description": "Site ignored"
     },
     "continue": {
-        "message": "Continuar",
+        "message": "Συνέχεια",
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
+        "message": "We've found $AMOUNT$ credentials for this site",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Valor",
+        "message": "Value",
         "description": "Custom fields"
     },
     "donate_button_title": {
-        "message": "El desarrollo depende de las donaciones, por favor apóyenos",
+        "message": "Developent depends on donations, please support us",
         "description": "Title on the PayPal button"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Favor de ingresas sus credenciales de Nextcloud / ownCloud",
+        "message": "Παρακαλούμε εισάγετε τα διαπιστευτήριά σας για το Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "ignore_path": {
-        "message": "Ignorar la ruta para la conicidencia de sitios",
+        "message": "Ignore path for site matching",
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Campos personalizados",
+        "message": "Custom Fields",
         "description": "Custom fields"
     },
     "show_adv": {
@@ -204,11 +204,11 @@
         "description": "Disable password picker"
     },
     "invalid_host": {
-        "message": "URL del servidor inválida",
+        "message": "Invalid server URL",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
-        "message": "¡La contraseña maestra es inválida!",
+        "message": "Μη έγκυρο πρωτεύον συνθηματικό!",
         "description": "When the master password is invalid"
     },
     "general": {
@@ -216,19 +216,19 @@
         "description": "Custom fields"
     },
     "no_password_match": {
-        "message": "Las contraseñas no coinciden",
+        "message": "Δεν ταιριάζουν τα συνθηματικά",
         "description": "When comparing passwords"
     },
     "close": {
-        "message": "Cerrar",
+        "message": "Κλείσιμο",
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "Προηγ",
         "description": "Previous"
     },
     "add_hint": {
-        "message": "Después de crearlas, usted puede editar las credenciales en Passman",
+        "message": "After creating it, you can edit the credential in Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
@@ -240,19 +240,19 @@
         "description": "Search"
     },
     "default_vault": {
-        "message": "Bóveda predeterminada",
+        "message": "Default vault",
         "description": "Default vault"
     },
     "ignore_port": {
-        "message": "Ignorar el puerto en las coincidencias de sitios",
+        "message": "Αγνοήστε τη θύρα για αντιστοίχιση ιστότοπου",
         "description": "Ignore port for site matching"
     },
     "server_settings": {
-        "message": "Configuraciones del servidor",
+        "message": "Ρυθμίσεις διακομιστή",
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Establecer la contraseña maestra",
+        "message": "Ορισμός πρωτεύοντος συνθηματικού",
         "description": "Set a master password"
     },
     "disable_picker_text": {
@@ -260,15 +260,15 @@
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "password": {
-        "message": "Contraseña",
+        "message": "Συνθηματικό",
         "description": "Password"
     },
     "copy": {
-        "message": "Copiar",
+        "message": "Αντιγραφή",
         "description": "Copy"
     },
     "begin": {
-        "message": "¡Comencemos!",
+        "message": "Ας αρχίσουμε!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -288,7 +288,7 @@
         "description": "Ignored sites"
     },
     "toggle_visibility": {
-        "message": "Alternar visibilidad",
+        "message": "Toggle visibility",
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
@@ -296,31 +296,31 @@
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "Recordar la contraseña maestra",
+        "message": "Απομνημόνευση του πρωτεύων συνθηματικού",
         "description": "Remember master password"
     },
     "btn_save_site": {
-        "message": "Guardar las credenciales para este sitio",
+        "message": "Αποθήκευση διαπιστευτηριων για την ιστοσελίδα",
         "description": "Save credentials for this site"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Bloqueado",
+        "message": "Passman - Κλειδώθηκε",
         "description": "Browser extension title when the extension is locked"
     },
     "label_required": {
-        "message": "Favor de llenar la etiqueta",
+        "message": "Please fill in a label",
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Introduzca la contraseña maestra",
+        "message": "Εισάγετε πρωτεύον συνθηματικό",
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Configuraciones de la bóveda",
+        "message": "Vault settings",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Bóveda de contraseñas",
+        "message": "Vault password",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
@@ -328,7 +328,7 @@
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Guardar sitio",
+        "message": "Αποθήκευση σελίδας",
         "description": "Save site"
     },
     "extra_accounts": {
@@ -336,11 +336,11 @@
         "description": "Search"
     },
     "next": {
-        "message": "Siguiente",
+        "message": "Επόμενο",
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Evitar caracteres ambiguos",
+        "message": "Avoid ambiguous characters",
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
@@ -368,23 +368,23 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
-        "message": "Se detectó un nuevo inicio de sesión",
+        "message": "Ανιχνεύθηκε νέα είσοδος",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Se detectó un cambio en la contraseña para el usuario",
+        "message": "Ανιχνεύθηκε αλλαγμένο συνθηματικό για τον χρήστη",
         "description": "Detected changed password for user"
     },
     "invalid_response_from_server": {
-        "message": "Respuesta del servidor inválida :[$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "save": {
-        "message": "Guardar",
+        "message": "Αποθήκευση",
         "description": "Save"
     },
     "generate_password": {
-        "message": "Generar contraseña",
+        "message": "Δημιουργία συνθηματικού",
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
@@ -392,7 +392,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "URL del servidor",
+        "message": "Server URL",
         "description": "Server URL"
     },
     "disable_page": {
@@ -404,19 +404,19 @@
         "description": "Disable password picker"
     },
     "cancel": {
-        "message": "Cancelar",
+        "message": "Ακύρωση",
         "description": "Cancel"
     },
     "add": {
-        "message": "Agregar",
+        "message": "Προσθήκη",
         "description": "Add"
     },
     "credential_updated": {
-        "message": "Credencial actualizada",
+        "message": "Ενημερώθηκαν τα διαπιστευτήρια",
         "description": "updated, lowercase"
     },
     "no_credentials_found": {
-        "message": "No se encontraron credenciales",
+        "message": "Δεν βρέθηκαν διαπιστευτήρια",
         "description": "No credentials found for the current site"
     },
     "extName": {
@@ -424,31 +424,31 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Bloquear extensión",
+        "message": "Lock extension",
         "description": "Title on the PayPal button"
     },
     "search_for": {
-        "message": "Buscar a",
+        "message": "Αναζήτηση για",
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Contraseña (repetir)",
+        "message": "Συνθηματικό (επανάλληψη)",
         "description": "Password"
     },
     "credential_saved": {
-        "message": "Credenciales guardadas",
+        "message": "Αποθηκεύτηκαν τα διαπιστευτήρια",
         "description": "saved, lowercase"
     },
     "require_every_character_type": {
-        "message": "Requerir todos los tipos de caracteres",
+        "message": "Require every character type",
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Habilitar el modo de depuración",
+        "message": "Ενεργοποιήστε τη λειτουργία εντοπισμού σφαλμάτων",
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "Correo electrónico",
+        "message": "E-mail",
         "description": "E-mail"
     },
     "welcome_to_passman": {
@@ -456,7 +456,7 @@
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "http_warning": {
@@ -464,7 +464,7 @@
         "description": "Warning for http connections"
     },
     "done": {
-        "message": "Terminado",
+        "message": "Ολοκληρώθηκε",
         "description": "Done"
     },
     "no_credentials_found_for_site": {
@@ -476,7 +476,7 @@
         "description": "Enable form auto submit"
     },
     "saving": {
-        "message": "Guardando",
+        "message": "Γίνεται αποθήκευση",
         "description": "Saving"
     },
     "url": {
@@ -488,51 +488,51 @@
         "description": "Search"
     },
     "no_sites_ignored": {
-        "message": "No se han ignorado sitios",
+        "message": "No sites ignored",
         "description": "No sites ignored"
     },
     "done_donate": {
-        "message": "Si le agrada, no olvide donar",
+        "message": "Εάν σας αρέσει, μην ξεχάσετε να κάνετε δωρεά",
         "description": "If you like, don't forget to donate"
     },
     "accounts": {
-        "message": "Cuentas",
+        "message": "Λογαριασμοί",
         "description": "Accounts"
     },
     "password_generator": {
-        "message": "Generador de contraseñas",
+        "message": "Δημιουργία συνθηματικού",
         "description": "Password generator"
     },
     "empty_master_key": {
-        "message": "¡La llave maestra está vacía!",
+        "message": "Εκκαθάριση κυρίως κλειδιού!",
         "description": "Empty master key!"
     },
     "ignore_subdomain": {
-        "message": "Ignorar el subdominio para las coincidencias de sitios",
+        "message": "Αγνοήστε τον υποτομέα για αντιστοίχιση ιστότοπων",
         "description": "Password"
     },
     "btn_search": {
-        "message": "Buscar credenciales",
+        "message": "Αναζήτηση διαπιστευτηρίων",
         "description": "Search credentials"
     },
     "credential_created": {
-        "message": "Credencial creada",
+        "message": "Credential created",
         "description": "Credential created"
     },
     "username": {
-        "message": "Nombre de usuario",
+        "message": "Όνομα χρήστη",
         "description": "Username"
     },
     "pw_length": {
-        "message": "Longitud de la contraseña",
+        "message": "Μέγεθος συνθηματικού",
         "description": "Password length"
     },
     "disable_browser_autofill": {
-        "message": "Desactivar el autocompletado del navegador",
+        "message": "Απενεργοποίηση αυτόματης συμπλήρωσης του περιηγητή",
         "description": "Disable auto fill of forms"
     },
     "refresh_timer": {
-        "message": "Restablecer temporizador [s]",
+        "message": "Refresh timer [s]",
         "description": "Password"
     }
 }
