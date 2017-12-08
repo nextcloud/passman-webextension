@@ -296,7 +296,7 @@
         "description": "Remember master password"
     },
     "remember_master_password": {
-        "message": "忘记主密码",
+        "message": "记住主密码",
         "description": "Remember master password"
     },
     "btn_save_site": {
