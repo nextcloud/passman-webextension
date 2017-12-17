@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Aðgangi bætt við.",
         "description": "Search"
     },
     "label": {
@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Já, ég er viss!",
         "description": "Search"
     },
     "no_sites_ignored": {

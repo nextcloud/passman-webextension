@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Учётная запись добавлена.",
         "description": "Search"
     },
     "label": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Мастер поможет настроить дополнение и синхронизацию паролей.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Введите домен или домен верхнего уровня, который следует игнорировать и нажмите  ",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Подбор паролей: Если не найдено ни одной записи, переходить:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Выберите хранилище, которое будет сихнронизироваться с браузером. ",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Не найдено записей, соответствующих этому сайту.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {

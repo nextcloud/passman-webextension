@@ -44,7 +44,7 @@
         "description": "Finish"
     },
     "detected_changed_url": {
-        "message": "Gewijzigde URL gevonden voor",
+        "message": "Aangepaste URL gevonden voor",
         "description": "Detected changed URL for"
     },
     "donate": {
@@ -340,7 +340,7 @@
         "description": "Next"
     },
     "avoid_ambiguous": {
-        "message": "Voorkomen dubbelzinnige tekens",
+        "message": "Voorkomen gelijkende tekens",
         "description": "Avoid ambiguous characters"
     },
     "disable_site": {
@@ -424,7 +424,7 @@
         "description": "Extension name"
     },
     "lock_extension": {
-        "message": "Slot uitbreiding",
+        "message": "Uitbreiding vergrendelen",
         "description": "Title on the PayPal button"
     },
     "search_for": {
@@ -460,7 +460,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "Je gebruikt HTTP! Inlog gegevens zullen worden verzonden in platte tekst. Je Passman inlog gegevens hebben nog encryptie.",
+        "message": "Je gebruikt HTTP! Inloggegevens zullen worden verzonden in platte tekst. Je Passman inlog gegevens hebben nog encryptie.",
         "description": "Warning for http connections"
     },
     "done": {
