@@ -56,7 +56,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Vragen om de inloggegevens-URL bij te werken als die niet overeenkomt met de huidige URL",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Als een wachtwoord is gevonden, ga naar de lijst in plaats van naar de laatst actieve tab",
         "description": "Disable password picker"
     },
     "search": {
@@ -108,7 +108,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Dit wachtwoord wordt gebruikt om alle instellingen in deze extensie te versleutelen. Je kunt het wachtwoord lokaal opslaan, maar dan wordt het in LEESBARE tekst opgeslagen.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -272,7 +272,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Deze assistent begleidt je door de stappen voor het instellen van de extensie en het synchroniseren van je wachtwoorden.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Geef een te negeren domein of TLD op en druk op  ",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Waarschuwing! Je hoofdwachtwoord wordt in leesbare tekst opgeslagen.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Als de Wachtwoordkiezer geen inloggegevens kan vinden, gaat die naar:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Selecteer de kluis die je wilt synchroniseren met je webbrowser.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Je hebt niet de autorisatie om deze inloggegevens te wijzigen.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Welkom bij de Passman webextensie",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Geen inloggegevens gevonden voor deze site",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
