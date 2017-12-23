@@ -484,7 +484,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Kyllä, olen varma!",
         "description": "Search"
     },
     "no_sites_ignored": {
