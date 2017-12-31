@@ -64,7 +64,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "Quando le password sono trovate, vai all'elenco invece che all'ultima scheda attiva",
+        "message": "Quando le password sono individuate, vai all'elenco invece che all'ultima scheda attiva",
         "description": "Disable password picker"
     },
     "search": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "no_vaults": {
-        "message": "Spiacenti, nessuna cassaforte trovata. Crea una cassaforte tramite l'applicazione di Nextcloud / ownCloud  e prova ancora.",
+        "message": "Nessuna cassaforte trovata. Crea una cassaforte tramite l'applicazione di Nextcloud / ownCloud  e prova ancora.",
         "description": "Search"
     },
     "edit": {
@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Avviso! La tua password principale sarà memorizzata in chiaro.",
+        "message": "Attenzione! La tua password principale sarà memorizzata in chiaro.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -324,7 +324,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Se il selettore delle password: non trova credenziali, andrà a:",
+        "message": "Se il selettore delle password non trova delle credenziali, andrà a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -452,7 +452,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Benvenuto nell'estensione web Passman",
+        "message": "Benvenuto nell'estensione Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "Credenzial non trovatei per questo sito.",
+        "message": "Credenzial non trovate per questo sito.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
