@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Upozornenie! Vaše hlavné heslo bude uložené ako čistý text.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -328,7 +328,7 @@
         "description": "Select password picker default tab"
     },
     "save_site": {
-        "message": "Save site",
+        "message": "Uložiť stránku",
         "description": "Save site"
     },
     "extra_accounts": {
