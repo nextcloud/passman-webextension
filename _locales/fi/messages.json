@@ -24,7 +24,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Tili lisätty.",
         "description": "Search"
     },
     "label": {
@@ -176,7 +176,7 @@
         "description": "Continue"
     },
     "credentials_found_for_site": {
-        "message": "We've found $AMOUNT$ credentials for this site",
+        "message": "Tälle sivustolle löytyi $AMOUNT$ kirjautumistieto(a)",
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
@@ -200,7 +200,7 @@
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Näytä lisävalinnat",
         "description": "Disable password picker"
     },
     "invalid_host": {
@@ -252,7 +252,7 @@
         "description": "Server Settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Aseta pääsalasana",
         "description": "Set a master password"
     },
     "disable_picker_text": {
@@ -388,7 +388,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Sinulla ei ole oikeutta muokata tätä kirjautumistietoja.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -400,7 +400,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Piilota lisävalinnat",
         "description": "Disable password picker"
     },
     "cancel": {
@@ -432,7 +432,7 @@
         "description": "No credentials found for the current site"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Salasana (toista)",
         "description": "Password"
     },
     "credential_saved": {
@@ -468,7 +468,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Tälle sivustolle ei löytynyt kirjautumistietoja.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -516,7 +516,7 @@
         "description": "Search credentials"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Kirjautumistieto luotu",
         "description": "Credential created"
     },
     "username": {
