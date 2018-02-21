@@ -92,7 +92,7 @@
         "description": "Vault password"
     },
     "msg_reset_extension": {
-        "message": "Puedes resetear la contraseña. Esto reseteará la extensión a su estado por defecto.",
+        "message": "Puedes restablecer la contraseña. Ésto restablecerá la extensión a su estado por defecto.",
         "description": "Search"
     },
     "no_vaults": {
@@ -204,7 +204,7 @@
         "description": "Disable password picker"
     },
     "invalid_host": {
-        "message": "URL del servidor inválida",
+        "message": "URL del servidor no válida",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
@@ -280,7 +280,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Introduce un dominio o TLD para ignorar y pulsa  ",
+        "message": "Introduce un dominio o TLD a ignorar y pulsa ↵",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -360,7 +360,7 @@
         "description": "Disable password picker"
     },
     "auto_login": {
-        "message": "Passman te está registrando como $USERNAME$",
+        "message": "Passman te está iniciando sesión como $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
@@ -460,7 +460,7 @@
         "description": "String for the browser action"
     },
     "http_warning": {
-        "message": "estas usando HTTP para las credenciales de acceso y seran enviadas en texto plano. Tus credenciales de Passman aun estan encriptadas",
+        "message": "¡Estás usando HTTP! Las credenciales de acceso se enviarán en texto plano. Tus credenciales de Passman siguen estando cifradas.",
         "description": "Warning for http connections"
     },
     "done": {
