@@ -16,7 +16,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "vault": {
-        "message": "Bóveda",
+        "message": "Caja fuerte",
         "description": "Vault"
     },
     "ignore_site_tab": {
@@ -88,7 +88,7 @@
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "¡Clave de bóveda inválida!",
+        "message": "¡Llave no válida de la caja fuerte!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
@@ -96,7 +96,7 @@
         "description": "Search"
     },
     "no_vaults": {
-        "message": "Lo sentimos, no se han  encontrado bóvedas. Por favor, crea una bóveda a través de la app e Nextcloud / ownCloud y vuelve a intentarlo.",
+        "message": "Lo sentimos, no se han encontrado cajas fuertes. Por favor, crea una caja fuerte a través de la app de Nextcloud / ownCloud y vuelve a intentarlo.",
         "description": "Search"
     },
     "edit": {
@@ -112,7 +112,7 @@
         "description": "Enter master password"
     },
     "select_vault": {
-        "message": "Selecciona bóveda",
+        "message": "Selecciona caja fuerte",
         "description": "Search"
     },
     "enable_autofill": {
@@ -164,7 +164,7 @@
         "description": "Update"
     },
     "select_default_vault": {
-        "message": "Seleccionar bóveda por defecto",
+        "message": "Seleccionar caja fuerte predeterminada",
         "description": "Select default vault"
     },
     "site_ignored": {
@@ -240,7 +240,7 @@
         "description": "Search"
     },
     "default_vault": {
-        "message": "Bóveda por defecto",
+        "message": "Caja fuerte predeterminada",
         "description": "Default vault"
     },
     "ignore_port": {
@@ -316,11 +316,11 @@
         "description": "Enter master password"
     },
     "vault_settings": {
-        "message": "Configuración de bóveda",
+        "message": "Configuración de la caja fuerte",
         "description": "Vault settings"
     },
     "vault_password": {
-        "message": "Contraseña de la bóveda",
+        "message": "Contraseña de la caja fuerte",
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
@@ -364,7 +364,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Selecciona la bóveda que quieres mantener sincronizada con el navegador.",
+        "message": "Selecciona la caja fuerte que quieres mantener sincronizada con el navegador.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
