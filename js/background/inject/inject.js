@@ -65,20 +65,11 @@ $j(document).ready(function () {
 					if(customFieldPattern.test(login.custom_fields[i].label)){
 						/* set variable elementid to whatever element we are trying to auto fill */
 						elementId=customFieldPattern.exec(login.custom_fields[i].label)[1];
-						/* check to see if element id exist */
-						if($j('#'+elementId).length){
-							element=$j('#'+elementId);
-						}
-						else if($j('input[name$="'+elementId+'"]').length){ /* maybe element name exist */
-							element=$j('input[name$="'+elementId+'"]');
-						}
-						else{ /* neither element id or name exist */
-							element=false;
-						}
-						/* if we have an element and it is type text, number or password, lets auto fill it */
-						if(element&&(element[0].type==='text'||element[0].type==='number'||element[0].type==='password')){
-							element.val(login.custom_fields[i].value);
-						}
+						enterCustomFieldElement(elementId, login.custom_fields[i].value);
+					}
+					else if ($j('label[for]:contains(' + login.custom_fields[i].label + ')').length) {
+						elementId=$j('label[for]:contains(' + login.custom_fields[i].label + ')').attr('for');
+						enterCustomFieldElement(elementId, login.custom_fields[i].value);
 					}
 				}
 			}
@@ -90,6 +81,23 @@ $j(document).ready(function () {
 		}
 	}
     
+    function enterCustomFieldElement(elementId, value) {
+    	/* check to see if element id exist */
+	if($j('#'+elementId).length){
+		element=$j('#'+elementId);
+	}
+	else if($j('input[name$="'+elementId+'"]').length){ /* maybe element name exist */
+		element=$j('input[name$="'+elementId+'"]');
+	}
+	else{ /* neither element id or name exist */
+		element=false;
+	}
+	/* if we have an element and it is type text, number or password, lets auto fill it */
+	if(element&&(element[0].type==='text'||element[0].type==='number'||element[0].type==='password')){
+		element.val(value);
+	}
+    }
+	
     function submitLoginForm(username) {
         if (!activeForm) {
             // @TODO detect login form on the current page
