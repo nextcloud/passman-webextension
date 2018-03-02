@@ -292,7 +292,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Aðvörun! Aðallykilorðið þitt verður geymt sem hreinn texti.",
         "description": "Remember master password"
     },
     "remember_master_password": {
