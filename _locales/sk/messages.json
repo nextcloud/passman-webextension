@@ -52,7 +52,7 @@
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Pridať vlastné pole",
         "description": "Add a custom field"
     },
     "enable_update_url": {
@@ -444,7 +444,7 @@
         "description": "Require every character type"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "Povoliť režim ladenia",
         "description": "Enable debug mode"
     },
     "email": {
