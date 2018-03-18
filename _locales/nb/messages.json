@@ -312,7 +312,7 @@
         "description": "When comparing passwords"
     },
     "enter_master_password": {
-        "message": "Skriv inn hoved-passord",
+        "message": "Skriv inn hovedpassord",
         "description": "Enter master password"
     },
     "vault_settings": {
