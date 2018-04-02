@@ -50,54 +50,54 @@ $j(document).ready(function () {
 
     _this.enterLoginDetails = enterLoginDetails;
 
-    function enterCustomFields(login,settings) {
-		var customFieldPattern=/^\#(.*)$/;
-		var elementId;
-		var element=false;
-		
-		/* parhaps wise to try / catch this as this is non essential and no reason to abort previous processing */
-		try{
-			/* do we have custom_fields for this entry */
-			if(login.hasOwnProperty('custom_fields')&&login.custom_fields.length){
-				/* yes we do, iterate over all the custom_fields values */
-				for(var i=0,len=login.custom_fields.length;i<len;i++){
-					/* does this custom field label begin with a hash? */
-					if(customFieldPattern.test(login.custom_fields[i].label)){
-						/* set variable elementid to whatever element we are trying to auto fill */
-						elementId=customFieldPattern.exec(login.custom_fields[i].label)[1];
-						enterCustomFieldElement(elementId, login.custom_fields[i].value);
-					}
-					else if ($j('label[for]:contains(' + login.custom_fields[i].label + ')').length) {
-						elementId=$j('label[for]:contains(' + login.custom_fields[i].label + ')').attr('for');
-						enterCustomFieldElement(elementId, login.custom_fields[i].value);
-					}
-				}
-			}
-		}
-		catch(e){
-			if(settings.debug){
-                console.log('While attempting to auto fill custom fields the following exception was thrown: '+e);
-			}
-		}
-	}
-    
-    function enterCustomFieldElement(elementId, value) {
-    	/* check to see if element id exist */
-	if($j('#'+elementId).length){
-		element=$j('#'+elementId);
-	}
-	else if($j('input[name$="'+elementId+'"]').length){ /* maybe element name exist */
-		element=$j('input[name$="'+elementId+'"]');
-	}
-	else{ /* neither element id or name exist */
-		element=false;
-	}
-	/* if we have an element and it is type text, number or password, lets auto fill it */
-	if(element&&(element[0].type==='text'||element[0].type==='number'||element[0].type==='password')){
-		element.val(value);
-	}
+    function enterCustomFields(login, settings) {
+        var customFieldPattern = /^\#(.*)$/;
+        var elementId;
+        var element = false;
+
+        /* parhaps wise to try / catch this as this is non essential and no reason to abort previous processing */
+        try {
+            /* do we have custom_fields for this entry */
+            if (login.hasOwnProperty('custom_fields') && login.custom_fields.length) {
+                /* yes we do, iterate over all the custom_fields values */
+                for (var i = 0, len = login.custom_fields.length; i < len; i++) {
+                    /* does this custom field label begin with a hash? */
+                    if (customFieldPattern.test(login.custom_fields[i].label)) {
+                        /* set variable elementid to whatever element we are trying to auto fill */
+                        elementId = customFieldPattern.exec(login.custom_fields[i].label)[1];
+                        enterCustomFieldElement(elementId, login.custom_fields[i].value);
+                    }
+                    else if ($j('label[for]:contains(' + login.custom_fields[i].label + ')').length) {
+                        elementId = $j('label[for]:contains(' + login.custom_fields[i].label + ')').attr('for');
+                        enterCustomFieldElement(elementId, login.custom_fields[i].value);
+                    }
+                }
+            }
+        }
+        catch (e) {
+            if (settings.debug) {
+                console.log('While attempting to auto fill custom fields the following exception was thrown: ' + e);
+            }
+        }
     }
-	
+
+    function enterCustomFieldElement(elementId, value) {
+        /* check to see if element id exist */
+        if ($j('#' + elementId).length) {
+            element = $j('#' + elementId);
+        }
+        else if ($j('input[name$="' + elementId + '"]').length) { /* maybe element name exist */
+            element = $j('input[name$="' + elementId + '"]');
+        }
+        else { /* neither element id or name exist */
+            element = false;
+        }
+        /* if we have an element and it is type text, number or password, lets auto fill it */
+        if (element && (element[0].type === 'text' || element[0].type === 'number' || element[0].type === 'password')) {
+            element.val(value);
+        }
+    }
+
     function submitLoginForm(username) {
         if (!activeForm) {
             // @TODO detect login form on the current page
@@ -156,7 +156,7 @@ $j(document).ready(function () {
         var top = (loginFieldPos) ? loginFieldPos.top : passwordFieldPos.top;
         var maxZ = getMaxZ();
 
-        if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
+        if (passwordFieldPos && loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
             //console.log('login fields below each other')
             top = passwordFieldPos.top + passwordField.height() + 10;
         } else {
@@ -219,8 +219,12 @@ $j(document).ready(function () {
     }
 
     function formSubmitted(fields) {
-        var user = fields[0].value;
-        var pass = fields[1].value;
+        if (fields[0]) {
+            var user = fields[0].value;
+        }
+        if (fields[1]) {
+            var pass = fields[1].value;
+        }
         var params = {
             username: user,
             password: pass
@@ -298,22 +302,24 @@ $j(document).ready(function () {
             if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url).length !== 0) {
                 return;
             }
-
             if (loginFields.length > 0) {
                 for (var i = 0; i < loginFields.length; i++) {
                     var form = getFormFromElement(loginFields[i][0]);
-                        if (enablePasswordPicker) {
-                            createPasswordPicker(loginFields[i], form);
-                        }
+                    if(form) {
+                        form.setAttribute('autocomplete', 'off');
+                    }
+                    if (enablePasswordPicker) {
+                        createPasswordPicker(loginFields[i], form);
+                    }
 
-                        //Password miner
-                        /* jshint ignore:start */
-                        $j(form).submit((function (loginFields) {
-                            return function () {
-                                formSubmitted(loginFields);
-                            };
-                        })(loginFields[i]));
-                        /* jshint ignore:end */
+                    //Password miner
+                    /* jshint ignore:start */
+                    $j(form).submit((function (loginFields) {
+                        return function () {
+                            formSubmitted(loginFields);
+                        };
+                    })(loginFields[i]));
+                    /* jshint ignore:end */
                 }
 
                 API.runtime.sendMessage(API.runtime.id, {
@@ -341,9 +347,9 @@ $j(document).ready(function () {
                             enterCustomFields(logins[0], settings);
                         }
                     });
-                    }
+                }
             });
-            
+
         });
     }
 
@@ -391,7 +397,7 @@ $j(document).ready(function () {
                 if (result) {
                     init();
                     var body = document.getElementsByTagName('body')[0];
-                    if(body) {
+                    if (body) {
                         observeDOM(body, initForms);
                     }
                 } else {

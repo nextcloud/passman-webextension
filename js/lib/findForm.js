@@ -1,4 +1,4 @@
-var formManager = function(){
+var formManager = function () {
     /**
      Code based on:
      @url https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#655
@@ -43,15 +43,15 @@ var formManager = function(){
             var pwFields = [];
             for (var i = 0; i < form.elements.length; i++) {
                 var elem = form.elements[i];
-                if (elem.type !== "password"){
+                if (elem.type !== "password") {
                     continue;
                 }
 
-                if(!this.isElementVisible(elem)){
+                if (!this.isElementVisible(elem)) {
                     continue;
                 }
 
-                if (skipEmptyFields && !elem.value){
+                if (skipEmptyFields && !elem.value) {
                     continue;
                 }
 
@@ -63,7 +63,7 @@ var formManager = function(){
 
             // If too few or too many fields, bail out.
             if (pwFields.length === 0) {
-                this.log('(form ignored ('+ form.action +') -- no password fields.)');
+                this.log('(form ignored (' + form.action + ') -- no password fields.)');
                 return null;
             } else if (pwFields.length > 3) {
                 this.log('(form ignored -- too many password fields. [got ' +
@@ -72,6 +72,24 @@ var formManager = function(){
             }
 
             return pwFields;
+        },
+        _getUsernameFields: function (form) {
+            var usernameFields = [];
+            for (var i = 0; i < form.elements.length; i++) {
+                var elem = form.elements[i];
+                if(!this.isElementVisible(elem)){
+                    continue;
+                }
+                if (elem.type.toLowerCase() !== "text" && elem.type.toLowerCase() !== "email") {
+                    continue;
+                }
+
+                usernameFields[usernameFields.length] = {
+                    index: i,
+                    element: elem
+                };
+            }
+            return usernameFields.pop();
         },
         /*
          * _getFormFields
@@ -95,10 +113,14 @@ var formManager = function(){
             // Locate the password field(s) in the form. Up to 3 supported.
             // If there's no password field, there's nothing for us to do.
             var pwFields = this._getPasswordFields(form, isSubmission);
-            if (!pwFields){
-                return [null, null, null];
+            if (!pwFields) {
+                usernameField = this._getUsernameFields(form);
+                if(usernameField && usernameField.hasOwnProperty('element')) {
+                    return [usernameField.element, null, null];
+                } else {
+                    return [null, null, null];
+                }
             }
-
 
 
             // Locate the username field in the form by searching backwards
@@ -106,7 +128,7 @@ var formManager = function(){
             // username. We might not find a username field if the user is
             // already logged in to the site.
             for (var i = pwFields[0].index - 1; i >= 0; i--) {
-                if(!this.isElementVisible(form.elements[i])){
+                if (!this.isElementVisible(form.elements[i])) {
                     continue;
                 }
                 if (form.elements[i].type.toLowerCase() === "text" || form.elements[i].type.toLowerCase() === "email") {
@@ -115,24 +137,23 @@ var formManager = function(){
                 }
             }
 
-            if (!usernameField){
-                this.log('(form ('+ form.action +') ignored -- no username field found)');
+            if (!usernameField) {
+                this.log('(form (' + form.action + ') ignored -- no username field found)');
             }
 
 
             // If we're not submitting a form (it's a page load), there are no
             // password field values for us to use for identifying fields. So,
             // just assume the first password field is the one to be filled in.
-            if (!isSubmission || pwFields.length === 1){
+            if (!isSubmission || pwFields.length === 1) {
                 var res = [usernameField, pwFields[0].element];
-                if(pwFields[1]){
+                if (pwFields[1]) {
                     res.push(pwFields[1].element);
                 } else {
                     res.push(null);
                 }
                 return res;
             }
-
 
 
             // Try to figure out WTF is in the form based on the password values.
@@ -178,7 +199,7 @@ var formManager = function(){
             return [usernameField, newPasswordField, oldPasswordField];
         },
         log: function (str) {
-            if(settings.debug){
+            if (settings.debug) {
                 console.log(str);
             }
         }
@@ -194,13 +215,9 @@ function getLoginFields(isSubmission) {
         var result = formManager.getFormFields(form, isSubmission);
         var usernameField = result[0];
         var passwordField = result[1];
-        // Need a valid password field to do anything.
-        if (passwordField === null){
-            continue;
-        }
 
         var res = [usernameField, passwordField];
-        if(result[2]){
+        if (result[2]) {
             res.push(result[2]);
         } else {
             res.push(null);
@@ -211,7 +228,7 @@ function getLoginFields(isSubmission) {
 }
 
 function getFormFromElement(elem) {
-    if(elem) {
+    if (elem) {
         while (elem.parentNode) {
             if (elem.parentNode.nodeName.toLowerCase() === "form") {
                 return elem.parentNode;
@@ -221,35 +238,47 @@ function getFormFromElement(elem) {
     }
 }
 
-function dispatchEvents(element){
-    var eventNames = [ 'click', 'focus', 'keypress', 'keydown', 'keyup', 'input', 'blur', 'change' ];
-    eventNames.forEach(function(eventName) {
-        element.dispatchEvent(new Event(eventName, {"bubbles":true}));
+function dispatchEvents(element) {
+    var eventNames = ['click', 'focus', 'keypress', 'keydown', 'keyup', 'input', 'blur', 'change'];
+    eventNames.forEach(function (eventName) {
+        element.dispatchEvent(new Event(eventName, {"bubbles": true}));
     });
 }
 
 function fillPassword(user, password) {
-    var loginFields = getLoginFields();
-    for (var i = 0; i < loginFields.length; i++) {
-        if(user && loginFields[i][0]){
-            loginFields[i][0].value = user;
-            if(loginFields[i][0].offsetParent) {
-                dispatchEvents(loginFields[i][0]);
-            }
-        }
-        if(password && loginFields[i][1]) {
-            loginFields[i][1].value = password;
-            if(loginFields[i][1].offsetParent) {
-                dispatchEvents(loginFields[i][1]);
-            }
-        }
-        if(password && loginFields[i][2]) {
-            loginFields[i][2].value = password;
-            if(loginFields[i][2].offsetParent) {
-                dispatchEvents(loginFields[i][2]);
-            }
-        }
+    // var loginFields = getLoginFields();
+    // for (var i = 0; i < loginFields.length; i++) {
+    //     if(user && loginFields[i][0]){
+    //         loginFields[i][0].value = user;
+    //         if(loginFields[i][0].offsetParent) {
+    //             dispatchEvents(loginFields[i][0]);
+    //         }
+    //     }
+    //     if(password && loginFields[i][1]) {
+    //         loginFields[i][1].value = password;
+    //         if(loginFields[i][1].offsetParent) {
+    //             dispatchEvents(loginFields[i][1]);
+    //         }
+    //     }
+    //     if(password && loginFields[i][2]) {
+    //         loginFields[i][2].value = password;
+    //         if(loginFields[i][2].offsetParent) {
+    //             dispatchEvents(loginFields[i][2]);
+    //         }
+    //     }
+    // }
+    if (user) {
+        document.querySelectorAll('input[type=text], input[type=email]').forEach(function (el) {
+            el.value = user;
+            dispatchEvents(el);
+        });
     }
-
+    if (password) {
+        document.querySelectorAll('input[type=password]').forEach(function (el) {
+            el.value = password;
+            dispatchEvents(el);
+        });
+    }
 }
+
 formManager._init_();
