@@ -18,7 +18,8 @@ var background = (function () {
     });
 
     API.runtime.onInstalled.addListener(function () {
-        var url = 'chrome-extension://' + API.runtime.id + '/html/browser_action/browser_action.html';
+        var prot = (typeof browser !== 'undefined') ? 'moz-extension' : 'chrome-extension';
+        var url = prot+'://' + API.runtime.id + '/html/browser_action/browser_action.html';
         API.tabs.create({url: url});
     });
 
