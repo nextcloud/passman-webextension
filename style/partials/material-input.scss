@@ -11,8 +11,10 @@
 .group:last-child{
   margin-bottom: 0;
 }
-
-input[type="text"], input[type="password"], select.input-md {
+textarea{
+  max-width: 395px;
+}
+input[type="text"], input[type="password"], select.input-md, textarea {
   font-size: 14px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -48,7 +50,7 @@ select.input-md{
 /* active state */
 input[type="text"]:focus ~ label,input[type="password"]:focus ~ label,
 input[type="text"].ng-valid:not(.ng-empty) ~ label,input[type="password"].ng-valid:not(.ng-empty) ~ label,
-select.ng-valid:not(.ng-empty) ~ label {
+select.ng-valid:not(.ng-empty) ~ label, textarea.ng-valid:not(.ng-empty) ~ label, textarea:focus ~ label {
   top: -20px;
   font-size: 14px;
   color: #1565c0;
@@ -149,7 +151,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after  {
   width: calc(100% - 32px);
 }
 /* active state */
-input:focus ~ .highlight, select.input-md ~ .highlight {
+input:focus ~ .highlight, select.input-md ~ .highlight, textarea:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;

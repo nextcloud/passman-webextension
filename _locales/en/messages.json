@@ -19,6 +19,10 @@
     "message": "No credentials found",
     "description": "No credentials found for the current site"
   },
+  "notes": {
+    "message": "Notes",
+    "description": "No credentials found for the current site"
+  },
   "invalid_response_from_server": {
     "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
     "description": "No credentials found for the current site",
