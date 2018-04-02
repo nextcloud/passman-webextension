@@ -538,7 +538,8 @@ body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden; }
   body.setup {
-    width: 100%; }
+    width: 100%;
+    min-width: 350px; }
 
 header {
   width: 100%;

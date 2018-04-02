@@ -11,6 +11,7 @@ $sidebarWidth: 250px;
 body {
   &.setup{
     width: 100%;
+    min-width: 350px;
   }
   width: 450px;
   min-height: 350px;
