@@ -32,6 +32,30 @@ module.exports = function (grunt) {
             },
             all: ['js/*', '!js/vendor']
         },
+        sass: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'css/auto-login-popup.css': 'style/auto-login-popup.scss',
+                    'css/browser_action.css': 'style/browser_action.scss',
+                    'css/doorhanger.css': 'style/doorhanger.scss',
+                    'css/doorhanger-iframe.css': 'style/doorhanger-iframe.scss',
+                    'css/main.css': 'style/main.scss',
+                    'css/password_picker.css': 'style/password_picker.scss',
+                }
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['style/**/*.scss', 'style/*.scss'],
+                tasks: ['sass'],
+                options: {
+                    spawn: false
+                }
+            }
+        },
         mkdir: {
             dist: {
                 options: {
@@ -45,7 +69,7 @@ module.exports = function (grunt) {
                 src: [
                     '**',
                     '*.xpi',
-		    '!fixLocale.js',
+                    '!fixLocale.js',
                     '!tests/*/**/*',
                     '!tests/*',
                     '!tests',
@@ -109,10 +133,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-execute');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     // Default task(s).
 
     grunt.registerTask('test', ['karma', 'jshint']);
-    grunt.registerTask('build', ['execute:fixLocale','jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
+    grunt.registerTask('build', ['execute:fixLocale', 'sass', 'jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
     grunt.registerTask('dist', ['']);
 
 };
