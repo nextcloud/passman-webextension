@@ -420,6 +420,7 @@ var background = (function () {
             _self.settings.ignored_sites.push(site);
             saveSettings(_self.settings);
         }
+        clearMined();
     }
 
     _self.ignoreSite = ignoreSite;
