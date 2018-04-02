@@ -18,9 +18,11 @@ var background = (function () {
     });
 
     API.runtime.onInstalled.addListener(function () {
-        var prot = (typeof browser !== 'undefined') ? 'moz-extension' : 'chrome-extension';
-        var url = prot+'://' + API.runtime.id + '/html/browser_action/browser_action.html';
-        API.tabs.create({url: url});
+        storage.get('settings').error(function () {
+            var prot = (typeof browser !== 'undefined') ? 'moz-extension' : 'chrome-extension';
+            var url = prot + '://' + API.runtime.id + '/html/browser_action/browser_action.html';
+            API.tabs.create({url: url});
+        });
     });
 
     var master_password = null;
