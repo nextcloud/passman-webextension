@@ -19,7 +19,7 @@ var background = (function () {
 
     API.runtime.onInstalled.addListener(function () {
         var url = 'chrome-extension://' + API.runtime.id + '/html/browser_action/browser_action.html';
-        API.tabs.create({url: url});
+       // API.tabs.create({url: url});
     });
 
     var master_password = null;
