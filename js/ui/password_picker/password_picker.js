@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
         storage.get('activeTab').then(function (name) {
             if (name && name !== '') {
-                makeTabActive(name);
+                // makeTabActive(name);
                 API.runtime.sendMessage(API.runtime.id, {method: "getActiveTab", args: {returnFn: "returnActiveTab"}});
             }
         });
@@ -242,6 +242,9 @@ $(document).ready(function () {
         var name = $(this).attr('data-name');
         storage.set('activeTab', name).then(function (r) {
             makeTabActive(name);
+            if(name === 'search'){
+                $('#password_search').focus();
+            }
         });
     });
     
@@ -341,10 +344,8 @@ $(document).ready(function () {
     });
 
 
-    $('#password_search').keypress(function (e) {
-        if (e.which === 13) {
-            searchCredentials();
-        }
+    $('#password_search').keyup(function () {
+        searchCredentials();
     });
 
     function url_domain(data) {
@@ -357,7 +358,7 @@ $(document).ready(function () {
 
 
     function searchCredentials() {
-        $('#searchResults').html('');
+
         var searchText = $('#password_search').val();
         if (searchText === '') {
             return;
@@ -369,6 +370,7 @@ $(document).ready(function () {
             if (result.length === 0 || !result) {
                 $('#searchResults').html(API.i18n.getMessage('no_credentials_found'));
             }
+            var html = '';
             for (var i = 0; i < result.length; i++) {
                 var login = result[i];
                 var div = $('<div>', {class: 'account', text: login.label});
@@ -392,9 +394,10 @@ $(document).ready(function () {
                     };
                 })(login));
                 /* jshint ignore:end*/
+                html += $('<div />').html(div).html();
 
-                picker.find('#searchResults').append(div);
             }
+            picker.find('#searchResults').html(html);
         });
     }
 
