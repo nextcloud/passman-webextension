@@ -290,6 +290,7 @@ $j(document).ready(function () {
 
     _this.closeDoorhanger = closeDoorhanger;
 
+    var flagFilledForm = false;
     function initForms() {
         API.runtime.sendMessage(API.runtime.id, {method: 'getRuntimeSettings'}).then(function (settings) {
             var enablePasswordPicker = settings.enablePasswordPicker;
@@ -323,8 +324,9 @@ $j(document).ready(function () {
                     console.log('Found ' + logins.length + ' logins for this site');
                     if (logins.length === 1) {
                         API.runtime.sendMessage(API.runtime.id, {method: 'isAutoFillEnabled'}).then(function (isEnabled) {
-                            if (isEnabled) {
+                            if (isEnabled && !flagFilledForm) {
                                 enterLoginDetails(logins[0], false);
+                                flagFilledForm = true;
                             }
                         });
                     }
