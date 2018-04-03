@@ -3,6 +3,10 @@
         "message": "ბაზაშია $AMOUNT$ უფლებამოსილება",
         "description": "Amount of the credentials in the database"
     },
+    "notes": {
+        "message": "Notes",
+        "description": "No credentials found for the current site"
+    },
     "refresh_credential_list": {
         "message": "უფლებამოსილებების სიის განახლება",
         "description": "Refresh the credential list"

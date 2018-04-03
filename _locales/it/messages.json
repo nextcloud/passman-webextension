@@ -3,6 +3,10 @@
         "message": "$AMOUNT$ credenziali nel database",
         "description": "Amount of the credentials in the database"
     },
+    "notes": {
+        "message": "Notes",
+        "description": "No credentials found for the current site"
+    },
     "refresh_credential_list": {
         "message": "Aggiorna elenco credenziali",
         "description": "Refresh the credential list"

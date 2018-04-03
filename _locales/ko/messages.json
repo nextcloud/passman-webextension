@@ -3,6 +3,10 @@
         "message": "데이터베이스에 인증 정보 $AMOUNT$개 있음",
         "description": "Amount of the credentials in the database"
     },
+    "notes": {
+        "message": "Notes",
+        "description": "No credentials found for the current site"
+    },
     "refresh_credential_list": {
         "message": "인증 정보 목록 새로 고침",
         "description": "Refresh the credential list"
