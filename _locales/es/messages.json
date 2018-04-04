@@ -4,7 +4,7 @@
         "description": "Amount of the credentials in the database"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Notas",
         "description": "No credentials found for the current site"
     },
     "refresh_credential_list": {
@@ -92,7 +92,7 @@
         "description": "Unlock"
     },
     "invalid_vault_password": {
-        "message": "¡Llave no válida de la caja fuerte!",
+        "message": "¡Llave de la caja fuerte no válida!",
         "description": "Vault password"
     },
     "msg_reset_extension": {
