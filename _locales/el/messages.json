@@ -4,7 +4,7 @@
         "description": "Amount of the credentials in the database"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Σημειώσεις",
         "description": "No credentials found for the current site"
     },
     "refresh_credential_list": {
@@ -28,7 +28,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Προστέθηκε ο λογαριασμός.",
         "description": "Search"
     },
     "label": {
@@ -56,7 +56,7 @@
         "description": "Donate"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Προσθήκη προσαρμοσμένου πεδίου",
         "description": "Add a custom field"
     },
     "enable_update_url": {
@@ -144,7 +144,7 @@
         "description": "Search"
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Μη έγκυρες ρυθμίσεις διακομιστή",
         "description": "Search"
     },
     "nextcloud_settings": {
@@ -184,7 +184,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "value": {
-        "message": "Value",
+        "message": "Τιμή",
         "description": "Custom fields"
     },
     "donate_button_title": {
@@ -200,15 +200,15 @@
         "description": "Ignore path for site matching"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Προσαρμοσμένα πεδία",
         "description": "Custom fields"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Εμφάνιση επιλογών για προχωρημένους",
         "description": "Disable password picker"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "Μη έγκυρη URL διακομιστή",
         "description": "Invalid server URL"
     },
     "invalid_master_password": {
@@ -216,7 +216,7 @@
         "description": "When the master password is invalid"
     },
     "general": {
-        "message": "General",
+        "message": "Γενικά",
         "description": "Custom fields"
     },
     "no_password_match": {
@@ -236,7 +236,7 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "text": {
-        "message": "text",
+        "message": "κείμενο",
         "description": "To describe a textual input field"
     },
     "reset_extension": {
@@ -296,7 +296,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Προειδοποίηση! Το κύριο συνθηματικό σας θα αποθηκευτεί σε απλό κείμενο.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -396,7 +396,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "URL διακομιστή",
         "description": "Server URL"
     },
     "disable_page": {
@@ -404,7 +404,7 @@
         "description": "Disable page"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Απόκρυψη επιλογών για προχωρημένους",
         "description": "Disable password picker"
     },
     "cancel": {
