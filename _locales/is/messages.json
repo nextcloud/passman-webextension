@@ -4,7 +4,7 @@
         "description": "Amount of the credentials in the database"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Athugasemdir",
         "description": "No credentials found for the current site"
     },
     "refresh_credential_list": {
@@ -60,7 +60,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Spyrja hvort eigi að uppfæra URL-slóð á auðkenni ef hún samsvarar ekki núverandi slóð",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -68,7 +68,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Þegar lykilorð finnast, fara í lista fremur en á síðasta virka flipa",
         "description": "Disable password picker"
     },
     "search": {
@@ -112,7 +112,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Þetta lykilorð mun verða notað til að dulrita allar stillingarnar þínar í viðaukanum. Þú getur valið að vista lykilorðið á tölvuna þína, en það verður þá vistað sem HREINN TEXTI.",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -276,7 +276,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Þessi leiðarvísir hjálpar þér í gegnum skrefin við að setja upp viðaukann og að halda öllum lykilorðunum þínum samstilltum.",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -284,7 +284,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Settu inn lén eða TLD til að hunsa og ýttu svo á ↵",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -328,7 +328,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Þegar lykilorðaveljarinn finnur ekki nein auðkenni, fara þá í:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -368,7 +368,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Veldu lykilorðageymsluna sem þú vilt halda samstilltri við vafrann.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -392,7 +392,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Þú hefur ekki heimild til að breyta þessum auðkennum.",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -456,7 +456,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Velkomin í Passman-vefviðaukann",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -472,7 +472,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Engin persónuauðkenni fundust fyrir þetta vefsvæði.",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
