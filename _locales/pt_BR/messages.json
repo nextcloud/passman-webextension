@@ -452,7 +452,7 @@
         "description": "Enable debug mode"
     },
     "email": {
-        "message": "E-mail",
+        "message": "Email",
         "description": "E-mail"
     },
     "welcome_to_passman": {
