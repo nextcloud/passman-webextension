@@ -4,7 +4,7 @@
         "description": "Amount of the credentials in the database"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Notas",
         "description": "No credentials found for the current site"
     },
     "refresh_credential_list": {
@@ -28,7 +28,7 @@
         "description": "Invalid server URL"
     },
     "account_added": {
-        "message": "¡Cuenta agregada!",
+        "message": "Cuenta agregada.",
         "description": "Search"
     },
     "label": {
@@ -60,7 +60,7 @@
         "description": "Add a custom field"
     },
     "enable_update_url": {
-        "message": "Solicitar actualizar la url de credenciales si no conicide con la url actual ",
+        "message": "Solicita actualizar la URL de las credenciales si no corresponde a la URL actual",
         "description": "Enable form auto submit"
     },
     "credentials": {
@@ -68,7 +68,7 @@
         "description": "credentials"
     },
     "password_picker_gotolist": {
-        "message": "Cuando se encuentren contraseñas, ir a la lista en lugar de la última pestaña activa",
+        "message": "Cuando se encuentre la contraseña, ir a la lista en lugar de a la última pestaña activa.",
         "description": "Disable password picker"
     },
     "search": {
@@ -112,7 +112,7 @@
         "description": "Minimum amount of digits"
     },
     "enter_master_password_desc": {
-        "message": "Esta contaseña de usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar tus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
+        "message": "Esta contraseña se usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar esta contraseña localmente pero será almacenada en TEXTO PLAN. ",
         "description": "Enter master password"
     },
     "select_vault": {
@@ -276,7 +276,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "¡Este asistente de instalación te guiará en los pasos para configurar la extensióny mantener todas tus contraseñas sincronizadas!",
+        "message": "Este asistente te guiará a través de los pasos para configurar la extension y mantener todas tus contraseñas sincronizadas. ",
         "description": "Cancel"
     },
     "credential_deleted": {
@@ -284,7 +284,7 @@
         "description": "Credential deleted"
     },
     "ignore_site_placeholder": {
-        "message": "Ingresa un dominio o TLD a ignorar y presiona Intro",
+        "message": "Ingresa un dominio o la TLD a ignorar y presiona intro",
         "description": "Disable auto fill of forms"
     },
     "ignored_sites": {
@@ -296,7 +296,7 @@
         "description": "Toggle visibility"
     },
     "master_pw_warning": {
-        "message": "¡Advertencia! Tu contraseña maestra será almacenada en texto plano",
+        "message": "¡Advertencia! Tu contraseña maestra será almacenada en texto plano.",
         "description": "Remember master password"
     },
     "remember_master_password": {
@@ -328,7 +328,7 @@
         "description": "Vault password"
     },
     "select_password_picker_default_tab": {
-        "message": "Seleccionador de contraseñas: Cuando no se encuentran contraseñas ir a:",
+        "message": "Cuando el Seleccionador de contraseñas no pueda encontrar ningunas creedenciales, irá a:",
         "description": "Select password picker default tab"
     },
     "save_site": {
@@ -368,7 +368,7 @@
         "description": "Amount of the credentials in the database"
     },
     "default_vault_desc": {
-        "message": "Selecciona la bóveda que deseas mantener sincronizada con el navegador. ",
+        "message": "Selecciona la bóveda que deseas mantener sincronizada con el navegador web.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "detected_new_login": {
@@ -392,7 +392,7 @@
         "description": "Generate password"
     },
     "edit_insufficient_permissions": {
-        "message": "No tienes permisos para editar estas credenciales.",
+        "message": "No cuentas con los privilegios para editar estas credenciales ",
         "description": "You don't have permissions to edit this credential."
     },
     "server_url": {
@@ -456,7 +456,7 @@
         "description": "E-mail"
     },
     "welcome_to_passman": {
-        "message": "Bienvenido a la extensión Passman",
+        "message": "Bienvenido a la extensión web de Passman",
         "description": "Intro at the setup"
     },
     "browser_action_title_login": {
@@ -472,7 +472,7 @@
         "description": "Done"
     },
     "no_credentials_found_for_site": {
-        "message": "¡No se encontraron credenciales para este sitio!",
+        "message": "No se encontraron credenciales para este sitio. ",
         "description": "No credentials found for the current site"
     },
     "enable_autosubmit": {
@@ -488,7 +488,7 @@
         "description": "URL"
     },
     "iam_sure": {
-        "message": "Sí, estoy seguro",
+        "message": "¡Sí, estoy seguro!",
         "description": "Search"
     },
     "no_sites_ignored": {
