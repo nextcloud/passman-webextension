@@ -1,0 +1,542 @@
+{
+    "credentials_in_db": {
+        "message": "$AMOUNT$ credentials in the database",
+        "description": "Amount of the credentials in the database"
+    },
+    "notes": {
+        "message": "הערות",
+        "description": "No credentials found for the current site"
+    },
+    "refresh_credential_list": {
+        "message": "רענון רשימת פרטי גישה",
+        "description": "Refresh the credential list"
+    },
+    "extDescription": {
+        "message": "Passman - מנהל הססמאות עבור NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "save_to": {
+        "message": "שמירה אל $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "vault": {
+        "message": "כספת",
+        "description": "Vault"
+    },
+    "ignore_site_tab": {
+        "message": "התעלמות מאתר / עמוד",
+        "description": "Invalid server URL"
+    },
+    "account_added": {
+        "message": "נוסף חשבון.",
+        "description": "Search"
+    },
+    "label": {
+        "message": "תווית",
+        "description": "Label"
+    },
+    "ignore_protocol": {
+        "message": "התעלמות מפרוטוקול להתאמת אתרים",
+        "description": "Ignore protocol for site matching"
+    },
+    "settings": {
+        "message": "הגדרות",
+        "description": "Settings"
+    },
+    "finish": {
+        "message": "סיום",
+        "description": "Finish"
+    },
+    "detected_changed_url": {
+        "message": "התגלה שינוי כתובת עבור",
+        "description": "Detected changed URL for"
+    },
+    "donate": {
+        "message": "תרומה",
+        "description": "Donate"
+    },
+    "add_custom_field": {
+        "message": "הוספת שדה בהתאמה אישית",
+        "description": "Add a custom field"
+    },
+    "enable_update_url": {
+        "message": "יש לשאול לעדכן כתובת פרטי גישה כשזו אינה תואמת לכתובת הנוכחית",
+        "description": "Enable form auto submit"
+    },
+    "credentials": {
+        "message": "פרטי גישה",
+        "description": "credentials"
+    },
+    "password_picker_gotolist": {
+        "message": "כאשר נמצאת ססמה, יש לגשת לרשימה במקום ללשונית הפעילה האחרונה",
+        "description": "Disable password picker"
+    },
+    "search": {
+        "message": "חיפוש",
+        "description": "Search"
+    },
+    "toggle_advanced": {
+        "message": "שינוי מצב אפשרויות מתקדמות",
+        "description": "Toggle advanced options"
+    },
+    "extension_locked": {
+        "message": "הרחבת Passman נעולה, יש לשחרר כדי להשתמש בה",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "update": {
+        "message": "עדכון",
+        "description": "Update"
+    },
+    "unlock": {
+        "message": "שחרור",
+        "description": "Unlock"
+    },
+    "invalid_vault_password": {
+        "message": "מפתח הכספת שגוי!",
+        "description": "Vault password"
+    },
+    "msg_reset_extension": {
+        "message": "יש לך אפשרות לאפס את הססמה שלך. פעולה זו תאפס את ההרחבה למצב בררת המחדל שלה.",
+        "description": "Search"
+    },
+    "no_vaults": {
+        "message": "לא נמצאו כספות, עמך הסליחה. נא ליצור כספת דרך היישומון של Nextcloud / ownCloud ולנסות שוב.",
+        "description": "Search"
+    },
+    "edit": {
+        "message": "עריכה",
+        "description": "Edit"
+    },
+    "min_digits": {
+        "message": "כמות הספרות המזערית",
+        "description": "Minimum amount of digits"
+    },
+    "enter_master_password_desc": {
+        "message": "ססמה זו תשמש להצפנת כל ההגדרות בהרחבה. יש לך אפשרות לבחור לשמור את הססמה הזאת מקומית אבל היא תישמר בטקסט גלוי!",
+        "description": "Enter master password"
+    },
+    "select_vault": {
+        "message": "בחירת כספת",
+        "description": "Search"
+    },
+    "enable_autofill": {
+        "message": "הפעלת מילוי אוטומטי של טפסים",
+        "description": "Disable auto fill of forms"
+    },
+    "add_account": {
+        "message": "הוספת חשבון",
+        "description": "Add account"
+    },
+    "back": {
+        "message": "חזרה",
+        "description": "Back"
+    },
+    "credential": {
+        "message": "פרטי גישה",
+        "description": "credential"
+    },
+    "delete": {
+        "message": "מחיקה",
+        "description": "Delete"
+    },
+    "forgot_password": {
+        "message": "לשכוח ססמה?",
+        "description": "Search"
+    },
+    "invalid_server_settings": {
+        "message": "הגדרות שרת שגויות",
+        "description": "Search"
+    },
+    "nextcloud_settings": {
+        "message": "הגדרות שרת Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "use_generated_password": {
+        "message": "שימוש בססמה",
+        "description": "Use password"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "list": {
+        "message": "רשימה",
+        "description": "List"
+    },
+    "ignore_site": {
+        "message": "התעלמות מאת",
+        "description": "Update"
+    },
+    "select_default_vault": {
+        "message": "בחירת כספת בררת המחדל",
+        "description": "Select default vault"
+    },
+    "site_ignored": {
+        "message": "האתר בהתעלמות",
+        "description": "Site ignored"
+    },
+    "continue": {
+        "message": "המשך",
+        "description": "Continue"
+    },
+    "credentials_found_for_site": {
+        "message": "We've found $AMOUNT$ credentials for this site",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "value": {
+        "message": "ערך",
+        "description": "Custom fields"
+    },
+    "donate_button_title": {
+        "message": "הפיתוח מבוסס על תרומות, נא לתמוך בנו",
+        "description": "Title on the PayPal button"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "נא להקליד את פרטי הגישה שלך ל־Nextcloud / ownCloud",
+        "description": "No credentials found for the current site"
+    },
+    "ignore_path": {
+        "message": "התעלמות מנתיב באתר להתאמת אתרים",
+        "description": "Ignore path for site matching"
+    },
+    "custom_fields": {
+        "message": "שדות בהתאמה אישית",
+        "description": "Custom fields"
+    },
+    "show_adv": {
+        "message": "הצגת אפשרויות מתקדמות",
+        "description": "Disable password picker"
+    },
+    "invalid_host": {
+        "message": "כתובת השרת שגויה",
+        "description": "Invalid server URL"
+    },
+    "invalid_master_password": {
+        "message": "הססמה הראשית שגויה!",
+        "description": "When the master password is invalid"
+    },
+    "general": {
+        "message": "כללי",
+        "description": "Custom fields"
+    },
+    "no_password_match": {
+        "message": "הססמאות אינן תואמות",
+        "description": "When comparing passwords"
+    },
+    "close": {
+        "message": "סגירה",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "קודם",
+        "description": "Previous"
+    },
+    "add_hint": {
+        "message": "לאחר היצירה, ניתן לערוך את פרטי הגישה ב־Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "text": {
+        "message": "טקסט",
+        "description": "To describe a textual input field"
+    },
+    "reset_extension": {
+        "message": "איפוס הרחבה",
+        "description": "Search"
+    },
+    "default_vault": {
+        "message": "כספת בררת מחדל",
+        "description": "Default vault"
+    },
+    "ignore_port": {
+        "message": "התעלמות מפתחה להתאמת אתרים",
+        "description": "Ignore port for site matching"
+    },
+    "server_settings": {
+        "message": "הגדרות שרת",
+        "description": "Server Settings"
+    },
+    "master_password": {
+        "message": "הגדרת ססמה ראשית",
+        "description": "Set a master password"
+    },
+    "disable_picker_text": {
+        "message": "להשבית את Passman לעמוד הנוכחי או לכל האתר?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "password": {
+        "message": "ססמה",
+        "description": "Password"
+    },
+    "copy": {
+        "message": "העתקה",
+        "description": "Copy"
+    },
+    "begin": {
+        "message": "אפשר להתחיל!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "אשף זה ידריך אותך צעד אחר צעד איך להגדיר את ההרחבה ולדאוג שכל הססמאות שלך תישארנה מסונכרנות.",
+        "description": "Cancel"
+    },
+    "credential_deleted": {
+        "message": "פרטי הגישה נמחקו",
+        "description": "Credential deleted"
+    },
+    "ignore_site_placeholder": {
+        "message": "נא להכניס שם מתחם או סיומת להתעלמות ואז ללחוץ על ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "ignored_sites": {
+        "message": "כתובת / אתרים בהתעלמות",
+        "description": "Ignored sites"
+    },
+    "toggle_visibility": {
+        "message": "הפעלת מצב חשיפה",
+        "description": "Toggle visibility"
+    },
+    "master_pw_warning": {
+        "message": "אזהרה! הססמה הראשית שלך תאוחסן כטקסט גלוי",
+        "description": "Remember master password"
+    },
+    "remember_master_password": {
+        "message": "שמירת הססמה הראשית",
+        "description": "Remember master password"
+    },
+    "btn_save_site": {
+        "message": "שמירת פרטי גישה לאתר זה",
+        "description": "Save credentials for this site"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - נעול",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "label_required": {
+        "message": "נא למלא תווית",
+        "description": "When comparing passwords"
+    },
+    "enter_master_password": {
+        "message": "נא להכניס ססמה ראשית",
+        "description": "Enter master password"
+    },
+    "vault_settings": {
+        "message": "הגדרות כספת",
+        "description": "Vault settings"
+    },
+    "vault_password": {
+        "message": "ססמת הכספת",
+        "description": "Vault password"
+    },
+    "select_password_picker_default_tab": {
+        "message": "כאשר בוחר הססמאות לא מצליח למצוא פרטי גישה הוא ימשיך אל:",
+        "description": "Select password picker default tab"
+    },
+    "save_site": {
+        "message": "שמירת אתר",
+        "description": "Save site"
+    },
+    "extra_accounts": {
+        "message": "לאחר השלמת תהליך ההגדרה, ניתן להוסיף חשבונות נוספים.",
+        "description": "Search"
+    },
+    "next": {
+        "message": "הבא",
+        "description": "Next"
+    },
+    "avoid_ambiguous": {
+        "message": "כדאי להימנע מאותיות דומות",
+        "description": "Avoid ambiguous characters"
+    },
+    "disable_site": {
+        "message": "השבתת אתר",
+        "description": "Disable site"
+    },
+    "url_ignored": {
+        "message": "הכתובת בהתעלמות",
+        "description": "URL ignored"
+    },
+    "saving_to": {
+        "message": "נשמר אל $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "enable_password_picker": {
+        "message": "הפעלת בוחר ססמאות",
+        "description": "Disable password picker"
+    },
+    "auto_login": {
+        "message": "Passman מכניס אותך בתור $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "default_vault_desc": {
+        "message": "נא לבחור את הכספת שמעניין אותך לסנכרן אותה עם הדפדפן.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "detected_new_login": {
+        "message": "התגלתה כניסה חדשה",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "התגלה שינוי ססמה למשתמש",
+        "description": "Detected changed password for user"
+    },
+    "invalid_response_from_server": {
+        "message": "תגובה שגויה מהשרת: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "save": {
+        "message": "שמירה",
+        "description": "Save"
+    },
+    "generate_password": {
+        "message": "יצירת ססמה",
+        "description": "Generate password"
+    },
+    "edit_insufficient_permissions": {
+        "message": "אין לך הרשאה לערוך את פרטי הגישה האלה.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "server_url": {
+        "message": "כתובת שרת",
+        "description": "Server URL"
+    },
+    "disable_page": {
+        "message": "השבתת עמוד",
+        "description": "Disable page"
+    },
+    "hide_adv": {
+        "message": "הסתרת אפשרויות מתקדמות",
+        "description": "Disable password picker"
+    },
+    "cancel": {
+        "message": "ביטו",
+        "description": "Cancel"
+    },
+    "add": {
+        "message": "הוספה",
+        "description": "Add"
+    },
+    "credential_updated": {
+        "message": "פרטי גישה עודכנו",
+        "description": "updated, lowercase"
+    },
+    "no_credentials_found": {
+        "message": "לא נמצאו פרטי גישה",
+        "description": "No credentials found for the current site"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    },
+    "lock_extension": {
+        "message": "נעילת ההרחבה",
+        "description": "Title on the PayPal button"
+    },
+    "search_for": {
+        "message": "חיפוש אחר",
+        "description": "No credentials found for the current site"
+    },
+    "password_repeat": {
+        "message": "ססמה (שוב)",
+        "description": "Password"
+    },
+    "credential_saved": {
+        "message": "פרטי הגישה נשמרו",
+        "description": "saved, lowercase"
+    },
+    "require_every_character_type": {
+        "message": "לדרוש כל סוג של תו",
+        "description": "Require every character type"
+    },
+    "enable_debug": {
+        "message": "הפעלת מצב ניפוי שגיאות",
+        "description": "Enable debug mode"
+    },
+    "email": {
+        "message": "דוא״ל",
+        "description": "E-mail"
+    },
+    "welcome_to_passman": {
+        "message": "ברוך בואך להרחבת הדפדפן Passman",
+        "description": "Intro at the setup"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ נמצאו לעמוד זה",
+        "description": "String for the browser action"
+    },
+    "http_warning": {
+        "message": "שיטת הגישה שלך היא HTTP! פרטי גישה יישלחו בטקסט גלוי. פרטי הגישה שלך ב־Passman עדיין מוצפנים.",
+        "description": "Warning for http connections"
+    },
+    "done": {
+        "message": "הסתיים",
+        "description": "Done"
+    },
+    "no_credentials_found_for_site": {
+        "message": "לא נמצאו פרטי גישה לאתר זה.",
+        "description": "No credentials found for the current site"
+    },
+    "enable_autosubmit": {
+        "message": "הפעלת שליחה אוטומטית של טפסים לאחר בחירת חשבון",
+        "description": "Enable form auto submit"
+    },
+    "saving": {
+        "message": "שמירה",
+        "description": "Saving"
+    },
+    "url": {
+        "message": "כתובת",
+        "description": "URL"
+    },
+    "iam_sure": {
+        "message": "כן, בטוח!",
+        "description": "Search"
+    },
+    "no_sites_ignored": {
+        "message": "אין אף אתר בהתעלמות",
+        "description": "No sites ignored"
+    },
+    "done_donate": {
+        "message": "אם אהבת, לא לשכוח לתרום",
+        "description": "If you like, don't forget to donate"
+    },
+    "accounts": {
+        "message": "חשבונות",
+        "description": "Accounts"
+    },
+    "password_generator": {
+        "message": "מחולל ססמאות",
+        "description": "Password generator"
+    },
+    "empty_master_key": {
+        "message": "הססמה הראשית ריקה!",
+        "description": "Empty master key!"
+    },
+    "ignore_subdomain": {
+        "message": "התעלמות מתת־מתחמים בהתאמת אתרים",
+        "description": "Password"
+    },
+    "btn_search": {
+        "message": "חיפוש פרטי גישה",
+        "description": "Search credentials"
+    },
+    "credential_created": {
+        "message": "נוצרו פרטי גישה",
+        "description": "Credential created"
+    },
+    "username": {
+        "message": "שם משתמש",
+        "description": "Username"
+    },
+    "pw_length": {
+        "message": "אורך ססמה",
+        "description": "Password length"
+    },
+    "disable_browser_autofill": {
+        "message": "ביטול המילוי האוטומטי של הדפדפן",
+        "description": "Disable auto fill of forms"
+    },
+    "refresh_timer": {
+        "message": "מתזמן רענון [שנ׳]",
+        "description": "Password"
+    }
+}
