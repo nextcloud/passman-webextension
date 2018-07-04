@@ -370,7 +370,7 @@ $(document).ready(function () {
             if (result.length === 0 || !result) {
                 $('#searchResults').html(API.i18n.getMessage('no_credentials_found'));
             }
-            var html = '';
+            var divs = [];
             for (var i = 0; i < result.length; i++) {
                 var login = result[i];
                 var div = $('<div>', {class: 'account', text: login.label});
@@ -394,10 +394,12 @@ $(document).ready(function () {
                     };
                 })(login));
                 /* jshint ignore:end*/
-                html += $('<div />').html(div).html();
+                divs.push(div);
 
             }
-            picker.find('#searchResults').html(html);
+            var searchResults = picker.find('#searchResults');
+            searchResults.empty();
+            searchResults.append(divs);
         });
     }
 
