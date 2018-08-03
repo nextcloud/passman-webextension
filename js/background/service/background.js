@@ -181,14 +181,21 @@ var background = (function () {
         if (!master_password) {
             return;
         }
-        //console.log('Loading vault with the following settings: ', settings);
+        // console.log('Loading vault with the following settings: ', settings);
         var tmpList = [];
 
         for (var i = 0; i < _self.settings.accounts.length; i++) {
             var account = _self.settings.accounts[i];
             /* jshint ignore:start */
             (function (inner_account) {
-                PAPI.getVault(inner_account, function (vault) {
+                PAPI.host = inner_account.nextcloud_host;
+                PAPI.username = inner_account.nextcloud_username;
+                PAPI.password = inner_account.nextcloud_password;
+		PAPI.getVaults(function(vaults) {
+                    if (vaults.hasOwnProperty('error')) {
+                        return;
+                    }
+	            PAPI.getVault(inner_account, function (vault) {
                     if (vault.hasOwnProperty('error')) {
                         return;
                     }
@@ -219,7 +226,9 @@ var background = (function () {
                     getSharedCredentials(inner_account);
 
 
-                });
+                });	    
+	    });
+
             }(account));
             /* jshint ignore:end */
         }
