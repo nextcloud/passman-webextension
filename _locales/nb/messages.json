@@ -12,7 +12,7 @@
         "description": "Refresh the credential list"
     },
     "extDescription": {
-        "message": "Passman - Passordbehandleren for NextCloud / ownCloud",
+        "message": "Passman - Passordbehandler for NextCloud / ownCloud",
         "description": "Extension description"
     },
     "save_to": {
@@ -156,7 +156,7 @@
         "description": "Use password"
     },
     "one_time_password": {
-        "message": "OTP",
+        "message": "Engangs passord",
         "description": "One time password"
     },
     "list": {
