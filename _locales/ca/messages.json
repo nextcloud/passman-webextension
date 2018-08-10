@@ -1,375 +1,115 @@
 {
-    "credentials_in_db": {
-        "message": "$AMOUNT$ credencials a la base de dades",
-        "description": "Amount of the credentials in the database"
+    "extDescription": {
+        "message": "Contrasenya: el gestor de contrasenyes per a NextCloud / own Cloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Busca per",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "No credentials found for this site.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "No s'ha trobat cap credencial",
+        "description": "No credentials found for the current site"
     },
     "notes": {
         "message": "Notes",
         "description": "No credentials found for the current site"
     },
-    "refresh_credential_list": {
-        "message": "Actualitza la llista de credencials",
-        "description": "Refresh the credential list"
-    },
-    "extDescription": {
-        "message": "Contrasenya: el gestor de contrasenyes per a NextCloud / own Cloud",
-        "description": "Extension description"
-    },
-    "save_to": {
-        "message": "Desa a $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "vault": {
-        "message": "cripta",
-        "description": "Vault"
-    },
-    "ignore_site_tab": {
-        "message": "Ignora lloc / pàgina",
-        "description": "Invalid server URL"
-    },
-    "account_added": {
-        "message": "Account added.",
-        "description": "Search"
-    },
-    "label": {
-        "message": "Etiqueta",
-        "description": "Label"
-    },
-    "ignore_protocol": {
-        "message": "Ignora el protocol per a la concordança de llocs",
-        "description": "Ignore protocol for site matching"
-    },
-    "settings": {
-        "message": "Configuració",
-        "description": "Settings"
-    },
-    "finish": {
-        "message": "Acaba",
-        "description": "Finish"
-    },
-    "detected_changed_url": {
-        "message": "S'ha detectat l'URL canviat per a",
-        "description": "Detected changed URL for"
-    },
-    "donate": {
-        "message": "Donar",
-        "description": "Donate"
-    },
-    "add_custom_field": {
-        "message": "Afegiu un camp personalitzat",
-        "description": "Add a custom field"
-    },
-    "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
-        "description": "Enable form auto submit"
-    },
-    "credentials": {
-        "message": "credencials",
-        "description": "credentials"
-    },
-    "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
-        "description": "Disable password picker"
-    },
-    "search": {
-        "message": "Cerca",
-        "description": "Search"
-    },
-    "toggle_advanced": {
-        "message": "Canvia les opcions avançades",
-        "description": "Toggle advanced options"
-    },
-    "extension_locked": {
-        "message": "L'extensió de contrasenya està bloquejada, desbloqueja-la per utilitzar-la",
-        "description": "When the extension is locked, and requires an unlock to use it"
-    },
-    "update": {
-        "message": "Actualitza",
-        "description": "Update"
-    },
-    "unlock": {
-        "message": "Desbloqueja",
-        "description": "Unlock"
-    },
-    "invalid_vault_password": {
-        "message": "Clau no vàlida!",
-        "description": "Vault password"
-    },
-    "msg_reset_extension": {
-        "message": "Podeu restablir la contrasenya. Això restablirà l'extensió a l'estat predeterminat.",
-        "description": "Search"
-    },
-    "no_vaults": {
-        "message": "No s'han trobat voltes. Creeu una volta mitjançant l'aplicació Nextcloud / ownCloud i torneu-ho a provar.",
-        "description": "Search"
-    },
-    "edit": {
-        "message": "Edita",
-        "description": "Edit"
-    },
-    "min_digits": {
-        "message": "Quantitat mínima de dígits",
-        "description": "Minimum amount of digits"
-    },
-    "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
-        "description": "Enter master password"
-    },
-    "select_vault": {
-        "message": "Seleccioneu la cripta",
-        "description": "Search"
-    },
-    "enable_autofill": {
-        "message": "Habilita l'ompliment automàtic del formulari",
-        "description": "Disable auto fill of forms"
-    },
-    "add_account": {
-        "message": "Afegeix compte",
-        "description": "Add account"
-    },
-    "back": {
-        "message": "Enrera",
-        "description": "Back"
-    },
-    "credential": {
-        "message": "credencials",
-        "description": "credential"
-    },
-    "delete": {
-        "message": "Esborra",
-        "description": "Delete"
-    },
-    "forgot_password": {
-        "message": "Has oblidat la contrasenya?",
-        "description": "Search"
-    },
-    "invalid_server_settings": {
-        "message": "Configuració del servidor no vàlida",
-        "description": "Search"
-    },
-    "nextcloud_settings": {
-        "message": "Configuració del servidor Nextcloud / ownCloud",
-        "description": "Nextcloud / ownCloud server settings"
-    },
-    "use_generated_password": {
-        "message": "Utilitza la contrasenya",
-        "description": "Use password"
-    },
-    "one_time_password": {
-        "message": "OTP",
-        "description": "One time password"
-    },
-    "list": {
-        "message": "Llista",
-        "description": "List"
-    },
-    "ignore_site": {
-        "message": "Ignora el lloc",
-        "description": "Update"
-    },
-    "select_default_vault": {
-        "message": "Seleccioneu la volta predeterminada",
-        "description": "Select default vault"
-    },
-    "site_ignored": {
-        "message": "S'ha ignorat el lloc",
-        "description": "Site ignored"
-    },
-    "continue": {
-        "message": "Continua",
-        "description": "Continue"
-    },
-    "credentials_found_for_site": {
-        "message": "Hem trobat $AMOUNT$ credencials per a aquest lloc",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "value": {
-        "message": "Valor",
-        "description": "Custom fields"
-    },
-    "donate_button_title": {
-        "message": "El desenvolupament depèn de les donacions, si us plau, recolzi-nos",
-        "description": "Title on the PayPal button"
+    "invalid_response_from_server": {
+        "message": "Resposta no vàlida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Introduïu les vostres credencials de Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
-    "ignore_path": {
-        "message": "Ignora la ruta d'accés per a la concordança de lloc",
-        "description": "Ignore path for site matching"
+    "save_site": {
+        "message": "Guarda el lloc",
+        "description": "Save site"
     },
-    "custom_fields": {
-        "message": "Camps personalitzats",
-        "description": "Custom fields"
+    "password_generator": {
+        "message": "Generador de contrasenyes",
+        "description": "Password generator"
     },
-    "show_adv": {
-        "message": "Show advanced options",
-        "description": "Disable password picker"
-    },
-    "invalid_host": {
-        "message": "Direcció del servidor invàlida",
-        "description": "Invalid server URL"
-    },
-    "invalid_master_password": {
-        "message": "Contrasenya mestra no vàlida!",
-        "description": "When the master password is invalid"
-    },
-    "general": {
-        "message": "General",
-        "description": "Custom fields"
-    },
-    "no_password_match": {
-        "message": "Les contrasenyes no coincideixen",
-        "description": "When comparing passwords"
-    },
-    "close": {
-        "message": "Tanca",
-        "description": "Close"
-    },
-    "prev": {
-        "message": "Anterior",
-        "description": "Previous"
-    },
-    "add_hint": {
-        "message": "Després de crear-lo, podeu editar la credencial a Passman",
-        "description": "After creating it, you can edit the credential in Passman"
-    },
-    "text": {
-        "message": "text",
-        "description": "To describe a textual input field"
-    },
-    "reset_extension": {
-        "message": "Reinicia l'extensió",
-        "description": "Search"
-    },
-    "default_vault": {
-        "message": "cripta per defecte",
-        "description": "Default vault"
-    },
-    "ignore_port": {
-        "message": "Ignora el port per a la concordança de llocs",
-        "description": "Ignore port for site matching"
-    },
-    "server_settings": {
-        "message": "Configuració del Servidor",
-        "description": "Server Settings"
-    },
-    "master_password": {
-        "message": "contrasenya mestra",
-        "description": "Set a master password"
-    },
-    "disable_picker_text": {
-        "message": "Voleu desactivar Passman per a la pàgina actual o per al lloc web sencer?",
-        "description": "Would you like to disable Passman for the current page, or for the entire website?"
-    },
-    "password": {
-        "message": "Password",
-        "description": "Password"
-    },
-    "copy": {
-        "message": "Copia",
-        "description": "Copy"
-    },
-    "begin": {
-        "message": "Comencem!",
-        "description": "Let's begin!"
-    },
-    "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
-        "description": "Cancel"
-    },
-    "credential_deleted": {
-        "message": "Credencial eliminada",
-        "description": "Credential deleted"
-    },
-    "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
-        "description": "Disable auto fill of forms"
-    },
-    "ignored_sites": {
-        "message": "Llocs / URL ignorats",
-        "description": "Ignored sites"
+    "generate_password": {
+        "message": "Genera contrasenya",
+        "description": "Generate password"
     },
     "toggle_visibility": {
         "message": "Commuta la visibilitat",
         "description": "Toggle visibility"
     },
-    "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
-        "description": "Remember master password"
+    "toggle_advanced": {
+        "message": "Canvia les opcions avançades",
+        "description": "Toggle advanced options"
     },
-    "remember_master_password": {
-        "message": "Recorda la contrasenya mestra",
-        "description": "Remember master password"
+    "use_generated_password": {
+        "message": "Utilitza la contrasenya",
+        "description": "Use password"
     },
-    "btn_save_site": {
-        "message": "Deseu credencials per a aquest lloc",
-        "description": "Save credentials for this site"
+    "add_hint": {
+        "message": "Després de crear-lo, podeu editar la credencial a Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
-    "browser_action_title_locked": {
-        "message": "contrasenya bloquejada",
-        "description": "Browser extension title when the extension is locked"
+    "pw_length": {
+        "message": "Longitud de la contrasenya",
+        "description": "Password length"
     },
-    "label_required": {
-        "message": "Si us plau, omple l'etiqueta!",
-        "description": "When comparing passwords"
-    },
-    "enter_master_password": {
-        "message": "Introdueix la contrasenya mestra",
-        "description": "Enter master password"
-    },
-    "vault_settings": {
-        "message": "Configuració de vault",
-        "description": "Vault settings"
-    },
-    "vault_password": {
-        "message": "Contrasenya de la cripta",
-        "description": "Vault password"
-    },
-    "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
-        "description": "Select password picker default tab"
-    },
-    "save_site": {
-        "message": "Guarda el lloc",
-        "description": "Save site"
-    },
-    "extra_accounts": {
-        "message": "Un cop completat el procés de configuració, podeu afegir més comptes.",
-        "description": "Search"
-    },
-    "next": {
-        "message": "Següent",
-        "description": "Next"
+    "min_digits": {
+        "message": "Quantitat mínima de dígits",
+        "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
         "message": "Evita caràcters ambigus",
         "description": "Avoid ambiguous characters"
     },
-    "disable_site": {
-        "message": "Desactiva el lloc",
-        "description": "Disable site"
+    "require_every_character_type": {
+        "message": "Requereix  tipus de caràcter",
+        "description": "Require every character type"
     },
-    "url_ignored": {
-        "message": "S'ha ignorat l'URL",
-        "description": "URL ignored"
+    "add_account": {
+        "message": "Afegeix compte",
+        "description": "Add account"
     },
-    "saving_to": {
-        "message": "S'està desant a $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+    "accounts": {
+        "message": "Comptes",
+        "description": "Accounts"
     },
-    "enable_password_picker": {
-        "message": "Activa el selector de contrasenya",
-        "description": "Disable password picker"
+    "label": {
+        "message": "Etiqueta",
+        "description": "Label"
     },
-    "auto_login": {
-        "message": "Passman t'està iniciant la sessió $USERNAME$",
-        "description": "Amount of the credentials in the database"
+    "username": {
+        "message": "Usuari",
+        "description": "Username"
     },
-    "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
-        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Afegeix",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "S'ha creat una credencial",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "Url",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Password",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Contrasenya (repetició)",
+        "description": "Password"
     },
     "detected_new_login": {
         "message": "S'ha detectat un nou inici de sessió",
@@ -379,164 +119,424 @@
         "message": "S'ha detectat una contrasenya modificada per a l'usuari",
         "description": "Detected changed password for user"
     },
-    "invalid_response_from_server": {
-        "message": "Resposta no vàlida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
-    },
-    "save": {
-        "message": "Desa",
-        "description": "Save"
-    },
-    "generate_password": {
-        "message": "Genera contrasenya",
-        "description": "Generate password"
-    },
-    "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
-        "description": "You don't have permissions to edit this credential."
-    },
-    "server_url": {
-        "message": "URL del servidor",
-        "description": "Server URL"
-    },
-    "disable_page": {
-        "message": "Desactiva la pàgina",
-        "description": "Disable page"
-    },
-    "hide_adv": {
-        "message": "Hide advanced options",
-        "description": "Disable password picker"
-    },
-    "cancel": {
-        "message": "Cancel·la",
-        "description": "Cancel"
-    },
-    "add": {
-        "message": "Afegeix",
-        "description": "Add"
-    },
-    "credential_updated": {
-        "message": "Credencial actualitzada",
-        "description": "updated, lowercase"
-    },
-    "no_credentials_found": {
-        "message": "No s'ha trobat cap credencial",
-        "description": "No credentials found for the current site"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
-    },
-    "lock_extension": {
-        "message": "Bloqueja l'extensió",
-        "description": "Title on the PayPal button"
-    },
-    "search_for": {
-        "message": "Busca per",
-        "description": "No credentials found for the current site"
-    },
-    "password_repeat": {
-        "message": "Contrasenya (repetició)",
-        "description": "Password"
-    },
-    "credential_saved": {
-        "message": "Credencials desades",
-        "description": "saved, lowercase"
-    },
-    "require_every_character_type": {
-        "message": "Requereix  tipus de caràcter",
-        "description": "Require every character type"
-    },
-    "enable_debug": {
-        "message": "Activa el mode de depuració",
-        "description": "Enable debug mode"
-    },
-    "email": {
-        "message": "E-mail",
-        "description": "E-mail"
-    },
-    "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
-        "description": "Intro at the setup"
-    },
     "browser_action_title_login": {
         "message": "Contrasenya - $CREDENTIAL_AMOUNT$ $PLURAL$ trobat per a aquesta pàgina",
         "description": "String for the browser action"
     },
-    "http_warning": {
-        "message": "Esteu utilitzant HTTP! Les credencials d'inici de sessió es publicaran en text sense format. Les vostres credencials de Passman segueixen xifrades.",
-        "description": "Warning for http connections"
+    "browser_action_title_locked": {
+        "message": "contrasenya bloquejada",
+        "description": "Browser extension title when the extension is locked"
     },
-    "done": {
-        "message": "Fet",
-        "description": "Done"
+    "detected_changed_url": {
+        "message": "S'ha detectat l'URL canviat per a",
+        "description": "Detected changed URL for"
     },
-    "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
-        "description": "No credentials found for the current site"
+    "credential": {
+        "message": "credencials",
+        "description": "credential"
     },
-    "enable_autosubmit": {
-        "message": "Habiliteu el formulari per enviar automàticament després de seleccionar el compte",
-        "description": "Enable form auto submit"
+    "credentials": {
+        "message": "credencials",
+        "description": "credentials"
     },
-    "saving": {
-        "message": "Desant",
-        "description": "Saving"
+    "refresh_timer": {
+        "message": "Actualitza el temporitzador [s]",
+        "description": "Password"
     },
-    "url": {
-        "message": "Url",
-        "description": "URL"
-    },
-    "iam_sure": {
-        "message": "Yes, I'm sure!",
-        "description": "Search"
-    },
-    "no_sites_ignored": {
-        "message": "No s'ha ignorat cap lloc",
-        "description": "No sites ignored"
-    },
-    "done_donate": {
-        "message": "Si t'agrada, no t'oblidis de donar",
-        "description": "If you like, don't forget to donate"
-    },
-    "accounts": {
-        "message": "Comptes",
-        "description": "Accounts"
-    },
-    "password_generator": {
-        "message": "Generador de contrasenyes",
-        "description": "Password generator"
-    },
-    "empty_master_key": {
-        "message": "Clau mestra buida!",
-        "description": "Empty master key!"
+    "ignore_protocol": {
+        "message": "Ignora el protocol per a la concordança de llocs",
+        "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
         "message": "Ignora el subdomini per a la concordança de lloc",
         "description": "Password"
     },
-    "btn_search": {
-        "message": "Busca credencial...",
-        "description": "Search credentials"
+    "ignore_port": {
+        "message": "Ignora el port per a la concordança de llocs",
+        "description": "Ignore port for site matching"
     },
-    "credential_created": {
-        "message": "S'ha creat una credencial",
-        "description": "Credential created"
+    "http_warning": {
+        "message": "Esteu utilitzant HTTP! Les credencials d'inici de sessió es publicaran en text sense format. Les vostres credencials de Passman segueixen xifrades.",
+        "description": "Warning for http connections"
     },
-    "username": {
-        "message": "Usuari",
-        "description": "Username"
+    "ignore_path": {
+        "message": "Ignora la ruta d'accés per a la concordança de lloc",
+        "description": "Ignore path for site matching"
     },
-    "pw_length": {
-        "message": "Longitud de la contrasenya",
-        "description": "Password length"
+    "enable_autofill": {
+        "message": "Habilita l'ompliment automàtic del formulari",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Habiliteu el formulari per enviar automàticament després de seleccionar el compte",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
         "message": "Desactivacio automàtica del navegador",
         "description": "Disable auto fill of forms"
     },
-    "refresh_timer": {
-        "message": "Actualitza el temporitzador [s]",
-        "description": "Password"
+    "ignore_site_placeholder": {
+        "message": "Enter a domain or TLD to ignore and press ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Activa el selector de contrasenya",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "When a password is found, go to list rather than last active tab",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Activa el mode de depuració",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Desa",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Desant",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Credencials desades",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Credencial actualitzada",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "S'ha ignorat el lloc",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "S'ha ignorat l'URL",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Actualitza",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignora el lloc",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Deseu credencials per a aquest lloc",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Busca credencial...",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Welcome to the Passman webextension",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL del servidor",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Comencem!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Cancel·la",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "cripta per defecte",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Introdueix la contrasenya mestra",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Recorda la contrasenya mestra",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Warning! Your master password will be stored in plaintext.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Fet",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Camps personalitzats",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "General",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Valor",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Llista",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Edita",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Configuració del Servidor",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Configuració de vault",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "contrasenya mestra",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Acaba",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Si t'agrada, no t'oblidis de donar",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Tanca",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Anterior",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Enrera",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Copia",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Següent",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Continua",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Donar",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Configuració del servidor Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Seleccioneu la volta predeterminada",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Llocs / URL ignorats",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Desactiva la pàgina",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Desactiva el lloc",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Voleu desactivar Passman per a la pàgina actual o per al lloc web sencer?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "No s'ha ignorat cap lloc",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Contrasenya de la cripta",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Si us plau, omple l'etiqueta!",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Direcció del servidor invàlida",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignora lloc / pàgina",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Les contrasenyes no coincideixen",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Clau no vàlida!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Clau mestra buida!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Configuració",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Un cop completat el procés de configuració, podeu afegir més comptes.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Account added.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Seleccioneu la cripta",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Esborra",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Cerca",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Credencial eliminada",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "No s'han trobat voltes. Creeu una volta mitjançant l'aplicació Nextcloud / ownCloud i torneu-ho a provar.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Podeu restablir la contrasenya. Això restablirà l'extensió a l'estat predeterminat.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Has oblidat la contrasenya?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Reinicia l'extensió",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Yes, I'm sure!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "You don't have the permission to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Configuració del servidor no vàlida",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Actualitza la llista de credencials",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "El desenvolupament depèn de les donacions, si us plau, recolzi-nos",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Bloqueja l'extensió",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "L'extensió de contrasenya està bloquejada, desbloqueja-la per utilitzar-la",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Contrasenya mestra no vàlida!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Desbloqueja",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Hem trobat $AMOUNT$ credencials per a aquest lloc",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Desa a $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "S'està desant a $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ credencials a la base de dades",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman t'està iniciant la sessió $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "cripta",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Afegiu un camp personalitzat",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "text",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
     }
 }

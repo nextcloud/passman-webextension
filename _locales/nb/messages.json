@@ -1,375 +1,115 @@
 {
-    "credentials_in_db": {
-        "message": "$AMOUNT$ påloggingsdetaljer i databasen",
-        "description": "Amount of the credentials in the database"
+    "extDescription": {
+        "message": "Passman - Passordbehandler for NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Søk etter",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Ingen påloggingsdetaljer funnet for denne siden.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Fant ingen påloggingsdetaljer",
+        "description": "No credentials found for the current site"
     },
     "notes": {
         "message": "Notater",
         "description": "No credentials found for the current site"
     },
-    "refresh_credential_list": {
-        "message": "Gjenoppfrisk liste over påloggingsdetaljer",
-        "description": "Refresh the credential list"
-    },
-    "extDescription": {
-        "message": "Passman - Passordbehandler for NextCloud / ownCloud",
-        "description": "Extension description"
-    },
-    "save_to": {
-        "message": "Lagre til $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "vault": {
-        "message": "Hvelv",
-        "description": "Vault"
-    },
-    "ignore_site_tab": {
-        "message": "Ignorer side",
-        "description": "Invalid server URL"
-    },
-    "account_added": {
-        "message": "Konto lagt til.",
-        "description": "Search"
-    },
-    "label": {
-        "message": "Etikett",
-        "description": "Label"
-    },
-    "ignore_protocol": {
-        "message": "Ignorer protokoll for sjekk av sider mot hverandre",
-        "description": "Ignore protocol for site matching"
-    },
-    "settings": {
-        "message": "Innstillinger",
-        "description": "Settings"
-    },
-    "finish": {
-        "message": "Fullfør",
-        "description": "Finish"
-    },
-    "detected_changed_url": {
-        "message": "Oppdaget ny URL for",
-        "description": "Detected changed URL for"
-    },
-    "donate": {
-        "message": "Doner",
-        "description": "Donate"
-    },
-    "add_custom_field": {
-        "message": "Legg til egendefinert felt",
-        "description": "Add a custom field"
-    },
-    "enable_update_url": {
-        "message": "Spør om å oppdatere nettadresse for påloggingsdetalj hvis den ikke samsvarer med gjeldende nettadresse",
-        "description": "Enable form auto submit"
-    },
-    "credentials": {
-        "message": "påloggingsdetaljer",
-        "description": "credentials"
-    },
-    "password_picker_gotolist": {
-        "message": "Når et nytt passord blir funnet, gå til liste snarere enn forrige aktive fane",
-        "description": "Disable password picker"
-    },
-    "search": {
-        "message": "Søk",
-        "description": "Search"
-    },
-    "toggle_advanced": {
-        "message": "Veksle avanserte alternativer",
-        "description": "Toggle advanced options"
-    },
-    "extension_locked": {
-        "message": "Passman-utvidelsen er låst. Lås det opp for å bruke det",
-        "description": "When the extension is locked, and requires an unlock to use it"
-    },
-    "update": {
-        "message": "Oppdater",
-        "description": "Update"
-    },
-    "unlock": {
-        "message": "Lås opp",
-        "description": "Unlock"
-    },
-    "invalid_vault_password": {
-        "message": "Ugyldig hvelv-nøkkel!",
-        "description": "Vault password"
-    },
-    "msg_reset_extension": {
-        "message": "Du kan tilbakestille passordet ditt. Dette vil tilbakestille utvidelsen til forvalgt tilstand.",
-        "description": "Search"
-    },
-    "no_vaults": {
-        "message": "Beklager, utvidelsen fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
-        "description": "Search"
-    },
-    "edit": {
-        "message": "Rediger",
-        "description": "Edit"
-    },
-    "min_digits": {
-        "message": "Minste antall siffer",
-        "description": "Minimum amount of digits"
-    },
-    "enter_master_password_desc": {
-        "message": "Dette passordet brukes til å kryptere alle dine innstillinger i utvidelsen. Du kan velge å lagre dette passordet lokalt, men det vil bli lagret i KLARTEKST.",
-        "description": "Enter master password"
-    },
-    "select_vault": {
-        "message": "Velg hvelv",
-        "description": "Search"
-    },
-    "enable_autofill": {
-        "message": "Skru på auto-utfylling av skjemaer",
-        "description": "Disable auto fill of forms"
-    },
-    "add_account": {
-        "message": "Legg til en konto",
-        "description": "Add account"
-    },
-    "back": {
-        "message": "Tilbake",
-        "description": "Back"
-    },
-    "credential": {
-        "message": "påloggingsdetalj",
-        "description": "credential"
-    },
-    "delete": {
-        "message": "Slett",
-        "description": "Delete"
-    },
-    "forgot_password": {
-        "message": "Glemt passordet?",
-        "description": "Search"
-    },
-    "invalid_server_settings": {
-        "message": "Ugyldige tjenerinnstillinger",
-        "description": "Search"
-    },
-    "nextcloud_settings": {
-        "message": "Nextcloud- / ownCloud -tjenerinnstillinger",
-        "description": "Nextcloud / ownCloud server settings"
-    },
-    "use_generated_password": {
-        "message": "Bruk passord",
-        "description": "Use password"
-    },
-    "one_time_password": {
-        "message": "Engangs passord",
-        "description": "One time password"
-    },
-    "list": {
-        "message": "Liste",
-        "description": "List"
-    },
-    "ignore_site": {
-        "message": "Ignorer side",
-        "description": "Update"
-    },
-    "select_default_vault": {
-        "message": "Velg forvalgt hvelv",
-        "description": "Select default vault"
-    },
-    "site_ignored": {
-        "message": "Side ignorert",
-        "description": "Site ignored"
-    },
-    "continue": {
-        "message": "Fortsett",
-        "description": "Continue"
-    },
-    "credentials_found_for_site": {
-        "message": "Vi har funnet $AMOUNT$ påloggingsdetaljer for denne siden",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "value": {
-        "message": "Verdi",
-        "description": "Custom fields"
-    },
-    "donate_button_title": {
-        "message": "Utviklingen avhenger av kronerulling, støtt opp",
-        "description": "Title on the PayPal button"
+    "invalid_response_from_server": {
+        "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Skriv inn dine Nextcloud / ownCloud -påloggingsdetaljer",
         "description": "No credentials found for the current site"
     },
-    "ignore_path": {
-        "message": "Ignorer sti for sjekk av sider mot hverandre",
-        "description": "Ignore path for site matching"
+    "save_site": {
+        "message": "Lagre side",
+        "description": "Save site"
     },
-    "custom_fields": {
-        "message": "Brukervalgte felter",
-        "description": "Custom fields"
+    "password_generator": {
+        "message": "Passordgenerator",
+        "description": "Password generator"
     },
-    "show_adv": {
-        "message": "Vis avanserte valg",
-        "description": "Disable password picker"
-    },
-    "invalid_host": {
-        "message": "Ugyldig tjener-URL",
-        "description": "Invalid server URL"
-    },
-    "invalid_master_password": {
-        "message": "Ugyldig hoved-passord!",
-        "description": "When the master password is invalid"
-    },
-    "general": {
-        "message": "Generelt",
-        "description": "Custom fields"
-    },
-    "no_password_match": {
-        "message": "Passordene samsvarer ikke",
-        "description": "When comparing passwords"
-    },
-    "close": {
-        "message": "Lukk",
-        "description": "Close"
-    },
-    "prev": {
-        "message": "Forrige",
-        "description": "Previous"
-    },
-    "add_hint": {
-        "message": "Etter å ha opprettet den, kan du redigere identitetsdetaljen i Passman",
-        "description": "After creating it, you can edit the credential in Passman"
-    },
-    "text": {
-        "message": "tekst",
-        "description": "To describe a textual input field"
-    },
-    "reset_extension": {
-        "message": "Tilbakestill utvidelsen",
-        "description": "Search"
-    },
-    "default_vault": {
-        "message": "Forvalgt hvelv",
-        "description": "Default vault"
-    },
-    "ignore_port": {
-        "message": "Ignorer port for sjekk av sider mot hverandre",
-        "description": "Ignore port for site matching"
-    },
-    "server_settings": {
-        "message": "Tjenerinnstillinger",
-        "description": "Server Settings"
-    },
-    "master_password": {
-        "message": "Sett hoved-passord",
-        "description": "Set a master password"
-    },
-    "disable_picker_text": {
-        "message": "Ønsker du å slå av Passman for den nåværende siden, eller for hele domenet?",
-        "description": "Would you like to disable Passman for the current page, or for the entire website?"
-    },
-    "password": {
-        "message": "Passord",
-        "description": "Password"
-    },
-    "copy": {
-        "message": "Kopier",
-        "description": "Copy"
-    },
-    "begin": {
-        "message": "La oss komme igang!",
-        "description": "Let's begin!"
-    },
-    "intro_text": {
-        "message": "Veiviseren tar deg gjennom stegene for å sette opp utvidelsen og holde alle passordene dine synkronisert.",
-        "description": "Cancel"
-    },
-    "credential_deleted": {
-        "message": "Identitetsdetalj slettet",
-        "description": "Credential deleted"
-    },
-    "ignore_site_placeholder": {
-        "message": "Skriv inn et domene eller toppnivådomene og trykk  ",
-        "description": "Disable auto fill of forms"
-    },
-    "ignored_sites": {
-        "message": "Ignorerte sider / nettadresser",
-        "description": "Ignored sites"
+    "generate_password": {
+        "message": "Generer passord",
+        "description": "Generate password"
     },
     "toggle_visibility": {
         "message": "Veksle synlighet",
         "description": "Toggle visibility"
     },
-    "master_pw_warning": {
-        "message": "Advarsel! Hovedpassordet ditt vil bli lagret i klartekst.",
-        "description": "Remember master password"
+    "toggle_advanced": {
+        "message": "Veksle avanserte alternativer",
+        "description": "Toggle advanced options"
     },
-    "remember_master_password": {
-        "message": "Husk hoved-passord",
-        "description": "Remember master password"
+    "use_generated_password": {
+        "message": "Bruk passord",
+        "description": "Use password"
     },
-    "btn_save_site": {
-        "message": "Lagre påloggingsdetaljer for denne siden",
-        "description": "Save credentials for this site"
+    "add_hint": {
+        "message": "Etter å ha opprettet den, kan du redigere identitetsdetaljen i Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
-    "browser_action_title_locked": {
-        "message": "Passman - Låst",
-        "description": "Browser extension title when the extension is locked"
+    "pw_length": {
+        "message": "Passordlengde",
+        "description": "Password length"
     },
-    "label_required": {
-        "message": "Fyll inn en etikett",
-        "description": "When comparing passwords"
-    },
-    "enter_master_password": {
-        "message": "Skriv inn hovedpassord",
-        "description": "Enter master password"
-    },
-    "vault_settings": {
-        "message": "Hvelvinnstillinger",
-        "description": "Vault settings"
-    },
-    "vault_password": {
-        "message": "Hvelv-passord",
-        "description": "Vault password"
-    },
-    "select_password_picker_default_tab": {
-        "message": "Når passordvelgeren ikke klarer å finne noen påloggingsdetaljer, vil den gå til:",
-        "description": "Select password picker default tab"
-    },
-    "save_site": {
-        "message": "Lagre side",
-        "description": "Save site"
-    },
-    "extra_accounts": {
-        "message": "Etter oppsettsprosessen er fullført, kan du legge til flere kontoer.",
-        "description": "Search"
-    },
-    "next": {
-        "message": "Neste",
-        "description": "Next"
+    "min_digits": {
+        "message": "Minste antall siffer",
+        "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
         "message": "Unngå tvetydige tegn",
         "description": "Avoid ambiguous characters"
     },
-    "disable_site": {
-        "message": "Slå av side",
-        "description": "Disable site"
+    "require_every_character_type": {
+        "message": "Krev hver type tegn",
+        "description": "Require every character type"
     },
-    "url_ignored": {
-        "message": "URL ignorert",
-        "description": "URL ignored"
+    "add_account": {
+        "message": "Legg til en konto",
+        "description": "Add account"
     },
-    "saving_to": {
-        "message": "Lagrer til $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+    "accounts": {
+        "message": "Kontoer",
+        "description": "Accounts"
     },
-    "enable_password_picker": {
-        "message": "Skru på passordvelger",
-        "description": "Disable password picker"
+    "label": {
+        "message": "Etikett",
+        "description": "Label"
     },
-    "auto_login": {
-        "message": "Passman logger deg inn som $USERNAME$",
-        "description": "Amount of the credentials in the database"
+    "username": {
+        "message": "Brukernavn",
+        "description": "Username"
     },
-    "default_vault_desc": {
-        "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
-        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    "email": {
+        "message": "E-post",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Legg til",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Påloggingsdetalj laget",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Passord",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Passord (gjenta)",
+        "description": "Password"
     },
     "detected_new_login": {
         "message": "Fant ny innlogging",
@@ -379,164 +119,424 @@
         "message": "Oppdaget at brukeren har endret passord",
         "description": "Detected changed password for user"
     },
-    "invalid_response_from_server": {
-        "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
-    },
-    "save": {
-        "message": "Lagre",
-        "description": "Save"
-    },
-    "generate_password": {
-        "message": "Generer passord",
-        "description": "Generate password"
-    },
-    "edit_insufficient_permissions": {
-        "message": "Du har ikke tilgang til å endre denne identitetsdetaljen.",
-        "description": "You don't have permissions to edit this credential."
-    },
-    "server_url": {
-        "message": "Tjener-URL",
-        "description": "Server URL"
-    },
-    "disable_page": {
-        "message": "Skru av side",
-        "description": "Disable page"
-    },
-    "hide_adv": {
-        "message": "Skjul avanserte valg",
-        "description": "Disable password picker"
-    },
-    "cancel": {
-        "message": "Avbryt",
-        "description": "Cancel"
-    },
-    "add": {
-        "message": "Legg til",
-        "description": "Add"
-    },
-    "credential_updated": {
-        "message": "Legitimasjon oppdatert",
-        "description": "updated, lowercase"
-    },
-    "no_credentials_found": {
-        "message": "Fant ingen påloggingsdetaljer",
-        "description": "No credentials found for the current site"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
-    },
-    "lock_extension": {
-        "message": "Lås utvidelse",
-        "description": "Title on the PayPal button"
-    },
-    "search_for": {
-        "message": "Søk etter",
-        "description": "No credentials found for the current site"
-    },
-    "password_repeat": {
-        "message": "Passord (gjenta)",
-        "description": "Password"
-    },
-    "credential_saved": {
-        "message": "Påloggingsdetalj lagret",
-        "description": "saved, lowercase"
-    },
-    "require_every_character_type": {
-        "message": "Krev hver type tegn",
-        "description": "Require every character type"
-    },
-    "enable_debug": {
-        "message": "Skru på feilrettingsmodus",
-        "description": "Enable debug mode"
-    },
-    "email": {
-        "message": "E-post",
-        "description": "E-mail"
-    },
-    "welcome_to_passman": {
-        "message": "Velkommen til Passman-utvidelsen",
-        "description": "Intro at the setup"
-    },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ funnet for denne siden",
         "description": "String for the browser action"
     },
-    "http_warning": {
-        "message": "Du bruker HTTP! Innloggingsdetaljer vil bli sendt i klartekst. Dine Passman-identitetsdetaljer er fremdeles krypterte.",
-        "description": "Warning for http connections"
+    "browser_action_title_locked": {
+        "message": "Passman - Låst",
+        "description": "Browser extension title when the extension is locked"
     },
-    "done": {
-        "message": "Ferdig",
-        "description": "Done"
+    "detected_changed_url": {
+        "message": "Oppdaget ny URL for",
+        "description": "Detected changed URL for"
     },
-    "no_credentials_found_for_site": {
-        "message": "Ingen påloggingsdetaljer funnet for denne siden.",
-        "description": "No credentials found for the current site"
+    "credential": {
+        "message": "påloggingsdetalj",
+        "description": "credential"
     },
-    "enable_autosubmit": {
-        "message": "Skru på automatisk skjemainnsendelse etter å ha valgt konto",
-        "description": "Enable form auto submit"
+    "credentials": {
+        "message": "påloggingsdetaljer",
+        "description": "credentials"
     },
-    "saving": {
-        "message": "Lagrer",
-        "description": "Saving"
+    "refresh_timer": {
+        "message": "Gjenoppfriskningstidtaker [s]",
+        "description": "Password"
     },
-    "url": {
-        "message": "URL",
-        "description": "URL"
-    },
-    "iam_sure": {
-        "message": "Ja, jeg er sikker!",
-        "description": "Search"
-    },
-    "no_sites_ignored": {
-        "message": "Ingen sider ignorert",
-        "description": "No sites ignored"
-    },
-    "done_donate": {
-        "message": "Hvis du har glede av, ikke glem å donere",
-        "description": "If you like, don't forget to donate"
-    },
-    "accounts": {
-        "message": "Kontoer",
-        "description": "Accounts"
-    },
-    "password_generator": {
-        "message": "Passordgenerator",
-        "description": "Password generator"
-    },
-    "empty_master_key": {
-        "message": "Tom hoved-nøkkel!",
-        "description": "Empty master key!"
+    "ignore_protocol": {
+        "message": "Ignorer protokoll for sjekk av sider mot hverandre",
+        "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
         "message": "Ignorer subdomene for sjekk av sider mot hverandre",
         "description": "Password"
     },
-    "btn_search": {
-        "message": "Søk etter påloggingsdetaljer",
-        "description": "Search credentials"
+    "ignore_port": {
+        "message": "Ignorer port for sjekk av sider mot hverandre",
+        "description": "Ignore port for site matching"
     },
-    "credential_created": {
-        "message": "Påloggingsdetalj laget",
-        "description": "Credential created"
+    "http_warning": {
+        "message": "Du bruker HTTP! Innloggingsdetaljer vil bli sendt i klartekst. Dine Passman-identitetsdetaljer er fremdeles krypterte.",
+        "description": "Warning for http connections"
     },
-    "username": {
-        "message": "Brukernavn",
-        "description": "Username"
+    "ignore_path": {
+        "message": "Ignorer sti for sjekk av sider mot hverandre",
+        "description": "Ignore path for site matching"
     },
-    "pw_length": {
-        "message": "Passordlengde",
-        "description": "Password length"
+    "enable_autofill": {
+        "message": "Skru på auto-utfylling av skjemaer",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Skru på automatisk skjemainnsendelse etter å ha valgt konto",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Spør om å oppdatere nettadresse for påloggingsdetalj hvis den ikke samsvarer med gjeldende nettadresse",
+        "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
         "message": "Skru av auto-utfylling i nettleser",
         "description": "Disable auto fill of forms"
     },
-    "refresh_timer": {
-        "message": "Gjenoppfriskningstidtaker [s]",
-        "description": "Password"
+    "ignore_site_placeholder": {
+        "message": "Skriv inn et domene eller toppnivådomene og trykk  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Skru på passordvelger",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Når et nytt passord blir funnet, gå til liste snarere enn forrige aktive fane",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Skjul avanserte valg",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Vis avanserte valg",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Skru på feilrettingsmodus",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Lagre",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Lagrer",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Påloggingsdetalj lagret",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Legitimasjon oppdatert",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Side ignorert",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignorert",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Oppdater",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignorer side",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Lagre påloggingsdetaljer for denne siden",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Søk etter påloggingsdetaljer",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Velkommen til Passman-utvidelsen",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "Tjener-URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "La oss komme igang!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Veiviseren tar deg gjennom stegene for å sette opp utvidelsen og holde alle passordene dine synkronisert.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Avbryt",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Forvalgt hvelv",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Velg hvelvet du ønsker å holde synkronisert med nettleseren",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Skriv inn hovedpassord",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Dette passordet brukes til å kryptere alle dine innstillinger i utvidelsen. Du kan velge å lagre dette passordet lokalt, men det vil bli lagret i KLARTEKST.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Husk hoved-passord",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Advarsel! Hovedpassordet ditt vil bli lagret i klartekst.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Ferdig",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Brukervalgte felter",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Generelt",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Verdi",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Liste",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Rediger",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Tjenerinnstillinger",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Hvelvinnstillinger",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Sett hoved-passord",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Fullfør",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Hvis du har glede av, ikke glem å donere",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Lukk",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Forrige",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Tilbake",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopier",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Neste",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Fortsett",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Doner",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud- / ownCloud -tjenerinnstillinger",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Velg forvalgt hvelv",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ignorerte sider / nettadresser",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Skru av side",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Slå av side",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Ønsker du å slå av Passman for den nåværende siden, eller for hele domenet?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Ingen sider ignorert",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Hvelv-passord",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Fyll inn en etikett",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Ugyldig tjener-URL",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignorer side",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Passordene samsvarer ikke",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Ugyldig hvelv-nøkkel!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Tom hoved-nøkkel!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "Engangs passord",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Innstillinger",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Etter oppsettsprosessen er fullført, kan du legge til flere kontoer.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Konto lagt til.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Velg hvelv",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Slett",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Søk",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Identitetsdetalj slettet",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Når passordvelgeren ikke klarer å finne noen påloggingsdetaljer, vil den gå til:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Beklager, utvidelsen fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Du kan tilbakestille passordet ditt. Dette vil tilbakestille utvidelsen til forvalgt tilstand.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Glemt passordet?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Tilbakestill utvidelsen",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Ja, jeg er sikker!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Du har ikke tilgang til å endre denne identitetsdetaljen.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Ugyldige tjenerinnstillinger",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Gjenoppfrisk liste over påloggingsdetaljer",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Utviklingen avhenger av kronerulling, støtt opp",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Lås utvidelse",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman-utvidelsen er låst. Lås det opp for å bruke det",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Ugyldig hoved-passord!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Lås opp",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Vi har funnet $AMOUNT$ påloggingsdetaljer for denne siden",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Lagre til $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Lagrer til $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ påloggingsdetaljer i databasen",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman logger deg inn som $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Hvelv",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Legg til egendefinert felt",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "tekst",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
     }
 }

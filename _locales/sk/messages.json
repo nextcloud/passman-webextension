@@ -1,375 +1,115 @@
 {
-    "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
-        "description": "Amount of the credentials in the database"
+    "extDescription": {
+        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Hľadať",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "No credentials found for this site.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "No credentials found",
+        "description": "No credentials found for the current site"
     },
     "notes": {
         "message": "Poznámky",
         "description": "No credentials found for the current site"
     },
-    "refresh_credential_list": {
-        "message": "Obnoviť zoznam prihlasovacích údajov",
-        "description": "Refresh the credential list"
-    },
-    "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
-        "description": "Extension description"
-    },
-    "save_to": {
-        "message": "Uložiť do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "vault": {
-        "message": "Trezor",
-        "description": "Vault"
-    },
-    "ignore_site_tab": {
-        "message": "Ignore site / page",
-        "description": "Invalid server URL"
-    },
-    "account_added": {
-        "message": "Účet pridaný.",
-        "description": "Search"
-    },
-    "label": {
-        "message": "Štítok",
-        "description": "Label"
-    },
-    "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
-        "description": "Ignore protocol for site matching"
-    },
-    "settings": {
-        "message": "Nastavenia",
-        "description": "Settings"
-    },
-    "finish": {
-        "message": "Dokončiť",
-        "description": "Finish"
-    },
-    "detected_changed_url": {
-        "message": "Detected changed URL for",
-        "description": "Detected changed URL for"
-    },
-    "donate": {
-        "message": "Darovať",
-        "description": "Donate"
-    },
-    "add_custom_field": {
-        "message": "Pridať vlastné pole",
-        "description": "Add a custom field"
-    },
-    "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
-        "description": "Enable form auto submit"
-    },
-    "credentials": {
-        "message": "prihlasovacie údaje",
-        "description": "credentials"
-    },
-    "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
-        "description": "Disable password picker"
-    },
-    "search": {
-        "message": "Hľadať",
-        "description": "Search"
-    },
-    "toggle_advanced": {
-        "message": "Pokročilé možnosti",
-        "description": "Toggle advanced options"
-    },
-    "extension_locked": {
-        "message": "Rozšírenie Passman je uzamknuté, pre použitie ho odomknite",
-        "description": "When the extension is locked, and requires an unlock to use it"
-    },
-    "update": {
-        "message": "Aktualizovať",
-        "description": "Update"
-    },
-    "unlock": {
-        "message": "Odomknúť",
-        "description": "Unlock"
-    },
-    "invalid_vault_password": {
-        "message": "Kľúč do trezora naplatný!",
-        "description": "Vault password"
-    },
-    "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
-        "description": "Search"
-    },
-    "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
-        "description": "Search"
-    },
-    "edit": {
-        "message": "Upraviť",
-        "description": "Edit"
-    },
-    "min_digits": {
-        "message": "Minimálny počet číselných znakov",
-        "description": "Minimum amount of digits"
-    },
-    "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
-        "description": "Enter master password"
-    },
-    "select_vault": {
-        "message": "Vybrať trezor",
-        "description": "Search"
-    },
-    "enable_autofill": {
-        "message": "Povoliť automatické vypĺňanie formulárov",
-        "description": "Disable auto fill of forms"
-    },
-    "add_account": {
-        "message": "Pridať účet",
-        "description": "Add account"
-    },
-    "back": {
-        "message": "Späť",
-        "description": "Back"
-    },
-    "credential": {
-        "message": "prístupový údaj",
-        "description": "credential"
-    },
-    "delete": {
-        "message": "Zmazať",
-        "description": "Delete"
-    },
-    "forgot_password": {
-        "message": "Zabudli ste heslo?",
-        "description": "Search"
-    },
-    "invalid_server_settings": {
-        "message": "Neplatné nastavenia servera",
-        "description": "Search"
-    },
-    "nextcloud_settings": {
-        "message": "Nastavenia servera Nextcloud / ownCloud",
-        "description": "Nextcloud / ownCloud server settings"
-    },
-    "use_generated_password": {
-        "message": "Použiť hesl",
-        "description": "Use password"
-    },
-    "one_time_password": {
-        "message": "OTP",
-        "description": "One time password"
-    },
-    "list": {
-        "message": "Zoznam",
-        "description": "List"
-    },
-    "ignore_site": {
-        "message": "Ignorovať stránku",
-        "description": "Update"
-    },
-    "select_default_vault": {
-        "message": "Vybrať predvolený trezor",
-        "description": "Select default vault"
-    },
-    "site_ignored": {
-        "message": "Site ignored",
-        "description": "Site ignored"
-    },
-    "continue": {
-        "message": "Pokračovať",
-        "description": "Continue"
-    },
-    "credentials_found_for_site": {
-        "message": "Pre túto stránku boli nájdené  $AMOUNT$ prístupové údaje",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "value": {
-        "message": "Hodnota",
-        "description": "Custom fields"
-    },
-    "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
-        "description": "Title on the PayPal button"
+    "invalid_response_from_server": {
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Zadajte prosím prihlasovacie údaje pre svoj Nextcloud",
         "description": "No credentials found for the current site"
     },
-    "ignore_path": {
-        "message": "Ignore path for site matching",
-        "description": "Ignore path for site matching"
+    "save_site": {
+        "message": "Uložiť stránku",
+        "description": "Save site"
     },
-    "custom_fields": {
-        "message": "Vlastné polia",
-        "description": "Custom fields"
+    "password_generator": {
+        "message": "Generátor hesla",
+        "description": "Password generator"
     },
-    "show_adv": {
-        "message": "Zobraziť pokročilé možnosti",
-        "description": "Disable password picker"
-    },
-    "invalid_host": {
-        "message": "Neplatná url servera",
-        "description": "Invalid server URL"
-    },
-    "invalid_master_password": {
-        "message": "Hlavné heslo je neplatné!",
-        "description": "When the master password is invalid"
-    },
-    "general": {
-        "message": "Všeobecné",
-        "description": "Custom fields"
-    },
-    "no_password_match": {
-        "message": "Heslá sa nezhodujú",
-        "description": "When comparing passwords"
-    },
-    "close": {
-        "message": "Zatvoriť",
-        "description": "Close"
-    },
-    "prev": {
-        "message": "Predch",
-        "description": "Previous"
-    },
-    "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
-        "description": "After creating it, you can edit the credential in Passman"
-    },
-    "text": {
-        "message": "text",
-        "description": "To describe a textual input field"
-    },
-    "reset_extension": {
-        "message": "Resetovať rozšírenie",
-        "description": "Search"
-    },
-    "default_vault": {
-        "message": "Predvolený trezor",
-        "description": "Default vault"
-    },
-    "ignore_port": {
-        "message": "Ignore port for site matching",
-        "description": "Ignore port for site matching"
-    },
-    "server_settings": {
-        "message": "Nastavenia servera",
-        "description": "Server Settings"
-    },
-    "master_password": {
-        "message": "Nastaviť hlavné heslo",
-        "description": "Set a master password"
-    },
-    "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
-        "description": "Would you like to disable Passman for the current page, or for the entire website?"
-    },
-    "password": {
-        "message": "Heslo",
-        "description": "Password"
-    },
-    "copy": {
-        "message": "Kopírovať",
-        "description": "Copy"
-    },
-    "begin": {
-        "message": "Začnime!",
-        "description": "Let's begin!"
-    },
-    "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
-        "description": "Cancel"
-    },
-    "credential_deleted": {
-        "message": "Prihlasovací údaj bol zmazaný",
-        "description": "Credential deleted"
-    },
-    "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
-        "description": "Disable auto fill of forms"
-    },
-    "ignored_sites": {
-        "message": "Ignored sites / URLs",
-        "description": "Ignored sites"
+    "generate_password": {
+        "message": "Generovať heslo",
+        "description": "Generate password"
     },
     "toggle_visibility": {
         "message": "Prepnúť viditeľnosť",
         "description": "Toggle visibility"
     },
-    "master_pw_warning": {
-        "message": "Upozornenie! Vaše hlavné heslo bude uložené ako čistý text.",
-        "description": "Remember master password"
+    "toggle_advanced": {
+        "message": "Pokročilé možnosti",
+        "description": "Toggle advanced options"
     },
-    "remember_master_password": {
-        "message": "Zapamätať hlavné hesl",
-        "description": "Remember master password"
+    "use_generated_password": {
+        "message": "Použiť hesl",
+        "description": "Use password"
     },
-    "btn_save_site": {
-        "message": "Uložiť prístupové údaje pre túto stránku",
-        "description": "Save credentials for this site"
+    "add_hint": {
+        "message": "After creating it, you can edit the credential in Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
-    "browser_action_title_locked": {
-        "message": "Passman - zamknutý",
-        "description": "Browser extension title when the extension is locked"
+    "pw_length": {
+        "message": "Dĺžka hesla",
+        "description": "Password length"
     },
-    "label_required": {
-        "message": "Zadajte prosím názov!",
-        "description": "When comparing passwords"
-    },
-    "enter_master_password": {
-        "message": "Vložte hlavné heslo",
-        "description": "Enter master password"
-    },
-    "vault_settings": {
-        "message": "Nastavenia trezora",
-        "description": "Vault settings"
-    },
-    "vault_password": {
-        "message": "Heslo trezora",
-        "description": "Vault password"
-    },
-    "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
-        "description": "Select password picker default tab"
-    },
-    "save_site": {
-        "message": "Uložiť stránku",
-        "description": "Save site"
-    },
-    "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
-        "description": "Search"
-    },
-    "next": {
-        "message": "Ďalej",
-        "description": "Next"
+    "min_digits": {
+        "message": "Minimálny počet číselných znakov",
+        "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
         "message": "Vyhnúť sa nejednoznačným znakom",
         "description": "Avoid ambiguous characters"
     },
-    "disable_site": {
-        "message": "Disable site",
-        "description": "Disable site"
+    "require_every_character_type": {
+        "message": "Vyžadovať znak z každého typu",
+        "description": "Require every character type"
     },
-    "url_ignored": {
-        "message": "URL ignorovaná",
-        "description": "URL ignored"
+    "add_account": {
+        "message": "Pridať účet",
+        "description": "Add account"
     },
-    "saving_to": {
-        "message": "Ukladá sa do $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+    "accounts": {
+        "message": "Účty",
+        "description": "Accounts"
     },
-    "enable_password_picker": {
-        "message": "Povoliť vyberač hesla",
-        "description": "Disable password picker"
+    "label": {
+        "message": "Štítok",
+        "description": "Label"
     },
-    "auto_login": {
-        "message": "Passman vás prihlasuje ako $USERNAME$",
-        "description": "Amount of the credentials in the database"
+    "username": {
+        "message": "Používateľské meno",
+        "description": "Username"
     },
-    "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
-        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Pridať",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Prihlasovací údaj bol vytvorený",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Heslo",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Heslo (opakovať)",
+        "description": "Password"
     },
     "detected_new_login": {
         "message": "Zistené nové prihlasovacie meno",
@@ -379,164 +119,424 @@
         "message": "Bola zistená zmena hesla používateľa",
         "description": "Detected changed password for user"
     },
-    "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
-    },
-    "save": {
-        "message": "Uložiť",
-        "description": "Save"
-    },
-    "generate_password": {
-        "message": "Generovať heslo",
-        "description": "Generate password"
-    },
-    "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
-        "description": "You don't have permissions to edit this credential."
-    },
-    "server_url": {
-        "message": "URL servera",
-        "description": "Server URL"
-    },
-    "disable_page": {
-        "message": "Disable page",
-        "description": "Disable page"
-    },
-    "hide_adv": {
-        "message": "Schovať pokročilé možnosti",
-        "description": "Disable password picker"
-    },
-    "cancel": {
-        "message": "Zrušiť",
-        "description": "Cancel"
-    },
-    "add": {
-        "message": "Pridať",
-        "description": "Add"
-    },
-    "credential_updated": {
-        "message": "Prístupové údaje boli aktualizované",
-        "description": "updated, lowercase"
-    },
-    "no_credentials_found": {
-        "message": "No credentials found",
-        "description": "No credentials found for the current site"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
-    },
-    "lock_extension": {
-        "message": "Uzamknúť doplnok",
-        "description": "Title on the PayPal button"
-    },
-    "search_for": {
-        "message": "Hľadať",
-        "description": "No credentials found for the current site"
-    },
-    "password_repeat": {
-        "message": "Heslo (opakovať)",
-        "description": "Password"
-    },
-    "credential_saved": {
-        "message": "Prístupové údaje boli uložené",
-        "description": "saved, lowercase"
-    },
-    "require_every_character_type": {
-        "message": "Vyžadovať znak z každého typu",
-        "description": "Require every character type"
-    },
-    "enable_debug": {
-        "message": "Povoliť režim ladenia",
-        "description": "Enable debug mode"
-    },
-    "email": {
-        "message": "E-mail",
-        "description": "E-mail"
-    },
-    "welcome_to_passman": {
-        "message": "Víta Vás doplnok Passman",
-        "description": "Intro at the setup"
-    },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
-    "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
-        "description": "Warning for http connections"
+    "browser_action_title_locked": {
+        "message": "Passman - zamknutý",
+        "description": "Browser extension title when the extension is locked"
     },
-    "done": {
-        "message": "Hotovo",
-        "description": "Done"
+    "detected_changed_url": {
+        "message": "Detected changed URL for",
+        "description": "Detected changed URL for"
     },
-    "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
-        "description": "No credentials found for the current site"
+    "credential": {
+        "message": "prístupový údaj",
+        "description": "credential"
     },
-    "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
-        "description": "Enable form auto submit"
+    "credentials": {
+        "message": "prihlasovacie údaje",
+        "description": "credentials"
     },
-    "saving": {
-        "message": "Ukladá sa",
-        "description": "Saving"
+    "refresh_timer": {
+        "message": "Časovač obnovovania [s]",
+        "description": "Password"
     },
-    "url": {
-        "message": "URL",
-        "description": "URL"
-    },
-    "iam_sure": {
-        "message": "Áno, som si istý!",
-        "description": "Search"
-    },
-    "no_sites_ignored": {
-        "message": "No sites ignored",
-        "description": "No sites ignored"
-    },
-    "done_donate": {
-        "message": "Nezabudnite prispieť, ak sa vám páči",
-        "description": "If you like, don't forget to donate"
-    },
-    "accounts": {
-        "message": "Účty",
-        "description": "Accounts"
-    },
-    "password_generator": {
-        "message": "Generátor hesla",
-        "description": "Password generator"
-    },
-    "empty_master_key": {
-        "message": "Hlavný kľúč nemá žiadnu hodnotu!",
-        "description": "Empty master key!"
+    "ignore_protocol": {
+        "message": "Ignore protocol for site matching",
+        "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
         "message": "Ignore subdomain for site matching",
         "description": "Password"
     },
-    "btn_search": {
-        "message": "Hladať prihlasovacie údaje",
-        "description": "Search credentials"
+    "ignore_port": {
+        "message": "Ignore port for site matching",
+        "description": "Ignore port for site matching"
     },
-    "credential_created": {
-        "message": "Prihlasovací údaj bol vytvorený",
-        "description": "Credential created"
+    "http_warning": {
+        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "description": "Warning for http connections"
     },
-    "username": {
-        "message": "Používateľské meno",
-        "description": "Username"
+    "ignore_path": {
+        "message": "Ignore path for site matching",
+        "description": "Ignore path for site matching"
     },
-    "pw_length": {
-        "message": "Dĺžka hesla",
-        "description": "Password length"
+    "enable_autofill": {
+        "message": "Povoliť automatické vypĺňanie formulárov",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Enable form auto submit after picking account",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
         "message": "Zakázať automatické vypĺňanie prehliadačom",
         "description": "Disable auto fill of forms"
     },
-    "refresh_timer": {
-        "message": "Časovač obnovovania [s]",
-        "description": "Password"
+    "ignore_site_placeholder": {
+        "message": "Enter a domain or TLD to ignore and press ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Povoliť vyberač hesla",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "When a password is found, go to list rather than last active tab",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Schovať pokročilé možnosti",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Zobraziť pokročilé možnosti",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Povoliť režim ladenia",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Uložiť",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Ukladá sa",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Prístupové údaje boli uložené",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Prístupové údaje boli aktualizované",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Site ignored",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignorovaná",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Aktualizovať",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignorovať stránku",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Uložiť prístupové údaje pre túto stránku",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Hladať prihlasovacie údaje",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Víta Vás doplnok Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL servera",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Začnime!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Zrušiť",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Predvolený trezor",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Vložte hlavné heslo",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Zapamätať hlavné hesl",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Upozornenie! Vaše hlavné heslo bude uložené ako čistý text.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Hotovo",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Vlastné polia",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Všeobecné",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Hodnota",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Zoznam",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Upraviť",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Nastavenia servera",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Nastavenia trezora",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Nastaviť hlavné heslo",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Dokončiť",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Nezabudnite prispieť, ak sa vám páči",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Zatvoriť",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Predch",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Späť",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopírovať",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Ďalej",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Pokračovať",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Darovať",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nastavenia servera Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Vybrať predvolený trezor",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ignored sites / URLs",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Disable page",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Disable site",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "No sites ignored",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Heslo trezora",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Zadajte prosím názov!",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Neplatná url servera",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignore site / page",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Heslá sa nezhodujú",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Kľúč do trezora naplatný!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Hlavný kľúč nemá žiadnu hodnotu!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Nastavenia",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Účet pridaný.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Vybrať trezor",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Zmazať",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Hľadať",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Prihlasovací údaj bol zmazaný",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Zabudli ste heslo?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Resetovať rozšírenie",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Áno, som si istý!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "You don't have the permission to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Neplatné nastavenia servera",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Obnoviť zoznam prihlasovacích údajov",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Developent depends on donations, please support us",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Uzamknúť doplnok",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Rozšírenie Passman je uzamknuté, pre použitie ho odomknite",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Hlavné heslo je neplatné!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Odomknúť",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Pre túto stránku boli nájdené  $AMOUNT$ prístupové údaje",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Uložiť do $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Ukladá sa do $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ credentials in the database",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman vás prihlasuje ako $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Trezor",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Pridať vlastné pole",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "text",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
     }
 }

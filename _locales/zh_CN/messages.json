@@ -1,375 +1,115 @@
 {
-    "credentials_in_db": {
-        "message": "$AMOUNT$ 凭据在数据库中",
-        "description": "Amount of the credentials in the database"
+    "extDescription": {
+        "message": "Passman - NextCloud / ownCloud的密码管理器",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "搜索",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "未找到此页面的凭据",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "未找到凭据",
+        "description": "No credentials found for the current site"
     },
     "notes": {
         "message": "Notes",
         "description": "No credentials found for the current site"
     },
-    "refresh_credential_list": {
-        "message": "刷新凭据列表",
-        "description": "Refresh the credential list"
-    },
-    "extDescription": {
-        "message": "Passman - NextCloud / ownCloud的密码管理器",
-        "description": "Extension description"
-    },
-    "save_to": {
-        "message": "保存$VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "vault": {
-        "message": "保管库",
-        "description": "Vault"
-    },
-    "ignore_site_tab": {
-        "message": "忽略站点/页面",
-        "description": "Invalid server URL"
-    },
-    "account_added": {
-        "message": "账户已添加",
-        "description": "Search"
-    },
-    "label": {
-        "message": "标签",
-        "description": "Label"
-    },
-    "ignore_protocol": {
-        "message": "忽略站点匹配协议",
-        "description": "Ignore protocol for site matching"
-    },
-    "settings": {
-        "message": "设置",
-        "description": "Settings"
-    },
-    "finish": {
-        "message": "完成",
-        "description": "Finish"
-    },
-    "detected_changed_url": {
-        "message": "检测到的已更改的URL",
-        "description": "Detected changed URL for"
-    },
-    "donate": {
-        "message": "捐助",
-        "description": "Donate"
-    },
-    "add_custom_field": {
-        "message": "添加自定义字段",
-        "description": "Add a custom field"
-    },
-    "enable_update_url": {
-        "message": "如果不符合当前URL就请求更新凭据的URL",
-        "description": "Enable form auto submit"
-    },
-    "credentials": {
-        "message": "凭据",
-        "description": "credentials"
-    },
-    "password_picker_gotolist": {
-        "message": "当发现一个密码后，弹出的控件显示凭据列表而不是上一个标签",
-        "description": "Disable password picker"
-    },
-    "search": {
-        "message": "搜索",
-        "description": "Search"
-    },
-    "toggle_advanced": {
-        "message": "切换到高级选项",
-        "description": "Toggle advanced options"
-    },
-    "extension_locked": {
-        "message": "Passman拓展已锁定，解锁以使用",
-        "description": "When the extension is locked, and requires an unlock to use it"
-    },
-    "update": {
-        "message": "更新",
-        "description": "Update"
-    },
-    "unlock": {
-        "message": "解锁",
-        "description": "Unlock"
-    },
-    "invalid_vault_password": {
-        "message": "无效的保险箱密钥",
-        "description": "Vault password"
-    },
-    "msg_reset_extension": {
-        "message": "您可以重置密码。 这将将扩展名重置为其默认状态。",
-        "description": "Search"
-    },
-    "no_vaults": {
-        "message": "对不起，没有找到保管库。 请通过Nextcloud / ownCloud应用程序创建一个保管库，然后重试。",
-        "description": "Search"
-    },
-    "edit": {
-        "message": "编辑",
-        "description": "Edit"
-    },
-    "min_digits": {
-        "message": "最小数字位数",
-        "description": "Minimum amount of digits"
-    },
-    "enter_master_password_desc": {
-        "message": "这个密码将会用于加密扩展中所有的配置。您可以选择本地存储，但是请注意这种方式存储的密码是明文的！",
-        "description": "Enter master password"
-    },
-    "select_vault": {
-        "message": "选择保管库",
-        "description": "Search"
-    },
-    "enable_autofill": {
-        "message": "启用表单自动填充",
-        "description": "Disable auto fill of forms"
-    },
-    "add_account": {
-        "message": "添加账户",
-        "description": "Add account"
-    },
-    "back": {
-        "message": "返回",
-        "description": "Back"
-    },
-    "credential": {
-        "message": "凭据",
-        "description": "credential"
-    },
-    "delete": {
-        "message": "删除",
-        "description": "Delete"
-    },
-    "forgot_password": {
-        "message": "忘记密码？",
-        "description": "Search"
-    },
-    "invalid_server_settings": {
-        "message": "服务器设置无效",
-        "description": "Search"
-    },
-    "nextcloud_settings": {
-        "message": "Nextcloud/ownCloud服务器设置",
-        "description": "Nextcloud / ownCloud server settings"
-    },
-    "use_generated_password": {
-        "message": "使用密码",
-        "description": "Use password"
-    },
-    "one_time_password": {
-        "message": "OTP",
-        "description": "One time password"
-    },
-    "list": {
-        "message": "列表",
-        "description": "List"
-    },
-    "ignore_site": {
-        "message": "忽略站点",
-        "description": "Update"
-    },
-    "select_default_vault": {
-        "message": "选择默认保险箱",
-        "description": "Select default vault"
-    },
-    "site_ignored": {
-        "message": "已忽略的站点",
-        "description": "Site ignored"
-    },
-    "continue": {
-        "message": "继续",
-        "description": "Continue"
-    },
-    "credentials_found_for_site": {
-        "message": "我们已经找到了$AMOUNT$这个网站的凭据",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "value": {
-        "message": "价值",
-        "description": "Custom fields"
-    },
-    "donate_button_title": {
-        "message": "项目发展取决于捐款，请支持我们",
-        "description": "Title on the PayPal button"
+    "invalid_response_from_server": {
+        "message": "服务器响应无效：[$STATUS_CODE$]$STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
         "message": "请输入你的Nextcloud / ownCloud凭证",
         "description": "No credentials found for the current site"
     },
-    "ignore_path": {
-        "message": "忽略站点匹配的路径",
-        "description": "Ignore path for site matching"
+    "save_site": {
+        "message": "保存站点",
+        "description": "Save site"
     },
-    "custom_fields": {
-        "message": "自定义字段",
-        "description": "Custom fields"
+    "password_generator": {
+        "message": "密码生成器",
+        "description": "Password generator"
     },
-    "show_adv": {
-        "message": "显示高级选项",
-        "description": "Disable password picker"
-    },
-    "invalid_host": {
-        "message": "Invalid server URL",
-        "description": "Invalid server URL"
-    },
-    "invalid_master_password": {
-        "message": "无效的主密码",
-        "description": "When the master password is invalid"
-    },
-    "general": {
-        "message": "普通",
-        "description": "Custom fields"
-    },
-    "no_password_match": {
-        "message": "密码不匹配",
-        "description": "When comparing passwords"
-    },
-    "close": {
-        "message": "关闭",
-        "description": "Close"
-    },
-    "prev": {
-        "message": "上一页",
-        "description": "Previous"
-    },
-    "add_hint": {
-        "message": "创建后，您可以编辑Passman中的凭据",
-        "description": "After creating it, you can edit the credential in Passman"
-    },
-    "text": {
-        "message": "文本",
-        "description": "To describe a textual input field"
-    },
-    "reset_extension": {
-        "message": "重置扩展",
-        "description": "Search"
-    },
-    "default_vault": {
-        "message": "默认保险箱",
-        "description": "Default vault"
-    },
-    "ignore_port": {
-        "message": "忽略站点匹配的端口",
-        "description": "Ignore port for site matching"
-    },
-    "server_settings": {
-        "message": "服务器设置",
-        "description": "Server Settings"
-    },
-    "master_password": {
-        "message": "设置主密码",
-        "description": "Set a master password"
-    },
-    "disable_picker_text": {
-        "message": "你想禁用Passman的当前页面，还是整个网站？",
-        "description": "Would you like to disable Passman for the current page, or for the entire website?"
-    },
-    "password": {
-        "message": "密码",
-        "description": "Password"
-    },
-    "copy": {
-        "message": "复制",
-        "description": "Copy"
-    },
-    "begin": {
-        "message": "让我们开始吧！",
-        "description": "Let's begin!"
-    },
-    "intro_text": {
-        "message": "这个向导将会按步骤指引您配置扩展并使您的密钥处于同步状态",
-        "description": "Cancel"
-    },
-    "credential_deleted": {
-        "message": "证书已删除",
-        "description": "Credential deleted"
-    },
-    "ignore_site_placeholder": {
-        "message": "请输入要忽略的一个域名或者顶级域名并确认",
-        "description": "Disable auto fill of forms"
-    },
-    "ignored_sites": {
-        "message": "忽略的网站/网址",
-        "description": "Ignored sites"
+    "generate_password": {
+        "message": "生成密码",
+        "description": "Generate password"
     },
     "toggle_visibility": {
         "message": "切换可见性",
         "description": "Toggle visibility"
     },
-    "master_pw_warning": {
-        "message": "警告！您的主密码将会被明文存储！",
-        "description": "Remember master password"
+    "toggle_advanced": {
+        "message": "切换到高级选项",
+        "description": "Toggle advanced options"
     },
-    "remember_master_password": {
-        "message": "记住主密码",
-        "description": "Remember master password"
+    "use_generated_password": {
+        "message": "使用密码",
+        "description": "Use password"
     },
-    "btn_save_site": {
-        "message": "为此站点保存凭证",
-        "description": "Save credentials for this site"
+    "add_hint": {
+        "message": "创建后，您可以编辑Passman中的凭据",
+        "description": "After creating it, you can edit the credential in Passman"
     },
-    "browser_action_title_locked": {
-        "message": "Passman - 锁定",
-        "description": "Browser extension title when the extension is locked"
+    "pw_length": {
+        "message": "密码长度",
+        "description": "Password length"
     },
-    "label_required": {
-        "message": "请填写一个标签",
-        "description": "When comparing passwords"
-    },
-    "enter_master_password": {
-        "message": "输入主密码",
-        "description": "Enter master password"
-    },
-    "vault_settings": {
-        "message": "保险箱设置",
-        "description": "Vault settings"
-    },
-    "vault_password": {
-        "message": "保险箱密码",
-        "description": "Vault password"
-    },
-    "select_password_picker_default_tab": {
-        "message": "当密码选择器找不到任何凭据时，它应该：",
-        "description": "Select password picker default tab"
-    },
-    "save_site": {
-        "message": "保存站点",
-        "description": "Save site"
-    },
-    "extra_accounts": {
-        "message": "安装过程完成后，您可以添加更多帐户。",
-        "description": "Search"
-    },
-    "next": {
-        "message": "下一个",
-        "description": "Next"
+    "min_digits": {
+        "message": "最小数字位数",
+        "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
         "message": "避免模糊字符",
         "description": "Avoid ambiguous characters"
     },
-    "disable_site": {
-        "message": "禁用网址",
-        "description": "Disable site"
+    "require_every_character_type": {
+        "message": "要求每个字符类型",
+        "description": "Require every character type"
     },
-    "url_ignored": {
-        "message": "网址被忽略",
-        "description": "URL ignored"
+    "add_account": {
+        "message": "添加账户",
+        "description": "Add account"
     },
-    "saving_to": {
-        "message": "保存$VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+    "accounts": {
+        "message": "账户",
+        "description": "Accounts"
     },
-    "enable_password_picker": {
-        "message": "启用密码选择器",
-        "description": "Disable password picker"
+    "label": {
+        "message": "标签",
+        "description": "Label"
     },
-    "auto_login": {
-        "message": "Passman 正在登录 $USERNAME$",
-        "description": "Amount of the credentials in the database"
+    "username": {
+        "message": "用户名",
+        "description": "Username"
     },
-    "default_vault_desc": {
-        "message": "请选择您想与浏览器同步的密码箱",
-        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "添加",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "创建凭证",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "密码",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "密码(重复)",
+        "description": "Password"
     },
     "detected_new_login": {
         "message": "检测到新登录",
@@ -379,164 +119,424 @@
         "message": "检测到用户更改了密码",
         "description": "Detected changed password for user"
     },
-    "invalid_response_from_server": {
-        "message": "服务器响应无效：[$STATUS_CODE$]$STATUS_TEXT$",
-        "description": "No credentials found for the current site"
-    },
-    "save": {
-        "message": "保存",
-        "description": "Save"
-    },
-    "generate_password": {
-        "message": "生成密码",
-        "description": "Generate password"
-    },
-    "edit_insufficient_permissions": {
-        "message": "您没有权限修改该凭据",
-        "description": "You don't have permissions to edit this credential."
-    },
-    "server_url": {
-        "message": "服务器URL",
-        "description": "Server URL"
-    },
-    "disable_page": {
-        "message": "禁用页面",
-        "description": "Disable page"
-    },
-    "hide_adv": {
-        "message": "隐藏高级选项",
-        "description": "Disable password picker"
-    },
-    "cancel": {
-        "message": "取消",
-        "description": "Cancel"
-    },
-    "add": {
-        "message": "添加",
-        "description": "Add"
-    },
-    "credential_updated": {
-        "message": "凭据已更新",
-        "description": "updated, lowercase"
-    },
-    "no_credentials_found": {
-        "message": "未找到凭据",
-        "description": "No credentials found for the current site"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
-    },
-    "lock_extension": {
-        "message": "锁定延伸",
-        "description": "Title on the PayPal button"
-    },
-    "search_for": {
-        "message": "搜索",
-        "description": "No credentials found for the current site"
-    },
-    "password_repeat": {
-        "message": "密码(重复)",
-        "description": "Password"
-    },
-    "credential_saved": {
-        "message": "凭据已保存",
-        "description": "saved, lowercase"
-    },
-    "require_every_character_type": {
-        "message": "要求每个字符类型",
-        "description": "Require every character type"
-    },
-    "enable_debug": {
-        "message": "启用调试模式",
-        "description": "Enable debug mode"
-    },
-    "email": {
-        "message": "E-mail",
-        "description": "E-mail"
-    },
-    "welcome_to_passman": {
-        "message": "欢迎使用PASSMAN扩展",
-        "description": "Intro at the setup"
-    },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ 找到这个页面",
         "description": "String for the browser action"
     },
-    "http_warning": {
-        "message": "你正在使用HTTP！ 登录凭证将以纯文本形式发送。 您的Passman凭证仍然加密。",
-        "description": "Warning for http connections"
+    "browser_action_title_locked": {
+        "message": "Passman - 锁定",
+        "description": "Browser extension title when the extension is locked"
     },
-    "done": {
-        "message": "已完成",
-        "description": "Done"
+    "detected_changed_url": {
+        "message": "检测到的已更改的URL",
+        "description": "Detected changed URL for"
     },
-    "no_credentials_found_for_site": {
-        "message": "未找到此页面的凭据",
-        "description": "No credentials found for the current site"
+    "credential": {
+        "message": "凭据",
+        "description": "credential"
     },
-    "enable_autosubmit": {
-        "message": "选择帐户后，启用表单自动提交",
-        "description": "Enable form auto submit"
+    "credentials": {
+        "message": "凭据",
+        "description": "credentials"
     },
-    "saving": {
-        "message": "保存中",
-        "description": "Saving"
+    "refresh_timer": {
+        "message": "刷新计时器(S)",
+        "description": "Password"
     },
-    "url": {
-        "message": "URL",
-        "description": "URL"
-    },
-    "iam_sure": {
-        "message": "是的，我确定！",
-        "description": "Search"
-    },
-    "no_sites_ignored": {
-        "message": "无已忽略的站点",
-        "description": "No sites ignored"
-    },
-    "done_donate": {
-        "message": "如果你喜欢，别忘了捐助我们",
-        "description": "If you like, don't forget to donate"
-    },
-    "accounts": {
-        "message": "账户",
-        "description": "Accounts"
-    },
-    "password_generator": {
-        "message": "密码生成器",
-        "description": "Password generator"
-    },
-    "empty_master_key": {
-        "message": "主密码为空！",
-        "description": "Empty master key!"
+    "ignore_protocol": {
+        "message": "忽略站点匹配协议",
+        "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
         "message": "忽略网站匹配的子域名",
         "description": "Password"
     },
-    "btn_search": {
-        "message": "搜索凭据",
-        "description": "Search credentials"
+    "ignore_port": {
+        "message": "忽略站点匹配的端口",
+        "description": "Ignore port for site matching"
     },
-    "credential_created": {
-        "message": "创建凭证",
-        "description": "Credential created"
+    "http_warning": {
+        "message": "你正在使用HTTP！ 登录凭证将以纯文本形式发送。 您的Passman凭证仍然加密。",
+        "description": "Warning for http connections"
     },
-    "username": {
-        "message": "用户名",
-        "description": "Username"
+    "ignore_path": {
+        "message": "忽略站点匹配的路径",
+        "description": "Ignore path for site matching"
     },
-    "pw_length": {
-        "message": "密码长度",
-        "description": "Password length"
+    "enable_autofill": {
+        "message": "启用表单自动填充",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "选择帐户后，启用表单自动提交",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "如果不符合当前URL就请求更新凭据的URL",
+        "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
         "message": "禁用自动填写表单",
         "description": "Disable auto fill of forms"
     },
-    "refresh_timer": {
-        "message": "刷新计时器(S)",
-        "description": "Password"
+    "ignore_site_placeholder": {
+        "message": "请输入要忽略的一个域名或者顶级域名并确认",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "启用密码选择器",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "当发现一个密码后，弹出的控件显示凭据列表而不是上一个标签",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "隐藏高级选项",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "显示高级选项",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "启用调试模式",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "保存",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "保存中",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "凭据已保存",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "凭据已更新",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "已忽略的站点",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "网址被忽略",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "更新",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "忽略站点",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "为此站点保存凭证",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "搜索凭据",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "欢迎使用PASSMAN扩展",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "服务器URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "让我们开始吧！",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "这个向导将会按步骤指引您配置扩展并使您的密钥处于同步状态",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "取消",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "默认保险箱",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "请选择您想与浏览器同步的密码箱",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "输入主密码",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "这个密码将会用于加密扩展中所有的配置。您可以选择本地存储，但是请注意这种方式存储的密码是明文的！",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "记住主密码",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "警告！您的主密码将会被明文存储！",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "已完成",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "自定义字段",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "普通",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "价值",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "列表",
+        "description": "List"
+    },
+    "edit": {
+        "message": "编辑",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "服务器设置",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "保险箱设置",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "设置主密码",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "完成",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "如果你喜欢，别忘了捐助我们",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "关闭",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "上一页",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "返回",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "复制",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "下一个",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "继续",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "捐助",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud/ownCloud服务器设置",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "选择默认保险箱",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "忽略的网站/网址",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "禁用页面",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "禁用网址",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "你想禁用Passman的当前页面，还是整个网站？",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "无已忽略的站点",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "保险箱密码",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "请填写一个标签",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Invalid server URL",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "忽略站点/页面",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "密码不匹配",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "无效的保险箱密钥",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "主密码为空！",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "设置",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "安装过程完成后，您可以添加更多帐户。",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "账户已添加",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "选择保管库",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "删除",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "搜索",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "证书已删除",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "当密码选择器找不到任何凭据时，它应该：",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "对不起，没有找到保管库。 请通过Nextcloud / ownCloud应用程序创建一个保管库，然后重试。",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "您可以重置密码。 这将将扩展名重置为其默认状态。",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "忘记密码？",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "重置扩展",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "是的，我确定！",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "您没有权限修改该凭据",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "服务器设置无效",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "刷新凭据列表",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "项目发展取决于捐款，请支持我们",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "锁定延伸",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman拓展已锁定，解锁以使用",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "无效的主密码",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "解锁",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "我们已经找到了$AMOUNT$这个网站的凭据",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "保存$VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "保存$VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ 凭据在数据库中",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman 正在登录 $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "保管库",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "添加自定义字段",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "文本",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
     }
 }

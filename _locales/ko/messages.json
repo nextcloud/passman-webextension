@@ -1,375 +1,115 @@
 {
-    "credentials_in_db": {
-        "message": "데이터베이스에 인증 정보 $AMOUNT$개 있음",
-        "description": "Amount of the credentials in the database"
+    "extDescription": {
+        "message": "Passman - NextCloud / ownCloud 암호 관리자",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "검색 항목",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "이 사이트의 인증 정보를 찾을 수 없습니다.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "인증 정보를 찾을 수 없음",
+        "description": "No credentials found for the current site"
     },
     "notes": {
         "message": "Notes",
         "description": "No credentials found for the current site"
     },
-    "refresh_credential_list": {
-        "message": "인증 정보 목록 새로 고침",
-        "description": "Refresh the credential list"
-    },
-    "extDescription": {
-        "message": "Passman - NextCloud / ownCloud 암호 관리자",
-        "description": "Extension description"
-    },
-    "save_to": {
-        "message": "$VAULT_NAME$에 저장",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "vault": {
-        "message": "비밀 저장소",
-        "description": "Vault"
-    },
-    "ignore_site_tab": {
-        "message": "사이트/페이지 무시",
-        "description": "Invalid server URL"
-    },
-    "account_added": {
-        "message": "계정이 추가되었습니다.",
-        "description": "Search"
-    },
-    "label": {
-        "message": "레이블",
-        "description": "Label"
-    },
-    "ignore_protocol": {
-        "message": "사이트 비교 시 프로토콜 무시",
-        "description": "Ignore protocol for site matching"
-    },
-    "settings": {
-        "message": "설정",
-        "description": "Settings"
-    },
-    "finish": {
-        "message": "완료",
-        "description": "Finish"
-    },
-    "detected_changed_url": {
-        "message": "다음의 URL 변경 감지됨:",
-        "description": "Detected changed URL for"
-    },
-    "donate": {
-        "message": "기부하기",
-        "description": "Donate"
-    },
-    "add_custom_field": {
-        "message": "사용자 정의 필드 추가",
-        "description": "Add a custom field"
-    },
-    "enable_update_url": {
-        "message": "현재 URL과 일치하지 않는 경우 인증 정보의 URL 업데이트 여부 묻기",
-        "description": "Enable form auto submit"
-    },
-    "credentials": {
-        "message": "인증 정보",
-        "description": "credentials"
-    },
-    "password_picker_gotolist": {
-        "message": "암호를 찾았을 때 마지막 탭 대신 목록으로 이동",
-        "description": "Disable password picker"
-    },
-    "search": {
-        "message": "검색",
-        "description": "Search"
-    },
-    "toggle_advanced": {
-        "message": "고급 옵션 전환",
-        "description": "Toggle advanced options"
-    },
-    "extension_locked": {
-        "message": "Passman 확장 기능이 잠겼습니다. 사용하려면 잠금을 해제하십시오",
-        "description": "When the extension is locked, and requires an unlock to use it"
-    },
-    "update": {
-        "message": "업데이트",
-        "description": "Update"
-    },
-    "unlock": {
-        "message": "잠금 해제",
-        "description": "Unlock"
-    },
-    "invalid_vault_password": {
-        "message": "비밀 저장소 키가 잘못되었습니다!",
-        "description": "Vault password"
-    },
-    "msg_reset_extension": {
-        "message": "암호를 초기화할 수 있습니다. 확장 기능을 기본 상태로 초기화합니다.",
-        "description": "Search"
-    },
-    "no_vaults": {
-        "message": "비밀 저장소를 찾을 수 없습니다. Nextcloud / ownCloud 앱에서 비밀 저장소를 만든 다음 다시 시도하십시오.",
-        "description": "Search"
-    },
-    "edit": {
-        "message": "편집",
-        "description": "Edit"
-    },
-    "min_digits": {
-        "message": "최소 자릿수",
-        "description": "Minimum amount of digits"
-    },
-    "enter_master_password_desc": {
-        "message": "이 암호로 확장 기능의 모든 설정을 암호화합니다. 이 암호를 로컬에 저장할 수 있지만 평문으로 저장됩니다.",
-        "description": "Enter master password"
-    },
-    "select_vault": {
-        "message": "비밀 저장소 선택",
-        "description": "Search"
-    },
-    "enable_autofill": {
-        "message": "폼 자동 입력 사용",
-        "description": "Disable auto fill of forms"
-    },
-    "add_account": {
-        "message": "계정 추가",
-        "description": "Add account"
-    },
-    "back": {
-        "message": "뒤로",
-        "description": "Back"
-    },
-    "credential": {
-        "message": "인증 정보",
-        "description": "credential"
-    },
-    "delete": {
-        "message": "삭제",
-        "description": "Delete"
-    },
-    "forgot_password": {
-        "message": "암호를 잊으셨나요?",
-        "description": "Search"
-    },
-    "invalid_server_settings": {
-        "message": "잘못된 서버 설정",
-        "description": "Search"
-    },
-    "nextcloud_settings": {
-        "message": "Nextcloud / ownCloud 서버 설정",
-        "description": "Nextcloud / ownCloud server settings"
-    },
-    "use_generated_password": {
-        "message": "암호 사용",
-        "description": "Use password"
-    },
-    "one_time_password": {
-        "message": "OTP",
-        "description": "One time password"
-    },
-    "list": {
-        "message": "목록",
-        "description": "List"
-    },
-    "ignore_site": {
-        "message": "사이트 무시",
-        "description": "Update"
-    },
-    "select_default_vault": {
-        "message": "기본 비밀 저장소 선택",
-        "description": "Select default vault"
-    },
-    "site_ignored": {
-        "message": "사이트 무시함",
-        "description": "Site ignored"
-    },
-    "continue": {
-        "message": "계속",
-        "description": "Continue"
-    },
-    "credentials_found_for_site": {
-        "message": "이 사이트의 인증 정보 $AMOUNT$개를 찾았습니다",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "value": {
-        "message": "값",
-        "description": "Custom fields"
-    },
-    "donate_button_title": {
-        "message": "개발은 기부에 크게 의존합니다. 지원해 주십시오",
-        "description": "Title on the PayPal button"
+    "invalid_response_from_server": {
+        "message": "서버에서 잘못된 응답을 반환함: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Nextcloud / ownCloud 인증 정보를 입력하십시오",
         "description": "No credentials found for the current site"
     },
-    "ignore_path": {
-        "message": "사이트 일치 시 경로 무시",
-        "description": "Ignore path for site matching"
+    "save_site": {
+        "message": "사이트 저장",
+        "description": "Save site"
     },
-    "custom_fields": {
-        "message": "사용자 정의 필드",
-        "description": "Custom fields"
+    "password_generator": {
+        "message": "암호 생성기",
+        "description": "Password generator"
     },
-    "show_adv": {
-        "message": "고급 옵션 표시",
-        "description": "Disable password picker"
-    },
-    "invalid_host": {
-        "message": "잘못된 서버 URL",
-        "description": "Invalid server URL"
-    },
-    "invalid_master_password": {
-        "message": "잘못된 마스터 암호!",
-        "description": "When the master password is invalid"
-    },
-    "general": {
-        "message": "일반",
-        "description": "Custom fields"
-    },
-    "no_password_match": {
-        "message": "암호가 일치하지 않음",
-        "description": "When comparing passwords"
-    },
-    "close": {
-        "message": "닫기",
-        "description": "Close"
-    },
-    "prev": {
-        "message": "이전",
-        "description": "Previous"
-    },
-    "add_hint": {
-        "message": "인증 정보를 만든 후에는 Passman에서 편집할 수 있습니다",
-        "description": "After creating it, you can edit the credential in Passman"
-    },
-    "text": {
-        "message": "텍스트",
-        "description": "To describe a textual input field"
-    },
-    "reset_extension": {
-        "message": "확장 기능 초기화",
-        "description": "Search"
-    },
-    "default_vault": {
-        "message": "기본 비밀 저장소",
-        "description": "Default vault"
-    },
-    "ignore_port": {
-        "message": "사이트 일치 시 포트 무시",
-        "description": "Ignore port for site matching"
-    },
-    "server_settings": {
-        "message": "서버 설정",
-        "description": "Server Settings"
-    },
-    "master_password": {
-        "message": "마스터 암호 설정",
-        "description": "Set a master password"
-    },
-    "disable_picker_text": {
-        "message": "Passman을 현재 페이지에서만 비활성화하시겠습니까? 아니면 전체 웹사이트에서 비활성화하시겠습니까?",
-        "description": "Would you like to disable Passman for the current page, or for the entire website?"
-    },
-    "password": {
-        "message": "암호",
-        "description": "Password"
-    },
-    "copy": {
-        "message": "복사",
-        "description": "Copy"
-    },
-    "begin": {
-        "message": "시작해 봅시다!",
-        "description": "Let's begin!"
-    },
-    "intro_text": {
-        "message": "이 마법사는 확장 기능을 설정하고 암호 동기화 상태를 유지합니다.",
-        "description": "Cancel"
-    },
-    "credential_deleted": {
-        "message": "인증 정보 삭제됨",
-        "description": "Credential deleted"
-    },
-    "ignore_site_placeholder": {
-        "message": "무시할 TLD나 도메인을 입력하고 ↵ 키를 누르십시오",
-        "description": "Disable auto fill of forms"
-    },
-    "ignored_sites": {
-        "message": "무시하는 사이트 및 URL",
-        "description": "Ignored sites"
+    "generate_password": {
+        "message": "암호 생성",
+        "description": "Generate password"
     },
     "toggle_visibility": {
         "message": "표시/숨기기",
         "description": "Toggle visibility"
     },
-    "master_pw_warning": {
-        "message": "경고! 마스터 암호를 평문으로 저장합니다.",
-        "description": "Remember master password"
+    "toggle_advanced": {
+        "message": "고급 옵션 전환",
+        "description": "Toggle advanced options"
     },
-    "remember_master_password": {
-        "message": "마스터 암호 기억",
-        "description": "Remember master password"
+    "use_generated_password": {
+        "message": "암호 사용",
+        "description": "Use password"
     },
-    "btn_save_site": {
-        "message": "이 사이트의 인증 정보 저장",
-        "description": "Save credentials for this site"
+    "add_hint": {
+        "message": "인증 정보를 만든 후에는 Passman에서 편집할 수 있습니다",
+        "description": "After creating it, you can edit the credential in Passman"
     },
-    "browser_action_title_locked": {
-        "message": "Passman - 잠김",
-        "description": "Browser extension title when the extension is locked"
+    "pw_length": {
+        "message": "암호 길이",
+        "description": "Password length"
     },
-    "label_required": {
-        "message": "레이블을 입력하십시오",
-        "description": "When comparing passwords"
-    },
-    "enter_master_password": {
-        "message": "마스터 암호 입력",
-        "description": "Enter master password"
-    },
-    "vault_settings": {
-        "message": "비밀 저장소 설정",
-        "description": "Vault settings"
-    },
-    "vault_password": {
-        "message": "비밀 저장소 암호",
-        "description": "Vault password"
-    },
-    "select_password_picker_default_tab": {
-        "message": "암호 피커에서 인증 정보를 찾을 수 없을 때 이동할 페이지:",
-        "description": "Select password picker default tab"
-    },
-    "save_site": {
-        "message": "사이트 저장",
-        "description": "Save site"
-    },
-    "extra_accounts": {
-        "message": "설정 과정이 완료된 후 더 많은 계정을 추가할 수 있습니다.",
-        "description": "Search"
-    },
-    "next": {
-        "message": "다음",
-        "description": "Next"
+    "min_digits": {
+        "message": "최소 자릿수",
+        "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
         "message": "모호한 문자 피하기",
         "description": "Avoid ambiguous characters"
     },
-    "disable_site": {
-        "message": "사이트 비활성화",
-        "description": "Disable site"
+    "require_every_character_type": {
+        "message": "모든 문자 종류 포함",
+        "description": "Require every character type"
     },
-    "url_ignored": {
-        "message": "URL ignored",
-        "description": "URL ignored"
+    "add_account": {
+        "message": "계정 추가",
+        "description": "Add account"
     },
-    "saving_to": {
-        "message": "$VAULT_NAME$에 저장",
-        "description": "Amount of the credentials found for the current site"
+    "accounts": {
+        "message": "계정",
+        "description": "Accounts"
     },
-    "enable_password_picker": {
-        "message": "암호 피커 사용",
-        "description": "Disable password picker"
+    "label": {
+        "message": "레이블",
+        "description": "Label"
     },
-    "auto_login": {
-        "message": "Passman에서 $USERNAME$(으)로 로그인함",
-        "description": "Amount of the credentials in the database"
+    "username": {
+        "message": "사용자 이름",
+        "description": "Username"
     },
-    "default_vault_desc": {
-        "message": "웹 브라우저와 동기화할 비밀 저장소를 선택하십시오.",
-        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    "email": {
+        "message": "이메일",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "추가",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "인증 정보 생성됨",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "암호",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "암호(확인)",
+        "description": "Password"
     },
     "detected_new_login": {
         "message": "새 로그인 정보 감지함",
@@ -379,164 +119,424 @@
         "message": "사용자의 암호 변경을 감지함",
         "description": "Detected changed password for user"
     },
-    "invalid_response_from_server": {
-        "message": "서버에서 잘못된 응답을 반환함: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
-    },
-    "save": {
-        "message": "저장",
-        "description": "Save"
-    },
-    "generate_password": {
-        "message": "암호 생성",
-        "description": "Generate password"
-    },
-    "edit_insufficient_permissions": {
-        "message": "이 인증 정보를 편집할 수 있는 권한이 없습니다.",
-        "description": "You don't have permissions to edit this credential."
-    },
-    "server_url": {
-        "message": "서버 URL",
-        "description": "Server URL"
-    },
-    "disable_page": {
-        "message": "페이지 비활성화",
-        "description": "Disable page"
-    },
-    "hide_adv": {
-        "message": "고급 옵션 숨기기",
-        "description": "Disable password picker"
-    },
-    "cancel": {
-        "message": "취소",
-        "description": "Cancel"
-    },
-    "add": {
-        "message": "추가",
-        "description": "Add"
-    },
-    "credential_updated": {
-        "message": "인증 정보 업데이트됨",
-        "description": "updated, lowercase"
-    },
-    "no_credentials_found": {
-        "message": "인증 정보를 찾을 수 없음",
-        "description": "No credentials found for the current site"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
-    },
-    "lock_extension": {
-        "message": "확장 기능 잠금",
-        "description": "Title on the PayPal button"
-    },
-    "search_for": {
-        "message": "검색 항목",
-        "description": "No credentials found for the current site"
-    },
-    "password_repeat": {
-        "message": "암호(확인)",
-        "description": "Password"
-    },
-    "credential_saved": {
-        "message": "암호 저장됨",
-        "description": "saved, lowercase"
-    },
-    "require_every_character_type": {
-        "message": "모든 문자 종류 포함",
-        "description": "Require every character type"
-    },
-    "enable_debug": {
-        "message": "디버그 모드 사용",
-        "description": "Enable debug mode"
-    },
-    "email": {
-        "message": "이메일",
-        "description": "E-mail"
-    },
-    "welcome_to_passman": {
-        "message": "Passman 확장 기능에 오신 것을 환영합니다",
-        "description": "Intro at the setup"
-    },
     "browser_action_title_login": {
         "message": "Passman - 이 페이지에서 $CREDENTIAL_AMOUNT$ $PLURAL$개 찾음",
         "description": "String for the browser action"
     },
-    "http_warning": {
-        "message": "HTTP를 사용하고 있습니다! 로그인 정보를 평문으로 전송합니다. Passman에 저장된 정보는 암호화되어 있습니다.",
-        "description": "Warning for http connections"
+    "browser_action_title_locked": {
+        "message": "Passman - 잠김",
+        "description": "Browser extension title when the extension is locked"
     },
-    "done": {
-        "message": "완료",
-        "description": "Done"
+    "detected_changed_url": {
+        "message": "다음의 URL 변경 감지됨:",
+        "description": "Detected changed URL for"
     },
-    "no_credentials_found_for_site": {
-        "message": "이 사이트의 인증 정보를 찾을 수 없습니다.",
-        "description": "No credentials found for the current site"
+    "credential": {
+        "message": "인증 정보",
+        "description": "credential"
     },
-    "enable_autosubmit": {
-        "message": "계정을 선택한 다음 폼 자동으로 제출",
-        "description": "Enable form auto submit"
+    "credentials": {
+        "message": "인증 정보",
+        "description": "credentials"
     },
-    "saving": {
-        "message": "저장 중",
-        "description": "Saving"
+    "refresh_timer": {
+        "message": "새로 고침 타이머 [초]",
+        "description": "Password"
     },
-    "url": {
-        "message": "URL",
-        "description": "URL"
-    },
-    "iam_sure": {
-        "message": "예, 알겠습니다!",
-        "description": "Search"
-    },
-    "no_sites_ignored": {
-        "message": "무시하는 사이트 없음",
-        "description": "No sites ignored"
-    },
-    "done_donate": {
-        "message": "확장 기능을 좋아하셨다면 기부해 주세요",
-        "description": "If you like, don't forget to donate"
-    },
-    "accounts": {
-        "message": "계정",
-        "description": "Accounts"
-    },
-    "password_generator": {
-        "message": "암호 생성기",
-        "description": "Password generator"
-    },
-    "empty_master_key": {
-        "message": "마스터 키가 비어 있음!",
-        "description": "Empty master key!"
+    "ignore_protocol": {
+        "message": "사이트 비교 시 프로토콜 무시",
+        "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
         "message": "사이트 일치 시 하위 도메인 무시",
         "description": "Password"
     },
-    "btn_search": {
-        "message": "인증 정보 검색",
-        "description": "Search credentials"
+    "ignore_port": {
+        "message": "사이트 일치 시 포트 무시",
+        "description": "Ignore port for site matching"
     },
-    "credential_created": {
-        "message": "인증 정보 생성됨",
-        "description": "Credential created"
+    "http_warning": {
+        "message": "HTTP를 사용하고 있습니다! 로그인 정보를 평문으로 전송합니다. Passman에 저장된 정보는 암호화되어 있습니다.",
+        "description": "Warning for http connections"
     },
-    "username": {
-        "message": "사용자 이름",
-        "description": "Username"
+    "ignore_path": {
+        "message": "사이트 일치 시 경로 무시",
+        "description": "Ignore path for site matching"
     },
-    "pw_length": {
-        "message": "암호 길이",
-        "description": "Password length"
+    "enable_autofill": {
+        "message": "폼 자동 입력 사용",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "계정을 선택한 다음 폼 자동으로 제출",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "현재 URL과 일치하지 않는 경우 인증 정보의 URL 업데이트 여부 묻기",
+        "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
         "message": "브라우저 자동 입력 비활성화",
         "description": "Disable auto fill of forms"
     },
-    "refresh_timer": {
-        "message": "새로 고침 타이머 [초]",
-        "description": "Password"
+    "ignore_site_placeholder": {
+        "message": "무시할 TLD나 도메인을 입력하고 ↵ 키를 누르십시오",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "암호 피커 사용",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "암호를 찾았을 때 마지막 탭 대신 목록으로 이동",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "고급 옵션 숨기기",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "고급 옵션 표시",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "디버그 모드 사용",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "저장",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "저장 중",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "암호 저장됨",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "인증 정보 업데이트됨",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "사이트 무시함",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignored",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "업데이트",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "사이트 무시",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "이 사이트의 인증 정보 저장",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "인증 정보 검색",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Passman 확장 기능에 오신 것을 환영합니다",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "서버 URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "시작해 봅시다!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "이 마법사는 확장 기능을 설정하고 암호 동기화 상태를 유지합니다.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "취소",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "기본 비밀 저장소",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "웹 브라우저와 동기화할 비밀 저장소를 선택하십시오.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "마스터 암호 입력",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "이 암호로 확장 기능의 모든 설정을 암호화합니다. 이 암호를 로컬에 저장할 수 있지만 평문으로 저장됩니다.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "마스터 암호 기억",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "경고! 마스터 암호를 평문으로 저장합니다.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "완료",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "사용자 정의 필드",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "일반",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "값",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "목록",
+        "description": "List"
+    },
+    "edit": {
+        "message": "편집",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "서버 설정",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "비밀 저장소 설정",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "마스터 암호 설정",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "완료",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "확장 기능을 좋아하셨다면 기부해 주세요",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "닫기",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "이전",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "뒤로",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "복사",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "다음",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "계속",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "기부하기",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / ownCloud 서버 설정",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "기본 비밀 저장소 선택",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "무시하는 사이트 및 URL",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "페이지 비활성화",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "사이트 비활성화",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Passman을 현재 페이지에서만 비활성화하시겠습니까? 아니면 전체 웹사이트에서 비활성화하시겠습니까?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "무시하는 사이트 없음",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "비밀 저장소 암호",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "레이블을 입력하십시오",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "잘못된 서버 URL",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "사이트/페이지 무시",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "암호가 일치하지 않음",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "비밀 저장소 키가 잘못되었습니다!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "마스터 키가 비어 있음!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "설정",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "설정 과정이 완료된 후 더 많은 계정을 추가할 수 있습니다.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "계정이 추가되었습니다.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "비밀 저장소 선택",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "삭제",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "검색",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "인증 정보 삭제됨",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "암호 피커에서 인증 정보를 찾을 수 없을 때 이동할 페이지:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "비밀 저장소를 찾을 수 없습니다. Nextcloud / ownCloud 앱에서 비밀 저장소를 만든 다음 다시 시도하십시오.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "암호를 초기화할 수 있습니다. 확장 기능을 기본 상태로 초기화합니다.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "암호를 잊으셨나요?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "확장 기능 초기화",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "예, 알겠습니다!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "이 인증 정보를 편집할 수 있는 권한이 없습니다.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "잘못된 서버 설정",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "인증 정보 목록 새로 고침",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "개발은 기부에 크게 의존합니다. 지원해 주십시오",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "확장 기능 잠금",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman 확장 기능이 잠겼습니다. 사용하려면 잠금을 해제하십시오",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "잘못된 마스터 암호!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "잠금 해제",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "이 사이트의 인증 정보 $AMOUNT$개를 찾았습니다",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "$VAULT_NAME$에 저장",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "$VAULT_NAME$에 저장",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "데이터베이스에 인증 정보 $AMOUNT$개 있음",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman에서 $USERNAME$(으)로 로그인함",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "비밀 저장소",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "사용자 정의 필드 추가",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "텍스트",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
     }
 }

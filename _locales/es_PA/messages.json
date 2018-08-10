@@ -1,375 +1,115 @@
 {
-    "credentials_in_db": {
-        "message": "$AMOUNT$ credenciales en la base de datos",
-        "description": "Amount of the credentials in the database"
+    "extDescription": {
+        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Buscar a",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "¡No se encontraron credenciales para este sitio!",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "No se encontraron credenciales",
+        "description": "No credentials found for the current site"
     },
     "notes": {
         "message": "Notes",
         "description": "No credentials found for the current site"
     },
-    "refresh_credential_list": {
-        "message": "Actualizar la lista de credenciales",
-        "description": "Refresh the credential list"
-    },
-    "extDescription": {
-        "message": "Passman - El adminsitrador de contraseñas para NextCloud / ownCloud",
-        "description": "Extension description"
-    },
-    "save_to": {
-        "message": "Guardar en $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "vault": {
-        "message": "Bóveda",
-        "description": "Vault"
-    },
-    "ignore_site_tab": {
-        "message": "Ignorar página / sitio",
-        "description": "Invalid server URL"
-    },
-    "account_added": {
-        "message": "¡Cuenta agregada!",
-        "description": "Search"
-    },
-    "label": {
-        "message": "Etiqueta",
-        "description": "Label"
-    },
-    "ignore_protocol": {
-        "message": "Ignorar el protocolo para las coincidencias de sitios",
-        "description": "Ignore protocol for site matching"
-    },
-    "settings": {
-        "message": "Configuraciones ",
-        "description": "Settings"
-    },
-    "finish": {
-        "message": "Terminar",
-        "description": "Finish"
-    },
-    "detected_changed_url": {
-        "message": "Se detecó un cambio en la URL de",
-        "description": "Detected changed URL for"
-    },
-    "donate": {
-        "message": "Dona",
-        "description": "Donate"
-    },
-    "add_custom_field": {
-        "message": "Agregar un campo personalizado",
-        "description": "Add a custom field"
-    },
-    "enable_update_url": {
-        "message": "Solicitar actualizar la url de credenciales si no conicide con la url actual ",
-        "description": "Enable form auto submit"
-    },
-    "credentials": {
-        "message": "credenciales",
-        "description": "credentials"
-    },
-    "password_picker_gotolist": {
-        "message": "Cuando se encuentren contraseñas, ir a la lista en lugar de la última pestaña activa",
-        "description": "Disable password picker"
-    },
-    "search": {
-        "message": "Buscar",
-        "description": "Search"
-    },
-    "toggle_advanced": {
-        "message": "Alternar opciones avanzadas",
-        "description": "Toggle advanced options"
-    },
-    "extension_locked": {
-        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
-        "description": "When the extension is locked, and requires an unlock to use it"
-    },
-    "update": {
-        "message": "Actualizar",
-        "description": "Update"
-    },
-    "unlock": {
-        "message": "Desbloquear",
-        "description": "Unlock"
-    },
-    "invalid_vault_password": {
-        "message": "¡La llave de la bóveda es inválida!",
-        "description": "Vault password"
-    },
-    "msg_reset_extension": {
-        "message": "Puedes restablecer tu contraseña. Esto restablecerá la extensión a su estado predeterminado.",
-        "description": "Search"
-    },
-    "no_vaults": {
-        "message": "Lo sentimos, no se encontraron bóvedas. Por favor crea una bóveda a través de la aplicación Nextcloud / ownCloud y vuelve a intentarlo.",
-        "description": "Search"
-    },
-    "edit": {
-        "message": "Editar",
-        "description": "Edit"
-    },
-    "min_digits": {
-        "message": "Número mínimo de dígitos",
-        "description": "Minimum amount of digits"
-    },
-    "enter_master_password_desc": {
-        "message": "Esta contaseña de usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar tus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
-        "description": "Enter master password"
-    },
-    "select_vault": {
-        "message": "Seleccionar bóveda",
-        "description": "Search"
-    },
-    "enable_autofill": {
-        "message": "Habilitar autocompletar de formas",
-        "description": "Disable auto fill of forms"
-    },
-    "add_account": {
-        "message": "Agregar cuenta",
-        "description": "Add account"
-    },
-    "back": {
-        "message": "Atrás",
-        "description": "Back"
-    },
-    "credential": {
-        "message": "credencial",
-        "description": "credential"
-    },
-    "delete": {
-        "message": "Borrar",
-        "description": "Delete"
-    },
-    "forgot_password": {
-        "message": "¿Olvidaste tu contraseña?",
-        "description": "Search"
-    },
-    "invalid_server_settings": {
-        "message": "Configuraciones del servidor inválidas",
-        "description": "Search"
-    },
-    "nextcloud_settings": {
-        "message": "Configuraciones del servidor Nextcloud / ownCloud",
-        "description": "Nextcloud / ownCloud server settings"
-    },
-    "use_generated_password": {
-        "message": "Usar contraseña",
-        "description": "Use password"
-    },
-    "one_time_password": {
-        "message": "OTP",
-        "description": "One time password"
-    },
-    "list": {
-        "message": "Lista",
-        "description": "List"
-    },
-    "ignore_site": {
-        "message": "Ignorar sitio",
-        "description": "Update"
-    },
-    "select_default_vault": {
-        "message": "Seleccionar bóveda predeterminada",
-        "description": "Select default vault"
-    },
-    "site_ignored": {
-        "message": "Sitio ignorado",
-        "description": "Site ignored"
-    },
-    "continue": {
-        "message": "Continuar",
-        "description": "Continue"
-    },
-    "credentials_found_for_site": {
-        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
-        "description": "Amount of the credentials found for the current site"
-    },
-    "value": {
-        "message": "Valor",
-        "description": "Custom fields"
-    },
-    "donate_button_title": {
-        "message": "El desarrollo depende de las donaciones, por favor apóyanos",
-        "description": "Title on the PayPal button"
+    "invalid_response_from_server": {
+        "message": "Respuesta inválida del servidor : [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
         "message": "Por favor ingresa tus credenciales de Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
-    "ignore_path": {
-        "message": "Ignorar la ruta para la conicidencia de sitios",
-        "description": "Ignore path for site matching"
+    "save_site": {
+        "message": "Guardar sitio",
+        "description": "Save site"
     },
-    "custom_fields": {
-        "message": "Campos personalizados",
-        "description": "Custom fields"
+    "password_generator": {
+        "message": "Generador de contraseñas",
+        "description": "Password generator"
     },
-    "show_adv": {
-        "message": "Mostrar opciones avanzadas",
-        "description": "Disable password picker"
-    },
-    "invalid_host": {
-        "message": "URL del servidor inválida",
-        "description": "Invalid server URL"
-    },
-    "invalid_master_password": {
-        "message": "¡La contraseña maestra es inválida!",
-        "description": "When the master password is invalid"
-    },
-    "general": {
-        "message": "General",
-        "description": "Custom fields"
-    },
-    "no_password_match": {
-        "message": "Las contraseñas no coinciden",
-        "description": "When comparing passwords"
-    },
-    "close": {
-        "message": "Cerrar",
-        "description": "Close"
-    },
-    "prev": {
-        "message": "Prev",
-        "description": "Previous"
-    },
-    "add_hint": {
-        "message": "Después de crearlas, puedes editar las credenciales en Passman",
-        "description": "After creating it, you can edit the credential in Passman"
-    },
-    "text": {
-        "message": "texto",
-        "description": "To describe a textual input field"
-    },
-    "reset_extension": {
-        "message": "Reiniciar extensión",
-        "description": "Search"
-    },
-    "default_vault": {
-        "message": "Bóveda predeterminada",
-        "description": "Default vault"
-    },
-    "ignore_port": {
-        "message": "Ignorar el puerto en las coincidencias de sitios",
-        "description": "Ignore port for site matching"
-    },
-    "server_settings": {
-        "message": "Configuraciones del servidor",
-        "description": "Server Settings"
-    },
-    "master_password": {
-        "message": "Establecer la contraseña maestra",
-        "description": "Set a master password"
-    },
-    "disable_picker_text": {
-        "message": "¿Deseas deshabilitar Passman para la página actual o para el sitio completo?",
-        "description": "Would you like to disable Passman for the current page, or for the entire website?"
-    },
-    "password": {
-        "message": "Contraseña",
-        "description": "Password"
-    },
-    "copy": {
-        "message": "Copiar",
-        "description": "Copy"
-    },
-    "begin": {
-        "message": "¡Comencemos!",
-        "description": "Let's begin!"
-    },
-    "intro_text": {
-        "message": "¡Este asistente de instalación te guiará en los pasos para configurar la extensióny mantener todas tus contraseñas sincronizadas!",
-        "description": "Cancel"
-    },
-    "credential_deleted": {
-        "message": "Credenciales borradas",
-        "description": "Credential deleted"
-    },
-    "ignore_site_placeholder": {
-        "message": "Ingresa un dominio o TLD a ignorar y presiona Intro",
-        "description": "Disable auto fill of forms"
-    },
-    "ignored_sites": {
-        "message": "Sitios / URLs ignorados",
-        "description": "Ignored sites"
+    "generate_password": {
+        "message": "Generar contraseña",
+        "description": "Generate password"
     },
     "toggle_visibility": {
         "message": "Alternar visibilidad",
         "description": "Toggle visibility"
     },
-    "master_pw_warning": {
-        "message": "¡Advertencia! Tu contraseña maestra será almacenada en texto plano",
-        "description": "Remember master password"
+    "toggle_advanced": {
+        "message": "Alternar opciones avanzadas",
+        "description": "Toggle advanced options"
     },
-    "remember_master_password": {
-        "message": "Recordar la contraseña maestra",
-        "description": "Remember master password"
+    "use_generated_password": {
+        "message": "Usar contraseña",
+        "description": "Use password"
     },
-    "btn_save_site": {
-        "message": "Guardar las credenciales para este sitio",
-        "description": "Save credentials for this site"
+    "add_hint": {
+        "message": "Después de crearlas, puedes editar las credenciales en Passman",
+        "description": "After creating it, you can edit the credential in Passman"
     },
-    "browser_action_title_locked": {
-        "message": "Passman - Bloqueado",
-        "description": "Browser extension title when the extension is locked"
+    "pw_length": {
+        "message": "Longitud de la contraseña",
+        "description": "Password length"
     },
-    "label_required": {
-        "message": "Por favor llena la etiqueta",
-        "description": "When comparing passwords"
-    },
-    "enter_master_password": {
-        "message": "Introduce la contraseña maestra",
-        "description": "Enter master password"
-    },
-    "vault_settings": {
-        "message": "Configuraciones de la bóveda",
-        "description": "Vault settings"
-    },
-    "vault_password": {
-        "message": "Bóveda de contraseñas",
-        "description": "Vault password"
-    },
-    "select_password_picker_default_tab": {
-        "message": "Seleccionador de contraseñas: Cuando no se encuentran contraseñas ir a:",
-        "description": "Select password picker default tab"
-    },
-    "save_site": {
-        "message": "Guardar sitio",
-        "description": "Save site"
-    },
-    "extra_accounts": {
-        "message": "Después de que el proceso de configuración termine, puedes agregar más cuentas. ",
-        "description": "Search"
-    },
-    "next": {
-        "message": "Siguiente",
-        "description": "Next"
+    "min_digits": {
+        "message": "Número mínimo de dígitos",
+        "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
         "message": "Evitar caracteres ambiguos",
         "description": "Avoid ambiguous characters"
     },
-    "disable_site": {
-        "message": "Deshabilitar sitio",
-        "description": "Disable site"
+    "require_every_character_type": {
+        "message": "Requerir todos los tipos de caracteres",
+        "description": "Require every character type"
     },
-    "url_ignored": {
-        "message": "URL ignorado",
-        "description": "URL ignored"
+    "add_account": {
+        "message": "Agregar cuenta",
+        "description": "Add account"
     },
-    "saving_to": {
-        "message": "Guardando en $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+    "accounts": {
+        "message": "Cuentas",
+        "description": "Accounts"
     },
-    "enable_password_picker": {
-        "message": "Habilitar la selección de contraseñas",
-        "description": "Disable password picker"
+    "label": {
+        "message": "Etiqueta",
+        "description": "Label"
     },
-    "auto_login": {
-        "message": "Passman te está registrando como $USERNAME$",
-        "description": "Amount of the credentials in the database"
+    "username": {
+        "message": "Usuario",
+        "description": "Username"
     },
-    "default_vault_desc": {
-        "message": "Selecciona la bóveda que deseas mantener sincronizada con el navegador. ",
-        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    "email": {
+        "message": "Correo electrónico",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Agregar",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Credenciales creadas",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Contraseña",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Contraseña (repetir)",
+        "description": "Password"
     },
     "detected_new_login": {
         "message": "Se detectó un nuevo inicio de sesión",
@@ -379,164 +119,424 @@
         "message": "Se detectó un cambio en la contraseña para el usuario",
         "description": "Detected changed password for user"
     },
-    "invalid_response_from_server": {
-        "message": "Respuesta inválida del servidor : [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
-    },
-    "save": {
-        "message": "Guardar",
-        "description": "Save"
-    },
-    "generate_password": {
-        "message": "Generar contraseña",
-        "description": "Generate password"
-    },
-    "edit_insufficient_permissions": {
-        "message": "No tienes permisos para editar estas credenciales.",
-        "description": "You don't have permissions to edit this credential."
-    },
-    "server_url": {
-        "message": "URL del servidor",
-        "description": "Server URL"
-    },
-    "disable_page": {
-        "message": "Dehabilitar página",
-        "description": "Disable page"
-    },
-    "hide_adv": {
-        "message": "Ocultar opciones avanzadas",
-        "description": "Disable password picker"
-    },
-    "cancel": {
-        "message": "Cancelar",
-        "description": "Cancel"
-    },
-    "add": {
-        "message": "Agregar",
-        "description": "Add"
-    },
-    "credential_updated": {
-        "message": "Credencial actualizada",
-        "description": "updated, lowercase"
-    },
-    "no_credentials_found": {
-        "message": "No se encontraron credenciales",
-        "description": "No credentials found for the current site"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
-    },
-    "lock_extension": {
-        "message": "Bloquear extensión",
-        "description": "Title on the PayPal button"
-    },
-    "search_for": {
-        "message": "Buscar a",
-        "description": "No credentials found for the current site"
-    },
-    "password_repeat": {
-        "message": "Contraseña (repetir)",
-        "description": "Password"
-    },
-    "credential_saved": {
-        "message": "Credenciales guardadas",
-        "description": "saved, lowercase"
-    },
-    "require_every_character_type": {
-        "message": "Requerir todos los tipos de caracteres",
-        "description": "Require every character type"
-    },
-    "enable_debug": {
-        "message": "Habilitar el modo de depuración",
-        "description": "Enable debug mode"
-    },
-    "email": {
-        "message": "Correo electrónico",
-        "description": "E-mail"
-    },
-    "welcome_to_passman": {
-        "message": "Bienvenido a la extensión Passman",
-        "description": "Intro at the setup"
-    },
     "browser_action_title_login": {
         "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ encontrado para esta página",
         "description": "String for the browser action"
     },
-    "http_warning": {
-        "message": "¡Estas usando HTTP! Las credenciales de inicio de sesión serán enviadas en texto plano. Tus credenciales de Passman aún están encriptadas. ",
-        "description": "Warning for http connections"
+    "browser_action_title_locked": {
+        "message": "Passman - Bloqueado",
+        "description": "Browser extension title when the extension is locked"
     },
-    "done": {
-        "message": "Terminado",
-        "description": "Done"
+    "detected_changed_url": {
+        "message": "Se detecó un cambio en la URL de",
+        "description": "Detected changed URL for"
     },
-    "no_credentials_found_for_site": {
-        "message": "¡No se encontraron credenciales para este sitio!",
-        "description": "No credentials found for the current site"
+    "credential": {
+        "message": "credencial",
+        "description": "credential"
     },
-    "enable_autosubmit": {
-        "message": "Habilita el auto enviado de formularios después de seleccionar una cuenta",
-        "description": "Enable form auto submit"
+    "credentials": {
+        "message": "credenciales",
+        "description": "credentials"
     },
-    "saving": {
-        "message": "Guardando",
-        "description": "Saving"
+    "refresh_timer": {
+        "message": "Restablecer temporizador [s]",
+        "description": "Password"
     },
-    "url": {
-        "message": "URL",
-        "description": "URL"
-    },
-    "iam_sure": {
-        "message": "Sí, estoy seguro",
-        "description": "Search"
-    },
-    "no_sites_ignored": {
-        "message": "No se han ignorado sitios",
-        "description": "No sites ignored"
-    },
-    "done_donate": {
-        "message": "Si te agrada, no olvides donar",
-        "description": "If you like, don't forget to donate"
-    },
-    "accounts": {
-        "message": "Cuentas",
-        "description": "Accounts"
-    },
-    "password_generator": {
-        "message": "Generador de contraseñas",
-        "description": "Password generator"
-    },
-    "empty_master_key": {
-        "message": "¡La llave maestra está vacía!",
-        "description": "Empty master key!"
+    "ignore_protocol": {
+        "message": "Ignorar el protocolo para las coincidencias de sitios",
+        "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
         "message": "Ignorar el subdominio para las coincidencias de sitios",
         "description": "Password"
     },
-    "btn_search": {
-        "message": "Buscar credenciales",
-        "description": "Search credentials"
+    "ignore_port": {
+        "message": "Ignorar el puerto en las coincidencias de sitios",
+        "description": "Ignore port for site matching"
     },
-    "credential_created": {
-        "message": "Credenciales creadas",
-        "description": "Credential created"
+    "http_warning": {
+        "message": "¡Estas usando HTTP! Las credenciales de inicio de sesión serán enviadas en texto plano. Tus credenciales de Passman aún están encriptadas. ",
+        "description": "Warning for http connections"
     },
-    "username": {
-        "message": "Usuario",
-        "description": "Username"
+    "ignore_path": {
+        "message": "Ignorar la ruta para la conicidencia de sitios",
+        "description": "Ignore path for site matching"
     },
-    "pw_length": {
-        "message": "Longitud de la contraseña",
-        "description": "Password length"
+    "enable_autofill": {
+        "message": "Habilitar autocompletar de formas",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Habilita el auto enviado de formularios después de seleccionar una cuenta",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Solicitar actualizar la url de credenciales si no conicide con la url actual ",
+        "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
         "message": "Desactivar el autocompletado del navegador",
         "description": "Disable auto fill of forms"
     },
-    "refresh_timer": {
-        "message": "Restablecer temporizador [s]",
-        "description": "Password"
+    "ignore_site_placeholder": {
+        "message": "Ingresa un dominio o TLD a ignorar y presiona Intro",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Habilitar la selección de contraseñas",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Cuando se encuentren contraseñas, ir a la lista en lugar de la última pestaña activa",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Ocultar opciones avanzadas",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Mostrar opciones avanzadas",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Habilitar el modo de depuración",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Guardar",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Guardando",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Credenciales guardadas",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Credencial actualizada",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Sitio ignorado",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignorado",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Actualizar",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignorar sitio",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Guardar las credenciales para este sitio",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Buscar credenciales",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Bienvenido a la extensión Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL del servidor",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "¡Comencemos!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "¡Este asistente de instalación te guiará en los pasos para configurar la extensióny mantener todas tus contraseñas sincronizadas!",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Cancelar",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Bóveda predeterminada",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Selecciona la bóveda que deseas mantener sincronizada con el navegador. ",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Introduce la contraseña maestra",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Esta contaseña de usará para encriptar todas tus configuraciones de la extensión. Puedes optar por guardar tus contraseñas localmente pero serían guardadas en TEXTO PLANO. ",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Recordar la contraseña maestra",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "¡Advertencia! Tu contraseña maestra será almacenada en texto plano",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Terminado",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Campos personalizados",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "General",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Valor",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Lista",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Editar",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Configuraciones del servidor",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Configuraciones de la bóveda",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Establecer la contraseña maestra",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Terminar",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Si te agrada, no olvides donar",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Cerrar",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Prev",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Atrás",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Copiar",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Siguiente",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Continuar",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Dona",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Configuraciones del servidor Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Seleccionar bóveda predeterminada",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Sitios / URLs ignorados",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Dehabilitar página",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Deshabilitar sitio",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "¿Deseas deshabilitar Passman para la página actual o para el sitio completo?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "No se han ignorado sitios",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Bóveda de contraseñas",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Por favor llena la etiqueta",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "URL del servidor inválida",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignorar página / sitio",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Las contraseñas no coinciden",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "¡La llave de la bóveda es inválida!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "¡La llave maestra está vacía!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Configuraciones ",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Después de que el proceso de configuración termine, puedes agregar más cuentas. ",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "¡Cuenta agregada!",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Seleccionar bóveda",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Borrar",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Buscar",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Credenciales borradas",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Seleccionador de contraseñas: Cuando no se encuentran contraseñas ir a:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Lo sentimos, no se encontraron bóvedas. Por favor crea una bóveda a través de la aplicación Nextcloud / ownCloud y vuelve a intentarlo.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Puedes restablecer tu contraseña. Esto restablecerá la extensión a su estado predeterminado.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "¿Olvidaste tu contraseña?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Reiniciar extensión",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Sí, estoy seguro",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "No tienes permisos para editar estas credenciales.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Configuraciones del servidor inválidas",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Actualizar la lista de credenciales",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "El desarrollo depende de las donaciones, por favor apóyanos",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Bloquear extensión",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "La extensión Passman está bloqueada, desbloquela para usarla",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "¡La contraseña maestra es inválida!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Desbloquear",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Se han encontrado $AMOUNT$ credenciales para este sitio",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Guardar en $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Guardando en $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ credenciales en la base de datos",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman te está registrando como $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Bóveda",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Agregar un campo personalizado",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "texto",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
     }
 }
