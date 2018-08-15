@@ -197,8 +197,8 @@ window.PAPI = (function () {
         headers.append("Accept", " application/json, text/plain, */*");
         var opts = {
             method: method,
-            headers: headers
-
+            headers: headers,
+            credentials: 'omit' // don't send cookies to not confuse nextcloud Auth
         };
 
         if(data){
