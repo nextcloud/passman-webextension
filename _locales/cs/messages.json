@@ -512,7 +512,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Ukládám do $VAULT_NAME$",
+        "message": "Ukládá se do $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
