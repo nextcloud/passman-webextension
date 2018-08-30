@@ -508,7 +508,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Αποθήκευση στο $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
