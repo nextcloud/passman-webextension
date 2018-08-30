@@ -6,7 +6,7 @@
   "author": "Sander Brand",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
-  "homepage_url": "https://github.com/nextcloud/passman-chrome-extension",
+  "homepage_url": "https://github.com/nextcloud/passman-webextension",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
