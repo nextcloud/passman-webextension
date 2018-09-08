@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Toto heslo bude použito k šifrování všech nastavení v rozšíření. Můžete si vybrat toto heslo uložit místně, ale bude uloženo v PLAINTEXTu.",
+        "message": "Toto heslo bude použito k šifrování všech nastavení v rozšíření. Můžete si vybrat toto heslo uložit místně, ale bude uloženo nezabezpečeně (v čitelném formátu).",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -284,7 +284,7 @@
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Varování! Vaše hlavní heslo bude uloženo v otevřeném textu.",
+        "message": "Varování! Vaše hlavní heslo bude uloženo nezabezpečeně (v čitelné podobě).",
         "description": "Remember master password"
     },
     "done": {
@@ -292,7 +292,7 @@
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Vlastní pole",
+        "message": "Uživatelsky určované kolonky",
         "description": "Custom fields"
     },
     "general": {
@@ -328,7 +328,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Pokud chcete,nezapomeňte na dar",
+        "message": "Pokud se vám aplikace líbí, prosíme nezapomeňte ocenit darem",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -392,7 +392,7 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Prosím, vyplňte popisek",
+        "message": "Vyplňte popisek",
         "description": "When comparing passwords"
     },
     "invalid_host": {
