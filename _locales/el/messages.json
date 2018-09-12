@@ -8,7 +8,7 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Δεν βρέθηκαν διαπιστευτήρια σε αυτή τη σελίδα.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
