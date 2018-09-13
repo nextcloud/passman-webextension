@@ -260,7 +260,7 @@
         "description": "Cancel"
     },
     "cancel": {
-        "message": "Zrušit",
+        "message": "Storno",
         "description": "Cancel"
     },
     "default_vault": {
