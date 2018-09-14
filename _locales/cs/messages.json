@@ -188,7 +188,7 @@
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Když je heslo nalezeno, přejít na seznam namísto posledně aktivní kartu",
         "description": "Disable password picker"
     },
     "hide_adv": {
