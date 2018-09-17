@@ -20,7 +20,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Virheellinen vastaus palvelimelta: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "Kehitystyö on riippuvaista lahjoituksista, tue meitä",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman kirjaa sinut sisään käyttäjänä $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
