@@ -328,7 +328,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Pokud se vám aplikace líbí, prosíme nezapomeňte ocenit darem",
+        "message": "Pokud se vám aplikace líbí, prosíme nezapomeňte podpořit darem",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -404,7 +404,7 @@
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Hesla se neshodují",
+        "message": "Zadání hesla se neshodují",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Můžete resetovat vaše heslo. To resetuje rozšíření do výchozího stavu.",
+        "message": "Můžete resetovat své heslo. To resetuje rozšíření do výchozího stavu.",
         "description": "Search"
     },
     "forgot_password": {
@@ -492,7 +492,7 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Rozšíření Passman je uzamčeno, před použitím ho musíte odemknout",
+        "message": "Rozšíření Passman je uzamčeno, před použitím je třeba ho odemknout",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
