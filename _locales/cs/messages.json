@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Prosím, zadejte své přístupové údaje k Nextcloudu / ownCloudu",
+        "message": "Zadejte své přístupové údaje k Nextcloudu / ownCloudu",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -36,7 +36,7 @@
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Generovat heslo",
+        "message": "Vytvořit heslo",
         "description": "Generate password"
     },
     "toggle_visibility": {
@@ -112,11 +112,11 @@
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Detekováno nové přihlášení",
+        "message": "Zjištěno nové přihlášení",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Detekováno změněné heslo uživatele",
+        "message": "Zjištěno změněné heslo uživatele",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
@@ -128,7 +128,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Detekována změna URL pro",
+        "message": "Zjištěna změna URL pro",
         "description": "Detected changed URL for"
     },
     "credential": {
