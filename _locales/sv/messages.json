@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Be om att uppdatera autentiseringsadress om den inte matchar den aktuella webbadressen",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
