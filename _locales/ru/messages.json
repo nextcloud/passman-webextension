@@ -420,7 +420,7 @@
         "description": "One time password"
     },
     "settings": {
-        "message": "Настройки",
+        "message": "Параметры",
         "description": "Settings"
     },
     "extra_accounts": {
