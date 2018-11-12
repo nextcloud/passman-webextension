@@ -288,7 +288,7 @@
         "description": "Remember master password"
     },
     "done": {
-        "message": "Gedaan",
+        "message": "Klaar",
         "description": "Done"
     },
     "custom_fields": {
