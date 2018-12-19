@@ -200,7 +200,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Habilitar modo de depuração",
+        "message": "Ativar modo de depuração",
         "description": "Enable debug mode"
     },
     "save": {
@@ -372,11 +372,11 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Desabilitar página",
+        "message": "Desativar página",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Desabilitar site",
+        "message": "Desativar site",
         "description": "Disable site"
     },
     "disable_picker_text": {
