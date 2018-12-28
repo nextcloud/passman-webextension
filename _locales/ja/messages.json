@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - NextCloud / ownCloudのパスワードマネージャー",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "を探す",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "このサイトには資格情報が見つかりません。",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "資格情報が見つかりません。",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "ノート",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Nextcloud / Owncloud 資格情報を入力してください",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "サイトを保存する",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "パスワードジェネレータ",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "パスワードを生成する",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "ビジリティをトグルする",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "詳細オプションをトグルする",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "パスワードを使う",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "生成後にPassmanの資格情報を編集できます。",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "パスワードの長さ",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "最小の桁数",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "あいまいな文字を避ける",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "すべての文字種を必須にする",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "アカウントを追加",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "アカウント",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "ラベル",
+        "description": "Label"
+    },
+    "username": {
+        "message": "ユーザー名",
+        "description": "Username"
+    },
+    "email": {
+        "message": "メール",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "追加",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "資格情報が作成されました",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "パスワード",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "パスワード（確認）",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "新しいログインが検出されました",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "ユーザパスワード変更が検出されました",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman -ロックされました",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "のURLが変更されました",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "資格",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "資格情報",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "タイマーをリフレッシュする",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "サイトマッチングのプロトコルを無視する",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "サイトマッチングのサブドメインを無視する",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "サイトマッチングのポートを無視する",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "あなたはHTTPを使っています！ ログイン資格情報はプレーンテキストで送信されます。 Passmanの資格情報はまだ暗号化されています。",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "サイトマッチングのパスを無視する",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "フォームの自動入力を有効に",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "アカウント選択後にフォームの自動送信を有効にする",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "現在のURLと一致しない場合、認証情報URLを更新するように依頼します",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "ブラウザの自動入力を無効にする",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "無視するドメインまたはTLDを入力して↵を押す",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "パスワードピッカーを有効にする",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "パスワードが見つかったら、最後にアクティブになったタブではなくリストに移動します",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "詳細オプションを隠す",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "詳細オプションを表示する",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "デバッグモードを有効にする",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "保存",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "保存しています",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "資格情報を保存しました",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "資格情報が更新されました",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "サイトが無視されました",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URLが無視されました",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "更新",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "サイトを無視",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "このサイトの資格情報を保存",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "資格情報を検索しています...",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": " Passman Web拡張へようこそ",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "サーバーURL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "始めましょう！",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "このウィザードは、拡張機能を設定してすべてのパスワードを同期させるための手順を案内します。",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "キャンセル",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "デフォルトの保管庫",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Webブラウザと同期したい保管庫を選択します。",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "マスターパスワードを入力してください",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "このパスワードは、拡張機能内のすべての設定を暗号化するために使用されます。 このパスワードをローカルに保存することを選択できますが、プレーンテキストに保存されます。",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "マスターパスワードを記憶してください",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "警告！ マスターパスワードは平文で保存されます。",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "完了",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "カスタムフィールド",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "一般",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "値",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "リスト",
+        "description": "List"
+    },
+    "edit": {
+        "message": "編集",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "サーバー設定",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "保管庫設定",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "マスターパスワードを設定",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "完了",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "良ければ、忘れずに寄付してください",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "閉じる",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "前へ",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "戻る",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "コピー",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "次へ",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "続ける",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "寄付",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / Owncloud サーバー設定",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "デフォルトの保管庫を選択",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "サイト / URL を無視しました",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "ページを無効",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "サイトを無効",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "現在のページ、またはWebサイト全体に対してPassmanを無効にしますか？",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "無視されたサイトはありません",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "保管庫パスワード",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "ラベルを記入してください",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "サーバーのURLが無効",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "サイト / URL を無視",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "パスワードが一致しません",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "無効な保管庫キー",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "マスターキーが空です!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "設定",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "セットアッププロセスが完了したら、アカウントを追加できます。",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "アカウントが追加されました",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "保管庫を選択",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "削除",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "検索",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "資格情報が削除されました",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "パスワードピッカーが認証情報を見つけられない場合は、次の場所に移動します。",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "申し訳ありません、保管庫が見つかりませんでした。 Nextcloud / ownCloudアプリで保管庫を作成してから、もう一度やり直してください。",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "パスワードを再設定できます。 これにより拡張機能はデフォルトの状態にリセットされます。",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "パスワードをお忘れですか?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "拡張機能をリセット",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "はい、確かです！",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "この資格情報を編集する権限がありません。",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "サーバー設定が無効です",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "資格情報リストをリフレッシュします",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "開発は寄付金に依存しています。応援してください",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "拡張機能をロック",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman 拡張機能はロックされています。利用するにはアンロックして下さい",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "マスターパスワードが無効です",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "解除",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "We've found $AMOUNT$ credentials for this site",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "$VAULT_NAME$ に保存",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "$VAULT_NAME$ に保存",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ credentials in the database",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "保管庫",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "カスタムフィールドを追加する",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "テキスト",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
