@@ -8,7 +8,10 @@
             {{credential.label}}
         </div>
         <div class="info">
-            {{credential.username}} in {{ credential.account.vault.name}}
+            {{credential.username}} in {{ credential.account.vault.name}} <copy-text text="credential.username"></copy-text>
+        </div>
+        <div class="extra" ng-if="credential.password">
+            {{'password' | translate}}: ******** <copy-text text="credential.password"></copy-text>
         </div>
         <div class="extra" ng-if="credential.otp.secret">
             {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>

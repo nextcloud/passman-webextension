@@ -22,7 +22,10 @@
             {{credential.label}}
         </div>
         <div class="info">
-            {{credential.username}}
+            {{credential.username}} <copy-text text="credential.username"></copy-text>
+        </div>
+        <div class="extra" ng-if="credential.password">
+            {{'password' | translate}}: ******** <copy-text text="credential.password"></copy-text>
         </div>
         <div class="extra" ng-if="credential.otp.secret">
             {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>
