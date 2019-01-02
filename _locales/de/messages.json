@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Nach der Erstellung können die Anmeldedaten mit Passmann bearbeitet werden",
+        "message": "Nach der Erstellung können die Anmeldedaten mit Passman bearbeitet werden",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Du nutzt HTTP! Deine Anmeldedaten werden als Klartext übertragen. Deine Passmann-Zugangsdaten sind verschlüsselt.",
+        "message": "Du nutzt HTTP! Deine Anmeldedaten werden als Klartext übertragen. Deine Passman-Zugangsdaten sind verschlüsselt.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
