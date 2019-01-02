@@ -1,102 +1,102 @@
 {
     "extDescription": {
-        "message": "Passman - manažér hesiel pre NextCloud / ownCloud",
+        "message": "Passman - NextCloud / ownCloudのパスワードマネージャー",
         "description": "Extension description"
     },
     "search_for": {
-        "message": "Hľadať",
+        "message": "を探す",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Pre túto stránku neboli nájdené žiadne prístupové údaje.",
+        "message": "このサイトには資格情報が見つかりません。",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Prihlasovacie údaje nenájdené",
+        "message": "資格情報が見つかりません。",
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Poznámky",
+        "message": "ノート",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Neplatná odpoveď zo servra\" [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Zadajte prosím prihlasovacie údaje pre svoj Nextcloud",
+        "message": "Nextcloud / Owncloud 資格情報を入力してください",
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "Uložiť stránku",
+        "message": "サイトを保存する",
         "description": "Save site"
     },
     "password_generator": {
-        "message": "Generátor hesla",
+        "message": "パスワードジェネレータ",
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Generovať heslo",
+        "message": "パスワードを生成する",
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Prepnúť viditeľnosť",
+        "message": "ビジリティをトグルする",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Pokročilé možnosti",
+        "message": "詳細オプションをトグルする",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Použiť hesl",
+        "message": "パスワードを使う",
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Po vytvorení môžete prihlasovací údaj upravovať v Passman",
+        "message": "生成後にPassmanの資格情報を編集できます。",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
-        "message": "Dĺžka hesla",
+        "message": "パスワードの長さ",
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minimálny počet číselných znakov",
+        "message": "最小の桁数",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Vyhnúť sa nejednoznačným znakom",
+        "message": "あいまいな文字を避ける",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Vyžadovať znak z každého typu",
+        "message": "すべての文字種を必須にする",
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "Pridať účet",
+        "message": "アカウントを追加",
         "description": "Add account"
     },
     "accounts": {
-        "message": "Účty",
+        "message": "アカウント",
         "description": "Accounts"
     },
     "label": {
-        "message": "Štítok",
+        "message": "ラベル",
         "description": "Label"
     },
     "username": {
-        "message": "Používateľské meno",
+        "message": "ユーザー名",
         "description": "Username"
     },
     "email": {
-        "message": "E-mail",
+        "message": "メール",
         "description": "E-mail"
     },
     "add": {
-        "message": "Pridať",
+        "message": "追加",
         "description": "Add"
     },
     "credential_created": {
-        "message": "Prihlasovací údaj bol vytvorený",
+        "message": "資格情報が作成されました",
         "description": "Credential created"
     },
     "url": {
@@ -104,435 +104,435 @@
         "description": "URL"
     },
     "password": {
-        "message": "Heslo",
+        "message": "パスワード",
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Heslo (opakovať)",
+        "message": "パスワード（確認）",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Zistené nové prihlasovacie meno",
+        "message": "新しいログインが検出されました",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Bola zistená zmena hesla používateľa",
+        "message": "ユーザパスワード変更が検出されました",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ nájdené pre túto stránku",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - zamknutý",
+        "message": "Passman -ロックされました",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Zistená zmenená URL pre",
+        "message": "のURLが変更されました",
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "prístupový údaj",
+        "message": "資格",
         "description": "credential"
     },
     "credentials": {
-        "message": "prihlasovacie údaje",
+        "message": "資格情報",
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Časovač obnovovania [s]",
+        "message": "タイマーをリフレッシュする",
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj protokol",
+        "message": "サイトマッチングのプロトコルを無視する",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj subdoménu",
+        "message": "サイトマッチングのサブドメインを無視する",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj port",
+        "message": "サイトマッチングのポートを無視する",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Používate protokol HTTP!  Prihlasovacie údaje budú odoslané nezašifrované.  Prihlasovacie údaje v Passman ale zostávajú šifrované.",
+        "message": "あなたはHTTPを使っています！ ログイン資格情報はプレーンテキストで送信されます。 Passmanの資格情報はまだ暗号化されています。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj cestu",
+        "message": "サイトマッチングのパスを無視する",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Povoliť automatické vypĺňanie formulárov",
+        "message": "フォームの自動入力を有効に",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Povoliť automatické odoslanie formulára po výbere účtu",
+        "message": "アカウント選択後にフォームの自動送信を有効にする",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Spýtať sa na aktualizáciu URL prihlasovacieho údaja v prípade že sa nezhoduje s aktuálnou URL",
+        "message": "現在のURLと一致しない場合、認証情報URLを更新するように依頼します",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Zakázať automatické vypĺňanie prehliadačom",
+        "message": "ブラウザの自動入力を無効にする",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Zadajte ignorovanú doménu alebo TLD a stlačte enter",
+        "message": "無視するドメインまたはTLDを入力して↵を押す",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Povoliť vyberač hesla",
+        "message": "パスワードピッカーを有効にする",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "Keď sa nájde heslo, prejdi na zoznam radšej než na posledný aktívny tab",
+        "message": "パスワードが見つかったら、最後にアクティブになったタブではなくリストに移動します",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Schovať pokročilé možnosti",
+        "message": "詳細オプションを隠す",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Zobraziť pokročilé možnosti",
+        "message": "詳細オプションを表示する",
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Povoliť režim ladenia",
+        "message": "デバッグモードを有効にする",
         "description": "Enable debug mode"
     },
     "save": {
-        "message": "Uložiť",
+        "message": "保存",
         "description": "Save"
     },
     "saving": {
-        "message": "Ukladá sa",
+        "message": "保存しています",
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Prístupové údaje boli uložené",
+        "message": "資格情報を保存しました",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Prístupové údaje boli aktualizované",
+        "message": "資格情報が更新されました",
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Stránka ignorovaná",
+        "message": "サイトが無視されました",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignorovaná",
+        "message": "URLが無視されました",
         "description": "URL ignored"
     },
     "update": {
-        "message": "Aktualizovať",
+        "message": "更新",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignorovať stránku",
+        "message": "サイトを無視",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Uložiť prístupové údaje pre túto stránku",
+        "message": "このサイトの資格情報を保存",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Hladať prihlasovacie údaje",
+        "message": "資格情報を検索しています...",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Víta Vás doplnok Passman",
+        "message": " Passman Web拡張へようこそ",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "URL servera",
+        "message": "サーバーURL",
         "description": "Server URL"
     },
     "begin": {
-        "message": "Začnime!",
+        "message": "始めましょう！",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Tento sprievodca Vám ukáže ako nastaviť rozšírenie a ako udržiavať všetky Vaše heslá synchronizované.",
+        "message": "このウィザードは、拡張機能を設定してすべてのパスワードを同期させるための手順を案内します。",
         "description": "Cancel"
     },
     "cancel": {
-        "message": "Zrušiť",
+        "message": "キャンセル",
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "Predvolený trezor",
+        "message": "デフォルトの保管庫",
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Vyberte si trezor, ktorý chcete udržiavať synchronizovaný s prehliadačom.",
+        "message": "Webブラウザと同期したい保管庫を選択します。",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Vložte hlavné heslo",
+        "message": "マスターパスワードを入力してください",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Všetky vaše nastavenia pre doplnok budú zašifrované pomocou tohto hesla. Môžete si zvoliť uloženie tohto hesla lokálne, avšak v tom prípade bude uložené ako OBYČAJNÝ TEXT (nešifrované).",
+        "message": "このパスワードは、拡張機能内のすべての設定を暗号化するために使用されます。 このパスワードをローカルに保存することを選択できますが、プレーンテキストに保存されます。",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Zapamätať hlavné hesl",
+        "message": "マスターパスワードを記憶してください",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Upozornenie! Vaše hlavné heslo bude uložené ako čistý text.",
+        "message": "警告！ マスターパスワードは平文で保存されます。",
         "description": "Remember master password"
     },
     "done": {
-        "message": "Hotovo",
+        "message": "完了",
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Vlastné polia",
+        "message": "カスタムフィールド",
         "description": "Custom fields"
     },
     "general": {
-        "message": "Všeobecné",
+        "message": "一般",
         "description": "Custom fields"
     },
     "value": {
-        "message": "Hodnota",
+        "message": "値",
         "description": "Custom fields"
     },
     "list": {
-        "message": "Zoznam",
+        "message": "リスト",
         "description": "List"
     },
     "edit": {
-        "message": "Upraviť",
+        "message": "編集",
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Nastavenia servera",
+        "message": "サーバー設定",
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Nastavenia trezora",
+        "message": "保管庫設定",
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Nastaviť hlavné heslo",
+        "message": "マスターパスワードを設定",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Dokončiť",
+        "message": "完了",
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Nezabudnite prispieť, ak sa vám páči",
+        "message": "良ければ、忘れずに寄付してください",
         "description": "If you like, don't forget to donate"
     },
     "close": {
-        "message": "Zatvoriť",
+        "message": "閉じる",
         "description": "Close"
     },
     "prev": {
-        "message": "Predch",
+        "message": "前へ",
         "description": "Previous"
     },
     "back": {
-        "message": "Späť",
+        "message": "戻る",
         "description": "Back"
     },
     "copy": {
-        "message": "Kopírovať",
+        "message": "コピー",
         "description": "Copy"
     },
     "next": {
-        "message": "Ďalej",
+        "message": "次へ",
         "description": "Next"
     },
     "continue": {
-        "message": "Pokračovať",
+        "message": "続ける",
         "description": "Continue"
     },
     "donate": {
-        "message": "Darovať",
+        "message": "寄付",
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nastavenia servera Nextcloud / ownCloud",
+        "message": "Nextcloud / Owncloud サーバー設定",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Vybrať predvolený trezor",
+        "message": "デフォルトの保管庫を選択",
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignorované stránky / URL",
+        "message": "サイト / URL を無視しました",
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Zakázať stránku",
+        "message": "ページを無効",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Zakázať stránku",
+        "message": "サイトを無効",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Chcete zakázať Passman pre aktuálnu stránku alebo pre všetky?",
+        "message": "現在のページ、またはWebサイト全体に対してPassmanを無効にしますか？",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Žiadne stránky nie sú ignorované",
+        "message": "無視されたサイトはありません",
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "Heslo trezora",
+        "message": "保管庫パスワード",
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Zadajte prosím názov!",
+        "message": "ラベルを記入してください",
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Neplatná url servera",
+        "message": "サーバーのURLが無効",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignoruj stránku",
+        "message": "サイト / URL を無視",
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Heslá sa nezhodujú",
+        "message": "パスワードが一致しません",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Kľúč do trezora naplatný!",
+        "message": "無効な保管庫キー",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Hlavný kľúč nemá žiadnu hodnotu!",
+        "message": "マスターキーが空です!",
         "description": "Empty master key!"
     },
     "one_time_password": {
-        "message": "jednorazové heslo (OTP)",
+        "message": "OTP",
         "description": "One time password"
     },
     "settings": {
-        "message": "Nastavenia",
+        "message": "設定",
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Po dokončení nastavenia môžete pridať ďalšie účty.",
+        "message": "セットアッププロセスが完了したら、アカウントを追加できます。",
         "description": "Search"
     },
     "account_added": {
-        "message": "Účet pridaný.",
+        "message": "アカウントが追加されました",
         "description": "Search"
     },
     "select_vault": {
-        "message": "Vybrať trezor",
+        "message": "保管庫を選択",
         "description": "Search"
     },
     "delete": {
-        "message": "Zmazať",
+        "message": "削除",
         "description": "Delete"
     },
     "search": {
-        "message": "Hľadať",
+        "message": "検索",
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Prihlasovací údaj bol zmazaný",
+        "message": "資格情報が削除されました",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "V prípade že sa nenájde žiadny prihlasovací údaj, prejde sa na:",
+        "message": "パスワードピッカーが認証情報を見つけられない場合は、次の場所に移動します。",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Prepáčte, žiadny trezor sa nenašiel.  Prosím vytvorte trezor cez Nextcloud / ownCloud aplikáciu a skúste znova.",
+        "message": "申し訳ありません、保管庫が見つかりませんでした。 Nextcloud / ownCloudアプリで保管庫を作成してから、もう一度やり直してください。",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Môžete resetovať Vaše heslo.  Toto spôsobí nastenie rozšírenia na pôvodný stav.",
+        "message": "パスワードを再設定できます。 これにより拡張機能はデフォルトの状態にリセットされます。",
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Zabudli ste heslo?",
+        "message": "パスワードをお忘れですか?",
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Resetovať rozšírenie",
+        "message": "拡張機能をリセット",
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Áno, som si istý!",
+        "message": "はい、確かです！",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Nemáte oprávnenie na úpravu tohto prihlasovacieho údaju.",
+        "message": "この資格情報を編集する権限がありません。",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Neplatné nastavenia servera",
+        "message": "サーバー設定が無効です",
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Obnoviť zoznam prihlasovacích údajov",
+        "message": "資格情報リストをリフレッシュします",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Vývoj závisí od darov, prosím podporte nás",
+        "message": "開発は寄付金に依存しています。応援してください",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Uzamknúť doplnok",
+        "message": "拡張機能をロック",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Rozšírenie Passman je uzamknuté, pre použitie ho odomknite",
+        "message": "Passman 拡張機能はロックされています。利用するにはアンロックして下さい",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Hlavné heslo je neplatné!",
+        "message": "マスターパスワードが無効です",
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "Odomknúť",
+        "message": "解除",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Pre túto stránku boli nájdené  $AMOUNT$ prístupové údaje",
+        "message": "We've found $AMOUNT$ credentials for this site",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Uložiť do $VAULT_NAME$",
+        "message": "$VAULT_NAME$ に保存",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Ukladá sa do $VAULT_NAME$",
+        "message": "$VAULT_NAME$ に保存",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ prihlasovacích údajov v databáze",
+        "message": "$AMOUNT$ credentials in the database",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman vás prihlasuje ako $USERNAME$",
+        "message": "Passman is logging you in as $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Trezor",
+        "message": "保管庫",
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Pridať vlastné pole",
+        "message": "カスタムフィールドを追加する",
         "description": "Add a custom field"
     },
     "text": {
-        "message": "text",
+        "message": "テキスト",
         "description": "To describe a textual input field"
     },
     "extName": {

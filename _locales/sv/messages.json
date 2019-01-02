@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Anteckningar",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Be om att uppdatera autentiseringsadress om den inte matchar den aktuella webbadressen",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
