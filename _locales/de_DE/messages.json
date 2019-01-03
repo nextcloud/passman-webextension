@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Sie nutzen HTTP! Ihre Anmeldedaten werden als Klartext übertragen. Ihre Passman-Zugangsdaten sind verschlüsselt.",
+        "message": "Sie nutzen HTTP! Ihre Anmeldedaten werden als Klartext übertragen. Ihre Passmann-Zugangsdaten sind verschlüsselt.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
