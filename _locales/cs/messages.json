@@ -468,7 +468,7 @@
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Ano jsem si jistý!",
+        "message": "Ano, opravdu to tak chci!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
