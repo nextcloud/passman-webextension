@@ -30,6 +30,14 @@
         <div class="extra" ng-if="credential.otp.secret">
             {{'one_time_password' | translate}}: <div otp-generator secret="credential.otp.secret"></div>
         </div>
+        <div class="extra"  ng-repeat="(key, field) in credential.custom_fields">
+            <div ng-if="field.field_type=='password'">
+                {{field.label}} <copy-text text="field.value"></copy-text>
+            </div>
+            <div ng-if="field.field_type=='text'">
+                {{field.label}}: {{field.value}} <copy-text text="field.value"></copy-text>
+            </div>
+        </div>
         <div class="edit" ng-click="editCredential(credential)">
             <div class="mdi mdi-pencil"></div>
         </div>
