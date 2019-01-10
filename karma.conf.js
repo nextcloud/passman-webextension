@@ -1,9 +1,13 @@
 // Karma configuration
 // Generated on Mon Oct 17 2016 15:46:52 GMT+0200 (CEST)
 var isTravis = (process.env.TRAVIS_BUILD_NUMBER) ? true : false;
+var isDocker = (process.env.DOCKER) ? true : false;
 var browsers = ['Firefox'];
 if(!isTravis){
     browsers = ['Chrome'];
+}
+if(isDocker){
+    browsers = ['Chromium_Docker', 'Firefox_Docker'];
 }
 module.exports = function (config) {
     config.set({
@@ -62,6 +66,16 @@ module.exports = function (config) {
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         browsers: browsers,
+        customLaunchers: {
+            Chromium_Docker: {
+              base: 'Chromium',
+              flags: ['--headless', '--disable-gpu', '--remote-debugging-port=9222', '--no-sandbox']
+            },
+            Firefox_Docker: {
+                base: 'Firefox',
+                flags: ['--headless']
+              }
+          },
 
 
         // Continuous Integration mode
