@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Du hast nicht die erforderlichen Rechte, um diese Anmeldedaten zu ändern.",
+        "message": "Du hast keine Berechtigung, um diese Anmeldedaten zu ändern.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
