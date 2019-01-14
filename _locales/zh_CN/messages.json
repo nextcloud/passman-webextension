@@ -108,7 +108,7 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "密码(重复)",
+        "message": "密码（重复）",
         "description": "Password"
     },
     "detected_new_login": {
