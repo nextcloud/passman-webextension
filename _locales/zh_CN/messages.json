@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - NextCloud / ownCloud的密码管理器",
+        "message": "Passman - NextCloud 或 ownCloud 的密码管理器",
         "description": "Extension description"
     },
     "search_for": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "请输入你的Nextcloud / ownCloud凭证",
+        "message": "请输入您的 Nextcloud 或 ownCloud 凭证",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "创建后，您可以编辑Passman中的凭据",
+        "message": "创建后，您可以编辑 Passman 中的凭据",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -88,7 +88,7 @@
         "description": "Username"
     },
     "email": {
-        "message": "E-mail",
+        "message": "电子邮件",
         "description": "E-mail"
     },
     "add": {
@@ -128,7 +128,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "检测到的已更改的URL",
+        "message": "检测到的已更改的 URL",
         "description": "Detected changed URL for"
     },
     "credential": {
@@ -140,7 +140,7 @@
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "刷新计时器(S)",
+        "message": "刷新计时器 [S]",
         "description": "Password"
     },
     "ignore_protocol": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "你正在使用HTTP！ 登录凭证将以纯文本形式发送。 您的Passman凭证仍然加密。",
+        "message": "您正在使用HTTP！登录凭证将以纯文本形式发送。您的 Passman 凭证仍然加密。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -244,11 +244,11 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "欢迎使用PASSMAN扩展",
+        "message": "欢迎使用 Passman 扩展",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "服务器URL",
+        "message": "服务器 URL",
         "description": "Server URL"
     },
     "begin": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "请选择您想与浏览器同步的密码箱",
+        "message": "请选择您想与浏览器同步的保险箱",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -328,7 +328,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "如果你喜欢，别忘了捐助我们",
+        "message": "如果您喜欢，别忘了捐助我们",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud/ownCloud服务器设置",
+        "message": "Nextcloud 或 ownCloud 服务器设置",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -380,7 +380,7 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "你想禁用Passman的当前页面，还是整个网站？",
+        "message": "您想禁用 Passman 的当前页面，还是整个网站？",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "无效的服务器地址",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -428,11 +428,11 @@
         "description": "Search"
     },
     "account_added": {
-        "message": "账户已添加",
+        "message": "账户已添加。",
         "description": "Search"
     },
     "select_vault": {
-        "message": "选择保管库",
+        "message": "选择保险箱",
         "description": "Search"
     },
     "delete": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "对不起，没有找到保管库。 请通过Nextcloud / ownCloud应用程序创建一个保管库，然后重试。",
+        "message": "对不起，没有找到保险箱。请通过 Nextcloud 或 ownCloud 应用程序创建一个保险箱，然后重试。",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -492,7 +492,7 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Passman拓展已锁定，解锁以使用",
+        "message": "Passman 拓展已锁定，解锁以使用",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
@@ -508,11 +508,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "保存$VAULT_NAME$",
+        "message": "保存到 $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "保存$VAULT_NAME$",
+        "message": "保存到 $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
@@ -524,7 +524,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "保管库",
+        "message": "保险箱",
         "description": "Vault"
     },
     "add_custom_field": {
