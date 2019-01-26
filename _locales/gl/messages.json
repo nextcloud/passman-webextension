@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Insira os seus credenciais de Nextcloud / ownCloud",
+        "message": "Introduza os seus credenciais de Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -180,7 +180,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Insira o dominio ou o tld a ignorar e prema intro",
+        "message": "Introduza o dominio ou o TLD a ignorar e prema ↵(intro)",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
@@ -272,7 +272,7 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Insira o contrasinal mestre",
+        "message": "Introduza o contrasinal mestre",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
