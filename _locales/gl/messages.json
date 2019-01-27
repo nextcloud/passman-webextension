@@ -40,7 +40,7 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Alternar a visibilidade",
+        "message": "Ver/agachar",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
