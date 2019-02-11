@@ -68,7 +68,7 @@
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Require every character type",
+        "message": "Vaadi kaikki eri merkkityypit",
         "description": "Require every character type"
     },
     "add_account": {
