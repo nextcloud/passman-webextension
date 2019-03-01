@@ -20,7 +20,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Ugyldig svar fra tjener: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ugyldig svar fra server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -248,7 +248,7 @@
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "Tjener-URL",
+        "message": "Server-URL",
         "description": "Server URL"
     },
     "begin": {
@@ -312,7 +312,7 @@
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Tjenerinnstillinger",
+        "message": "Serverinnstillinger",
         "description": "Server Settings"
     },
     "vault_settings": {
@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud- / ownCloud -tjenerinnstillinger",
+        "message": "Nextcloud- / ownCloud -serverinnstillinger",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Ugyldig tjener-URL",
+        "message": "Ugyldig server-URL",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Beklager, utvidelsen fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -programmet og prøv igjen.",
+        "message": "Beklager, utvidelsen fant ingen hvelv. Opprett et hvelv via Nextcloud- / ownCloud -appen og prøv igjen.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Ugyldige tjenerinnstillinger",
+        "message": "Ugyldige serverinnstillinger",
         "description": "Search"
     },
     "refresh_credential_list": {
