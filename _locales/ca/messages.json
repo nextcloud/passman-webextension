@@ -104,7 +104,7 @@
         "description": "URL"
     },
     "password": {
-        "message": "Password",
+        "message": "Contrasenya",
         "description": "Password"
     },
     "password_repeat": {

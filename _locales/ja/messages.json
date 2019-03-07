@@ -116,7 +116,7 @@
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "ユーザパスワード変更が検出されました",
+        "message": "ユーザーパスワードの変更が検出されました",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
