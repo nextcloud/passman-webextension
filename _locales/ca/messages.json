@@ -312,7 +312,7 @@
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Configuració del Servidor",
+        "message": "Paràmetres del servidor",
         "description": "Server Settings"
     },
     "vault_settings": {
@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Configuració del servidor Nextcloud / ownCloud",
+        "message": "Paràmetres del servidor de Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Configuració del servidor no vàlida",
+        "message": "Els paràmetres del servidor no són vàlids",
         "description": "Search"
     },
     "refresh_credential_list": {
