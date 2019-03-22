@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Du kannst dein Passwort zurücksetzen. Dies setzt die Erweiterung auf die Standarteinstellungen zurück.",
+        "message": "Du kannst Dein Passwort zurücksetzen. Dies setzt die Erweiterung auf die Standarteinstellungen zurück.",
         "description": "Search"
     },
     "forgot_password": {
