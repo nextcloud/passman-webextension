@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Menedżer haseł dla NextCloud / ownCloud",
+        "message": "Passman - Menedżer haseł dla Nextcloud / ownCloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Wprowadź swoje poświadczenia dla NextCloud / ownCloud",
+        "message": "Wprowadź dane poświadczające Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
