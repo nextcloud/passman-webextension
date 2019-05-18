@@ -40,7 +40,7 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Ver/agachar",
+        "message": "Ver/agochar",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
@@ -192,7 +192,7 @@
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Agachar as opcións avanzadas",
+        "message": "Agochar as opcións avanzadas",
         "description": "Disable password picker"
     },
     "show_adv": {
