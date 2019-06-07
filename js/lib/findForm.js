@@ -54,6 +54,10 @@ var formManager = function () {
                 if (skipEmptyFields && !elem.value) {
                     continue;
                 }
+                //Only autofill if method is post
+                if (!testFormIsPost(form, "pw")) {
+                    break;
+                }
 
                 pwFields[pwFields.length] = {
                     index: i,
@@ -83,7 +87,10 @@ var formManager = function () {
                 if (elem.type.toLowerCase() !== "text" && elem.type.toLowerCase() !== "email") {
                     continue;
                 }
-
+                //Only autofill if method is post
+                if (!testFormIsPost(form, "un")) {
+                    break;
+                }
                 usernameFields[usernameFields.length] = {
                     index: i,
                     element: elem
@@ -269,16 +276,34 @@ function fillPassword(user, password) {
     // }
     if (user) {
         document.querySelectorAll('input[type=text], input[type=email]').forEach(function (el) {
-            el.value = user;
-            dispatchEvents(el);
+            //Only autofill if method is post
+            if (testFormIsPost(el.form, "userparent")) {
+                console.log("was post");
+                el.value = user;
+                dispatchEvents(el);
+
+            }else{
+                console.log("was get");
+            }
         });
     }
     if (password) {
         document.querySelectorAll('input[type=password]').forEach(function (el) {
-            el.value = password;
-            dispatchEvents(el);
+            //Only autofill if method is post
+            if (testFormIsPost(el.form, "passwordparent")) {
+                console.log("was post");
+                el.value = password;
+                dispatchEvents(el);
+            }else{
+                console.log("was get");
+            }
         });
     }
 }
 
+
+function testFormIsPost(form, name) {
+    console.log("Found form with method: "+form.method);
+    return form.method === "post";
+}
 formManager._init_();
