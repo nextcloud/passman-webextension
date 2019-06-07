@@ -278,12 +278,8 @@ function fillPassword(user, password) {
         document.querySelectorAll('input[type=text], input[type=email]').forEach(function (el) {
             //Only autofill if method is post
             if (testFormIsPost(el.form, "userparent")) {
-                console.log("was post");
                 el.value = user;
                 dispatchEvents(el);
-
-            }else{
-                console.log("was get");
             }
         });
     }
@@ -291,11 +287,8 @@ function fillPassword(user, password) {
         document.querySelectorAll('input[type=password]').forEach(function (el) {
             //Only autofill if method is post
             if (testFormIsPost(el.form, "passwordparent")) {
-                console.log("was post");
                 el.value = password;
                 dispatchEvents(el);
-            }else{
-                console.log("was get");
             }
         });
     }
