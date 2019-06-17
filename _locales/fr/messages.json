@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Ce mot de passe sera utilisé afin de crypter tous vos réglages dans l'extension. Vous pouvez choisir de le sauvegarder localement, mais il sera enregistré en TEXTE CLAIR.",
+        "message": "Ce mot de passe sera utilisé afin de chiffrer tous vos paramètres dans l'extension. Vous pouvez choisir de le sauvegarder localement, mais il sera enregistré en TEXTE CLAIR.",
         "description": "Enter master password"
     },
     "remember_master_password": {
