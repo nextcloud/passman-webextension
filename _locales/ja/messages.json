@@ -20,7 +20,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "サーバーからの無効な応答：$STATUS_CODE$ [$STATUS_TEXT$]",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -120,7 +120,7 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - このページで$CREDENTIAL_AMOUNT$ $PLURAL$ が見つかりました",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "We've found $AMOUNT$ credentials for this site",
+        "message": "このサイトの$AMOUNT$認証情報が見つかりました",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -516,11 +516,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
+        "message": "データベース内の$AMOUNT$認証情報",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passmanが$USERNAME$としてログインしています",
         "description": "Amount of the credentials in the database"
     },
     "vault": {

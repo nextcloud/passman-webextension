@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Диспечера на пароли за NextCloud / ownCloud",
+        "message": "Passman - Диспечерът на пароли за NextCloud / ownCloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Няма идент. данни за сайта.",
+        "message": "Не са намерени регистрации за страницата.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Няма идент. данни",
+        "message": "Не са намерени регистрации",
         "description": "No credentials found for the current site"
     },
     "notes": {
@@ -20,7 +20,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Невалиден отговор от сървър: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Невалиден отговор от сървъра: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -28,7 +28,7 @@
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "Запис на сайта",
+        "message": "Запазване на страницата",
         "description": "Save site"
     },
     "password_generator": {
@@ -36,15 +36,15 @@
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Генерирай парола",
+        "message": "Генериране на пароли",
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Превключи видимост",
+        "message": "Показване/скриване",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Превключи допълнителните опции",
+        "message": "Показване/скриване на разширените ",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
@@ -72,7 +72,7 @@
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "Добави профил",
+        "message": "Добавяне на регистрация",
         "description": "Add account"
     },
     "accounts": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Регистрацията е създадена",
         "description": "Credential created"
     },
     "url": {
@@ -108,19 +108,19 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Повтори парола",
+        "message": "Парола (отново)",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Засечено е ново вписване",
+        "message": "Открита е нова регистрация",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Detected changed password for user",
+        "message": "Открита е промяна в парола или потребителско име",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ идент. данни за сайта",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ регистраци за страницата",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
@@ -128,39 +128,39 @@
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Открита е промяна на URL за",
+        "message": "Открита е промяна на адреса за",
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "credential",
+        "message": "регистрация",
         "description": "credential"
     },
     "credentials": {
-        "message": "credentials",
+        "message": "регистрации",
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Нулиране на хронометъра",
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Не зачитай протокола при търсене",
+        "message": "Незачитане на протокола при търсене",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Не зачитай поддомейна при търсене",
+        "message": "Незачитане на поддомейна при търсене",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Не зачитай порта при търсене",
+        "message": "Незачитане на порта при търсене",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Ползвате HTTP! Идентификационните ви данни ще бъдат изпращани в некриптиран вид. Въпреки това данните в Passman остават криптирани.",
+        "message": "Протокол HTTP! Данните за удостоверяване ще бъдат изпращани в нешифрован вид. Въпреки това - в Passman те остават шифровани.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Не зачитай пътя при търсене",
+        "message": "Незачитане на пътя при търсене",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
@@ -168,15 +168,15 @@
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Попълвай автоматично полетата след избор на профил",
+        "message": "Изпращане на формуляра при избор на регистрация",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Запитване за актуализиране на записания URL ако не съвпада с текущия ",
+        "message": "Запитване за обновяване на адреса ако не съвпада с текущия",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Изключване на автоматичното попълване от четеца",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
@@ -188,23 +188,23 @@
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "При намиране на парола отваря списъка, а не последния отворен раздел",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Скрий допълнителните опции",
+        "message": "Скриване на разширените настройки",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Покажи допълнителните опции",
+        "message": "Разширени настройки",
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "Режим за отстраняване на дефекти",
         "description": "Enable debug mode"
     },
     "save": {
-        "message": "Запиши",
+        "message": "Запазване",
         "description": "Save"
     },
     "saving": {
@@ -212,39 +212,39 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Идентификационните данни са записани",
+        "message": "Регистрацията е запазена",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Credential updated",
+        "message": "Регистрацията е обновена",
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Сайта е игнориран",
+        "message": "Страницата е пренебрегната",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL е игнориран",
+        "message": "Адресът е пренебрегнат",
         "description": "URL ignored"
     },
     "update": {
-        "message": "Обнови",
+        "message": "Обновяване",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Игнориране на сайта",
+        "message": "Пренебрегване на страницата",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Запиши идент. данни за сайта",
+        "message": "Запазване на регистрациите за страницата",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Търси за идент. данни",
+        "message": "Търсене на регистрации",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Добре дошли в Passman разширението",
+        "message": "Добре дошли в разширението Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -252,11 +252,11 @@
         "description": "Server URL"
     },
     "begin": {
-        "message": "Нека започваме!",
+        "message": "Да започваме!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Помощника ще ви напътства в процеса по настройване на синхронизирането на паролите.",
+        "message": "Помощникът ще ви напътства в процеса по настройване на разширението синхронизирането на паролите.",
         "description": "Cancel"
     },
     "cancel": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Изберете с кое хранилище, стандартно, да бъде синхронизиран браузъра.",
+        "message": "Изберете с кое хранилище, стандартно, да бъде синхронизиран четецът.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,15 +276,15 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Главната парола ще бъде използвана за криптиране на настройките на разширението. Ако желаете може да бъде записана локално, но НЯМА да записана в криптиран вид.",
+        "message": "Главната парола ще бъде използвана за шифроване на настройките на разширението. Ако желаете може да бъде запазена, но НЯМА да бъде в шифрован вид.",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Запомни главната парола (некриптирана)",
+        "message": "Запомняне на главната парола (нешифрована)",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Внимание! Главната парола ще бъде записана в некриптиран вид.",
+        "message": "Внимание! Главната парола ще бъде запазена нешифрована.",
         "description": "Remember master password"
     },
     "done": {
@@ -308,7 +308,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Редактирай",
+        "message": "Променяне",
         "description": "Edit"
     },
     "server_settings": {
@@ -320,11 +320,11 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Задай главна парола",
+        "message": "Избиране на главна парола",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Приключи",
+        "message": "Приключиване",
         "description": "Finish"
     },
     "done_donate": {
@@ -332,7 +332,7 @@
         "description": "If you like, don't forget to donate"
     },
     "close": {
-        "message": "Затвори",
+        "message": "Затваряне",
         "description": "Close"
     },
     "prev": {
@@ -344,7 +344,7 @@
         "description": "Back"
     },
     "copy": {
-        "message": "Копирай",
+        "message": "Копиране",
         "description": "Copy"
     },
     "next": {
@@ -352,11 +352,11 @@
         "description": "Next"
     },
     "continue": {
-        "message": "Продължи",
+        "message": "Продължаване",
         "description": "Continue"
     },
     "donate": {
-        "message": "Дари",
+        "message": "Дарение",
         "description": "Donate"
     },
     "nextcloud_settings": {
@@ -368,7 +368,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Игнорирани сайтове / URL",
+        "message": "Пренебрегнати страници / адреси",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -380,15 +380,15 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Желаете Passman да игнорира само текущата страница или целия сайт?",
+        "message": "Желаете Passman да пренебрегне само текущата страница или и сайта?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Няма игнорирани сайтове",
+        "message": "Няма пренебрегнати страници",
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "Паролата на хранилището",
+        "message": "Парола на хранилището",
         "description": "Vault password"
     },
     "label_required": {
@@ -400,7 +400,7 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Игнорирай сайта / страницата",
+        "message": "Пренебрегване на сайта",
         "description": "Invalid server URL"
     },
     "no_password_match": {
@@ -412,7 +412,7 @@
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Въведи главен ключ",
+        "message": "Въведете главна парола",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -424,19 +424,19 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "След това ще можете да добавяте профили.",
+        "message": "След това ще можете да добавяте още регистрации.",
         "description": "Search"
     },
     "account_added": {
-        "message": "Профилът е добавен.",
+        "message": "Регистрацията е добавена.",
         "description": "Search"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Избиране на хранилище",
         "description": "Search"
     },
     "delete": {
-        "message": "Изтрий",
+        "message": "Изтриване",
         "description": "Delete"
     },
     "search": {
@@ -444,7 +444,7 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Регистрацията е премахната",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
@@ -464,7 +464,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Нулиране на разширението",
         "description": "Search"
     },
     "iam_sure": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Нямате права за променяне на регистрацията.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -480,15 +480,15 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Refresh credential list",
+        "message": "Презареждане на списъка с регистрациите",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Развитието е зависимо от даренията, молим ви да ни подкрепите",
+        "message": "Разработката зависи от даренията, приканваме ви да ни подкрепите",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Заключи разширението",
+        "message": "Заключване на разширението",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
@@ -496,27 +496,27 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Невалидна главна парола",
+        "message": "Грешна главна парола",
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "Отключи",
+        "message": "Отключване",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Открити са $AMOUNT$ идент. данни за сайта",
+        "message": "Открити са $AMOUNT$ регистрации за страницата",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Запазване в $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Записване в $VAULT_NAME$",
+        "message": "Запазване в $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ идент. данни в базата данни",
+        "message": "Налични са $AMOUNT$ регистрации",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
@@ -528,7 +528,7 @@
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Добави персонализирано поле",
+        "message": "Добавяне на допълнително поле",
         "description": "Add a custom field"
     },
     "text": {
