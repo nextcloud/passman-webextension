@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Je gebruikt HTTP! Inloggegevens zullen worden verzonden in platte tekst. Je Passman inlog gegevens hebben nog encryptie.",
+        "message": "Je gebruikt HTTP! Inloggegevens zullen worden verzonden in platte tekst. Je Passman inloggegevens hebben nog encryptie.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
