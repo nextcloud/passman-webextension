@@ -492,7 +492,7 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Passman 拡張機能はロックされています。利用するにはアンロックして下さい",
+        "message": "Passman 拡張機能はロックされています。利用するにはアンロックしてください",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
