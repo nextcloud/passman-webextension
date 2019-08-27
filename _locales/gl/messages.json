@@ -140,7 +140,7 @@
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Restabelecer o(s) temporizador(es)",
+        "message": "Actualizar o(s) temporizador(es)",
         "description": "Password"
     },
     "ignore_protocol": {
