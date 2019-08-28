@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman – upravitelj zaporkama za NextCloud/ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Traži",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Za ovo web-mjesto nije pronađena nijedna vjerodajnica.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Nije pronađena nijedna vjerodajnica",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Bilješke",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Nevažeći odgovor poslužitelja: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Unesite svoje vjerodajnice za Nextcloud/ownCloud",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Spremi web-mjesto",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Generator zaporki",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Generiraj zaporku",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Uključi/isključi vidljivost",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Uključi/isključi napredne opcije",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Koristi zaporku",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Nakon što je stvorite, možete urediti vjerodajnicu u Passmanu",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Dužina zaporke",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Minimalna količina znamenki",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Izbjegavaj dvosmislene znakove",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Koristiti svaku vrstu znakova",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Dodaj račun",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Računi",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Oznaka",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Korisničko ime",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-pošta",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Dodaj",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Vjerodajnica je stvorena",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Zaporka",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Zaporka (ponovite)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Otkrivena nova prijava",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Otkrivena promijenjena zaporka za korisnika",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Za ovu je stranicu pronađen Passman – $CREDENTIAL_AMOUNT$ $PLURAL$",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman – zaključano",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Otkriven promijenjeni URL za",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "vjerodajnicu",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "vjerodajnice",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Osvježi brojač vremena [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Zanemari protokol za podudaranje web-mjesta",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Zanemari poddomenu za podudaranja web-mjesta",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Zanemari port za podudaranje web-mjesta",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Koristite HTTP! Vjerodajnice za prijavu šalju se u obliku običnog teksta. Vaše Passman vjerodajnice su i dalje šifrirane.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Zanemari put za podudaranje web-mjesta",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Omogući automatsko ispunjavanje obrasca",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Omogući automatsko slanje obrasca nakon odabira računa",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Zatraži URL za ažuriranje vjerodajnice ako se ne podudara s trenutnim URL-om",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Onemogući automatsko ispunjavanje u pregledniku",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Unesite domenu ili TLD kako biste zanemarili i pritisnite ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Omogući birač zaporke",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Kad je zaporka pronađena, idite na popis, a ne na zadnju aktivnu karticu",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Sakrij napredne opcije",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Prikaži napredne opcije",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Omogući način otklanjanja pogrešaka",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Spremi",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Spremanje",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Vjerodajnica spremljena",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Vjerodajnica ažurirana",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Web-mjesto zanemareno",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL zanemaren",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Ažuriraj",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Zanemari web-mjesto",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Spremi vjerodajnice za ovo web-mjesto",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Traži vjerodajnice",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Dobrodošli u Passman webextension",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL poslužitelja",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Započnimo!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Ovaj će vas čarobnjak voditi kroz korake za postavljanje proširenja i održavanje sinkronizacije zaporki.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Odustani",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Zadan trezor",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Odaberite trezor koji želite zadržati u sinkronizaciji s web preglednikom.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Unesite glavnu zaporku",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Ova će se zaporka koristiti za šifriranje svih vaših postavki proširenja. Tu zaporku možete lokalno spremiti, ali bit će spremljena kao OBIČAN TEKST.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Zapamti glavnu zaporku",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Upozorenje! Vaša glavna zaporka bit će spremljena kao običan tekst.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Gotovo",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Prilagodljiva polja",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Općenito",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Vrijednost",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Popis",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Uredi",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Postavke poslužitelja",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Postavke trezora",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Postavi glavnu zaporku",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Završi",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Ako želite, ne zaboravite donirati",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Zatvori",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Pret.",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Natrag",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopiraj",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Sljedeća",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Nastavi",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Doniraj",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Postavke poslužitelja Nextcloud/ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Odaberi zadani trezor",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Zanemarena web-mjesta/URL-ovi",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Onemogući stranicu",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Onemogući web-mjesto",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Želite li onemogućiti Passman za trenutnu stranicu ili za cijelo web-mjesto?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Nema zanemarenih web-mjesta",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Zaporka trezora",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Ispunite oznaku",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Nevažeći URL poslužitelja",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Zanemari web-mjesto/stranicu",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Zaporke se ne podudaraju",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Nevažeći ključ trezora!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Prazan glavni ključ!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Postavke",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Nakon dovršetka postupka postavljanja, možete dodati više računa.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Račun je dodan.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Odaberi trezor",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Izbriši",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Traži",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Vjerodajnica izbrisana",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Kada odabirač zaporki ne može pronaći nijednu vjerodajnicu, ići će na:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Nažalost, nije pronađen nijedan trezor. Stvorite trezor putem aplikacije Nextcloud/ownCloud i pokušajte ponovo.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Možete resetirati zaporku. Time ćete vratiti proširenje u zadano stanje.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Zaboravili ste zaporku?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Resetiraj proširenje",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Da, siguran sam!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Nemate dopuštenje za uređivanje ove vjerodajnice.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Nevažeće postavke poslužitelja",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Osvježi popis vjerodajnica",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Razvoj ovisi o donacijama, podržite nas",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Zaključaj proširenje",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Proširenje Passman je zaključano, otključajte ga kako biste ga koristili",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Nevažeća glavna zaporka!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Otključaj",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Pronašli smo $AMOUNT$ vjerodajnica za ovo web-mjesto",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Spremi u $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Spremanje u $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ vjerodajnica u bazi podataka",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman vas prijavljuje kao $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Trezor",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Dodaj prilagođeno polje",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "tekst",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
