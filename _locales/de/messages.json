@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Bitte geben Deine Zugangsdaten zu Nextcloud / ownCloud ein",
+        "message": "Bitte Nextcloud / ownCloud Zugangsdaten eingeben",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -272,7 +272,7 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Gebe das Masterpasswort ein",
+        "message": "Masterpasswort eingeben",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Entschuldigung, keine Tresore gefunden. Bitte erstelle einen über die Nextcloud/ownCloud-App und versuche es nochmal.",
+        "message": "Leider keine Tresore gefunden. Bitte erstelle einen Tresor über die Nextcloud/ownCloud-App und versuche es noch einmal.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Entwicklung ist abhängig von Spenden, bitte unterstütze uns",
+        "message": "Die Entwicklung ist abhängig von Spenden, bitte unterstütze uns",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
