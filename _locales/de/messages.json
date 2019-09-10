@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Bitte Nextcloud / ownCloud Zugangsdaten eingeben",
+        "message": "Bitte Nextcloud / ownCloud-Zugangsdaten eingeben",
         "description": "No credentials found for the current site"
     },
     "save_site": {
