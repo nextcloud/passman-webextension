@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sentímolo, non se atoparon bóvedas. Cree unha bóveda a través do aplicativo do Nextcloud / ownCloud e ténteo de novo.",
+        "message": "Sentímolo, non se atoparon bóvedas. Cree unha bóveda a través da aplicación do Nextcloud / ownCloud e ténteo de novo.",
         "description": "Search"
     },
     "msg_reset_extension": {
