@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Var god ange dina Nextcloud/ownCloud-uppgifter",
+        "message": "Vänligen ange dina Nextcloud/ownCloud-uppgifter",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -128,7 +128,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Upptäckte ändrad URL för",
+        "message": "Upptäckte ändrad webbadress för",
         "description": "Detected changed URL for"
     },
     "credential": {
@@ -224,7 +224,7 @@
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignorerad",
+        "message": "Webbadress ignorerad",
         "description": "URL ignored"
     },
     "update": {
@@ -248,7 +248,7 @@
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "Server-URL",
+        "message": "Serverwebbadress",
         "description": "Server URL"
     },
     "begin": {
@@ -368,7 +368,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignorera webbplatser / URLs",
+        "message": "Ignorera webbplatser / webbadresser",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -392,11 +392,11 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Var god fyll i en etikett",
+        "message": "Vänligen fyll i en etikett",
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Ogiltig server-URL",
+        "message": "Ogiltig serverwebbadress",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Tyvärr, inga valv funna. Var god skapa ett valv via Nextcloud/ownCloud-appen och försök igen.",
+        "message": "Tyvärr, inga valv funna. Vänligen skapa ett valv via Nextcloud/ownCloud-appen och försök igen.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Utveckling är beroende av donationer, var god stöd oss",
+        "message": "Utveckling är beroende av donationer, vänligen stöd oss",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
