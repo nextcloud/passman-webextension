@@ -88,7 +88,7 @@
         "description": "Username"
     },
     "email": {
-        "message": "Email",
+        "message": "E-mail",
         "description": "E-mail"
     },
     "add": {
