@@ -140,7 +140,7 @@
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Obnovit časovač [s]",
+        "message": "Časovač [s] opětovného načtení",
         "description": "Password"
     },
     "ignore_protocol": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Neplatné nastavení serveru",
+        "message": "Neplatná nastavení serveru",
         "description": "Search"
     },
     "refresh_credential_list": {
@@ -528,7 +528,7 @@
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Přidat vlastní pole",
+        "message": "Přidat uživatelsky určenou kolonku",
         "description": "Add a custom field"
     },
     "text": {
