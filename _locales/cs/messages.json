@@ -200,7 +200,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Povolit ladící režim",
+        "message": "Zapnout režim ladění",
         "description": "Enable debug mode"
     },
     "save": {
@@ -392,7 +392,7 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Vyplňte popisek",
+        "message": "Vyplňte štítek",
         "description": "When comparing passwords"
     },
     "invalid_host": {
