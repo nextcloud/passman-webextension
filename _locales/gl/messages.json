@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Vostede non ten permisos para editar esta credencial.",
+        "message": "Vostede non ten permiso para editar esta credencial.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {

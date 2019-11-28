@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Pro tento web nebyla nalezena žádná pověření.",
+        "message": "Pro tento web nebyly nalezeny žádné přihlašovací údaje.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Nebyla nalezena žádná pověření",
+        "message": "Nebyly nalezeny žádné přihlašovací údaje",
         "description": "No credentials found for the current site"
     },
     "notes": {
@@ -32,7 +32,7 @@
         "description": "Save site"
     },
     "password_generator": {
-        "message": "Generátor hesel",
+        "message": "Vytváření hesel",
         "description": "Password generator"
     },
     "generate_password": {
@@ -40,11 +40,11 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Přepnout viditelnost",
+        "message": "Vyp/zap. viditelnost",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Přepnout pokročilé možnosti",
+        "message": "Vyp/zap. pokročilé možnosti",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
@@ -80,7 +80,7 @@
         "description": "Accounts"
     },
     "label": {
-        "message": "Štítek",
+        "message": "Jmenovka",
         "description": "Label"
     },
     "username": {
@@ -120,11 +120,11 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passsman - pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
+        "message": "Passsman – pro tuto stránku bylo nalezeno $CREDENTIAL_AMOUNT$ $PLURAL$ ",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - uzamčen",
+        "message": "Passman ‒ uzamčeno",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
@@ -132,11 +132,11 @@
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "Pověření",
+        "message": "Přihlašovací údaje",
         "description": "credential"
     },
     "credentials": {
-        "message": "Pověření",
+        "message": "přihlašovací údaje",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -144,19 +144,19 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Pro hledání stránek ignorovat protokol",
+        "message": "Při hledání shody se stránkami ignorovat protokol",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Pro hledání stránek ignorovat poddoménu",
+        "message": "Při hledání shody se stránkou ignorovat dílčí doménu",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Pro hledání stránek ignorovat port",
+        "message": "Při hledání shody se stránkou ignorovat port",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Používáte HTTP! Přihlašovací údaje budou poslány v čistém textu. Přihlašovací údaje do Passmanu jsou stále chráněnay",
+        "message": "Používáte HTTP! Přihlašovací údaje budou poslány v čistém textu. Přihlašovací údaje do Passman jsou chráněny i tak.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Požádat o obnovu URL s údaji, pokud není stejné jako aktuální URL",
+        "message": "Požádat o obnovu URL s údaji, pokud není stejné jako stávající URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -212,7 +212,7 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Pověření uloženo",
+        "message": "Přihlašovací údaje uloženy",
         "description": "saved, lowercase"
     },
     "credential_updated": {
@@ -236,7 +236,7 @@
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Uložit pověření pro tuto stránku",
+        "message": "Uložit přihlašovací údaje pro tuto stránku",
         "description": "Save credentials for this site"
     },
     "btn_search": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Zapamatovat hlavní heslo",
+        "message": "Pamatovat si hlavní heslo",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -336,7 +336,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Zpět",
+        "message": "Předchozí",
         "description": "Previous"
     },
     "back": {
@@ -376,11 +376,11 @@
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Zakázat stránky",
+        "message": "Zakázat web",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Chcete passman zakázat pouze pro tuto stránku, nebo pro celé webové stránky?",
+        "message": "Chcete Passman zakázat pouze pro tuto stránku, nebo pro celý tento web?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
@@ -388,7 +388,7 @@
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "Heslo trezoru",
+        "message": "Heslo k trezoru",
         "description": "Vault password"
     },
     "label_required": {
@@ -448,7 +448,7 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "Pokud nástroj pro výběr hesel nemůže najít žádné pověření, přejde na:",
+        "message": "Pokud nástroj pro výběr hesel nemůže najít žádné přihlašovací údaje, přejde na:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Nemáte oprávnění k úpravě těchto pověření.",
+        "message": "Nemáte oprávnění k úpravě těchto přihlašovacích údajů.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -480,11 +480,11 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Obnovit seznam pověření",
+        "message": "Znovu načíst seznam přihlašovacích údajů",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Vývoj závisí na darech, podpořte nás",
+        "message": "Financování vývoje závisí na darech – prosíme podpořte nás",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Pro tuto stránku jsme našli $AMOUNT$ pověření",
+        "message": "Pro tuto stránku bylo nalezeno $AMOUNT$ přihlašovacích údajů",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -516,7 +516,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ pověření v databázi",
+        "message": "$AMOUNT$ přihlašovacích údajů v databázi",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
