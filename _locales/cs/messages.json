@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Po vytvoření můžete pověření spravovat přes Passman",
+        "message": "Po vytvoření můžete přihlašovací údaje upravovat v Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -444,7 +444,7 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Pověření smazáno",
+        "message": "Přihlašovací údaje smazány",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
