@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "URL del servidor no vàlida",
+        "message": "L'URL del servidor no és vàlid",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {

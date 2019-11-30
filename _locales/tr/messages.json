@@ -144,15 +144,15 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Site eşleştirmesinde iletişim kuralı yoksayılsın",
+        "message": "Site eşleştirmesinde iletişim kuralı yok sayılsın",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Site eşleştirmesinde alt etki alanı yoksayılsın",
+        "message": "Site eşleştirmesinde alt etki alanı yok sayılsın",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Site eşleştirmesinde kapı numarası yoksayılsın",
+        "message": "Site eşleştirmesinde kapı numarası yok sayılsın",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
@@ -220,11 +220,11 @@
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Site yoksayıldı",
+        "message": "Site yok sayıldı",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "Adres yoksayıldı",
+        "message": "Adres yok sayıldı",
         "description": "URL ignored"
     },
     "update": {
@@ -232,7 +232,7 @@
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Site yoksayılsın",
+        "message": "Site yok sayılsın",
         "description": "Update"
     },
     "btn_save_site": {
@@ -384,7 +384,7 @@
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Henüz bir site yoksayılmamış",
+        "message": "Henüz yok sayılan bir site yok",
         "description": "No sites ignored"
     },
     "vault_password": {
@@ -400,7 +400,7 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Site ya da sayfa yoksayılsın",
+        "message": "Site ya da sayfa yok sayılsın",
         "description": "Invalid server URL"
     },
     "no_password_match": {

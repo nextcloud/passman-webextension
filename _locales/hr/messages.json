@@ -1,102 +1,102 @@
 {
     "extDescription": {
-        "message": "Passman - Диспечерът на пароли за NextCloud / ownCloud",
+        "message": "Passman – upravitelj zaporkama za NextCloud/ownCloud",
         "description": "Extension description"
     },
     "search_for": {
-        "message": "Търсене за",
+        "message": "Traži",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Не са намерени регистрации за страницата.",
+        "message": "Za ovo web-mjesto nije pronađena nijedna vjerodajnica.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Не са намерени регистрации",
+        "message": "Nije pronađena nijedna vjerodajnica",
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Бележки",
+        "message": "Bilješke",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Невалиден отговор от сървъра: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Nevažeći odgovor poslužitelja: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Въведете потребител и парола за Nextcloud / ownCloud",
+        "message": "Unesite svoje vjerodajnice za Nextcloud/ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "Запазване на страницата",
+        "message": "Spremi web-mjesto",
         "description": "Save site"
     },
     "password_generator": {
-        "message": "Генератор на пароли",
+        "message": "Generator zaporki",
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Генериране на пароли",
+        "message": "Generiraj zaporku",
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Показване/скриване",
+        "message": "Uključi/isključi vidljivost",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Показване/скриване на разширените ",
+        "message": "Uključi/isključi napredne opcije",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Използвай паролата",
+        "message": "Koristi zaporku",
         "description": "Use password"
     },
     "add_hint": {
-        "message": "След това ще можете да редактирате идент. данни в Passman",
+        "message": "Nakon što je stvorite, možete urediti vjerodajnicu u Passmanu",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
-        "message": "Дължина на паролата",
+        "message": "Dužina zaporke",
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Минимален брой цифри",
+        "message": "Minimalna količina znamenki",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Без двузначни (I, L и 1)",
+        "message": "Izbjegavaj dvosmislene znakove",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Всеки тип",
+        "message": "Koristiti svaku vrstu znakova",
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "Добавяне на регистрация",
+        "message": "Dodaj račun",
         "description": "Add account"
     },
     "accounts": {
-        "message": "Профили",
+        "message": "Računi",
         "description": "Accounts"
     },
     "label": {
-        "message": "Име",
+        "message": "Oznaka",
         "description": "Label"
     },
     "username": {
-        "message": "Потребител",
+        "message": "Korisničko ime",
         "description": "Username"
     },
     "email": {
-        "message": "Имейл",
+        "message": "E-pošta",
         "description": "E-mail"
     },
     "add": {
-        "message": "Добавяне",
+        "message": "Dodaj",
         "description": "Add"
     },
     "credential_created": {
-        "message": "Регистрацията е създадена",
+        "message": "Vjerodajnica je stvorena",
         "description": "Credential created"
     },
     "url": {
@@ -104,315 +104,315 @@
         "description": "URL"
     },
     "password": {
-        "message": "Парола",
+        "message": "Zaporka",
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Парола (отново)",
+        "message": "Zaporka (ponovite)",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Открита е нова регистрация",
+        "message": "Otkrivena nova prijava",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Открита е промяна в парола или потребителско име",
+        "message": "Otkrivena promijenjena zaporka za korisnika",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ регистраци за страницата",
+        "message": "Za ovu je stranicu pronađen Passman – $CREDENTIAL_AMOUNT$ $PLURAL$",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Заключено",
+        "message": "Passman – zaključano",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Открита е промяна на адреса за",
+        "message": "Otkriven promijenjeni URL za",
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "регистрация",
+        "message": "vjerodajnicu",
         "description": "credential"
     },
     "credentials": {
-        "message": "регистрации",
+        "message": "vjerodajnice",
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Нулиране на хронометъра",
+        "message": "Osvježi brojač vremena [s]",
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Незачитане на протокола при търсене",
+        "message": "Zanemari protokol za podudaranje web-mjesta",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Незачитане на поддомейна при търсене",
+        "message": "Zanemari poddomenu za podudaranja web-mjesta",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Незачитане на порта при търсене",
+        "message": "Zanemari port za podudaranje web-mjesta",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Протокол HTTP! Данните за удостоверяване ще бъдат изпращани в нешифрован вид. Въпреки това - в Passman те остават шифровани.",
+        "message": "Koristite HTTP! Vjerodajnice za prijavu šalju se u obliku običnog teksta. Vaše Passman vjerodajnice su i dalje šifrirane.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Незачитане на пътя при търсене",
+        "message": "Zanemari put za podudaranje web-mjesta",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Автоматично попълване",
+        "message": "Omogući automatsko ispunjavanje obrasca",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Изпращане на формуляра при избор на регистрация",
+        "message": "Omogući automatsko slanje obrasca nakon odabira računa",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Запитване за обновяване на адреса ако не съвпада с текущия",
+        "message": "Zatraži URL za ažuriranje vjerodajnice ako se ne podudara s trenutnim URL-om",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Изключване на автоматичното попълване от четеца",
+        "message": "Onemogući automatsko ispunjavanje u pregledniku",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Въведете домейн или TLD за игнориране и натиснете \"Enter\"",
+        "message": "Unesite domenu ili TLD kako biste zanemarili i pritisnite ↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Omogući birač zaporke",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "При намиране на парола отваря списъка, а не последния отворен раздел",
+        "message": "Kad je zaporka pronađena, idite na popis, a ne na zadnju aktivnu karticu",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Скриване на разширените настройки",
+        "message": "Sakrij napredne opcije",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Разширени настройки",
+        "message": "Prikaži napredne opcije",
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Режим за отстраняване на дефекти",
+        "message": "Omogući način otklanjanja pogrešaka",
         "description": "Enable debug mode"
     },
     "save": {
-        "message": "Запазване",
+        "message": "Spremi",
         "description": "Save"
     },
     "saving": {
-        "message": "Запазване",
+        "message": "Spremanje",
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Регистрацията е запазена",
+        "message": "Vjerodajnica spremljena",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Регистрацията е обновена",
+        "message": "Vjerodajnica ažurirana",
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Страницата е пренебрегната",
+        "message": "Web-mjesto zanemareno",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "Адресът е пренебрегнат",
+        "message": "URL zanemaren",
         "description": "URL ignored"
     },
     "update": {
-        "message": "Обновяване",
+        "message": "Ažuriraj",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Пренебрегване на страницата",
+        "message": "Zanemari web-mjesto",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Запазване на регистрациите за страницата",
+        "message": "Spremi vjerodajnice za ovo web-mjesto",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Търсене на регистрации",
+        "message": "Traži vjerodajnice",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Добре дошли в разширението Passman",
+        "message": "Dobrodošli u Passman webextension",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "URL адрес на сървъра",
+        "message": "URL poslužitelja",
         "description": "Server URL"
     },
     "begin": {
-        "message": "Да започваме!",
+        "message": "Započnimo!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Помощникът ще ви напътства в процеса по настройване на разширението синхронизирането на паролите.",
+        "message": "Ovaj će vas čarobnjak voditi kroz korake za postavljanje proširenja i održavanje sinkronizacije zaporki.",
         "description": "Cancel"
     },
     "cancel": {
-        "message": "Отказ",
+        "message": "Odustani",
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "Стандартно хранилище",
+        "message": "Zadan trezor",
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Изберете с кое хранилище, стандартно, да бъде синхронизиран четецът.",
+        "message": "Odaberite trezor koji želite zadržati u sinkronizaciji s web preglednikom.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Въведете главна парола",
+        "message": "Unesite glavnu zaporku",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Главната парола ще бъде използвана за шифроване на настройките на разширението. Ако желаете може да бъде запазена, но НЯМА да бъде в шифрован вид.",
+        "message": "Ova će se zaporka koristiti za šifriranje svih vaših postavki proširenja. Tu zaporku možete lokalno spremiti, ali bit će spremljena kao OBIČAN TEKST.",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Запомняне на главната парола (нешифрована)",
+        "message": "Zapamti glavnu zaporku",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Внимание! Главната парола ще бъде запазена нешифрована.",
+        "message": "Upozorenje! Vaša glavna zaporka bit će spremljena kao običan tekst.",
         "description": "Remember master password"
     },
     "done": {
-        "message": "Готово",
+        "message": "Gotovo",
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Персонализирани полета",
+        "message": "Prilagodljiva polja",
         "description": "Custom fields"
     },
     "general": {
-        "message": "Общи",
+        "message": "Općenito",
         "description": "Custom fields"
     },
     "value": {
-        "message": "Стойност",
+        "message": "Vrijednost",
         "description": "Custom fields"
     },
     "list": {
-        "message": "Списък",
+        "message": "Popis",
         "description": "List"
     },
     "edit": {
-        "message": "Променяне",
+        "message": "Uredi",
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Настройки на сървъра",
+        "message": "Postavke poslužitelja",
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Настройки на хранилището",
+        "message": "Postavke trezora",
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Избиране на главна парола",
+        "message": "Postavi glavnu zaporku",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Приключиване",
+        "message": "Završi",
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Ако желаете може да дарите",
+        "message": "Ako želite, ne zaboravite donirati",
         "description": "If you like, don't forget to donate"
     },
     "close": {
-        "message": "Затваряне",
+        "message": "Zatvori",
         "description": "Close"
     },
     "prev": {
-        "message": "Назад",
+        "message": "Pret.",
         "description": "Previous"
     },
     "back": {
-        "message": "Назад",
+        "message": "Natrag",
         "description": "Back"
     },
     "copy": {
-        "message": "Копиране",
+        "message": "Kopiraj",
         "description": "Copy"
     },
     "next": {
-        "message": "Напред",
+        "message": "Sljedeća",
         "description": "Next"
     },
     "continue": {
-        "message": "Продължаване",
+        "message": "Nastavi",
         "description": "Continue"
     },
     "donate": {
-        "message": "Дарение",
+        "message": "Doniraj",
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Настройки за Nextcloud / ownCloud сървър",
+        "message": "Postavke poslužitelja Nextcloud/ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Избор на стандартно хранилище",
+        "message": "Odaberi zadani trezor",
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Пренебрегнати страници / адреси",
+        "message": "Zanemarena web-mjesta/URL-ovi",
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Страницата",
+        "message": "Onemogući stranicu",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Сайта",
+        "message": "Onemogući web-mjesto",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Желаете Passman да пренебрегне само текущата страница или и сайта?",
+        "message": "Želite li onemogućiti Passman za trenutnu stranicu ili za cijelo web-mjesto?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Няма пренебрегнати страници",
+        "message": "Nema zanemarenih web-mjesta",
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "Парола на хранилището",
+        "message": "Zaporka trezora",
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Моля, въведете етикет",
+        "message": "Ispunite oznaku",
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Невалиден URL адрес на сървъра",
+        "message": "Nevažeći URL poslužitelja",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Пренебрегване на сайта",
+        "message": "Zanemari web-mjesto/stranicu",
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Паролите не съвпадат",
+        "message": "Zaporke se ne podudaraju",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Паролата за хранилището е грешна!",
+        "message": "Nevažeći ključ trezora!",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Въведете главна парола",
+        "message": "Prazan glavni ključ!",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -420,119 +420,119 @@
         "description": "One time password"
     },
     "settings": {
-        "message": "Настройки",
+        "message": "Postavke",
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "След това ще можете да добавяте още регистрации.",
+        "message": "Nakon dovršetka postupka postavljanja, možete dodati više računa.",
         "description": "Search"
     },
     "account_added": {
-        "message": "Регистрацията е добавена.",
+        "message": "Račun je dodan.",
         "description": "Search"
     },
     "select_vault": {
-        "message": "Избиране на хранилище",
+        "message": "Odaberi trezor",
         "description": "Search"
     },
     "delete": {
-        "message": "Изтриване",
+        "message": "Izbriši",
         "description": "Delete"
     },
     "search": {
-        "message": "Търсене",
+        "message": "Traži",
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Регистрацията е премахната",
+        "message": "Vjerodajnica izbrisana",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "Когато няма идент. данни за сайта да се отваря:",
+        "message": "Kada odabirač zaporki ne može pronaći nijednu vjerodajnicu, ići će na:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Няма хранилище. Моля създайте хранилище от приложението за Nextcloud / ownCloud и опитайте отново.",
+        "message": "Nažalost, nije pronađen nijedan trezor. Stvorite trezor putem aplikacije Nextcloud/ownCloud i pokušajte ponovo.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Možete resetirati zaporku. Time ćete vratiti proširenje u zadano stanje.",
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Забравена парола?",
+        "message": "Zaboravili ste zaporku?",
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Нулиране на разширението",
+        "message": "Resetiraj proširenje",
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Да, сигурен съм!",
+        "message": "Da, siguran sam!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Нямате права за променяне на регистрацията.",
+        "message": "Nemate dopuštenje za uređivanje ove vjerodajnice.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Настройките за сървъра са невалидни",
+        "message": "Nevažeće postavke poslužitelja",
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Презареждане на списъка с регистрациите",
+        "message": "Osvježi popis vjerodajnica",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Разработката зависи от даренията, приканваме ви да ни подкрепите",
+        "message": "Razvoj ovisi o donacijama, podržite nas",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Заключване на разширението",
+        "message": "Zaključaj proširenje",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Разширението Passman е заключено",
+        "message": "Proširenje Passman je zaključano, otključajte ga kako biste ga koristili",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Грешна главна парола",
+        "message": "Nevažeća glavna zaporka!",
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "Отключване",
+        "message": "Otključaj",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Открити са $AMOUNT$ регистрации за страницата",
+        "message": "Pronašli smo $AMOUNT$ vjerodajnica za ovo web-mjesto",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Запазване в $VAULT_NAME$",
+        "message": "Spremi u $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Запазване в $VAULT_NAME$",
+        "message": "Spremanje u $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "Налични са $AMOUNT$ регистрации",
+        "message": "$AMOUNT$ vjerodajnica u bazi podataka",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman ви вписва като $USERNAME$",
+        "message": "Passman vas prijavljuje kao $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Хранилище",
+        "message": "Trezor",
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Добавяне на допълнително поле",
+        "message": "Dodaj prilagođeno polje",
         "description": "Add a custom field"
     },
     "text": {
-        "message": "текст",
+        "message": "tekst",
         "description": "To describe a textual input field"
     },
     "extName": {

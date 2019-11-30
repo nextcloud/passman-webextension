@@ -192,7 +192,7 @@
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Esconder opções avançadas",
+        "message": "Ocultar opções avançadas",
         "description": "Disable password picker"
     },
     "show_adv": {
