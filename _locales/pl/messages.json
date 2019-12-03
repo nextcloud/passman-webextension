@@ -208,7 +208,7 @@
         "description": "Save"
     },
     "saving": {
-        "message": "Zapisuję",
+        "message": "Zapisywanie",
         "description": "Saving"
     },
     "credential_saved": {
