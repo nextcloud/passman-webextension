@@ -72,7 +72,7 @@
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "添加账户",
+        "message": "添加账号",
         "description": "Add account"
     },
     "accounts": {
