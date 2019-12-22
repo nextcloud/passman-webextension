@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Notas",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
@@ -444,7 +444,7 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Credenciales borradas",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {

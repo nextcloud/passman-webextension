@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Muistiinpanot",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
@@ -40,7 +40,7 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Toggle visibility",
+        "message": "Määritä näkyvyys",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {

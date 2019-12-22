@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Notes",
+        "message": "筆記",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
@@ -292,7 +292,7 @@
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "自定義欄位",
         "description": "Custom fields"
     },
     "general": {
@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Invalid server URL",
+        "message": "無效的伺服器 URL",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {

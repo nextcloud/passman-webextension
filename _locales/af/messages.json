@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Notes",
+        "message": "Notas",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
@@ -208,7 +208,7 @@
         "description": "Save"
     },
     "saving": {
-        "message": "Saving",
+        "message": "Stoor tans",
         "description": "Saving"
     },
     "credential_saved": {
@@ -460,7 +460,7 @@
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Forgot password?",
+        "message": "Wagwoord vergeet?",
         "description": "Search"
     },
     "reset_extension": {

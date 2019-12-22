@@ -1,22 +1,22 @@
 {
     "extDescription": {
-        "message": "Passman - Ο διαχειριστής συνθηματικών για το NextCloud / ownCloud",
+        "message": "Passman - The password manager for NextCloud / ownCloud",
         "description": "Extension description"
     },
     "search_for": {
-        "message": "Αναζήτηση για",
+        "message": "Poišči",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Δεν βρέθηκαν διαπιστευτήρια σε αυτή τη σελίδα.",
+        "message": "No credentials found for this site.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Δεν βρέθηκαν διαπιστευτήρια",
+        "message": "Ni najdenih poveril",
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "Σημειώσεις",
+        "message": "Opombe",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
@@ -24,31 +24,31 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Παρακαλούμε εισάγετε τα διαπιστευτήριά σας για το Nextcloud / ownCloud",
+        "message": "Please enter your Nextcloud / ownCloud credentials",
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "Αποθήκευση σελίδας",
+        "message": "Shrani spletišče",
         "description": "Save site"
     },
     "password_generator": {
-        "message": "Δημιουργία συνθηματικού",
+        "message": "Ustvarjalnik gesel",
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Δημιουργία συνθηματικού",
+        "message": "Ustvari geslo",
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Toggle visibility",
+        "message": "Preklopi vidnost",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Εναλλαγή επιλογών για προχωρημένους",
+        "message": "Toggle advanced options",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Χρήση συνθηματικού",
+        "message": "Uporabi geslo",
         "description": "Use password"
     },
     "add_hint": {
@@ -56,43 +56,43 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
-        "message": "Μέγεθος συνθηματικού",
+        "message": "Dolžina gesla",
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Ελάχιστη ποσότητα ψηφίων",
+        "message": "Najmanjše število znakov",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Avoid ambiguous characters",
+        "message": "Izogni se dvoumnim znakom",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Require every character type",
+        "message": "Zahtevaj vse vrste znakov",
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "Προσθήκη λογαριασμού",
+        "message": "Dodaj račun",
         "description": "Add account"
     },
     "accounts": {
-        "message": "Λογαριασμοί",
+        "message": "Računi",
         "description": "Accounts"
     },
     "label": {
-        "message": "Ετικέτα",
+        "message": "Oznaka",
         "description": "Label"
     },
     "username": {
-        "message": "Όνομα χρήστη",
+        "message": "Uporabniško ime",
         "description": "Username"
     },
     "email": {
-        "message": "E-mail",
+        "message": "Elektronski naslov",
         "description": "E-mail"
     },
     "add": {
-        "message": "Προσθήκη",
+        "message": "Dodaj",
         "description": "Add"
     },
     "credential_created": {
@@ -100,23 +100,23 @@
         "description": "Credential created"
     },
     "url": {
-        "message": "URL",
+        "message": "Naslov URL",
         "description": "URL"
     },
     "password": {
-        "message": "Συνθηματικό",
+        "message": "Geslo",
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Συνθηματικό (επανάλληψη)",
+        "message": "Password (repeat)",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Ανιχνεύθηκε νέα είσοδος",
+        "message": "Detected new login",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Ανιχνεύθηκε αλλαγμένο συνθηματικό για τον χρήστη",
+        "message": "Detected changed password for user",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
@@ -124,7 +124,7 @@
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Κλειδώθηκε",
+        "message": "Passman - Locked",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
@@ -132,11 +132,11 @@
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "διαπιστευτήρια",
+        "message": "poverilo",
         "description": "credential"
     },
     "credentials": {
-        "message": "διαπιστευτήρια",
+        "message": "poverila",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -144,15 +144,15 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Αγνόηση πρωτοκόλλου για αντιστοίχιση ιστότοπου",
+        "message": "Ignore protocol for site matching",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Αγνοήστε τον υποτομέα για αντιστοίχιση ιστότοπων",
+        "message": "Ignore subdomain for site matching",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Αγνοήστε τη θύρα για αντιστοίχιση ιστότοπου",
+        "message": "Ignore port for site matching",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
@@ -164,7 +164,7 @@
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Omogoči samodejno izpolnjevanje obrazcev",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
@@ -176,7 +176,7 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Απενεργοποίηση αυτόματης συμπλήρωσης του περιηγητή",
+        "message": "Disable browser auto fill",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
@@ -184,7 +184,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Omogoči izbirnik gesel",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
@@ -192,67 +192,67 @@
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Απόκρυψη επιλογών για προχωρημένους",
+        "message": "Hide advanced options",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Εμφάνιση επιλογών για προχωρημένους",
+        "message": "Show advanced options",
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Ενεργοποιήστε τη λειτουργία εντοπισμού σφαλμάτων",
+        "message": "Omogoči razhroščevalni način",
         "description": "Enable debug mode"
     },
     "save": {
-        "message": "Αποθήκευση",
+        "message": "Shrani",
         "description": "Save"
     },
     "saving": {
-        "message": "Γίνεται αποθήκευση",
+        "message": "Shranjujem",
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Αποθηκεύτηκαν τα διαπιστευτήρια",
+        "message": "Credential saved",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Ενημερώθηκαν τα διαπιστευτήρια",
+        "message": "Poverila so posodobljena",
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Αγνόηση ιστότοπου",
+        "message": "Site ignored",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "Naslov URL je prezrt",
         "description": "URL ignored"
     },
     "update": {
-        "message": "Ενημέρωση",
+        "message": "Posodobi",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignore site",
+        "message": "Prezri spletišče",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Αποθήκευση διαπιστευτηριων για την ιστοσελίδα",
+        "message": "Shrani poverila za to stran",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Αναζήτηση διαπιστευτηρίων",
+        "message": "Iskanje poveril",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Dobrodošli v razširitvi Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "URL διακομιστή",
+        "message": "Naslov URL strežnika",
         "description": "Server URL"
     },
     "begin": {
-        "message": "Ας αρχίσουμε!",
+        "message": "Let's begin!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -260,7 +260,7 @@
         "description": "Cancel"
     },
     "cancel": {
-        "message": "Ακύρωση",
+        "message": "Prekliči",
         "description": "Cancel"
     },
     "default_vault": {
@@ -272,7 +272,7 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Εισάγετε πρωτεύον συνθηματικό",
+        "message": "Vpis glavnega gesla",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
@@ -280,39 +280,39 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Απομνημόνευση του πρωτεύων συνθηματικού",
+        "message": "Remember master password",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Προειδοποίηση! Το κύριο συνθηματικό σας θα αποθηκευτεί σε απλό κείμενο.",
+        "message": "Warning! Your master password will be stored in plaintext.",
         "description": "Remember master password"
     },
     "done": {
-        "message": "Ολοκληρώθηκε",
+        "message": "Končano",
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Προσαρμοσμένα πεδία",
+        "message": "Polja po meri",
         "description": "Custom fields"
     },
     "general": {
-        "message": "Γενικά",
+        "message": "Splošno",
         "description": "Custom fields"
     },
     "value": {
-        "message": "Τιμή",
+        "message": "Vrednost",
         "description": "Custom fields"
     },
     "list": {
-        "message": "Λίστα",
+        "message": "Seznam",
         "description": "List"
     },
     "edit": {
-        "message": "Επεξεργασία",
+        "message": "Uredi",
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Ρυθμίσεις διακομιστή",
+        "message": "Nastavitve strežnika",
         "description": "Server Settings"
     },
     "vault_settings": {
@@ -320,47 +320,47 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Ορισμός πρωτεύοντος συνθηματικού",
+        "message": "Set Master password",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Ολοκλήρωση",
+        "message": "Zaključek",
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Εάν σας αρέσει, μην ξεχάσετε να κάνετε δωρεά",
+        "message": "If you like, don't forget to donate",
         "description": "If you like, don't forget to donate"
     },
     "close": {
-        "message": "Κλείσιμο",
+        "message": "Zapri",
         "description": "Close"
     },
     "prev": {
-        "message": "Προηγ",
+        "message": "Prev",
         "description": "Previous"
     },
     "back": {
-        "message": "Πίσω",
+        "message": "Nazaj",
         "description": "Back"
     },
     "copy": {
-        "message": "Αντιγραφή",
+        "message": "Kopiraj",
         "description": "Copy"
     },
     "next": {
-        "message": "Επόμενο",
+        "message": "Naprej",
         "description": "Next"
     },
     "continue": {
-        "message": "Συνέχεια",
+        "message": "Nadaljuj",
         "description": "Continue"
     },
     "donate": {
-        "message": "Δωρεά",
+        "message": "Podpri",
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Ρυθμίσεις διακομιστή Nextcloud / ownCloud",
+        "message": "Nastavitve strežnika Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -372,11 +372,11 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Onemogoči stran",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Onemogoči spletišče",
         "description": "Disable site"
     },
     "disable_picker_text": {
@@ -388,7 +388,7 @@
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "Κωδικός πρόσβασης θησαυροφυλακίου ",
+        "message": "Vault password",
         "description": "Vault password"
     },
     "label_required": {
@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Μη έγκυρη URL διακομιστή",
+        "message": "Neveljaven naslov URL strežnika",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -404,7 +404,7 @@
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Δεν ταιριάζουν τα συνθηματικά",
+        "message": "Gesli se ne skladata",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
@@ -412,7 +412,7 @@
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Εκκαθάριση κυρίως κλειδιού!",
+        "message": "Empty master key!",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -420,7 +420,7 @@
         "description": "One time password"
     },
     "settings": {
-        "message": "Ρυθμίσεις",
+        "message": "Nastavitve",
         "description": "Settings"
     },
     "extra_accounts": {
@@ -428,7 +428,7 @@
         "description": "Search"
     },
     "account_added": {
-        "message": "Προστέθηκε ο λογαριασμός.",
+        "message": "Account added.",
         "description": "Search"
     },
     "select_vault": {
@@ -436,15 +436,15 @@
         "description": "Search"
     },
     "delete": {
-        "message": "Διαγραφή",
+        "message": "Izbriši",
         "description": "Delete"
     },
     "search": {
-        "message": "Αναζήτηση",
+        "message": "Poišči",
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Τα διαπιστευτήρια διαγράφηκαν",
+        "message": "Poverila so izbrisana",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
@@ -460,7 +460,7 @@
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Ξεχάσατε το συνθηματικό;",
+        "message": "Ali ste pozabili geslo?",
         "description": "Search"
     },
     "reset_extension": {
@@ -476,11 +476,11 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Μη έγκυρες ρυθμίσεις διακομιστή",
+        "message": "Neveljavne nastavitve strežnika",
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Ανανέωση της λίστας διαπιστευτηρίων",
+        "message": "Refresh credential list",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
@@ -488,19 +488,19 @@
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Lock extension",
+        "message": "Zakleni razširitev",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Το πρόσθετο Passman κλειδώθηκε και πρέπει να το ξεκλειδώσετε για να το χρησιμοποιήσετε",
+        "message": "Passman extension is locked, unlock to use it",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Μη έγκυρο πρωτεύον συνθηματικό!",
+        "message": "Neveljavno glavno geslo!",
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "Ξεκλείδωμα",
+        "message": "Odkleni",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
@@ -508,7 +508,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Αποθήκευση στο $VAULT_NAME$",
+        "message": "Shrani v $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
@@ -528,11 +528,11 @@
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Προσθήκη προσαρμοσμένου πεδίου",
+        "message": "Dodaj polje po meri",
         "description": "Add a custom field"
     },
     "text": {
-        "message": "κείμενο",
+        "message": "besedilo",
         "description": "To describe a textual input field"
     },
     "extName": {
