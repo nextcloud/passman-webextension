@@ -76,7 +76,7 @@
         "description": "Add account"
     },
     "accounts": {
-        "message": "账户",
+        "message": "账号",
         "description": "Accounts"
     },
     "label": {
@@ -168,7 +168,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "选择帐户后，启用表单自动提交",
+        "message": "选择账号后启用表单自动提交",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
@@ -424,11 +424,11 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "安装过程完成后，您可以添加更多帐户。",
+        "message": "安装过程完成后，您可以添加更多账号。",
         "description": "Search"
     },
     "account_added": {
-        "message": "账户已添加。",
+        "message": "账号已添加。",
         "description": "Search"
     },
     "select_vault": {
