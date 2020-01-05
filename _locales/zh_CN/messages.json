@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "您正在使用HTTP！登录凭证将以纯文本形式发送。您的 Passman 凭证仍然加密。",
+        "message": "您正在使用 HTTP！登录凭证将以纯文本形式发送。您的 Passman 凭证仍然加密。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -444,7 +444,7 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "证书已删除",
+        "message": "凭据已删除",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
