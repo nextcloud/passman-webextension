@@ -208,7 +208,7 @@
         "description": "Save"
     },
     "saving": {
-        "message": "Shranjujem",
+        "message": "Poteka shranjevanje ...",
         "description": "Saving"
     },
     "credential_saved": {

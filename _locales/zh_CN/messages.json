@@ -208,7 +208,7 @@
         "description": "Save"
     },
     "saving": {
-        "message": "保存中",
+        "message": "正在保存",
         "description": "Saving"
     },
     "credential_saved": {
@@ -512,7 +512,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "保存到 $VAULT_NAME$",
+        "message": "正在保存到 $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
