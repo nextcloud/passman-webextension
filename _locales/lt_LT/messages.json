@@ -48,7 +48,7 @@
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Use password",
+        "message": "Naudoti slaptažodį",
         "description": "Use password"
     },
     "add_hint": {
@@ -108,7 +108,7 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Slaptažodis (pakartokite)",
         "description": "Password"
     },
     "detected_new_login": {
@@ -280,11 +280,11 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Remember master password",
+        "message": "Prisiminti pagrindinį slaptažodį",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Įspėjimas! Jūsų pagrindinis slaptažodis bus laikomas grynojo teksto pavidalu.",
         "description": "Remember master password"
     },
     "done": {
