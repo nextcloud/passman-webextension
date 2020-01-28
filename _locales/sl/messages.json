@@ -428,7 +428,7 @@
         "description": "Search"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Račun je dodan.",
         "description": "Search"
     },
     "select_vault": {
@@ -464,7 +464,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Ponastavi razširitev",
         "description": "Search"
     },
     "iam_sure": {
