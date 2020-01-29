@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "message": "Passman – Upravljalnik gesel za okolja NextCloud / ownCloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -8,7 +8,7 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "Za to spletišče ni najdenih poveril.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
@@ -20,11 +20,11 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Neveljaven odziv strežnika: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "message": "Vpis poveril strežnika Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -44,7 +44,7 @@
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Toggle advanced options",
+        "message": "Preklopi napredne možnosti",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Poverila so ustvarjena",
         "description": "Credential created"
     },
     "url": {
@@ -108,27 +108,27 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Geslo (ponovno)",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Detected new login",
+        "message": "Zaznana je nova prijava",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Detected changed password for user",
+        "message": "Zaznana je sprememba gesla uporabnika",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman – najdenih je  $CREDENTIAL_AMOUNT$ $PLURAL$ za to stran.",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Locked",
+        "message": "Passman – Zakljenjeno",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Zaznana je sprememba naslova URL za",
         "description": "Detected changed URL for"
     },
     "credential": {
@@ -140,27 +140,27 @@
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Ča osvežitve [s]",
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
+        "message": "Prezri protokol za določanje skladnosti spletišč",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Ignore subdomain for site matching",
+        "message": "Prezri poddomene pri določanju skladnosti",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
+        "message": "Prezri vrata naslova pri določanju skladnosti",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Uporabljen je protokol HTTP! Poverila prijave bodo poslana kot golo besedilo, poverila Passman pa so še vedno šifrirana.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Prezri pot pri določanju skladnosti",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
@@ -176,7 +176,7 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Onemogoči samodejno izpolnjevanje v brskalniku",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
@@ -188,15 +188,15 @@
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Ko je zaznano geslo, skoči na seznam in ne na zadnji dejavni zavihek",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Skrij napredne možnosti",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Pokaži napredne možnosti",
         "description": "Disable password picker"
     },
     "enable_debug": {
@@ -212,7 +212,7 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Credential saved",
+        "message": "Poverila so shranjena",
         "description": "saved, lowercase"
     },
     "credential_updated": {
@@ -220,7 +220,7 @@
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Site ignored",
+        "message": "Spletišče je prezirto",
         "description": "Site ignored"
     },
     "url_ignored": {
@@ -252,11 +252,11 @@
         "description": "Server URL"
     },
     "begin": {
-        "message": "Let's begin!",
+        "message": "Začnimo!",
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Čarovnik omogoča vodenje prek nastavitev razširitve in usklajevanja gesel.",
         "description": "Cancel"
     },
     "cancel": {
@@ -264,11 +264,11 @@
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "Default vault",
+        "message": "Privzet trezor",
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Izberite trezor, ki naj bo usklajen s spletnim brskalnikom.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,15 +276,15 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "To geslo bo uporabljeno za šifriranje vseh nastavitev razširitve. Lahko ga shranite tudi krajevno, vendar bo shranjen kot golo besedilo!",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Remember master password",
+        "message": "Zapomni si glavno geslo",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Opozorilo! Glavno geslo bo shranjeno kot golo besedilo.",
         "description": "Remember master password"
     },
     "done": {
@@ -316,19 +316,19 @@
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Nastavitve trezorja",
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Nastavi glavno geslo",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Zaključek",
+        "message": "Zaključi",
         "description": "Finish"
     },
     "done_donate": {
-        "message": "If you like, don't forget to donate",
+        "message": "Če želite, lahko podprete projekt z donacijo.",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -364,11 +364,11 @@
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Select default vault",
+        "message": "Izbor privzetega trezorja",
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Prezrte strani / naslovi URL",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -380,19 +380,19 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Ali želite onemogočiti program Passman za trenutno stran ali za celotno spletišče?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "No sites ignored",
+        "message": "Ni prezrtih strani",
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "Vault password",
+        "message": "Geslo trezorja",
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Vpisati je treba oznako",
         "description": "When comparing passwords"
     },
     "invalid_host": {
@@ -400,7 +400,7 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Prezrite spletišče / spletno stran",
         "description": "Invalid server URL"
     },
     "no_password_match": {
@@ -408,11 +408,11 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Invalid vault key!",
+        "message": "Neveljaven ključ trezorja!",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Empty master key!",
+        "message": "Prazen glavni ključ!",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Po zaključku nastavitev je mogoče dodati več računov.",
         "description": "Search"
     },
     "account_added": {
@@ -432,7 +432,7 @@
         "description": "Search"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Izbor trezorja",
         "description": "Search"
     },
     "delete": {
@@ -452,11 +452,11 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Ni najdenih trezorjev. Najprej ga je treba ustvariti prek programa Nextcloud / ownCloud.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Geslo lahko ponastavite in povrnete razširitev v privzeto stanje.",
         "description": "Search"
     },
     "forgot_password": {
@@ -468,11 +468,11 @@
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Da, prepričan sem!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Ni ustreznih dovoljenj za urejanje tega poverila.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -480,11 +480,11 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Refresh credential list",
+        "message": "Osveži seznam poveril",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "Razvoj je odvisen od donacij, podprite nas!",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -512,7 +512,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Poteka shranjevanje v trezor  $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
@@ -524,7 +524,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Trezor",
         "description": "Vault"
     },
     "add_custom_field": {
