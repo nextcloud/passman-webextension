@@ -64,11 +64,11 @@
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Avoid ambiguous characters",
+        "message": "Αποφύγετε ασαφής χαρακτήρες",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Require every character type",
+        "message": "Απαιτείται κάθε τύπος χαρακτήρων",
         "description": "Require every character type"
     },
     "add_account": {
