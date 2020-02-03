@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - مدیر رمز عبور برای نکست کلود / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "جستجو کنید",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "هیچ گواهی نامه ای برای این سایت یافت نشد",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "هیچ مدرکی یافت نشد",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "یادداشت ها",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "پاسخ نامعتبر از سرور:[$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "لطفاً اعتبارنامه نکست کلود / ownCloud خود را وارد کنید",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "سایت را ذخیره کنید",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "تولید کننده رمز عبور",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "ایجاد گذرواژه",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "تغییر دید",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "گزینه های پیشرفته را تغییر دهید",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "از رمز عبور استفاده کنید",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "پس از ایجاد آن ، می توانید اعتبار را در Passman ویرایش کردن",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "طول رمز عبور",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "حداقل رقم",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "از شخصیت های مبهم خودداری کنید",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "به هر نوع شخصیت نیاز دارید",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "اضافه کردن حساب کاربری",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "حساب‌ها",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "برچسب",
+        "description": "Label"
+    },
+    "username": {
+        "message": "نام کاربری",
+        "description": "Username"
+    },
+    "email": {
+        "message": "پست الکترونیک",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "افزودن",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "اعتبارنامه ایجاد شده",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "گذرواژه",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "رمز عبور (تکرار)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "ورود به سیستم جدید تشخیص داده شد",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "رمزعبور تغییر یافته برای کاربر شناسایی شد",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ برای این صفحه یافت شد",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - قفل شده است",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "URL تغییر یافته برای",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "اعتبار",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "اعتبارنامه",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "زمان سنج تازه کردن [ها]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "پروتکل برای تطبیق سایت را نادیده بگیرید",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "نادیده گرفتن زیر دامنه برای تطبیق سایت",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "نادیده گرفتن پورت برای تطبیق سایت",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "شما از HTTP استفاده می کنید! اعتبارنامه ورود به متن ساده ارسال می شود. اعتبارنامه Passman شما هنوز رمزگذاری شده است.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "نادیده گرفتن مسیر برای تطبیق سایت",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "پر کردن خودکار فرم را فعال کنید",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "ارسال خودکار فرم پس از انتخاب حساب را فعال کنید",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "اگر با URL فعلی مطابقت ندارد ، بخواهید URL اعتبار را به روز کنید",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "غیرفعال کردن پر کردن خودکار مرورگر",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "برای نادیده گرفتن و فشار دادن دامنه یا TLD وارد کنید ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "انتخابگر رمز عبور را فعال کنید",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "وقتی رمز ورود پیدا کرد ، به جای آخرین برگه فعال ، به لیست بروید",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "گزینه های پیشرفته را مخفی کنید",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "گزینه های پیشرفته را نشان دهید",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "حالت اشکال زدایی را فعال کنید",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "ذخیره",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "درحال ذخیره",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "اعتبار ذخیره شد",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "اعتبار به روز شد",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "سایت نادیده گرفته شد",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL نادیده گرفته شد",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "به روز رسانی",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "سایت را نادیده بگیرید",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "اعتبارنامه را برای این سایت ذخیره کنید",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "اعتبارنامه را جستجو کنید",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "به وبسایت Passman خوش آمدید",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL سرور",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": " شروع کنیم!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "این جادوگر مراحل شما را برای تنظیم برنامه افزودنی و همگام سازی کلمه عبور خود راهنمایی می کند.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "لغو",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "طاق پیش فرض",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "طاق را که می خواهید همگام سازی کنید با مرورگر وب انتخاب کنید.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "رمز ورود استاد را وارد کنید",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "از این رمز عبور برای رمزگذاری کلیه تنظیمات شما در پسوند استفاده می شود. می توانید این رمز عبور را بصورت محلی انتخاب کردن ، اما در PLAINTEXT ذخیره می شود.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "رمز ورود استاد را بخاطر بسپار",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "هشدار! رمزعبور اصلی شما به صورت ساده ذخیره می شود.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "انجام شد",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "فیلدهای سفارشی",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "عمومی",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "ارزش",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "لیست",
+        "description": "List"
+    },
+    "edit": {
+        "message": "ویرایش",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "تنظیمات سرور",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "تنظیمات طاق",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "رمز ورود استاد را تنظیم کنید",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "پایان",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "اگر دوست دارید اهدا کنید فراموش نکنید",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "بستن",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "مقدمه",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "بازگشت",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "کپی کردن",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "بعدی",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "ادامه",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "اهدا کنید",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "تنظیمات سرور نکست کلود / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "طاق پیش فرض را انتخاب کنید",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "سایت های نادیده گرفته / URL ها",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "صفحه را غیرفعال کردن",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "غیرفعال کردن سایت",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "آیا می خواهید Passman را برای صفحه فعلی یا کل وب سایت غیرفعال کردن؟",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "هیچ سایتی نادیده گرفته نشده است",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "رمز عبور طاق",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "لطفاً یک برچسب را پر کنید",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "ادرس سرور نامعتبر",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "سایت / صفحه را نادیده بگیرید",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "کلمات عبور مطابقت ندارند",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "کلید طاق نامعتبر است!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "کلید استاد خالی!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "تنظیمات",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "پس از مراحل نصب کامل کردن شما می توانید حساب ها بیشتری اضافه کنید.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "حساب اضافه شد",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "طاق را انتخاب کنید",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "حذف",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "جستجو",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "اعتبارنامه حذف شد",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "هنگامی که انتخاب کننده گذرواژه قادر به یافتن هیچ مدرکی نیست ، به این موارد می رود:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "با عرض پوزش ، هیچ طاقچه ای یافت نشد. لطفا یک طاق را از طریق برنامه نکست کلود / ownCloud ایجاد شده و دوباره امتحان کنید.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "می توانید گذرواژه خود را دوباره تنظیم کنید. با این کار برنامه افزودنی را به حالت پیش فرض خود بازنشانی می کنید.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "رمز فراموش شده؟",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "بازنشانی پسوند",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "بله من مطمئن هستم!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "شما اجازه ویرایش کردن این اعتبارنامه ندارد.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "تنظیمات نامعتبر سرور",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "لیست اعتبارنامه تازه کردن",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "لطفا به ما کمک کنید",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "پسوند قفل",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "پسوند Passman قفل شده است، باز کردن قفل به استفاده از آن",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "رمز ورود استاد نامعتبر است!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "باز کردن",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "ما پیدا کرده ایم $AMOUNT$ اعتبار این سایت",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "ذخیره در $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "صرفه جویی در $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ اعتبارنامه در پایگاه داده",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman شما را به عنوان ورود به سیستم وارد می کند $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "طاق",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "یک فیلد سفارشی افزودن",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "متن",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "رهگذر",
+        "description": "Extension name"
+    }
+}
