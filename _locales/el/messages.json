@@ -20,7 +20,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Μη έγκυρη απάντηση διακομιστή: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Μετά τη δημιουργία, μπορείτε να επεξεργαστείτε την πιστοποίηση στο Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Δημιουργία διαπιστευτηρίων",
         "description": "Credential created"
     },
     "url": {
@@ -120,7 +120,7 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ found for this page",
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ βρέθηκαν για αυτή τη σελίδα",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
@@ -128,7 +128,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "Ανιχτεύτικε αλλαγή διεύθυνσης URL για",
         "description": "Detected changed URL for"
     },
     "credential": {
@@ -140,7 +140,7 @@
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Χρόνος ανανέωσης [s]",
         "description": "Password"
     },
     "ignore_protocol": {
@@ -156,23 +156,23 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "Χρησιμοποιείτε HTTP! Τα διαπιστευτήρια σύνδεσης θα αποστέλλονται σε απλό κείμενο. Τα διαπιστευτήρια Passman εξακολουθούν να είναι κρυπτογραφημένα.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Αγνοήστε τη διαδρομή για αντιστοίχιση ιστότοπου",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Ενεργοποίηση αυτόματης συμπλήρωσης",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Ενεργοποιήστε τη φόρμα αυτόματης υποβολής μετά την επιλογή λογαριασμού",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Ζητήστε να ενημερώσετε τη διεύθυνση URL διαπιστευτηρίων αν δεν ταιριάζει με την τρέχουσα διεύθυνση URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -180,15 +180,15 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Εισαγάγετε έναν τομέα ή το TLD για να αγνοήσετε και πατήστε ↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Ενεργοποιήστε τον επιλογέα κωδικών πρόσβασης",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Όταν εντοπιστεί ένας κωδικός πρόσβασης, μεταβείτε στη λίστα αντί για την τελευταία ενεργή καρτέλα",
         "description": "Disable password picker"
     },
     "hide_adv": {
