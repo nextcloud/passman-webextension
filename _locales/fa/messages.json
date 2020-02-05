@@ -72,7 +72,7 @@
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "اضافه کردن حساب کاربری",
+        "message": "افزودن حساب کاربری",
         "description": "Add account"
     },
     "accounts": {
@@ -308,7 +308,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "ویرایش",
+        "message": "ویرایش کردن",
         "description": "Edit"
     },
     "server_settings": {
@@ -352,7 +352,7 @@
         "description": "Next"
     },
     "continue": {
-        "message": "ادامه",
+        "message": "ادامه دادن",
         "description": "Continue"
     },
     "donate": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "پس از مراحل نصب کامل کردن شما می توانید حساب ها بیشتری اضافه کنید.",
+        "message": "پس از مراحل نصب کامل کردن شما می توانید حساب‌ها بیشتری افزودن.",
         "description": "Search"
     },
     "account_added": {

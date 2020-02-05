@@ -224,7 +224,7 @@
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "Αγνόηση URL",
         "description": "URL ignored"
     },
     "update": {
@@ -232,7 +232,7 @@
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignore site",
+        "message": "Αγνόηση ιστότοπου",
         "description": "Update"
     },
     "btn_save_site": {
@@ -244,7 +244,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Καλώ ήλθατε στην επέκταση Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "Ο οδηγός θα σας καθοδηγήσει στα βήματα για να ρυθμίσετε την επέκταση και να διατηρήσετε όλους τους κωδικούς σας συγχρονισμένους.",
         "description": "Cancel"
     },
     "cancel": {
@@ -264,11 +264,11 @@
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "Default vault",
+        "message": "Προεπιλεγμένη κρύπτη",
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Επιλέξτε την κρύπτη που θέλετε να συγχρονίζεται με τον φυλλομετρητή ιστού.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "Ο κωδικός πρόσβασης θα χρησιμοποιηθεί για κρυπτογράφηση όλων των ρυθμίσεων της επέκτασης. Μπορείτε να επιλέξετε να αποθηκεύσετε αυτόν τον κωδικό τοπικά, αλλά θα αποθηκευτεί σε ΑΠΛΟ ΚΕΙΜΕΝΟ.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -316,7 +316,7 @@
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Ρυθμίσεις κρύπτης",
         "description": "Vault settings"
     },
     "master_password": {
@@ -364,27 +364,27 @@
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Select default vault",
+        "message": "Επιλέξτε προεπιλεγμένη κρύπτη",
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Αγνοήθηκαν ιστότοποι / URLs",
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Απενεργοποίηση σελίδας",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Απενεργοποίηση ιστότοπου",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Θέλετε να απενεργοποιήσετε το Passman για την τρέχουσα σελίδα, ή για όλο τον ιστότοπο;",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "No sites ignored",
+        "message": "Κανείς ιστότοπος δεν αγνοήθηκε",
         "description": "No sites ignored"
     },
     "vault_password": {
@@ -392,7 +392,7 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Παρακαλώ συμπληρώστε την ετικέτα",
         "description": "When comparing passwords"
     },
     "invalid_host": {
@@ -400,7 +400,7 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Αγνόηση ιστότοπου / σελίδας",
         "description": "Invalid server URL"
     },
     "no_password_match": {
@@ -408,7 +408,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Invalid vault key!",
+        "message": "Μή έγκυρο κλειδί κρύπτης!",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Μόλις ολοκληρωθεί η εγκατάσταση, μπορείτε να προσθέσετε και άλλους λογαριασμούς.",
         "description": "Search"
     },
     "account_added": {
@@ -432,7 +432,7 @@
         "description": "Search"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Επιλέξτε κρύπτη",
         "description": "Search"
     },
     "delete": {
@@ -468,7 +468,7 @@
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Ναι, είμαι σίγουρος!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
@@ -524,7 +524,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Κρύπτη",
         "description": "Vault"
     },
     "add_custom_field": {
