@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Menedżer haseł dla Nextcloud / ownCloud",
+        "message": "Passman - Menedżer haseł dla Nextcloud/ownCloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Wprowadź dane poświadczające Nextcloud / ownCloud",
+        "message": "Wprowadź dane poświadczające Nextcloud/ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Ustawienia serwera Nextcloud / ownCloud",
+        "message": "Ustawienia serwera Nextcloud/ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -368,7 +368,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignorowane łącza / URLe",
+        "message": "Ignorowane strony/adresy URL",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -400,7 +400,7 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignoruj stronę / witrynę",
+        "message": "Ignoruj stronę/witrynę",
         "description": "Invalid server URL"
     },
     "no_password_match": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Przepraszamy, nie znaleziono sejfów. Utwórz sejf poprzez Nextcloud / ownCloud i spróbuj ponownie.",
+        "message": "Przepraszamy, nie znaleziono sejfów. Utwórz sejf poprzez Nextcloud/ownCloud i spróbuj ponownie.",
         "description": "Search"
     },
     "msg_reset_extension": {

@@ -448,15 +448,15 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Όταν η επιλογή Κωδικών πρόσβασης δεν μπορέσει να βρει διαπιστευτήρια, θα πάει σε:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Λυπούμαστε, δεν βρέθηκαν κρύπτες. Δημιουργήστε μια κρύπτη μέσω της εφαρμογής Nextcloud / ownCloud και δοκιμάστε ξανά.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας. Αυτό θα επαναφέρει την επέκταση στην προεπιλεγμένη κατάσταση.",
         "description": "Search"
     },
     "forgot_password": {
@@ -464,7 +464,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Επαναφορά επέκτασης",
         "description": "Search"
     },
     "iam_sure": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Δεν έχετε την άδεια να επεξεργαστείτε αυτήν την πιστοποίηση.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -484,11 +484,11 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "Η ανάπτυξη εξαρτάται από δωρεές, παρακαλούμε να υποστηρίξετε μας",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Lock extension",
+        "message": "Κλείδωμα επέκτασης",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "We've found $AMOUNT$ credentials for this site",
+        "message": "Βρήκαμε  $AMOUNT$ διαπιστευτήρια για αυτόν τον ιστότοπο",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -512,15 +512,15 @@
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Αποθήκευση στο  $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
+        "message": "$AMOUNT$ διαπιστευτήρια στην βάση δεδομένων",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Το Passman σας συνδέει ώς  $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
