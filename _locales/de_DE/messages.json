@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Dieser Assistent wird Sie durch die Konfiguration dieser Erweiterung führen und sicher stellen, dass alle Ihre Kennwörter synchron gehalten werden.",
+        "message": "Dieser Assistent wird Sie durch die Konfiguration dieser Erweiterung führen und sicher stellen, dass alle Ihre Passwörter synchron gehalten werden.",
         "description": "Cancel"
     },
     "cancel": {

@@ -26,7 +26,7 @@ window.OTP = (function () {
             var chunk = bits.substr(i, 4);
             hex = hex + parseInt(chunk, 2).toString(16);
         }
-        return hex;
+        return hex.length % 2 ? hex + "0" : hex;
 
     }
 
