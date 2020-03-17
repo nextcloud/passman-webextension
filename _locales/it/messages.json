@@ -376,7 +376,7 @@
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Disabilitata sito",
+        "message": "Disabilita sito",
         "description": "Disable site"
     },
     "disable_picker_text": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Nessuna cassaforte trovata. Crea una cassaforte tramite l'applicazione di Nextcloud / ownCloud  e prova ancora.",
+        "message": "Nessuna cassaforte trovata. Crea una cassaforte tramite l'applicazione di Nextcloud / ownCloud e prova ancora.",
         "description": "Search"
     },
     "msg_reset_extension": {
