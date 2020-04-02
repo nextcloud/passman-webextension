@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Detta lösenord kommer användas för att kryptera alla dina inställningar i tillägget. Du kan välja att spara lösenordet lokal, men det kommer sparas i REN TEXT.",
+        "message": "Detta lösenord kommer användas för att kryptera alla dina inställningar i tillägget. Du kan välja att spara lösenordet lokalt men det kommer sparas i OFORMATERAD TEXT.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -508,11 +508,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Spara till $VAULT_NAME$",
+        "message": "Spara i $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Sparar till $VAULT_NAME$",
+        "message": "Sparar i $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
