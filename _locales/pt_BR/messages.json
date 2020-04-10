@@ -152,7 +152,7 @@
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Ignorar porto para sites coincidentes",
+        "message": "Ignorar porta para sites coincidentes",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
