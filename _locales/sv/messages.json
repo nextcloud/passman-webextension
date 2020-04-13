@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Du använder HTTP! Inloggningsuppgifter kommer sändas som ren text. Dina Passman-uppgifter är fortfarande krypterade.",
+        "message": "Du använder HTTP! Inloggningsuppgifter skickas i vanlig text. Dina Passman-uppgifter är fortfarande krypterade.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
