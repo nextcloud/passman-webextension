@@ -36,7 +36,7 @@
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Általános jelszó",
+        "message": "Jelszó létrehozása",
         "description": "Generate password"
     },
     "toggle_visibility": {
