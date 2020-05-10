@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - NextCloud / ownCloud-entzako pasahitz-kudeatzailea",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Bilatu",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Ez da kredentzialik aurkitu gune honentzat.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Ez da kredentzialik aurkitu",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Oharrak",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Zerbitzariaren erantzun baliogabea: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Sartu zure Nextcloud /ownCloud kredentzialak",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Gorde gunea",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Pasahitz-sortzailea",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Sortu pasahitza",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Txandakatu ikusgaitasuna",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Txandakatu aukera aurreratuak",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Erabili pasahitza",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Sortu ondoren, kredentziala Passmanekin editatu dezakezu",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Pasahitzaren luzera",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Gutxieneko digitu kopurua",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Saihestu karaktere anbiguoak",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Egin karaktere mota guztiak beharrezko",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Gehitu kontua",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Kontuak",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Etiketa",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Erabiltzaile-izena",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-maila",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Gehitu",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Kredentzialak sortuta",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URLa",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Pasahitza",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Pasahitza (errepikatu)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Saio hasiera berria detektatuta",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Erabiltzailearen pasahitza aldatu dela detektatu da",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ aurkitu dira orri honentzat",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Blokeatuta",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "URL aldaketa detektatu da honentzat:",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "kredentzial",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "kredentzial",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Freskatu tenporizadorea [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Ignore protocol for site matching",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Ignore subdomain for site matching",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Ignore port for site matching",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "HTTP erabiltzen ari zara! Saio hasierako kredentzialak testu arrunt bezala bidaliko dira. Zure Passman kredentzialek enkriptatuta jarraitzen dute.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Ignore path for site matching",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Gaitu formularioak automatikoki betetzea",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Gaitu formularioak automatikoki betetzea kontua aukeratu ondoren",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Galdetu kredentzialaren URLa eguneratzeko, uneko URLarekin bat ez badator",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Desgaitu nabigatzaileak automatikoki betetzea",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Sartu domeinu edo TLD bat ez ikusia egiteko eta sakatu ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Gaitu pasahitz-hautatzailea",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Pasahitz bat aurkitzen denean, joan zerrendara, ez azken fitxa aktibora",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Ezkutatu aukera aurreratuak",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Erakutsi aukera aurreratuak",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Gaitu arazketa modua",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Gorde",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Gordetzen",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Kredentzialak gordeta",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Kredentziala eguneratuta",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Gune ezikusia",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URLa ez ikusi eginda",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Eguneratu",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ezikusi gunea",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Gorde kredentzialak gune honentzat",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Bilatu kredentzialak",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Ongi etorri Pass web hedapenera",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "Zerbitzariaren URLa",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Has gaitezen!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Morroi honek hedapena konfiguratu eta zure pasahitz guztiak sinkronizatuta edukitzeko urratsetatik gidatuko zaitu.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Utzi",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Gordailu lehenetsia",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Hautatu web-arakatzailearekin sinkronizatuta mantendu nahi duzun gordailua",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Sartu pasahitz nagusia",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Pasahitz hau zure ezarpen guztiak enkriptatzeko erabiliko da hedapenean. Pasahitz hau lokalean gordetzea aukeratu dezakezu, baina TESTU ARRUNT bezala gordeko da.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Gogoratu pasahitz nagusia",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Kontuz! Zure pasahitz nagusia testu arrunt bezala gordeko da.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Egina",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Eremu pertsonalizatuak",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Orokorra",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Balioa",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Zerrenda",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Editatu",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Zerbitzariaren ezarpenak",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Gordailu-ezarpenak",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Ezarri pasahitz nagusia",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Amaitu",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Nahi baduzu, ez ahaztu dohaintza egitea",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Itxi",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Aurrekoa",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Atzera",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopiatu",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Hurrengoa",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Jarraitu",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Donazioa egin",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud /ownCloud zerbitzariaren ezarpenak",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Hautatu gordailu lehenetsia",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ez ikusia egindako guneak / URLak",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Desgaitu orria",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Desgaitu gunea",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Passman desgaitu nahi duzu uneko orrian, edo webgune osoan?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Ez dago ez ikusia egindako gunerik",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Gordailuaren pasahitza",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Bete etiketa bat",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Zerbitzari URL baliogabea",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ez ikusia egin guneari / orriari",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Pasahitzak ez datoz bat",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Gordailu-gako baliogabea!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Pasahitz nagusia hutsik!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Ezarpenak",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Konfigurazio prozesua osatu ondoren, kontu gehiago gehitu ditzakezu.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Kontua gehituta.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Hautatu gordailua",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Ezabatu",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Bilatu",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Kredentziala ezabatuta",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Pasahitz-hautatzaileak kredentzialik ezin badu aurkitu, hona joango da:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Barkatu, ez da gordailurik aurkitu. Sortu gordailu bat Nextcloud / ownCloud aplikazioa erabiliz eta saiatu berriro.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Zure pasahitza berrezarri dezakezu. Horrek hedapenaren egoera lehenetsia berrezarriko du.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Pasahitza ahaztu duzu?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Berrezarri hedapena",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Bai, ziur nago!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Ez daukazu kredentzial hau editatzeko baimenik.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Zerbitzariaren ezarpen baliogabeak",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Freskatu kredentzial-zerrenda",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Garapenak dohaintzak behar ditu, mesedez babestu gaitzazu",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Blokeatu hedapena",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman hedapena blokeatuta dago, desblokeatu erabiltzeko",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Pasahitz nagusi baliogabea!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Desblokeatu",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": " $AMOUNT$ kredentzial aurkitu ditugu gune honentzat",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Gorde $VAULT_NAME$ gordailura",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": " $VAULT_NAME$ gordailura gordetzen",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ kredentzial datu-basean",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Gordailua",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Gehitu eremu pertsonalizatua",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "testua",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
