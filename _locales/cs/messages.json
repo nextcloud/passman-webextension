@@ -160,7 +160,7 @@
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Pro hledání stránek ignorovat cestu",
+        "message": "Pro hledání stránek ignorovat popis umístění",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
@@ -216,7 +216,7 @@
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Pověření aktualizováno",
+        "message": "Přihlašovací údaje zaktualizovány",
         "description": "updated, lowercase"
     },
     "site_ignored": {
@@ -356,7 +356,7 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Přispět",
+        "message": "Podpořit vývoj darem",
         "description": "Donate"
     },
     "nextcloud_settings": {
@@ -408,7 +408,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Neplatný klíč trezoru!",
+        "message": "Neplatný klíč k trezoru!",
         "description": "Vault password"
     },
     "empty_master_key": {

@@ -144,15 +144,15 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
+        "message": "Ezikusi protokoloa gunearen bat-etortzerako",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Ignore subdomain for site matching",
+        "message": "Ezikusi azpidomeinua guneraren bat-etortzerako",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
+        "message": "Ezikusi ataka gunearen bat-etortzerako",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
@@ -160,7 +160,7 @@
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Ezikusi bide-izena gunearen bat-etortzerako",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
