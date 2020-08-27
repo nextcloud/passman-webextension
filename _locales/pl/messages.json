@@ -100,7 +100,7 @@
         "description": "Credential created"
     },
     "url": {
-        "message": "URL",
+        "message": "Adres URL",
         "description": "URL"
     },
     "password": {
@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Nieprawidłowy URL serwera",
+        "message": "Nieprawidłowy adres URL serwera",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
