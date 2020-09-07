@@ -304,7 +304,7 @@
         "description": "Custom fields"
     },
     "list": {
-        "message": "List",
+        "message": "Sąrašas",
         "description": "List"
     },
     "edit": {
