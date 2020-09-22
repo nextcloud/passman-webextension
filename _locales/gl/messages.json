@@ -272,7 +272,7 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Introduza o contrasinal mestre",
+        "message": "Introduza o contrasinal principal",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
@@ -280,11 +280,11 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Lembrar o contrasinal mestre",
+        "message": "Lembrar o contrasinal principal",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Aviso! O seu contrasinal mestre vai ser almacenado en texto simple",
+        "message": "Advertencia! O seu contrasinal principal vai ser almacenado en texto simple",
         "description": "Remember master password"
     },
     "done": {
@@ -320,7 +320,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Estabelecer o contrasinal mestre",
+        "message": "Estabelecer o contrasinal principal",
         "description": "Set a master password"
     },
     "finish": {
@@ -412,7 +412,7 @@
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "A chave mestra está baleira",
+        "message": "A chave principal está baleira",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -496,7 +496,7 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Contrasinal mestre incorrecto",
+        "message": "Contrasinal principal incorrecto",
         "description": "When the master password is invalid"
     },
     "unlock": {
