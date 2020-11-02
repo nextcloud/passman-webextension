@@ -368,7 +368,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignoriere Seiten / URLs",
+        "message": "Ignorierte Seiten / URLs",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman protokolliert Sie als $USERNAME$",
+        "message": "Passman meldet Sie an als $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
