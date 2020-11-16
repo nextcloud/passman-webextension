@@ -328,7 +328,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Wspomóż nas, jeśli Ci się podoba",
+        "message": "Jeśli chcesz, to nie zapomnij nas wesprzeć",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -356,7 +356,7 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Dotuj",
+        "message": "Dotacja",
         "description": "Donate"
     },
     "nextcloud_settings": {
