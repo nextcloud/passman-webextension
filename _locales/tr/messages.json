@@ -352,7 +352,7 @@
         "description": "Next"
     },
     "continue": {
-        "message": "Devam",
+        "message": "Sürdür",
         "description": "Continue"
     },
     "donate": {
