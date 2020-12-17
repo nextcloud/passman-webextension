@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "After creating it, you can edit the credential in Passman",
+        "message": "Po ustvarjanju je mogoče poverila urejati tudi v programu Passman.",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -168,7 +168,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Omogoči samodejno pošiljanje obrazca po izbiri računa.",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Za to stran so nadjena: $AMOUNT$",
+        "message": "Za to stran so nadjena poverila: $AMOUNT$",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
