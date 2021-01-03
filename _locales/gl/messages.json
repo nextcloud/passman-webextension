@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Este asistente guiarao seguindo os pasos para configurar a extensión e manter todos os seus contrasinais sincronizados!",
+        "message": "Este asistente guiarao seguindo os pasos para configurar a extensión e conservar todos os seus contrasinais sincronizados!",
         "description": "Cancel"
     },
     "cancel": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Seleccione a bóveda que queira manter sincronizada co navegador.",
+        "message": "Seleccione a bóveda que queira conservar sincronizada co navegador.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
