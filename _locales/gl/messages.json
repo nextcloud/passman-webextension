@@ -408,11 +408,11 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "A chave da bóveda é incorrecta",
+        "message": "A clave da bóveda é incorrecta",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "A chave principal está baleira",
+        "message": "A clave principal está baleira",
         "description": "Empty master key!"
     },
     "one_time_password": {
