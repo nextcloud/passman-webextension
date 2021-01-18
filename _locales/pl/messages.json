@@ -248,7 +248,7 @@
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "URL serwera",
+        "message": "Adres URL serwera",
         "description": "Server URL"
     },
     "begin": {
