@@ -180,7 +180,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Vpišite domeno ali vrhnjo domeno TLD in pritisnite tipko Enter",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
@@ -448,7 +448,7 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Ko izbirnik gesel ne najde poveril, gre na:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
