@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "搜尋",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "No credentials found for this site.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "No credentials found",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "筆記",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "來自伺服器的無效回覆： [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "儲存站點",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "密碼生成器",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "生成密碼",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "調整可見度",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "切換為進階選項",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Use password",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "創建後，你可以在 Passman 中修改憑據",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "密碼長度",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Minimum amount of digits",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "避免含糊字符",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "需要全部字符類型",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "新增帳戶",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "帳號",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "標籤",
+        "description": "Label"
+    },
+    "username": {
+        "message": "使用者名稱",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "新增",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Credential created",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "網址URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "密碼",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "密碼(重複)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "檢測到新登入",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "檢測到用戶的密碼變更！",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - 在頁面中找到$CREDENTIAL_AMOUNT$ $PLURAL$",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - 已上鎖",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "檢測到 URL 變更：",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "憑據",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "credentials",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "刷新計時器",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Ignore protocol for site matching",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Ignore subdomain for site matching",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Ignore port for site matching",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Ignore path for site matching",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "啟用自動帶入",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Enable form auto submit after picking account",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "停用自動帶入",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Enter a domain or TLD to ignore and press ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Enable password picker",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "When a password is found, go to list rather than last active tab",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "隱藏進階選項",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Enable debug mode",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "儲存",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "儲存中",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "已儲存憑據",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "憑據已更新",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Site ignored",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignored",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "更新",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "忽略站點",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "為此站點儲存憑據",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Search credentials",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Welcome to the Passman webextension",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "伺服器 URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "讓我們開始吧！",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "取消",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "預設空間",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "輸入主密碼",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Remember master password",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Warning! Your master password will be stored in plaintext.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "完成",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "自定義欄位",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "一般",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "值",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "清單",
+        "description": "List"
+    },
+    "edit": {
+        "message": "編輯",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "伺服器設定",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Vault settings",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "設定主密碼",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "完成",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "如果你喜歡的話，請不要忘記贊助我們",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "關閉",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Prev",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "返回",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "複製",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "下一步",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "繼續",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "斗內",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / ownCloud 伺服器設定",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "選擇預設空間",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "忽略網站/連結",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "停用頁面",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "停用網站",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "No sites ignored",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "空間密碼",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Please fill in a label",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "無效的伺服器 URL",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "忽略站點",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "密碼不相符",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "無效的空間金鑰！",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "空白的主密碼！",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "設定",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Account added.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Select vault",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "移除",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "搜尋",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Credential deleted",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "忘記密碼？",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Yes, I'm sure!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "You don't have the permission to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Invalid server settings",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "重整驗證清單",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Developent depends on donations, please support us",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "上鎖擴充元件",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman 擴充元件已上鎖，請先解鎖",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "無效的主密碼！",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "解鎖",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "我們在此站點找到了 $AMOUNT$ 個憑據",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Save to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "正儲存至$VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ credentials in the database",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Vault",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Add a custom field",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "文字",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
