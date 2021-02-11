@@ -48,7 +48,7 @@
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Use password",
+        "message": "使用密碼",
         "description": "Use password"
     },
     "add_hint": {
@@ -60,7 +60,7 @@
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minimum amount of digits",
+        "message": "最少數字位數",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
@@ -84,11 +84,11 @@
         "description": "Label"
     },
     "username": {
-        "message": "使用者名稱",
+        "message": "用戶名稱",
         "description": "Username"
     },
     "email": {
-        "message": "E-mail",
+        "message": "電郵地址",
         "description": "E-mail"
     },
     "add": {
@@ -200,7 +200,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "啟用調試模式",
         "description": "Enable debug mode"
     },
     "save": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Remember master password",
+        "message": "記住主密碼",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -336,7 +336,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "上一個",
         "description": "Previous"
     },
     "back": {
@@ -428,7 +428,7 @@
         "description": "Search"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "帳戶已添加。",
         "description": "Search"
     },
     "select_vault": {
@@ -468,7 +468,7 @@
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "是的，我確定！",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "無效的伺服器設定",
         "description": "Search"
     },
     "refresh_credential_list": {
@@ -508,7 +508,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "儲存至$VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
