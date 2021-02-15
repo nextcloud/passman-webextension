@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "message": "Passman - NextCloud/ownCloud 的密碼管理器",
         "description": "Extension description"
     },
     "search_for": {
@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "找不到此站點的身份驗證。",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "No credentials found",
+        "message": "查無身份驗證",
         "description": "No credentials found for the current site"
     },
     "notes": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "message": "請輸入您Nextcloud/ownCloud的身份驗證",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "創建後，你可以在 Passman 中修改憑據",
+        "message": "創建後，你可以在 Passman 中修改身份驗證",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "身份驗證已建立",
         "description": "Credential created"
     },
     "url": {
@@ -136,7 +136,7 @@
         "description": "credential"
     },
     "credentials": {
-        "message": "credentials",
+        "message": "身份驗證",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -164,7 +164,7 @@
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "啟用自動帶入",
+        "message": "啟用瀏覽器自動填充",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
@@ -176,7 +176,7 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "停用自動帶入",
+        "message": "停用瀏覽器自動填充",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
@@ -196,7 +196,7 @@
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "顯示進階選項",
         "description": "Disable password picker"
     },
     "enable_debug": {
@@ -212,7 +212,7 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "已儲存憑據",
+        "message": "已儲存身份驗證",
         "description": "saved, lowercase"
     },
     "credential_updated": {
@@ -224,7 +224,7 @@
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "URL已忽略",
         "description": "URL ignored"
     },
     "update": {
@@ -240,11 +240,11 @@
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Search credentials",
+        "message": "搜尋身份驗證",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "歡迎使用Passman網絡擴展",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -284,7 +284,7 @@
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "警告！ 您的主密碼將以純文本格式存儲。",
         "description": "Remember master password"
     },
     "done": {
@@ -356,7 +356,7 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "斗內",
+        "message": "捐助",
         "description": "Donate"
     },
     "nextcloud_settings": {
@@ -396,7 +396,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "無效的伺服器 URL",
+        "message": "無效的伺服器URL",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -432,11 +432,11 @@
         "description": "Search"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "選擇保險箱",
         "description": "Search"
     },
     "delete": {
-        "message": "移除",
+        "message": "刪除",
         "description": "Delete"
     },
     "search": {
@@ -444,7 +444,7 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "身份驗證已刪除",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
@@ -464,7 +464,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "重設擴充元件",
         "description": "Search"
     },
     "iam_sure": {
@@ -516,7 +516,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
+        "message": "在數據庫中找到$AMOUNT$個身份驗證",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
@@ -524,11 +524,11 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "保險箱",
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "添加自定義欄位",
         "description": "Add a custom field"
     },
     "text": {
