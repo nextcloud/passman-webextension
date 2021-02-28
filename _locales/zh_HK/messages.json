@@ -264,7 +264,7 @@
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "預設空間",
+        "message": "默認保險庫",
         "description": "Default vault"
     },
     "default_vault_desc": {
@@ -432,7 +432,7 @@
         "description": "Search"
     },
     "select_vault": {
-        "message": "選擇保險箱",
+        "message": "選擇保險庫",
         "description": "Search"
     },
     "delete": {
@@ -524,7 +524,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "保險箱",
+        "message": "保險庫",
         "description": "Vault"
     },
     "add_custom_field": {
