@@ -72,7 +72,7 @@
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "新增帳戶",
+        "message": "新增賬戶",
         "description": "Add account"
     },
     "accounts": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "您正在使用HTTP！登錄身份驗證將以純文字形式發送。 您的Passman身份驗證仍被加密。",
+        "message": "您正在使用HTTP！登入身份驗證將以純文字形式發送。 您的Passman身份驗證仍被加密。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -424,11 +424,11 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "設置過程完成後，您可以添加更多帳戶。",
+        "message": "設置過程完成後，您可以添加更多賬戶。",
         "description": "Search"
     },
     "account_added": {
-        "message": "帳戶已添加。",
+        "message": "賬戶已添加。",
         "description": "Search"
     },
     "select_vault": {
@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman 以 $USERNAME$ 的身份登錄",
+        "message": "Passman 以 $USERNAME$ 的身份登入",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
