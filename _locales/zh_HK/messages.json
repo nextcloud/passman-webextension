@@ -44,7 +44,7 @@
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "切換為進階選項",
+        "message": "切換為高級選項",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
@@ -216,7 +216,7 @@
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "憑據已更新",
+        "message": "身份驗證已更新",
         "description": "updated, lowercase"
     },
     "site_ignored": {
