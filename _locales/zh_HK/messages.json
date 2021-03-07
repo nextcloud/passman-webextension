@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "請輸入您Nextcloud/ownCloud的身份驗證",
+        "message": "請輸入您 Nextcloud/ownCloud 的身份驗證",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -72,11 +72,11 @@
         "description": "Require every character type"
     },
     "add_account": {
-        "message": "新增賬戶",
+        "message": "添加賬戶",
         "description": "Add account"
     },
     "accounts": {
-        "message": "帳號",
+        "message": "賬戶",
         "description": "Accounts"
     },
     "label": {
@@ -108,7 +108,7 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "密碼(重複)",
+        "message": "密碼（重複）",
         "description": "Password"
     },
     "detected_new_login": {
@@ -132,7 +132,7 @@
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "憑據",
+        "message": "身份驗證",
         "description": "credential"
     },
     "credentials": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "您正在使用HTTP！登入身份驗證將以純文字形式發送。 您的Passman身份驗證仍被加密。",
+        "message": "您正在使用HTTP！登入身份驗證將以純文字形式發送。您的Passman身份驗證仍被加密。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -232,11 +232,11 @@
         "description": "Update"
     },
     "ignore_site": {
-        "message": "忽略站點",
+        "message": "略過站點",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "為此站點儲存憑據",
+        "message": "為此站點儲存身份驗證",
         "description": "Save credentials for this site"
     },
     "btn_search": {
@@ -244,7 +244,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "歡迎使用Passman網絡擴展",
+        "message": "歡迎使用 Passman 網絡擴展",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -364,7 +364,7 @@
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "選擇預設空間",
+        "message": "選擇預設保險庫",
         "description": "Select default vault"
     },
     "ignored_sites": {
@@ -388,7 +388,7 @@
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "空間密碼",
+        "message": "保險庫密碼",
         "description": "Vault password"
     },
     "label_required": {
@@ -408,7 +408,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "無效的空間金鑰！",
+        "message": "無效的保險庫密鑰！",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -480,7 +480,7 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "重整驗證清單",
+        "message": "重整身份驗證清單",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "我們在此站點找到了 $AMOUNT$ 個憑據",
+        "message": "我們在此站點找到了 $AMOUNT$ 個身份驗證",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
