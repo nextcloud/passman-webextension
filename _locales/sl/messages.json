@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Zahtevajte posodobitav naslova URI poveril, če ta ni v skladu s trenutnim pravim naslovom.",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
