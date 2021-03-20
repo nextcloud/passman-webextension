@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "找不到此站點的身份驗證。",
+        "message": "找不到此站點的身分驗證。",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "查無身份驗證",
+        "message": "查無身分驗證",
         "description": "No credentials found for the current site"
     },
     "notes": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "請輸入您 Nextcloud/ownCloud 的身份驗證",
+        "message": "請輸入您 Nextcloud/ownCloud 的身分驗證",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "創建後，你可以在 Passman 中修改身份驗證",
+        "message": "創建後，你可以在 Passman 中修改身分驗證",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "身份驗證已建立",
+        "message": "身分驗證已建立",
         "description": "Credential created"
     },
     "url": {
@@ -132,11 +132,11 @@
         "description": "Detected changed URL for"
     },
     "credential": {
-        "message": "身份驗證",
+        "message": "身分驗證",
         "description": "credential"
     },
     "credentials": {
-        "message": "身份驗證",
+        "message": "身分驗證",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "您正在使用HTTP！登入身份驗證將以純文字形式發送。您的Passman身份驗證仍被加密。",
+        "message": "您正在使用HTTP！登入身分驗證將以純文字形式發送。您的Passman身分驗證仍被加密。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "如果與當前URL不匹配，詢問更新身份驗證URL",
+        "message": "如果與當前URL不匹配，詢問更新身分驗證URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -212,11 +212,11 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "已儲存身份驗證",
+        "message": "已儲存身分驗證",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "身份驗證已更新",
+        "message": "身分驗證已更新",
         "description": "updated, lowercase"
     },
     "site_ignored": {
@@ -236,11 +236,11 @@
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "為此站點儲存身份驗證",
+        "message": "為此站點儲存身分驗證",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "搜尋身份驗證",
+        "message": "搜尋身分驗證",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
@@ -444,11 +444,11 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "身份驗證已刪除",
+        "message": "身分驗證已刪除",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "當密碼選擇器找不到任何身份驗證時，它將轉到：",
+        "message": "當密碼選擇器找不到任何身分驗證時，它將轉到：",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "您無權限編輯此身份驗證。",
+        "message": "您無權限編輯此身分驗證。",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -480,7 +480,7 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "重整身份驗證清單",
+        "message": "重整身分驗證清單",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "我們在此站點找到了 $AMOUNT$ 個身份驗證",
+        "message": "我們在此站點找到了 $AMOUNT$ 個身分驗證",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -516,11 +516,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "在數據庫中找到$AMOUNT$個身份驗證",
+        "message": "在數據庫中找到$AMOUNT$個身分驗證",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman 以 $USERNAME$ 的身份登入",
+        "message": "Passman 以 $USERNAME$ 的身分登入",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
