@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Select the vault that you want to keep in sync with the webbrowser。",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "您可以重設密碼。 這會將擴展 (extension) 重置為其默認狀態。",
+        "message": "您可以重設密碼。 這會將擴展（extension）重置為其默認狀態。",
         "description": "Search"
     },
     "forgot_password": {
