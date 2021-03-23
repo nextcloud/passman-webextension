@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman loguje Cię jako $USERNAME$",
+        "message": "Passman loguje Ciebie jako $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
