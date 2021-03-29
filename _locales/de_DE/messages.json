@@ -60,7 +60,7 @@
         "description": "Password length"
     },
     "min_digits": {
-        "message": " Minimale Anzahl von Ziffern",
+        "message": "Minimale Anzahl von Ziffern",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
@@ -180,7 +180,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Geben Sie eine Domäne oder eine TLD ein die ignoriert werden soll und drücken  ",
+        "message": "Geben Sie eine Domäne oder eine TLD ein, die ignoriert werden soll und drücken Sie↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Erinnere Master-Passwort",
+        "message": "Masterpasswort merken",
         "description": "Remember master password"
     },
     "master_pw_warning": {
