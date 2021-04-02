@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Zadejte své přístupové údaje k Nextcloudu / ownCloudu",
+        "message": "Zadejte své přístupové údaje k Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -244,7 +244,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Vítejte v rozšíření Passman",
+        "message": "Vítejte v rozšíření Passman pro webový prohlížeč",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Pamatovat si hlavní heslo",
+        "message": "Zapamatovat si hlavní heslo",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -344,7 +344,7 @@
         "description": "Back"
     },
     "copy": {
-        "message": "Kopírovat",
+        "message": "Zkopírovat",
         "description": "Copy"
     },
     "next": {
