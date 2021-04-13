@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "開発は寄付金に依存しています。応援してください",
+        "message": "開発は寄付金に依存致しますが、応援をよろしくお願いします",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
