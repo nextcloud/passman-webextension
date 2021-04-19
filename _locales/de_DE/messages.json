@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Bitte Ihre Nextcloud / Owncloud Anmeldeinformationen eingeben",
+        "message": "Bitte geben Sie Ihre Anmeldeinformationen für Nextcloud / ownCloud ein",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -64,11 +64,11 @@
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Vermeide Sonderzeichen",
+        "message": "Vermeide mehrdeutige Zeichen",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Allche Zeichentypen erforderlich",
+        "message": "Alle Zeichentypen erfordern",
         "description": "Require every character type"
     },
     "add_account": {
@@ -216,7 +216,7 @@
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Anmeldeinformationen aktualisieren",
+        "message": "Anmeldeinformationen aktualisiert",
         "description": "updated, lowercase"
     },
     "site_ignored": {
@@ -252,7 +252,7 @@
         "description": "Server URL"
     },
     "begin": {
-        "message": "Fangen Sie an!",
+        "message": "Lassen Sie uns beginnen!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Wählen Sie den Tresor den Sie mit dem Webbrowser synchronisieren wollen.",
+        "message": "Wählen Sie den Tresor, den Sie mit dem Webbrowser synchronisieren wollen.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Dieses Passwort wird benutzt um alle Ihre Einstellungen in der Erweiterung zu verschlüsseln. Sie können sich für eine lokale Speicherung des Passwort entscheiden, aber dann wird es im KLARTEXT gespeichert.",
+        "message": "Dieses Passwort wird benutzt, um all Ihre Einstellungen in der Erweiterung zu verschlüsseln. Sie können sich für eine lokale Speicherung des Passworts entscheiden, aber dann wird es im KLARTEXT gespeichert.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -360,11 +360,11 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud / ownCloud Server-Einstellungen",
+        "message": "Server-Einstellungen für Nextcloud / ownCloud ",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Standardtesor auswählen",
+        "message": "Standardtresor auswählen",
         "description": "Select default vault"
     },
     "ignored_sites": {
@@ -372,15 +372,15 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Deaktiviere Seite",
+        "message": "Seite deaktivieren",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Webauftritt deaktivieren",
+        "message": "Webseite deaktivieren",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Möchten Sie Passman für die aktuelle Seite oder den gesamten Webauftritt deaktivieren?",
+        "message": "Möchten Sie Passman für die aktuelle Seite oder die gesamte Webseite deaktivieren?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
@@ -396,11 +396,11 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Falsche Server-URL",
+        "message": "Ungültige Server-URL",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignoriere Seite / Gesamte Seite",
+        "message": "Gesamte Webseite / Einzelseite ignorieren",
         "description": "Invalid server URL"
     },
     "no_password_match": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Entschuldigung, es wurden keine Tresore gefunden. Bitte erstellen Sie Einen über die Nextcloud/ownCloud-App und versuchen Sie es erneut.",
+        "message": "Entschuldigung, es wurden keine Tresore gefunden. Bitte erstellen Sie einen über die App von Nextcloud/ownCloud und versuchen Sie es erneut.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -500,11 +500,11 @@
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "Öffnen",
+        "message": "Entsperren",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Es wurdes  $AMOUNT$ Anmeldeinformationen für diese Seite gefunden",
+        "message": "Es wurden  $AMOUNT$ Anmeldeinformationen für diese Seite gefunden",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
