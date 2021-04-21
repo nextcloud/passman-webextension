@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Za to stran so nadjena poverila: $AMOUNT$",
+        "message": "Za to stran so najdena poverila: $AMOUNT$",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
