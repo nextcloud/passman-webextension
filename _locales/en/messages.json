@@ -392,7 +392,7 @@
     "description": "Select default vault"
   },
   "ignored_sites": {
-    "message": "Ignored sites / URLs",
+    "message": "Ignored sites/URLs",
     "description": "Ignored sites"
   },
   "disable_page": {
@@ -424,7 +424,7 @@
     "description": "Invalid server URL"
   },
   "ignore_site_tab": {
-    "message": "Ignore site / page",
+    "message": "Ignore site/page",
     "description": "Invalid server URL"
   },
   "no_password_match": {
