@@ -240,7 +240,7 @@
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Suche Anmeldeinformationen",
+        "message": "Anmeldeinformationen suchen",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
