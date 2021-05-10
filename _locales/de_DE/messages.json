@@ -184,7 +184,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Passwortsammler einschalten",
+        "message": "Passwortauswahl aktivieren",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
