@@ -176,7 +176,7 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "ブラウザの自動入力を無効にする",
+        "message": "ブラウザーの自動入力を無効にする",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Webブラウザと同期したい保管庫を選択します。",
+        "message": "Webブラウザーと同期したい保管庫を選択します。",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
