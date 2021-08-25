@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "message": "Passman - NextCloud/ownCloud 密碼管理器",
         "description": "Extension description"
     },
     "search_for": {
@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "No credentials found for this site.",
+        "message": "找不到此站台的憑證。",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "No credentials found",
+        "message": "找不到憑證",
         "description": "No credentials found for the current site"
     },
     "notes": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "message": "請輸入您 Nextcloud/ownCloud 憑證",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -48,7 +48,7 @@
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Use password",
+        "message": "使用密碼",
         "description": "Use password"
     },
     "add_hint": {
@@ -60,7 +60,7 @@
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minimum amount of digits",
+        "message": "最少數字位數",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "Credential created",
+        "message": "憑證已建立",
         "description": "Credential created"
     },
     "url": {
@@ -136,7 +136,7 @@
         "description": "credential"
     },
     "credentials": {
-        "message": "credentials",
+        "message": "憑證",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -144,15 +144,15 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
+        "message": "略過用於站台匹配的協定",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Ignore subdomain for site matching",
+        "message": "略過用於站台匹配的子網域",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
+        "message": "略過用於站台匹配的連接埠",
         "description": "Ignore port for site matching"
     },
     "http_warning": {

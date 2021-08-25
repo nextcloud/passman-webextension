@@ -448,7 +448,7 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "Zbieranie haseł: Jeśli nie znaleziono żadnych poświadczeń przejdź do: ",
+        "message": "Gdy selektor haseł nie może znaleźć żadnych poświadczeń, przejdzie do:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
