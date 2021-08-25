@@ -40,7 +40,7 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Görünürlüğü Değiştir",
+        "message": "Görünürlüğü değiştir",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
@@ -84,7 +84,7 @@
         "description": "Label"
     },
     "username": {
-        "message": "Kullanıcı Adı",
+        "message": "Kullanıcı adı",
         "description": "Username"
     },
     "email": {
@@ -292,7 +292,7 @@
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Özel Alanlar",
+        "message": "Özel alanlar",
         "description": "Custom fields"
     },
     "general": {
@@ -312,15 +312,15 @@
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Sunucu Ayarları",
+        "message": "Sunucu ayarları",
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Kasa Ayarları",
+        "message": "Kasa ayarları",
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Ana Parolayı Ayarlayın",
+        "message": "Ana parolayı ayarlayın",
         "description": "Set a master password"
     },
     "finish": {
@@ -356,7 +356,7 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Bağış Yapın",
+        "message": "Bağış yapın",
         "description": "Donate"
     },
     "nextcloud_settings": {
@@ -368,7 +368,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Yok sayılan siteler / Adresler",
+        "message": "Yok sayılan siteler / adresler",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -484,11 +484,11 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Geliştirmeyi bağışlar sayesinde sürdürebiliyoruz, lütfen destek olun",
+        "message": "Geliştirme çalışmalarını bağışlar sayesinde sürdürebiliyoruz, lütfen bağış yapın",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Uygulamayı Kilitle",
+        "message": "Uygulamayı kilitle",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Bu site için  $AMOUNT$ bulundu",
+        "message": "Bu site için $AMOUNT$ bulundu",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {

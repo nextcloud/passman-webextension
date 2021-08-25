@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "پس از ایجاد آن ، می توانید اعتبار را در Passman ویرایش کردن",
+        "message": "پس از ایجاد آن ، می توانید اعتبار آن را در Passman ویرایش کنید",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -308,7 +308,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "ویرایش کردن",
+        "message": "ویرایش",
         "description": "Edit"
     },
     "server_settings": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "شما اجازه ویرایش کردن این اعتبارنامه ندارد.",
+        "message": "شما اجازه ویرایش این اعتبارنامه ندارید.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {

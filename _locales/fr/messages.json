@@ -196,7 +196,7 @@
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Montrer les options avancées",
+        "message": "Afficher les options avancées",
         "description": "Disable password picker"
     },
     "enable_debug": {

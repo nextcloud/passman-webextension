@@ -452,11 +452,11 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "抱歉，沒有找到保險庫。 請透過 Nextcloud/ownCloud 應用程式創建保險庫，然後重試。",
+        "message": "抱歉，沒有找到保險庫。請透過 Nextcloud/ownCloud 應用程式創建保險庫，然後重試。",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "您可以重設密碼。 這會將擴展（extension）重置為其默認狀態。",
+        "message": "您可以重設密碼。這會將擴展（extension）重置為其默認狀態。",
         "description": "Search"
     },
     "forgot_password": {
