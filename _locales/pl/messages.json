@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Ten kreator przeprowadzi Cię przez proces ustawiania rozszerzenia i pozwoli na synchronizację Twoich haseł.",
+        "message": "Ten kreator przeprowadzi Ciebie przez proces ustawienia rozszerzenia i na synchronizację Twoich haseł.",
         "description": "Cancel"
     },
     "cancel": {
