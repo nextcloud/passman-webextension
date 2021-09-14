@@ -340,7 +340,7 @@
         "description": "Previous"
     },
     "back": {
-        "message": "Wróć",
+        "message": "Wstecz",
         "description": "Back"
     },
     "copy": {
