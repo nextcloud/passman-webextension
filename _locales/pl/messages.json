@@ -64,7 +64,7 @@
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Unikaj wieloznacznych znaków",
+        "message": "Pomijaj znaki wieloznaczne",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
