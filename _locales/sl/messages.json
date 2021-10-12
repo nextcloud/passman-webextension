@@ -448,7 +448,7 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "Ko izbirnik gesel ne najde poveril, gre na:",
+        "message": "Ko izbirnik gesel ne najde poveril, skoči na:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
