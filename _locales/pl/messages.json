@@ -404,7 +404,7 @@
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Hasła do siebie nie pasują",
+        "message": "Hasła nie pasują do siebie",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
