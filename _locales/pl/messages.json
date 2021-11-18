@@ -64,7 +64,7 @@
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Unikaj wieloznacznych znaków",
+        "message": "Pomijaj znaki wieloznaczne",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Ten kreator przeprowadzi Cię przez proces ustawiania rozszerzenia i pozwoli na synchronizację Twoich haseł.",
+        "message": "Ten kreator przeprowadzi Ciebie przez proces ustawienia rozszerzenia i na synchronizację Twoich haseł.",
         "description": "Cancel"
     },
     "cancel": {
@@ -340,7 +340,7 @@
         "description": "Previous"
     },
     "back": {
-        "message": "Wróć",
+        "message": "Wstecz",
         "description": "Back"
     },
     "copy": {
@@ -404,7 +404,7 @@
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Hasła do siebie nie pasują",
+        "message": "Hasła nie pasują do siebie",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {

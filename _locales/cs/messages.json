@@ -108,7 +108,7 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Heslo (opakování)",
+        "message": "Heslo (zopakování)",
         "description": "Password"
     },
     "detected_new_login": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Je nám líto, nebyly nalezeny žádné trezory. Vytvořte trezor pomocí aplikace Nextcloud / ownCloud a zkuste to znovu.",
+        "message": "Je nám líto, nebyly nalezeny žádné trezory. Vytvořte trezor pomocí aplikace v Nextcloud / ownCloud a zkuste to znovu.",
         "description": "Search"
     },
     "msg_reset_extension": {
