@@ -144,7 +144,7 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "略過用於網站匹配的規約",
+        "message": "略過用於網站匹配的協定",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
