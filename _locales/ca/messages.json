@@ -372,11 +372,11 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Desactiva la pàgina",
+        "message": "Inhabilita la pàgina",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Desactiva el lloc",
+        "message": "Inhabilita el lloc",
         "description": "Disable site"
     },
     "disable_picker_text": {
