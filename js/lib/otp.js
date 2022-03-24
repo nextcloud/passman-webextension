@@ -23,7 +23,7 @@ window.OTP = (function () {
         }
 
         for (i = 0; i + 4 <= bits.length; i += 4) {
-            var chunk = bits.substr(i, 4);
+            var chunk = bits.slice(i, i + 4);
             hex = hex + parseInt(chunk, 2).toString(16);
         }
         return hex;
@@ -51,8 +51,8 @@ window.OTP = (function () {
             var hmacObj = new jsSHA(time, 'HEX');
             var hmac = hmacObj.getHMAC(key, 'HEX', 'SHA-1', "HEX");
             var offset = hex2dec(hmac.substring(hmac.length - 1));
-            var otp = (hex2dec(hmac.substr(offset * 2, 8)) & hex2dec('7fffffff')) + '';
-            otp = (otp).substr(otp.length - 6, 6);
+            var otp = (hex2dec(hmac.slice(offset * 2, offset * 2 + 8)) & hex2dec('7fffffff')) + '';
+            otp = (otp).slice(-6);
             return otp;
         }
     };
