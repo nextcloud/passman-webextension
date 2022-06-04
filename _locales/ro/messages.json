@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - Manager de parole pentru NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Caută după",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Nu sau găsit date de autentificare pentru această pagina.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Nu s-au găsit date de autentificare",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Notițe",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Raspuns invalid de la server:[$STATUS_CODE$]$STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Salvează pagina.",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Generator de parola",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Generează parola",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Comuta vizibilitatea",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Afirare opțiuni avansate",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Utilizeaza parolă",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Dupa creare poti edita datele de autentificare in Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Lungimea parolei",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Minimum amount of digits",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Evitati caractere ambigue",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Necesita toate tipurile de caractere",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Adaugă cont",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Conturi",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Etichetă",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Nume utilizator",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Adaugă",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Credential created",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Parolă",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Password (repeat)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Autentificare noua detectata",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Detectare parola schimbata la utilizator",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ gasit pentru aceasta pagina",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Incuiat",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Detected changed URL for",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "Detalii de autentificare",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "Detalii de autentificare",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Reseteaza cronometru [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Ignore protocol for site matching",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Ignora subdomeniile pentru paginile potrivite",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Ignore port for site matching",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Ignore path for site matching",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Enable form auto fill",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Enable form auto submit after picking account",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Disable browser auto fill",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Enter a domain or TLD to ignore and press ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Enable password picker",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "When a password is found, go to list rather than last active tab",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Hide advanced options",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Show advanced options",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Enable debug mode",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Salvează",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Se salvează",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Detalii de autentificare salvate",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Detalii de autentificare modificate",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Pagina ignorată",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignored",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Actualizare",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignora pagina",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Salvează date de autentificare pentru această pagină",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Cautare date de autentificare",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Bun venit in extensia Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL Server",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Sa incepem!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Acest ghid te va indruma prin toti pasii necesari pentru ati pastra parolele sincronizate",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Anulează",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Seif implicit",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Selecteaza seiful pe care doresti sa il pastrezi sincronizat cu borwserul",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Introduceti parola master",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Aceasta parola va fi utilizata pentru criptarea tuturor setarilor in aceasta extensie. Poti alege sa salvezi parola local insa aceasta va fi salvata necriptata.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Memorează parola master",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Warning! Your master password will be stored in plaintext.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Realizat",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Custom Fields",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "General",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Value",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Listă",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Editează",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Server settings",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Vault settings",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Set Master password",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Finalizare",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Daca iti place nu uita sa donezi",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Închide",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Precedent",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Înapoi",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Copiază",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Următorul",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Continuă",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Donate",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Setari  server Nextcloud/ ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Selecteaza seiful implicit",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ignored sites / URLs",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Disable page",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Disable site",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Nu sunt pagini ignorate",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Parolă seif",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Please fill in a label",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "URL server invalid",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignore site / page",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Passwords don't match",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Cheie de seif invalida!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Cheie master goala!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Setări",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "After the setup process is complete, you can add more accounts.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Account added.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Select vault",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Șterge",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Caută",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Credential deleted",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "You can reset your password. This will reset the extension to its default state.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Ai uitat parola?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Reset extension",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Yes, I'm sure!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "You don't have the permission to edit this credential.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Invalid server settings",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Refresh credential list",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Developent depends on donations, please support us",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Blocare extensie",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Extensia passman este incuiată. Deblochează pentru a utiliza",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Parolă master invalidă!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Deblochează",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Am gasit  $AMOUNT$ date de autentifiare pentru aceasta pagina",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Save to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Saving to $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ date de autentificare in baza de date",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman is logging you in as $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Vault",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Add a custom field",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "text",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
