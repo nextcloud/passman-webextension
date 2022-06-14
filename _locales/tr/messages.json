@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Maalesef herhangi bir kasa bulunamadı. Lütfen Nextcloud/ownCloud uygulaması ile bir kasa oluşturup yeniden deneyin.",
+        "message": "Ne yazık ki herhangi bir kasa bulunamadı. Lütfen Nextcloud/ownCloud uygulaması ile bir kasa oluşturup yeniden deneyin.",
         "description": "Search"
     },
     "msg_reset_extension": {
