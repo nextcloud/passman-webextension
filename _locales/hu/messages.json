@@ -44,7 +44,7 @@
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Részletes beállítások bekapcsolása",
+        "message": "Speciális beállítások be/ki",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
