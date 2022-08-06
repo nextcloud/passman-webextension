@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Dieser Einrichtungsassistent leitet Dich durch die notwendigen Schritte um die Browserextension aufzusetzen und alle Passwörter zu synchronisieren!",
+        "message": "Dieser Einrichtungsassistent leitet dich durch die notwendigen Schritte um die Browserextension aufzusetzen und alle Passwörter zu synchronisieren!",
         "description": "Cancel"
     },
     "cancel": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Wähle den Tresor aus, den Du mit dem Browser synchronisieren möchten.",
+        "message": "Wähle den Tresor aus, den du mit dem Browser synchronisieren möchten.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Dieses Passwort wird verwendet um alle Deine Einstellungen und Daten in der Browserextension zu verschlüsseln. Du kannst auswählen, dieses Passwort lokal zu speichern, aber es wird UNVERSCHLÜSSELT gespeichert.",
+        "message": "Dieses Passwort wird verwendet um alle deine Einstellungen und Daten in der Browserextension zu verschlüsseln. Du kannst auswählen, dieses Passwort lokal zu speichern, aber es wird UNVERSCHLÜSSELT gespeichert.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -328,7 +328,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Wenn Du Passman magst, vergesse nicht zu Spenden",
+        "message": "Wenn du Passman magst, vergesse nicht zu Spenden",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -380,7 +380,7 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Möchtest Du Passman für die aktuelle Seite oder den gesamten Webauftritt deaktivieren?",
+        "message": "Möchtest du Passman für die aktuelle Seite oder den gesamten Webauftritt deaktivieren?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Nachdem die Einrichtung abgeschlossen ist, kannst Du weitere Konten hinzufügen.",
+        "message": "Nachdem die Einrichtung abgeschlossen ist, kannst du weitere Konten hinzufügen.",
         "description": "Search"
     },
     "account_added": {
@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Du kannst Dein Passwort zurücksetzen. Dies setzt die Erweiterung auf die Standarteinstellungen zurück.",
+        "message": "Du kannst dein Passwort zurücksetzen. Dies setzt die Erweiterung auf die Standarteinstellungen zurück.",
         "description": "Search"
     },
     "forgot_password": {
@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman protokolliert Dich als $USERNAME$",
+        "message": "Passman protokolliert dich als $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
