@@ -156,11 +156,11 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
+        "message": "您正在使用 HTTP！登入憑據將以純文字形式發送。您的 Passman 憑據將仍處於加密狀態。",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "忽略為站點匹配的路徑",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
@@ -168,11 +168,11 @@
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "啟用在選取帳戶後自動提交表單",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "如果憑據 URL 與目前 URL 不匹配，則要求更新憑據 URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -196,11 +196,11 @@
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "顯示進階選項",
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "啟用除錯模式",
         "description": "Enable debug mode"
     },
     "save": {
@@ -220,11 +220,11 @@
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Site ignored",
+        "message": "已忽略站點",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "已忽略 URL",
         "description": "URL ignored"
     },
     "update": {
@@ -240,11 +240,11 @@
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Search credentials",
+        "message": "搜尋憑據",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "歡迎使用 Passman 網路擴充元件",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+        "message": "此精靈將指導您完成擴充元件設定，並保持所有密碼同步。",
         "description": "Cancel"
     },
     "cancel": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Remember master password",
+        "message": "記住主密碼",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -428,7 +428,7 @@
         "description": "Search"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "已新增帳戶。",
         "description": "Search"
     },
     "select_vault": {
@@ -468,7 +468,7 @@
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "是，我確定！",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "無效伺服器設定",
         "description": "Search"
     },
     "refresh_credential_list": {
