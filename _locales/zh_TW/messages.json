@@ -180,15 +180,15 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "請輸入要忽略的一個域名或者頂級域名，然後按 ",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "啟用密碼選擇器",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "找到密碼後，轉到清單而不是上一個 tab",
         "description": "Disable password picker"
     },
     "hide_adv": {
@@ -264,11 +264,11 @@
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "預設空間",
+        "message": "預設保險庫",
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "請選擇您想與瀏覽器同步的保險庫",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "This password will be used to encrypt all your settings in the extension. You can choose to save this password locally, but it will be saved in PLAINTEXT.",
+        "message": "此密碼將用於加密擴展程序中的所有設定。您可以選擇將此密碼保存在本地端，但將以**純文字(明碼)**格式保存。",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -284,7 +284,7 @@
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "警告！ 您的主密碼將以純文字(明碼)格式存儲。",
         "description": "Remember master password"
     },
     "done": {
@@ -316,7 +316,7 @@
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "保險庫設定",
         "description": "Vault settings"
     },
     "master_password": {
@@ -364,7 +364,7 @@
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "選擇預設空間",
+        "message": "選擇預設保險庫",
         "description": "Select default vault"
     },
     "ignored_sites": {
@@ -380,19 +380,19 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "您要為當前頁面停用Passman，或是整個網站？",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "No sites ignored",
+        "message": "沒有已忽略的網站",
         "description": "No sites ignored"
     },
     "vault_password": {
-        "message": "空間密碼",
+        "message": "保險庫密碼",
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "請填寫一個標籤",
         "description": "When comparing passwords"
     },
     "invalid_host": {
@@ -408,7 +408,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "無效的空間金鑰！",
+        "message": "無效的保險庫金鑰！",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "安裝程序完成後，您可以添加更多帳戶。",
         "description": "Search"
     },
     "account_added": {
@@ -432,7 +432,7 @@
         "description": "Search"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "選擇保險庫",
         "description": "Search"
     },
     "delete": {
@@ -444,19 +444,19 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "身分驗證已刪除",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "當密碼選擇器找不到任何身分驗證時，它將轉到：",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "抱歉，沒有找到保險庫。請透過 Nextcloud/ownCloud 應用程式創建保險庫，然後重試。",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "您可以重設密碼。這會將擴展（extension）重置為其默認狀態。",
         "description": "Search"
     },
     "forgot_password": {
@@ -464,7 +464,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "重設擴充元件",
         "description": "Search"
     },
     "iam_sure": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "您無權限編輯此身分驗證。",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "發展取決於捐款，請支持我們",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -508,7 +508,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "儲存至$VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
@@ -516,19 +516,19 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ credentials in the database",
+        "message": "在資料庫中找到$AMOUNT$憑證",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman 正嘗試以 $USERNAME$ 的身分將您登入",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "保險庫",
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "新增自訂字段",
         "description": "Add a custom field"
     },
     "text": {
