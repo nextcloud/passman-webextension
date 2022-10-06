@@ -80,7 +80,7 @@
         "description": "Accounts"
     },
     "label": {
-        "message": "Jmenovka",
+        "message": "Štítek",
         "description": "Label"
     },
     "username": {
