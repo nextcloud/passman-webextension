@@ -48,7 +48,7 @@
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Use password",
+        "message": "Brug adgangskode",
         "description": "Use password"
     },
     "add_hint": {
@@ -108,7 +108,7 @@
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Adgangskode (gentag)",
         "description": "Password"
     },
     "detected_new_login": {
@@ -140,7 +140,7 @@
         "description": "credentials"
     },
     "refresh_timer": {
-        "message": "Refresh timer [s]",
+        "message": "Genopfrisk timer [s]",
         "description": "Password"
     },
     "ignore_protocol": {
@@ -224,7 +224,7 @@
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "URL ignoreret",
         "description": "URL ignored"
     },
     "update": {
@@ -336,7 +336,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "Forrige",
         "description": "Previous"
     },
     "back": {
@@ -372,11 +372,11 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Deaktivér side",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Deaktivér side",
         "description": "Disable site"
     },
     "disable_picker_text": {
@@ -400,11 +400,11 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Ignorér side",
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Adgangskoderne stemmer ikke overens",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
@@ -428,7 +428,7 @@
         "description": "Search"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Konto tilføjet.",
         "description": "Search"
     },
     "select_vault": {
@@ -468,7 +468,7 @@
         "description": "Search"
     },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Ja, jeg er sikker!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Ugyldige server indstillinger",
         "description": "Search"
     },
     "refresh_credential_list": {
@@ -532,7 +532,7 @@
         "description": "Add a custom field"
     },
     "text": {
-        "message": "text",
+        "message": "tekst",
         "description": "To describe a textual input field"
     },
     "extName": {
