@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Dieser Einrichtungsassistent leitet dich durch die notwendigen Schritte um die Browserextension aufzusetzen und alle Passwörter zu synchronisieren!",
+        "message": "Dieser Einrichtungsassistent leitet dich durch die notwendigen Schritte, um die Browserextension aufzusetzen und alle Passwörter zu synchronisieren!",
         "description": "Cancel"
     },
     "cancel": {
@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Dieses Passwort wird verwendet um alle deine Einstellungen und Daten in der Browserextension zu verschlüsseln. Du kannst auswählen, dieses Passwort lokal zu speichern, aber es wird UNVERSCHLÜSSELT gespeichert.",
+        "message": "Dieses Passwort wird verwendet, um alle deine Einstellungen und Daten in der Browserextension zu verschlüsseln. Du kannst auswählen, dieses Passwort lokal zu speichern, aber es wird UNVERSCHLÜSSELT gespeichert.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -492,7 +492,7 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Die Passman-Browserextension ist gesperrt, entsperren um sie zu verwenden",
+        "message": "Die Passman-Browserextension ist gesperrt, entsperren, um sie zu verwenden",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
