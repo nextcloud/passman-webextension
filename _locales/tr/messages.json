@@ -516,7 +516,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "Veritabanında $AMOUNT$ kimlik doğrulama bilgisi var",
+        "message": "Veri tabanında $AMOUNT$ kimlik doğrulama bilgisi var",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
