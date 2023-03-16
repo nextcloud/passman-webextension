@@ -152,7 +152,7 @@
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Site eşleştirmesinde kapı numarası yok sayılsın",
+        "message": "Site eşleştirmesinde bağlantı noktası yok sayılsın",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
