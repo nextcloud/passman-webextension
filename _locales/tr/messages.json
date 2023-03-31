@@ -380,7 +380,7 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Geçerli sayfa ya da tüm web sitesi için Passman devre dışı bırakılsın mı?",
+        "message": "Geçerli sayfa ya da tüm site için Passman devre dışı bırakılsın mı?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
