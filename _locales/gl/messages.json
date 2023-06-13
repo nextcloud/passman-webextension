@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Despois de crealas, vostede pode editar as credenciais en Passman",
+        "message": "Após crealas, vostede pode editar as credenciais en Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sentímolo, non se atoparon bóvedas. Cree unha bóveda a través da aplicación do Nextcloud / ownCloud e ténteo de novo.",
+        "message": "Desculpe, non se atoparon bóvedas. Cree unha bóveda a través da aplicación do Nextcloud / ownCloud e ténteo de novo.",
         "description": "Search"
     },
     "msg_reset_extension": {
