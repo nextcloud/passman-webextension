@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "تطبيق باس مان \"Passman\"- مدير كلمات المرور لخادم نكست كلود/ أون كلود \"Nextcloud / ownCloud \"",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "البحث عن",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "لم يتم العثور على بيانات اعتماد لهذا الموقع.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "لم يتم العثور على بيانات اعتماد",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "الملاحظات",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "استجابة غير صالحة من الخادم: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "الرجاء إدخال بيانات اعتماد المرور لخادم نكست كلود/ أون كلود \"Nextcloud / ownCloud\" الخاصة بك",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "حفظ الموقع",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "مُنشئ كلمة السر",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "توليد كلمة سرية",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "تبديل إلي الرؤية",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "تبديل إلي الخيارات المتقدمة",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "استخدم كلمة المرور",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "بعد إنشائه، يمكنك تحرير بيانات الاعتماد في تطبيق إدارة كلمات المرور باس مان \"Passman\"",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "طول كلمة السر",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "الحد الأدنى لعدد الأرقام ",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "تجنب الرموز التي تسبب لبس",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "تتطلب نوع كل رمز",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "أضف حسابا",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "الحسابات",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "تسمية",
+        "description": "Label"
+    },
+    "username": {
+        "message": "اسم المستخدم",
+        "description": "Username"
+    },
+    "email": {
+        "message": "البريد الإلكتروني",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "إضافة",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "تم إنشاء بيانات الاعتماد",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "الرابط",
+        "description": "URL"
+    },
+    "password": {
+        "message": "الكلمة السرية",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "كلمة المرور (كرر)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "تم اكتشاف تسجيل دخول جديد",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "اكتشاف تغيير كلمة مرور المستخدم",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "تطبيق إدارة كلمات المرور باس مان \"Passman\"- تم العثور على $CREDENTIAL_AMOUNT$ $PLURAL$لهذه الصفحة",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "تطبيق إدارة كلمات المرور باس مان \"Passman\"- مغلق",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "تم اكتشاف تغيير عنوان محدد موقع الموارد المُوحّد \"URL\" لـ",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "بيانات الاعتماد",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "بيانات الاعتماد",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "مؤقت [مؤقتات] الإنعاش",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "تجاهل بروتوكول مطابقة الموقع",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "تجاهل النطاق الفرعي لمطابقة الموقع",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "تجاهل منفذ لمطابقة الموقع",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "أنت تستخدم بروتوكول نقل النص التشعبي\"HTTP\"! سيتم إرسال بيانات اعتماد تسجيل الدخول كنص عادي. لا تزال بيانات اعتماد تطبيق إدارة كلمات المرور باس مان \"Passman\" الخاص بك مشفرة.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "تجاهل مسار مطابقة الموقع",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "تفعيل الملء التلقائي للنموذج",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "تفعيل الإرسال التلقائي للنموذج بعد اختيار الحساب",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "اطلب تحديث عنوان محدد موقع الموارد المُوحّد \"URL\" لبيانات الاعتماد إذا لم يتطابق مع عنوان عنوان محدد موقع الموارد المُوحّد الحالي",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "تعطيل الملء التلقائي للمتصفح",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "أدخل النطاق أو نطاقات المستوي الأعلي \"TLD\" للتجاهل واضغط على  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "تفعيل منتقي كلمة المرور",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "عند العثور على كلمة مرور، انتقل إلى القائمة بدلاً من آخر علامة تبويب نشطة",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "إخفاء الخيارات المتقدمة",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "عرض الخيارات المتقدمة",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "تفعيل وضع التصحيح",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "حفظ",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "جاري الحفظ ...",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "تم حفظ بيانات الاعتماد",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "تم تحديث بيانات الاعتماد",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "تم تجاهل الموقع",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "تم تجاهل عنوان محدد موقع الموارد المُوحّد \"URL\"",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "تحديث",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "تجاهل الموقع",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "حفظ بيانات الاعتماد لهذا الموقع",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "البحث عن بيانات الاعتماد ",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "مرحبًا بك في ملحق ويب باس مان \"Passman webextension\"",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "عنوان محدد موقع الموارد المُوحّد \"URL\" للخادوم",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "لنبدأ!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "سوف يقوم هذا المعالج بإرشادك خلال خطوات إعداد الملحق والحفاظ على مزامنة جميع كلمات المرور الخاصة بك.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "إلغاء",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "خزينة افتراضية",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "حدد الخزينة التي تريد بقائها متزامنة مع متصفح الويب.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "أدخل كلمة المرور الرئيسية",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "سيتم استخدام كلمة المرور هذه لتشفير جميع إعداداتك في الملحق. يمكنك اختيار حفظ كلمة المرور هذه محليًا، ولكن سيتم حفظها كنص عادي \"PLAINTEXT\".",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "تذكر كلمة السر الرئيسية",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "تحذير! سيتم تخزين كلمة مرورك الرئيسية كنص عادي.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "تم",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "الحقول المخصصة",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "العامة",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "القيمة",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "قائمة",
+        "description": "List"
+    },
+    "edit": {
+        "message": "تعديل",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "إعدادات الخادم",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "إعدادات الخزينة ",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "تعيين كلمة مرور رئيسية",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "تم",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "إذا أردت، لا تنس التبرع",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "إغلاق",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "السابق",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "العودة",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "أنسخ",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "التالي",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "المتابعة",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "تبرع",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "إعدادات خادم نكست كلود/ أون كلود \"Nextcloud / ownCloud \"",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "حدد الخزينة الافتراضية",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "المواقع التي تم تجاهلها/ عناوين محدد موقع الموارد المُوحّد ",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "تعطيل الصفحة",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "تعطيل الموقع",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "هل ترغب في تعطيل تطبيق إدارة كلمات المرور باس مان \"Passman\" للصفحة الحالية، أم موقع الويب بأكمله؟",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "لم يتم تجاهل أي مواقع",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "كلمة مرور الخزينة",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "يرجى تعبئة التسمية",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "عنوان URL للخادم غير صالح",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "تجاهل الموقع / الصفحة",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "كلمات المرور غير متطابقة",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "مفتاح خزينة غير صالح!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "مفتاح رئيسي فارغ!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "كلمة المرور لمرة واحدة \"OTP\"",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "الإعدادات",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "بعد اكتمال عملية التنصيب، يمكنك إضافة المزيد من الحسابات.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "تمت إضافة الحساب.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "حدد الخزينة",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "حذف ",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "البحث",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "تم حذف بيانات الاعتماد",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "عند تعذر منتقي كلمة المرور في العثور على أي بيانات اعتماد، فسوف ينتقل إلى:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "عذرا، لم يتم العثور على خزائن. يرجى إنشاء خزينة عبر تطبيق Nextcloud/ownCloud والمحاولة مرة أخرى.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "يمكنك إعادة تعيين كلمة المرور الخاصة بك. سيؤدي هذا إلى إعادة تعيين الملحق إلى حالته الافتراضية.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "هل نسيت الكلمة السرية؟",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "إعادة تعيين الملحق ",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "نعم أنا متأكد!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "ليس لديك إذن بتعديل بيانات الاعتماد هذه.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "إعدادات الخادم غير صالحة",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "تحديث بيانات الاعتماد",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "التطوير قائم على التبرعات، يرجى دعمنا",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "تمديد الحظر",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "ملحق باس مان مغلق، فتحه للاستخدام",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "كلمة مرور رئيسية غير صحيحة!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "الغاء القفل",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "لقد وجدنا $AMOUNT$بيانات اعتماد لهذا الموقع",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "حفظ في $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "حفظ في $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "بيانات اعتماد $AMOUNT$ في قاعدة البيانات",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "يقوم تطبيق إدارة كلمات المرور باس مان \"Passman\" بتسجيل دخولك كـ $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "خزينة",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "إضافة حقل مخصص",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "نص",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "تطبيق إدارة كلمات المرور باس مان \"Passman\"",
+        "description": "Extension name"
+    }
+}
