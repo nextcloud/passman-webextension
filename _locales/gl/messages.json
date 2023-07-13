@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Após crealas, vostede pode editar as credenciais en Passman",
+        "message": "Após crealas, Vde. pode editar as credenciais en Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Após completar o proceso de configuración, vostede pode engadir máis contas.",
+        "message": "Após completar o proceso de configuración, Vde. pode engadir máis contas.",
         "description": "Search"
     },
     "account_added": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Vostede non ten permiso para editar esta credencial.",
+        "message": "Vde. non ten permiso para editar esta credencial.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
