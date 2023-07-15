@@ -496,7 +496,7 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Mot de passe maître incorrect",
+        "message": "Mot de passe maître incorrect !",
         "description": "When the master password is invalid"
     },
     "unlock": {
