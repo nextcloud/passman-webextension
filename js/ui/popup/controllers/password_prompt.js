@@ -43,6 +43,7 @@
             $rootScope.$broadcast('hideHeader');
             $scope.master_password_remember = false;
             $scope.master_password = '';
+
             $scope.apply_settings = function () {
                 $scope.saving = true;
                 $scope.inValidPassword = false;

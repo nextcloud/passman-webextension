@@ -2,6 +2,15 @@ $(document).ready(function () {
     var _this = this;
     var storage = new API.Storage();
     var runtimeSettings = {};
+    var IsMasterPasswordSet = true;
+
+    API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'}).then(function (MasterPasswordSet) {
+        if (!MasterPasswordSet) {
+            IsMasterPasswordSet = false;
+            $('.tabs > .tab').not('.close').hide();
+            makeTabActive('unlock');
+        }
+    });
 
     API.runtime.sendMessage(API.runtime.id, {'method': 'getRuntimeSettings'}).then(function (settings) {
         var accounts = settings.accounts;
@@ -281,10 +290,15 @@ $(document).ready(function () {
             disablePassman('url', tab.url);
         });
 
+        if (IsMasterPasswordSet === false) {
+            makeTabActive('unlock');
+        }
+
         API.runtime.sendMessage(API.runtime.id, {
             method: "getCredentialsByUrl",
             args: [tab.url]
         }).then(function (logins) {
+        if (IsMasterPasswordSet === true) {
             if (logins.length === 0) {
                 API.runtime.sendMessage(API.runtime.id, {
                     'method': 'getSetting',
@@ -318,6 +332,7 @@ $(document).ready(function () {
 
                 picker.find('.tab-list-content').append(div);
             }
+        }
         });
     }
 
