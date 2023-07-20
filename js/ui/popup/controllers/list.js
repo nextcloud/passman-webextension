@@ -44,6 +44,7 @@
                 API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
                     //First check attributes
                     if (!isPasswordSet) {
+                        window.location = '#!/locked';
                         return;
                     }
 

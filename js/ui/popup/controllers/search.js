@@ -34,6 +34,12 @@
      */
     angular.module('passmanExtension')
         .controller('SearchCtrl', ['$scope', function ($scope) {
+            API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'}).then(function (MasterPasswordSet) {
+                if (!MasterPasswordSet) {
+                    window.location = '#!/locked';
+                }
+                $scope.$apply();
+            });
             $scope.found_credentials = false;
             $scope.searchText = '';
             $scope.search = function () {

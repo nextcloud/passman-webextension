@@ -57,8 +57,8 @@
             var initApp = function () {
                 port.onMessage.addListener(messageParser);
                 API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
-                    //First check attributes
                     if (!isPasswordSet) {
+                        window.location = '#!/locked';
                         return;
                     }
                     $scope.refreshing_credentials = true;
