@@ -68,7 +68,7 @@
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Obrigar ao uso de todos os tipos de caracteres",
+        "message": "Precisar o uso de todos os tipos de caracteres",
         "description": "Require every character type"
     },
     "add_account": {
