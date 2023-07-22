@@ -28,7 +28,7 @@ window.PAPI = (function () {
         },
         decryptString: function (ciphertext, _key) {
             if(!ciphertext || !_key){
-                return '';
+                return false;
             }
             ciphertext = window.atob(ciphertext);
             var rp = {};
@@ -36,7 +36,9 @@ window.PAPI = (function () {
                 /** global: sjcl */
                 return sjcl.decrypt(_key, ciphertext, encryption_config, rp);
             } catch (e) {
-                throw e;
+                //throw e;
+                console.warn(e);
+                return false;
             }
         },
         decryptCredential: function (credential, key) {

@@ -57,10 +57,11 @@ var background = (function () {
     var testMasterPasswordAgainst;
 
     function isMasterPasswordValid(password) {
-        try {
-            PAPI.decryptString(testMasterPasswordAgainst, password);
+        var decryptedString = PAPI.decryptString(testMasterPasswordAgainst, password);
+
+        if (decryptedString && decryptedString !== false) {
             return true;
-        } catch (e) {
+        } else {
             return false;
         }
     }

@@ -80,11 +80,11 @@
                     });
                 },
                 vault: function (callback) {
-                    try {
-                        PAPI.decryptString($scope.settings.default_vault.challenge_password, $scope.settings.vault_password);
+                    var decryptedString = PAPI.decryptString($scope.settings.default_vault.challenge_password, $scope.settings.vault_password);
+
+                    if (decryptedString && decryptedString !== false) {
                         callback(true);
-                    }
-                    catch (e) {
+                    } else {
                         $scope.errors.push();
                         notify(API.i18n.getMessage('invalid_vault_password'));
                         callback(false);
