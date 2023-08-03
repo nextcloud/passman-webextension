@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "تطبيق باس مان \"Passman\"- مدير كلمات المرور لخادم نكست كلود/ أون كلود \"Nextcloud / ownCloud \"",
+        "message": "تطبيق Passman - مدير كلمات المرور لخادم نكست كلود/ أون كلود ",
         "description": "Extension description"
     },
     "search_for": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "الرجاء إدخال بيانات اعتماد المرور لخادم نكست كلود/ أون كلود \"Nextcloud / ownCloud\" الخاصة بك",
+        "message": "الرجاء إدخال بيانات اعتماد المرور لخادم نكست كلود/ أون كلود الخاصة بك",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "بعد إنشائه، يمكنك تحرير بيانات الاعتماد في تطبيق إدارة كلمات المرور باس مان \"Passman\"",
+        "message": "بعد إنشائه، يمكنك تحرير بيانات الاعتماد في تطبيق إدارة كلمات المرور Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -124,11 +124,11 @@
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "تطبيق إدارة كلمات المرور باس مان \"Passman\"- مغلق",
+        "message": "تطبيق إدارة كلمات المرور Passman - مغلق",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "تم اكتشاف تغيير عنوان محدد موقع الموارد المُوحّد \"URL\" لـ",
+        "message": "تم اكتشاف تغيير عنوان URL لـ",
         "description": "Detected changed URL for"
     },
     "credential": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "أنت تستخدم بروتوكول نقل النص التشعبي\"HTTP\"! سيتم إرسال بيانات اعتماد تسجيل الدخول كنص عادي. لا تزال بيانات اعتماد تطبيق إدارة كلمات المرور باس مان \"Passman\" الخاص بك مشفرة.",
+        "message": "أنت تستخدم بروتوكول HTTP! سيتم إرسال بيانات اعتماد تسجيل الدخول كنص عادي. لا تزال بيانات اعتماد تطبيق إدارة كلمات المرور Passman الخاص بك مشفرة.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "اطلب تحديث عنوان محدد موقع الموارد المُوحّد \"URL\" لبيانات الاعتماد إذا لم يتطابق مع عنوان عنوان محدد موقع الموارد المُوحّد الحالي",
+        "message": "اطلب تحديث عنوان URL لبيانات الاعتماد إذا لم يتطابق مع عنوان URL الحالي",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -224,7 +224,7 @@
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "تم تجاهل عنوان محدد موقع الموارد المُوحّد \"URL\"",
+        "message": "تم تجاهل عنوان URL",
         "description": "URL ignored"
     },
     "update": {
@@ -244,11 +244,11 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "مرحبًا بك في ملحق ويب باس مان \"Passman webextension\"",
+        "message": "مرحبًا بك في ملحق ويب Passman webextension",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "عنوان محدد موقع الموارد المُوحّد \"URL\" للخادوم",
+        "message": "عنوان URL للخادوم",
         "description": "Server URL"
     },
     "begin": {
@@ -368,7 +368,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "المواقع التي تم تجاهلها/ عناوين محدد موقع الموارد المُوحّد ",
+        "message": "المواقع التي تم تجاهلها/ عناوين URLs",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -380,7 +380,7 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "هل ترغب في تعطيل تطبيق إدارة كلمات المرور باس مان \"Passman\" للصفحة الحالية، أم موقع الويب بأكمله؟",
+        "message": "هل ترغب في تعطيل تطبيق إدارة كلمات المرور  Passman للصفحة الحالية، أم موقع الويب بأكمله؟",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
@@ -492,7 +492,7 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "ملحق باس مان مغلق، فتحه للاستخدام",
+        "message": "ملحق برنامج إدارة كلمات المرور Passman مغلق، فتحه للاستخدام",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "يقوم تطبيق إدارة كلمات المرور باس مان \"Passman\" بتسجيل دخولك كـ $USERNAME$",
+        "message": "يقوم تطبيق إدارة كلمات المرور Passman بتسجيل دخولك كـ $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
@@ -536,7 +536,7 @@
         "description": "To describe a textual input field"
     },
     "extName": {
-        "message": "تطبيق إدارة كلمات المرور باس مان \"Passman\"",
+        "message": "تطبيق إدارة كلمات المرور Passman",
         "description": "Extension name"
     }
 }
