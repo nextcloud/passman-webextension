@@ -202,11 +202,6 @@
 
 
             };
-            $scope.closeWindow = function () {
-                setTimeout(function () {
-                    window.close();
-                }, 500);
-            };
         }]);
 }());
 
