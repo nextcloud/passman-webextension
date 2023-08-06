@@ -77,7 +77,7 @@
                     </span>
                 </li>
                 <li>
-                    <a ng-click="goto('list')" title="{{'list' | translate}}"><i class="mdi mdi-format-list-bulleted"></i> {{'list' | translate}}</a>
+                    <a ng-click="goto('list')"><i class="mdi mdi-format-list-bulleted"></i> {{'list' | translate}}</a>
                 </li>
                 <li>
                     <a ng-click="goto('search')" title="{{'search' | translate}}"><i class="mdi mdi-magnify"></i> {{'search' | translate}}</a>
@@ -99,13 +99,13 @@
             <div class="menu-icon" ng-click="toggleMenu()">
                 <i class="mdi mdi-menu"></i>
             </div>
-            <div class="menu-icon pull-right" ng-click="lockExtension()" title="{{'lock_extension' | translate}}">
+            <div class="menu-icon pull-right" ng-click="lockExtension()">
                 <i class="mdi mdi-lock"></i>
             </div>
-            <div class="menu-icon pull-right" ng-click="refresh()" title="{{'refresh_credential_list' | translate}}">
+            <div class="menu-icon pull-right" ng-click="refresh()">
                 <i class="mdi mdi-refresh" ng-class="{'fa fa-spin': refreshing_credentials}"></i>
             </div>
-            <div class="menu-icon pull-right" ng-click="goto('search')" title="{{'search' | translate}}">
+            <div class="menu-icon pull-right" ng-click="goto('search')">
                 <i class="mdi mdi-magnify"></i>
             </div>
         </header>
