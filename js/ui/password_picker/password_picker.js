@@ -292,52 +292,49 @@ $(document).ready(function () {
 
         if (IsMasterPasswordSet === false) {
             makeTabActive('unlock');
-        }
-
-        API.runtime.sendMessage(API.runtime.id, {
-            method: "getCredentialsByUrl",
-            args: [tab.url]
-        }).then(function (logins) {
-        if (IsMasterPasswordSet === true) {
-            if (logins.length === 0) {
-                API.runtime.sendMessage(API.runtime.id, {
-                    'method': 'getSetting',
-                    args: 'no_results_found_tab'
-                }).then(function (value) {
-                    makeTabActive(value);
-                });
-                return;
-            }
-            if (logins.length !== 0) {
-                picker.find('.tab-list-content').html('');
-                if(runtimeSettings.passwordPickerGotoList){
-                    makeTabActive('list');
+        } else {
+            API.runtime.sendMessage(API.runtime.id, {
+                method: "getCredentialsByUrl",
+                args: [tab.url]
+            }).then(function (logins) {
+                if (logins.length === 0) {
+                    API.runtime.sendMessage(API.runtime.id, {
+                        'method': 'getSetting',
+                        args: 'no_results_found_tab'
+                    }).then(function (value) {
+                        makeTabActive(value);
+                    });
+                    return;
                 }
-            }
-            for (var i = 0; i < logins.length; i++) {
-                var login = logins[i];
-                var div = $('<div>', {class: 'account', text: login.label});
-                $('<br>').appendTo(div);
-                var username = (login.username !== '' ) ? login.username : login.email;
-                $('<small>').text(username).appendTo(div);
-                /* jshint ignore:start */
-                div.click((function (login) {
-                    return function () {
-                        //enterLoginDetails(login);
-                        //API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'})
-                        fillLogin(login)
-                    };
-                })(login));
-                /* jshint ignore:end*/
+                if (logins.length !== 0) {
+                    picker.find('.tab-list-content').html('');
+                    if(runtimeSettings.passwordPickerGotoList){
+                        makeTabActive('list');
+                    }
+                }
+                for (var i = 0; i < logins.length; i++) {
+                    var login = logins[i];
+                    var div = $('<div>', {class: 'account', text: login.label});
+                    $('<br>').appendTo(div);
+                    var username = (login.username !== '' ) ? login.username : login.email;
+                    $('<small>').text(username).appendTo(div);
+                    /* jshint ignore:start */
+                    div.click((function (login) {
+                        return function () {
+                            //enterLoginDetails(login);
+                            //API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'})
+                            fillLogin(login)
+                        };
+                    })(login));
+                    /* jshint ignore:end*/
 
-                picker.find('.tab-list-content').append(div);
-            }
+                    picker.find('.tab-list-content').append(div);
+                }
+            });
         }
-        });
     }
 
     _this.returnActiveTab = returnActiveTab;
-
 
     $('.no-credentials .save').on('click', function () {
         $('.tab.add').click();
