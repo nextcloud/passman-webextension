@@ -40,11 +40,11 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Alterar visibilidade",
+        "message": "Alternar visibilidade",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Alterar para opções avançadas",
+        "message": "Alternar opções avançadas",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {

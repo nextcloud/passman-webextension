@@ -184,7 +184,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
+        "message": "Активиране на инструмент за избор на парола",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Можете да възстановите паролата си. Това ще върне разширението към състоянието му по подразбиране.",
         "description": "Search"
     },
     "forgot_password": {

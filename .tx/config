@@ -1,9 +1,10 @@
 [main]
-host = https://www.transifex.com
-lang_map = bg_BG: bg, cs_CZ: cs, fi_FI: fi, hu_HU: hu, nb_NO: nb, sk_SK: sk, th_TH: th, ja_JP: ja
+host     = https://www.transifex.com
+lang_map = sk_SK: sk, th_TH: th, ja_JP: ja, bg_BG: bg, cs_CZ: cs, fi_FI: fi, hu_HU: hu, nb_NO: nb
 
-[nextcloud.passman-webextension]
+[o:nextcloud:p:nextcloud:r:passman-webextension]
 file_filter = _locales/<lang>/messages.json
 source_file = _locales/en/messages.json
 source_lang = en
-type = CHROME
+type        = CHROME
+

@@ -20,7 +20,7 @@
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "Respuesta inválida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Respuesta no válida del servidor: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Configuración del servidor inválida",
+        "message": "Configuración del servidor no válida",
         "description": "Search"
     },
     "refresh_credential_list": {
@@ -496,7 +496,7 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "¡Contraseña maestra inválida!",
+        "message": "¡Contraseña maestra no válida!",
         "description": "When the master password is invalid"
     },
     "unlock": {

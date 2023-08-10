@@ -52,7 +52,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Despois de crealas, vostede pode editar as credenciais en Passman",
+        "message": "Após crealas, Vde. pode editar as credenciais en Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -68,7 +68,7 @@
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Requirir todos os tipos de caracteres",
+        "message": "Precisar o uso de todos os tipos de caracteres",
         "description": "Require every character type"
     },
     "add_account": {
@@ -316,7 +316,7 @@
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Configuración da bóveda",
+        "message": "Axustes da bóveda",
         "description": "Vault settings"
     },
     "master_password": {
@@ -408,11 +408,11 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "A clave da bóveda é incorrecta",
+        "message": "A chave da bóveda é incorrecta",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "A clave principal está baleira",
+        "message": "A chave principal está baleira!",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Após completar o proceso de configuración, vostede pode engadir máis contas.",
+        "message": "Após completar o proceso de configuración, Vde. pode engadir máis contas.",
         "description": "Search"
     },
     "account_added": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sentímolo, non se atoparon bóvedas. Cree unha bóveda a través da aplicación do Nextcloud / ownCloud e ténteo de novo.",
+        "message": "Desculpe, non se atoparon bóvedas. Cree unha bóveda a través da aplicación de Nextcloud / ownCloud e ténteo de novo.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Vostede non ten permiso para editar esta credencial.",
+        "message": "Vde. non ten permiso para editar esta credencial.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {

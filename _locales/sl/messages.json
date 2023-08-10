@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Čarovnik omogoča vodenje prek nastavitev razširitve in usklajevanja gesel.",
+        "message": "Čarovnik omogoča vodenje po nastavitvah razširitve in usklajevanja gesel.",
         "description": "Cancel"
     },
     "cancel": {
@@ -336,7 +336,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "Predhodno",
         "description": "Previous"
     },
     "back": {
@@ -448,7 +448,7 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "Ko izbirnik gesel ne najde poveril, gre na:",
+        "message": "Ko izbirnik gesel ne najde poveril, skoči na:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Za to stran so nadjena poverila: $AMOUNT$",
+        "message": "Za to stran so najdena poverila: $AMOUNT$",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {

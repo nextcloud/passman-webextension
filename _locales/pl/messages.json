@@ -64,7 +64,7 @@
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Unikaj wieloznacznych znaków",
+        "message": "Pomijaj znaki wieloznaczne",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Ten kreator przeprowadzi Cię przez proces ustawiania rozszerzenia i pozwoli na synchronizację Twoich haseł.",
+        "message": "Ten kreator przeprowadzi Ciebie przez proces ustawienia rozszerzenia i na synchronizację Twoich haseł.",
         "description": "Cancel"
     },
     "cancel": {
@@ -340,7 +340,7 @@
         "description": "Previous"
     },
     "back": {
-        "message": "Wróć",
+        "message": "Wstecz",
         "description": "Back"
     },
     "copy": {
@@ -404,7 +404,7 @@
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Hasła do siebie nie pasują",
+        "message": "Hasła nie pasują do siebie",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
@@ -448,7 +448,7 @@
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
-        "message": "Zbieranie haseł: Jeśli nie znaleziono żadnych poświadczeń przejdź do: ",
+        "message": "Gdy selektor haseł nie może znaleźć żadnych poświadczeń, przejdzie do:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
@@ -520,7 +520,7 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman loguje Cię jako $USERNAME$",
+        "message": "Passman loguje Ciebie jako $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {

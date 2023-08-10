@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Je hebt niet de autorisatie om deze inloggegevens te wijzigen.",
+        "message": "Je hebt geen toestemming om deze inloggegevens te wijzigen.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
