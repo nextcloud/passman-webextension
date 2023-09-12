@@ -1,4 +1,8 @@
 {
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    },
     "extDescription": {
         "message": "Passman - NextCloud / ownCloud 암호 관리자",
         "description": "Extension description"
@@ -21,7 +25,17 @@
     },
     "invalid_response_from_server": {
         "message": "서버에서 잘못된 응답을 반환함: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "please_enter_nextcloud_credentials": {
         "message": "Nextcloud / ownCloud 인증 정보를 입력하십시오",
@@ -121,7 +135,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman - 이 페이지에서 $CREDENTIAL_AMOUNT$ $PLURAL$개 찾음",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "browser_action_title_locked": {
         "message": "Passman - 잠김",
@@ -505,23 +529,53 @@
     },
     "credentials_found_for_site": {
         "message": "이 사이트의 인증 정보 $AMOUNT$개를 찾았습니다",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "save_to": {
         "message": "$VAULT_NAME$에 저장",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "saving_to": {
         "message": "$VAULT_NAME$에 저장",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "credentials_in_db": {
         "message": "데이터베이스에 인증 정보 $AMOUNT$개 있음",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "auto_login": {
         "message": "Passman에서 $USERNAME$(으)로 로그인함",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "vault": {
         "message": "비밀 저장소",
@@ -534,9 +588,5 @@
     "text": {
         "message": "텍스트",
         "description": "To describe a textual input field"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
     }
 }
