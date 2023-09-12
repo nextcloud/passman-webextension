@@ -56,8 +56,10 @@ var background = (function () {
 
     var testMasterPasswordAgainst;
 
-    function isMasterPasswordValid(password) {
+    async function isMasterPasswordValid(password) {
         try {
+            const _settings = await storage.get('settings');
+            testMasterPasswordAgainst = _settings.accounts;
             PAPI.decryptString(testMasterPasswordAgainst, password);
             return true;
         } catch (e) {
@@ -80,9 +82,11 @@ var background = (function () {
             if ((!_settings || Object.keys(_settings).length === 0 || !_settings.hasOwnProperty('accounts')) && !master_password) {
                 return;
             }
+
+            testMasterPasswordAgainst = _settings.accounts;
+
             if (!master_password && _settings.hasOwnProperty('accounts') && _settings.accounts.length > 0) {
                 _self.settings.isInstalled = 1;
-                testMasterPasswordAgainst = _settings.accounts;
                 return;
             }
 
