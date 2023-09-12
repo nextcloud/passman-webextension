@@ -21,8 +21,8 @@
         <div href="{{credential.url}}" target="_blank" class="title" ng-if="!credential.url">
             {{credential.label}}
         </div>
-        <div class="info">
-            {{credential.username}} <copy-text text="credential.username"></copy-text>
+        <div class="extra" ng-if="credential.username">
+            {{'username' | translate}}: {{credential.username}} <copy-text text="credential.username"></copy-text>
         </div>
         <div class="extra" ng-if="credential.password">
             {{'password' | translate}}: ******** <copy-text text="credential.password"></copy-text>
