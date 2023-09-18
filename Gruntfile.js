@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
     var jsResources = [];
+    const sass = require('node-sass');
+    require('load-grunt-tasks')(grunt);
 
     // Project configuration.
     grunt.initConfig({
@@ -13,12 +15,9 @@ module.exports = function (grunt) {
                 eqeqeq: true,
                 eqnull: true,
                 browser: true,
+                jshintrc: true,
                 globals: {
-                    "angular": true,
-                    "PassmanImporter": true,
-                    "PassmanExporter": true,
                     "OC": true,
-                    "window": true,
                     "console": true,
                     "CRYPTO": true,
                     "C_Promise": true,
@@ -34,6 +33,7 @@ module.exports = function (grunt) {
         },
         sass: {
             options: {
+                implementation: sass,
                 sourceMap: true
             },
             dist: {
@@ -86,10 +86,10 @@ module.exports = function (grunt) {
                     '!.scrutinizer.yml',
                     '!.travis.yml',
                     '!Gruntfile.js',
-                    '!karma.conf.js',
                     '!launch_phpunit.sh',
                     '!Makefile',
                     '!package.json',
+                    '!package-lock.json',
                     '!phpunit.*',
                     '!Dockerfile',
                     '!*.md',
@@ -98,12 +98,6 @@ module.exports = function (grunt) {
                     '!.tx'
                 ],
                 dest: 'dist/'
-            }
-        },
-        karma: {
-            unit: {
-                configFile: './karma.conf.js',
-                background: false
             }
         },
         compress: {
@@ -119,26 +113,18 @@ module.exports = function (grunt) {
         clean: {
             dist: ['dist']
         },
-        execute: {
+        exec: {
             fixLocale: {
-                src: ['fixLocale.js']
+                cmd: 'node fixLocale.js'
+                // stdout: false,
+                // stderr: false
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-mkdir');
-    grunt.loadNpmTasks('grunt-contrib-compress');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-execute');
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    // Default task(s).
-
-    grunt.registerTask('test', ['karma', 'jshint']);
-    grunt.registerTask('build', ['execute:fixLocale', 'sass', 'jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
+    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('build', ['exec', 'sass', 'jshint', 'clean:dist', 'mkdir:dist', 'copy:dist', 'compress:dist']);
     grunt.registerTask('dist', ['']);
 
 };

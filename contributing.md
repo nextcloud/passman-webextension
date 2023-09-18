@@ -4,7 +4,6 @@ You can read how to GPG sign you commits [here](https://help.github.com/articles
 
 
 # Tools used
-[Karma](https://karma-runner.github.io): JS test framework
 [Bourbon](https://www.bourbon.io/): Sass->css framework
 [Grunt](https://gruntjs.com/): Automation tool to compile/test/deploy
 
