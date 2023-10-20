@@ -3,3 +3,4 @@
 node_modules
 dist
 extension.zip
+package-lock.json
