@@ -308,7 +308,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Éditer",
+        "message": "Modifier",
         "description": "Edit"
     },
     "server_settings": {
