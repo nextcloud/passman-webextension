@@ -1,4 +1,8 @@
 {
+    "extName": {
+        "message": "تطبيق إدارة كلمات المرور Passman",
+        "description": "Extension name"
+    },
     "extDescription": {
         "message": "تطبيق Passman - مدير كلمات المرور لخادم نكست كلود/ أون كلود ",
         "description": "Extension description"
@@ -21,7 +25,17 @@
     },
     "invalid_response_from_server": {
         "message": "استجابة غير صالحة من الخادم: [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "please_enter_nextcloud_credentials": {
         "message": "الرجاء إدخال بيانات اعتماد المرور لخادم نكست كلود/ أون كلود الخاصة بك",
@@ -121,7 +135,17 @@
     },
     "browser_action_title_login": {
         "message": "تطبيق إدارة كلمات المرور باس مان \"Passman\"- تم العثور على $CREDENTIAL_AMOUNT$ $PLURAL$لهذه الصفحة",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "browser_action_title_locked": {
         "message": "تطبيق إدارة كلمات المرور Passman - مغلق",
@@ -505,23 +529,53 @@
     },
     "credentials_found_for_site": {
         "message": "لقد وجدنا $AMOUNT$بيانات اعتماد لهذا الموقع",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "save_to": {
         "message": "حفظ في $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "saving_to": {
         "message": "حفظ في $VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "credentials_in_db": {
         "message": "بيانات اعتماد $AMOUNT$ في قاعدة البيانات",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "auto_login": {
         "message": "يقوم تطبيق إدارة كلمات المرور Passman بتسجيل دخولك كـ $USERNAME$",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "vault": {
         "message": "خزينة",
@@ -534,9 +588,5 @@
     "text": {
         "message": "نص",
         "description": "To describe a textual input field"
-    },
-    "extName": {
-        "message": "تطبيق إدارة كلمات المرور Passman",
-        "description": "Extension name"
     }
 }

@@ -1,29 +1,23 @@
 {
   "name": "passman-web-extension",
   "version": "1.0.0",
-  "description": "Tested on:    - Chrome - Firefox - Safari",
+  "description": "Webextension for the Passman Nextcloud app",
   "main": "Gruntfile.js",
   "dependencies": {
-    "grunt": "~0.4.5",
-    "grunt-cli": "~1.2.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-compress": "^1.4.1",
+    "grunt": "^1.6.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-compress": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^0.12.0",
-    "grunt-execute": "^0.2.2",
-    "grunt-karma": "^2.0.0",
-    "grunt-mkdir": "^1.0.0",
-    "jasmine-core": "^2.6.1",
+    "grunt-contrib-jshint": "^3.2.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-mkdir": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "jasmine-core": "^5.1.1",
     "jshint-stylish": "^2.2.1",
-    "karma": "^1.7.0",
-    "karma-chrome-launcher": "^2.1.1",
-    "karma-firefox-launcher": "^1.0.1",
-    "karma-jasmine": "^1.1.0",
-    "karma-verbose-reporter": "0.0.6"
-  },
-  "devDependencies": {
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^2.1.0"
+    "load-grunt-tasks": "^5.1.0",
+    "node-sass": "^9.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

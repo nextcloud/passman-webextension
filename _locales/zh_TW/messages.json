@@ -1,4 +1,8 @@
 {
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    },
     "extDescription": {
         "message": "Passman - NextCloud/ownCloud 密碼管理器",
         "description": "Extension description"
@@ -21,7 +25,17 @@
     },
     "invalid_response_from_server": {
         "message": "來自伺服器的無效回覆： [$STATUS_CODE$] $STATUS_TEXT$",
-        "description": "No credentials found for the current site"
+        "description": "No credentials found for the current site",
+        "placeholders": {
+            "status_code": {
+                "content": "$1",
+                "example": "404"
+            },
+            "status_text": {
+                "content": "$2",
+                "example": "Page not found"
+            }
+        }
     },
     "please_enter_nextcloud_credentials": {
         "message": "請輸入您 Nextcloud/ownCloud 憑證",
@@ -121,7 +135,17 @@
     },
     "browser_action_title_login": {
         "message": "Passman - 在頁面中找到$CREDENTIAL_AMOUNT$ $PLURAL$",
-        "description": "String for the browser action"
+        "description": "String for the browser action",
+        "placeholders": {
+            "credential_amount": {
+                "content": "$1",
+                "example": "4"
+            },
+            "plural": {
+                "content": "$2",
+                "example": "credentials"
+            }
+        }
     },
     "browser_action_title_locked": {
         "message": "Passman - 已上鎖",
@@ -505,23 +529,53 @@
     },
     "credentials_found_for_site": {
         "message": "我們在此站點找到了 $AMOUNT$ 個憑據",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "save_to": {
         "message": "儲存至$VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "saving_to": {
         "message": "正儲存至$VAULT_NAME$",
-        "description": "Amount of the credentials found for the current site"
+        "description": "Amount of the credentials found for the current site",
+        "placeholders": {
+            "vault_name": {
+                "content": "$1",
+                "example": "Main vault"
+            }
+        }
     },
     "credentials_in_db": {
         "message": "在資料庫中找到$AMOUNT$憑證",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "amount": {
+                "content": "$1",
+                "example": "2"
+            }
+        }
     },
     "auto_login": {
         "message": "Passman 正嘗試以 $USERNAME$ 的身分將您登入",
-        "description": "Amount of the credentials in the database"
+        "description": "Amount of the credentials in the database",
+        "placeholders": {
+            "username": {
+                "content": "$1",
+                "example": "MyUsername"
+            }
+        }
     },
     "vault": {
         "message": "保險庫",
@@ -534,9 +588,5 @@
     "text": {
         "message": "文字",
         "description": "To describe a textual input field"
-    },
-    "extName": {
-        "message": "Passman",
-        "description": "Extension name"
     }
 }
