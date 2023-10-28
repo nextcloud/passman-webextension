@@ -218,7 +218,7 @@ window.PAPI = (function () {
         var timeoutTimer = setTimeout(function () {
             API.notifications.create('Error', 'Error connecting to server (Error: Connection timeout)');
             callback({error: true, result: {statusText: 'Connection timeout', status: 0}});
-        }, 10000);
+        }, 30000);
 
         fetch(request).then(function(response){
             clearTimeout(timeoutTimer);
