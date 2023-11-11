@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Der Passwortmanager für NextCloud / ownCloud",
+        "message": "Passman - Der Passwortmanager für NextCloud/ownCloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Bitte Nextcloud / ownCloud-Zugangsdaten eingeben",
+        "message": "Bitte Nextcloud/ownCloud-Zugangsdaten eingeben",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud / ownCloud Servereinstellungen",
+        "message": "Nextcloud/ownCloud Servereinstellungen",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
