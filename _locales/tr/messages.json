@@ -32,11 +32,11 @@
         "description": "Save site"
     },
     "password_generator": {
-        "message": "Parola üreticisi",
+        "message": "Parola oluşturucu",
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "Parola üret",
+        "message": "Parola oluştur",
         "description": "Generate password"
     },
     "toggle_visibility": {
