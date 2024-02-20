@@ -1,6 +1,10 @@
 <script lang="ts">
+    import { sendToBackground } from "@plasmohq/messaging";
+    import { onMount } from "svelte";
+
     export let count = 0;
     let action: string = null;
+    let resp;
 
     function increment() {
         count += 1;
@@ -15,6 +19,24 @@
     function openOptionsPage() {
         chrome.runtime.openOptionsPage();
     }
+
+    const updateRespFromBackground = () => {
+        sendToBackground({
+            name: "ping",
+            body: {
+                id: count
+            }
+        }).then((value: {message: string}) => {
+            console.log(value.message);
+            resp = value.message;
+        });
+    }
+
+    $: count && updateRespFromBackground();
+
+    onMount(() => {
+        updateRespFromBackground();
+    })
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center space-y-4">
@@ -27,6 +49,8 @@
             Current count: <b>{count}</b>
         </p>
         <button on:click={increment}>+</button>
+
+        {resp}
     </div>
     {#if action}<p class="text-center font-bold text-green-600">{action}</p>{/if}
     <a href="https://docs.plasmo.com" target="_blank"> View Docs </a>

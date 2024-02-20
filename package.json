@@ -11,6 +11,7 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@plasmohq/messaging": "^0.6.2",
     "plasmo": "0.84.2",
     "svelte": "^4.2.11",
     "svelte-french-toast": "^1.2.0",
