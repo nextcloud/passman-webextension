@@ -6,12 +6,16 @@
   "author": "Timo Triebensky <timo@binsky.org>",
   "packageManager": "pnpm@8.10.2",
   "scripts": {
-    "dev": "plasmo dev",
+    "dev": "plasmo dev --verbose",
+    "dev-ff": "plasmo dev --target=firefox-mv2",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "build-ff": "plasmo build --target=firefox-mv2",
+    "package": "plasmo package",
+    "package-ff": "plasmo package --target=firefox-mv2"
   },
   "dependencies": {
     "@plasmohq/messaging": "^0.6.2",
+    "@plasmohq/storage": "^1.9.3",
     "plasmo": "0.84.2",
     "svelte": "^4.2.11",
     "svelte-french-toast": "^1.2.0",

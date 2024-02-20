@@ -1,19 +1,23 @@
 <script lang="ts">
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
+    import { SecureStorage } from "@plasmohq/storage/dist/secure";
 
+    export let storage: SecureStorage;
     export let count = 0;
     let action: string = null;
     let resp;
 
-    function increment() {
+    const increment = async () => {
         count += 1;
         action = "increment";
+        await storage.set('count', count);
     }
 
-    function decrement() {
+    const decrement = () => {
         count -= 1;
         action = "decrement";
+        storage.set('count', count);
     }
 
     function openOptionsPage() {
@@ -35,7 +39,14 @@
     $: count && updateRespFromBackground();
 
     onMount(() => {
-        updateRespFromBackground();
+        console.log("indexpage isSecureContext", isSecureContext);
+        storage.get<number>('count').then((value) => {
+            console.log("got from storage", value);
+            if (value) {
+                count = value;
+            }
+            updateRespFromBackground();
+        });
     })
 </script>
 
