@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Custa crae s'at a impreare pro tzifrare totu is impostatziones tuas in s'estensione. Podes seberare de sarvare custa crae in manera locale, ma at a èssere sarvada a CRARU",
+        "message": "Custa crae s'at a impreare pro tzifrare totu sa cunfiguratzione tua in s'estensione. Podes seberare de sarvare custa crae in manera locale, ma at a èssere sarvada a CRARU",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -312,11 +312,11 @@
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Impostatziones de su serbidore",
+        "message": "Cunfiguratzione de su serbidore",
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Impostatziones de sa cassaforte",
+        "message": "Cunfiguratzione de sa cassaforte",
         "description": "Vault settings"
     },
     "master_password": {
@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Impostatziones de su serbidore Nextcloud / ownCloud",
+        "message": "Cunfiguratzione de su serbidore Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -420,7 +420,7 @@
         "description": "One time password"
     },
     "settings": {
-        "message": "Impostatziones",
+        "message": "Cunfiguratzione",
         "description": "Settings"
     },
     "extra_accounts": {
@@ -476,7 +476,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Impostatziones de chirca no bàlidas",
+        "message": "Cunfiguratzione de chirca no bàlida",
         "description": "Search"
     },
     "refresh_credential_list": {
