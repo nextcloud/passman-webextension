@@ -84,7 +84,7 @@
         "description": "Label"
     },
     "username": {
-        "message": "Nom d'utilisateur",
+        "message": "Nom d’utilisateur",
         "description": "Username"
     },
     "email": {
