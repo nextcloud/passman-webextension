@@ -31,6 +31,9 @@ dependencies:
     version: 5.1.3(@babel/core@7.24.0)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.3.3)
 
 devDependencies:
+  '@binsky/passman-client-ts':
+    specifier: 0.1.0-7
+    version: 0.1.0-7
   '@ianvs/prettier-plugin-sort-imports':
     specifier: 4.1.1
     version: 4.1.1(prettier@3.2.4)
@@ -55,6 +58,9 @@ devDependencies:
   prettier-plugin-tailwindcss:
     specifier: ^0.5.12
     version: 0.5.12(@ianvs/prettier-plugin-sort-imports@4.1.1)(prettier-plugin-svelte@3.2.2)(prettier@3.2.4)
+  svelte-awesome:
+    specifier: ^3.3.1
+    version: 3.3.1(svelte@4.2.12)
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -252,6 +258,10 @@ packages:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+
+  /@binsky/passman-client-ts@0.1.0-7:
+    resolution: {integrity: sha512-q8tE4+ag3b9ETvoNixfts5MA1rBFdbI097RbON7nuZnwWQHUESyc52mVE9TydKF0vI0XgO/T7Ff+JePLReySFQ==}
+    dev: true
 
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==}
@@ -5578,6 +5588,14 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /svelte-awesome@3.3.1(svelte@4.2.12):
+    resolution: {integrity: sha512-nC2KXPs/MQF79vnQEj7RZFkWKdocNfN64Zh/kAWTDS4gFNdCrp7q8dwN3PIxe/mqiaDIUc7x4iv2CtOnVPItcQ==}
+    peerDependencies:
+      svelte: ^3.43.1 || ^4.0.0
+    dependencies:
+      svelte: 4.2.12
     dev: true
 
   /svelte-french-toast@1.2.0(svelte@4.2.12):

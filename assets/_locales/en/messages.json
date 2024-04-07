@@ -588,5 +588,9 @@
   "text": {
     "message": "text",
     "description": "To describe a textual input field"
+  },
+  "copy_to_clipboard": {
+    "message": "Copy to clipboard",
+    "description": "Copy to clipboard"
   }
 }
