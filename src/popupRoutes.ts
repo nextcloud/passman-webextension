@@ -8,7 +8,7 @@ import Setup from "~spa_components/Setup.svelte";
 const routes = {
     '/': Loading,
 
-    '/setup': Setup,
+    '/setup/:isInPopup': Setup,
     '/unlock': Unlock,
 
     '/home': IndexPage,
