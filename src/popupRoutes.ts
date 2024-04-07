@@ -4,11 +4,14 @@ import Loading from "~spa_components/Loading.svelte";
 import IndexPage from "~spa_components/IndexPage.svelte";
 import Unlock from "~spa_components/Unlock.svelte";
 import Setup from "~spa_components/Setup.svelte";
+import NextcloudLogin from "~spa_components/NextcloudLogin.svelte";
 
 const routes = {
     '/': Loading,
 
-    '/setup/:isInPopup': Setup,
+    '/setup/login': NextcloudLogin,
+    '/setup/start/:isInPopup': Setup,
+
     '/unlock': Unlock,
 
     '/home': IndexPage,

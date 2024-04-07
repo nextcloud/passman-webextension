@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link {
+    cursor: pointer;
+    text-decoration-line: underline;
+}

@@ -1,4 +1,7 @@
 <script lang="ts">
+    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+
     export let params: { isInPopup: string };
 
     function openOptionsPage() {
@@ -18,8 +21,12 @@
     </p>
 
     {#if (params && params.isInPopup === '1')}
-        <button on:click={openOptionsPage}>{chrome.i18n.getMessage("begin")} to options</button>
+        <OnClickButton callback={openOptionsPage} title="{chrome.i18n.getMessage('begin')}">
+            {chrome.i18n.getMessage("begin")} to options
+        </OnClickButton>
     {:else}
-        <button on:click={openOptionsPage}>{chrome.i18n.getMessage("begin")} direct</button>
+        <InternalHrefLinkButton href="/setup/login">
+            {chrome.i18n.getMessage("begin")} direct
+        </InternalHrefLinkButton>
     {/if}
 </div>

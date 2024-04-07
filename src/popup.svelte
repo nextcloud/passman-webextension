@@ -14,7 +14,7 @@
         unsafeStorage.get('extensionUnlockPasswordHash').then(async (storedExtensionUnlockPasswordHash: string | undefined) => {
             if (storedExtensionUnlockPasswordHash === undefined || storedExtensionUnlockPasswordHash === null || storedExtensionUnlockPasswordHash === '') {
                 // setup required
-                push('/setup/1');
+                push('/setup/start/1');
             } else {
                 // extension already set up
                 const extensionUnlockPassword = $extensionUnlockPasswordStore;
