@@ -1,12 +1,13 @@
 <script lang="ts">
     import './style.css';
+    import { onMount } from "svelte";
 
-    import Toaster from 'svelte-french-toast/dist/components/Toaster.svelte';
-
-    import IndexPage from '~pages/IndexPage.svelte';
+    onMount(async () => {
+        console.log("isSecureContext", isSecureContext);
+        // todo: see popup.svelte for storage init example
+    });
 </script>
 
 <div>
-    <IndexPage/>
-    <Toaster/>
+    should always show setup or settings
 </div>

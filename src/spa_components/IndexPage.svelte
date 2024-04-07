@@ -2,9 +2,13 @@
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
     import { SecureStorage } from "@plasmohq/storage/dist/secure";
+    import extensionUnlockPasswordStore from "~stores/extensionUnlockPasswordStore";
+    import { push } from "~Router.svelte";
 
-    export let storage: SecureStorage;
-    export let count = 0;
+    let storage: SecureStorage = null;
+    let count = 0;
+    //export let route: string;
+
     let action: string = null;
     let resp;
 
@@ -24,6 +28,11 @@
         chrome.runtime.openOptionsPage();
     }
 
+    function openHome2() {
+        //route = '/home2'
+        push('/home2');
+    }
+
     const updateRespFromBackground = () => {
         sendToBackground({
             name: "ping",
@@ -40,6 +49,10 @@
 
     onMount(() => {
         console.log("indexpage isSecureContext", isSecureContext);
+
+        storage = new SecureStorage();
+        storage.setPassword($extensionUnlockPasswordStore);
+
         storage.get<number>('count').then((value) => {
             console.log("got from storage", value);
             if (value) {
@@ -82,5 +95,23 @@
                     d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
         </svg>
         <span>Settings</span>
+    </button>
+
+    <button
+            on:click={openHome2}
+            class="inline-flex items-center space-x-2 rounded-md border px-3 py-1 text-gray-600 hover:bg-gray-100 focus:border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6">
+            <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+        </svg>
+        <span>Home2</span>
     </button>
 </div>
