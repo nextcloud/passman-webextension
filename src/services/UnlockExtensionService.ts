@@ -1,35 +1,16 @@
-import { Storage } from "@plasmohq/storage";
 import { sha512 } from "js-sha512";
+import CustomStorageService from "~services/CustomStorageService";
 
 export default class UnlockExtensionService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
     public static readonly EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY = 'extensionUnlockPasswordHash';
 
-    private static sessionStorage: Storage;
-    private static unsafeLocalStorage: Storage;
-
-    private static getSessionStorage() {
-        if (!this.sessionStorage) {
-            this.sessionStorage = new Storage({
-                area: "session"
-            });
-        }
-        return this.sessionStorage;
-    }
-
-    private static getUnsafeLocalStorage() {
-        if (!this.unsafeLocalStorage) {
-            this.unsafeLocalStorage = new Storage();
-        }
-        return this.unsafeLocalStorage;
-    }
-
     public static unlock(password: string) {
-        return this.isSetUp() && this.getUnsafeLocalStorage()
+        return this.isSetUp() && CustomStorageService.getUnsafeLocalStorage()
             .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY)
             .then(async (extensionUnlockPasswordHash: string | undefined) => {
                 if (extensionUnlockPasswordHash === sha512(password)) {
-                    await this.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
+                    await CustomStorageService.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
                     return true;
                 }
                 return false;
@@ -37,7 +18,7 @@ export default class UnlockExtensionService {
     }
 
     public static lock() {
-        return this.getSessionStorage().remove(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
+        return CustomStorageService.getSessionStorage().remove(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
     }
 
     /**
@@ -46,15 +27,15 @@ export default class UnlockExtensionService {
      * @param password
      */
     public static setUp(password: string) {
-        return this.getUnsafeLocalStorage()
+        return CustomStorageService.getUnsafeLocalStorage()
             .set(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY, sha512(password))
             .then(() => {
-                return this.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
+                return CustomStorageService.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
             });
     }
 
     public static isSetUp() {
-        return this.getUnsafeLocalStorage()
+        return CustomStorageService.getUnsafeLocalStorage()
             .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY)
             .then(async (extensionUnlockPasswordHash: string | undefined) => {
                 return extensionUnlockPasswordHash !== undefined && extensionUnlockPasswordHash !== null;
@@ -62,7 +43,7 @@ export default class UnlockExtensionService {
     }
 
     public static isUnlocked() {
-        return this.getSessionStorage()
+        return CustomStorageService.getSessionStorage()
             .get(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY)
             .then(async (extensionUnlockPassword: string | undefined) => {
                 return extensionUnlockPassword !== undefined && extensionUnlockPassword !== null;
