@@ -10,7 +10,6 @@
         sendToBackground({
             name: "getExtensionUnlockState"
         }).then((value) => {
-            console.log(value.status);
             switch (value.status) {
                 case ExtensionUnlockState.NOT_SET_UP_YET:
                     // setup required

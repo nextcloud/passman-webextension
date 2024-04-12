@@ -2,10 +2,6 @@
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
-    import { Storage } from "@plasmohq/storage";
-    import { sha512 } from "js-sha512";
-    import { sendToBackground } from "@plasmohq/messaging";
-    import { ExtensionUnlockPasswordValidationState } from "~stores/extensionUnlockPasswordStore";
     import UnlockExtensionService from "~services/UnlockExtensionService";
 
     export let params: { isInPopup: string };
@@ -15,7 +11,7 @@
 
     async function setUnlockPassword() {
         processNewUnlockPassword = true;
-        await UnlockExtensionService.setUp(newExtensionUnlockPassword);
+        await UnlockExtensionService.setUpExtensionPassword(newExtensionUnlockPassword);
         isExtensionUnlocked = true;
         processNewUnlockPassword = false;
     }
@@ -42,7 +38,7 @@
                 {chrome.i18n.getMessage("begin")} to options
             </OnClickButton>
         {:else}
-            <InternalHrefLinkButton href="/setup/login">
+            <InternalHrefLinkButton href="/setup/server">
                 {chrome.i18n.getMessage("begin")} direct
             </InternalHrefLinkButton>
         {/if}

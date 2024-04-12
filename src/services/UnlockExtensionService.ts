@@ -4,9 +4,10 @@ import CustomStorageService from "~services/CustomStorageService";
 export default class UnlockExtensionService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
     public static readonly EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY = 'extensionUnlockPasswordHash';
+    public static readonly EXTENSION_SETUP_DONE_ACCESS_KEY = 'extensionSetupDone';
 
     public static unlock(password: string) {
-        return this.isSetUp() && CustomStorageService.getUnsafeLocalStorage()
+        return this.isSetupDone() && CustomStorageService.getUnsafeLocalStorage()
             .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY)
             .then(async (extensionUnlockPasswordHash: string | undefined) => {
                 if (extensionUnlockPasswordHash === sha512(password)) {
@@ -26,7 +27,7 @@ export default class UnlockExtensionService {
      * This also unlocks the extension already.
      * @param password
      */
-    public static setUp(password: string) {
+    public static setUpExtensionPassword(password: string) {
         return CustomStorageService.getUnsafeLocalStorage()
             .set(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY, sha512(password))
             .then(() => {
@@ -34,11 +35,24 @@ export default class UnlockExtensionService {
             });
     }
 
-    public static isSetUp() {
+    public static setSetupDone() {
+        return CustomStorageService.getUnsafeLocalStorage()
+            .set(this.EXTENSION_SETUP_DONE_ACCESS_KEY, "true");
+    }
+
+    public static isExtensionPasswordSetUp() {
         return CustomStorageService.getUnsafeLocalStorage()
             .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY)
             .then(async (extensionUnlockPasswordHash: string | undefined) => {
                 return extensionUnlockPasswordHash !== undefined && extensionUnlockPasswordHash !== null;
+            });
+    }
+
+    public static isSetupDone() {
+        return CustomStorageService.getUnsafeLocalStorage()
+            .get(this.EXTENSION_SETUP_DONE_ACCESS_KEY)
+            .then(async (isSetUp: string | undefined) => {
+                return isSetUp === "true";
             });
     }
 

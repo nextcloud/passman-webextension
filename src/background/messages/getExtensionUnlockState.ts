@@ -3,7 +3,7 @@ import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
 import UnlockExtensionService from "~services/UnlockExtensionService";
 
 const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
-    const status = await UnlockExtensionService.isSetUp().then((isSetUp: boolean) => {
+    const status = await UnlockExtensionService.isSetupDone().then((isSetUp: boolean) => {
         if (isSetUp) {
             return UnlockExtensionService.isUnlocked().then((isUnlocked: boolean) => {
                 if (isUnlocked) {

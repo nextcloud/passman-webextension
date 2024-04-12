@@ -1,18 +1,19 @@
 <script lang="ts">
-    //import { PassmanClient } from "@binsky/passman-client-ts";
     import { field, form } from 'svelte-forms';
     import { min, required } from 'svelte-forms/validators';
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
     import Card from "~spa_partials/Card.svelte";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     //import ncAuthStore, { PERSISTENT_AUTH_STORE_ACCESS_KEY } from "../stores/ncAuth";
-    import { onMount } from "svelte";
-    //import { BrowserStorage, BrowserStorageType } from "../stores/browser";
     //import passmanStore from "../stores/passman";
     //import { notyError } from "../NotyService";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    //import { BrowserStorageType } from "@binsky/passman-client-ts/lib/BrowserStorage";
+    import { sendToBackground } from "@plasmohq/messaging";
+    import { onMount } from "svelte";
+    import UnlockExtensionService from "~services/UnlockExtensionService";
+    import { push } from "~Router.svelte";
+    import ExtensionSettingsService from "~services/ExtensionSettingsService";
     //import { MyLoggingService } from "../MyLoggingService";
 
     //const server = field('server', $ncAuthStore?.baseUrl, [required(), min(8)], { checkOnInit: true });
@@ -23,11 +24,15 @@
     //const persistence = field('persistence', $ncAuthStore?.persistence, [required()], { checkOnInit: true });
     const myForm = form(server, user, token);
 
-    let status = "";
+    let errorMessage = "";
+    let successMessage = "";
     let lockLoginButton = false;
 
     let login = async (): Promise<void> => {
         lockLoginButton = true;
+        errorMessage = '';
+        successMessage = '';
+
         if (!$server.value.startsWith('https://') && !$server.value.startsWith('http://')) {
             // throw new ConfigurationError('Base URL (or protocol) is invalid');
             // inject with https:// instead of throwing an error
@@ -38,31 +43,44 @@
             baseUrl: $server.value,
             user: $user.value,
             token: $token.value,
-            persistence: "localStorage" //BrowserStorageType.PERSISTENT
+            persistence: null
         };
 
-        /*try {
-            const passmanClient = new PassmanClient(loginData, new MyLoggingService());
-            if (await passmanClient.refreshVaults(true)) {
-                passmanStore.set(passmanClient);
-                ncAuthStore.set(loginData);
-                status = "Login succeeded";
+        sendToBackground({
+            name: "addNewServerConnection",
+            body: loginData
+        }).then((value) => {
+            console.log(value.status);
+            console.log(value.message);
 
-                BrowserStorage.setDefaultStorageType(loginData.persistence as BrowserStorageType);
-                const bs = BrowserStorage.getInstance();
-                bs.updateStorageType(loginData.persistence as BrowserStorageType);
-                bs.set(PERSISTENT_AUTH_STORE_ACCESS_KEY, loginData);
+            if (value.status) {
+                successMessage = value.message;
+                UnlockExtensionService.setSetupDone().then(() => {
+                    push('/home');
+                });
             } else {
-                status = "Login failed";
+                errorMessage = value.message;
             }
-        } catch (e) {
-            notyError(e.message);
-        }*/
-        lockLoginButton = false;
-    }
 
-    onMount(async () => {
-        status = "";
+            lockLoginButton = false;
+        });
+    };
+
+    onMount(() => {
+        UnlockExtensionService.isUnlocked().then((isUnlocked) => {
+            lockLoginButton = !isUnlocked;
+
+            UnlockExtensionService.isSetupDone().then((isSetupDone) => {
+                if (isSetupDone) {
+                    // populate input fields with current settings
+                    ExtensionSettingsService.getNextcloudServerSettings().then((settings) => {
+                        server.set(settings.baseUrl);
+                        user.set(settings.user);
+                        token.set(settings.token);
+                    });
+                }
+            });
+        });
     });
 </script>
 
@@ -96,6 +114,11 @@
             </OnClickButton>
         </div>
 
-        {status}
+        <div class="mt-2 text-green-600">
+            {successMessage}
+        </div>
+        <div class="mt-2 text-red-600">
+            {errorMessage}
+        </div>
     </Card>
 </div>
