@@ -1,8 +1,24 @@
 <script lang="ts">
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
+    import { Storage } from "@plasmohq/storage";
+    import { sha512 } from "js-sha512";
+    import { sendToBackground } from "@plasmohq/messaging";
+    import { ExtensionUnlockPasswordValidationState } from "~stores/extensionUnlockPasswordStore";
+    import UnlockExtensionService from "~services/UnlockExtensionService";
 
     export let params: { isInPopup: string };
+    let newExtensionUnlockPassword = '';
+    let isExtensionUnlocked = false;
+    let processNewUnlockPassword = false;
+
+    async function setUnlockPassword() {
+        processNewUnlockPassword = true;
+        await UnlockExtensionService.setUp(newExtensionUnlockPassword);
+        isExtensionUnlocked = true;
+        processNewUnlockPassword = false;
+    }
 
     function openOptionsPage() {
         chrome.runtime.openOptionsPage();
@@ -20,13 +36,24 @@
         {chrome.i18n.getMessage("extra_accounts")}
     </p>
 
-    {#if (params && params.isInPopup === '1')}
-        <OnClickButton callback={openOptionsPage} title="{chrome.i18n.getMessage('begin')}">
-            {chrome.i18n.getMessage("begin")} to options
-        </OnClickButton>
+    {#if isExtensionUnlocked}
+        {#if (params && params.isInPopup === '1')}
+            <OnClickButton callback={openOptionsPage} title="{chrome.i18n.getMessage('begin')}">
+                {chrome.i18n.getMessage("begin")} to options
+            </OnClickButton>
+        {:else}
+            <InternalHrefLinkButton href="/setup/login">
+                {chrome.i18n.getMessage("begin")} direct
+            </InternalHrefLinkButton>
+        {/if}
     {:else}
-        <InternalHrefLinkButton href="/setup/login">
-            {chrome.i18n.getMessage("begin")} direct
-        </InternalHrefLinkButton>
+        <CustomInputField label="Set a new extension unlock password"
+                          bind:value={newExtensionUnlockPassword}
+                          tabindex="1"
+                          type="password"/>
+        <OnClickButton callback={setUnlockPassword} title="{chrome.i18n.getMessage('begin')}"
+                       disabled={newExtensionUnlockPassword === '' || processNewUnlockPassword}>
+            Save password & unlock
+        </OnClickButton>
     {/if}
 </div>

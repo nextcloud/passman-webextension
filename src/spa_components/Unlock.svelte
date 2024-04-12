@@ -1,5 +1,40 @@
 <script lang="ts">
-    console.debug("on unlock page");
+    import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
+    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    import UnlockExtensionService from "~services/UnlockExtensionService";
+    import ShowGenericErrors from "~spa_partials/FormElements/ShowGenericErrors.svelte";
+    import { push } from "~Router.svelte";
+
+    let extensionUnlockPassword = '';
+    let errors: string[] = [];
+
+    const unlock = () => {
+        UnlockExtensionService.unlock(extensionUnlockPassword).then((state) => {
+            if (state) {
+                push('/home');
+            } else {
+                errors = [
+                    chrome.i18n.getMessage("invalid_master_password")
+                ];
+            }
+        });
+    };
 </script>
 
-Unlock required
+<form on:submit|preventDefault={unlock}>
+    <div class="flex min-h-screen flex-col items-center justify-center space-y-4 p-10">
+        <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">
+            {chrome.i18n.getMessage("extension_locked")}
+        </h2>
+
+        <CustomInputField placeholder="{chrome.i18n.getMessage('password')}" label=""
+                          bind:value={extensionUnlockPassword}
+                          tabindex="1"
+                          type="password"/>
+        <ShowGenericErrors bind:errors/>
+        <OnClickButton callback={unlock} title="{chrome.i18n.getMessage('unlock')}" tabindex="2"
+                       disabled={extensionUnlockPassword === ''}>
+            {chrome.i18n.getMessage("unlock")}
+        </OnClickButton>
+    </div>
+</form>

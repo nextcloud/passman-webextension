@@ -1,34 +1,36 @@
 <script lang="ts">
     import './style.css';
     import { onMount } from "svelte";
-    import Router, { push } from "~Router.svelte";
-    import { sha512 } from 'js-sha512';
-    import { Storage } from "@plasmohq/storage";
     import { routes } from "~popupRoutes";
-    import extensionUnlockPasswordStore from "~stores/extensionUnlockPasswordStore";
-    import Toaster from 'svelte-french-toast/dist/components/Toaster.svelte';
+    import Router, { push } from "~Router.svelte";
+    import { sendToBackground } from "@plasmohq/messaging";
+    import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
 
     onMount(async () => {
-        console.debug("isSecureContext", isSecureContext);
-        let unsafeStorage = new Storage();
-        unsafeStorage.get('extensionUnlockPasswordHash').then(async (storedExtensionUnlockPasswordHash: string | undefined) => {
-            if (storedExtensionUnlockPasswordHash === undefined || storedExtensionUnlockPasswordHash === null || storedExtensionUnlockPasswordHash === '') {
-                // setup required
-                push('/setup/start/1');
-            } else {
-                // extension already set up
-                const extensionUnlockPassword = $extensionUnlockPasswordStore;
-                if (extensionUnlockPassword !== undefined && extensionUnlockPassword !== null) {
-                    const extensionUnlockPasswordHash = sha512(extensionUnlockPassword);
-                    if (storedExtensionUnlockPasswordHash === extensionUnlockPasswordHash) {
-                        // correct unlock password already in memory / svelte store
-                        push('/home');
-                    } else {
-                        // extension unlock required
-                        push('/unlock');
-                    }
-                }
+        sendToBackground({
+            name: "getExtensionUnlockState"
+        }).then((value) => {
+            console.log(value.status);
+            switch (value.status) {
+                case ExtensionUnlockState.NOT_SET_UP_YET:
+                    // setup required
+                    push('/setup/start/0');
+                    break;
+                case ExtensionUnlockState.LOCKED:
+                    // extension unlock required
+                    push('/unlock');
+                    break;
+                case ExtensionUnlockState.UNLOCKED:
+                    // correct unlock password already in session
+                    push('/home');
+                    break;
+                default:
+                    console.error("Unknown error while checking extension lock state!");
+                    alert("Unknown error while checking extension lock state!");
             }
+        }, (error) => {
+            console.error(error);
+            alert(error);
         });
     });
 </script>
