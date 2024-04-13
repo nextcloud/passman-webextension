@@ -63,7 +63,7 @@
     })
 </script>
 
-<div class="flex min-h-screen flex-col items-center justify-center space-y-4">
+<div class="flex h-full flex-col items-center justify-center space-y-4">
     <h2 class="text-2xl font-semibold text-gray-700 text-center">
         {chrome.i18n.getMessage("welcome_to_passman")}
     </h2>

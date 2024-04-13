@@ -5,6 +5,7 @@
     import Router, { push } from "~Router.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
     import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
+    import BottomNavBar from "~spa_partials/BottomNavBar.svelte";
 
     onMount(async () => {
         sendToBackground({
@@ -34,8 +35,9 @@
     });
 </script>
 
-<div class="w-full text-center">
-    <div class="m-auto w-[28rem] text-sm">
+<div class="w-full h-screen text-center overflow-y-auto flex flex-col justify-between">
+    <div class="m-auto w-[28rem] text-sm my-8">
         <Router {routes}/>
     </div>
+    <BottomNavBar />
 </div>

@@ -84,8 +84,8 @@
     });
 </script>
 
-<div class="mx-auto flex flex-col mt-20 w-full items-center justify-center">
-    <Card additionalClasses="text-left w-[32rem] mb-8 space-y-3">
+<div class="mx-auto flex flex-col p-5 w-full items-center justify-center">
+    <Card additionalClasses="text-left mb-6 space-y-3 w-full">
         <p>
             This extension requires the
             <a href="https://apps.nextcloud.com/apps/passman" class="link" target="_blank">Passman App</a>
@@ -95,7 +95,7 @@
             No data is transferred to sources other than the specified Nextcloud server.
         </p>
     </Card>
-    <Card additionalClasses="text-left w-[32rem] mb-2">
+    <Card additionalClasses="text-left w-full">
         <CustomInputField label="{chrome.i18n.getMessage('server_url')}" bind:value={$server.value}/>
         <div class="mt-2">
             <CustomInputField label="{chrome.i18n.getMessage('username')}" bind:value={$user.value}/>

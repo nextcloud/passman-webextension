@@ -5,6 +5,10 @@
     import Router, { push } from "~Router.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
     import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
+    import search from "svelte-awesome/package/icons/search";
+    import Icon from "svelte-awesome/package/components/Icon.svelte";
+    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import BottomNavBar from "~spa_partials/BottomNavBar.svelte";
 
     onMount(async () => {
         sendToBackground({
@@ -34,6 +38,7 @@
     });
 </script>
 
-<div class="h-[28rem] w-[28rem] text-sm">
+<div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
     <Router {routes}/>
 </div>
+<BottomNavBar />

@@ -15,7 +15,7 @@
         {title}
         class="text-primary-light-button-text border border-gray-300 hover:bg-base-200 dark:hover:bg-neutral font-medium rounded-lg
 	text-sm {small
-		? 'px-2 pb-1'
+		? 'px-2 py-1'
 		: 'px-3 py-2'} text-center w-auto disabled:opacity-70 disabled:pointer-events-none {additionalClasses}"
 >
     <slot/>
