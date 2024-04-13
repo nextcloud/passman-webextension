@@ -4,9 +4,6 @@
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
     import Card from "~spa_partials/Card.svelte";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
-    //import ncAuthStore, { PERSISTENT_AUTH_STORE_ACCESS_KEY } from "../stores/ncAuth";
-    //import passmanStore from "../stores/passman";
-    //import { notyError } from "../NotyService";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
@@ -14,21 +11,24 @@
     import UnlockExtensionService from "~services/UnlockExtensionService";
     import { push } from "~Router.svelte";
     import ExtensionSettingsService from "~services/ExtensionSettingsService";
-    //import { MyLoggingService } from "../MyLoggingService";
+    import Select from 'svelte-select';
 
-    //const server = field('server', $ncAuthStore?.baseUrl, [required(), min(8)], { checkOnInit: true });
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
-    //const user = field('user', $ncAuthStore?.user, [required(), min(3)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
     const token = field('token', '', [required()], { checkOnInit: true });
-    //const persistence = field('persistence', $ncAuthStore?.persistence, [required()], { checkOnInit: true });
     const myForm = form(server, user, token);
 
+    let vaultErrorMessage = "";
     let errorMessage = "";
     let successMessage = "";
+    let serverSettingsValidated = false;
+    let vaultSelectionList: { guid: string, name: string }[] = [];
+    let selectedVaultInfo: { guid: string, name: string } = null;
+    let selectedVaultPassword: string = null;
     let lockLoginButton = false;
+    let lockDefaultVaultButton = false;
 
-    let login = async (): Promise<void> => {
+    const login = async (): Promise<void> => {
         lockLoginButton = true;
         errorMessage = '';
         successMessage = '';
@@ -55,9 +55,8 @@
 
             if (value.status) {
                 successMessage = value.message;
-                UnlockExtensionService.setSetupDone().then(() => {
-                    push('/home');
-                });
+                vaultSelectionList = value.vaultSelectionList;
+                serverSettingsValidated = true;
             } else {
                 errorMessage = value.message;
             }
@@ -66,18 +65,71 @@
         });
     };
 
+    const setDefaultVault = () => {
+        lockDefaultVaultButton = true;
+        sendToBackground({
+            name: "setDefaultVault",
+            body: {
+                guid: selectedVaultInfo.guid,
+                password: selectedVaultPassword
+            }
+        }).then((value) => {
+            if (value.status) {
+                UnlockExtensionService.isSetupDone().then((isSetupDone) => {
+                    if (!isSetupDone) {
+                        UnlockExtensionService.setSetupDone().then(() => {
+                            push('/home');
+                        });
+                    }
+                });
+            } else {
+                vaultErrorMessage = value.errorMessage;
+            }
+
+            lockDefaultVaultButton = false;
+        });
+    };
+
+    const reloadPossibleVaultsInfo = async () => {
+        return sendToBackground({
+            name: "getPossibleVaultsInfo"
+        }).then((value) => {
+            if (value.status) {
+                vaultSelectionList = value.vaultSelectionList;
+            } else {
+                vaultErrorMessage = value.errorMessage;
+            }
+
+            lockDefaultVaultButton = false;
+        });
+    };
+
     onMount(() => {
         UnlockExtensionService.isUnlocked().then((isUnlocked) => {
             lockLoginButton = !isUnlocked;
 
-            UnlockExtensionService.isSetupDone().then((isSetupDone) => {
+            UnlockExtensionService.isSetupDone().then(async (isSetupDone) => {
                 if (isSetupDone) {
                     // populate input fields with current settings
-                    ExtensionSettingsService.getNextcloudServerSettings().then((settings) => {
+                    await ExtensionSettingsService.getNextcloudServerSettings().then((settings) => {
                         server.set(settings.baseUrl);
                         user.set(settings.user);
                         token.set(settings.token);
                     });
+                    await reloadPossibleVaultsInfo();
+                    await ExtensionSettingsService.getDefaultVaultInfo().then((defaultVaultInfo) => {
+                        for (let info of vaultSelectionList) {
+                            if (info.guid === defaultVaultInfo.guid) {
+                                selectedVaultInfo = info;
+                                break;
+                            }
+                        }
+                        if (selectedVaultInfo) {
+                            // inject vault password only if the selected vault could be found
+                            selectedVaultPassword = defaultVaultInfo.password
+                        }
+                    });
+                    serverSettingsValidated = true;
                 }
             });
         });
@@ -95,7 +147,7 @@
             No data is transferred to sources other than the specified Nextcloud server.
         </p>
     </Card>
-    <Card additionalClasses="text-left w-full">
+    <Card additionalClasses="text-left w-full mb-6">
         <CustomInputField label="{chrome.i18n.getMessage('server_url')}" bind:value={$server.value}/>
         <div class="mt-2">
             <CustomInputField label="{chrome.i18n.getMessage('username')}" bind:value={$user.value}/>
@@ -121,4 +173,43 @@
             {errorMessage}
         </div>
     </Card>
+    {#if serverSettingsValidated}
+        <Card additionalClasses="text-left space-y-3 w-full">
+            <p>
+                {chrome.i18n.getMessage('default_vault_desc')}
+            </p>
+            <div class="mt-2">
+                <label for="vaults_select"
+                       class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                    {chrome.i18n.getMessage('select_default_vault')}
+                </label>
+                <div class="my-2">
+                    <Select
+                            multiple={false}
+                            label="name"
+                            itemId="guid"
+                            items={vaultSelectionList}
+                            bind:value={selectedVaultInfo}
+                            id="vaults_select"
+                            --height="38px"
+                    />
+                </div>
+            </div>
+            <div class="mt-2">
+                <CustomInputField label="{chrome.i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
+                                  type="password"/>
+            </div>
+            <div class="mt-2 text-red-600">
+                {vaultErrorMessage}
+            </div>
+            <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
+                           callback="{setDefaultVault}">
+                {#if lockDefaultVaultButton}
+                    <Icon data={refresh} scale={1.3} spin="{true}"/>
+                {:else}
+                    Save default vault settings
+                {/if}
+            </OnClickButton>
+        </Card>
+    {/if}
 </div>
