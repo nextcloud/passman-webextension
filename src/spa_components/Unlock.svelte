@@ -4,6 +4,7 @@
     import UnlockExtensionService from "~services/UnlockExtensionService";
     import ShowGenericErrors from "~spa_partials/FormElements/ShowGenericErrors.svelte";
     import { push } from "~Router.svelte";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
 
     let extensionUnlockPassword = '';
     let errors: string[] = [];
@@ -12,17 +13,19 @@
         UnlockExtensionService.unlock(extensionUnlockPassword).then((state) => {
             if (state) {
                 push('/home');
+                $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
             } else {
                 errors = [
                     chrome.i18n.getMessage("invalid_master_password")
                 ];
+                $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
             }
         });
     };
 </script>
 
 <form on:submit|preventDefault={unlock}>
-    <div class="flex min-h-screen flex-col items-center justify-center space-y-4 p-10">
+    <div class="h-full flex flex-col items-center justify-center space-y-4 p-10">
         <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">
             {chrome.i18n.getMessage("extension_locked")}
         </h2>

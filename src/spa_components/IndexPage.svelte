@@ -2,7 +2,7 @@
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
     import { SecureStorage } from "@plasmohq/storage/dist/secure";
-    import extensionUnlockPasswordStore from "~stores/extensionUnlockPasswordStore";
+    import extensionUnlockStateStore from "~stores/extensionUnlockStateStore";
     import { push } from "~Router.svelte";
     import { externalLink, lock } from "svelte-awesome/package/icons";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
@@ -54,17 +54,6 @@
 
     onMount(() => {
         console.log("indexpage isSecureContext", isSecureContext);
-
-        storage = new SecureStorage();
-        storage.setPassword($extensionUnlockPasswordStore);
-
-        storage.get<number>('count').then((value) => {
-            console.log("got from storage", value);
-            if (value) {
-                count = value;
-            }
-            updateRespFromBackground();
-        });
     })
 </script>
 

@@ -1,5 +1,5 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
-import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
+import { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
 import UnlockExtensionService from "~services/UnlockExtensionService";
 
 const handler: PlasmoMessaging.MessageHandler = async (req, res) => {

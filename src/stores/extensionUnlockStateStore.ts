@@ -12,7 +12,6 @@ export enum ExtensionUnlockState {
     UNLOCKED,
 }
 
-// holds the extension unlock password while in popup open state
-// todo: will be gone when closing the popup; longer living solution required
-const extensionUnlockPasswordStore = writable<string>();
-export default extensionUnlockPasswordStore;
+// holds the extension unlock state during popup is open
+const extensionUnlockStateStore = writable<ExtensionUnlockState>();
+export default extensionUnlockStateStore;

@@ -4,7 +4,7 @@
     import { routes } from "~popupRoutes";
     import Router, { push } from "~Router.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
-    import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import BottomNavBar from "~spa_partials/BottomNavBar.svelte";
 
     onMount(async () => {
@@ -28,6 +28,7 @@
                     console.error("Unknown error while checking extension lock state!");
                     alert("Unknown error while checking extension lock state!");
             }
+            $extensionUnlockStateStore = value.status;
         }, (error) => {
             console.error(error);
             alert(error);
@@ -39,5 +40,7 @@
     <div class="m-auto w-[28rem] text-sm my-8">
         <Router {routes}/>
     </div>
-    <BottomNavBar />
+    {#if $extensionUnlockStateStore === ExtensionUnlockState.UNLOCKED}
+        <BottomNavBar/>
+    {/if}
 </div>

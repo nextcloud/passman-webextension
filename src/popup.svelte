@@ -4,10 +4,7 @@
     import { routes } from "~popupRoutes";
     import Router, { push } from "~Router.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
-    import { ExtensionUnlockState } from "~stores/extensionUnlockPasswordStore";
-    import search from "svelte-awesome/package/icons/search";
-    import Icon from "svelte-awesome/package/components/Icon.svelte";
-    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import BottomNavBar from "~spa_partials/BottomNavBar.svelte";
 
     onMount(async () => {
@@ -31,6 +28,7 @@
                     console.error("Unknown error while checking extension lock state!");
                     alert("Unknown error while checking extension lock state!");
             }
+            $extensionUnlockStateStore = value.status;
         }, (error) => {
             console.error(error);
             alert(error);
@@ -41,4 +39,6 @@
 <div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
     <Router {routes}/>
 </div>
-<BottomNavBar />
+{#if $extensionUnlockStateStore === ExtensionUnlockState.UNLOCKED}
+    <BottomNavBar/>
+{/if}
