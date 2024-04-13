@@ -36,4 +36,14 @@ export default class CustomStorageService {
         }
         return this.secureStorage;
     }
+
+    public static closeSecureStorage() {
+        if (this.secureStorage) {
+            this.secureStorage = null;
+        }
+    }
+
+    public static async clearSessionStorage() {
+        return this.getSessionStorage().clear(true);
+    }
 }

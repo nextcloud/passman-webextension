@@ -1,5 +1,6 @@
 import { sha512 } from "js-sha512";
 import CustomStorageService from "~services/CustomStorageService";
+import ExtensionSettingsService from "~services/ExtensionSettingsService";
 
 export default class UnlockExtensionService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -18,8 +19,13 @@ export default class UnlockExtensionService {
             });
     }
 
-    public static lock() {
-        return CustomStorageService.getSessionStorage().remove(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
+    /**
+     * Locks the extension, as well as taking care about clearing decrypted cache within the background service worker.
+     */
+    public static async lock() {
+        await CustomStorageService.clearSessionStorage();
+        CustomStorageService.closeSecureStorage();
+        ExtensionSettingsService.updatePassmanClient(null);
     }
 
     /**

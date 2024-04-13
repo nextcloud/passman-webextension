@@ -2,12 +2,12 @@
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
     import { SecureStorage } from "@plasmohq/storage/dist/secure";
-    import extensionUnlockStateStore from "~stores/extensionUnlockStateStore";
     import { push } from "~Router.svelte";
     import { externalLink, lock } from "svelte-awesome/package/icons";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import refresh from "svelte-awesome/icons/refresh";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
 
     let storage: SecureStorage = null;
     let searchInput = '';
@@ -16,6 +16,15 @@
 
     let action: string = null;
     let resp;
+
+    const lockExtension = () => {
+        sendToBackground({
+            name: "lockExtension"
+        }).then(() => {
+            $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
+            push('/unlock');
+        });
+    }
 
     const increment = async () => {
         count += 1;
@@ -53,7 +62,7 @@
     $: count && updateRespFromBackground();
 
     onMount(() => {
-        console.log("indexpage isSecureContext", isSecureContext);
+
     })
 </script>
 
@@ -68,7 +77,7 @@
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
         </div>
-        <OnClickButton callback={openOptionsPage} title="Lock" additionalClasses="w-12">
+        <OnClickButton callback={lockExtension} title="Lock" additionalClasses="w-12">
             <Icon data={lock} scale={1.3}/>
         </OnClickButton>
         <OnClickButton callback={openOptionsPage} title="Open options page" additionalClasses="w-12">
