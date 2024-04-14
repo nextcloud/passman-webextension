@@ -11,12 +11,15 @@
     import ExtensionSettingsService from "~services/ExtensionSettingsService";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
+    import CredentialListElement from "~spa_partials/InteractionElements/CredentialListElement.svelte";
+    import Loading from "~spa_components/Loading.svelte";
 
     let storage: SecureStorage = null;
     let searchInput = '';
     let errorMessage: string = null;
     let vault: Vault = null;
     let filteredCredentials: Credential[] = [];
+    let pageIsLoading = true;
 
     const lockExtension = () => {
         sendToBackground({
@@ -29,9 +32,11 @@
 
     const refreshCredentialList = () => {
         if (vault) {
+            pageIsLoading = true;
             vault.refresh().then(() => {
                 vault = vault;
                 console.log("refreshCredentialList done");
+                pageIsLoading = false;
             });
         }
     }
@@ -75,9 +80,11 @@
                         console.error(exception);
                         errorMessage = 'Could not get or decrypt vault';
                     }
+                    pageIsLoading = false;
                 });
             } else {
-                console.log("no passman client for you");
+                console.error("no passman client for you");
+                pageIsLoading = false;
             }
         });
     })
@@ -106,18 +113,20 @@
     </div>
 
     <div class="overflow-y-auto pt-2">
-        <div class="flex flex-col items-center justify-center space-y-4">
-            {#if errorMessage}
-                <div class="mt-2 text-red-600">
-                    {errorMessage}
-                </div>
-            {/if}
+        {#if pageIsLoading}
+            <Loading />
+        {:else}
+            <div class="flex flex-col items-center justify-center space-y-4">
+                {#if errorMessage}
+                    <div class="mt-2 text-red-600">
+                        {errorMessage}
+                    </div>
+                {/if}
 
-            {#each filteredCredentials as credential}
-                <div>
-                    <p class="border-1 p-1 m-2">{credential.label}</p>
-                </div>
-            {/each}
-        </div>
+                {#each filteredCredentials as credential}
+                    <CredentialListElement bind:credential/>
+                {/each}
+            </div>
+        {/if}
     </div>
 </div>
