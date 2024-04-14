@@ -1,11 +1,11 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
-import type {
-    NextcloudServerInterface
-} from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInterface";
 import { PassmanClient } from "@binsky/passman-client-ts";
 import ExtensionSettingsService from "~services/ExtensionSettingsService";
+import type {
+    NextcloudServerInfoInterface
+} from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 
-const handler: PlasmoMessaging.MessageHandler<NextcloudServerInterface> = async (req, res) => {
+const handler: PlasmoMessaging.MessageHandler<NextcloudServerInfoInterface> = async (req, res) => {
     let status = false;
     let message = '';
     let vaultSelectionList: { guid: string, name: string }[] = [];

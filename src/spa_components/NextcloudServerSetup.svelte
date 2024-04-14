@@ -12,6 +12,9 @@
     import { push } from "~Router.svelte";
     import ExtensionSettingsService from "~services/ExtensionSettingsService";
     import Select from 'svelte-select';
+    import type {
+        NextcloudServerInfoInterface
+    } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -39,7 +42,7 @@
             $server.value = 'https://'.concat($server.value);
         }
 
-        const loginData = {
+        const loginData: NextcloudServerInfoInterface = {
             baseUrl: $server.value,
             user: $user.value,
             token: $token.value,

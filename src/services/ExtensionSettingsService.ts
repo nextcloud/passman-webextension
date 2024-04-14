@@ -1,15 +1,17 @@
-import type {
-    NextcloudServerInterface
-} from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInterface";
 import CustomStorageService from "~services/CustomStorageService";
 import { PassmanClient } from "@binsky/passman-client-ts";
+import type {
+    NextcloudServerInfoInterface
+} from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
+import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
+import { DefaultLoggingService } from "@binsky/passman-client-ts/lib/Service/DefaultLoggingService";
 
 export default class ExtensionSettingsService {
     private static readonly PERSISTENT_AUTH_STORE_ACCESS_KEY: string = 'NextcloudServerAuthInfo';
     private static readonly DEFAULT_VAULT_INFO_ACCESS_KEY: string = 'DefaultVaultInfo';
     private static localPassmanClient: PassmanClient = null;
 
-    public static updateNextcloudServerSettings = async (ncAuthInfo: NextcloudServerInterface) => {
+    public static updateNextcloudServerSettings = async (ncAuthInfo: NextcloudServerInfoInterface) => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
             return await myStorage.set(ExtensionSettingsService.PERSISTENT_AUTH_STORE_ACCESS_KEY, ncAuthInfo)
         })
@@ -17,15 +19,28 @@ export default class ExtensionSettingsService {
 
     public static getNextcloudServerSettings = async () => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return await myStorage.get(ExtensionSettingsService.PERSISTENT_AUTH_STORE_ACCESS_KEY) as NextcloudServerInterface
+            return await myStorage.get(ExtensionSettingsService.PERSISTENT_AUTH_STORE_ACCESS_KEY) as NextcloudServerInfoInterface
         })
     };
 
-    public static getPassmanClient = async () => {
+    public static getPassmanClient = async (createWithNextcloudServerMessagingConnector = false) => {
         if (!ExtensionSettingsService.localPassmanClient) {
-            ExtensionSettingsService.localPassmanClient = new PassmanClient(
-                await ExtensionSettingsService.getNextcloudServerSettings()
-            );
+            if (createWithNextcloudServerMessagingConnector) {
+                // only required for PassmanClient usage by the extension frontend
+                const logger = new DefaultLoggingService();
+                ExtensionSettingsService.localPassmanClient = new PassmanClient(
+                    null,
+                    new NextcloudServerMessagingConnector(
+                        await ExtensionSettingsService.getNextcloudServerSettings(),
+                        logger
+                    ),
+                    logger
+                );
+            } else {
+                ExtensionSettingsService.localPassmanClient = new PassmanClient(
+                    await ExtensionSettingsService.getNextcloudServerSettings()
+                );
+            }
         }
 
         return ExtensionSettingsService.localPassmanClient;

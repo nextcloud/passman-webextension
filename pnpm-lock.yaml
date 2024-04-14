@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@binsky/passman-client-ts':
-    specifier: ^0.1.4
-    version: 0.1.4
+    specifier: ^0.1.7
+    version: 0.1.7
   '@ianvs/prettier-plugin-sort-imports':
     specifier: ^4.2.1
     version: 4.2.1(prettier@3.2.5)
@@ -266,8 +266,8 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@binsky/passman-client-ts@0.1.4:
-    resolution: {integrity: sha512-t8HbaEuFBJbhi9oXqwUz7wAFmx75LdxGZrQN3q6X1OYqdLU+2aSJwCcNnH57uJDK/GqrFzGqSKZgBmBTMU/TJg==}
+  /@binsky/passman-client-ts@0.1.7:
+    resolution: {integrity: sha512-tltauHBOAYPpEW0rtrPCTsFUBxSnXk4W5L2zLj2w2aSortu3RFmqOUCJjb7jAfHGNy1FrODwOv5Mz4djcVIXpg==}
     dependencies:
       '@types/html-escaper': 3.0.2
       '@types/jest': 29.5.12
