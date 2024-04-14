@@ -116,7 +116,7 @@
         {#if pageIsLoading}
             <Loading />
         {:else}
-            <div class="flex flex-col items-center justify-center space-y-4">
+            <div class="flex flex-col items-center justify-center">
                 {#if errorMessage}
                     <div class="mt-2 text-red-600">
                         {errorMessage}
