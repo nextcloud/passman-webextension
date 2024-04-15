@@ -6,6 +6,7 @@
     import { sendToBackground } from "@plasmohq/messaging";
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import BottomNavBar from "~spa_partials/BottomNavBar.svelte";
+    import { Toaster } from "svelte-french-toast/dist/index";
 
     onMount(async () => {
         sendToBackground({
@@ -38,6 +39,7 @@
 
 <div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
     <Router {routes}/>
+    <Toaster />
 </div>
 {#if $extensionUnlockStateStore === ExtensionUnlockState.UNLOCKED}
     <BottomNavBar/>
