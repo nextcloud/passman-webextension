@@ -25,7 +25,7 @@
                 {credential.label}
             </span>
             <span class="text-gray-400">
-                {credential.username ?? (credential.email ?? '(no user found)')}
+                {credential.username ?? (credential.email ?? '')}
             </span>
         </div>
         <div class="basis-4/12 flex items-center justify-end space-x-2 pe-2">

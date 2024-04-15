@@ -1,7 +1,6 @@
 <script lang="ts">
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
-    import { SecureStorage } from "@plasmohq/storage/dist/secure";
     import { push } from "~Router.svelte";
     import { externalLink, lock, plus } from "svelte-awesome/package/icons";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
@@ -13,8 +12,8 @@
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import CredentialListElement from "~spa_partials/InteractionElements/CredentialListElement.svelte";
     import Loading from "~spa_components/Loading.svelte";
+    import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 
-    let storage: SecureStorage = null;
     let searchInput = '';
     let errorMessage: string = null;
     let vault: Vault = null;
@@ -35,7 +34,6 @@
             pageIsLoading = true;
             vault.refresh().then(() => {
                 vault = vault;
-                console.log("refreshCredentialList done");
                 pageIsLoading = false;
             });
         }
@@ -46,14 +44,10 @@
     }
 
     const applyCredentialFilter = (searchInput: string) => {
-        console.log("applyCredentialFilter", searchInput, vault);
+        filteredCredentials = [];
+
         if (vault) {
-            if (!searchInput) {
-                filteredCredentials = vault.credentials;
-            } else {
-                // todo: implement logic to filter input
-                console.log("todo: implement logic to filter input", searchInput);
-            }
+            filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput);
         }
     };
 
@@ -62,14 +56,12 @@
     onMount(() => {
         ExtensionSettingsService.getPassmanClient(true).then((passmanClient) => {
             if (passmanClient) {
-                console.log("got passman client");
                 ExtensionSettingsService.getDefaultVaultInfo().then(async (defaultVaultInfo) => {
                     try {
                         let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {
-                                console.log("refresh vault");
                                 await myVault.refresh();
                             }
                             vault = myVault;
@@ -114,7 +106,7 @@
 
     <div class="overflow-y-auto pt-2">
         {#if pageIsLoading}
-            <Loading />
+            <Loading/>
         {:else}
             <div class="flex flex-col items-center justify-center">
                 {#if errorMessage}
@@ -126,6 +118,11 @@
                 {#each filteredCredentials as credential}
                     <CredentialListElement bind:credential/>
                 {/each}
+                {#if filteredCredentials.length === 0}
+                    <span class="text-gray-400 mt-4">
+                        No matching credentials
+                    </span>
+                {/if}
             </div>
         {/if}
     </div>
