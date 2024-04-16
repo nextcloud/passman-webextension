@@ -4,7 +4,7 @@ import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
-import { DefaultLoggingService } from "@binsky/passman-client-ts/lib/Service/DefaultLoggingService";
+import { CustomPassmanClientLoggingService } from "~services/CustomPassmanClientLoggingService";
 
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,
@@ -39,20 +39,20 @@ export default class ExtensionSettingsService {
 
     public static getExtensionSettings = async () => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY) as ExtensionSettings
+            return (await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY) ?? {}) as ExtensionSettings
         })
     };
 
-    public static getPartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K): Promise<ExtensionSettings[K]> => {
+    public static getPartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K): Promise<ExtensionSettings[K] | null> => {
         const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
-        return extensionSettings[key];
+        return extensionSettings[key] ?? null;
     };
 
     public static getPassmanClient = async (createWithNextcloudServerMessagingConnector = false) => {
         if (!ExtensionSettingsService.localPassmanClient) {
             if (createWithNextcloudServerMessagingConnector) {
                 // only required for PassmanClient usage by the extension frontend
-                const logger = new DefaultLoggingService();
+                const logger = new CustomPassmanClientLoggingService();
                 ExtensionSettingsService.localPassmanClient = new PassmanClient(
                     null,
                     new NextcloudServerMessagingConnector(
