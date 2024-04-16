@@ -1,13 +1,16 @@
-import toast, { type ToastOptions } from 'svelte-french-toast/dist/index';
 import type { IFormFieldError } from "@binsky/passman-client-ts/lib/Exception/FormFieldError";
+import type { ToastOptions } from "svelte-french-toast";
+import toast from "svelte-french-toast/dist/core/toast";
 
 const notyOptions: ToastOptions = {
     position: "bottom-left"
 };
 
-export const notySuccess = (msg: string) => toast.success(msg, notyOptions);
-export const notyError = (msg: string) => toast.error(msg, notyOptions);
+export default class NotyService {
+    public static notySuccess = (msg: string) => toast.success(msg, notyOptions);
+    public static notyError = (msg: string) => toast.error(msg, notyOptions);
 
-export const notyFormFieldErrors = (errors: IFormFieldError[]) => {
-    errors.forEach((error: IFormFieldError) => notyError(error.error));
-};
+    public static notyFormFieldErrors = (errors: IFormFieldError[]) => {
+        errors.forEach((error: IFormFieldError) => NotyService.notyError(error.error));
+    };
+}

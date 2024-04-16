@@ -15,7 +15,7 @@
     import type {
         NextcloudServerInfoInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
-    import { notyError } from "~services/NotyService";
+    import NotyService from "~services/NotyService";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -123,7 +123,7 @@
                                 user.set(settings.user);
                                 token.set(settings.token);
                             } else {
-                                notyError("Could not get Nextcloud server settings");
+                                NotyService.notyError("Could not get Nextcloud server settings");
                             }
                         });
                     await reloadPossibleVaultsInfo();
