@@ -1,5 +1,5 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
-import ExtensionSettingsService from "~services/ExtensionSettingsService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 
 const getFilteredCredentials = (credentials: Credential[], searchInput: string) => {
@@ -22,7 +22,7 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
 
     await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
         if (passmanClient) {
-            return await ExtensionSettingsService.getDefaultVaultInfo().then(async (defaultVaultInfo) => {
+            return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {
                     let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
                     if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {

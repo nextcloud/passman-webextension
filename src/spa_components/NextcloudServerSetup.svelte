@@ -10,7 +10,7 @@
     import { onMount } from "svelte";
     import UnlockExtensionService from "~services/UnlockExtensionService";
     import { push } from "~Router.svelte";
-    import ExtensionSettingsService from "~services/ExtensionSettingsService";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
     import Select from 'svelte-select';
     import type {
         NextcloudServerInfoInterface
@@ -116,17 +116,18 @@
             UnlockExtensionService.isSetupDone().then(async (isSetupDone) => {
                 if (isSetupDone) {
                     // populate input fields with current settings
-                    await ExtensionSettingsService.getNextcloudServerSettings().then((settings) => {
-                        if (settings) {
-                            server.set(settings.baseUrl);
-                            user.set(settings.user);
-                            token.set(settings.token);
-                        } else {
-                            notyError("Could not get Nextcloud server settings");
-                        }
-                    });
+                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo)
+                        .then((settings) => {
+                            if (settings) {
+                                server.set(settings.baseUrl);
+                                user.set(settings.user);
+                                token.set(settings.token);
+                            } else {
+                                notyError("Could not get Nextcloud server settings");
+                            }
+                        });
                     await reloadPossibleVaultsInfo();
-                    await ExtensionSettingsService.getDefaultVaultInfo().then((defaultVaultInfo) => {
+                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then((defaultVaultInfo) => {
                         for (let info of vaultSelectionList) {
                             if (info.guid === defaultVaultInfo.guid) {
                                 selectedVaultInfo = info;

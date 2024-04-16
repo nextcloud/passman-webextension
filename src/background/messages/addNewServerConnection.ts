@@ -1,6 +1,6 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
 import { PassmanClient } from "@binsky/passman-client-ts";
-import ExtensionSettingsService from "~services/ExtensionSettingsService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
@@ -14,7 +14,7 @@ const handler: PlasmoMessaging.MessageHandler<NextcloudServerInfoInterface> = as
         const passmanClient = new PassmanClient(req.body);
         if (await passmanClient.refreshVaults(true)) {
             ExtensionSettingsService.updatePassmanClient(passmanClient);
-            await ExtensionSettingsService.updateNextcloudServerSettings(req.body);
+            await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo, req.body);
 
             for (let vault of passmanClient.vaults) {
                 vaultSelectionList.push({

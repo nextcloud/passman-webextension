@@ -7,7 +7,7 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import refresh from "svelte-awesome/icons/refresh";
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
-    import ExtensionSettingsService from "~services/ExtensionSettingsService";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import CredentialListElement from "~spa_partials/InteractionElements/CredentialListElement.svelte";
@@ -56,7 +56,7 @@
     onMount(() => {
         ExtensionSettingsService.getPassmanClient(true).then((passmanClient) => {
             if (passmanClient) {
-                ExtensionSettingsService.getDefaultVaultInfo().then(async (defaultVaultInfo) => {
+                ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
                         let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {

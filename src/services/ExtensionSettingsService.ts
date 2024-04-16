@@ -6,21 +6,46 @@ import type {
 import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
 import { DefaultLoggingService } from "@binsky/passman-client-ts/lib/Service/DefaultLoggingService";
 
+export enum ExtensionSettingsOptions {
+    nextcloudServerAuthInfo,
+    defaultVaultInfo,
+    offlineCacheEnabled
+}
+
+export interface ExtensionSettings {
+    [ExtensionSettingsOptions.nextcloudServerAuthInfo]: NextcloudServerInfoInterface,
+    [ExtensionSettingsOptions.defaultVaultInfo]: {
+        guid: string,
+        password: string
+    },
+    [ExtensionSettingsOptions.offlineCacheEnabled]: boolean
+}
+
 export default class ExtensionSettingsService {
-    private static readonly PERSISTENT_AUTH_STORE_ACCESS_KEY: string = 'NextcloudServerAuthInfo';
-    private static readonly DEFAULT_VAULT_INFO_ACCESS_KEY: string = 'DefaultVaultInfo';
+    private static readonly EXTENSION_SETTINGS_ACCESS_KEY: string = 'ExtensionSettings';
     private static localPassmanClient: PassmanClient = null;
 
-    public static updateNextcloudServerSettings = async (ncAuthInfo: NextcloudServerInfoInterface) => {
+    public static updateExtensionSettings = async (extensionSettings: ExtensionSettings) => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return await myStorage.set(ExtensionSettingsService.PERSISTENT_AUTH_STORE_ACCESS_KEY, ncAuthInfo)
+            return await myStorage.set(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY, extensionSettings)
         })
     };
 
-    public static getNextcloudServerSettings = async () => {
+    public static updatePartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K, value: ExtensionSettings[K]) => {
+        const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
+        extensionSettings[key] = value;
+        return ExtensionSettingsService.updateExtensionSettings(extensionSettings);
+    };
+
+    public static getExtensionSettings = async () => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return await myStorage.get(ExtensionSettingsService.PERSISTENT_AUTH_STORE_ACCESS_KEY) as NextcloudServerInfoInterface
+            return await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY) as ExtensionSettings
         })
+    };
+
+    public static getPartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K): Promise<ExtensionSettings[K]> => {
+        const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
+        return extensionSettings[key];
     };
 
     public static getPassmanClient = async (createWithNextcloudServerMessagingConnector = false) => {
@@ -31,14 +56,14 @@ export default class ExtensionSettingsService {
                 ExtensionSettingsService.localPassmanClient = new PassmanClient(
                     null,
                     new NextcloudServerMessagingConnector(
-                        await ExtensionSettingsService.getNextcloudServerSettings(),
+                        await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo),
                         logger
                     ),
                     logger
                 );
             } else {
                 ExtensionSettingsService.localPassmanClient = new PassmanClient(
-                    await ExtensionSettingsService.getNextcloudServerSettings()
+                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo)
                 );
             }
         }
@@ -48,20 +73,5 @@ export default class ExtensionSettingsService {
 
     public static updatePassmanClient = (passmanClient: PassmanClient) => {
         ExtensionSettingsService.localPassmanClient = passmanClient;
-    };
-
-    public static setDefaultVaultInfo = async (guid: string, password: string) => {
-        return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return await myStorage.set(ExtensionSettingsService.DEFAULT_VAULT_INFO_ACCESS_KEY, { guid, password });
-        })
-    };
-
-    public static getDefaultVaultInfo = async () => {
-        return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return await myStorage.get(ExtensionSettingsService.DEFAULT_VAULT_INFO_ACCESS_KEY) as {
-                guid: string,
-                password: string
-            }
-        })
     };
 }
