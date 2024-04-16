@@ -52,7 +52,8 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                     headers: {
                         Accept: 'application/json',
                         Authorization: `Basic ${this.getEncodedLogin()}`
-                    }
+                    },
+                    credentials: 'omit',
                 }
             }
         }).then(async (value) => this.handleConnectorJsonResponse<T>(value, errorCallback));
@@ -72,7 +73,8 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                     method: 'DELETE',
                     headers: {
                         Authorization: `Basic ${this.getEncodedLogin()}`
-                    }
+                    },
+                    credentials: 'omit',
                 }
             }
         }).then(async (value) => this.handleConnectorJsonResponse<T>(value, errorCallback));
@@ -97,6 +99,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                         Authorization: `Basic ${this.getEncodedLogin()}`,
                         "Content-Type": "application/json",
                     },
+                    credentials: 'omit',
                     body: JSON.stringify(data),
                 }
             }
