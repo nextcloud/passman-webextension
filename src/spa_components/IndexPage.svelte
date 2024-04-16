@@ -34,6 +34,7 @@
             pageIsLoading = true;
             vault.refresh().then(() => {
                 vault = vault;
+            }).finally(() => {
                 pageIsLoading = false;
             });
         }
@@ -84,10 +85,10 @@
 
 <div class="h-full overflow-y-hidden flex flex-col">
     <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
-        <OnClickButton callback={refreshCredentialList} title="Refresh credential list" additionalClasses="w-12">
+        <OnClickButton callback={refreshCredentialList} title="Refresh credential list" additionalClasses="w-12" disabled={!vault}>
             <Icon data={refresh} scale={1.3}/>
         </OnClickButton>
-        <OnClickButton callback={openOptionsPage} title="Create new credential" additionalClasses="w-12">
+        <OnClickButton callback={openOptionsPage} title="Create new credential" additionalClasses="w-12" disabled={!vault}>
             <Icon data={plus} scale={1.3}/>
         </OnClickButton>
         <div class="">
@@ -118,7 +119,7 @@
                 {#each filteredCredentials as credential}
                     <CredentialListElement bind:credential/>
                 {/each}
-                {#if filteredCredentials.length === 0}
+                {#if !errorMessage && filteredCredentials.length === 0}
                     <span class="text-gray-400 mt-4">
                         No matching credentials
                     </span>
