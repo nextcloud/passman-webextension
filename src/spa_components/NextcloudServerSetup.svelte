@@ -15,6 +15,7 @@
     import type {
         NextcloudServerInfoInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
+    import { notyError } from "~services/NotyService";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -52,9 +53,10 @@
         sendToBackground({
             name: "addNewServerConnection",
             body: loginData
-        }).then((value) => {
+        }).then(async (value) => {
             console.log(value.status);
             console.log(value.message);
+            console.log(value.vaultSelectionList);
 
             if (value.status) {
                 successMessage = value.message;
@@ -85,15 +87,15 @@
                         });
                     }
                 });
-            } else {
-                vaultErrorMessage = value.errorMessage;
             }
+            vaultErrorMessage = value.errorMessage ?? '';
 
             lockDefaultVaultButton = false;
         });
     };
 
     const reloadPossibleVaultsInfo = async () => {
+        lockDefaultVaultButton = true;
         return sendToBackground({
             name: "getPossibleVaultsInfo"
         }).then((value) => {
@@ -115,9 +117,13 @@
                 if (isSetupDone) {
                     // populate input fields with current settings
                     await ExtensionSettingsService.getNextcloudServerSettings().then((settings) => {
-                        server.set(settings.baseUrl);
-                        user.set(settings.user);
-                        token.set(settings.token);
+                        if (settings) {
+                            server.set(settings.baseUrl);
+                            user.set(settings.user);
+                            token.set(settings.token);
+                        } else {
+                            notyError("Could not get Nextcloud server settings");
+                        }
                     });
                     await reloadPossibleVaultsInfo();
                     await ExtensionSettingsService.getDefaultVaultInfo().then((defaultVaultInfo) => {
@@ -187,15 +193,17 @@
                     {chrome.i18n.getMessage('select_default_vault')}
                 </label>
                 <div class="my-2">
-                    <Select
-                            multiple={false}
-                            label="name"
-                            itemId="guid"
-                            items={vaultSelectionList}
-                            bind:value={selectedVaultInfo}
-                            id="vaults_select"
-                            --height="38px"
-                    />
+                    {#key vaultSelectionList}
+                        <Select
+                                multiple={false}
+                                label="name"
+                                itemId="guid"
+                                items={vaultSelectionList}
+                                bind:value={selectedVaultInfo}
+                                id="vaults_select"
+                                --height="38px"
+                        />
+                    {/key}
                 </div>
             </div>
             <div class="mt-2">
