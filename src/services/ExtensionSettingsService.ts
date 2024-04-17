@@ -9,7 +9,11 @@ import { CustomPassmanClientLoggingService } from "~services/CustomPassmanClient
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,
     defaultVaultInfo,
-    offlineCacheEnabled
+    offlineCacheEnabled,
+    ignoreProtocol,
+    ignoreSubdomain,
+    ignorePath,
+    ignorePort
 }
 
 export interface ExtensionSettings {
@@ -18,7 +22,11 @@ export interface ExtensionSettings {
         guid: string,
         password: string
     },
-    [ExtensionSettingsOptions.offlineCacheEnabled]: boolean
+    [ExtensionSettingsOptions.offlineCacheEnabled]: boolean,
+    [ExtensionSettingsOptions.ignoreProtocol]: boolean,
+    [ExtensionSettingsOptions.ignoreSubdomain]: boolean,
+    [ExtensionSettingsOptions.ignorePath]: boolean,
+    [ExtensionSettingsOptions.ignorePort]: boolean,
 }
 
 export default class ExtensionSettingsService {

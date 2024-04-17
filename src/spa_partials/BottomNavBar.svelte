@@ -19,7 +19,7 @@
             Generator
         </span>
     </InternalHrefLinkButton>
-    <InternalHrefLinkButton href="/setup/server" title="Settings" small={true}
+    <InternalHrefLinkButton href="/settings" title="Settings" small={true}
                             additionalClasses="flex flex-col items-center min-w-24">
         <Icon data={cogs} scale={1.5}/>
         <span class="text-xs mt-1">
