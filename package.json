@@ -6,6 +6,7 @@
   "author": "Timo Triebensky <timo@binsky.org>",
   "packageManager": "pnpm@8.10.2",
   "scripts": {
+    "prebuild": "node ./assets/helper_scripts/update-tld-rules.js",
     "dev": "plasmo dev --verbose",
     "dev-ff": "plasmo dev --target=firefox-mv2",
     "build": "plasmo build",
