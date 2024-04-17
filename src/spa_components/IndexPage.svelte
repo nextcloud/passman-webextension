@@ -13,8 +13,10 @@
     import CredentialListElement from "~spa_partials/InteractionElements/CredentialListElement.svelte";
     import Loading from "~spa_components/Loading.svelte";
     import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
+    import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
 
     let searchInput = '';
+    let overwriteInputFilterByTabUrl: string = null;
     let errorMessage: string = null;
     let vault: Vault = null;
     let filteredCredentials: Credential[] = [];
@@ -48,15 +50,26 @@
         filteredCredentials = [];
 
         if (vault) {
-            filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput);
+            if (overwriteInputFilterByTabUrl) {
+                CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, vault.credentials)
+                    .then((credentials) => {
+                        filteredCredentials = credentials;
+                    });
+            } else {
+                filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput);
+            }
         }
     };
 
     $: vault && applyCredentialFilter(searchInput);
 
     onMount(() => {
-        ExtensionSettingsService.getPassmanClient(true).then((passmanClient) => {
+        ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
             if (passmanClient) {
+                await chrome.tabs.query({currentWindow: true, active: true}).then(function (activeTabs: chrome.tabs.Tab[]) {
+                    overwriteInputFilterByTabUrl = activeTabs[0].url;
+                });
+
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
                         let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
