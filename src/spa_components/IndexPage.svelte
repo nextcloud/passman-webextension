@@ -15,7 +15,7 @@
     import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
     import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
 
-    let searchInput = '';
+    let searchInput = null;
     let overwriteInputFilterByTabUrl: string = null;
     let errorMessage: string = null;
     let vault: Vault = null;
@@ -50,12 +50,14 @@
         filteredCredentials = [];
 
         if (vault) {
-            if (overwriteInputFilterByTabUrl) {
+            if (overwriteInputFilterByTabUrl && searchInput === null) {
                 CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, vault.credentials)
                     .then((credentials) => {
                         filteredCredentials = credentials;
                     });
             } else {
+                // reset tab url search filter when entering a custom search value the first time
+                overwriteInputFilterByTabUrl = null;
                 filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput);
             }
         }
@@ -66,7 +68,10 @@
     onMount(() => {
         ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
             if (passmanClient) {
-                await chrome.tabs.query({currentWindow: true, active: true}).then(function (activeTabs: chrome.tabs.Tab[]) {
+                await chrome.tabs.query({
+                    currentWindow: true,
+                    active: true
+                }).then(function (activeTabs: chrome.tabs.Tab[]) {
                     overwriteInputFilterByTabUrl = activeTabs[0].url;
                 });
 
@@ -98,10 +103,12 @@
 
 <div class="h-full overflow-y-hidden flex flex-col">
     <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
-        <OnClickButton callback={refreshCredentialList} title="Refresh credential list" additionalClasses="w-12" disabled={!vault}>
+        <OnClickButton callback={refreshCredentialList} title="Refresh credential list" additionalClasses="w-12"
+                       disabled={!vault}>
             <Icon data={refresh} scale={1.3}/>
         </OnClickButton>
-        <OnClickButton callback={openOptionsPage} title="Create new credential" additionalClasses="w-12" disabled={!vault}>
+        <OnClickButton callback={openOptionsPage} title="Create new credential" additionalClasses="w-12"
+                       disabled={!vault}>
             <Icon data={plus} scale={1.3}/>
         </OnClickButton>
         <div class="">
