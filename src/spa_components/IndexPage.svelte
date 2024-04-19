@@ -34,7 +34,7 @@
     const refreshCredentialList = () => {
         if (vault) {
             pageIsLoading = true;
-            vault.refresh().then(() => {
+            vault.refresh(false).then(() => {
                 vault = vault;
             }).finally(() => {
                 pageIsLoading = false;
@@ -49,7 +49,7 @@
     const applyCredentialFilter = (searchInput: string) => {
         filteredCredentials = [];
 
-        if (vault) {
+        if (vault && vault.credentials && vault.credentials.length > 0) {
             if (overwriteInputFilterByTabUrl && searchInput === null) {
                 CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, vault.credentials)
                     .then((credentials) => {
@@ -58,7 +58,7 @@
             } else {
                 // reset tab url search filter when entering a custom search value the first time
                 overwriteInputFilterByTabUrl = null;
-                filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput);
+                filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput ?? '');
             }
         }
     };
@@ -77,11 +77,11 @@
 
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
-                        let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
+                        let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {
-                                await myVault.refresh();
+                                await myVault.refresh(true);
                             }
                             vault = myVault;
                         } else {

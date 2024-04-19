@@ -7,6 +7,7 @@ import type {
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { NextcloudServer } from "@binsky/passman-client-ts/lib/Model/NextcloudServer";
 import { sendToBackground } from "@plasmohq/messaging";
+import CustomStorageService from "~services/CustomStorageService";
 
 export class NextcloudServerMessagingConnector extends NextcloudServer implements NextcloudServerInterface {
 
@@ -18,7 +19,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      * @throws ConfigurationError
      */
     constructor(serverData: NextcloudServerInfoInterface, logger: LoggingHandlerInterface) {
-        super(serverData, logger);
+        super(serverData, logger, CustomStorageService.getSessionRequestCachingHandler());
     }
 
     private handleConnectorJsonResponse = async <T>(response: any, errorCallback: (response: Error) => void): Promise<T | void> => {
@@ -42,8 +43,23 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      * Do a response typed get request in the background service worker.
      * @param endpoint
      * @param errorCallback
+     * @param getCachedIfPossible
      */
-    getJson = async <T>(endpoint: string, errorCallback: (response: Error) => void): Promise<T | void> => {
+    getJson = async <T>(endpoint: string, errorCallback: (response: Error) => void, getCachedIfPossible: boolean = false): Promise<T | void> => {
+        const cachePrefix = 'cache-getJson-';
+        if (getCachedIfPossible && this.cache) {
+            const cachedValue = await this.cache.get(cachePrefix + endpoint)
+            if (cachedValue && cachedValue !== '') {
+                try {
+                    console.debug("try parse cached value for key: " + cachePrefix + endpoint);
+                    return JSON.parse(cachedValue) as T;
+                } catch (e) {
+                    // ignore all exceptions, just continue with the non-cached request logic
+                    console.debug(e);
+                }
+            }
+        }
+
         return sendToBackground({
             name: "nextcloudServerMessagingConnectorApi",
             body: {
@@ -56,7 +72,13 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                     credentials: 'omit',
                 }
             }
-        }).then(async (value) => this.handleConnectorJsonResponse<T>(value, errorCallback));
+        }).then(async (value) => {
+            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            if (this.cache) {
+                await this.cache.set(cachePrefix + endpoint, JSON.stringify(jsonResponse));
+            }
+            return jsonResponse;
+        });
     };
 
     /**

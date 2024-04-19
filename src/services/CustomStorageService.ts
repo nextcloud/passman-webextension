@@ -1,11 +1,15 @@
 import { Storage } from "@plasmohq/storage";
 import { SecureStorage } from "@plasmohq/storage/dist/secure";
 import UnlockExtensionService from "~services/UnlockExtensionService";
+import type {
+    RequestCachingHandlerInterface
+} from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
 
 export default class CustomStorageService {
     private static sessionStorage: Storage;
     private static unsafeLocalStorage: Storage;
     private static secureStorage: SecureStorage;
+    private static requestCachingHandler: RequestCachingHandlerInterface;
 
     public static getSessionStorage() {
         if (!this.sessionStorage) {
@@ -45,5 +49,24 @@ export default class CustomStorageService {
 
     public static async clearSessionStorage() {
         return this.getSessionStorage().clear(true);
+    }
+
+    /**
+     * Get request cache handler that uses the volatile session storage backend.
+     */
+    public static getSessionRequestCachingHandler() {
+        if (!this.requestCachingHandler) {
+            this.requestCachingHandler = {
+                set: function (key: string, value: string): Promise<void> {
+                    //return idb_set(key, value);
+                    return CustomStorageService.getSessionStorage().set(key, value);
+                },
+                get: function (key: string): Promise<string> {
+                    //return idb_get(key);
+                    return CustomStorageService.getSessionStorage().get(key);
+                }
+            };
+        }
+        return this.requestCachingHandler;
     }
 }

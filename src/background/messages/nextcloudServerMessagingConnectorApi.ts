@@ -28,6 +28,7 @@ const handler: PlasmoMessaging.MessageHandler<NextcloudServerMessagingConnectorA
         // just 401 is not a valid reason to get cached data
         if (!response || response.status === undefined || response.status > 401) {
             // todo: check if cache is enabled and not yet timed out
+            // CustomStorageService.getIndexedDBRequestCachingHandler()
         }
     }
 
