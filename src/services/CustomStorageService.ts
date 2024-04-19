@@ -4,6 +4,7 @@ import UnlockExtensionService from "~services/UnlockExtensionService";
 import type {
     RequestCachingHandlerInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
+import { get as idb_get, set as idb_set } from 'idb-keyval';
 
 export default class CustomStorageService {
     private static sessionStorage: Storage;
@@ -58,12 +59,28 @@ export default class CustomStorageService {
         if (!this.requestCachingHandler) {
             this.requestCachingHandler = {
                 set: function (key: string, value: string): Promise<void> {
-                    //return idb_set(key, value);
                     return CustomStorageService.getSessionStorage().set(key, value);
                 },
                 get: function (key: string): Promise<string> {
-                    //return idb_get(key);
                     return CustomStorageService.getSessionStorage().get(key);
+                }
+            };
+        }
+        return this.requestCachingHandler;
+    }
+
+    /**
+     * Get request cache handler that uses the Indexed DB backend to avoid "Error: QUOTA_BYTES_PER_ITEM quota exceeded"
+     * (which will occur by storing too big values in local storage).
+     */
+    public static getIndexedDBRequestCachingHandler() {
+        if (!this.requestCachingHandler) {
+            this.requestCachingHandler = {
+                set: function (key: string, value: string): Promise<void> {
+                    return idb_set(key, value);
+                },
+                get: function (key: string): Promise<string> {
+                    return idb_get(key);
                 }
             };
         }
