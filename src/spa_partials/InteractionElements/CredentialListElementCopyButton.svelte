@@ -1,7 +1,7 @@
 <script lang="ts">
     import Icon from "svelte-awesome/components/Icon.svelte";
     import type { IconType } from "svelte-awesome/package/components/Icon.svelte";
-    import ClipboardService from "~services/ClipboardService";
+    import ClipboardService from "~services/frontend/ClipboardService";
 
     export let value: string | number;
     export let fieldName: string;

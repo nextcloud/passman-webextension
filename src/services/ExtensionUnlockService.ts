@@ -2,9 +2,9 @@ import { sha512 } from "js-sha512";
 import CustomStorageService from "~services/CustomStorageService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
-import { ExtensionBadgeService } from "~services/ExtensionBadgeService";
+import { ExtensionBadgeService } from "~services/backend/ExtensionBadgeService";
 
-export default class UnlockExtensionService {
+export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
     public static readonly EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY = 'extensionUnlockPasswordHash';
     public static readonly EXTENSION_SETUP_DONE_ACCESS_KEY = 'extensionSetupDone';
@@ -78,7 +78,7 @@ export default class UnlockExtensionService {
      * Returns the unlocked default vault if possible. It does not refresh the vault to load credentials from the api.
      */
     public static async getUnlockedDefaultVault(createWithNextcloudServerMessagingConnector = false): Promise<Vault> {
-        return await UnlockExtensionService.isUnlocked().then(async (isUnlocked) => {
+        return await ExtensionUnlockService.isUnlocked().then(async (isUnlocked) => {
             if (isUnlocked) {
                 return await ExtensionSettingsService.getPassmanClient(createWithNextcloudServerMessagingConnector).then(async (passmanClient) => {
                     if (passmanClient) {

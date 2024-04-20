@@ -2,7 +2,7 @@
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
-    import UnlockExtensionService from "~services/UnlockExtensionService";
+    import ExtensionUnlockService from "~services/ExtensionUnlockService";
 
     export let params: { isInPopup: string };
     let newExtensionUnlockPassword = '';
@@ -11,7 +11,7 @@
 
     async function setUnlockPassword() {
         processNewUnlockPassword = true;
-        await UnlockExtensionService.setUpExtensionPassword(newExtensionUnlockPassword);
+        await ExtensionUnlockService.setUpExtensionPassword(newExtensionUnlockPassword);
         isExtensionUnlocked = true;
         processNewUnlockPassword = false;
     }

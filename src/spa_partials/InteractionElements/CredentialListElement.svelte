@@ -5,7 +5,7 @@
     import CredentialListElementCopyButton
         from "~spa_partials/InteractionElements/CredentialListElementCopyButton.svelte";
     import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
-    import ClipboardService from "~services/ClipboardService";
+    import ClipboardService from "~services/frontend/ClipboardService";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { link } from "~Router.svelte";
     import { onMount } from "svelte";

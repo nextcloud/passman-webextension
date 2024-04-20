@@ -1,6 +1,6 @@
 import { Storage } from "@plasmohq/storage";
 import { SecureStorage } from "@plasmohq/storage/dist/secure";
-import UnlockExtensionService from "~services/UnlockExtensionService";
+import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import type {
     RequestCachingHandlerInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
@@ -36,7 +36,7 @@ export default class CustomStorageService {
         if (!this.secureStorage) {
             this.secureStorage = new SecureStorage();
             await this.secureStorage.setPassword(
-                await this.getSessionStorage().get(UnlockExtensionService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY)
+                await this.getSessionStorage().get(ExtensionUnlockService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY)
             );
         }
         return this.secureStorage;

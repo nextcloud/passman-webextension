@@ -4,12 +4,12 @@
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
-    import UnlockExtensionService from "~services/UnlockExtensionService";
+    import ExtensionUnlockService from "~services/ExtensionUnlockService";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
     import CustomCheckboxField from "~spa_partials/FormElements/CustomCheckboxField.svelte";
     import { push } from "~Router.svelte";
     import Loading from "~spa_components/Loading.svelte";
-    import NotyService from "~services/NotyService";
+    import NotyService from "~services/frontend/NotyService";
     import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
 
     let extendedSettings = {
@@ -34,7 +34,7 @@
     }
 
     onMount(() => {
-        UnlockExtensionService.isSetupDone().then(async (isSetupDone) => {
+        ExtensionUnlockService.isSetupDone().then(async (isSetupDone) => {
             if (isSetupDone) {
                 // populate input fields with current settings
                 extendedSettings[ExtensionSettingsOptions.ignoreProtocol] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreProtocol);

@@ -1,4 +1,4 @@
-import UnlockExtensionService from "~services/UnlockExtensionService";
+import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 
@@ -6,9 +6,9 @@ export class ExtensionBadgeService {
     public static readonly DEFAULT_BADGE_BG_COLOR = '#0082c9';
 
     public static updateAllTabsIcon = (isFrontendCall = false) => {
-        UnlockExtensionService.isUnlocked().then((isUnlocked) => {
+        ExtensionUnlockService.isUnlocked().then((isUnlocked) => {
             if (isUnlocked) {
-                UnlockExtensionService.getUnlockedDefaultVault(isFrontendCall).then(async (vault) => {
+                ExtensionUnlockService.getUnlockedDefaultVault(isFrontendCall).then(async (vault) => {
                     if (vault) {
                         if (vault.credentials.length <= 1) {
                             await vault.refresh(true);
@@ -35,7 +35,7 @@ export class ExtensionBadgeService {
      */
     public static createIconForTab = async (tab: chrome.tabs.Tab, ignoreUnlockedCheck = false, vault?: Vault, isFrontendCall = false) => {
         if (!vault) {
-            vault = await UnlockExtensionService.getUnlockedDefaultVault(isFrontendCall);
+            vault = await ExtensionUnlockService.getUnlockedDefaultVault(isFrontendCall);
             if (vault) {
                 if (vault.credentials.length <= 1) {
                     await vault.refresh(true);
@@ -43,7 +43,7 @@ export class ExtensionBadgeService {
             }
         }
 
-        if (!vault || !ignoreUnlockedCheck && !await UnlockExtensionService.isUnlocked()) {
+        if (!vault || !ignoreUnlockedCheck && !await ExtensionUnlockService.isUnlocked()) {
             return;
         }
 

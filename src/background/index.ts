@@ -1,5 +1,5 @@
-import UnlockExtensionService from "~services/UnlockExtensionService";
-import { ExtensionBadgeService } from "~services/ExtensionBadgeService";
+import ExtensionUnlockService from "~services/ExtensionUnlockService";
+import { ExtensionBadgeService } from "~services/backend/ExtensionBadgeService";
 
 chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason === 'install') {
@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    UnlockExtensionService.isUnlocked().then(async (isUnlocked) => {
+    ExtensionUnlockService.isUnlocked().then(async (isUnlocked) => {
         if (isUnlocked) {
             await ExtensionBadgeService.createIconForTab(tab);
         } else {
@@ -23,7 +23,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 chrome.tabs.onActivated.addListener((activeInfo: chrome.tabs.TabActiveInfo) => {
     chrome.tabs.get(activeInfo.tabId).then((tab) => {
-        UnlockExtensionService.isUnlocked().then(async (isUnlocked) => {
+        ExtensionUnlockService.isUnlocked().then(async (isUnlocked) => {
             if (isUnlocked) {
                 await ExtensionBadgeService.createIconForTab(tab);
             } else {

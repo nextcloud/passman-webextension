@@ -1,4 +1,4 @@
-import NotyService from "~services/NotyService";
+import NotyService from "~services/frontend/NotyService";
 
 export default class ClipboardService {
     public static copyToClipboard = (value: string, fieldTitle: string) => {

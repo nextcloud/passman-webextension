@@ -1,11 +1,11 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
 import { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
-import UnlockExtensionService from "~services/UnlockExtensionService";
+import ExtensionUnlockService from "~services/ExtensionUnlockService";
 
 const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
-    const status = await UnlockExtensionService.isSetupDone().then((isSetUp: boolean) => {
+    const status = await ExtensionUnlockService.isSetupDone().then((isSetUp: boolean) => {
         if (isSetUp) {
-            return UnlockExtensionService.isUnlocked().then((isUnlocked: boolean) => {
+            return ExtensionUnlockService.isUnlocked().then((isUnlocked: boolean) => {
                 if (isUnlocked) {
                     // correct unlock password already in session
                     return ExtensionUnlockState.UNLOCKED;

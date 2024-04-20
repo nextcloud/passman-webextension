@@ -4,7 +4,7 @@ import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
-import { CustomPassmanClientLoggingService } from "~services/CustomPassmanClientLoggingService";
+import { CustomPassmanClientLoggingService } from "~services/frontend/CustomPassmanClientLoggingService";
 
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,

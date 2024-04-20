@@ -1,5 +1,5 @@
 import { DefaultLoggingService } from "@binsky/passman-client-ts/lib/Service/DefaultLoggingService";
-import NotyService from "~services/NotyService";
+import NotyService from "~services/frontend/NotyService";
 
 export class CustomPassmanClientLoggingService extends DefaultLoggingService {
     onSuccess(message: string): void {

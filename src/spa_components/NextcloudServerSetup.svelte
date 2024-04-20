@@ -8,14 +8,14 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
-    import UnlockExtensionService from "~services/UnlockExtensionService";
+    import ExtensionUnlockService from "~services/ExtensionUnlockService";
     import { push } from "~Router.svelte";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
     import Select from 'svelte-select';
     import type {
         NextcloudServerInfoInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
-    import NotyService from "~services/NotyService";
+    import NotyService from "~services/frontend/NotyService";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -80,9 +80,9 @@
             }
         }).then((value) => {
             if (value.status) {
-                UnlockExtensionService.isSetupDone().then((isSetupDone) => {
+                ExtensionUnlockService.isSetupDone().then((isSetupDone) => {
                     if (!isSetupDone) {
-                        UnlockExtensionService.setSetupDone().then(() => {
+                        ExtensionUnlockService.setSetupDone().then(() => {
                             push('/home');
                         });
                     }
@@ -110,10 +110,10 @@
     };
 
     onMount(() => {
-        UnlockExtensionService.isUnlocked().then((isUnlocked) => {
+        ExtensionUnlockService.isUnlocked().then((isUnlocked) => {
             lockLoginButton = !isUnlocked;
 
-            UnlockExtensionService.isSetupDone().then(async (isSetupDone) => {
+            ExtensionUnlockService.isSetupDone().then(async (isSetupDone) => {
                 if (isSetupDone) {
                     // populate input fields with current settings
                     await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo)

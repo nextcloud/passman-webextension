@@ -1,5 +1,5 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
-import UnlockExtensionService from "~services/UnlockExtensionService";
+import ExtensionUnlockService from "~services/ExtensionUnlockService";
 
 /**
  * The extension frontend can be locked from the frontend itself, but it should additionally call this messaging endpoint,
@@ -9,7 +9,7 @@ import UnlockExtensionService from "~services/UnlockExtensionService";
  */
 const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     res.send({
-        status: await UnlockExtensionService.unlock(req.body.extensionUnlockPassword)
+        status: await ExtensionUnlockService.unlock(req.body.extensionUnlockPassword)
     });
 }
 
