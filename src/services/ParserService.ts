@@ -6,14 +6,13 @@ export class ParserService {
             return inputUrl;
         }
 
-        const anchorElementParser = document.createElement('a');
-        anchorElementParser.href = inputUrl;
+        const { hostname, pathname, port, protocol } = ParserService.parseUrl(inputUrl);
 
-        if (anchorElementParser.hostname === null || anchorElementParser.hostname === "") {
+        if (hostname === null || hostname === "") {
             return inputUrl;
         }
 
-        const splitURL = anchorElementParser.hostname.split(".");
+        const splitURL = hostname.split(".");
         let isIP = false;
         if (splitURL.length === 4) {
             isIP = true;
@@ -27,9 +26,9 @@ export class ParserService {
 
         let baseHost = null;
         if (isIP) {
-            baseHost = anchorElementParser.hostname;
+            baseHost = hostname;
         } else {
-            const tld = ParserService.parseHost(anchorElementParser.hostname);
+            const tld = ParserService.parseHost(hostname);
             if (tld) {
                 baseHost = tld.domain;
             }
@@ -37,31 +36,45 @@ export class ParserService {
 
         let returnURL = "";
         if (!ignoreProtocol) {
-            returnURL += anchorElementParser.protocol + "//";
+            returnURL += protocol + "//";
         }
 
         if (!ignoreSubdomain) {
-            returnURL += anchorElementParser.hostname;
+            returnURL += hostname;
         } else {
             returnURL += baseHost;  //return the hostname and the tld of the website if ignoreSubdomain is true
         }
 
         if (ignorePort) {
-            if (anchorElementParser.port) {
-                returnURL = returnURL.replace(':' + anchorElementParser.port, '');
+            if (port) {
+                returnURL = returnURL.replace(':' + port, '');
             }
-        } else if (anchorElementParser.port) {
-            returnURL += ':' + anchorElementParser.port;
+        } else if (port) {
+            returnURL += ':' + port;
         }
 
-        if (!ignorePath && anchorElementParser.pathname) {
-            returnURL += anchorElementParser.pathname;
+        if (!ignorePath && pathname) {
+            returnURL += pathname;
         }
         if (returnURL.slice(-1) === "/") {
             returnURL = returnURL.slice(0, -1);
         }
         return returnURL;
     }
+
+    public static parseUrl = (url: string | URL) => {
+        if (typeof url === "string") {
+            url = new URL(url);
+        }
+        const { hostname, pathname, port, protocol } = url as URL;
+
+        return {
+            hostname,
+            port: port ? parseInt(port) : undefined,
+            protocol,
+            pathname: pathname
+        };
+    };
 
     public static parseHost = (hostname: string) => {
         /** global: tlds */
