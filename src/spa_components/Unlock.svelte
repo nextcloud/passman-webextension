@@ -8,24 +8,29 @@
 
     let extensionUnlockPassword = '';
     let errors: string[] = [];
+    let inUnlockRequest = false;
 
     const unlock = () => {
-        sendToBackground({
-            name: "unlockExtension",
-            body: {
-                extensionUnlockPassword
-            }
-        }).then((value) => {
-            if (value.status) {
-                push('/home');
-                $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
-            } else {
-                errors = [
-                    chrome.i18n.getMessage("invalid_master_password")
-                ];
-                $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
-            }
-        });
+        if (!inUnlockRequest) {
+            inUnlockRequest = true;
+            sendToBackground({
+                name: "unlockExtension",
+                body: {
+                    extensionUnlockPassword
+                }
+            }).then((value) => {
+                if (value.status) {
+                    push('/home');
+                    $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
+                } else {
+                    errors = [
+                        chrome.i18n.getMessage("invalid_master_password")
+                    ];
+                    $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
+                }
+                inUnlockRequest = false;
+            });
+        }
     };
 </script>
 
@@ -41,7 +46,7 @@
                           type="password"/>
         <ShowGenericErrors bind:errors/>
         <OnClickButton callback={unlock} title="{chrome.i18n.getMessage('unlock')}" tabindex="2"
-                       disabled={extensionUnlockPassword === ''}>
+                       disabled={extensionUnlockPassword === '' || inUnlockRequest}>
             {chrome.i18n.getMessage("unlock")}
         </OnClickButton>
     </div>

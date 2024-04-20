@@ -77,12 +77,12 @@ export default class UnlockExtensionService {
     /**
      * Returns the unlocked default vault if possible. It does not refresh the vault to load credentials from the api.
      */
-    public static getUnlockedDefaultVault(createWithNextcloudServerMessagingConnector = false): Promise<Vault> {
-        return UnlockExtensionService.isUnlocked().then((isUnlocked) => {
+    public static async getUnlockedDefaultVault(createWithNextcloudServerMessagingConnector = false): Promise<Vault> {
+        return await UnlockExtensionService.isUnlocked().then(async (isUnlocked) => {
             if (isUnlocked) {
-                return ExtensionSettingsService.getPassmanClient(createWithNextcloudServerMessagingConnector).then(async (passmanClient) => {
+                return await ExtensionSettingsService.getPassmanClient(createWithNextcloudServerMessagingConnector).then(async (passmanClient) => {
                     if (passmanClient) {
-                        return ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
+                        return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                             try {
                                 let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
                                 if (myVault) {
