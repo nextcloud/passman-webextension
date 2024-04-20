@@ -1,3 +1,6 @@
+import UnlockExtensionService from "~services/UnlockExtensionService";
+import { ExtensionBadgeService } from "~services/ExtensionBadgeService";
+
 chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason === 'install') {
         // on extension installation
@@ -5,6 +8,28 @@ chrome.runtime.onInstalled.addListener((details) => {
     } else if (details.reason === 'update') {
         // on extension update
     }
+});
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    UnlockExtensionService.isUnlocked().then(async (isUnlocked) => {
+        if (isUnlocked) {
+            await ExtensionBadgeService.createIconForTab(tab);
+        } else {
+            ExtensionBadgeService.displayLogoutIcons();
+        }
+    });
+});
+
+chrome.tabs.onActivated.addListener((activeInfo: chrome.tabs.TabActiveInfo) => {
+    chrome.tabs.get(activeInfo.tabId).then((tab) => {
+        UnlockExtensionService.isUnlocked().then(async (isUnlocked) => {
+            if (isUnlocked) {
+                await ExtensionBadgeService.createIconForTab(tab);
+            } else {
+                ExtensionBadgeService.displayLogoutIcons();
+            }
+        });
+    });
 });
 
 export {}

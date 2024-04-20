@@ -51,7 +51,6 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
             const cachedValue = await this.cache.get(cachePrefix + endpoint)
             if (cachedValue && cachedValue !== '') {
                 try {
-                    console.debug("try parse cached value for key: " + cachePrefix + endpoint);
                     return JSON.parse(cachedValue) as T;
                 } catch (e) {
                     // ignore all exceptions, just continue with the non-cached request logic

@@ -1,6 +1,7 @@
 import { sha512 } from "js-sha512";
 import CustomStorageService from "~services/CustomStorageService";
-import ExtensionSettingsService from "~services/ExtensionSettingsService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 
 export default class UnlockExtensionService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -68,5 +69,40 @@ export default class UnlockExtensionService {
             .then(async (extensionUnlockPassword: string | undefined) => {
                 return extensionUnlockPassword !== undefined && extensionUnlockPassword !== null;
             });
+    }
+
+    /**
+     * Returns the unlocked default vault if possible. It does not refresh the vault to load credentials from the api.
+     */
+    public static getUnlockedDefaultVault(): Promise<Vault> {
+        return UnlockExtensionService.isUnlocked().then((isUnlocked) => {
+            if (isUnlocked) {
+                return ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
+                    if (passmanClient) {
+                        return ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
+                            try {
+                                let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
+                                if (myVault) {
+                                    if (myVault.vaultKey === undefined || myVault.vaultKey === null) {
+                                        // seems not to be unlocked yet
+                                        if (myVault.testVaultKey(defaultVaultInfo.password)) {
+                                            // unlock successful
+                                            myVault.vaultKey = defaultVaultInfo.password;
+                                            return myVault;
+                                        } else {
+                                            return;
+                                        }
+                                    }
+                                    return myVault;
+                                }
+                            } catch (exception) {
+                                // Could not get or decrypt vault
+                                console.error(exception);
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
 }
