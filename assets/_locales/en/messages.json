@@ -175,6 +175,10 @@
     "message": "Detected changed URL for",
     "description": "Detected changed URL for"
   },
+  "edit_credential": {
+    "message": "Edit credential",
+    "description": "credential"
+  },
   "credential": {
     "message": "Credential",
     "description": "credential"

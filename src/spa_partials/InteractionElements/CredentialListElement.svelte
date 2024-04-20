@@ -9,6 +9,7 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { link } from "~Router.svelte";
     import { onMount } from "svelte";
+    import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
 
     export let credential: Credential;
     let editLink = '';
@@ -43,11 +44,17 @@
             <CredentialListElementCopyButton value={null} copy={copyOTPToClipboard}
                                              forceEnable={credential.otp != null && credential.otp.secret != null}
                                              fieldName="OTP" icon={clockO} iconScale={1.2}/>
-            <a title="Edit credential" class="cursor-pointer px-0.5 hover:text-blue-700"
-               href="{editLink}"
-               use:link={editLink}>
-                <Icon data={pencil} scale={1.2}/>
-            </a>
+            {#if credential.acl === undefined || credential.acl.permissions.hasPermission(SharingACL.permissions.WRITE)}
+                <a title="{chrome.i18n.getMessage('edit_credential')}" class="cursor-pointer px-0.5 hover:text-blue-700"
+                   href="{editLink}"
+                   use:link={editLink}>
+                    <Icon data={pencil} scale={1.2}/>
+                </a>
+            {:else}
+                <span title="{chrome.i18n.getMessage('edit_insufficient_permissions')}" class="px-0.5 text-gray-300">
+                    <Icon data={pencil} scale={1.2}/>
+                </span>
+            {/if}
         </div>
     </div>
 {/if}
