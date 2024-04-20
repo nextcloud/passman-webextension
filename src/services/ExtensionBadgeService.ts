@@ -5,10 +5,10 @@ import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 export class ExtensionBadgeService {
     public static readonly DEFAULT_BADGE_BG_COLOR = '#0082c9';
 
-    public static updateAllTabsIcon = () => {
+    public static updateAllTabsIcon = (isFrontendCall = false) => {
         UnlockExtensionService.isUnlocked().then((isUnlocked) => {
             if (isUnlocked) {
-                UnlockExtensionService.getUnlockedDefaultVault().then(async (vault) => {
+                UnlockExtensionService.getUnlockedDefaultVault(isFrontendCall).then(async (vault) => {
                     if (vault) {
                         if (vault.credentials.length <= 1) {
                             await vault.refresh(true);
@@ -16,13 +16,13 @@ export class ExtensionBadgeService {
 
                         chrome.tabs.query({}).then(async (tabs) => {
                             for (const tab of tabs) {
-                                await ExtensionBadgeService.createIconForTab(tab, true, vault);
+                                await ExtensionBadgeService.createIconForTab(tab, true, vault, isFrontendCall);
                             }
                         });
                     }
                 });
             } else {
-                ExtensionBadgeService.displayLogoutIcons();
+                ExtensionBadgeService.displayLockIcons();
             }
         });
     }
@@ -31,10 +31,11 @@ export class ExtensionBadgeService {
      * @param tab
      * @param ignoreUnlockedCheck could cause errors if this is true, but the extension is not unlocked! use carefully!
      * @param vault
+     * @param isFrontendCall
      */
-    public static createIconForTab = async (tab: chrome.tabs.Tab, ignoreUnlockedCheck = false, vault?: Vault) => {
+    public static createIconForTab = async (tab: chrome.tabs.Tab, ignoreUnlockedCheck = false, vault?: Vault, isFrontendCall = false) => {
         if (!vault) {
-            vault = await UnlockExtensionService.getUnlockedDefaultVault();
+            vault = await UnlockExtensionService.getUnlockedDefaultVault(isFrontendCall);
             if (vault) {
                 if (vault.credentials.length <= 1) {
                     await vault.refresh(true);
@@ -70,7 +71,22 @@ export class ExtensionBadgeService {
         });
     }
 
-    public static displayLogoutIcons = () => {
-        // todo: implement
+    public static displayLockIcons = () => {
+        chrome.tabs.query({}).then(async (tabs) => {
+            for (const tab of tabs) {
+                await chrome.action.setBadgeText({
+                    text: '🔑',
+                    tabId: tab.id
+                });
+                await chrome.action.setBadgeBackgroundColor({
+                    color: '#ff0000',
+                    tabId: tab.id
+                });
+                await chrome.action.setTitle({
+                    title: chrome.i18n.getMessage('browser_action_title_locked'),
+                    tabId: tab.id
+                });
+            }
+        });
     }
 }
