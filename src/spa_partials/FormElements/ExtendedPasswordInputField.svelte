@@ -17,6 +17,7 @@
     export let afterPWGenCallback: (generated: string) => void = undefined;
     export let showCopyClipboardButton: boolean = true;
     export let showHiddenToggle: boolean = true;
+    export let iconScale: number = 1.0;
     export let id = undefined;
     export let value;
     export let name = '';
@@ -29,11 +30,9 @@
 </script>
 
 {#if label !== undefined}
-    <label
-            for={id}
-            class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2"
-    >{label}</label
-    >
+    <label class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2" for={id}>
+        {label}
+    </label>
 {/if}
 
 
@@ -54,9 +53,9 @@
         {#if showHiddenToggle}
             <button on:click={() => {
                     showPasswordValue = true;
-                }}
+                }} title="{chrome.i18n.getMessage('toggle_visibility')}"
                     class="cursor-pointer px-0.5 transition-opacity opacity-20 hover:opacity-100">
-                <Icon data={eyeSlash} scale={1.0}/>
+                <Icon data={eyeSlash} scale={iconScale}/>
             </button>
         {/if}
     {:else}
@@ -75,9 +74,9 @@
         {#if showHiddenToggle}
             <button on:click={() => {
                     showPasswordValue = false;
-                }}
+                }} title="{chrome.i18n.getMessage('toggle_visibility')}"
                     class="cursor-pointer px-0.5 transition-opacity opacity-20 hover:opacity-100">
-                <Icon data={eye} scale={1.0}/>
+                <Icon data={eye} scale={iconScale}/>
             </button>
         {/if}
     {/if}
@@ -88,14 +87,14 @@
                     if (afterPWGenCallback !== undefined) {
                         afterPWGenCallback(value);
                     }
-                }}
+                }} title="{chrome.i18n.getMessage('generate_password')}"
                 class="cursor-pointer px-0.5 transition-opacity opacity-20 hover:opacity-100">
-            <Icon data={refresh} scale={1.0}/>
+            <Icon data={refresh} scale={iconScale-0.1}/>
         </button>
     {/if}
     {#if showCopyClipboardButton}
         <CopyClipboardButton bind:value buttonTitle="{chrome.i18n.getMessage('copy_to_clipboard')}"
-                             fieldTitle="{chrome.i18n.getMessage('password')}"
+                             fieldTitle="{chrome.i18n.getMessage('password')}" iconScale={iconScale-0.3}
                              additionalClasses="transition-opacity opacity-20 hover:opacity-100"/>
     {/if}
 </div>

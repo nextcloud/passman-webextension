@@ -45,6 +45,10 @@
     "message": "Save site",
     "description": "Save site"
   },
+  "generator": {
+    "message": "Generator",
+    "description": "Password generator menu entry"
+  },
   "password_generator": {
     "message": "Password generator",
     "description": "Password generator"
@@ -84,6 +88,22 @@
   "require_every_character_type": {
     "message": "Require every character type",
     "description": "Require every character type"
+  },
+  "use_uppercase": {
+    "message": "Use uppercase letters",
+    "description": "Use uppercase letters"
+  },
+  "use_lowercase": {
+    "message": "Use lowercase letters",
+    "description": "Use lowercase letters"
+  },
+  "use_digits": {
+    "message": "Use digits",
+    "description": "Use digits"
+  },
+  "use_special_chars": {
+    "message": "Use special characters",
+    "description": "Use special characters"
   },
   "add_account": {
     "message": "Add account",
@@ -156,11 +176,11 @@
     "description": "Detected changed URL for"
   },
   "credential": {
-    "message": "credential",
+    "message": "Credential",
     "description": "credential"
   },
   "credentials": {
-    "message": "credentials",
+    "message": "Credentials",
     "description": "credentials"
   },
   "refresh_timer": {

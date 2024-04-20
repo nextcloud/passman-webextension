@@ -46,6 +46,15 @@ devDependencies:
   '@types/node':
     specifier: ^20.12.7
     version: 20.12.7
+  '@zxcvbn-ts/core':
+    specifier: ^3.0.4
+    version: 3.0.4
+  '@zxcvbn-ts/language-common':
+    specifier: ^3.0.4
+    version: 3.0.4
+  '@zxcvbn-ts/language-en':
+    specifier: ^3.0.2
+    version: 3.0.2
   autoprefixer:
     specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.38)

@@ -66,7 +66,7 @@ export class ExtensionBadgeService {
 
         const plural = (credentialAmount === 1) ? chrome.i18n.getMessage('credential') : chrome.i18n.getMessage('credentials');
         await chrome.action.setTitle({
-            title: chrome.i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString()]),
+            title: chrome.i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString().toLowerCase()]),
             tabId: tab.id
         });
     }

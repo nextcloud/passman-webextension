@@ -5,25 +5,25 @@
 </script>
 
 <div class="flex flex-nowrap items-center justify-center space-x-4 border-t py-2">
-    <InternalHrefLinkButton href="/home" title="Credentials" small={true}
+    <InternalHrefLinkButton href="/home" title="{chrome.i18n.getMessage('credentials')}" small={true}
                             additionalClasses="flex flex-col items-center min-w-24">
         <Icon data={search} scale={1.4}/>
         <span class="text-xs mt-1">
-            Credentials
+            {chrome.i18n.getMessage('credentials')}
         </span>
     </InternalHrefLinkButton>
-    <InternalHrefLinkButton href="/setup/server" title="Settings" small={true}
+    <InternalHrefLinkButton href="/generator" title="{chrome.i18n.getMessage('password_generator')}" small={true}
                             additionalClasses="flex flex-col items-center min-w-24">
         <Icon data={circleONotch} scale={1.5}/>
         <span class="text-xs mt-1">
-            Generator
+            {chrome.i18n.getMessage('generator')}
         </span>
     </InternalHrefLinkButton>
-    <InternalHrefLinkButton href="/settings" title="Settings" small={true}
+    <InternalHrefLinkButton href="/settings" title="{chrome.i18n.getMessage('settings')}" small={true}
                             additionalClasses="flex flex-col items-center min-w-24">
         <Icon data={cogs} scale={1.5}/>
         <span class="text-xs mt-1">
-            Settings
+            {chrome.i18n.getMessage('settings')}
         </span>
     </InternalHrefLinkButton>
 </div>
