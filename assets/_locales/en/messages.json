@@ -19,9 +19,9 @@
     "message": "No credentials found",
     "description": "No credentials found for the current site"
   },
-  "notes": {
-    "message": "Notes",
-    "description": "No credentials found for the current site"
+  "description": {
+    "message": "Description",
+    "description": "Credential notes / description"
   },
   "invalid_response_from_server": {
     "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
@@ -129,13 +129,25 @@
     "message": "Add",
     "description": "Add"
   },
+  "credential_changed": {
+    "message": "Credential changed",
+    "description": "Credential changed"
+  },
   "credential_created": {
     "message": "Credential created",
     "description": "Credential created"
   },
+  "credentials_expires": {
+    "message": "Credential expires",
+    "description": "Credential expires"
+  },
   "url": {
     "message": "URL",
     "description": "URL"
+  },
+  "tags": {
+    "message": "Tags",
+    "description": "Tags"
   },
   "password": {
     "message": "Password",
@@ -186,6 +198,10 @@
   "credentials": {
     "message": "Credentials",
     "description": "credentials"
+  },
+  "compromised_notice": {
+    "message": "This password is compromised. You can only remove this warning by changing the password.",
+    "description": "Credential compromised notice"
   },
   "refresh_timer": {
     "message": "Refresh timer [s]",
@@ -466,6 +482,14 @@
   "one_time_password": {
     "message": "OTP",
     "description": "One time password"
+  },
+  "otp_configuration_invalid": {
+    "message": "Invalid OTP configuration",
+    "description": "Invalid one time password configuration"
+  },
+  "files": {
+    "message": "Files",
+    "description": "Credential files"
   },
   "settings": {
     "message": "Settings",

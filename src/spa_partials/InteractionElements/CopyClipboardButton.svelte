@@ -8,7 +8,7 @@
     export let icon: IconType = clipboard;
     export let iconScale: number = 1.0;
     export let fieldTitle: string = '';
-    export let buttonTitle: string = '';
+    export let buttonTitle: string = chrome.i18n.getMessage('copy_to_clipboard');
     export let additionalClasses = '';
 </script>
 

@@ -74,7 +74,11 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
         }).then(async (value) => {
             const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
             if (this.cache) {
-                await this.cache.set(cachePrefix + endpoint, JSON.stringify(jsonResponse));
+                try {
+                    await this.cache.set(cachePrefix + endpoint, JSON.stringify(jsonResponse));
+                } catch (e) {
+                    console.warn('Failed to cache ' + endpoint, e);
+                }
             }
             return jsonResponse;
         });
