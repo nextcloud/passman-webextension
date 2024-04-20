@@ -27,6 +27,9 @@
             name: "lockExtension"
         }).then(() => {
             $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
+            if (vault) {
+                vault.lock();
+            }
             push('/unlock');
         });
     }

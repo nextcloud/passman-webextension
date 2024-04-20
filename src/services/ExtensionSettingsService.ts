@@ -47,7 +47,7 @@ export default class ExtensionSettingsService {
 
     public static getExtensionSettings = async () => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return (await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY) ?? {}) as ExtensionSettings
+            return ((await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY)) ?? {}) as ExtensionSettings
         })
     };
 
@@ -70,8 +70,9 @@ export default class ExtensionSettingsService {
                     logger
                 );
             } else {
+                const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo);
                 ExtensionSettingsService.localPassmanClient = new PassmanClient(
-                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo)
+                    nextcloudServerData
                 );
             }
         }

@@ -2,18 +2,20 @@ import { sha512 } from "js-sha512";
 import CustomStorageService from "~services/CustomStorageService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
+import { ExtensionBadgeService } from "~services/ExtensionBadgeService";
 
 export default class UnlockExtensionService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
     public static readonly EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY = 'extensionUnlockPasswordHash';
     public static readonly EXTENSION_SETUP_DONE_ACCESS_KEY = 'extensionSetupDone';
 
-    public static unlock(password: string) {
-        return this.isSetupDone() && CustomStorageService.getUnsafeLocalStorage()
-            .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY)
+    public static async unlock(password: string, isFrontendCall = false) {
+        return await this.isSetupDone() && await (CustomStorageService.getUnsafeLocalStorage()
+            .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY))
             .then(async (extensionUnlockPasswordHash: string | undefined) => {
                 if (extensionUnlockPasswordHash === sha512(password)) {
                     await CustomStorageService.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
+                    ExtensionBadgeService.updateAllTabsIcon(isFrontendCall);
                     return true;
                 }
                 return false;
@@ -27,6 +29,7 @@ export default class UnlockExtensionService {
         await CustomStorageService.clearSessionStorage();
         CustomStorageService.closeSecureStorage();
         ExtensionSettingsService.updatePassmanClient(null);
+        ExtensionBadgeService.displayLockIcons();
     }
 
     /**
@@ -74,10 +77,10 @@ export default class UnlockExtensionService {
     /**
      * Returns the unlocked default vault if possible. It does not refresh the vault to load credentials from the api.
      */
-    public static getUnlockedDefaultVault(): Promise<Vault> {
+    public static getUnlockedDefaultVault(createWithNextcloudServerMessagingConnector = false): Promise<Vault> {
         return UnlockExtensionService.isUnlocked().then((isUnlocked) => {
             if (isUnlocked) {
-                return ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
+                return ExtensionSettingsService.getPassmanClient(createWithNextcloudServerMessagingConnector).then(async (passmanClient) => {
                     if (passmanClient) {
                         return ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                             try {

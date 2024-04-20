@@ -1,17 +1,22 @@
 <script lang="ts">
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
-    import UnlockExtensionService from "~services/UnlockExtensionService";
     import ShowGenericErrors from "~spa_partials/FormElements/ShowGenericErrors.svelte";
     import { push } from "~Router.svelte";
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
+    import { sendToBackground } from "@plasmohq/messaging";
 
     let extensionUnlockPassword = '';
     let errors: string[] = [];
 
     const unlock = () => {
-        UnlockExtensionService.unlock(extensionUnlockPassword).then((state) => {
-            if (state) {
+        sendToBackground({
+            name: "unlockExtension",
+            body: {
+                extensionUnlockPassword
+            }
+        }).then((value) => {
+            if (value.status) {
                 push('/home');
                 $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
             } else {

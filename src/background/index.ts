@@ -15,7 +15,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         if (isUnlocked) {
             await ExtensionBadgeService.createIconForTab(tab);
         } else {
-            ExtensionBadgeService.displayLogoutIcons();
+            ExtensionBadgeService.displayLockIcons();
         }
     });
 });
@@ -26,7 +26,7 @@ chrome.tabs.onActivated.addListener((activeInfo: chrome.tabs.TabActiveInfo) => {
             if (isUnlocked) {
                 await ExtensionBadgeService.createIconForTab(tab);
             } else {
-                ExtensionBadgeService.displayLogoutIcons();
+                ExtensionBadgeService.displayLockIcons();
             }
         });
     });
