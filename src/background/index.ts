@@ -7,6 +7,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         chrome.runtime.openOptionsPage();
     } else if (details.reason === 'update') {
         // on extension update
+        ExtensionBadgeService.updateAllTabsIcon();
     }
 });
 
