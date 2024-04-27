@@ -1,6 +1,7 @@
 import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
+import ContextMenuService from "~services/backend/ContextMenuService";
 
 export class ExtensionBadgeService {
     public static readonly DEFAULT_BADGE_BG_COLOR = '#0082c9';
@@ -28,6 +29,7 @@ export class ExtensionBadgeService {
     }
 
     /**
+     * Creates / updates the tab icon with the credential count. Updates the tab specific context menu as well (if it is active).
      * @param tab
      * @param ignoreUnlockedCheck could cause errors if this is true, but the extension is not unlocked! use carefully!
      * @param vault
@@ -51,8 +53,7 @@ export class ExtensionBadgeService {
         const credentialAmount = credentialsForTab.length;
 
         if (tab.active) {
-            // todo: update contextMenu
-            // window.contextMenu.setContextItems(credentialsForTab);
+            ContextMenuService.updateActiveTabSpecificContextMenuItems(credentialsForTab);
         }
 
         await chrome.action.setBadgeText({

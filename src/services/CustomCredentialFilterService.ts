@@ -3,6 +3,12 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/Ex
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 
 export class CustomCredentialFilterService {
+    /**
+     * Creates and returns a new array of credentials that can be associated with the given tab url.
+     * Returns an empty array, if the tab url is missing or an empty string.
+     * @param userTabUrl
+     * @param credentials All credentials, to filter for. (Usually all credentials of the vault.)
+     */
     public static getCredentialsByUrl = async (userTabUrl: string, credentials: Credential[]) => {
         let found_list: Credential[] = [];
 

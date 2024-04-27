@@ -49,6 +49,9 @@
     "host_permissions": [
       "https://*/*"
     ],
-    "default_locale": "en"
+    "default_locale": "en",
+    "permissions": [
+      "contextMenus"
+    ]
   }
 }

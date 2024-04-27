@@ -3,6 +3,7 @@ import CustomStorageService from "~services/CustomStorageService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import { ExtensionBadgeService } from "~services/backend/ExtensionBadgeService";
+import ContextMenuService from "~services/backend/ContextMenuService";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -30,6 +31,7 @@ export default class ExtensionUnlockService {
         CustomStorageService.closeSecureStorage();
         ExtensionSettingsService.updatePassmanClient(null);
         ExtensionBadgeService.displayLockIcons();
+        ContextMenuService.reCreateContextMenuParentItems(false);
     }
 
     /**
