@@ -13,7 +13,7 @@
 </script>
 
 {#if value && icon}
-    <button on:click={() => ClipboardService.copyToClipboard(value, fieldTitle)}
+    <button on:click={() => ClipboardService.copyToClipboardWithNotification(value, fieldTitle)}
             title="{buttonTitle}"
             class="cursor-pointer px-0.5 {additionalClasses}">
         <Icon data={icon} scale={iconScale}/>

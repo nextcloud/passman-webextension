@@ -9,7 +9,7 @@
     export let iconScale: number = 1.0;
     export let forceEnable: boolean = false;
     export let copy = () => {
-        ClipboardService.copyToClipboard(value.toString(), fieldName);
+        ClipboardService.copyToClipboardWithNotification(value.toString(), fieldName);
     }
 </script>
 

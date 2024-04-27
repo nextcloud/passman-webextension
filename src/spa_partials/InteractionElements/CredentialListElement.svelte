@@ -17,7 +17,7 @@
     let showExpandedView = false;
 
     const copyOTPToClipboard = () => {
-        ClipboardService.copyToClipboard(OTPService.updateOTP(credential.otp), 'OTP');
+        ClipboardService.copyToClipboardWithNotification(OTPService.updateOTP(credential.otp), 'OTP');
     }
 
     const toggleExpandedCredentialView = () => {
