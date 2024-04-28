@@ -1,0 +1,163 @@
+import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
+import { sendToBackground } from "@plasmohq/messaging";
+import {
+    type GetCredentialsListMessagingConfiguration,
+    type GetCredentialsListMessagingResponse,
+    GetCredentialsListMessagingFilterType
+} from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
+import passwordPickerIcon from "data-base64:~../assets/images/passwordPickerIcon.svg";
+
+export class PasswordPickerService {
+    public static initPickerForPage = () => {
+        console.log("initPickerForPage");
+        const pageUrl = window.location.href;
+        const loginFields = LegacyFormManagerService.getLoginFields();
+        console.log(pageUrl);
+        console.log(loginFields);
+
+        // todo: fetch enablePasswordPicker from settings
+        const enablePasswordPicker = true;
+
+        // todo: check ignored sites / urls here
+        /*
+        if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url).length !== 0) {
+            return;
+        }
+        */
+
+        if (loginFields.length > 0) {
+            for (const loginField of loginFields) {
+                const form = LegacyFormManagerService.getFormFromElement(loginField[0]);
+                if (enablePasswordPicker) {
+                    PasswordPickerService.createPasswordPicker(form);
+                }
+
+                //Password miner
+                form.addEventListener("submit", () => {
+                    PasswordPickerService.onFormSubmittedCallback(loginField)
+                }, {
+                    capture: true
+                });
+            }
+
+            sendToBackground<GetCredentialsListMessagingConfiguration, GetCredentialsListMessagingResponse>({
+                name: "getPartiallyDecryptedFilteredCredentialsList",
+                body: {
+                    filterText: pageUrl,
+                    filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL
+                }
+            }).then(async (value) => {
+                console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
+
+                // todo: get from settings: isAutofillEnabled
+                /*
+                   if (logins.length === 1) {
+                        chrome.runtime.sendMessage(chrome.runtime.id, { method: 'isAutoFillEnabled' }).then(function (isEnabled) {
+                            if (isEnabled && !flagFilledForm) {
+                                enterLoginDetails(logins[0], false);
+                                flagFilledForm = true;
+                            }
+                        });
+                    }
+                 */
+            });
+        }
+    }
+
+    private static onFormIconClick = (event?: MouseEvent, data?: { width: number, height: number, form: HTMLFormElement }) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const offsetX = event.offsetX;
+        const offsetRight = (data.width - offsetX);
+
+        // only open iframe, if the mouse clicked at the passman icon in the input element
+        // using data.height as replacement for the icon width, since it is automatically resized to fill the element height
+        if (offsetRight < data.height) {
+            // todo: implement
+            //PasswordPickerService.showPasswordPicker(data.form);
+
+            alert("the password picker should open up now - if it was implemented");
+        }
+    }
+
+    /*private static showPasswordPicker = (form: HTMLFormElement) => {
+        var passwordPickerFrames = document.querySelectorAll('.passwordPickerIframe');
+        if (passwordPickerFrames.length > 1) {
+            return;
+        }
+
+        var loginField = document.querySelector(form[0]);
+        var loginFieldPos = loginField.getBoundingClientRect();
+        var loginFieldVisible = window.getComputedStyle(loginField).display !== 'none';
+
+        var passwordField = document.querySelector(form[1]);
+        var passwordFieldPos = passwordField.getBoundingClientRect();
+        var passwordFieldVisible = window.getComputedStyle(passwordField).display !== 'none';
+
+        var left = loginFieldPos.left || passwordFieldPos.left;
+        var top = loginFieldPos.top || passwordFieldPos.top;
+        var maxZ = getMaxZ();
+
+        if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
+            top = passwordFieldPos.top + passwordField.offsetHeight + 10;
+        } else {
+            if (loginFieldPos) {
+                top = top + loginField.offsetHeight + 10;
+            } else {
+                top = top + passwordField.offsetHeight + 10;
+            }
+        }
+        if (!loginFieldVisible) {
+            left = passwordFieldPos.left;
+        }
+
+        var pickerUrl = chrome.extension.getURL('/html/inject/password_picker.html');
+        var picker = document.createElement('iframe');
+        picker.classList.add('passwordPickerIframe');
+        picker.setAttribute('scrolling', 'no');
+        picker.setAttribute('height', '385');
+        picker.setAttribute('width', '350');
+        picker.setAttribute('frameborder', '0');
+        picker.setAttribute('src', pickerUrl);
+        picker.style.position = 'absolute';
+        picker.style.left = left + 'px';
+        picker.style.zIndex = maxZ + 10;
+        picker.style.top = top + 'px';
+        document.body.insertBefore(picker, document.body.firstChild);
+        activeForm = form;
+
+        var existingPickers = document.querySelectorAll('.passwordPickerIframe:not(:last-child)');
+        existingPickers.forEach(function(picker) {
+            picker.remove();
+        });
+    }*/
+
+
+    private static createFormIcon = (el: HTMLInputElement, form: HTMLFormElement) => {
+        const width = el.offsetWidth;
+        const height = el.offsetHeight;
+
+        const pickerIcon = chrome.runtime.getURL('/assets/icon.png');
+
+        //el.style.backgroundImage = 'url("' + pickerIcon + '")';
+        el.style.backgroundImage = 'url("' + passwordPickerIcon + '")';
+        el.style.backgroundRepeat = 'no-repeat';
+        el.style.cssText = el.getAttribute('style') + ' background-position: right 3px center !important;';
+
+        el.removeEventListener('click', PasswordPickerService.onFormIconClick);
+        el.addEventListener('click', function(event) {
+            PasswordPickerService.onFormIconClick(event, { width: width, height: height, form: form });
+        });
+    }
+
+    public static createPasswordPicker = (form: HTMLFormElement) => {
+        for (let element of form.getElementsByTagName('input')) {
+            PasswordPickerService.createFormIcon(element, form);
+        }
+    }
+
+    public static onFormSubmittedCallback = (loginField) => {
+        console.log("onFormSubmittedCallback");
+        console.log(loginField);
+    }
+}

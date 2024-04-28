@@ -43,4 +43,17 @@ export class CustomCredentialFilterService {
 
         return found_list;
     }
+
+    public static getCredentialsByLabel = (searchInput: string, credentials: Credential[]) => {
+        let filtered: Credential[] = [];
+        if (searchInput && searchInput.trim() !== '') {
+            for (const credential of credentials) {
+                if (credential.label.includes(searchInput)) {
+                    filtered.push(credential);
+                }
+            }
+            return filtered;
+        }
+        return credentials;
+    }
 }
