@@ -3,6 +3,9 @@
     import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
     import { sendToBackground } from "@plasmohq/messaging";
     import { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
+    import Icon from "svelte-awesome/package/components/Icon.svelte";
+    import { ban, list, plus, search, times } from "svelte-awesome/package/icons";
+    import refresh from "svelte-awesome/icons/refresh";
 
     let extensionIsUnlocked = false;
     let customPickerStyle = "display: none;";
@@ -32,11 +35,11 @@
                 extensionIsUnlocked = true;
                 console.debug("is unlocked");
 
-                document.addEventListener('click', function(event) {
+                document.addEventListener('click', function (event) {
                     let shadowRootContainer = document.getElementsByTagName('plasmo-csui').item(0);
                     let targetEl = event.target as Element; // clicked element
                     do {
-                        if(targetEl == shadowRootContainer) {
+                        if (targetEl == shadowRootContainer) {
                             // This is a click inside, does nothing, just return.
                             // console.debug("Clicked inside!");
                             return;
@@ -67,27 +70,42 @@
 </script>
 
 
-<link rel="stylesheet" type="text/css" href="{chrome.runtime.getURL('/assets/content_styles/password_picker.css')}" />
+<link rel="stylesheet" type="text/css" href="{chrome.runtime.getURL('/assets/content_styles/password_picker.css')}"/>
 
 
 {#if extensionIsUnlocked || true}
-    <!--<div style="background-color: #61d345; width: 10%; height: 10%">
-        i am the unlocked picker
-    </div>-->
     <div id="password_picker" style="height: 385px; width: 350px; {customPickerStyle}">
         <div class="tabs">
-            <div class="tab add" data-name="add"><span class="fa fa-plus" aria-hidden="true"
-                                                       title="[add_account, title]"></span></div>
-            <div class="tab list" data-name="list"><span class="fa fa-list" aria-hidden="true"
-                                                         title="[accounts, title]"></span></div>
-            <div class="tab search" data-name="search"><span class="fa fa-search" aria-hidden="true"
-                                                             title="[search, title]"></span></div>
-            <div class="tab generate" data-name="generate"><span class="fa fa-refresh" aria-hidden="true"
-                                                                 title="[password_generator, title]"></span></div>
-            <div class="tab ignore" data-name="ignore"><span class="fa fa-ban" aria-hidden="true"
-                                                             title="[ignore_site_tab, title]"></span></div>
-            <div class="tab close pull-right"><span class="fa fa-times" aria-hidden="true"
-                                                    title="[close, title]"></span></div>
+            <div class="tab add" data-name="add">
+                <span class="fa" title="[add_account, title]">
+                    <Icon data={plus} scale={1.0}/>
+                </span>
+            </div>
+            <div class="tab list" data-name="list">
+                <span class="fa" title="[accounts, title]">
+                    <Icon data={list} scale={1.0}/>
+                </span>
+            </div>
+            <div class="tab search" data-name="search">
+                <span class="fa" title="[search, title]">
+                    <Icon data={search} scale={1.0}/>
+                </span>
+            </div>
+            <div class="tab generate" data-name="generate">
+                <span class="fa" title="[password_generator, title]">
+                    <Icon data={refresh} scale={1.0}/>
+                </span>
+            </div>
+            <div class="tab ignore" data-name="ignore">
+                <span class="fa" title="[ignore_site_tab, title]">
+                    <Icon data={ban} scale={1.0}/>
+                </span>
+            </div>
+            <div class="tab close pull-right">
+                <span class="fa" title="[close, title]">
+                    <Icon data={times} scale={1.0}/>
+                </span>
+            </div>
         </div>
         <div class="tab-content">
             <div class="tab-add-content" style="display: none">
