@@ -8,7 +8,13 @@ import {
 import passwordPickerIcon from "data-base64:~../assets/images/passwordPickerIcon.svg";
 
 export class PasswordPickerService {
-    public static initPickerForPage = () => {
+    private static showPickerCallback: (left: number, top: number, maxZ: any) => void;
+    private static hidePickerCallback: () => void;
+
+    public static initPickerForPage = (showPickerCallback: (left: number, top: number, maxZ: any) => void, hidePickerCallback: () => void) => {
+        PasswordPickerService.showPickerCallback = showPickerCallback;
+        PasswordPickerService.hidePickerCallback = hidePickerCallback;
+
         console.log("initPickerForPage");
         const pageUrl = window.location.href;
         const loginFields = LegacyFormManagerService.getLoginFields();
@@ -74,29 +80,41 @@ export class PasswordPickerService {
         // using data.height as replacement for the icon width, since it is automatically resized to fill the element height
         if (offsetRight < data.height) {
             // todo: implement
-            //PasswordPickerService.showPasswordPicker(data.form);
+            PasswordPickerService.showPasswordPicker(data.form);
 
-            alert("the password picker should open up now - if it was implemented");
+            //alert("the password picker should open up now - if it was implemented");
         }
     }
 
-    /*private static showPasswordPicker = (form: HTMLFormElement) => {
-        var passwordPickerFrames = document.querySelectorAll('.passwordPickerIframe');
+    private static getMaxZ = () => {
+        return Math.max.apply(null,
+            Array.from(document.querySelectorAll('body *')).map(function (e) {
+                if (window.getComputedStyle(e).position !== 'static') {
+                    return parseInt(window.getComputedStyle(e).zIndex) || 1;
+                }
+            }).filter(function (value) {
+                return typeof value === 'number';
+            })
+        );
+    }
+
+    private static showPasswordPicker = (form: HTMLFormElement) => {
+        var passwordPickerFrames = document.querySelectorAll('#password_picker');
         if (passwordPickerFrames.length > 1) {
             return;
         }
 
-        var loginField = document.querySelector(form[0]);
+        var loginField = form[0] as HTMLElement;
         var loginFieldPos = loginField.getBoundingClientRect();
         var loginFieldVisible = window.getComputedStyle(loginField).display !== 'none';
 
-        var passwordField = document.querySelector(form[1]);
+        var passwordField = form[1] as HTMLElement;
         var passwordFieldPos = passwordField.getBoundingClientRect();
         var passwordFieldVisible = window.getComputedStyle(passwordField).display !== 'none';
 
         var left = loginFieldPos.left || passwordFieldPos.left;
         var top = loginFieldPos.top || passwordFieldPos.top;
-        var maxZ = getMaxZ();
+        var maxZ = PasswordPickerService.getMaxZ();
 
         if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
             top = passwordFieldPos.top + passwordField.offsetHeight + 10;
@@ -111,26 +129,31 @@ export class PasswordPickerService {
             left = passwordFieldPos.left;
         }
 
-        var pickerUrl = chrome.extension.getURL('/html/inject/password_picker.html');
-        var picker = document.createElement('iframe');
-        picker.classList.add('passwordPickerIframe');
-        picker.setAttribute('scrolling', 'no');
-        picker.setAttribute('height', '385');
-        picker.setAttribute('width', '350');
-        picker.setAttribute('frameborder', '0');
-        picker.setAttribute('src', pickerUrl);
-        picker.style.position = 'absolute';
+        PasswordPickerService.showPickerCallback(left, top, maxZ);
+
+        //var pickerUrl = chrome.extension.getURL('/html/inject/password_picker.html');
+        //var picker = document.getElementById('password_picker');
+        //console.log(picker);
+        //picker.classList.add('passwordPickerIframe');
+        //picker.setAttribute('scrolling', 'no');
+        //picker.setAttribute('height', '385');
+        //picker.setAttribute('width', '350');
+        //picker.setAttribute('frameborder', '0');
+        //picker.setAttribute('src', pickerUrl);
+        /*picker.style.position = 'absolute';
         picker.style.left = left + 'px';
         picker.style.zIndex = maxZ + 10;
-        picker.style.top = top + 'px';
-        document.body.insertBefore(picker, document.body.firstChild);
-        activeForm = form;
+        picker.style.top = top + 'px';*/
+        //document.body.insertBefore(picker, document.body.firstChild);
 
-        var existingPickers = document.querySelectorAll('.passwordPickerIframe:not(:last-child)');
+        // todo: what is this line? :
+        //activeForm = form;
+
+        /*var existingPickers = document.querySelectorAll('.passwordPickerIframe:not(:last-child)');
         existingPickers.forEach(function(picker) {
             picker.remove();
-        });
-    }*/
+        });*/
+    }
 
 
     private static createFormIcon = (el: HTMLInputElement, form: HTMLFormElement) => {

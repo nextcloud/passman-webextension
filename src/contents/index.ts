@@ -1,5 +1,4 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
-import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     console.log("[content script] Received message from background script:", message);
@@ -17,4 +16,4 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     }
 });
 
-PasswordPickerService.initPickerForPage();
+// password picker will be checked and initialized by PasswordPicker.svelte
