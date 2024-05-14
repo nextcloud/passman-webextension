@@ -1,17 +1,22 @@
 import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
 import { sendToBackground } from "@plasmohq/messaging";
 import {
+    type DecryptedPartialCredentialData,
     type GetCredentialsListMessagingConfiguration,
-    type GetCredentialsListMessagingResponse,
-    GetCredentialsListMessagingFilterType
+    GetCredentialsListMessagingFilterType,
+    type GetCredentialsListMessagingResponse
 } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
 import passwordPickerIcon from "data-base64:~../assets/images/passwordPickerIcon.svg";
 
 export class PasswordPickerService {
     private static showPickerCallback: (left: number, top: number, maxZ: any) => void;
     private static hidePickerCallback: () => void;
+    public static decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
-    public static initPickerForPage = (showPickerCallback: (left: number, top: number, maxZ: any) => void, hidePickerCallback: () => void) => {
+    public static initPickerForPage = (
+        showPickerCallback: (left: number, top: number, maxZ: any) => void,
+        hidePickerCallback: () => void
+    ) => {
         PasswordPickerService.showPickerCallback = showPickerCallback;
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
 
@@ -54,6 +59,7 @@ export class PasswordPickerService {
                 }
             }).then(async (value) => {
                 console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
+                PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
 
                 // todo: get from settings: isAutofillEnabled
                 /*
@@ -168,7 +174,7 @@ export class PasswordPickerService {
         el.style.cssText = el.getAttribute('style') + ' background-position: right 3px center !important;';
 
         el.removeEventListener('click', PasswordPickerService.onFormIconClick);
-        el.addEventListener('click', function(event) {
+        el.addEventListener('click', function (event) {
             PasswordPickerService.onFormIconClick(event, { width: width, height: height, form: form });
         });
     }
