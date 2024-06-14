@@ -38,8 +38,11 @@ export class PasswordPickerService {
 
         if (loginFields.length > 0) {
             for (const loginField of loginFields) {
+                if (loginField == null) {
+                    continue;
+                }
                 const form = LegacyFormManagerService.getFormFromElement(loginField[0]);
-                if (enablePasswordPicker) {
+                if (enablePasswordPicker && form) {
                     PasswordPickerService.createPasswordPicker(form);
                 }
 
@@ -76,7 +79,11 @@ export class PasswordPickerService {
         }
     }
 
-    private static onFormIconClick = (event?: MouseEvent, data?: { width: number, height: number, form: HTMLFormElement }) => {
+    private static onFormIconClick = (event?: MouseEvent, data?: {
+        width: number,
+        height: number,
+        form: HTMLFormElement
+    }) => {
         event.preventDefault();
         event.stopPropagation();
         const offsetX = event.offsetX;
@@ -163,20 +170,19 @@ export class PasswordPickerService {
 
 
     private static createFormIcon = (el: HTMLInputElement, form: HTMLFormElement) => {
-        const width = el.offsetWidth;
-        const height = el.offsetHeight;
+        if (el.type == 'email' || el.type == 'password' || el.type == 'text') {
+            const width = el.offsetWidth;
+            const height = el.offsetHeight;
 
-        const pickerIcon = chrome.runtime.getURL('/assets/icon.png');
+            el.style.backgroundImage = 'url("' + passwordPickerIcon + '")';
+            el.style.backgroundRepeat = 'no-repeat';
+            el.style.cssText = el.getAttribute('style') + ' background-position: right 3px center !important;';
 
-        //el.style.backgroundImage = 'url("' + pickerIcon + '")';
-        el.style.backgroundImage = 'url("' + passwordPickerIcon + '")';
-        el.style.backgroundRepeat = 'no-repeat';
-        el.style.cssText = el.getAttribute('style') + ' background-position: right 3px center !important;';
-
-        el.removeEventListener('click', PasswordPickerService.onFormIconClick);
-        el.addEventListener('click', function (event) {
-            PasswordPickerService.onFormIconClick(event, { width: width, height: height, form: form });
-        });
+            el.removeEventListener('click', PasswordPickerService.onFormIconClick);
+            el.addEventListener('click', function (event) {
+                PasswordPickerService.onFormIconClick(event, { width: width, height: height, form: form });
+            });
+        }
     }
 
     public static createPasswordPicker = (form: HTMLFormElement) => {

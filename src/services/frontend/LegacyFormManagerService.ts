@@ -13,7 +13,7 @@ export class LegacyFormManagerService {
      * Returns true if the page requests autocomplete be disabled for the
      * specified form input.
      */
-    public static isAutocompleteDisabled = (element: HTMLElement): boolean =>  {
+    public static isAutocompleteDisabled = (element: HTMLElement): boolean => {
         return !!(
             element &&
             element.hasAttribute("autocomplete") &&
@@ -88,7 +88,7 @@ export class LegacyFormManagerService {
      * change-password field, with oldPasswordField containing the password
      * that is being changed.
      */
-    private static getFormFields = (form: HTMLFormElement, isSubmission: boolean) =>  {
+    private static getFormFields = (form: HTMLFormElement, isSubmission: boolean) => {
         const formInputElements = form.querySelectorAll('input');
 
         // Locate the password field(s) in the form. Up to 3 supported.
@@ -177,6 +177,10 @@ export class LegacyFormManagerService {
         return [usernameField, newPasswordField, oldPasswordField];
     }
 
+    /**
+     * todo: needs refactoring
+     * @param isSubmission
+     */
     public static getLoginFields = (isSubmission: boolean = false) => {
         const loginForms = [];
 
@@ -186,12 +190,12 @@ export class LegacyFormManagerService {
             const passwordField = result[1];
 
             // Need a valid password field to do anything.
-            if (passwordField === null){
+            if (passwordField === null) {
                 continue;
             }
 
             const res = [usernameField, passwordField];
-            if(result[2]){
+            if (result[2]) {
                 res.push(result[2]);
             } else {
                 res.push(null);
@@ -203,47 +207,45 @@ export class LegacyFormManagerService {
     }
 
     /**
-     * May this slightly typescript optimized method does no longer work as expected.
-     * todo: find out, what's expected!
+     * A slight (enforced) typescript optimized method to get the next possible parent form of the given element.
      * @param elem
      */
     public static getFormFromElement = (elem: HTMLElement) => {
-        if(elem) {
-            let parentNodeForLoop: HTMLElement|ParentNode = elem;
-            while (parentNodeForLoop.parentNode) {
+        if (elem) {
+            while (elem.parentNode) {
                 if (elem.parentNode.nodeName.toLowerCase() === "form") {
                     return elem.parentNode as HTMLFormElement;
                 }
-                parentNodeForLoop = elem.parentNode;
+                elem = elem.parentNode as HTMLElement;
             }
         }
     }
 
     public static dispatchEvents = (element: EventTarget) => {
-        const eventNames = [ 'click', 'focus', 'keypress', 'keydown', 'keyup', 'input', 'blur', 'change' ];
-        eventNames.forEach(function(eventName) {
-            element.dispatchEvent(new Event(eventName, {"bubbles":true}));
+        const eventNames = ['click', 'focus', 'keypress', 'keydown', 'keyup', 'input', 'blur', 'change'];
+        eventNames.forEach(function (eventName) {
+            element.dispatchEvent(new Event(eventName, { "bubbles": true }));
         });
     }
 
     public static fillPassword = (user: string, password: string) => {
         const loginFields = LegacyFormManagerService.getLoginFields();
         for (let i = 0; i < loginFields.length; i++) {
-            if(user && loginFields[i][0]){
+            if (user && loginFields[i][0]) {
                 loginFields[i][0].value = user;
-                if(loginFields[i][0].offsetParent) {
+                if (loginFields[i][0].offsetParent) {
                     LegacyFormManagerService.dispatchEvents(loginFields[i][0]);
                 }
             }
-            if(password && loginFields[i][1]) {
+            if (password && loginFields[i][1]) {
                 loginFields[i][1].value = password;
-                if(loginFields[i][1].offsetParent) {
+                if (loginFields[i][1].offsetParent) {
                     LegacyFormManagerService.dispatchEvents(loginFields[i][1]);
                 }
             }
-            if(password && loginFields[i][2]) {
+            if (password && loginFields[i][2]) {
                 loginFields[i][2].value = password;
-                if(loginFields[i][2].offsetParent) {
+                if (loginFields[i][2].offsetParent) {
                     LegacyFormManagerService.dispatchEvents(loginFields[i][2]);
                 }
             }
