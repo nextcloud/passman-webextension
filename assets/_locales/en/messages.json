@@ -228,8 +228,8 @@
     "description": "Ignore path for site matching"
   },
   "enable_autofill": {
-    "message": "Enable form auto fill",
-    "description": "Disable auto fill of forms"
+    "message": "Enable form auto fill (for a single matching credential)",
+    "description": "Enable auto fill of forms"
   },
   "enable_autosubmit": {
     "message": "Enable form auto submit after picking account",

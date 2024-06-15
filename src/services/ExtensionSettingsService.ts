@@ -13,7 +13,8 @@ export enum ExtensionSettingsOptions {
     ignoreProtocol,
     ignoreSubdomain,
     ignorePath,
-    ignorePort
+    ignorePort,
+    autofillEnabled
 }
 
 export interface ExtensionSettings {
@@ -27,6 +28,7 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.ignoreSubdomain]: boolean,
     [ExtensionSettingsOptions.ignorePath]: boolean,
     [ExtensionSettingsOptions.ignorePort]: boolean,
+    [ExtensionSettingsOptions.autofillEnabled]: boolean,
 }
 
 export default class ExtensionSettingsService {

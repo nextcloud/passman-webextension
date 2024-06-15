@@ -17,6 +17,7 @@
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
         [ExtensionSettingsOptions.ignorePath]: true,
         [ExtensionSettingsOptions.ignorePort]: false,
+        [ExtensionSettingsOptions.autofillEnabled]: false,
     };
 
 
@@ -41,6 +42,7 @@
                 extendedSettings[ExtensionSettingsOptions.ignoreSubdomain] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreSubdomain);
                 extendedSettings[ExtensionSettingsOptions.ignorePath] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePath);
                 extendedSettings[ExtensionSettingsOptions.ignorePort] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePort);
+                extendedSettings[ExtensionSettingsOptions.autofillEnabled] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.autofillEnabled);
             } else {
                 push('/setup/server');
             }
@@ -70,6 +72,9 @@
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePort]}
                                  id="ignorePort"
                                  label="{chrome.i18n.getMessage('ignore_port')}"/>
+            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
+                                 id="enable_autofill"
+                                 label="{chrome.i18n.getMessage('enable_autofill')}"/>
         </Card>
 
         <OnClickButton callback="{save}">

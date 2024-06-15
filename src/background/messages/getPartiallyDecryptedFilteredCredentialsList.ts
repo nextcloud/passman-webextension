@@ -15,6 +15,7 @@ export type GetCredentialsListMessagingConfiguration = {
 }
 
 export type DecryptedPartialCredentialData = {
+    guid: string,
     label: string | null,
     username: string | null,
     email: string | null,
@@ -64,6 +65,7 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsListMessagingConfigu
 
     for (const filteredCredential of filteredCredentials) {
         decryptedPartialCredentialData.push({
+            guid: filteredCredential.guid,
             label: filteredCredential.label,
             username: filteredCredential.username,
             email: filteredCredential.email,

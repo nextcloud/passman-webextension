@@ -2,18 +2,24 @@
     import type {
         DecryptedPartialCredentialData
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
+    import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
 
     export let decryptedPartialCredentialData: DecryptedPartialCredentialData;
-    export let callback = () => {
-        undefined;
+    const callback = () => {
+        LegacyFormManagerService.fillPassword(
+            decryptedPartialCredentialData.username ?? decryptedPartialCredentialData.email,
+            decryptedPartialCredentialData.password
+        );
+        PasswordPickerService.hidePicker();
     };
 </script>
 
 {#if (decryptedPartialCredentialData)}
-    <div class="border-2 rounded-lg p-1 m-1 w-[95%]">
+    <div class="border-2 rounded-lg p-1 m-1 w-[95%] cursor-pointer" aria-hidden="true"
+         on:click={callback} on:keypress={() => {}} title="Click to auto fill">
         <div class="flex space-x-1" style="padding-left: 2px;">
-            <div class="flex flex-col truncate cursor-pointer" aria-hidden="true"
-                 on:click={callback} on:keypress={() => {}}>
+            <div class="flex flex-col truncate">
                 <span class="truncate" title="{decryptedPartialCredentialData.label}">
                     {decryptedPartialCredentialData.label}
                 </span>

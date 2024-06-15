@@ -64,18 +64,24 @@ export class PasswordPickerService {
                 console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
                 PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
 
-                // todo: get from settings: isAutofillEnabled
-                /*
-                   if (logins.length === 1) {
-                        chrome.runtime.sendMessage(chrome.runtime.id, { method: 'isAutoFillEnabled' }).then(function (isEnabled) {
-                            if (isEnabled && !flagFilledForm) {
-                                enterLoginDetails(logins[0], false);
-                                flagFilledForm = true;
-                            }
-                        });
+                sendToBackground({
+                    name: "getAutofillEnabledState"
+                }).then(async (value) => {
+                    if (value.autofillEnabled === true && PasswordPickerService.decryptedPartialCredentialData.length === 1) {
+                        const credentialToAutofill = PasswordPickerService.decryptedPartialCredentialData[0];
+                        LegacyFormManagerService.fillPassword(
+                            credentialToAutofill.username ?? credentialToAutofill.email,
+                            credentialToAutofill.password
+                        );
                     }
-                 */
+                });
             });
+        }
+    }
+
+    public static readonly hidePicker = () => {
+        if (PasswordPickerService.hidePickerCallback) {
+            PasswordPickerService.hidePickerCallback();
         }
     }
 
