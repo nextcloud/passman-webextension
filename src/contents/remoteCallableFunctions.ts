@@ -1,4 +1,5 @@
 import ClipboardService from "~services/frontend/ClipboardService";
+import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
 
 export enum RemoteCallableFunctionNames {
     copyText = "copyText",
@@ -28,9 +29,17 @@ export class RemoteCallableFunctions {
         ClipboardService.copyToClipboard(text);
     }
 
-    private static enterLoginDetails: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.enterLoginDetails] = (args: { password?: string })
+    private static enterLoginDetails: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.enterLoginDetails] = (args: {
+        email?: string,
+        otp?: string,
+        password?: string,
+        username?: string
+    })
         : RemoteCallableFunctionReturnTypes[RemoteCallableFunctionNames.enterLoginDetails] => {
-        // todo: implement
+        LegacyFormManagerService.fillPassword(
+            args.username ?? args.email,
+            args.password
+        );
         return true;
     }
 }
