@@ -93,8 +93,9 @@
         </button>
     {/if}
     {#if showCopyClipboardButton}
-        <CopyClipboardButton bind:value buttonTitle="{chrome.i18n.getMessage('copy_to_clipboard')}"
-                             fieldTitle="{chrome.i18n.getMessage('password')}" iconScale={iconScale-0.3}
+        <CopyClipboardButton bind:value
+                             buttonTitle="{chrome.i18n.getMessage('copy_to_clipboard', chrome.i18n.getMessage('password'))}"
+                             fieldTitle="{chrome.i18n.getMessage('password')}" iconScale={iconScale-0.2}
                              additionalClasses="transition-opacity opacity-20 hover:opacity-100"/>
     {/if}
 </div>

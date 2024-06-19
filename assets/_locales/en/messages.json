@@ -203,6 +203,10 @@
     "message": "This password is compromised. You can only remove this warning by changing the password.",
     "description": "Credential compromised notice"
   },
+  "mark_compromised": {
+    "message": "Mark as compromised",
+    "description": "Mark credential password as compromised"
+  },
   "refresh_timer": {
     "message": "Refresh timer [s]",
     "description": "Password"
@@ -282,6 +286,10 @@
   "credential_updated": {
     "message": "Credential updated",
     "description": "updated, lowercase"
+  },
+  "credential_update_error": {
+    "message": "An error occurred while updating the credential",
+    "description": "An error occurred while updating the credential"
   },
   "site_ignored": {
     "message": "Site ignored",
@@ -638,7 +646,13 @@
     "description": "To describe a textual input field"
   },
   "copy_to_clipboard": {
-    "message": "Copy to clipboard",
-    "description": "Copy to clipboard"
+    "message": "Copy $FIELDNAME$ to clipboard",
+    "description": "Copy to clipboard",
+    "placeholders": {
+      "fieldname": {
+        "content": "$1",
+        "example": "password"
+      }
+    }
   }
 }

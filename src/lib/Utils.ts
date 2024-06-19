@@ -9,3 +9,11 @@ export default class Utils {
         };
     };
 }
+
+export enum CREDENTIAL_EDIT_SECTIONS {
+    GENERAL,
+    PASSWORD,
+    FILES,
+    CUSTOM_FIELDS,
+    OTP
+}
