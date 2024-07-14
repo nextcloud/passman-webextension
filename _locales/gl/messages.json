@@ -320,7 +320,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Estabelecer o contrasinal principal",
+        "message": "Definir o contrasinal principal",
         "description": "Set a master password"
     },
     "finish": {
