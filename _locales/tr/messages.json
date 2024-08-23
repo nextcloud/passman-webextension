@@ -244,7 +244,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Passman uygulamasına hoşgeldiniz",
+        "message": "Passman eklentisine hoşgeldiniz",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -256,7 +256,7 @@
         "description": "Let's begin!"
     },
     "intro_text": {
-        "message": "Bu yardımcı uygulama ayarlarını yapmanızı ve parolalarınızı eşitleyerek korumanızı sağlar.",
+        "message": "Bu yardımcı ile eklenti ayarlarını yapabilir ve parolalarınızı eşitleyerek koruyabilirsiniz.",
         "description": "Cancel"
     },
     "cancel": {
@@ -488,11 +488,11 @@
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Uygulamayı kilitle",
+        "message": "Eklentiyi kilitle",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Passman uygulaması kilitli, kullanabilmek için kilidi açın",
+        "message": "Passman eklentisi kilitli. Kullanabilmek için kilidi açın",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
