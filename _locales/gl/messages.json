@@ -164,7 +164,7 @@
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Activar o enchido automático de formularios",
+        "message": "Activar o autocompletado de formularios",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
@@ -176,7 +176,7 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Desactivar o enchido automático no navegador",
+        "message": "Desactivar o autocompletado no navegador",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
