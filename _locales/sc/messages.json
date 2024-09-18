@@ -320,7 +320,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Imposta sa crae printzipale",
+        "message": "Cunfigura sa crae printzipale",
         "description": "Set a master password"
     },
     "finish": {
@@ -456,15 +456,15 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Podes torrare a impostare sa crae tua. Custu at a torrare a impostare s'estensione a s'istadu predefinidu.",
+        "message": "Podes torrare a cunfigurare sa crae tua. Custu at a ripristinare s'estensione a s'istadu predefinidu.",
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Crae iscaressida?",
+        "message": "As ismentigadu sa crae?",
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Torra a impostare s'estensione",
+        "message": "Ripristina s'estensione",
         "description": "Search"
     },
     "iam_sure": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "S'isvilupu dipendet dae is donatziones, suporta•nosi!",
+        "message": "S'isvilupu dipendet dae is donatziones, agiuda·nos!",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
