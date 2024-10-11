@@ -32,7 +32,7 @@
         "description": "Save site"
     },
     "password_generator": {
-        "message": "مُنشئ كلمة السر",
+        "message": "مُنشئ كلمة المرور",
         "description": "Password generator"
     },
     "generate_password": {
@@ -56,7 +56,7 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
-        "message": "طول كلمة السر",
+        "message": "طول كلمة المرور",
         "description": "Password length"
     },
     "min_digits": {
@@ -104,7 +104,7 @@
         "description": "URL"
     },
     "password": {
-        "message": "الكلمة السرية",
+        "message": "كلمة المرور",
         "description": "Password"
     },
     "password_repeat": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "تذكر كلمة السر الرئيسية",
+        "message": "تذكر كلمة المرور الرئيسية",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -460,7 +460,7 @@
         "description": "Search"
     },
     "forgot_password": {
-        "message": "هل نسيت الكلمة السرية؟",
+        "message": "نسيت كلمة المرور؟",
         "description": "Search"
     },
     "reset_extension": {
