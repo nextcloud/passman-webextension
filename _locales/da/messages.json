@@ -136,7 +136,7 @@
         "description": "credential"
     },
     "credentials": {
-        "message": "credentials",
+        "message": "legitimationsoplysninger",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -524,7 +524,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Boks",
         "description": "Vault"
     },
     "add_custom_field": {
