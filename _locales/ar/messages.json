@@ -248,7 +248,7 @@
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "عنوان URL للخادوم",
+        "message": "عنوان URL للخادم",
         "description": "Server URL"
     },
     "begin": {
