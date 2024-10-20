@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "您可以重置密码。 这将将扩展名重置为其默认状态。",
+        "message": "你可以重置密码。 这将重置扩展为其默认状态。",
         "description": "Search"
     },
     "forgot_password": {
