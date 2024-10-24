@@ -36,7 +36,7 @@
         "description": "Password generator"
     },
     "generate_password": {
-        "message": "توليد كلمة سرية",
+        "message": "توليد كلمة مرور",
         "description": "Generate password"
     },
     "toggle_visibility": {
