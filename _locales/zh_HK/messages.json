@@ -172,7 +172,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "如果與當前URL不匹配，詢問更新身分驗證URL",
+        "message": "如果與目前URL不匹配，詢問更新身分驗證URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -380,7 +380,7 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "您要為當前頁面或整個網站停用Passman嗎？",
+        "message": "您要為目前頁面或整個網站停用Passman嗎？",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
