@@ -9,16 +9,20 @@
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
-    import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
+    import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import CredentialListElement from "~spa_partials/InteractionElements/CredentialListElement.svelte";
     import Loading from "~spa_components/Loading.svelte";
     import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
     import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
+    import type { GetCredentialsForVaultMessagingResponse } from "~background/messages/getCredentialsForVault";
+    import NotyService from "~services/frontend/NotyService";
+    import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
 
     let searchInput = null;
     let overwriteInputFilterByTabUrl: string = null;
     let errorMessage: string = null;
     let vault: Vault = null;
+    let credentials: Credential[] = null;
     let filteredCredentials: Credential[] = [];
     let pageIsLoading = true;
 
@@ -27,22 +31,37 @@
             name: "lockExtension"
         }).then(() => {
             $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
-            if (vault) {
-                vault.lock();
+            if (credentials) {
+                vault = null;
+                credentials = null;
+                filteredCredentials = [];
             }
             push('/unlock');
         });
     }
 
     const refreshCredentialList = () => {
-        if (vault) {
-            pageIsLoading = true;
-            vault.refresh(false).then(() => {
-                vault = vault;
-            }).finally(() => {
-                pageIsLoading = false;
-            });
-        }
+        pageIsLoading = true;
+        sendToBackground({
+            name: "getCredentialsForVault",
+            body: null
+        }).then((response: GetCredentialsForVaultMessagingResponse) => {
+            if (response.status) {
+                credentials = [];
+                for (const encryptedCredentialData of response.encryptedCredentialsData) {
+                    if (encryptedCredentialData.acl) {
+                        console.log(encryptedCredentialData.acl);
+                        const permissionsSharingAcl = new SharingACL(encryptedCredentialData.acl.permissions as unknown as number);
+                        encryptedCredentialData.acl.permissions = permissionsSharingAcl;
+                    }
+                    credentials.push(new Credential(vault, vault.getServer(), encryptedCredentialData));
+                }
+                filteredCredentials = [];
+            } else {
+                NotyService.notyError(response.errorMessage);
+            }
+            pageIsLoading = false;
+        });
     }
 
     const openOptionsPage = () => {
@@ -52,21 +71,21 @@
     const applyCredentialFilter = (searchInput: string) => {
         filteredCredentials = [];
 
-        if (vault && vault.credentials && vault.credentials.length > 0) {
+        if (vault && credentials && credentials.length > 0) {
             if (overwriteInputFilterByTabUrl && searchInput === null) {
-                CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, vault.credentials)
+                CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
                     .then((credentials) => {
                         filteredCredentials = credentials;
                     });
             } else {
                 // reset tab url search filter when entering a custom search value the first time
                 overwriteInputFilterByTabUrl = null;
-                filteredCredentials = CredentialFilterService.getFilteredCredentials(vault.credentials, FILTERS.SHOW_ALL, searchInput ?? '');
+                filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL, searchInput ?? '');
             }
         }
     };
 
-    $: vault && applyCredentialFilter(searchInput);
+    $: vault && credentials && applyCredentialFilter(searchInput);
 
     onMount(() => {
         ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
@@ -83,10 +102,11 @@
                         let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
-                            if (myVault.credentials.length <= 1) {
+                            /*if (myVault.credentials.length <= 1) {
                                 await myVault.refresh(true);
-                            }
+                            }*/
                             vault = myVault;
+                            refreshCredentialList();
                         } else {
                             errorMessage = 'Could not decrypt vault';
                         }
