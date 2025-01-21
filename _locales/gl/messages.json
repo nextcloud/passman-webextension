@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Non se atoparon credenciais para este sitio",
+        "message": "Non se atopou ningunha credencial para este sitio",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Non se atoparon credenciais",
+        "message": "Non se atopou ningunha credencial",
         "description": "No credentials found for the current site"
     },
     "notes": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Desculpe, non se atoparon bóvedas. Cree unha bóveda a través da aplicación de Nextcloud / ownCloud e ténteo de novo.",
+        "message": "Desculpe, non se atopou ningunha bóveda. Cree unha bóveda a través da aplicación de Nextcloud / ownCloud e ténteo de novo.",
         "description": "Search"
     },
     "msg_reset_extension": {
