@@ -184,7 +184,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Povoliť vyberač hesla",
+        "message": "Povoliť výber hesla",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
