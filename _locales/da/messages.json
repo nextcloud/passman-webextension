@@ -228,11 +228,11 @@
         "description": "URL ignored"
     },
     "update": {
-        "message": "Opdatér",
+        "message": "Opdater",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignorér side",
+        "message": "Ignorer side",
         "description": "Update"
     },
     "btn_save_site": {
@@ -308,7 +308,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Redigér",
+        "message": "Rediger",
         "description": "Edit"
     },
     "server_settings": {
@@ -344,7 +344,7 @@
         "description": "Back"
     },
     "copy": {
-        "message": "Kopiér",
+        "message": "Kopier",
         "description": "Copy"
     },
     "next": {
@@ -356,7 +356,7 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Donér",
+        "message": "Doner",
         "description": "Donate"
     },
     "nextcloud_settings": {
@@ -372,11 +372,11 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Deaktivér side",
+        "message": "Deaktiver side",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Deaktivér side",
+        "message": "Deaktiver side",
         "description": "Disable site"
     },
     "disable_picker_text": {
@@ -400,7 +400,7 @@
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignorér side",
+        "message": "Ignorer side",
         "description": "Invalid server URL"
     },
     "no_password_match": {
