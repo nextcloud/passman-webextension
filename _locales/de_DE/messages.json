@@ -360,7 +360,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Server-Einstellungen für Nextcloud / ownCloud ",
+        "message": "Servereinstellungen für Nextcloud / ownCloud ",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
