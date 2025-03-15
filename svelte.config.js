@@ -1,7 +1,9 @@
-const sveltePreprocess = require("svelte-preprocess")
+import preprocess from 'svelte-preprocess';
 
-module.exports = {
-    // Consult https://github.com/sveltejs/svelte-preprocess
-    // for more information about preprocessors
-    preprocess: sveltePreprocess()
-}
+const config = {
+  preprocess: preprocess({
+    typescript: true
+  })
+};
+
+export default config;

@@ -16,13 +16,12 @@
     import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
     import type { GetCredentialsForVaultMessagingResponse } from "~background/messages/getCredentialsForVault";
     import NotyService from "~services/frontend/NotyService";
-    import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
 
-    let searchInput = null;
-    let overwriteInputFilterByTabUrl: string = null;
-    let errorMessage: string = null;
-    let vault: Vault = null;
-    let credentials: Credential[] = null;
+    let searchInput: string | null = null;
+    let overwriteInputFilterByTabUrl: string | null | undefined = null;
+    let errorMessage: string | null = null;
+    let vault: Vault | null = null;
+    let credentials: Credential[] | null = null;
     let filteredCredentials: Credential[] = [];
     let pageIsLoading = true;
 
@@ -40,25 +39,23 @@
         });
     }
 
-    const refreshCredentialList = () => {
+    const refreshCredentialList = (getCachedIfPossible: boolean = false) => {
         pageIsLoading = true;
         sendToBackground({
             name: "getCredentialsForVault",
-            body: null
+            body: {
+                getCachedIfPossible: getCachedIfPossible
+            }
         }).then((response: GetCredentialsForVaultMessagingResponse) => {
-            if (response.status) {
+            if (response.status && vault) {
                 credentials = [];
-                for (const encryptedCredentialData of response.encryptedCredentialsData) {
-                    if (encryptedCredentialData.acl) {
-                        console.log(encryptedCredentialData.acl);
-                        const permissionsSharingAcl = new SharingACL(encryptedCredentialData.acl.permissions as unknown as number);
-                        encryptedCredentialData.acl.permissions = permissionsSharingAcl;
-                    }
-                    credentials.push(new Credential(vault, vault.getServer(), encryptedCredentialData));
+                for (const serializedCredential of response.serializedCredentials) {
+                    const credential = Credential.fromSerializable(serializedCredential, vault, vault.getServer());
+                    credentials.push(credential);
                 }
                 filteredCredentials = [];
             } else {
-                NotyService.notyError(response.errorMessage);
+                NotyService.notyError(response.errorMessage ?? 'Unknown error in refreshCredentialList');
             }
             pageIsLoading = false;
         });
@@ -85,7 +82,7 @@
         }
     };
 
-    $: vault && credentials && applyCredentialFilter(searchInput);
+    $: vault && credentials && applyCredentialFilter(searchInput ?? '');
 
     onMount(() => {
         ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
@@ -99,16 +96,20 @@
 
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
-                        let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
-                        if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
-                            myVault.vaultKey = defaultVaultInfo.password;
-                            /*if (myVault.credentials.length <= 1) {
-                                await myVault.refresh(true);
-                            }*/
-                            vault = myVault;
-                            refreshCredentialList();
+                        if (defaultVaultInfo) {
+                            let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
+                            if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
+                                myVault.vaultKey = defaultVaultInfo.password;
+                                /*if (myVault.credentials.length <= 1) {
+                                    await myVault.refresh(true);
+                                }*/
+                                vault = myVault;
+                                refreshCredentialList(true);
+                            } else {
+                                errorMessage = 'Could not decrypt vault';
+                            }
                         } else {
-                            errorMessage = 'Could not decrypt vault';
+                            errorMessage = 'No default vault info found';
                         }
                     } catch (exception) {
                         console.error(exception);

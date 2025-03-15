@@ -1,19 +1,33 @@
 {
   "extends": "plasmo/templates/tsconfig.base",
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    ".plasmo/index.d.ts",
-    "./**/*.ts",
-    "./**/*.svelte"
-  ],
   "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    "types": [
+      "@types/chrome",
+      "node"
+    ],
+    "baseUrl": ".",
     "paths": {
       "~*": [
         "./src/*"
       ]
     },
-    "baseUrl": "."
-  }
+    "skipLibCheck": true
+  },
+  "include": [
+    ".plasmo/index.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./**/*.svelte"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

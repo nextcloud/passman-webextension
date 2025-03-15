@@ -1,45 +1,54 @@
 import type { PlasmoMessaging } from "@plasmohq/messaging"
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
-import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
-import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
-import type {
-    EncryptedCredentialInterface
-} from "@binsky/passman-client-ts/lib/Interfaces/Credential/EncryptedCredentialInterface";
+import type { EncryptedOwnedCredentialFromServerInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/EncryptedOwnedCredentialFromServerInterface";
+import type { SpacialCredentialFieldsToUpdateForServerInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/EncryptedOwnedCredentialToUpdateForServerInterface";
+import type { SerializableTransferCredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/SerializableTransferCredentialInterface";
 
 export type GetCredentialsForVaultMessagingConfiguration = {
     vaultGuid: string
 }
 
+export type GetCredentialsForVaultMessagingRequest = {
+    getCachedIfPossible?: boolean
+}
+
 export type GetCredentialsForVaultMessagingResponse = {
     status: boolean,
     errorMessage: string | null,
-    encryptedCredentialsData: EncryptedCredentialInterface[]
+    serializedCredentials: SerializableTransferCredentialInterface[]
 }
 
-const handler: PlasmoMessaging.MessageHandler<null, GetCredentialsForVaultMessagingResponse> = async (req, res) => {
+const handler: PlasmoMessaging.MessageHandler<GetCredentialsForVaultMessagingRequest, GetCredentialsForVaultMessagingResponse> = async (req, res) => {
     let status = false;
     let errorMessage = null;
-    let encryptedCredentialsData: EncryptedCredentialInterface[] = [];
+    let serializedCredentials: SerializableTransferCredentialInterface[] = [];
+    console.log("handler", req);
 
     await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
+        console.log("passmanClient", passmanClient);
         if (passmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {
-                    let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
-                    if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
-                        myVault.vaultKey = defaultVaultInfo.password;
-                        if (myVault.credentials.length <= 1) {
-                            console.log("refresh vault");
-                            await myVault.refresh();
-                        }
+                    if (defaultVaultInfo) {
+                        // get from cache by default except no-cache is explicitly requested
+                        console.log("getCachedIfPossible", req.body?.getCachedIfPossible);
+                        let myVault = await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, req.body?.getCachedIfPossible === true);
+                        if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
+                            myVault.vaultKey = defaultVaultInfo.password;
+                            if (myVault.credentials.length <= 1) {
+                                console.log("refresh vault");
+                                await myVault.refresh();
+                            }
 
-                        for (const credential of myVault.credentials) {
-                            encryptedCredentialsData.push(credential.getEncrypted());
+                            for (const credential of myVault.credentials) {
+                                serializedCredentials.push(credential.getAsSerializable());
+                            }
+                            status = true;
+                        } else {
+                            errorMessage = 'Could not decrypt vault';
                         }
-                        status = true;
                     } else {
-                        errorMessage = 'Could not decrypt vault';
+                        errorMessage = 'No vault info provided by ExtensionSettingsService.getPartialExtensionSettings';
                     }
                 } catch (exception) {
                     errorMessage = 'Could not get or decrypt vault';
@@ -51,7 +60,7 @@ const handler: PlasmoMessaging.MessageHandler<null, GetCredentialsForVaultMessag
     res.send({
         status,
         errorMessage,
-        encryptedCredentialsData
+        serializedCredentials
     })
 }
 

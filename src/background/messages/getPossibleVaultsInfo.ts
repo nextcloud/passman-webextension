@@ -9,18 +9,22 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
         if (passmanClient) {
             try {
-                await passmanClient.refreshVaults(true, true);
+                await passmanClient.preloadVaults(true, true);
 
-                for (let vault of passmanClient.vaults) {
+                for (let preloadedVault of passmanClient.preloadedVaults) {
                     vaultSelectionList.push({
-                        guid: vault.guid,
-                        name: vault.name
+                        guid: preloadedVault.guid,
+                        name: preloadedVault.name
                     });
                 }
                 status = true;
             } catch (exception) {
                 console.error(exception);
-                errorMessage = exception.message;
+                if (exception instanceof Error) {
+                    errorMessage = exception.message;
+                } else {
+                    errorMessage = "Unknown error";
+                }
             }
         } else {
             errorMessage = "setDefaultVault message: could not get passman client";

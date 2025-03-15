@@ -11,26 +11,34 @@ const handler: PlasmoMessaging.MessageHandler<NextcloudServerInfoInterface> = as
     let vaultSelectionList: { guid: string, name: string }[] = [];
 
     try {
-        const passmanClient = new PassmanClient(req.body);
-        if (await passmanClient.refreshVaults(true)) {
-            ExtensionSettingsService.updatePassmanClient(passmanClient);
-            await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo, req.body);
+        if (req.body) {
+            const passmanClient = await PassmanClient.createInstance(req.body);
+            if (await passmanClient.preloadVaults(true)) {
+                ExtensionSettingsService.updatePassmanClient(passmanClient);
+                await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo, req.body);
 
-            for (let vault of passmanClient.vaults) {
-                vaultSelectionList.push({
-                    guid: vault.guid,
-                    name: vault.name
-                });
+                for (let preloadedVault of passmanClient.preloadedVaults) {
+                    vaultSelectionList.push({
+                        guid: preloadedVault.guid,
+                        name: preloadedVault.name
+                    });
+                }
+
+                status = true;
+                message = "Login succeeded";
+            } else {
+                message = "Login failed";
             }
-
-            status = true;
-            message = "Login succeeded";
         } else {
-            message = "Login failed";
+            message = "No server info provided";
         }
     } catch (e) {
         console.error(e);
-        message = e.message;
+        if (e instanceof Error) {
+            message = e.message;
+        } else {
+            message = "Unknown error";
+        }
     }
 
     res.send({

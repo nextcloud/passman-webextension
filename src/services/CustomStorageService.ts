@@ -5,11 +5,13 @@ import type {
     RequestCachingHandlerInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
 import { get as idb_get, set as idb_set } from 'idb-keyval';
+import ExtensionPassmanClientPersistenceService from "./ExtensionPassmanClientPersistenceService";
+import { customIndexedDBService } from "./CustomIndexedDBService";
 
 export default class CustomStorageService {
     private static sessionStorage: Storage;
     private static unsafeLocalStorage: Storage;
-    private static secureStorage: SecureStorage;
+    private static secureStorage?: SecureStorage;
     private static requestCachingHandler: RequestCachingHandlerInterface;
 
     public static getSessionStorage() {
@@ -35,16 +37,19 @@ export default class CustomStorageService {
     public static async getSecureStorage() {
         if (!this.secureStorage) {
             this.secureStorage = new SecureStorage();
-            await this.secureStorage.setPassword(
-                await this.getSessionStorage().get(ExtensionUnlockService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY)
-            );
+            const extensionUnlockPassword = await this.getSessionStorage().get(ExtensionUnlockService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
+            if (extensionUnlockPassword) {
+                await this.secureStorage.setPassword(
+                    extensionUnlockPassword
+                );
+            }
         }
         return this.secureStorage;
     }
 
     public static closeSecureStorage() {
         if (this.secureStorage) {
-            this.secureStorage = null;
+            this.secureStorage = undefined;
         }
     }
 
@@ -58,10 +63,10 @@ export default class CustomStorageService {
     public static getSessionRequestCachingHandler() {
         if (!this.requestCachingHandler) {
             this.requestCachingHandler = {
-                set: function (key: string, value: string): Promise<void> {
-                    return CustomStorageService.getSessionStorage().set(key, value);
+                set: async function (key: string, value: string): Promise<void> {
+                    await CustomStorageService.getSessionStorage().set(key, value);
                 },
-                get: function (key: string): Promise<string> {
+                get: function (key: string): Promise<string | undefined> {
                     return CustomStorageService.getSessionStorage().get(key);
                 }
             };
@@ -79,11 +84,22 @@ export default class CustomStorageService {
                 set: function (key: string, value: string): Promise<void> {
                     return idb_set(key, value);
                 },
-                get: function (key: string): Promise<string> {
+                get: function (key: string): Promise<string | undefined> {
                     return idb_get(key);
                 }
             };
         }
         return this.requestCachingHandler;
+    }
+
+    /**
+     * todo: test decrypted data caching handler implementation
+     */
+    public static getExtensionPassmanClientPersistenceService() {
+        return new ExtensionPassmanClientPersistenceService(
+            true,
+            CustomStorageService.getIndexedDBRequestCachingHandler(),
+            customIndexedDBService
+        );
     }
 }

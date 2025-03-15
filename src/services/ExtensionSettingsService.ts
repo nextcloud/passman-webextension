@@ -33,7 +33,7 @@ export interface ExtensionSettings {
 
 export default class ExtensionSettingsService {
     private static readonly EXTENSION_SETTINGS_ACCESS_KEY: string = 'ExtensionSettings';
-    private static localPassmanClient: PassmanClient = null;
+    private static localPassmanClient: PassmanClient | null = null;
 
     public static updateExtensionSettings = async (extensionSettings: ExtensionSettings) => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
@@ -63,19 +63,21 @@ export default class ExtensionSettingsService {
             if (createWithNextcloudServerMessagingConnector) {
                 // only required for PassmanClient usage by the extension frontend
                 const logger = new CustomPassmanClientLoggingService();
-                ExtensionSettingsService.localPassmanClient = new PassmanClient(
-                    null,
+                ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
+                    null as unknown as NextcloudServerInfoInterface,
                     new NextcloudServerMessagingConnector(
-                        await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo),
+                        await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface,
                         logger
                     ),
                     logger
                 );
             } else {
                 const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo);
-                ExtensionSettingsService.localPassmanClient = new PassmanClient(
-                    nextcloudServerData
-                );
+                if (nextcloudServerData) {
+                    ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
+                        nextcloudServerData
+                    );
+                }
             }
         }
 

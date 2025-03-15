@@ -19,7 +19,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      * @throws ConfigurationError
      */
     constructor(serverData: NextcloudServerInfoInterface, logger: LoggingHandlerInterface) {
-        super(serverData, logger, CustomStorageService.getSessionRequestCachingHandler());
+        super(serverData, logger, CustomStorageService.getExtensionPassmanClientPersistenceService());
     }
 
     private handleConnectorJsonResponse = async <T>(response: any, errorCallback: (response: Error) => void): Promise<T | void> => {
@@ -47,8 +47,9 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      */
     getJson = async <T>(endpoint: string, errorCallback: (response: Error) => void, getCachedIfPossible: boolean = false): Promise<T | void> => {
         const cachePrefix = 'cache-getJson-';
-        if (getCachedIfPossible && this.cache) {
-            const cachedValue = await this.cache.get(cachePrefix + endpoint)
+        const requestCacheHandler = this.persistence.getRequestCacheHandler();
+        if (getCachedIfPossible && requestCacheHandler) {
+            const cachedValue = await requestCacheHandler.get(cachePrefix + endpoint);
             if (cachedValue && cachedValue !== '') {
                 try {
                     return JSON.parse(cachedValue) as T;
@@ -73,9 +74,10 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
             }
         }).then(async (value) => {
             const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
-            if (this.cache) {
+            const requestCacheHandler = this.persistence.getRequestCacheHandler();
+            if (requestCacheHandler) {
                 try {
-                    await this.cache.set(cachePrefix + endpoint, JSON.stringify(jsonResponse));
+                    await requestCacheHandler.set(cachePrefix + endpoint, JSON.stringify(jsonResponse));
                 } catch (e) {
                     console.warn('Failed to cache ' + endpoint, e);
                 }
