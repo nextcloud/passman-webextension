@@ -23,6 +23,8 @@
         IGNORE
     }
 
+    const runtime = chrome.runtime;
+
     /**
      * State whether the password picker (in place overlay popup) is open or not.
      * Required to remove picker popup contents from shadow dom when the popup gets closed
@@ -98,7 +100,7 @@
     })
 </script>
 
-<link rel="stylesheet" type="text/css" href="{chrome.runtime.getURL('/assets/content_styles/password_picker.css')}"/>
+<link rel="stylesheet" type="text/css" href="{runtime.getURL('/assets/content_styles/password_picker.css')}"/>
 
 
 {#if extensionIsUnlocked}

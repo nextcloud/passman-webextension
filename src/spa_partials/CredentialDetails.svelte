@@ -16,6 +16,7 @@
     export let credential: Credential;
     export let hideDefaultDatetimeFields: boolean = true;
 
+    const i18n = chrome.i18n;
     let expire_time_formatted: string;
     let created_formatted: string;
     let changed_formatted: string;
@@ -40,59 +41,59 @@
         {#if credential.compromised}
             <div class="text-sm text-red-600 !mb-4">
                 <Icon data={exclamationCircle} scale={1.0}/>
-                {chrome.i18n.getMessage('compromised_notice')}
+                {i18n.getMessage('compromised_notice')}
             </div>
         {/if}
         {#if credential.username != null && credential.username !== ''}
             <div class="flex flex-wrap text-sm">
-                <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('username')}</div>
+                <div class="basis-3/12 grow font-semibold">{i18n.getMessage('username')}</div>
                 <div class="basis-8/12 break-all">
                     {credential.username}
                 </div>
                 <div class="basis-1/12 grow text-end">
                     <CopyClipboardButton bind:value={credential.username}
-                                         fieldTitle="{chrome.i18n.getMessage('username')}"/>
+                                         fieldTitle="{i18n.getMessage('username')}"/>
                 </div>
             </div>
         {/if}
         {#if credential.password != null && credential.password !== ''}
             <div class="flex flex-wrap text-sm">
-                <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('password')}</div>
+                <div class="basis-3/12 grow font-semibold">{i18n.getMessage('password')}</div>
                 <div class="basis-8/12 break-all">
                     <SecretField bind:value={credential.password}/>
                 </div>
                 <div class="basis-1/12 grow text-end">
                     <CopyClipboardButton bind:value={credential.password}
-                                         fieldTitle="{chrome.i18n.getMessage('password')}"/>
+                                         fieldTitle="{i18n.getMessage('password')}"/>
                 </div>
             </div>
         {/if}
         {#if credential.otp != null && credential.otp.secret != null}
             <div class="flex flex-wrap text-sm">
-                <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('one_time_password')}</div>
+                <div class="basis-3/12 grow font-semibold">{i18n.getMessage('one_time_password')}</div>
                 <div class="basis-8/12 break-all">
                     <OTPGenerator bind:otp={credential.otp} bind:token={otp_token}/>
                 </div>
                 <div class="basis-1/12 grow text-end">
                     <CopyClipboardButton bind:value={otp_token}
-                                         fieldTitle="{chrome.i18n.getMessage('one_time_password')}"/>
+                                         fieldTitle="{i18n.getMessage('one_time_password')}"/>
                 </div>
             </div>
         {/if}
         {#if credential.email != null && credential.email !== ''}
             <div class="flex flex-wrap text-sm">
-                <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('email')}</div>
+                <div class="basis-3/12 grow font-semibold">{i18n.getMessage('email')}</div>
                 <div class="basis-8/12 break-all">
                     {credential.email}
                 </div>
                 <div class="basis-1/12 grow text-end">
-                    <CopyClipboardButton bind:value={credential.email} fieldTitle="{chrome.i18n.getMessage('email')}"/>
+                    <CopyClipboardButton bind:value={credential.email} fieldTitle="{i18n.getMessage('email')}"/>
                 </div>
             </div>
         {/if}
         {#if credential.url != null && credential.url !== ''}
             <div class="flex flex-wrap text-sm">
-                <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('url')}</div>
+                <div class="basis-3/12 grow font-semibold">{i18n.getMessage('url')}</div>
                 <div class="basis-8/12 break-all">
                     {credential.url}
                     <a href="{credential.url}" target="_blank"
@@ -101,26 +102,26 @@
                     </a>
                 </div>
                 <div class="basis-1/12 grow text-end">
-                    <CopyClipboardButton bind:value={credential.url} fieldTitle="{chrome.i18n.getMessage('url')}"/>
+                    <CopyClipboardButton bind:value={credential.url} fieldTitle="{i18n.getMessage('url')}"/>
                 </div>
             </div>
         {/if}
         {#if credential.description != null && credential.description !== ''}
             <div class="flex flex-wrap text-sm">
-                <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('description')}</div>
+                <div class="basis-3/12 grow font-semibold">{i18n.getMessage('description')}</div>
                 <div class="basis-8/12 break-all">
                     {credential.description}
                 </div>
                 <div class="basis-1/12 grow text-end">
                     <CopyClipboardButton bind:value={credential.description}
-                                         fieldTitle="{chrome.i18n.getMessage('description')}"/>
+                                         fieldTitle="{i18n.getMessage('description')}"/>
                 </div>
             </div>
         {/if}
         {#if credential.acl === undefined || credential.acl.permissions.hasPermission(SharingACL.permissions.FILES)}
             {#if credential.files != null && credential.files.length > 0}
                 <div class="flex flex-wrap text-sm">
-                    <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('files')}</div>
+                    <div class="basis-3/12 grow font-semibold">{i18n.getMessage('files')}</div>
                     <div class="basis-9/12 break-all space-y-2">
                         {#each credential.files as file, index}
                             <p>
@@ -170,46 +171,46 @@
     {/if}
     {#if credential.expire_time != null && credential.expire_time > 0}
         <div class="flex flex-wrap text-sm">
-            <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('credentials_expires')}</div>
+            <div class="basis-3/12 grow font-semibold">{i18n.getMessage('credentials_expires')}</div>
             <div class="basis-8/12">
                 <Time timestamp={credential.expire_time * 1000} format="YYYY-MM-DD HH:mm:ss"
                       bind:formatted={expire_time_formatted}/>
             </div>
             <div class="basis-1/12 grow text-end">
                 <CopyClipboardButton bind:value={expire_time_formatted}
-                                     fieldTitle="{chrome.i18n.getMessage('credentials_expires')}"/>
+                                     fieldTitle="{i18n.getMessage('credentials_expires')}"/>
             </div>
         </div>
     {/if}
     {#if !hideDefaultDatetimeFields && credential.created != null}
         <div class="flex flex-wrap text-sm">
-            <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('credential_created')}</div>
+            <div class="basis-3/12 grow font-semibold">{i18n.getMessage('credential_created')}</div>
             <div class="basis-8/12">
                 <Time timestamp={credential.created * 1000} format="YYYY-MM-DD HH:mm:ss"
                       bind:formatted={created_formatted}/>
             </div>
             <div class="basis-1/12 grow text-end">
                 <CopyClipboardButton bind:value={created_formatted}
-                                     fieldTitle="{chrome.i18n.getMessage('credential_created')}"/>
+                                     fieldTitle="{i18n.getMessage('credential_created')}"/>
             </div>
         </div>
     {/if}
     {#if !hideDefaultDatetimeFields && credential.changed != null}
         <div class="flex flex-wrap text-sm">
-            <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('credential_changed')}</div>
+            <div class="basis-3/12 grow font-semibold">{i18n.getMessage('credential_changed')}</div>
             <div class="basis-8/12">
                 <Time timestamp={credential.changed * 1000} format="YYYY-MM-DD HH:mm:ss"
                       bind:formatted={changed_formatted}/>
             </div>
             <div class="basis-1/12 grow text-end">
                 <CopyClipboardButton bind:value={changed_formatted}
-                                     fieldTitle="{chrome.i18n.getMessage('credential_changed')}"/>
+                                     fieldTitle="{i18n.getMessage('credential_changed')}"/>
             </div>
         </div>
     {/if}
     {#if credential.tags != null && credential.tags.length > 0}
         <div class="flex flex-wrap text-sm">
-            <div class="basis-3/12 grow font-semibold">{chrome.i18n.getMessage('tags')}</div>
+            <div class="basis-3/12 grow font-semibold">{i18n.getMessage('tags')}</div>
             <div class="basis-9/12">
                 <TagsView tags={credential.tags}/>
             </div>

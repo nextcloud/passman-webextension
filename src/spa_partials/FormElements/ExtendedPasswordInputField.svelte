@@ -11,6 +11,7 @@
     import refresh from "svelte-awesome/icons/refresh";
     import CopyClipboardButton from "../InteractionElements/CopyClipboardButton.svelte";
 
+    const i18n = chrome.i18n;
     export let required = false;
     export let readonly = false;
     export let disabled = false;
@@ -53,7 +54,7 @@
         {#if showHiddenToggle}
             <button on:click={() => {
                     showPasswordValue = true;
-                }} title="{chrome.i18n.getMessage('toggle_visibility')}"
+                }} title="{i18n.getMessage('toggle_visibility')}"
                     class="cursor-pointer px-0.5 transition-opacity opacity-20 hover:opacity-100">
                 <Icon data={eyeSlash} scale={iconScale}/>
             </button>
@@ -74,7 +75,7 @@
         {#if showHiddenToggle}
             <button on:click={() => {
                     showPasswordValue = false;
-                }} title="{chrome.i18n.getMessage('toggle_visibility')}"
+                }} title="{i18n.getMessage('toggle_visibility')}"
                     class="cursor-pointer px-0.5 transition-opacity opacity-20 hover:opacity-100">
                 <Icon data={eye} scale={iconScale}/>
             </button>
@@ -87,15 +88,15 @@
                     if (afterPWGenCallback !== undefined) {
                         afterPWGenCallback(value);
                     }
-                }} title="{chrome.i18n.getMessage('generate_password')}"
+                }} title="{i18n.getMessage('generate_password')}"
                 class="cursor-pointer px-0.5 transition-opacity opacity-20 hover:opacity-100">
             <Icon data={refresh} scale={iconScale-0.1}/>
         </button>
     {/if}
     {#if showCopyClipboardButton}
         <CopyClipboardButton bind:value
-                             buttonTitle="{chrome.i18n.getMessage('copy_to_clipboard', chrome.i18n.getMessage('password'))}"
-                             fieldTitle="{chrome.i18n.getMessage('password')}" iconScale={iconScale-0.2}
+                             buttonTitle="{i18n.getMessage('copy_to_clipboard', i18n.getMessage('password'))}"
+                             fieldTitle="{i18n.getMessage('password')}" iconScale={iconScale-0.2}
                              additionalClasses="transition-opacity opacity-20 hover:opacity-100"/>
     {/if}
 </div>

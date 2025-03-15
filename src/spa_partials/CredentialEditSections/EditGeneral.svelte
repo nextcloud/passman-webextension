@@ -11,6 +11,7 @@
 
     export let credentialData: CredentialInterface;
 
+    const i18n = chrome.i18n;
     let password = "", passwordRepeat = "";
     let initDone = false;
 
@@ -39,18 +40,18 @@
 </script>
 
 {#if credentialData}
-    <CustomInputField id="label" label="{chrome.i18n.getMessage('label')}"
+    <CustomInputField id="label" label="{i18n.getMessage('label')}"
                       bind:value={credentialData.label}/>
     <div class="mt-2">
-        <CustomInputField id="username" label="{chrome.i18n.getMessage('username')}"
+        <CustomInputField id="username" label="{i18n.getMessage('username')}"
                           bind:value={credentialData.username}/>
     </div>
     <div class="mt-2">
-        <CustomInputField id="email" label="{chrome.i18n.getMessage('email')}"
+        <CustomInputField id="email" label="{i18n.getMessage('email')}"
                           bind:value={credentialData.email}/>
     </div>
     <div class="mt-2">
-        <ExtendedPasswordInputField id="password" label="{chrome.i18n.getMessage('password')}"
+        <ExtendedPasswordInputField id="password" label="{i18n.getMessage('password')}"
                                     bind:value={password}
                                     passwordGeneratorConfiguration={PasswordGeneratorService.getDefaultConfig()}
                                     afterPWGenCallback={(generated) => {
@@ -62,22 +63,22 @@
         <PasswordMeter password={password}/>
         {#if password !== passwordRepeat}
             <p class="text-red-500">
-                {chrome.i18n.getMessage('no_password_match')}
+                {i18n.getMessage('no_password_match')}
             </p>
         {/if}
     </div>
     <div class="mt-2">
         <ExtendedPasswordInputField id="password_repeat"
-                                    label="{chrome.i18n.getMessage('password_repeat')}"
+                                    label="{i18n.getMessage('password_repeat')}"
                                     bind:value={passwordRepeat}
                                     showCopyClipboardButton={false}/>
     </div>
     <div class="mt-2">
-        <CustomInputField id="url" label="{chrome.i18n.getMessage('url')}"
+        <CustomInputField id="url" label="{i18n.getMessage('url')}"
                           bind:value={credentialData.url}/>
     </div>
     <div class="mt-2">
-        <CustomInputField id="description" label="{chrome.i18n.getMessage('description')}"
+        <CustomInputField id="description" label="{i18n.getMessage('description')}"
                           bind:value={credentialData.description}
                           type="textarea"/>
     </div>
@@ -88,12 +89,12 @@
         <div class="mt-2">
             <div class="text-sm text-red-600 !mb-4">
                 <Icon data={exclamationCircle} scale={1.0}/>
-                {chrome.i18n.getMessage('compromised_notice')}
+                {i18n.getMessage('compromised_notice')}
             </div>
         </div>
     {/if}
     <div class="mt-2">
         <OnClickButton additionalClasses="bg-red-600 hover:bg-red-500"
-                       callback="{markAsCompromised}">{chrome.i18n.getMessage('mark_compromised')}</OnClickButton>
+                       callback={markAsCompromised}>{i18n.getMessage('mark_compromised')}</OnClickButton>
     </div>
 {/if}

@@ -14,6 +14,7 @@
     import { push } from "~Router.svelte";
 
     export let params: { guid?: string } = {};
+    const i18n = chrome.i18n;
     let pageIsLoading = true;
     let lockSaveButton = false;
     let vault: Vault = null;
@@ -29,11 +30,11 @@
 
     const saveCredential = async () => {
         if (credentialData.label === null || credentialData.label.length === 0) {
-            NotyService.notyError(chrome.i18n.getMessage('label_required'));
+            NotyService.notyError(i18n.getMessage('label_required'));
             return;
         }
         if (credentialData.password === undefined) {
-            NotyService.notyError(chrome.i18n.getMessage('no_password_match'));
+            NotyService.notyError(i18n.getMessage('no_password_match'));
             return;
         }
         if (credential.password !== credentialData.password) {
@@ -43,7 +44,7 @@
 
         credential.updateData(credentialData);
         if (await credential.update()) {
-            NotyService.notySuccess(chrome.i18n.getMessage('credential_updated'));
+            NotyService.notySuccess(i18n.getMessage('credential_updated'));
 
             // since our vault caching is not yet good (only response cache atm), we need to refresh the vault to get the latest data (and update the cache)
             await ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
@@ -59,7 +60,7 @@
             });
             push('/home');
         } else {
-            NotyService.notyError(chrome.i18n.getMessage('credential_update_error'));
+            NotyService.notyError(i18n.getMessage('credential_update_error'));
         }
         lockSaveButton = false;
     }
@@ -113,7 +114,7 @@
             <Loading/>
         {:else}
             <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
-                <OnClickButton callback={saveCredential} title="{chrome.i18n.getMessage('save')}"
+                <OnClickButton callback={saveCredential} title="{i18n.getMessage('save')}"
                                bind:disabled="{lockSaveButton}">
                     {#if lockSaveButton}
                         <Icon data={refresh} scale={1.3} spin="{true}"/>

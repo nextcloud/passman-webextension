@@ -12,6 +12,7 @@
     import NotyService from "~services/frontend/NotyService";
     import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
 
+    const i18n = chrome.i18n;
     let extendedSettings = {
         [ExtensionSettingsOptions.ignoreProtocol]: false,
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
@@ -62,19 +63,19 @@
             </p>
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                  id="ignoreProtocol"
-                                 label="{chrome.i18n.getMessage('ignore_protocol')}"/>
+                                 label="{i18n.getMessage('ignore_protocol')}"/>
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreSubdomain]}
                                  id="ignoreSubdomain"
-                                 label="{chrome.i18n.getMessage('ignore_subdomain')}"/>
+                                 label="{i18n.getMessage('ignore_subdomain')}"/>
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePath]}
                                  id="ignorePath"
-                                 label="{chrome.i18n.getMessage('ignore_path')}"/>
+                                 label="{i18n.getMessage('ignore_path')}"/>
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePort]}
                                  id="ignorePort"
-                                 label="{chrome.i18n.getMessage('ignore_port')}"/>
+                                 label="{i18n.getMessage('ignore_port')}"/>
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
                                  id="enable_autofill"
-                                 label="{chrome.i18n.getMessage('enable_autofill')}"/>
+                                 label="{i18n.getMessage('enable_autofill')}"/>
         </Card>
 
         <OnClickButton callback="{save}">

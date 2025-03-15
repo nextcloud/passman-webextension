@@ -17,6 +17,7 @@
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
     import NotyService from "~services/frontend/NotyService";
 
+    const i18n = chrome.i18n;
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
     const token = field('token', '', [required()], { checkOnInit: true });
@@ -158,12 +159,12 @@
         </p>
     </Card>
     <Card additionalClasses="text-left w-full mb-6">
-        <CustomInputField label="{chrome.i18n.getMessage('server_url')}" bind:value={$server.value}/>
+        <CustomInputField label="{i18n.getMessage('server_url')}" bind:value={$server.value}/>
         <div class="mt-2">
-            <CustomInputField label="{chrome.i18n.getMessage('username')}" bind:value={$user.value}/>
+            <CustomInputField label="{i18n.getMessage('username')}" bind:value={$user.value}/>
         </div>
         <div class="mt-2">
-            <CustomInputField label="{chrome.i18n.getMessage('password')}" bind:value={$token.value}
+            <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
                               type="password"/>
         </div>
         <div class="mt-4">
@@ -171,7 +172,7 @@
                 {#if lockLoginButton}
                     <Icon data={refresh} scale={1.3} spin="{true}"/>
                 {:else}
-                    {chrome.i18n.getMessage('save')}
+                    {i18n.getMessage('save')}
                 {/if}
             </OnClickButton>
         </div>
@@ -186,12 +187,12 @@
     {#if serverSettingsValidated}
         <Card additionalClasses="text-left space-y-3 w-full">
             <p>
-                {chrome.i18n.getMessage('default_vault_desc')}
+                {i18n.getMessage('default_vault_desc')}
             </p>
             <div class="mt-2">
                 <label for="vaults_select"
                        class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
-                    {chrome.i18n.getMessage('select_default_vault')}
+                    {i18n.getMessage('select_default_vault')}
                 </label>
                 <div class="my-2">
                     {#key vaultSelectionList}
@@ -208,7 +209,7 @@
                 </div>
             </div>
             <div class="mt-2">
-                <CustomInputField label="{chrome.i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
+                <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
                                   type="password"/>
             </div>
             <div class="mt-2 text-red-600">

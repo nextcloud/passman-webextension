@@ -5,6 +5,8 @@
     import ExtensionUnlockService from "~services/ExtensionUnlockService";
 
     export let params: { isInPopup: string };
+
+    const i18n = chrome.i18n;
     let newExtensionUnlockPassword = '';
     let isExtensionUnlocked = false;
     let processNewUnlockPassword = false;
@@ -23,23 +25,23 @@
 
 <div class="flex h-full flex-col items-center justify-center space-y-4 p-10">
     <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">
-        {chrome.i18n.getMessage("welcome_to_passman")}
+        {i18n.getMessage("welcome_to_passman")}
     </h2>
     <p>
-        {chrome.i18n.getMessage("intro_text")}
+        {i18n.getMessage("intro_text")}
     </p>
     <p>
-        {chrome.i18n.getMessage("extra_accounts")}
+        {i18n.getMessage("extra_accounts")}
     </p>
 
     {#if isExtensionUnlocked}
         {#if (params && params.isInPopup === '1')}
-            <OnClickButton callback={openOptionsPage} title="{chrome.i18n.getMessage('begin')}">
-                {chrome.i18n.getMessage("begin")} to options
+            <OnClickButton callback={openOptionsPage} title="{i18n.getMessage('begin')}">
+                {i18n.getMessage("begin")} to options
             </OnClickButton>
         {:else}
             <InternalHrefLinkButton href="/setup/server">
-                {chrome.i18n.getMessage("begin")} direct
+                {i18n.getMessage("begin")} direct
             </InternalHrefLinkButton>
         {/if}
     {:else}
@@ -47,7 +49,7 @@
                           bind:value={newExtensionUnlockPassword}
                           tabindex="1"
                           type="password"/>
-        <OnClickButton callback={setUnlockPassword} title="{chrome.i18n.getMessage('begin')}"
+        <OnClickButton callback={setUnlockPassword} title="{i18n.getMessage('begin')}"
                        disabled={newExtensionUnlockPassword === '' || processNewUnlockPassword}>
             Save password & unlock
         </OnClickButton>
