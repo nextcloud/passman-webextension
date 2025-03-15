@@ -15,6 +15,7 @@
     export let credential: Credential;
     let editLink = '';
     let showExpandedView = false;
+    const i18n = chrome.i18n;
 
     const copyOTPToClipboard = () => {
         ClipboardService.copyToClipboardWithNotification(OTPService.updateOTP(credential.otp), 'OTP');
@@ -54,14 +55,14 @@
                                                  forceEnable={credential.otp != null && credential.otp.secret != null}
                                                  fieldName="OTP" icon={clockO} iconScale={1.2}/>
                 {#if credential.acl === undefined || credential.acl.permissions.hasPermission(SharingACL.permissions.WRITE)}
-                    <a title="{chrome.i18n.getMessage('edit_credential')}"
+                    <a title="{i18n.getMessage('edit_credential')}"
                        class="cursor-pointer px-0.5 hover:text-blue-700"
                        href="{editLink}"
                        use:link={editLink}>
                         <Icon data={pencil} scale={1.2}/>
                     </a>
                 {:else}
-                <span title="{chrome.i18n.getMessage('edit_insufficient_permissions')}" class="px-0.5 text-gray-300">
+                <span title="{i18n.getMessage('edit_insufficient_permissions')}" class="px-0.5 text-gray-300">
                     <Icon data={pencil} scale={1.2}/>
                 </span>
                 {/if}
