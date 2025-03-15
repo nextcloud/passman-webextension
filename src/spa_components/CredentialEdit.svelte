@@ -44,6 +44,19 @@
         credential.updateData(credentialData);
         if (await credential.update()) {
             NotyService.notySuccess(chrome.i18n.getMessage('credential_updated'));
+
+            // since our vault caching is not yet good (only response cache atm), we need to refresh the vault to get the latest data (and update the cache)
+            await ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
+                if (passmanClient) {
+                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
+                        try {
+                            await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, false);
+                        } catch (exception) {
+                            console.error(exception);
+                        }
+                    });
+                }
+            });
             push('/home');
         } else {
             NotyService.notyError(chrome.i18n.getMessage('credential_update_error'));
@@ -57,7 +70,7 @@
             if (passmanClient) {
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
-                        let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
+                        let myVault = await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {
