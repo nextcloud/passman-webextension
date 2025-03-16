@@ -15,6 +15,7 @@ enum ContextMenuItemId {
     COPY_PASSWORD = 'COPY_PASSWORD',
     COPY_URL = 'COPY_URL',
     COPY_OTP = 'COPY_OTP',
+    RELOAD_PICKER = 'RELOAD_PICKER',
 }
 
 export default class ContextMenuService {
@@ -37,6 +38,13 @@ export default class ContextMenuService {
                                 password: PasswordGeneratorService.generate(PasswordGeneratorService.getDefaultConfig())
                             }
                         },
+                        name: RemoteCallableFunctions.remoteFunctionCallMessageName
+                    });
+                    break;
+                case ContextMenuItemId.RELOAD_PICKER:
+                    await sendToContentScript({
+                        tabId: tab?.id,
+                        body: { method: RemoteCallableFunctionNames.reloadPicker },
                         name: RemoteCallableFunctions.remoteFunctionCallMessageName
                     });
                     break;
@@ -123,6 +131,7 @@ export default class ContextMenuService {
             ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_PASSWORD, 'Copy password');
             ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_URL, 'Copy URL');
             ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_OTP, 'Copy OTP');
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.RELOAD_PICKER, 'Reload password picker');
         }
     }
 

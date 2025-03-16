@@ -14,6 +14,7 @@
     import type {
         DecryptedPartialCredentialData
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
 
     enum PASSWORD_PICKER_SECTIONS {
         ADD,
@@ -55,7 +56,7 @@
         pickerPopupIsOpen = false;
     }
 
-    const loadPickerForCurrentTab = () => {
+    export const loadPickerForCurrentTab = () => {
         console.debug("picker svelte initialized");
 
         sendToBackground({
@@ -67,10 +68,11 @@
                 console.debug("is unlocked");
 
                 document.addEventListener('click', function (event) {
-                    let shadowRootContainer = document.getElementsByTagName('plasmo-csui').item(0);
+                    //let shadowRootContainer = document.getElementsByTagName('plasmo-csui').item(0);
+                    let pickerContainer = document.getElementById('password_picker');
                     let targetEl = event.target as Element; // clicked element
                     do {
-                        if (targetEl == shadowRootContainer) {
+                        if (targetEl == pickerContainer) {
                             // This is a click inside, does nothing, just return.
                             // console.debug("Clicked inside!");
                             return;
@@ -83,6 +85,7 @@
                 });
 
                 PasswordPickerService.initPickerForPage(showPickerCallback, hidePickerCallback);
+                console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
             }
         });
     }

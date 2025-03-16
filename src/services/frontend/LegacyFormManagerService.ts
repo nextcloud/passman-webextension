@@ -5,6 +5,7 @@
  todo: needs complete refactoring, just copied from the old extension (findForm.js) and fixed/improved some logic
  */
 export class LegacyFormManagerService {
+    public static skippedInvisibleFieldsDetected: boolean = false;
 
     /**
      *
@@ -39,22 +40,37 @@ export class LegacyFormManagerService {
      *
      * skipEmptyFields can be set to ignore password fields with no value.
      */
-    private static _getPasswordFields = (formInputElements: NodeListOf<HTMLInputElement>, skipEmptyFields: boolean) => {
+    private static _getTypedFields = (
+        formInputElements: NodeListOf<HTMLInputElement>, 
+        skipEmptyFields: boolean,
+        skipNonVisibleFields: boolean = true,
+        type: string = 'password',
+        andHasNameOf: string[] = []
+    ) => {
         // Locate the password fields in the form.
         const pwFields = [];
 
         for (let i = 0; i < formInputElements.length; i++) {
             const elem = formInputElements[i];
-            if (elem.type !== "password") {
+            if (elem.type !== type) {
                 continue;
             }
 
-            if (!this.isElementVisible(elem)) {
+            if (skipNonVisibleFields && !this.isElementVisible(elem)) {
+                console.debug(`ingore non visible ${type} field`, elem);
+                this.skippedInvisibleFieldsDetected = true;
                 continue;
             }
 
             if (skipEmptyFields && !elem.value) {
                 continue;
+            }
+
+            if (andHasNameOf.length > 0) {
+                const hasNameOf = andHasNameOf.some(name => elem.name.toLowerCase().includes(name.toLowerCase()));
+                if (!hasNameOf) {
+                    continue;
+                }
             }
 
             pwFields.push({
@@ -88,12 +104,25 @@ export class LegacyFormManagerService {
      * change-password field, with oldPasswordField containing the password
      * that is being changed.
      */
-    private static getFormFields = (form: HTMLFormElement, isSubmission: boolean) => {
+    private static getFormFields = (form: HTMLFormElement, isSubmission: boolean, skipNonVisibleFields: boolean = true) => {
         const formInputElements = form.querySelectorAll('input');
 
         // Locate the password field(s) in the form. Up to 3 supported.
         // If there's no password field, there's nothing for us to do.
-        const pwFields = this._getPasswordFields(formInputElements, isSubmission);
+        let pwFields = this._getTypedFields(formInputElements, isSubmission, skipNonVisibleFields, 'password');
+
+        // try not to give up; may it's only a username field; let's use pwFields for other possible fields of type text
+        // TODO: this is a hack; we should find a better way to do this; unused code since it's not working for the later method code
+        /*if (!pwFields || pwFields.length === 0) {
+            //return [null, null, null];
+            pwFields = this._getTypedFields(
+                formInputElements, 
+                isSubmission, 
+                'text',
+                ['username', 'user', 'login', 'nickname', 'nick', 'email', 'emailaddress', 'mail']
+            );
+        }*/
+
         if (!pwFields || pwFields.length === 0) {
             return [null, null, null];
         }
@@ -181,11 +210,11 @@ export class LegacyFormManagerService {
      * todo: needs refactoring
      * @param isSubmission
      */
-    public static getLoginFields = (isSubmission: boolean = false) => {
+    public static getLoginFields = (isSubmission: boolean = false, skipNonVisibleFields: boolean = true) => {
         const loginForms = [];
 
         for (const form of document.forms) {
-            const result = LegacyFormManagerService.getFormFields(form, isSubmission);
+            const result = LegacyFormManagerService.getFormFields(form, isSubmission, skipNonVisibleFields);
             const usernameField = result[0];
             const passwordField = result[1];
 

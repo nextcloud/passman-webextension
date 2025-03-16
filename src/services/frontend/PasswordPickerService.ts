@@ -88,6 +88,7 @@ export class PasswordPickerService {
     private static onFormIconClick = (event?: MouseEvent, data?: {
         width: number,
         height: number,
+        el: HTMLInputElement,
         form: HTMLFormElement
     }) => {
         event.preventDefault();
@@ -99,7 +100,7 @@ export class PasswordPickerService {
         // using data.height as replacement for the icon width, since it is automatically resized to fill the element height
         if (offsetRight < data.height) {
             // todo: implement
-            PasswordPickerService.showPasswordPicker(data.form);
+            PasswordPickerService.showPasswordPicker(data.el, data.form);
 
             //alert("the password picker should open up now - if it was implemented");
         }
@@ -117,35 +118,58 @@ export class PasswordPickerService {
         );
     }
 
-    private static showPasswordPicker = (form: HTMLFormElement) => {
+    private static showPasswordPicker = (el: HTMLInputElement, form: HTMLFormElement) => {
         var passwordPickerFrames = document.querySelectorAll('#password_picker');
         if (passwordPickerFrames.length > 1) {
             return;
         }
 
-        var loginField = form[0] as HTMLElement;
-        var loginFieldPos = loginField.getBoundingClientRect();
-        var loginFieldVisible = window.getComputedStyle(loginField).display !== 'none';
+        let loginField = null;
+        let loginFieldPos = null;
+        let loginFieldVisible = null;
 
-        var passwordField = form[1] as HTMLElement;
-        var passwordFieldPos = passwordField.getBoundingClientRect();
-        var passwordFieldVisible = window.getComputedStyle(passwordField).display !== 'none';
+        let passwordField = null;
+        let passwordFieldPos = null;
+        let passwordFieldVisible = null;
 
-        var left = loginFieldPos.left || passwordFieldPos.left;
-        var top = loginFieldPos.top || passwordFieldPos.top;
-        var maxZ = PasswordPickerService.getMaxZ();
+        for (const element of form.getElementsByTagName('input')) {
+            if (element == el) {
+                // we found the element, the user has initially clicked on
+                console.log("we found the element, the user has initially clicked on", element);
+                loginField = element;
+            }
+            /*if (element.type == 'password') {
+                passwordField = element;
+            }*/
+        }
 
-        if (loginFieldPos && passwordFieldPos.top > loginFieldPos.top) {
-            top = passwordFieldPos.top + passwordField.offsetHeight + 10;
+        // var loginField = form[0] as HTMLElement;
+        if (loginField != null) {
+            loginFieldPos = loginField.getBoundingClientRect();
+            loginFieldVisible = window.getComputedStyle(loginField).display !== 'none';
+        }
+
+        //var passwordField = form[1] as HTMLElement;
+        if (passwordField != null) {
+            passwordFieldPos = passwordField.getBoundingClientRect();
+            passwordFieldVisible = window.getComputedStyle(passwordField).display !== 'none';
+        }
+
+        let left = loginFieldPos?.left || passwordFieldPos?.left;
+        let top = loginFieldPos?.top || passwordFieldPos?.top;
+        let maxZ = PasswordPickerService.getMaxZ();
+
+        if (loginFieldPos && passwordFieldPos?.top > loginFieldPos?.top) {
+            top = passwordFieldPos?.top + passwordField?.offsetHeight + 10;
         } else {
             if (loginFieldPos) {
-                top = top + loginField.offsetHeight + 10;
+                top = top + loginField?.offsetHeight + 10;
             } else {
-                top = top + passwordField.offsetHeight + 10;
+                top = top + passwordField?.offsetHeight + 10;
             }
         }
         if (!loginFieldVisible) {
-            left = passwordFieldPos.left;
+            left = passwordFieldPos?.left;
         }
 
         PasswordPickerService.showPickerCallback(left, top, maxZ);
@@ -186,7 +210,7 @@ export class PasswordPickerService {
 
             el.removeEventListener('click', PasswordPickerService.onFormIconClick);
             el.addEventListener('click', function (event) {
-                PasswordPickerService.onFormIconClick(event, { width: width, height: height, form: form });
+                PasswordPickerService.onFormIconClick(event, { width: width, height: height, el: el, form: form });
             });
         }
     }
