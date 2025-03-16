@@ -7,11 +7,15 @@
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import BottomNavBar from "~spa_partials/BottomNavBar.svelte";
     import { Toaster } from "svelte-french-toast/dist/index";
+    import Loading from '~spa_components/Loading.svelte';
 
     onMount(async () => {
         sendToBackground({
             name: "getExtensionUnlockState"
         }).then((value) => {
+            // use locked as initial state; will be overridden by the actual state right after the switch
+            $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
+
             switch (value.status) {
                 case ExtensionUnlockState.NOT_SET_UP_YET:
                     // setup required
@@ -37,10 +41,17 @@
     });
 </script>
 
-<div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
-    <Router {routes}/>
-    <Toaster />
-</div>
+{#if $extensionUnlockStateStore !== undefined}
+    <div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
+        <Router {routes}/>
+        <Toaster />
+    </div>
+{:else}
+    <div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
+        <Loading/>
+    </div>
+{/if}
+
 {#if $extensionUnlockStateStore === ExtensionUnlockState.UNLOCKED}
     <BottomNavBar/>
 {/if}
