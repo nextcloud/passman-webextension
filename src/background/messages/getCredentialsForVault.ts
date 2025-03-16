@@ -24,15 +24,15 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsForVaultMessagingReq
     let serializedCredentials: SerializableTransferCredentialInterface[] = [];
     console.log("handler", req);
 
-    await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
-        console.log("passmanClient", passmanClient);
-        if (passmanClient) {
+    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+        console.log("backendPassmanClient", backendPassmanClient);
+        if (backendPassmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {
                     if (defaultVaultInfo) {
                         // get from cache by default except no-cache is explicitly requested
                         console.log("getCachedIfPossible", req.body?.getCachedIfPossible);
-                        let myVault = await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, req.body?.getCachedIfPossible === true);
+                        let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, req.body?.getCachedIfPossible === true);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {

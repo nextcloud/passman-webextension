@@ -5,11 +5,11 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     let status = false;
     let errorMessage = null;
 
-    await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
-        if (passmanClient) {
-            await passmanClient.preloadVaults(true, true);
+    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+        if (backendPassmanClient) {
+            await backendPassmanClient.preloadVaults(true, true);
             // do not request cached vault here to prevent calling vault.refresh() later on it
-            return await passmanClient.getFullVaultByGuid(req.body.guid).then(async (vault) => {
+            return await backendPassmanClient.getFullVaultByGuid(req.body.guid).then(async (vault) => {
                 if (vault) {
                     // await vault.refresh();
                     if (vault.testVaultKey(req.body.password)) {

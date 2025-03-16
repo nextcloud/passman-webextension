@@ -583,6 +583,10 @@
     "message": "Unlock",
     "description": "Unlock"
   },
+  "unlock_without_refresh": {
+    "message": "Unlock without refresh",
+    "description": "Unlock without refresh"
+  },
   "credentials_found_for_site": {
     "message": "We've found $AMOUNT$ credentials for this site",
     "description": "Amount of the credentials found for the current site",

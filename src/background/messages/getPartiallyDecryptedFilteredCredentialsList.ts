@@ -35,11 +35,11 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsListMessagingConfigu
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
-    await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
-        if (passmanClient) {
+    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+        if (backendPassmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {
-                    let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid);
+                    let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid);
                     if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                         myVault.vaultKey = defaultVaultInfo.password;
                         if (myVault.credentials.length <= 1) {

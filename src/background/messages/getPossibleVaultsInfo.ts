@@ -6,12 +6,12 @@ const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     let errorMessage = null;
     let vaultSelectionList: { guid: string, name: string }[] = [];
 
-    await ExtensionSettingsService.getPassmanClient().then(async (passmanClient) => {
-        if (passmanClient) {
+    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+        if (backendPassmanClient) {
             try {
-                await passmanClient.preloadVaults(true, true);
+                await backendPassmanClient.preloadVaults(true, req?.body?.getCachedIfPossible === true);
 
-                for (let preloadedVault of passmanClient.preloadedVaults) {
+                for (let preloadedVault of backendPassmanClient.preloadedVaults) {
                     vaultSelectionList.push({
                         guid: preloadedVault.guid,
                         name: preloadedVault.name

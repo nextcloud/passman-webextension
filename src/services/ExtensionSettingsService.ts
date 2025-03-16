@@ -5,6 +5,7 @@ import type {
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
 import { CustomPassmanClientLoggingService } from "~services/frontend/CustomPassmanClientLoggingService";
+import { BackendPassmanClient } from "~lib/BackendPassmanClient";
 
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,
@@ -33,6 +34,7 @@ export interface ExtensionSettings {
 
 export default class ExtensionSettingsService {
     private static readonly EXTENSION_SETTINGS_ACCESS_KEY: string = 'ExtensionSettings';
+    private static backendPassmanClient: BackendPassmanClient | null = null;
     private static localPassmanClient: PassmanClient | null = null;
 
     public static updateExtensionSettings = async (extensionSettings: ExtensionSettings) => {
@@ -58,33 +60,43 @@ export default class ExtensionSettingsService {
         return extensionSettings[key] ?? null;
     };
 
-    public static getPassmanClient = async (createWithNextcloudServerMessagingConnector = false) => {
-        if (!ExtensionSettingsService.localPassmanClient) {
-            if (createWithNextcloudServerMessagingConnector) {
-                // only required for PassmanClient usage by the extension frontend
+    public static getBackendPassmanClient = async () => {
+        if (!ExtensionSettingsService.backendPassmanClient) {
+            const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo);
+            if (nextcloudServerData) {
                 const logger = new CustomPassmanClientLoggingService();
-                ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
-                    null as unknown as NextcloudServerInfoInterface,
-                    new NextcloudServerMessagingConnector(
-                        await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface,
-                        logger
-                    ),
-                    logger
+                ExtensionSettingsService.backendPassmanClient = await BackendPassmanClient.createInstance(
+                    nextcloudServerData,
+                    undefined,
+                    logger,
+                    CustomStorageService.getExtensionPassmanClientPersistenceService()
                 );
-            } else {
-                const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo);
-                if (nextcloudServerData) {
-                    ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
-                        nextcloudServerData
-                    );
-                }
             }
+        }
+
+        return ExtensionSettingsService.backendPassmanClient;
+    };
+
+    public static getPopupPassmanClient = async () => {
+        if (!ExtensionSettingsService.localPassmanClient) {
+            const logger = new CustomPassmanClientLoggingService();
+            ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
+                null as unknown as NextcloudServerInfoInterface,
+                new NextcloudServerMessagingConnector(
+                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface,
+                    logger
+                ),
+                logger
+            );
+
+            // todo: try to get serialized vaults fomr the backend passman client and fill them into this one
+            // ExtensionSettingsService.localPassmanClient.
         }
 
         return ExtensionSettingsService.localPassmanClient;
     };
 
-    public static updatePassmanClient = (passmanClient: PassmanClient) => {
-        ExtensionSettingsService.localPassmanClient = passmanClient;
+    public static updateBackendPassmanClient = (backendPassmanClient: BackendPassmanClient | null) => {
+        ExtensionSettingsService.backendPassmanClient = backendPassmanClient;
     };
 }

@@ -65,12 +65,12 @@
         chrome.runtime.openOptionsPage();
     }
 
-    const applyCredentialFilter = (searchInput: string) => {
+    const applyCredentialFilter = async (searchInput: string) => {
         filteredCredentials = [];
 
         if (vault && credentials && credentials.length > 0) {
             if (overwriteInputFilterByTabUrl && searchInput === null) {
-                CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
+                await CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
                     .then((credentials) => {
                         filteredCredentials = credentials;
                     });
@@ -85,8 +85,8 @@
     $: vault && credentials && applyCredentialFilter(searchInput ?? '');
 
     onMount(() => {
-        ExtensionSettingsService.getPassmanClient(true).then(async (passmanClient) => {
-            if (passmanClient) {
+        ExtensionSettingsService.getPopupPassmanClient().then(async (popupPassmanClient) => {
+            if (popupPassmanClient) {
                 await chrome.tabs.query({
                     currentWindow: true,
                     active: true
@@ -97,14 +97,19 @@
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
                         if (defaultVaultInfo) {
-                            let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
+                            let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
                             if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                                 myVault.vaultKey = defaultVaultInfo.password;
-                                /*if (myVault.credentials.length <= 1) {
-                                    await myVault.refresh(true);
-                                }*/
+
+                                // not really needed, but if cached getFullVaultByGuid returns a vault without custom credentials, force refresh
+                                if (myVault.credentials.length <= 1) {
+                                    await myVault.refresh(false);
+                                }
+
                                 vault = myVault;
-                                refreshCredentialList(true);
+                                credentials = vault.credentials;
+                                filteredCredentials = [];
+                                await applyCredentialFilter(null);
                             } else {
                                 errorMessage = 'Could not decrypt vault';
                             }

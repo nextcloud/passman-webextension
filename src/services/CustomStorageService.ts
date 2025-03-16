@@ -4,7 +4,7 @@ import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import type {
     RequestCachingHandlerInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
-import { get as idb_get, set as idb_set } from 'idb-keyval';
+import { get as idb_get, set as idb_set, del as idb_del } from 'idb-keyval';
 import ExtensionPassmanClientPersistenceService from "./ExtensionPassmanClientPersistenceService";
 import { customIndexedDBService } from "./CustomIndexedDBService";
 
@@ -64,7 +64,11 @@ export default class CustomStorageService {
         if (!this.requestCachingHandler) {
             this.requestCachingHandler = {
                 set: async function (key: string, value: string): Promise<void> {
-                    await CustomStorageService.getSessionStorage().set(key, value);
+                    if (value === undefined) {
+                        await CustomStorageService.getSessionStorage().remove(key);
+                    } else {
+                        await CustomStorageService.getSessionStorage().set(key, value);
+                    }
                 },
                 get: function (key: string): Promise<string | undefined> {
                     return CustomStorageService.getSessionStorage().get(key);
@@ -82,7 +86,11 @@ export default class CustomStorageService {
         if (!this.requestCachingHandler) {
             this.requestCachingHandler = {
                 set: function (key: string, value: string): Promise<void> {
-                    return idb_set(key, value);
+                    if (value === undefined) {
+                        return idb_del(key);
+                    } else {
+                        return idb_set(key, value);
+                    }
                 },
                 get: function (key: string): Promise<string | undefined> {
                     return idb_get(key);

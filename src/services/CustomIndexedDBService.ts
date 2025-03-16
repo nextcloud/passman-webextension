@@ -1,150 +1,63 @@
-import PouchDB from 'pouchdb';
-import PouchDBMemory from 'pouchdb-adapter-memory';
-import PouchDBFind from 'pouchdb-find';
 import type { DecryptedDataCachingHandlerInterface } from '@binsky/passman-client-ts/lib/Interfaces/DecryptedDataCachingHandlerInterface';
 
-// Register memory adapter and find plugin
-PouchDB.plugin(PouchDBMemory);
-PouchDB.plugin(PouchDBFind);
-
-interface CacheDocumentData {
-    cacheName: string;  // usually {vaultGuid}_{credentialGuid}
-    key: string;        // usually {credentialPropertyName}
-    value: string | number | boolean | null;
-}
-
-interface CacheDocument extends PouchDB.Core.IdMeta, CacheDocumentData {}
-
 export class CustomIndexedDBService implements DecryptedDataCachingHandlerInterface {
-    private static readonly DB_NAME = 'passman_cache_db';
-    private db: PouchDB.Database<CacheDocument>;
     private static instance: CustomIndexedDBService | null = null;
+    private cache: Map<string, Map<string, string | number | boolean | null>>;
 
-    /**
-     * @param useMemoryAdapter - Whether to use the memory adapter (default is true)
-     */
-    constructor(useMemoryAdapter: boolean = true) {
-        // Creates a database or opens an existing one
-        this.db = new PouchDB<CacheDocument>(CustomIndexedDBService.DB_NAME, {
-            adapter: useMemoryAdapter ? 'memory' : 'idb'
-        });
-
-        // Create indexes for efficient querying (does nothing if it already exists)
-        this.db.createIndex({
-            index: {
-                fields: ['cacheName', 'key']
-            }
-        }).catch((error: Error) => {
-            console.error('Failed to create index:', error);
-        });
+    constructor() {
+        this.cache = new Map();
     }
 
-    public static getInstance(useMemoryAdapter: boolean = true): CustomIndexedDBService {
+    public static getInstance(): CustomIndexedDBService {
         if (!CustomIndexedDBService.instance) {
-            CustomIndexedDBService.instance = new CustomIndexedDBService(useMemoryAdapter);
+            CustomIndexedDBService.instance = new CustomIndexedDBService();
         }
         return CustomIndexedDBService.instance;
     }
 
-    private getDocId(cacheName: string, key: string): string {
-        return `${cacheName}:${key}`;
+    private getOrCreateCacheMap(cacheName: string): Map<string, string | number | boolean | null> {
+        let cacheMap = this.cache.get(cacheName);
+        if (!cacheMap) {
+            cacheMap = new Map();
+            this.cache.set(cacheName, cacheMap);
+        }
+        return cacheMap;
     }
 
     async set(cacheName: string, key: string, value: string | number | boolean | null | undefined): Promise<void> {
-        const docId = this.getDocId(cacheName, key);
-
+        const cacheMap = this.getOrCreateCacheMap(cacheName);
+        
         if (value === undefined) {
-            // Delete the document if value is undefined
-            // (when we may use revisions with _rev later, we can't just remove the document, but it's fine for now)
-            try {
-                const doc = await this.db.get(docId);
-                await this.db.remove(doc);
-            } catch (error) {
-                // Document might not exist, which is fine
-                if (error instanceof Error && error.name !== 'not_found') {
-                    console.error('Error deleting document:', error);
-                }
+            // Delete the key if value is undefined
+            cacheMap.delete(key);
+            // Remove the cache map if it's empty
+            if (cacheMap.size === 0) {
+                this.cache.delete(cacheName);
             }
         } else {
-            try {
-                const newDoc: CacheDocument | CacheDocument & PouchDB.Core.IdMeta & PouchDB.Core.GetMeta = {
-                    _id: docId,
-                    cacheName,
-                    key,
-                    value
-                };
-
-                // Try to get existing document to get _rev
-                let existingDoc: CacheDocument & PouchDB.Core.IdMeta & PouchDB.Core.GetMeta | null = null;
-                try {
-                    existingDoc = await this.db.get(docId);
-                } catch (error) {
-                    if (error instanceof Error && error.name !== 'not_found') {
-                        throw error;
-                    }
-                }
-
-                if (existingDoc) {
-                    await this.db.put({
-                        ...newDoc,
-                        _rev: existingDoc._rev
-                    });
-                } else {
-                    await this.db.put(newDoc);
-                }
-            } catch (error) {
-                console.error('Error setting document:', error);
-                throw error;
-            }
+            cacheMap.set(key, value);
         }
     }
 
     async get(cacheName: string, key: string): Promise<string | number | boolean | null | undefined> {
-        const docId = this.getDocId(cacheName, key);
-
-        try {
-            const doc = await this.db.get(docId);
-            return doc.value;
-        } catch (error) {
-            if (error instanceof Error && error.name === 'not_found') {
-                return undefined;
-            }
-            console.error('Error getting document:', error);
-            throw error;
+        const cacheMap = this.cache.get(cacheName);
+        if (!cacheMap) {
+            return undefined;
         }
+        console.log('get from cacheMap', cacheMap);
+        return cacheMap.has(key) ? cacheMap.get(key) : undefined;
     }
 
     async clearCacheByName(cacheName: string): Promise<void> {
-        try {
-            // Find all documents for the given cacheName
-            const result = await this.db.find({
-                selector: {
-                    cacheName: cacheName
-                }
-            });
-
-            // Delete all found documents
-            await this.db.bulkDocs(
-                result.docs.map((doc: CacheDocument) => {
-                    return {
-                        _deleted: true,
-                        ...doc
-                    };
-                })
-            );
-        } catch (error) {
-            console.error('Error clearing cache:', error);
-            throw error;
-        }
+        this.cache.delete(cacheName);
     }
 
-    // Additional utility method to destroy the database (useful for testing)
-    async destroy(): Promise<void> {
-        await this.db.destroy();
-        CustomIndexedDBService.instance = null;
+    // Additional utility method to clear all data (useful for testing)
+    clear(): void {
+        this.cache.clear();
     }
 }
 
-// Export a singleton instance with persistent storage by default
-export const customIndexedDBService = CustomIndexedDBService.getInstance(true);
+// Export a singleton instance
+export const customIndexedDBService = CustomIndexedDBService.getInstance();
 export default customIndexedDBService;

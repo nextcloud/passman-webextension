@@ -4,6 +4,8 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/Ex
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import { ExtensionBadgeService } from "~services/backend/ExtensionBadgeService";
 import ContextMenuService from "~services/backend/ContextMenuService";
+import type { PassmanClient } from "packages/passman-client-ts/lib/PassmanClient";
+import type { BackendPassmanClient } from "~lib/BackendPassmanClient";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -25,11 +27,12 @@ export default class ExtensionUnlockService {
 
     /**
      * Locks the extension, as well as taking care about clearing decrypted cache within the background service worker.
+     * Should be called from the LockExtension MessageHandler.
      */
     public static async lock() {
         await CustomStorageService.clearSessionStorage();
         CustomStorageService.closeSecureStorage();
-        ExtensionSettingsService.updatePassmanClient(null);
+        ExtensionSettingsService.updateBackendPassmanClient(null);
         ExtensionBadgeService.displayLockIcons();
         ContextMenuService.reCreateContextMenuParentItems(false);
     }
@@ -79,14 +82,20 @@ export default class ExtensionUnlockService {
     /**
      * Returns the unlocked default vault if possible. It does not refresh the vault to load credentials from the api.
      */
-    public static async getUnlockedDefaultVault(createWithNextcloudServerMessagingConnector = false): Promise<Vault> {
+    public static async getUnlockedDefaultVault(isFrontendCall = false): Promise<Vault> {
         return await ExtensionUnlockService.isUnlocked().then(async (isUnlocked) => {
             if (isUnlocked) {
-                return await ExtensionSettingsService.getPassmanClient(createWithNextcloudServerMessagingConnector).then(async (passmanClient) => {
+                let passmanClientPromise: Promise<PassmanClient | BackendPassmanClient | null>;
+                if (isFrontendCall) {
+                    passmanClientPromise = ExtensionSettingsService.getPopupPassmanClient();
+                } else {
+                    passmanClientPromise = ExtensionSettingsService.getBackendPassmanClient();
+                }
+                return await passmanClientPromise.then(async (passmanClient) => {
                     if (passmanClient) {
                         return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                             try {
-                                let myVault = await passmanClient.getVaultByGuid(defaultVaultInfo.guid, true);
+                                let myVault = await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
                                 if (myVault) {
                                     if (myVault.vaultKey === undefined || myVault.vaultKey === null) {
                                         // seems not to be unlocked yet

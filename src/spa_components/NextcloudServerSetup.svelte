@@ -197,6 +197,7 @@
                 <div class="my-2">
                     {#key vaultSelectionList}
                         <Select
+                                disabled={lockDefaultVaultButton}
                                 multiple={false}
                                 label="name"
                                 itemId="guid"
