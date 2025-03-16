@@ -6,11 +6,13 @@
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import { sendToBackground } from "@plasmohq/messaging";
     import Loading from "./Loading.svelte";
+    import { onMount } from "svelte";
 
     const i18n = chrome.i18n;
     let extensionUnlockPassword = '';
     let errors: string[] = [];
     let inUnlockRequest = false;
+    let extensionUnlockPasswordInputRef: HTMLInputElement;
 
     const unlockOnFormEvent = (event: Event) => {
         event.preventDefault();
@@ -39,6 +41,12 @@
             });
         }
     };
+
+    onMount(() => {
+        if (extensionUnlockPasswordInputRef) {
+            extensionUnlockPasswordInputRef.focus();
+        }
+    });
 </script>
 
 <form on:submit|preventDefault={unlockOnFormEvent}>
@@ -51,9 +59,11 @@
             </h2>
 
             <CustomInputField placeholder="{i18n.getMessage('password')}" label=""
-                bind:value={extensionUnlockPassword}
+                bind:value={extensionUnlockPassword} 
                 tabindex="1"
-                type="password"/>
+                type="password"
+                bind:ref={extensionUnlockPasswordInputRef}
+            />
             <ShowGenericErrors bind:errors/>
             <div class="flex space-x-2 justify-center items-center">
                 <OnClickButton callback={unlock} title="{i18n.getMessage('unlock')}" tabindex="2" 

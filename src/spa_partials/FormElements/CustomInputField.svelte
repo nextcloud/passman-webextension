@@ -15,6 +15,7 @@
     export let showHiddenToggleIfTypePassword: boolean = true;
     let showPasswordValue = false;
 
+    export let ref = undefined;
     export let id = undefined;
     export let tabindex = undefined;
     export let value;
@@ -51,6 +52,7 @@
                         {name}
                         {id}
                         bind:value
+                        bind:this={ref}
                         class="block border-0 border-b-2 border-gray-200 focus:outline-none focus:border-primary-focus
         shadow-sm w-full read-only:cursor-default disabled:bg-gray-200 disabled:cursor-not-allowed dark:bg-neutral"
                         {placeholder}
