@@ -28,15 +28,19 @@
   "devDependencies": {
     "@binsky/passman-client-ts": "^0.2.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@stylistic/eslint-plugin-ts": "^4.2.0",
     "@types/chrome": "^0.0.309",
     "@types/node": "^22.13.10",
     "@types/pouchdb": "^6.4.2",
     "@types/pouchdb-adapter-memory": "^6.1.6",
     "@types/pouchdb-find": "^7.3.3",
+    "@typescript-eslint/parser": "^8.26.1",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
     "@zxcvbn-ts/language-en": "^3.0.2",
     "autoprefixer": "^10.4.21",
+    "eslint-plugin-svelte": "^3.3.0",
+    "eslint-plugin-tailwindcss": "^3.18.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
@@ -46,7 +50,8 @@
     "svelte-select": "^5.8.3",
     "svelte-time": "^0.9.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
   },
   "manifest": {
     "host_permissions": [
