@@ -11,7 +11,8 @@ export enum GetCredentialsListMessagingFilterType {
 
 export type GetCredentialsListMessagingConfiguration = {
     filterText: string,
-    filterType: GetCredentialsListMessagingFilterType
+    filterType: GetCredentialsListMessagingFilterType,
+    getCachedIfPossible: boolean
 }
 
 export type DecryptedPartialCredentialData = {
@@ -39,10 +40,11 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsListMessagingConfigu
         if (backendPassmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {
-                    let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid);
+                    let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, req.body.getCachedIfPossible ?? true);
                     if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                         myVault.vaultKey = defaultVaultInfo.password;
                         if (myVault.credentials.length <= 1) {
+                            // should not be needed, but having no custom credential here could lead to an caching issue
                             console.log("refresh vault");
                             await myVault.refresh();
                         }

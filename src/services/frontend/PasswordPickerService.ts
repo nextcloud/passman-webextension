@@ -58,7 +58,8 @@ export class PasswordPickerService {
                 name: "getPartiallyDecryptedFilteredCredentialsList",
                 body: {
                     filterText: pageUrl,
-                    filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL
+                    filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
+                    getCachedIfPossible: true
                 }
             }).then(async (value) => {
                 console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');

@@ -207,7 +207,7 @@ export class LegacyFormManagerService {
     }
 
     /**
-     * todo: needs refactoring
+     * todo: needs refactoring; we should use a more type safe approach, since username (or email - who knows?) and password fields are not determined by the type of the field
      * @param isSubmission
      */
     public static getLoginFields = (isSubmission: boolean = false, skipNonVisibleFields: boolean = true) => {
