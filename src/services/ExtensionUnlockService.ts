@@ -4,7 +4,7 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/Ex
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import { ExtensionBadgeService } from "~services/backend/ExtensionBadgeService";
 import ContextMenuService from "~services/backend/ContextMenuService";
-import type { PassmanClient } from "packages/passman-client-ts/lib/PassmanClient";
+import type { PassmanClient } from "@binsky/passman-client-ts/lib/PassmanClient";
 import type { BackendPassmanClient } from "~lib/BackendPassmanClient";
 
 export default class ExtensionUnlockService {
@@ -82,10 +82,10 @@ export default class ExtensionUnlockService {
     /**
      * Returns the unlocked default vault if possible. It does not refresh the vault to load credentials from the api.
      */
-    public static async getUnlockedDefaultVault(isFrontendCall = false): Promise<Vault> {
+    public static async getUnlockedDefaultVault(isFrontendCall = false): Promise<Vault | undefined> {
         return await ExtensionUnlockService.isUnlocked().then(async (isUnlocked) => {
             if (isUnlocked) {
-                let passmanClientPromise: Promise<PassmanClient | BackendPassmanClient | null>;
+                let passmanClientPromise: Promise<PassmanClient> | Promise<BackendPassmanClient | null>;
                 if (isFrontendCall) {
                     passmanClientPromise = ExtensionSettingsService.getPopupPassmanClient();
                 } else {
@@ -94,24 +94,29 @@ export default class ExtensionUnlockService {
                 return await passmanClientPromise.then(async (passmanClient) => {
                     if (passmanClient) {
                         return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
-                            try {
-                                let myVault = await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
-                                if (myVault) {
-                                    if (myVault.vaultKey === undefined || myVault.vaultKey === null) {
-                                        // seems not to be unlocked yet
-                                        if (myVault.testVaultKey(defaultVaultInfo.password)) {
-                                            // unlock successful
-                                            myVault.vaultKey = defaultVaultInfo.password;
-                                            return myVault;
-                                        } else {
-                                            return;
+                            if (defaultVaultInfo) {
+                                try {
+                                    let myVault = await passmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
+                                    if (myVault) {
+                                        if (myVault.vaultKey === undefined || myVault.vaultKey === null) {
+                                            // seems not to be unlocked yet
+                                            if (myVault.testVaultKey(defaultVaultInfo.password)) {
+                                                // unlock successful
+                                                myVault.vaultKey = defaultVaultInfo.password;
+                                                return myVault;
+                                            } else {
+                                                return;
+                                            }
                                         }
+                                        return myVault;
                                     }
-                                    return myVault;
+                                } catch (exception) {
+                                    // Could not get or decrypt vault
+                                    console.error(exception);
                                 }
-                            } catch (exception) {
-                                // Could not get or decrypt vault
-                                console.error(exception);
+                            } else {
+                                console.error("No default vault info found");
+                                return;
                             }
                         });
                     }

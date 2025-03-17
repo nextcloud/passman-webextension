@@ -36,44 +36,54 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsListMessagingConfigu
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
-    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
-        if (backendPassmanClient) {
-            return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
-                try {
-                    let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, req.body.getCachedIfPossible ?? true);
-                    if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
-                        myVault.vaultKey = defaultVaultInfo.password;
-                        if (myVault.credentials.length <= 1) {
-                            // should not be needed, but having no custom credential here could lead to an caching issue
-                            console.log("refresh vault");
-                            await myVault.refresh();
-                        }
-
-                        if (req.body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
-                            filteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(req.body.filterText, myVault.credentials);
-                        } else {
-                            filteredCredentials = CustomCredentialFilterService.getCredentialsByLabel(req.body.filterText, myVault.credentials);
-                        }
-                        status = true;
-                    } else {
-                        errorMessage = 'Could not decrypt vault';
+    if (req.body === undefined || !req.body.filterText || !req.body.filterType || req.body.getCachedIfPossible === undefined) {
+        errorMessage = 'Invalid request (check request body)';
+    } else {
+        const body = req.body;
+        await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+            if (backendPassmanClient) {
+                return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
+                    if (!defaultVaultInfo) {
+                        errorMessage = 'Could not get default vault info';
+                        return;
                     }
-                } catch (exception) {
-                    errorMessage = 'Could not get or decrypt vault';
-                }
+
+                    try {
+                        let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, body.getCachedIfPossible ?? true);
+                        if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
+                            myVault.vaultKey = defaultVaultInfo.password;
+                            if (myVault.credentials.length <= 1) {
+                                // should not be needed, but having no custom credential here could lead to an caching issue
+                                console.log("refresh vault");
+                                await myVault.refresh();
+                            }
+    
+                            if (body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
+                                filteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials);
+                            } else {
+                                filteredCredentials = CustomCredentialFilterService.getCredentialsByLabel(body.filterText, myVault.credentials);
+                            }
+                            status = true;
+                        } else {
+                            errorMessage = 'Could not decrypt vault';
+                        }
+                    } catch (exception) {
+                        errorMessage = 'Could not get or decrypt vault';
+                    }
+                });
+            }
+        });
+    
+        for (const filteredCredential of filteredCredentials) {
+            decryptedPartialCredentialData.push({
+                guid: filteredCredential.guid,
+                label: filteredCredential.label,
+                username: filteredCredential.username,
+                email: filteredCredential.email,
+                password: filteredCredential.password,
+                otp: OTPService.updateOTP(filteredCredential.otp)
             });
         }
-    });
-
-    for (const filteredCredential of filteredCredentials) {
-        decryptedPartialCredentialData.push({
-            guid: filteredCredential.guid,
-            label: filteredCredential.label,
-            username: filteredCredential.username,
-            email: filteredCredential.email,
-            password: filteredCredential.password,
-            otp: OTPService.updateOTP(filteredCredential.otp)
-        });
     }
 
     res.send({

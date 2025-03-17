@@ -1,7 +1,7 @@
 <script lang="ts">
     import CustomInputField from "../FormElements/CustomInputField.svelte";
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
-    import type { CredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CredentialInterface";
+    import type { DecryptedCredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
     import { onMount } from "svelte";
     import PasswordMeter from "~spa_partials/PasswordMeter.svelte";
     import exclamationCircle from "svelte-awesome/icons/exclamationCircle";
@@ -9,7 +9,7 @@
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
     import ExtendedPasswordInputField from "../FormElements/ExtendedPasswordInputField.svelte";
 
-    export let credentialData: CredentialInterface;
+    export let credentialData: DecryptedCredentialInterface;
 
     const i18n = chrome.i18n;
     let password = "", passwordRepeat = "";

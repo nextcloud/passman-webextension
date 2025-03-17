@@ -17,6 +17,8 @@ enum ContextMenuItemId {
     COPY_OTP = 'COPY_OTP',
     RELOAD_PICKER = 'RELOAD_PICKER',
 }
+ // there are more fields, but we only need these for now (and we know there are getters for them in the Credential model)
+type CredentialField = 'username' | 'email' | 'password' | 'url' | 'otp';
 
 export default class ContextMenuService {
     public static reInit = () => {
@@ -55,6 +57,10 @@ export default class ContextMenuService {
                     const vault = await ExtensionUnlockService.getUnlockedDefaultVault();
                     if (vault && vault.credentials.length <= 1) {
                         await vault.refresh(true);
+                    }
+                    if (!vault) {
+                        console.error("No vault found");
+                        break;
                     }
 
                     const credential = vault.getCredentialByGuid(credentialGuid);
@@ -162,11 +168,11 @@ export default class ContextMenuService {
      */
     public static updateActiveTabSpecificContextMenuItems = (credentials: Credential[]) => {
         const fields = [
-            { credentialFieldName: 'username', parentMenuItemId: ContextMenuItemId.COPY_USERNAME, atLeastOneCredentialFieldFound: false },
-            { credentialFieldName: 'email', parentMenuItemId: ContextMenuItemId.COPY_EMAIL, atLeastOneCredentialFieldFound: false },
-            { credentialFieldName: 'password', parentMenuItemId: ContextMenuItemId.COPY_PASSWORD, atLeastOneCredentialFieldFound: false },
-            { credentialFieldName: 'url', parentMenuItemId: ContextMenuItemId.COPY_URL, atLeastOneCredentialFieldFound: false },
-            { credentialFieldName: 'otp', parentMenuItemId: ContextMenuItemId.COPY_OTP, atLeastOneCredentialFieldFound: false }
+            { credentialFieldName: 'username' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_USERNAME, atLeastOneCredentialFieldFound: false },
+            { credentialFieldName: 'email' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_EMAIL, atLeastOneCredentialFieldFound: false },
+            { credentialFieldName: 'password' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_PASSWORD, atLeastOneCredentialFieldFound: false },
+            { credentialFieldName: 'url' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_URL, atLeastOneCredentialFieldFound: false },
+            { credentialFieldName: 'otp' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_OTP, atLeastOneCredentialFieldFound: false }
         ];
         ContextMenuService.reCreateContextMenuParentItems();
 

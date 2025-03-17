@@ -8,8 +8,8 @@
     export let required = false;
     export let readonly = false;
     export let disabled = false;
-    export let onfocusout: (event: Event) => void = undefined;
-    export let onchange: (event: Event) => void = undefined;
+    export let onfocusout: (event: Event) => void = () => {};
+    export let onchange: (event: Event) => void = () => {};
 
     // options only required for type=password
     export let showHiddenToggleIfTypePassword: boolean = true;
@@ -17,15 +17,15 @@
 
     export let ref = undefined;
     export let id = undefined;
-    export let tabindex = undefined;
-    export let value;
+    export let tabindex: number | null | undefined = undefined;
+    export let value: string | null | undefined = undefined;
     export let name = '';
     export let placeholder = '';
     export let label;
     export let type = 'text';
     export let errors: IFormFieldError[] = [];
 
-    function typeAction(node) {
+    function typeAction(node: HTMLInputElement) {
         node.type = type;
     }
 </script>

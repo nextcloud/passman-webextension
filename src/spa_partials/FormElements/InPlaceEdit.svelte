@@ -2,11 +2,13 @@
     import { createEventDispatcher, onMount } from 'svelte';
     import SecretField from "./SecretField.svelte";
 
-    export let value, required = true, forceDblClick = false;
+    export let value: any, required = true, forceDblClick = false;
     export let isSecret: boolean = false;
 
     const dispatch = createEventDispatcher();
-    let editing = false, original, valueToEdit;
+    let editing = false;
+    let original: any;
+    let valueToEdit: any;
 
     onMount(() => {
         valueToEdit = value;
@@ -33,7 +35,7 @@
         editing = false;
     }
 
-    function keydown(event) {
+    function keydown(event: KeyboardEvent) {
         if (event.key == 'Escape') {
             event.preventDefault();
             valueToEdit = original;
@@ -41,7 +43,7 @@
         }
     }
 
-    function focus(element) {
+    function focus(element: HTMLInputElement) {
         element.focus();
     }
 </script>

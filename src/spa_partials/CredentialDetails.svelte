@@ -21,7 +21,7 @@
     let created_formatted: string;
     let changed_formatted: string;
     let otp_token: string;
-    let show_loading_for_file_id = null;
+    let show_loading_for_file_id: number | undefined = undefined;
 
     const downloadFile = async (file: FileInterface) => {
         if (!show_loading_for_file_id) {
@@ -31,7 +31,7 @@
             } catch (e) {
                 console.error('Unexpected error during file download', e);
             }
-            show_loading_for_file_id = null;
+            show_loading_for_file_id = undefined;
         }
     }
 </script>

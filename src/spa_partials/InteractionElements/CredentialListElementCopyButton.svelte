@@ -3,13 +3,15 @@
     import type { IconType } from "svelte-awesome/package/components/Icon.svelte";
     import ClipboardService from "~services/frontend/ClipboardService";
 
-    export let value: string | number;
+    export let value: string | number | null;
     export let fieldName: string;
     export let icon: IconType;
     export let iconScale: number = 1.0;
     export let forceEnable: boolean = false;
     export let copy = () => {
-        ClipboardService.copyToClipboardWithNotification(value.toString(), fieldName);
+        if (value) {
+            ClipboardService.copyToClipboardWithNotification(value.toString(), fieldName);
+        }
     }
 </script>
 

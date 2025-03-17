@@ -11,6 +11,15 @@ export interface NextcloudServerMessagingConnectorApiRequest {
 
 const handler: PlasmoMessaging.MessageHandler<NextcloudServerMessagingConnectorApiRequest> = async (req, res) => {
     let error: Error | null = null;
+    if (!req.body) {
+        error = new Error('No request body provided to the messaging connector');
+        res.send({
+            response: null,
+            error: error
+        });
+        return;
+    }
+
     const response = await fetch(req.body.url, req.body.init)
         .catch((err: Error) => {
             console.error('Error fetching:', err);
@@ -24,14 +33,18 @@ const handler: PlasmoMessaging.MessageHandler<NextcloudServerMessagingConnectorA
     }
 
     // Get request method and URL for response classification
-    const requestMethod = req.body.init.method || 'GET';
+    const requestMethod = req.body.init?.method || 'GET';
     const requestUrl = req.body.url;
 
     // Get BackendPassmanClient instance
     const backendPassmanClient = await ExtensionSettingsService.getBackendPassmanClient();
+    if (!backendPassmanClient) {
+        // half-critical since the backendPassmanClient (e.g. cache) can not be updated, but we should not fail here. Response evaluation is not part if this specific condition.
+        error = new Error('Could not get BackendPassmanClient instance');
+    }
 
     // Update background PassmanClient based on response
-    if (response && error === null && json) {
+    if (response && error === null && json && backendPassmanClient !== null) {
         console.log('updating background PassmanClient based on response', response, json, requestMethod, requestUrl, backendPassmanClient);
         await NextcloudServerMessagingConnectorService.updateBackgroundPassmanClient(requestMethod, requestUrl, json, backendPassmanClient);
     }

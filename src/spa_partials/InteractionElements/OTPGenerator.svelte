@@ -12,7 +12,7 @@
     let intervalID: number;
 
     const updateTimer = (forceUpdateCurrentToken: boolean = false) => {
-        if (otp) {
+        if (otp && otp.period) {
             const epoch = Math.round(new Date().getTime() / 1000.0);
             timeLeft = otp.period - (epoch % otp.period);
             if (epoch % otp.period === 1 || forceUpdateCurrentToken) {

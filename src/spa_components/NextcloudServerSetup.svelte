@@ -28,8 +28,8 @@
     let successMessage = "";
     let serverSettingsValidated = false;
     let vaultSelectionList: { guid: string, name: string }[] = [];
-    let selectedVaultInfo: { guid: string, name: string } = null;
-    let selectedVaultPassword: string = null;
+    let selectedVaultInfo: { guid: string, name: string } | null = null;
+    let selectedVaultPassword: string | null = null;
     let lockLoginButton = false;
     let lockDefaultVaultButton = false;
 
@@ -48,7 +48,7 @@
             baseUrl: $server.value,
             user: $user.value,
             token: $token.value,
-            persistence: null
+            persistence: ''
         };
 
         sendToBackground({
@@ -72,6 +72,12 @@
     };
 
     const setDefaultVault = () => {
+        if (!selectedVaultInfo) {
+            console.error('No selected vault info found');
+            // todo: we need this as translated error message here (any in may other places)
+            NotyService.notyError('No selected vault info found');
+            return;
+        }
         lockDefaultVaultButton = true;
         sendToBackground({
             name: "setDefaultVault",
@@ -129,6 +135,12 @@
                         });
                     await reloadPossibleVaultsInfo();
                     await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then((defaultVaultInfo) => {
+                        if (!defaultVaultInfo) {
+                            console.error('No default vault info found');
+                            // todo: we need this as translated error message here (any in may other places)
+                            NotyService.notyError('No default vault info found');
+                            return;
+                        }
                         for (let info of vaultSelectionList) {
                             if (info.guid === defaultVaultInfo.guid) {
                                 selectedVaultInfo = info;
@@ -140,6 +152,8 @@
                             selectedVaultPassword = defaultVaultInfo.password
                         }
                     });
+
+                    // todo: should we set this true, even if defaultVaultInfo was not found in the previous call?
                     serverSettingsValidated = true;
                 }
             });

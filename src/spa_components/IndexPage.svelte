@@ -65,7 +65,7 @@
         chrome.runtime.openOptionsPage();
     }
 
-    const applyCredentialFilter = async (searchInput: string) => {
+    const applyCredentialFilter = async (searchInput: string | null) => {
         filteredCredentials = [];
 
         if (vault && credentials && credentials.length > 0) {

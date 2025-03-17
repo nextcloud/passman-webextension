@@ -38,7 +38,7 @@ export class PasswordPickerService {
 
         if (loginFields.length > 0) {
             for (const loginField of loginFields) {
-                if (loginField == null) {
+                if (loginField == null || !loginField[0]) {
                     continue;
                 }
                 const form = LegacyFormManagerService.getFormFromElement(loginField[0]);
@@ -47,7 +47,7 @@ export class PasswordPickerService {
                 }
 
                 //Password miner
-                form.addEventListener("submit", () => {
+                form?.addEventListener("submit", () => {
                     PasswordPickerService.onFormSubmittedCallback(loginField)
                 }, {
                     capture: true
@@ -71,8 +71,8 @@ export class PasswordPickerService {
                     if (value.autofillEnabled === true && PasswordPickerService.decryptedPartialCredentialData.length === 1) {
                         const credentialToAutofill = PasswordPickerService.decryptedPartialCredentialData[0];
                         LegacyFormManagerService.fillPassword(
-                            credentialToAutofill.username ?? credentialToAutofill.email,
-                            credentialToAutofill.password
+                            credentialToAutofill.username ?? credentialToAutofill.email ?? undefined,
+                            credentialToAutofill.password ?? undefined
                         );
                     }
                 });
@@ -92,6 +92,9 @@ export class PasswordPickerService {
         el: HTMLInputElement,
         form: HTMLFormElement
     }) => {
+        if (!event || !data) {
+            return;
+        }
         event.preventDefault();
         event.stopPropagation();
         const offsetX = event.offsetX;
@@ -125,19 +128,15 @@ export class PasswordPickerService {
             return;
         }
 
-        let loginField = null;
-        let loginFieldPos = null;
-        let loginFieldVisible = null;
-
-        let passwordField = null;
-        let passwordFieldPos = null;
-        let passwordFieldVisible = null;
+        let clickField = null;
+        let clickFieldPos = null;
+        let clickFieldVisible = null;
 
         for (const element of form.getElementsByTagName('input')) {
             if (element == el) {
                 // we found the element, the user has initially clicked on
                 console.log("we found the element, the user has initially clicked on", element);
-                loginField = element;
+                clickField = element;
             }
             /*if (element.type == 'password') {
                 passwordField = element;
@@ -145,33 +144,14 @@ export class PasswordPickerService {
         }
 
         // var loginField = form[0] as HTMLElement;
-        if (loginField != null) {
-            loginFieldPos = loginField.getBoundingClientRect();
-            loginFieldVisible = window.getComputedStyle(loginField).display !== 'none';
+        if (clickField != null) {
+            clickFieldPos = clickField.getBoundingClientRect();
+            clickFieldVisible = window.getComputedStyle(clickField).display !== 'none';
         }
 
-        //var passwordField = form[1] as HTMLElement;
-        if (passwordField != null) {
-            passwordFieldPos = passwordField.getBoundingClientRect();
-            passwordFieldVisible = window.getComputedStyle(passwordField).display !== 'none';
-        }
-
-        let left = loginFieldPos?.left || passwordFieldPos?.left;
-        let top = loginFieldPos?.top || passwordFieldPos?.top;
+        let left = clickFieldPos?.left ?? 0;    // todo: is 0 a good fallback? how could we guess the position?
+        let top = clickFieldPos?.top ?? 0;      // todo: ^
         let maxZ = PasswordPickerService.getMaxZ();
-
-        if (loginFieldPos && passwordFieldPos?.top > loginFieldPos?.top) {
-            top = passwordFieldPos?.top + passwordField?.offsetHeight + 10;
-        } else {
-            if (loginFieldPos) {
-                top = top + loginField?.offsetHeight + 10;
-            } else {
-                top = top + passwordField?.offsetHeight + 10;
-            }
-        }
-        if (!loginFieldVisible) {
-            left = passwordFieldPos?.left;
-        }
 
         PasswordPickerService.showPickerCallback(left, top, maxZ);
 
@@ -222,7 +202,7 @@ export class PasswordPickerService {
         }
     }
 
-    public static onFormSubmittedCallback = (loginField) => {
+    public static onFormSubmittedCallback = (loginField: (HTMLInputElement | null)[]) => {
         console.log("onFormSubmittedCallback");
         console.log(loginField);
     }

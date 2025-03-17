@@ -8,8 +8,8 @@
     export let decryptedPartialCredentialData: DecryptedPartialCredentialData;
     const callback = () => {
         LegacyFormManagerService.fillPassword(
-            decryptedPartialCredentialData.username ?? decryptedPartialCredentialData.email,
-            decryptedPartialCredentialData.password
+            decryptedPartialCredentialData.username ?? decryptedPartialCredentialData.email ?? undefined,
+            decryptedPartialCredentialData.password ?? undefined
         );
         PasswordPickerService.hidePicker();
     };

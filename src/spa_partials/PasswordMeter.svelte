@@ -21,8 +21,8 @@
     };
     zxcvbnOptions.setOptions(options);
 
-    const updateMeter = (password) => {
-        if (password != null) {
+    const updateMeter = (password: string | null | undefined) => {
+        if (password !== null && password !== undefined) {
             result = zxcvbn(password);
         }
     };

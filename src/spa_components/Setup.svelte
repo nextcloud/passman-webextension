@@ -47,7 +47,7 @@
     {:else}
         <CustomInputField label="Set a new extension unlock password"
                           bind:value={newExtensionUnlockPassword}
-                          tabindex="1"
+                          tabindex={1}
                           type="password"/>
         <OnClickButton callback={setUnlockPassword} title="{i18n.getMessage('begin')}"
                        disabled={newExtensionUnlockPassword === '' || processNewUnlockPassword}>

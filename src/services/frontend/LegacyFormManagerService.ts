@@ -18,7 +18,7 @@ export class LegacyFormManagerService {
         return !!(
             element &&
             element.hasAttribute("autocomplete") &&
-            element.getAttribute("autocomplete").toLowerCase() === "off"
+            element.getAttribute("autocomplete")?.toLowerCase() === "off"
         );
     }
 
@@ -257,27 +257,35 @@ export class LegacyFormManagerService {
         });
     }
 
-    public static fillPassword = (user: string, password: string) => {
+    public static fillPassword = (user?: string, password?: string) => {
         const loginFields = LegacyFormManagerService.getLoginFields();
-        for (let i = 0; i < loginFields.length; i++) {
-            if (user && loginFields[i][0]) {
-                loginFields[i][0].value = user;
-                if (loginFields[i][0].offsetParent) {
-                    LegacyFormManagerService.dispatchEvents(loginFields[i][0]);
+        if (loginFields) {
+            for (let i = 0; i < loginFields.length; i++) {
+                const fields = loginFields[i];
+                if (!fields || (!fields[0] && !fields[1] && !fields[2])) {
+                    continue;
+                }
+                if (user && fields[0]) {
+                    fields[0].value = user;
+                    if (fields[0].offsetParent) {
+                        LegacyFormManagerService.dispatchEvents(fields[0]);
+                    }
+                }
+                if (password && fields[1]) {
+                    fields[1].value = password;
+                    if (fields[1].offsetParent) {
+                        LegacyFormManagerService.dispatchEvents(fields[1]);
+                    }
+                }
+                if (password && fields[2]) {
+                    fields[2].value = password;
+                    if (fields[2].offsetParent) {
+                        LegacyFormManagerService.dispatchEvents(fields[2]);
+                    }
                 }
             }
-            if (password && loginFields[i][1]) {
-                loginFields[i][1].value = password;
-                if (loginFields[i][1].offsetParent) {
-                    LegacyFormManagerService.dispatchEvents(loginFields[i][1]);
-                }
-            }
-            if (password && loginFields[i][2]) {
-                loginFields[i][2].value = password;
-                if (loginFields[i][2].offsetParent) {
-                    LegacyFormManagerService.dispatchEvents(loginFields[i][2]);
-                }
-            }
+        } else {
+            console.error('The fillPassword was called, but no login fields could be found');
         }
     }
 }

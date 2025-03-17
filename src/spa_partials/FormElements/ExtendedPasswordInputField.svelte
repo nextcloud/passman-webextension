@@ -15,17 +15,17 @@
     export let required = false;
     export let readonly = false;
     export let disabled = false;
-    export let afterPWGenCallback: (generated: string) => void = undefined;
+    export let afterPWGenCallback: (generated: string) => void = () => {};
     export let showCopyClipboardButton: boolean = true;
     export let showHiddenToggle: boolean = true;
     export let iconScale: number = 1.0;
     export let id = undefined;
-    export let value;
+    export let value: string | null | undefined = undefined;
     export let name = '';
     export let placeholder = '';
     export let label;
     export let errors: IFormFieldError[] = [];
-    export let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = undefined;
+    export let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
 
     let showPasswordValue = false;
 </script>
@@ -93,7 +93,7 @@
             <Icon data={refresh} scale={iconScale-0.1}/>
         </button>
     {/if}
-    {#if showCopyClipboardButton}
+    {#if showCopyClipboardButton && value}
         <CopyClipboardButton bind:value
                              buttonTitle="{i18n.getMessage('copy_to_clipboard', i18n.getMessage('password'))}"
                              fieldTitle="{i18n.getMessage('password')}" iconScale={iconScale-0.2}

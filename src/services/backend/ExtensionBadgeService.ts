@@ -44,12 +44,13 @@ export class ExtensionBadgeService {
                 }
             }
         }
+        const url = tab.url ?? tab.pendingUrl;
 
-        if (!vault || !ignoreUnlockedCheck && !await ExtensionUnlockService.isUnlocked()) {
+        if (!vault || !ignoreUnlockedCheck && !await ExtensionUnlockService.isUnlocked() || !url) {
             return;
         }
 
-        const credentialsForTab = await CustomCredentialFilterService.getCredentialsByUrl(tab.url, vault.credentials);
+        const credentialsForTab = await CustomCredentialFilterService.getCredentialsByUrl(url, vault.credentials);
         const credentialAmount = credentialsForTab.length;
 
         if (tab.active) {

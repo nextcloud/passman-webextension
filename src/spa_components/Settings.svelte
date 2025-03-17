@@ -13,7 +13,7 @@
     import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
 
     const i18n = chrome.i18n;
-    let extendedSettings = {
+    let extendedSettings: { [key: number]: boolean } = {
         [ExtensionSettingsOptions.ignoreProtocol]: false,
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
         [ExtensionSettingsOptions.ignorePath]: true,
@@ -29,7 +29,8 @@
         lockSaveButton = true;
         for (let i of Object.keys(extendedSettings)) {
             const settingId = parseInt(i) as ExtensionSettingsOptions;
-            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);
+            const settingValue = extendedSettings[settingId];
+            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, settingValue);
         }
         NotyService.notySuccess('Settings updated successfully');
         lockSaveButton = false;
@@ -38,13 +39,18 @@
     onMount(() => {
         ExtensionUnlockService.isSetupDone().then(async (isSetupDone) => {
             if (isSetupDone) {
-                if (ExtensionUnlockService.isUnlocked()) {
+                if (await ExtensionUnlockService.isUnlocked()) {
                     // populate input fields with current settings
-                    extendedSettings[ExtensionSettingsOptions.ignoreProtocol] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreProtocol);
-                    extendedSettings[ExtensionSettingsOptions.ignoreSubdomain] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreSubdomain);
-                    extendedSettings[ExtensionSettingsOptions.ignorePath] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePath);
-                    extendedSettings[ExtensionSettingsOptions.ignorePort] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePort);
-                    extendedSettings[ExtensionSettingsOptions.autofillEnabled] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.autofillEnabled);
+                    extendedSettings[ExtensionSettingsOptions.ignoreProtocol] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreProtocol)
+                        ?? extendedSettings[ExtensionSettingsOptions.ignoreProtocol];
+                    extendedSettings[ExtensionSettingsOptions.ignoreSubdomain] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreSubdomain)
+                        ?? extendedSettings[ExtensionSettingsOptions.ignoreSubdomain];
+                    extendedSettings[ExtensionSettingsOptions.ignorePath] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePath)
+                        ?? extendedSettings[ExtensionSettingsOptions.ignorePath];
+                    extendedSettings[ExtensionSettingsOptions.ignorePort] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePort)
+                        ?? extendedSettings[ExtensionSettingsOptions.ignorePort];
+                    extendedSettings[ExtensionSettingsOptions.autofillEnabled] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.autofillEnabled)
+                        ?? extendedSettings[ExtensionSettingsOptions.autofillEnabled];
                 } else {
                     push('/unlock');
                 }

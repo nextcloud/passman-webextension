@@ -5,7 +5,7 @@
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import NotyService from "~services/frontend/NotyService";
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-    import type { CredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CredentialInterface";
+    import type { DecryptedCredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
     import { CREDENTIAL_EDIT_SECTIONS } from "~lib/Utils";
     import EditGeneral from "~spa_partials/CredentialEditSections/EditGeneral.svelte";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
@@ -17,9 +17,9 @@
     const i18n = chrome.i18n;
     let pageIsLoading = true;
     let lockSaveButton = false;
-    let vault: Vault = null;
-    let credential: Credential = null;
-    let credentialData: CredentialInterface = null;
+    let vault: Vault | null = null;
+    let credential: Credential | null = null;
+    let credentialData: DecryptedCredentialInterface | null = null;
     let selectedSection: CREDENTIAL_EDIT_SECTIONS = CREDENTIAL_EDIT_SECTIONS.GENERAL;
 
     console.debug("Credential edit");
@@ -29,6 +29,11 @@
     }
 
     const saveCredential = async () => {
+        if (!credentialData || !credential) {
+            console.error("No credential / credential data found");
+            NotyService.notyError(i18n.getMessage('credential_update_error'));
+            return;
+        }
         if (credentialData.label === null || credentialData.label.length === 0) {
             NotyService.notyError(i18n.getMessage('label_required'));
             return;
@@ -57,6 +62,20 @@
         ExtensionSettingsService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
+                    if (!defaultVaultInfo) {
+                        console.error("No default vault info found");
+                        // I don't think we need a special translated error message here, because this is an internal error, that should really never happen
+                        NotyService.notyError(i18n.getMessage('credential_update_error'));
+                        pageIsLoading = false;
+                        return;
+                    }
+                    if (!params.guid) {
+                        console.error("No credential guid found");
+                        // todo: may we need a custom error message here
+                        NotyService.notyError(i18n.getMessage('credential_update_error'));
+                        pageIsLoading = false;
+                        return;
+                    }
                     try {
                         let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
@@ -66,11 +85,11 @@
                             }
                             vault = myVault;
 
-                            credential = vault.getCredentialByGuid(params.guid);
+                            credential = vault.getCredentialByGuid(params.guid) ?? null;
                             if (credential === undefined) {
                                 // it seems the local vault does not contain a credential with the requested guid, try to refresh vault
                                 await vault.refresh();
-                                credential = vault.getCredentialByGuid(params.guid);
+                                credential = vault.getCredentialByGuid(params.guid) ?? null;
                             }
                             if (credential) {
                                 await credential.refresh();
