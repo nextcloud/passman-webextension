@@ -136,7 +136,7 @@
                        disabled={!vault}>
             <Icon data={refresh} scale={1.3}/>
         </OnClickButton>
-        <OnClickButton callback={openOptionsPage} title="Create new credential" additionalClasses="w-12"
+        <OnClickButton callback={() => NotyService.notyError('Not implemented yet')} title="Create new credential" additionalClasses="w-12"
                        disabled={!vault}>
             <Icon data={plus} scale={1.3}/>
         </OnClickButton>
