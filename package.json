@@ -67,5 +67,10 @@
         ]
       }
     ]
-  }
+  },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@swc/core",
+    "svelte-preprocess"
+  ]
 }
