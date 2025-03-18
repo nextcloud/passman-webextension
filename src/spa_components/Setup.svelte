@@ -3,6 +3,7 @@
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
     import ExtensionUnlockService from "~services/ExtensionUnlockService";
+    import { push } from "~Router.svelte";
 
     export let params: { isInPopup: string };
 
@@ -16,6 +17,7 @@
         await ExtensionUnlockService.setUpExtensionPassword(newExtensionUnlockPassword);
         isExtensionUnlocked = true;
         processNewUnlockPassword = false;
+        push('/setup/server');
     }
 
     function openOptionsPage() {
