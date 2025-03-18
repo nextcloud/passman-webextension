@@ -1,9 +1,35 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+This is an approach of a more modern webextension for the Passman Nextcloud app, using the [Plasmo](https://docs.plasmo.com/) framework.
+
+It uses [Svelte](https://svelte.dev/) for the UI, and [Typescript](https://www.typescriptlang.org/) at all, since it is just very good! :)
+
+The so called project "Passman Webextension v3" will replace the current Passman extension, once it's finished. Until then, you can use this one to test it.
+
+# Getting Started as Tester
+
+Please be careful with this, since it is a development version and might not work as expected. Expect bugs and missing features.
+
+**Do always backup your vault!!!**
+
+Since google takes some time to approve the new extension, you can test it already today using the following manual steps:
+
+1. Download the latest version of the extension from the [releases page](https://gitlab.com/binsky08/passman-webextension-v3/-/releases)
+    - optionally you can ownload the very latest (development) version of the extension from the [artifacts page](https://gitlab.com/binsky08/passman-webextension-v3/-/artifacts) (use the latest build artifact with a size of ~ 3-4 MB called `artifacts.zip`)
+2. Unzip the file into an empty folder of your choice (`passman-webextension-v3` could be a good name)
+3. Open the extension page in your browser (e.g. chrome://extensions/)
+4. Enable "Developer mode" if it is not already enabled
+5. Click on "Load unpacked"
+6. Select the unzipped folder
+7. You should now see the extension icon in the toolbar
+
+
+# Development
 
 ## Getting Started
 
 ### Precondition: Get bun installed
 Take a look at to documentation for installation instructions: https://bun.sh/docs/installation
+
+Optionally use pnpm (recommended by Plasmo, but not me): https://pnpm.io/installation
 
 ### Install dependencies
 
