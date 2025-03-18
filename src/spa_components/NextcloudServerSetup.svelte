@@ -16,6 +16,7 @@
         NextcloudServerInfoInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
     import NotyService from "~services/frontend/NotyService";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from '~stores/extensionUnlockStateStore';
 
     const i18n = chrome.i18n;
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
@@ -89,6 +90,7 @@
             if (value.status) {
                 ExtensionUnlockService.isSetupDone().then((isSetupDone) => {
                     if (!isSetupDone) {
+                        $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
                         ExtensionUnlockService.setSetupDone().then(() => {
                             push('/home');
                         });
