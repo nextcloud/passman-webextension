@@ -37,12 +37,14 @@
     });
 </script>
 
-<div class="w-full h-screen text-center overflow-y-auto flex flex-col justify-between">
-    <div class="m-auto w-[28rem] text-sm my-8">
+<div class="w-full h-screen flex flex-col justify-between">
+    <div class="flex-1 overflow-y-auto m-auto w-[28rem] text-sm">
         <Router {routes}/>
     </div>
     {#if $extensionUnlockStateStore === ExtensionUnlockState.UNLOCKED}
-        <BottomNavBar/>
+        <div class="flex-shrink-0">
+            <BottomNavBar/>
+        </div>
     {/if}
 </div>
 <Toaster />
