@@ -1,3 +1,11 @@
+# Passman Webextension v3
+
+[![Latest Release](https://gitlab.com/binsky08/passman-webextension-v3/-/badges/release.svg?order_by=release_at)](https://gitlab.com/binsky08/passman-webextension-v3/-/releases)
+[![Pipeline Status](https://gitlab.com/binsky08/passman-webextension-v3/badges/master/pipeline.svg)](https://gitlab.com/binsky08/passman-webextension-v3/-/pipelines)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://opensource.org/license/agpl-v3)
+
+## About the project
+
 This is an approach of a more modern webextension for the Passman Nextcloud app, using the [Plasmo](https://docs.plasmo.com/) framework.
 
 It uses [Svelte](https://svelte.dev/) for the UI, and [Typescript](https://www.typescriptlang.org/) at all, since it is just very good! :)
