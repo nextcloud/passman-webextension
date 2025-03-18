@@ -12,7 +12,6 @@ stages:
 cache:
   key:
     files:
-      - bun.lock
       - bun.lockb
       - package.json
   paths:
