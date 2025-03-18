@@ -1,0 +1,56 @@
+image: oven/bun:latest
+
+# variables:
+#   BUN_VERSION: "1.0.30"
+
+stages:
+  - setup
+  - build
+  - package
+
+# Cache dependencies between jobs
+cache:
+  key:
+    files:
+      - bun.lock
+      - bun.lockb
+      - package.json
+  paths:
+    - node_modules/
+
+install:
+  stage: setup
+  script:
+    - bun --version
+    - bun install --frozen-lockfile
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+
+build:
+  stage: build
+  needs:
+    - install
+  script:
+    - bun run prebuild
+    - bun run build
+#    - bun run build-ff
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
+
+package:
+  stage: package
+  needs:
+    - build
+  script:
+    - bun run package
+#    - bun run package-ff
+  artifacts:
+    paths:
+      - build/chrome-mv3-prod.zip
+#      - build/firefox-mv2-prod.zip
+    expire_in: 1 month
+    when: on_success
