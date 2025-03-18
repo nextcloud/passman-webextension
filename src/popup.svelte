@@ -19,7 +19,7 @@
             switch (value.status) {
                 case ExtensionUnlockState.NOT_SET_UP_YET:
                     // setup required
-                    push('/setup/start/0');
+                    push('/setup/start/1');
                     break;
                 case ExtensionUnlockState.LOCKED:
                     // extension unlock required
