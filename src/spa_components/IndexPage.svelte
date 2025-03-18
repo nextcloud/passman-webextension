@@ -2,7 +2,7 @@
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
     import { push } from "~Router.svelte";
-    import { externalLink, lock, plus } from "svelte-awesome/package/icons";
+    import { externalLink, lock, plus, close } from "svelte-awesome/package/icons";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import refresh from "svelte-awesome/icons/refresh";
@@ -18,12 +18,13 @@
     import NotyService from "~services/frontend/NotyService";
 
     let searchInput: string | null = null;
-    let overwriteInputFilterByTabUrl: string | null | undefined = null;
+    let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
     let errorMessage: string | null = null;
     let vault: Vault | null = null;
     let credentials: Credential[] | null = null;
     let filteredCredentials: Credential[] = [];
     let pageIsLoading = true;
+    let initialLoadIsDone = false;
 
     const lockExtension = () => {
         sendToBackground({
@@ -69,6 +70,7 @@
         filteredCredentials = [];
 
         if (vault && credentials && credentials.length > 0) {
+            const overwriteInputFilterByTabUrl = await overwriteInputFilterByTabUrlPromise;
             if (overwriteInputFilterByTabUrl && searchInput === null) {
                 await CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
                     .then((credentials) => {
@@ -76,8 +78,11 @@
                     });
             } else {
                 // reset tab url search filter when entering a custom search value the first time
-                overwriteInputFilterByTabUrl = null;
-                filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL, searchInput ?? '');
+                // to prevent it from being reset during the inital request by the reactive statement block below, we need to wait until the initial request is done
+                if (initialLoadIsDone) {
+                    overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
+                    filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL, searchInput ?? '');
+                }
             }
         }
     };
@@ -87,11 +92,11 @@
     onMount(() => {
         ExtensionSettingsService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
-                await chrome.tabs.query({
+                overwriteInputFilterByTabUrlPromise = chrome.tabs.query({
                     currentWindow: true,
                     active: true
                 }).then(function (activeTabs: chrome.tabs.Tab[]) {
-                    overwriteInputFilterByTabUrl = activeTabs[0].url;
+                    return activeTabs[0].url;
                 });
 
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
@@ -121,10 +126,12 @@
                         errorMessage = 'Could not get or decrypt vault';
                     }
                     pageIsLoading = false;
+                    initialLoadIsDone = true;
                 });
             } else {
                 console.error("no passman client for you");
                 pageIsLoading = false;
+                initialLoadIsDone = true;
             }
         });
     })
@@ -159,6 +166,19 @@
             <Loading/>
         {:else}
             <div class="flex flex-col items-center justify-center">
+                {#await overwriteInputFilterByTabUrlPromise then resolvedOverwriteInputFilterByTabUrl}
+                    {#if resolvedOverwriteInputFilterByTabUrl}
+                        <div class="text-gray-400 mb-1">
+                            <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2" on:click={() => {
+                                overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
+                                applyCredentialFilter(searchInput ?? '');
+                            }}>
+                                Clear tab url filter
+                                <Icon data={close} scale={0.8}/>
+                            </button>
+                        </div>
+                    {/if}
+                {/await}
                 {#if errorMessage}
                     <div class="mt-2 text-red-600">
                         {errorMessage}
