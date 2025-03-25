@@ -79,7 +79,7 @@
             } else {
                 // reset tab url search filter when entering a custom search value the first time
                 // to prevent it from being reset during the inital request by the reactive statement block below, we need to wait until the initial request is done
-                if (initialLoadIsDone) {
+                if (initialLoadIsDone || !overwriteInputFilterByTabUrl) {
                     overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
                     filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL, searchInput ?? '');
                 }
