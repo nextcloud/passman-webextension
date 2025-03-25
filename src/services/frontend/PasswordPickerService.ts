@@ -206,4 +206,18 @@ export class PasswordPickerService {
         console.log("onFormSubmittedCallback");
         console.log(loginField);
     }
+
+    public static searchCredentialsForPicker = (searchInput: string): Promise<GetCredentialsListMessagingResponse> => {
+        return sendToBackground<GetCredentialsListMessagingConfiguration, GetCredentialsListMessagingResponse>({
+            name: "getPartiallyDecryptedFilteredCredentialsList",
+            body: {
+                filterText: searchInput,
+                filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
+                getCachedIfPossible: true
+            }
+        }).then(async (value) => {
+            console.log('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
+            return value;
+        });
+    }
 }

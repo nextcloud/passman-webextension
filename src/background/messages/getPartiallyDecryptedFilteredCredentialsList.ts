@@ -36,7 +36,7 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsListMessagingConfigu
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
-    if (req.body === undefined || !req.body.filterText || !req.body.filterType || req.body.getCachedIfPossible === undefined) {
+    if (req.body === undefined || !req.body.filterText || req.body.filterType === undefined || req.body.getCachedIfPossible === undefined) {
         errorMessage = 'Invalid request (check request body)';
     } else {
         const body = req.body;

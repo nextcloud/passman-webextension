@@ -47,9 +47,10 @@ export class CustomCredentialFilterService {
 
     public static getCredentialsByLabel = (searchInput: string, credentials: Credential[]) => {
         let filtered: Credential[] = [];
+        searchInput = searchInput.toLowerCase();
         if (searchInput && searchInput.trim() !== '') {
             for (const credential of credentials) {
-                if (credential.label.includes(searchInput)) {
+                if (credential.label.toLowerCase().includes(searchInput)) {
                     filtered.push(credential);
                 }
             }

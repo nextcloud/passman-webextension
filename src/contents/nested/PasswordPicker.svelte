@@ -24,6 +24,7 @@
         IGNORE
     }
 
+    const i18n = chrome.i18n;
     const runtime = chrome.runtime;
 
     /**
@@ -111,36 +112,36 @@
         <div class="tabs">
             <div class="tab add" data-name="add" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.ADD}>
-                <span class="fa" title="[add_account, title]">
+                <span class="fa" title={i18n.getMessage("add_account")}>
                     <Icon data={plus} scale={1.0}/>
                 </span>
             </div>
             <div class="tab list" data-name="list" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.LIST}>
-                <span class="fa" title="[accounts, title]">
+                <span class="fa" title={i18n.getMessage("accounts")}>
                     <Icon data={list} scale={1.0}/>
                 </span>
             </div>
             <div class="tab search" data-name="search" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.SEARCH}>
-                <span class="fa" title="[search, title]">
+                <span class="fa" title={i18n.getMessage("search")}>
                     <Icon data={search} scale={1.0}/>
                 </span>
             </div>
             <div class="tab generate" data-name="generate" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
-                <span class="fa" title="[password_generator, title]">
+                <span class="fa" title={i18n.getMessage("password_generator")}>
                     <Icon data={refresh} scale={1.0}/>
                 </span>
             </div>
             <div class="tab ignore" data-name="ignore" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.IGNORE}>
-                <span class="fa" title="[ignore_site_tab, title]">
+                <span class="fa" title={i18n.getMessage("ignore_site_tab")}>
                     <Icon data={ban} scale={1.0}/>
                 </span>
             </div>
             <div class="tab close pull-right" aria-hidden="true" on:click={hidePickerCallback}>
-                <span class="fa" title="[close, title]">
+                <span class="fa" title={i18n.getMessage("close")}>
                     <Icon data={times} scale={1.0}/>
                 </span>
             </div>
@@ -153,7 +154,6 @@
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.LIST}
                     <PickerTabList/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.SEARCH}
-                    search section
                     <PickerTabSearch/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.GENERATE}
                     generate section
