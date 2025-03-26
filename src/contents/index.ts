@@ -1,5 +1,11 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
+import type { PlasmoCSConfig } from "plasmo";
+
+export const config: PlasmoCSConfig = {
+    matches: ["<all_urls>"],
+    css: ["../../assets/content_styles/password_picker.css"]
+}
 
 // Modified message listener with error handling
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {

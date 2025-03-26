@@ -103,9 +103,6 @@
     })
 </script>
 
-<link rel="stylesheet" type="text/css" href="{runtime.getURL('/assets/content_styles/password_picker.css')}"/>
-
-
 {#if extensionIsUnlocked}
     <div id="password_picker" style="{customPickerStyle}">
         <div class="tabs">
