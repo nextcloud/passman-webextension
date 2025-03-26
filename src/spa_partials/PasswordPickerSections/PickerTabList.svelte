@@ -9,7 +9,6 @@
     let allDecryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
     onMount(() => {
-        console.log("mount tab-list-content");
         allDecryptedPartialCredentialData = PasswordPickerService.decryptedPartialCredentialData;
     })
 </script>

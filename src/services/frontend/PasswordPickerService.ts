@@ -150,7 +150,7 @@ export class PasswordPickerService {
         }
 
         let left = clickFieldPos?.left ?? 0;    // todo: is 0 a good fallback? how could we guess the position?
-        let top = clickFieldPos?.top ?? 0;      // todo: ^
+        let top = clickFieldPos?.bottom ?? 0;   // attach picker to the bottom of the clicked element; todo: ^
         let maxZ = PasswordPickerService.getMaxZ();
 
         PasswordPickerService.showPickerCallback(left, top, maxZ);
@@ -205,5 +205,19 @@ export class PasswordPickerService {
     public static onFormSubmittedCallback = (loginField: (HTMLInputElement | null)[]) => {
         console.log("onFormSubmittedCallback");
         console.log(loginField);
+    }
+
+    public static searchCredentialsForPicker = (searchInput: string): Promise<GetCredentialsListMessagingResponse> => {
+        return sendToBackground<GetCredentialsListMessagingConfiguration, GetCredentialsListMessagingResponse>({
+            name: "getPartiallyDecryptedFilteredCredentialsList",
+            body: {
+                filterText: searchInput,
+                filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
+                getCachedIfPossible: true
+            }
+        }).then(async (value) => {
+            console.log('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
+            return value;
+        });
     }
 }
