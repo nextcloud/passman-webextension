@@ -150,7 +150,7 @@ export class PasswordPickerService {
         }
 
         let left = clickFieldPos?.left ?? 0;    // todo: is 0 a good fallback? how could we guess the position?
-        let top = clickFieldPos?.top ?? 0;      // todo: ^
+        let top = clickFieldPos?.bottom ?? 0;   // attach picker to the bottom of the clicked element; todo: ^
         let maxZ = PasswordPickerService.getMaxZ();
 
         PasswordPickerService.showPickerCallback(left, top, maxZ);

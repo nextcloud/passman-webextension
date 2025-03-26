@@ -41,7 +41,6 @@
 
     const showPickerCallback = (left: number, top: number, maxZ: any) => {
         decryptedPartialCredentialData = PasswordPickerService.decryptedPartialCredentialData;
-        console.log(decryptedPartialCredentialData);
         /*const picker = document.getElementById('password_picker');
         console.log(picker);
         picker.style.position = 'absolute';
