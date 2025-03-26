@@ -25,7 +25,7 @@
             if (password == passwordRepeat) {
                 credentialData.password = password;
             } else {
-                credentialData.password = undefined;
+                credentialData.password = undefined!;
             }
         }
     }

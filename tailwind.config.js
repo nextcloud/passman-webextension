@@ -5,7 +5,13 @@ module.exports = {
     ],
     darkMode: "media",
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: {
+                    focus: '#2563eb',
+                },
+            },
+        },
     },
     plugins: [],
 }

@@ -19,7 +19,7 @@
     export let showCopyClipboardButton: boolean = true;
     export let showHiddenToggle: boolean = true;
     export let iconScale: number = 1.0;
-    export let id = undefined;
+    export let id: string | undefined = undefined;
     export let value: string | null | undefined = undefined;
     export let name = '';
     export let placeholder = '';

@@ -8,6 +8,10 @@ export default class Utils {
             }, timeout);
         };
     };
+    public static isInPopup = () => {
+        return (typeof chrome != undefined && chrome.extension) ?
+            chrome.extension.getViews({ type: "popup" }).length > 0 : null;
+    };
 }
 
 export enum CREDENTIAL_EDIT_SECTIONS {

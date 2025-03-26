@@ -16,12 +16,12 @@
     let showPasswordValue = false;
 
     export let ref = undefined;
-    export let id = undefined;
+    export let id: string | undefined = undefined;
     export let tabindex: number | null | undefined = undefined;
     export let value: string | null | undefined = undefined;
     export let name = '';
     export let placeholder = '';
-    export let label;
+    export let label: string | undefined = undefined;
     export let type = 'text';
     export let errors: IFormFieldError[] = [];
 

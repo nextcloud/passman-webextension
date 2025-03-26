@@ -12,6 +12,7 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { refresh, save } from "svelte-awesome/package/icons";
     import { push } from "~Router.svelte";
+    import EditCustomFields from "~spa_partials/CredentialEditSections/EditCustomFields.svelte";
 
     export let params: { guid?: string } = {};
     const i18n = chrome.i18n;
@@ -128,21 +129,24 @@
                         <Icon data={save} scale={1.3}/>
                     {/if}
                 </OnClickButton>
-                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.GENERAL)} title="General"
+                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.GENERAL)} title="{i18n.getMessage('general')}"
                                additionalClasses=""
                                disabled={!credential}>
-                    <span>General</span>
+                    <span>{i18n.getMessage('general')}</span>
                 </OnClickButton>
                 <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.CUSTOM_FIELDS)}
-                               title="Custom fields" additionalClasses=""
+                               title="{i18n.getMessage('custom_fields')}" additionalClasses=""
                                disabled={!credential}>
-                    <span>Custom fields</span>
+                    <span>{i18n.getMessage('custom_fields')}</span>
                 </OnClickButton>
             </div>
             <div class="flex flex-col p-5">
                 {#if credentialData}
                     {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.GENERAL}
                         <EditGeneral bind:credentialData/>
+                    {/if}
+                    {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.CUSTOM_FIELDS}
+                        <EditCustomFields bind:credentialData bind:credential/>
                     {/if}
                 {/if}
             </div>

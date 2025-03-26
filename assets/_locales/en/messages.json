@@ -367,9 +367,41 @@
     "message": "Custom Fields",
     "description": "Custom fields"
   },
+  "custom_fields_types_text": {
+    "message": "Text",
+    "description": "Custom field type text"
+  },
+  "custom_fields_types_password": {
+    "message": "Password",
+    "description": "Custom field type password"
+  },
+  "custom_fields_types_file": {
+    "message": "File",
+    "description": "Custom field type file"
+  },
+  "custom_fields_header_add": {
+    "message": "Add field",
+    "description": "Custom field add"
+  },
+  "custom_fields_header_label": {
+    "message": "Field label",
+    "description": "Custom field label"
+  },
+  "custom_fields_header_value": {
+    "message": "Field value",
+    "description": "Custom field value"
+  },
+  "custom_fields_header_type": {
+    "message": "Field type",
+    "description": "Custom field type"
+  },
+  "custom_fields_error_no_file_selected": {
+    "message": "No file selected",
+    "description": "Custom field no file selected"
+  },
   "general": {
     "message": "General",
-    "description": "Custom fields"
+    "description": "Credential edit general section"
   },
   "value": {
     "message": "Value",
@@ -658,5 +690,41 @@
         "example": "password"
       }
     }
+  },
+  "files_upload_succeeded": {
+    "message": "File upload succeeded",
+    "description": "Shown when a file has been successfully uploaded"
+  },
+  "files_upload_failed": {
+    "message": "File upload failed",
+    "description": "Shown when a file upload has failed"
+  },
+  "files_deletion_succeeded": {
+    "message": "File deletion succeeded",
+    "description": "Shown when a file has been successfully deleted"
+  },
+  "files_deletion_failed": {
+    "message": "File deletion failed",
+    "description": "Shown when a file deletion has failed"
+  },
+  "files_header_name": {
+    "message": "File name",
+    "description": "Column header for file name in files table"
+  },
+  "files_header_created": {
+    "message": "Created at",
+    "description": "Column header for creation date in files table"
+  },
+  "files_header_size": {
+    "message": "Size",
+    "description": "Column header for file size in files table"
+  },
+  "custom_fields_error_file_upload_popup": {
+    "message": "Unfortunately, file upload is not supported in the popup.",
+    "description": "Error message when trying to upload a file in the popup"
+  },
+  "custom_fields_error_file_upload_popup_2": {
+    "message": "Please use the webextension options page or another client to add a custom field with files.",
+    "description": "Error message when trying to upload a file in the popup"
   }
 }
