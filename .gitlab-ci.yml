@@ -22,10 +22,6 @@ install:
   script:
     - bun --version
     - bun install --frozen-lockfile
-  artifacts:
-    paths:
-      - node_modules/
-    expire_in: 1 hour
 
 build:
   stage: build
