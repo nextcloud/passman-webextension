@@ -2,6 +2,7 @@
 module.exports = {
     content: [
         "./src/**/*.{html,js,svelte,ts}",
+        "./assets/**/*.{css,scss}"
     ],
     darkMode: "media",
     theme: {

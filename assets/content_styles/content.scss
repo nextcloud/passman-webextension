@@ -1,0 +1,16 @@
+// First, import our custom password picker styles
+@use 'password_picker.scss' as *;
+
+// Then include Tailwind directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Layer your custom styles after Tailwind if you want to override or extend them
+@layer components {
+  // Add any additional component styles here that extend Tailwind
+}
+
+@layer utilities {
+  // Add any additional utility styles here that extend Tailwind
+}

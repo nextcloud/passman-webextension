@@ -1,6 +1,6 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
-import passwordPickerCssText from "data-text:../../assets/content_styles/password_picker.scss";
+import contentStylesText from "data-text:../../assets/content_styles/content.scss";
 
 // Modified message listener with error handling
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
@@ -38,7 +38,7 @@ const passwordPickerContainer = document.createElement("div");
 shadowRoot.appendChild(passwordPickerContainer);
 
 const style = document.createElement("style");
-style.textContent = passwordPickerCssText;
+style.textContent = contentStylesText;
 shadowRoot.appendChild(style);
 
 // password picker will be checked and initialized by PasswordPicker.svelte if it is in contents directory;
