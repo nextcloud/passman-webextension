@@ -1,6 +1,6 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
-import passwordPickerCssText from "data-text:../../assets/content_styles/password_picker.css";
+import passwordPickerCssText from "data-text:../../assets/content_styles/password_picker.scss";
 
 // Modified message listener with error handling
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
