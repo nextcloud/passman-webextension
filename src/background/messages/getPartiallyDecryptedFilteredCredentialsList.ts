@@ -3,6 +3,7 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/Ex
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
+import type { IconInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/IconInterface";
 
 export enum GetCredentialsListMessagingFilterType {
     DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -22,6 +23,9 @@ export type DecryptedPartialCredentialData = {
     email: string | null,
     password: string | null,
     otp: string | null | void,   // current OTP, not the secret
+    icon: IconInterface | null,
+    is_shared_with_me: boolean | null,
+    is_shared_with_others: boolean | null,
 }
 
 export type GetCredentialsListMessagingResponse = {
@@ -81,7 +85,10 @@ const handler: PlasmoMessaging.MessageHandler<GetCredentialsListMessagingConfigu
                 username: filteredCredential.username,
                 email: filteredCredential.email,
                 password: filteredCredential.password,
-                otp: OTPService.updateOTP(filteredCredential.otp)
+                otp: OTPService.updateOTP(filteredCredential.otp),
+                icon: filteredCredential.icon,
+                is_shared_with_me: filteredCredential.shared_key ? true : null,
+                is_shared_with_others: filteredCredential.acl ? true : null
             });
         }
     }

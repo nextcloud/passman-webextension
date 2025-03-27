@@ -8,6 +8,8 @@
     export let credential: Credential;
     export let isSmall = "true";
     export let additionalClasses = '';
+    export let bigScaleIconNumber = 3;
+    export let smallScaleIconNumber = 1.4;
 
     let iconUrl = '';
 
@@ -35,11 +37,11 @@
     {:else}
         <div class="{isSmall === 'true' ? 'w-[16px]' : 'w-12'} inline-block text-center {additionalClasses}">
             {#if credential.acl}
-                <Icon data={shareAlt} scale="{isSmall === 'true' ? 1.4 : 3}"/>
+                <Icon data={shareAlt} scale="{isSmall === 'true' ? smallScaleIconNumber : bigScaleIconNumber}"/>
             {:else if credential.shared_key}
-                <Icon data={shareAltSquare} scale="{isSmall === 'true' ? 1.4 : 3}"/>
+                <Icon data={shareAltSquare} scale="{isSmall === 'true' ? smallScaleIconNumber : bigScaleIconNumber}"/>
             {:else}
-                <Icon data={lock} scale="{isSmall === 'true' ? 1.4 : 3}"/>
+                <Icon data={lock} scale="{isSmall === 'true' ? smallScaleIconNumber : bigScaleIconNumber}"/>
             {/if}
         </div>
     {/if}
