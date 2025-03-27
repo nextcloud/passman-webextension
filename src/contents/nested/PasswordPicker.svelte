@@ -114,36 +114,36 @@
         <div class="tabs">
             <div class="tab add" data-name="add" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.ADD}>
-                <span class="fa" title={i18n.getMessage("add_account")}>
+                <span class="picker-fa" title={i18n.getMessage("add_account")}>
                     <Icon data={plus} scale={1.0}/>
                 </span>
             </div>
             <div class="tab list" data-name="list" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.LIST}>
-                <span class="fa" title={i18n.getMessage("accounts")}>
+                <span class="picker-fa" title={i18n.getMessage("accounts")}>
                     <Icon data={list} scale={1.0}/>
                 </span>
             </div>
             <div class="tab search" data-name="search" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.SEARCH}>
-                <span class="fa" title={i18n.getMessage("search")}>
+                <span class="picker-fa" title={i18n.getMessage("search")} style="padding-bottom: 7px;">
                     <Icon data={search} scale={1.0}/>
                 </span>
             </div>
             <div class="tab generate" data-name="generate" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
-                <span class="fa" title={i18n.getMessage("password_generator")}>
+                <span class="picker-fa" title={i18n.getMessage("password_generator")} style="padding-bottom: 7px;">
                     <Icon data={refresh} scale={1.0}/>
                 </span>
             </div>
             <div class="tab ignore" data-name="ignore" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.IGNORE}>
-                <span class="fa" title={i18n.getMessage("ignore_site_tab")}>
+                <span class="picker-fa" title={i18n.getMessage("ignore_site_tab")} style="padding-bottom: 7px;">
                     <Icon data={ban} scale={1.0}/>
                 </span>
             </div>
             <div class="tab close pull-right" aria-hidden="true" on:click={hidePickerCallback}>
-                <span class="fa" title={i18n.getMessage("close")}>
+                <span class="picker-fa" title={i18n.getMessage("close")} style="padding-bottom: 7px;">
                     <Icon data={times} scale={1.0}/>
                 </span>
             </div>
