@@ -16,14 +16,10 @@
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
 
-    // Ensure shadow DOM style isolation
-    const shadowRoot = document.querySelector('plasmo-csui')?.shadowRoot;
-    if (shadowRoot) {
-        shadowRoot.adoptedStyleSheets = [];
-    }
-
     const i18n = chrome.i18n;
     const runtime = chrome.runtime;
+
+    export let shadowRootContainerId: string;
 
     /**
      * State whether the password picker (in place overlay popup) is open or not.
@@ -66,28 +62,23 @@
                 console.debug("is unlocked");
 
                 document.addEventListener('click', function (event) {
-                    const pickerContainer = document.getElementById('password_picker');
-                    if (!pickerContainer || !pickerPopupIsOpen) {
-                        // no picker container found, so we can't detect clicks outside
-                        return;
-                    };
-
-                    let targetEl = event.composedPath().find(el => {
-                        return el instanceof Element && (
-                            el === pickerContainer || 
-                            (el instanceof Element && el.closest('#password_picker'))
-                        );
-                    });
-
-                    if (targetEl) {
-                        // Click was inside the picker
-                        console.debug("Clicked inside the picker!");
+                    if (!pickerPopupIsOpen) {
                         return;
                     }
 
-                    // Click was outside
-                    console.debug("Clicked outside the picker!");
-                    hidePickerCallback();
+                    // Get the composed path of the click event
+                    const path = event.composedPath();
+                    
+                    // Check if the click was inside our root container
+                    const wasInsidePicker = path.some(node => {
+                        return node instanceof Element && 
+                               node.id === shadowRootContainerId;
+                    });
+
+                    if (!wasInsidePicker) {
+                        // Click was outside
+                        hidePickerCallback();
+                    }
                 });
 
                 PasswordPickerService.initPickerForPage(showPickerCallback, hidePickerCallback);

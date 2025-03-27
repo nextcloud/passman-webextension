@@ -1,11 +1,6 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
-import type { PlasmoCSConfig } from "plasmo";
-
-export const config: PlasmoCSConfig = {
-    matches: ["<all_urls>"],
-    css: ["../../assets/content_styles/password_picker.css"]
-}
+import passwordPickerCssText from "data-text:../../assets/content_styles/password_picker.css";
 
 // Modified message listener with error handling
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
@@ -30,10 +25,28 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     }
 });
 
+// create closed shadow root container (needed since plasmo-csui does not support closed shadow roots - or it does but it is not working!)
+const shadowRootContainerId = "picker-root-container";
+const mount = document.createElement("div");
+mount.id = shadowRootContainerId;
+document.body.appendChild(mount);
+
+const shadowRoot = mount.attachShadow({ mode: "closed" });
+shadowRoot.adoptedStyleSheets = [];
+
+const passwordPickerContainer = document.createElement("div");
+shadowRoot.appendChild(passwordPickerContainer);
+
+const style = document.createElement("style");
+style.textContent = passwordPickerCssText;
+shadowRoot.appendChild(style);
+
 // password picker will be checked and initialized by PasswordPicker.svelte if it is in contents directory;
 // since we moved it to nested directory, we need to check for it here
 const app = new PasswordPicker({
-    target: document.body,
-    props: {}
+    target: passwordPickerContainer,
+    props: {
+        shadowRootContainerId: shadowRootContainerId
+    }
 });
 RemoteCallableFunctions.setReloadPickerCallback(app.loadPickerForCurrentTab);
