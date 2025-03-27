@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
+    import { PASSWORD_PICKER_SECTIONS, PasswordPickerService } from "~services/frontend/PasswordPickerService";
     import { sendToBackground } from "@plasmohq/messaging";
     import { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
     import Icon from "svelte-awesome/package/components/Icon.svelte";
@@ -16,12 +16,10 @@
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
 
-    enum PASSWORD_PICKER_SECTIONS {
-        ADD,
-        LIST,
-        SEARCH,
-        GENERATE,
-        IGNORE
+    // Ensure shadow DOM style isolation
+    const shadowRoot = document.querySelector('plasmo-csui')?.shadowRoot;
+    if (shadowRoot) {
+        shadowRoot.adoptedStyleSheets = [];
     }
 
     const i18n = chrome.i18n;
@@ -68,19 +66,27 @@
                 console.debug("is unlocked");
 
                 document.addEventListener('click', function (event) {
-                    //let shadowRootContainer = document.getElementsByTagName('plasmo-csui').item(0);
-                    let pickerContainer = document.getElementById('password_picker');
-                    let targetEl = event.target as Element; // clicked element
-                    do {
-                        if (targetEl == pickerContainer) {
-                            // This is a click inside, does nothing, just return.
-                            // console.debug("Clicked inside!");
-                            return;
-                        }
-                        // Go up the DOM
-                        targetEl = targetEl.parentNode as Element;
-                    } while (targetEl);
-                    // console.debug("Clicked outside!");
+                    const pickerContainer = document.getElementById('password_picker');
+                    if (!pickerContainer || !pickerPopupIsOpen) {
+                        // no picker container found, so we can't detect clicks outside
+                        return;
+                    };
+
+                    let targetEl = event.composedPath().find(el => {
+                        return el instanceof Element && (
+                            el === pickerContainer || 
+                            (el instanceof Element && el.closest('#password_picker'))
+                        );
+                    });
+
+                    if (targetEl) {
+                        // Click was inside the picker
+                        console.debug("Clicked inside the picker!");
+                        return;
+                    }
+
+                    // Click was outside
+                    console.debug("Clicked outside the picker!");
                     hidePickerCallback();
                 });
 
@@ -148,7 +154,7 @@
                     add section
                     <PickerTabAdd/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.LIST}
-                    <PickerTabList/>
+                    <PickerTabList bind:selectedSection/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.SEARCH}
                     <PickerTabSearch/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.GENERATE}

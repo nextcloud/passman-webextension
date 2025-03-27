@@ -16,14 +16,14 @@
 </script>
 
 {#if (decryptedPartialCredentialData)}
-    <div class="border-2 rounded-lg p-1 m-1 w-[95%] cursor-pointer" aria-hidden="true"
+    <div class="border-2 rounded-lg p-2 m-1 w-[93%] cursor-pointer" aria-hidden="true"
          on:click={callback} on:keypress={() => {}} title="Click to auto fill">
         <div class="flex space-x-1" style="padding-left: 2px;">
             <div class="flex flex-col truncate">
-                <span class="truncate" title="{decryptedPartialCredentialData.label}">
+                <span class="truncate cursor-pointer" title="{decryptedPartialCredentialData.label}">
                     {decryptedPartialCredentialData.label}
                 </span>
-                <span class="text-gray-400">
+                <span class="text-gray-400 cursor-pointer">
                     {decryptedPartialCredentialData.username ?? (decryptedPartialCredentialData.email ?? '')}
                 </span>
             </div>

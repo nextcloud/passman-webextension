@@ -1,11 +1,14 @@
 <script lang="ts">
-    import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
+    import { PASSWORD_PICKER_SECTIONS, PasswordPickerService } from "~services/frontend/PasswordPickerService";
     import { onMount } from "svelte";
     import PickerCredentialListElement from "~spa_partials/InteractionElements/PickerCredentialListElement.svelte";
     import type {
         DecryptedPartialCredentialData
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
 
+    export let selectedSection: PASSWORD_PICKER_SECTIONS = PASSWORD_PICKER_SECTIONS.LIST;
+
+    const i18n = chrome.i18n;
     let allDecryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
     onMount(() => {
@@ -22,11 +25,20 @@
         </div>
     {:else}
         <div class="no-credentials">
-            <div class="btn btn-secondary save" title="btn_save_site"></div>
+            <div class="btn btn-secondary save" title="{i18n.getMessage("add_account")}" data-name="add" aria-hidden="true"
+                on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.ADD}>
+                {i18n.getMessage("add_account")}
+            </div>
             <div class="clearfix"></div>
-            <div class="btn btn-secondary search" title="btn_search"></div>
+            <div class="btn btn-secondary search" title="{i18n.getMessage("search")}" data-name="search" aria-hidden="true"
+                on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.SEARCH}>
+                {i18n.getMessage("search")}
+            </div>
             <div class="clearfix"></div>
-            <div class="btn btn-secondary gen" title="generate_password"></div>
+            <div class="btn btn-secondary gen" title="generate_password" data-name="generate" aria-hidden="true"
+                on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
+                {i18n.getMessage("password_generator")}
+            </div>
         </div>
     {/if}
 </div>

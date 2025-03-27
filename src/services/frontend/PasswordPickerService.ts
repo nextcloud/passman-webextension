@@ -8,6 +8,14 @@ import {
 } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
 import passwordPickerIcon from "data-base64:~../assets/images/passwordPickerIcon.svg";
 
+export enum PASSWORD_PICKER_SECTIONS {
+    ADD,
+    LIST,
+    SEARCH,
+    GENERATE,
+    IGNORE
+}
+
 export class PasswordPickerService {
     private static showPickerCallback: (left: number, top: number, maxZ: any) => void;
     private static hidePickerCallback: () => void;
