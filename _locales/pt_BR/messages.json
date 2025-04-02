@@ -188,7 +188,7 @@
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "Quando uma senha for encontrada, vá para a lista ao invés da última guia ativa",
+        "message": "Quando uma senha for encontrada, vá para a lista ao invés da última aba ativa",
         "description": "Disable password picker"
     },
     "hide_adv": {
