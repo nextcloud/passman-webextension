@@ -76,7 +76,7 @@
         "description": "Add account"
     },
     "accounts": {
-        "message": "Accounts",
+        "message": "Konten",
         "description": "Accounts"
     },
     "label": {
@@ -252,7 +252,7 @@
         "description": "Server URL"
     },
     "begin": {
-        "message": "Fangen wir an!",
+        "message": "Loslegen!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -504,7 +504,7 @@
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "Wir haben $AMOUNT$ Zugangsdaten für diese Seite gefunde",
+        "message": "Es wurden $AMOUNT$ Zugangsdaten für diese Seite gefunde",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
