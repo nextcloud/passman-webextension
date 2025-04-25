@@ -164,11 +164,11 @@
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Aktiver automatisk udfyldning",
+        "message": "Aktivér automatisk udfyldning",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
-        "message": "Aktiver automatisk indsendelse af formular efter valg af konto",
+        "message": "Aktivér automatisk indsendelse af formular efter valg af konto",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
@@ -176,15 +176,15 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Deaktiver automatisk udfyldning i browser",
+        "message": "Deaktivér automatisk udfyldning i browser",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Indtast et domæne eller TLD for at ignorere, og tryk på  ",
+        "message": "Indtast et domæne eller TLD du vil ignorere, og tryk på  ",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Aktiver adgangskodevælger",
+        "message": "Aktivér adgangskodevælger",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
@@ -200,7 +200,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Aktiver fejlretningstilstand",
+        "message": "Aktivér fejlretningstilstand",
         "description": "Enable debug mode"
     },
     "save": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Udvikler afhænger af donationer, venligst støtte os",
+        "message": "Udvikling afhænger af donationer, støt os hvis du kan",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -492,7 +492,7 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Passman udvidelse er låst, låse for at bruge det",
+        "message": "Passman udvidelse er låst, lås op for at bruge det",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
