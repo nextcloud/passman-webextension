@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - salasõnahaldur, mis hoiab andmeid NextCloudi või ownCloudi serveris",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Otsi:",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Selle saidi kohta ei leidu salasõnakirjet.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Salasõnakirjeid ei leidu",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Märkmed",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Vigane vastus serverist: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Palun sisesta oma Nextcloudi / ownCloudi kasutajanimi ja salasõna",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Salvesta sait",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Salasõnade looja",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Loo salasõna",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Lülita nähtavus sisse/välja",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Lülita täiendavad valikud sisse/välja",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Kasuta salasõna",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Peale loomist saad seda salasõnakirjet muuta Passmanis",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Salasõna pikkus",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Numbrite miinimumarv",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Väldi mitmetähenduslikke tähemärke",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Eelda kõiki tüüpi tähemärkide kasutamist",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Lisa kasutajakonto",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Kasutajakontod",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Silt",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Kasutajanimi",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-post",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Lisa",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Salasõnakirje on loodud!",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "Võrguaadress",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Salasõna",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Salasõna (korda) ",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Tuvastasin uue sisselogimise",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Tuvastasin kasutaja salasõna muutumise",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - selle lehe jaos leidub $CREDENTIAL_AMOUNT$ $PLURAL$ ",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman on lukustatud",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Tuvastasin võrguaadressu muutumise - ",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "salasõnakirje",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "salasõnakirjed",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Uuendamise taimer [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Saidi tuvastamisel eira protokolli",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Saidi tuvastamisel eira alamdomeeni",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Saidi tuvastamisel eira porti",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Sa kasutad ühenduse jaoks HTTP-protokolli! See tähendab, et kasutajanimi ja salasõna edastatakse krüptimata kujul interneti kaudu. Passmani kasutajanimi ja salasõna on siiski krüptitud.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Saidi tuvastamisel eira aadressi kohalikku osa",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Võta brauseri automaattäite teenus kasutusele",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Peale kasutajakonto valimist kasuta vormi automaatset saatmist",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Kui salasõnakirje võrguaadress ei vasta praegusele, siis küsi, kas seda peaks uuendama",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Eemalda brauseri automaattäite teenus kasutuselt",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Sisesta eiratav domeen või üladomeen ja vajuta  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Võta salasõnavalija kasutusele",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Salasõna leidmisel ava pigem loend, mitte viimane aktiivne vahekaart",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Peida täiendavad valikud",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Näita täiendavaid valikuid",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Lülita veaotsingurežiim sisse",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Salvesta",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Salvestamisel",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Salasõnakirje on salvestatud",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Salasõnakirje on uuendatud",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Sait on eiratud",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "Võrguaadress on eiratud",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Uuenda",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Eira saiti",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Salvesta selle veebisaidi kohta salasõnakirje",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Otsi salasõnakirjeid",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Tere tulemast kasutama Passmani brauserilaiendust",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "Serveri võrguaadress",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Alustame!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "See abitarvik aitab sul teha esimesed olulised seadistused ja hoida sinu salasõnad sünkroonis.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Katkesta",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Vaikimisi andmehoidla",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Vali andmehoidla, mida soovid hoida sünkroonis oma veebibrauseriga.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Sisesta üldsalasõna",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Selle salasõnaga krüptid kõik antud brauserilaiendusega seotud andmed. Sa võid ta ka salvestada kohalikus seadmes, aga palun arvesta, et see tehakse krüptimata kujul.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Jäta üldsalasõna meelde",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Hoiatus! Sinu üldsalasõna salvestatakse krüptimata tekstina.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Valmis",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Kohandatud väljad",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Üldine",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Väärtus",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Loend",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Redigeeri",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Serveri seaded",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Andmehoidla seadistused",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Võta kasutusele üldsalasõna",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Lõpeta",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Kui sulle see tarkvara meeldib, siis ära unusta meid rahaliselt toetada",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Sulge",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Eelmine",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Tagasi",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopeeri",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Järgmine",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Jätka",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Anneta",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloudi / ownCloudi serveri seadistused",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Vali vaikimisi andmehoidla",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Eiratud saidid ja võrguaadressid",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Ära kasuta sellel lehel",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Ära kasuta siin saidis",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Kas sa ei soovi Passmani kasutada siin veebisaidis või sellel lehel?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Ühtegi eiratud veebisaiti pole",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Andmehoidla salasõna",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Palun täida nime väli",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Vigane serveri URL",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Eira saiti või lehte",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Salasõnad ei klapi",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Vigane andmehoidla võti!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Tühi üldvõti!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "Ühekordne salasõna",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Seaded",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Kui algseadistused on tehtud, siis saad lisada ka täiendavaid kasutajakontosid.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Kasutajakonto on lisatud.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Vali andmehoidla",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Kustuta",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Otsi",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Salasõnakirje on kustutatud",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Kui salasõnade valija ei suuda leida ühtegi salasõnakirjet, siis ta läheb:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Vabandust, aga andmehoidlaid ei leidu. Palun loo mõni oma Nextcloudi või ownCloudi rakendusest ja proovi uuesti.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Sa võid oma salasõna lähtestada, aga sellega ka brauserilaiendus viiakse algolekusse.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Unustasid parooli?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Lähtesta brauserilaiendus",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Jah, olen selles kindel!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Sul pole õigusi selle salasõnakirje muutmiseks.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Vigased serveriseadistused",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Uuenda salasõnakirjete loendit",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Arendamine sõltub sinu rahalistest toetustest - palun toetamist",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Lukusta brauserilaiendus",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passmani brauserilaiendus on lukus, kasutamiseks võta ta lukust lahti",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Vigane üldsalasõna!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Eemalda lukustus",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Me leidsime selle saidi kohta $AMOUNT$ salasõnakirjet",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Salvesta andmehoidlasse $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Salvestan andmehoidlasse $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "Andmebaasis on $AMOUNT$ salasõnakirjet",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman logib sind sisse kasutajanimega $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Andmehoidla",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Lisa kohandatud väli",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "tekst",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
