@@ -28,6 +28,8 @@
   "devDependencies": {
     "@binsky/passman-client-ts": "^0.2.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+    "@melt-ui/pp": "^0.3.2",
+    "@melt-ui/svelte": "^0.86.6",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/chrome": "^0.0.309",
     "@types/node": "^22.15.30",
