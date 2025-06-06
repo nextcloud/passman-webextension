@@ -8,12 +8,29 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
     import ExtendedPasswordInputField from "../FormElements/ExtendedPasswordInputField.svelte";
+    import { createTagsInput, melt, type Tag } from '@melt-ui/svelte';
+    import type { TagInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/TagInterface";
+
+    interface DefiniteTagInterface extends TagInterface {
+        text: string;
+    }
 
     export let credentialData: DecryptedCredentialInterface;
 
     const i18n = chrome.i18n;
     let password = "", passwordRepeat = "";
     let initDone = false;
+
+    const {
+        elements: { root, input, tag, deleteTrigger },
+        states: { tags: tagsStore }
+    } = createTagsInput({
+        unique: true,
+        add: (tag: string) => {
+            if (tag.length <= 2) return Promise.reject('Tag must be longer than 2 characters');
+            return { id: tag, value: tag };
+        }
+    });
 
     const markAsCompromised = () => {
         console.log('markAsCompromised');
@@ -33,6 +50,20 @@
     $: password && passwordRepeat && checkUpdatePasswordField();
 
     onMount(() => {
+        if (credentialData?.tags) {
+            let filteredTags: DefiniteTagInterface[] = credentialData.tags.filter(tag => tag.text !== undefined) as DefiniteTagInterface[];
+            tagsStore.set(filteredTags.map(_value => { return { id: _value.text, value: _value.text }}));
+        } else {
+            tagsStore.set([]);
+        }
+        tagsStore.subscribe(tags => {
+            if (initDone) {
+                credentialData.tags = tags.map(value => {
+                    return { text: value.value }
+                });
+            }
+        });
+
         password = credentialData.password;
         passwordRepeat = credentialData.password;
         initDone = true;
@@ -82,9 +113,26 @@
                           bind:value={credentialData.description}
                           type="textarea"/>
     </div>
-    <!--<div class="mt-2">
-        Tags ...
-    </div>-->
+    <div class="mt-2">
+        {#if initDone}
+            <div use:melt={$root} class="flex flex-wrap gap-2 p-2 border border-gray-200 rounded-md">
+                {#each $tagsStore as t}
+                    <div use:melt={$tag(t)} class="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
+                        <span>{t.value}</span>
+                        <button use:melt={$deleteTrigger(t)} class="text-gray-500 hover:text-gray-700">
+                            ×
+                        </button>
+                    </div>
+                {/each}
+                <input 
+                    use:melt={$input} 
+                    type="text" 
+                    placeholder="Add a tag" 
+                    class="flex-1 min-w-[120px] outline-none bg-transparent"
+                />
+            </div>
+        {/if}
+    </div>
     {#if credentialData.compromised}
         <div class="mt-2">
             <div class="text-sm text-red-600 !mb-4">
