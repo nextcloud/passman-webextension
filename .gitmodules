@@ -1,3 +1,0 @@
-[submodule "packages/passman-client-ts"]
-	path = packages/passman-client-ts
-	url = git@gitlab.com:binsky08/passman-client-ts.git
