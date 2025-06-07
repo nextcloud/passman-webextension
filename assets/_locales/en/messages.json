@@ -527,6 +527,34 @@
     "message": "Invalid OTP configuration",
     "description": "Invalid one time password configuration"
   },
+  "otp_secret": {
+    "message": "OTP secret",
+    "description": "OTP secret"
+  },
+  "otp_clear_all": {
+    "message": "Clear OTP configuration",
+    "description": "Clear OTP configuration"
+  },
+  "issuer": {
+    "message": "Issuer",
+    "description": "OTP issuer"
+  },
+  "type": {
+    "message": "Type",
+    "description": "OTP type"
+  },
+  "digits": {
+    "message": "Digits",
+    "description": "OTP digits"
+  },
+  "period": {
+    "message": "Period",
+    "description": "OTP period"
+  },
+  "algorithm": {
+    "message": "Algorithm",
+    "description": "OTP algorithm"
+  },
   "files": {
     "message": "Files",
     "description": "Credential files"

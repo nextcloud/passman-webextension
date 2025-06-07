@@ -13,6 +13,7 @@
     import { refresh, save } from "svelte-awesome/package/icons";
     import { push } from "~Router.svelte";
     import EditCustomFields from "~spa_partials/CredentialEditSections/EditCustomFields.svelte";
+    import EditOTP from "~spa_partials/CredentialEditSections/EditOTP.svelte";
 
     export let params: { guid?: string } = {};
     const i18n = chrome.i18n;
@@ -139,6 +140,11 @@
                                disabled={!credential}>
                     <span>{i18n.getMessage('custom_fields')}</span>
                 </OnClickButton>
+                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.OTP)}
+                                title="{i18n.getMessage('one_time_password')}" additionalClasses=""
+                                disabled={!credential}>
+                    <span>{i18n.getMessage('one_time_password')}</span>
+                </OnClickButton>
             </div>
             <div class="flex flex-col p-5">
                 {#if credentialData}
@@ -147,6 +153,9 @@
                     {/if}
                     {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.CUSTOM_FIELDS}
                         <EditCustomFields bind:credentialData bind:credential/>
+                    {/if}
+                    {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.OTP}
+                        <EditOTP bind:credentialData />
                     {/if}
                 {/if}
             </div>
