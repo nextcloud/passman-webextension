@@ -12,7 +12,7 @@
     let extensionUnlockPassword = '';
     let errors: string[] = [];
     let inUnlockRequest = false;
-    let extensionUnlockPasswordInputRef: HTMLInputElement;
+    let extensionUnlockPasswordInputRef: HTMLInputElement | undefined;
 
     const unlockOnFormEvent = (event: Event) => {
         event.preventDefault();
@@ -60,7 +60,7 @@
 
             <CustomInputField placeholder="{i18n.getMessage('password')}" label=""
                 bind:value={extensionUnlockPassword} 
-                tabindex="1"
+                tabindex={1}
                 type="password"
                 bind:ref={extensionUnlockPasswordInputRef}
             />

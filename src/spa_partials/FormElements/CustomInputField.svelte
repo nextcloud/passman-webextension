@@ -4,18 +4,19 @@
     import eyeSlash from "svelte-awesome/icons/eyeSlash";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import eye from "svelte-awesome/icons/eye";
+    import type { ChangeEventHandler, FocusEventHandler } from 'svelte/elements';
 
     export let required = false;
     export let readonly = false;
     export let disabled = false;
-    export let onfocusout: (event: Event) => void = () => {};
-    export let onchange: (event: Event) => void = () => {};
+    export let onfocusout: FocusEventHandler<HTMLInputElement|HTMLTextAreaElement> = () => {};
+    export let onchange: ChangeEventHandler<HTMLInputElement|HTMLTextAreaElement> = () => {};
 
     // options only required for type=password
     export let showHiddenToggleIfTypePassword: boolean = true;
     let showPasswordValue = false;
 
-    export let ref = undefined;
+    export let ref: HTMLInputElement | undefined = undefined;
     export let id: string | undefined = undefined;
     export let tabindex: number | null | undefined = undefined;
     export let value: string | null | undefined = undefined;
