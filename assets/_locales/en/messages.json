@@ -719,6 +719,24 @@
       }
     }
   },
+  "files_upload_box_text": {
+    "message": "$START_HTML_TAG$Click to upload$END_HTML_TAG$ or drag and drop",
+    "description": "Text shown in the drag and drop upload box",
+    "placeholders": {
+      "start_html_tag": {
+        "content": "$1",
+        "example": "<span class=\"font-semibold\">"
+      },
+      "end_html_tag": {
+        "content": "$2",
+        "example": "</span>"
+      }
+    }
+  },
+  "files_any_type_info": {
+    "message": "Any file type",
+    "description": "File type info shown in the drag and drop upload box"
+  },
   "files_upload_succeeded": {
     "message": "File upload succeeded",
     "description": "Shown when a file has been successfully uploaded"
@@ -747,12 +765,12 @@
     "message": "Size",
     "description": "Column header for file size in files table"
   },
-  "custom_fields_error_file_upload_popup": {
+  "error_file_upload_popup": {
     "message": "Unfortunately, file upload is not supported in the popup.",
     "description": "Error message when trying to upload a file in the popup"
   },
-  "custom_fields_error_file_upload_popup_2": {
-    "message": "Please use the webextension options page or another client to add a custom field with files.",
+  "error_file_upload_popup_2": {
+    "message": "Please use the webextension options page or another client to add files.",
     "description": "Error message when trying to upload a file in the popup"
   }
 }

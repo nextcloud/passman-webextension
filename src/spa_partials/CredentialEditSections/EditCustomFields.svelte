@@ -37,7 +37,6 @@
         { label: customFieldTypes.password, value: 'password' },
         { label: customFieldTypes.file, value: 'file' }
     ];
-    console.log(customFieldTypesArray);
 
     const getCustomFieldTypeLabel = (type: string) => {
         return customFieldTypes[type as keyof typeof customFieldTypes];
@@ -131,8 +130,6 @@
         credentialData.custom_fields.splice(pos, 1);
         customFieldReactivityCounter++;
     }
-
-    $: console.log(newFieldType);
 </script>
 
 {#if credentialData && credential}
@@ -188,10 +185,10 @@
         {#if isInPopup && newFieldType === 'file'}
             <div class="space-y-2">
                 <p class="text-sm text-gray-500">
-                    {i18n.getMessage('custom_fields_error_file_upload_popup')}
+                    {i18n.getMessage('error_file_upload_popup')}
                 </p>
                 <p class="text-sm text-gray-500">
-                    {i18n.getMessage('custom_fields_error_file_upload_popup_2')}
+                    {i18n.getMessage('error_file_upload_popup_2')}
                 </p>
             </div>
         {:else}

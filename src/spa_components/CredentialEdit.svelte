@@ -14,6 +14,7 @@
     import { push } from "~Router.svelte";
     import EditCustomFields from "~spa_partials/CredentialEditSections/EditCustomFields.svelte";
     import EditOTP from "~spa_partials/CredentialEditSections/EditOTP.svelte";
+    import EditFiles from "~spa_partials/CredentialEditSections/EditFiles.svelte";
 
     export let params: { guid?: string } = {};
     const i18n = chrome.i18n;
@@ -135,6 +136,11 @@
                                disabled={!credential}>
                     <span>{i18n.getMessage('general')}</span>
                 </OnClickButton>
+                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.FILES)}
+                                title="{i18n.getMessage('files')}" additionalClasses=""
+                                disabled={!credential}>
+                    <span>{i18n.getMessage('files')}</span>
+                </OnClickButton>
                 <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.CUSTOM_FIELDS)}
                                title="{i18n.getMessage('custom_fields')}" additionalClasses=""
                                disabled={!credential}>
@@ -150,6 +156,9 @@
                 {#if credentialData}
                     {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.GENERAL}
                         <EditGeneral bind:credentialData/>
+                    {/if}
+                    {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.FILES}
+                        <EditFiles bind:credentialData bind:credential/>
                     {/if}
                     {#if selectedSection === CREDENTIAL_EDIT_SECTIONS.CUSTOM_FIELDS}
                         <EditCustomFields bind:credentialData bind:credential/>
