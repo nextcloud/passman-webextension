@@ -832,5 +832,9 @@
   "settings_updated_successfully": {
     "message": "Settings updated successfully",
     "description": "Settings updated successfully"
+  },
+  "extension_version": {
+    "message": "Extension version",
+    "description": "Extension version"
   }
 }

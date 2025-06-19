@@ -11,8 +11,10 @@
     import Loading from "~spa_components/Loading.svelte";
     import NotyService from "~services/frontend/NotyService";
     import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
+    import packageJson from "../../package.json";
 
     const i18n = chrome.i18n;
+    const extensionVersion = packageJson.version;
     let extendedSettings: { [key: number]: boolean } = {
         [ExtensionSettingsOptions.ignoreProtocol]: false,
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
@@ -96,4 +98,10 @@
             {/if}
         </OnClickButton>
     {/if}
+
+    <div class="mt-4">
+        <p class="text-sm text-gray-500 text-center">
+            {i18n.getMessage('extension_version')}: {extensionVersion}
+        </p>
+    </div>
 </div>
