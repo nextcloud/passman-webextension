@@ -103,12 +103,12 @@
 {#if extensionIsUnlocked}
     <div id="password_picker" style="{customPickerStyle}">
         <div class="tabs">
-            <div class="tab add" data-name="add" aria-hidden="true"
+            <!--<div class="tab add" data-name="add" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.ADD}>
                 <span class="picker-fa" title={i18n.getMessage("add_account")}>
                     <Icon data={plus} scale={1.0}/>
                 </span>
-            </div>
+            </div>-->
             <div class="tab list" data-name="list" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.LIST}>
                 <span class="picker-fa" title={i18n.getMessage("accounts")}>
@@ -121,7 +121,7 @@
                     <Icon data={search} scale={1.0}/>
                 </span>
             </div>
-            <div class="tab generate" data-name="generate" aria-hidden="true"
+            <!--<div class="tab generate" data-name="generate" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
                 <span class="picker-fa" title={i18n.getMessage("password_generator")} style="padding-bottom: 7px;">
                     <Icon data={refresh} scale={1.0}/>
@@ -132,7 +132,7 @@
                 <span class="picker-fa" title={i18n.getMessage("ignore_site_tab")} style="padding-bottom: 7px;">
                     <Icon data={ban} scale={1.0}/>
                 </span>
-            </div>
+            </div>-->
             <div class="tab close pull-right" aria-hidden="true" on:click={hidePickerCallback}>
                 <span class="picker-fa" title={i18n.getMessage("close")} style="padding-bottom: 7px;">
                     <Icon data={times} scale={1.0}/>
