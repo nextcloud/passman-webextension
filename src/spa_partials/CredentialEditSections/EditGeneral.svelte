@@ -10,6 +10,8 @@
     import ExtendedPasswordInputField from "../FormElements/ExtendedPasswordInputField.svelte";
     import { createTagsInput, melt, type Tag } from '@melt-ui/svelte';
     import type { TagInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/TagInterface";
+    import EditPasswordIntegrationForGeneral from "./EditPasswordIntegrationForGeneral.svelte";
+    import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 
     interface DefiniteTagInterface extends TagInterface {
         text: string;
@@ -20,7 +22,8 @@
     const i18n = chrome.i18n;
     let password = "", passwordRepeat = "";
     let initDone = false;
-
+    let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
+    let showExtendedPasswordSettings = false;
     const {
         elements: { root, input, tag, deleteTrigger },
         states: { tags: tagsStore }
@@ -84,7 +87,7 @@
     <div class="mt-2">
         <ExtendedPasswordInputField id="password" label="{i18n.getMessage('password')}"
                                     bind:value={password}
-                                    passwordGeneratorConfiguration={PasswordGeneratorService.getDefaultConfig()}
+                                    bind:passwordGeneratorConfiguration={passwordGeneratorConfiguration}
                                     afterPWGenCallback={(generated) => {
                                                         passwordRepeat = generated;
                                                     }}
@@ -96,6 +99,18 @@
             <p class="text-red-500">
                 {i18n.getMessage('no_password_match')}
             </p>
+        {/if}
+    </div>
+    <div class="mt-2">
+        <button class="bg-slate-100 px-2 py-1 rounded-md hover:bg-slate-200" on:click={() => {
+            showExtendedPasswordSettings = !showExtendedPasswordSettings;
+        }}>
+            {i18n.getMessage('toggle_extended_password_settings')}
+        </button>
+        {#if showExtendedPasswordSettings}
+            <div class="mt-2 bg-slate-100 p-2 rounded-md">
+                <EditPasswordIntegrationForGeneral bind:credentialData={credentialData} bind:passwordGeneratorConfiguration={passwordGeneratorConfiguration}/>
+            </div>
         {/if}
     </div>
     <div class="mt-2">

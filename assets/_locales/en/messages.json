@@ -53,6 +53,14 @@
     "message": "Password generator",
     "description": "Password generator"
   },
+  "password_generation_settings": {
+    "message": "Password generation settings",
+    "description": "Settings for the password generator"
+  },
+  "toggle_extended_password_settings": {
+    "message": "Toggle extended password settings",
+    "description": "Toggle extended password settings"
+  },
   "generate_password": {
     "message": "Generate password",
     "description": "Generate password"
@@ -140,6 +148,14 @@
   "credentials_expires": {
     "message": "Credential expires",
     "description": "Credential expires"
+  },
+  "expire_date": {
+    "message": "Expiration date",
+    "description": "Credential password expiration date"
+  },
+  "no_expire_date": {
+    "message": "No expiration date set",
+    "description": "No expiration date set for the credential password"
   },
   "url": {
     "message": "URL",
