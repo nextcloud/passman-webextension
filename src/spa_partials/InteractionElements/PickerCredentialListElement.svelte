@@ -10,8 +10,8 @@
     export let decryptedPartialCredentialData: DecryptedPartialCredentialData;
     let fakeCredentialObjectForIcon = {
         icon: decryptedPartialCredentialData.icon,
-        acl: decryptedPartialCredentialData.is_shared_with_others,
-        shared_key: decryptedPartialCredentialData.is_shared_with_me
+        acl: decryptedPartialCredentialData.is_shared_with_others ?? false,
+        shared_key: decryptedPartialCredentialData.is_shared_with_me ?? false
     } as unknown as Credential;
 
     const callback = () => {

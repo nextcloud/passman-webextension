@@ -20,7 +20,7 @@
         <input type="text" class="input" id="password_search" style="margin-bottom: 5px;"
             title={i18n.getMessage("search_for")} on:input={searchInputCallback}>
         {#if searchResponse}
-            {#each searchResponse.decryptedPartialCredentialData as decryptedPartialCredentialData}
+            {#each searchResponse.decryptedPartialCredentialData as decryptedPartialCredentialData (decryptedPartialCredentialData.guid)}
                 <PickerCredentialListElement bind:decryptedPartialCredentialData/>
             {/each}
         {/if}

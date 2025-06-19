@@ -19,7 +19,7 @@
 <div class="tab-list-content">
     {#if allDecryptedPartialCredentialData && allDecryptedPartialCredentialData.length > 0}
         <div class="flex flex-col items-center justify-center">
-            {#each allDecryptedPartialCredentialData as decryptedPartialCredentialData}
+            {#each allDecryptedPartialCredentialData as decryptedPartialCredentialData (decryptedPartialCredentialData.guid)}
                 <PickerCredentialListElement bind:decryptedPartialCredentialData/>
             {/each}
         </div>
