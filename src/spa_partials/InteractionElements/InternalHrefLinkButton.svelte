@@ -6,11 +6,13 @@
     export let target = undefined;
     export let title = '';
     export let small = false;
+    export let disabled = false;
 </script>
 
 <a
         {href}
         use:link
+        {disabled}
         {target}
         {title}
         class="text-primary-light-button-text border border-gray-300 hover:bg-base-200 dark:hover:bg-neutral font-medium rounded-lg

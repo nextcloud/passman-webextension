@@ -16,7 +16,9 @@
     import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
     import type { GetCredentialsForVaultMessagingResponse } from "~background/messages/getCredentialsForVault";
     import NotyService from "~services/frontend/NotyService";
+    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
 
+    const i18n = chrome.i18n;
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
     let errorMessage: string | null = null;
@@ -139,24 +141,24 @@
 
 <div class="h-full overflow-y-hidden flex flex-col">
     <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
-        <OnClickButton callback={refreshCredentialList} title="Refresh credential list" additionalClasses="w-12"
+        <OnClickButton callback={refreshCredentialList} title={i18n.getMessage('refresh_credential_list')} additionalClasses="w-12"
                        disabled={!vault}>
             <Icon data={refresh} scale={1.3}/>
         </OnClickButton>
-        <OnClickButton callback={() => NotyService.notyError('Not implemented yet')} title="Create new credential" additionalClasses="w-12"
-                       disabled={!vault}>
+        <InternalHrefLinkButton href="/credential/add" title={i18n.getMessage('create_new_credential')} additionalClasses="w12"
+                        disabled={!vault}>
             <Icon data={plus} scale={1.3}/>
-        </OnClickButton>
+        </InternalHrefLinkButton>
         <div class="">
-            <input bind:value={searchInput} placeholder="Type to search"
+            <input bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
                    class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-primary-focus
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
         </div>
-        <OnClickButton callback={lockExtension} title="Lock" additionalClasses="w-12">
+        <OnClickButton callback={lockExtension} title={i18n.getMessage('lock_extension')} additionalClasses="w-12">
             <Icon data={lock} scale={1.3}/>
         </OnClickButton>
-        <OnClickButton callback={openOptionsPage} title="Open options page" additionalClasses="w-12">
+        <OnClickButton callback={openOptionsPage} title={i18n.getMessage('open_options_page')} additionalClasses="w-12">
             <Icon data={externalLink} scale={1.2}/>
         </OnClickButton>
     </div>
@@ -173,7 +175,7 @@
                                 overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
                                 applyCredentialFilter(searchInput ?? '');
                             }}>
-                                Clear tab url filter
+                                {i18n.getMessage('clear_tab_url_filter')}
                                 <Icon data={close} scale={0.8}/>
                             </button>
                         </div>
@@ -190,7 +192,7 @@
                 {/each}
                 {#if !errorMessage && filteredCredentials.length === 0}
                     <span class="text-gray-400 mt-4">
-                        No matching credentials
+                        {i18n.getMessage('no_matching_credentials')}
                     </span>
                 {/if}
             </div>

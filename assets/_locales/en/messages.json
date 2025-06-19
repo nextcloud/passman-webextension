@@ -205,7 +205,11 @@
   },
   "edit_credential": {
     "message": "Edit credential",
-    "description": "credential"
+    "description": "Edit credential button label for the edit credential page"
+  },
+  "create_new_credential": {
+    "message": "Create new credential",
+    "description": "Create new credential button label for the new credential page"
   },
   "credential": {
     "message": "Credential",
@@ -306,6 +310,14 @@
   "credential_update_error": {
     "message": "An error occurred while updating the credential",
     "description": "An error occurred while updating the credential"
+  },
+  "credential_create_error": {
+    "message": "An error occurred while creating the credential",
+    "description": "An error occurred while creating the credential"
+  },
+  "open_options_page": {
+    "message": "Open options page",
+    "description": "Open options page button label"
   },
   "site_ignored": {
     "message": "Site ignored",
@@ -599,6 +611,10 @@
     "message": "Search",
     "description": "Search"
   },
+  "type_to_search": {
+    "message": "Type to search",
+    "description": "Type to search placeholder for the search input"
+  },
   "credential_deleted": {
     "message": "Credential deleted",
     "description": "Credential deleted"
@@ -788,5 +804,13 @@
   "error_file_upload_popup_2": {
     "message": "Please use the webextension options page or another client to add files.",
     "description": "Error message when trying to upload a file in the popup"
+  },
+  "clear_tab_url_filter": {
+    "message": "Clear tab url filter",
+    "description": "Clear tab url filter button label"
+  },
+  "no_matching_credentials": {
+    "message": "No matching credentials",
+    "description": "No matching credentials"
   }
 }

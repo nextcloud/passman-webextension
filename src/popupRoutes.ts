@@ -8,6 +8,7 @@ import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
 import CredentialEdit from "~spa_components/CredentialEdit.svelte";
 import Settings from "~spa_components/Settings.svelte";
 import PasswordGenerator from "~spa_components/PasswordGenerator.svelte";
+import CredentialAdd from "~spa_components/CredentialAdd.svelte";
 
 const routes = {
     '/': Loading,
@@ -19,6 +20,7 @@ const routes = {
 
     '/home': IndexPage,
     '/credential/edit/:guid': CredentialEdit,
+    '/credential/add': CredentialAdd,
 
     '/generator': PasswordGenerator,
     '/settings': Settings,
