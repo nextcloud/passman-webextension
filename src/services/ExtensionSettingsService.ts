@@ -6,6 +6,8 @@ import type {
 import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
 import { CustomPassmanClientLoggingService } from "~services/frontend/CustomPassmanClientLoggingService";
 import { BackendPassmanClient } from "~lib/BackendPassmanClient";
+import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
+import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,
@@ -15,7 +17,8 @@ export enum ExtensionSettingsOptions {
     ignoreSubdomain,
     ignorePath,
     ignorePort,
-    autofillEnabled
+    autofillEnabled,
+    passwordGeneratorConfiguration
 }
 
 export interface ExtensionSettings {
@@ -30,6 +33,7 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.ignorePath]: boolean,
     [ExtensionSettingsOptions.ignorePort]: boolean,
     [ExtensionSettingsOptions.autofillEnabled]: boolean,
+    [ExtensionSettingsOptions.passwordGeneratorConfiguration]: PasswordGeneratorConfigurationInterface,
 }
 
 export default class ExtensionSettingsService {
@@ -55,9 +59,41 @@ export default class ExtensionSettingsService {
         })
     };
 
-    public static getPartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K): Promise<ExtensionSettings[K] | null> => {
+    /**
+     * Get the default value for an extension setting if provided, otherwise return null
+     * @param key The key of the extension setting
+     */
+    protected static getDefaultForExtensionSetting = async <K extends ExtensionSettingsOptions>(key: K): Promise<ExtensionSettings[K] | null> => {
+        let returnValue: ExtensionSettings[K] | null = null;
+        switch (key) {
+            case ExtensionSettingsOptions.ignoreProtocol:
+                returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.ignoreSubdomain:
+                returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.ignorePath:
+                returnValue = true as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.ignorePort:
+                returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.autofillEnabled:
+                returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.passwordGeneratorConfiguration:
+                returnValue = PasswordGeneratorService.getDefaultConfig() as ExtensionSettings[K];
+                break;
+            default:
+                returnValue = null;
+                break;
+        }
+        return returnValue;
+    }
+
+    public static getPartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K, tryDefault: boolean = false): Promise<ExtensionSettings[K] | null> => {
         const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
-        return extensionSettings[key] ?? null;
+        return extensionSettings[key] ?? (tryDefault ? await ExtensionSettingsService.getDefaultForExtensionSetting(key) : null);
     };
 
     public static getBackendPassmanClient = async () => {
