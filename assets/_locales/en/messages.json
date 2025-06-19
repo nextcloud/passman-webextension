@@ -812,5 +812,25 @@
   "no_matching_credentials": {
     "message": "No matching credentials",
     "description": "No matching credentials"
+  },
+  "update_default_settings": {
+    "message": "Update default settings",
+    "description": "Update default settings button label"
+  },
+  "save_settings": {
+    "message": "Save settings",
+    "description": "Save settings button label"
+  },
+  "extended_settings": {
+    "message": "Extended settings",
+    "description": "Extended settings"
+  },
+  "save_default_vault_settings": {
+    "message": "Save default vault settings",
+    "description": "Save default vault settings button label"
+  },
+  "settings_updated_successfully": {
+    "message": "Settings updated successfully",
+    "description": "Settings updated successfully"
   }
 }

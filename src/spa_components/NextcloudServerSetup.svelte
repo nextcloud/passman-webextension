@@ -237,7 +237,7 @@
                 {#if lockDefaultVaultButton}
                     <Icon data={refresh} scale={1.3} spin="{true}"/>
                 {:else}
-                    Save default vault settings
+                    {i18n.getMessage('save_default_vault_settings')}
                 {/if}
             </OnClickButton>
         </Card>

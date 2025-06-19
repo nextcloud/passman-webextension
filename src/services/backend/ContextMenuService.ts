@@ -4,6 +4,7 @@ import { sendToContentScript } from "@plasmohq/messaging";
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
 import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 
 enum ContextMenuItemId {
     GENERATE_PASSWORD = 'GENERATE_PASSWORD',
@@ -29,7 +30,9 @@ export default class ContextMenuService {
             switch (info.menuItemId) {
                 case ContextMenuItemId.COPY_GENERATED_PASSWORD:
                     // Send a message to the content script of the specified or currently active tab
-                    await ContextMenuService.sendToContentScriptCopyToClipboard(PasswordGeneratorService.generate(PasswordGeneratorService.getDefaultConfig()), tab);
+                    await ContextMenuService.sendToContentScriptCopyToClipboard(PasswordGeneratorService.generate(
+                        await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.passwordGeneratorConfiguration, true) ?? PasswordGeneratorService.getDefaultConfig()
+                    ), tab);
                     break;
                 case ContextMenuItemId.FILL_GENERATED_PASSWORD:
                     await sendToContentScript({
@@ -37,7 +40,9 @@ export default class ContextMenuService {
                         body: {
                             method: RemoteCallableFunctionNames.enterLoginDetails,
                             args: {
-                                password: PasswordGeneratorService.generate(PasswordGeneratorService.getDefaultConfig())
+                                password: PasswordGeneratorService.generate(
+                                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.passwordGeneratorConfiguration, true) ?? PasswordGeneratorService.getDefaultConfig()
+                                )
                             }
                         },
                         name: RemoteCallableFunctions.remoteFunctionCallMessageName

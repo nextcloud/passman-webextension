@@ -12,6 +12,7 @@
     import type { TagInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/TagInterface";
     import EditPasswordIntegrationForGeneral from "./EditPasswordIntegrationForGeneral.svelte";
     import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
 
     interface DefiniteTagInterface extends TagInterface {
         text: string;
@@ -52,7 +53,7 @@
 
     $: password && passwordRepeat && checkUpdatePasswordField();
 
-    onMount(() => {
+    onMount(async () => {
         if (credentialData?.tags) {
             let filteredTags: DefiniteTagInterface[] = credentialData.tags.filter(tag => tag.text !== undefined) as DefiniteTagInterface[];
             tagsStore.set(filteredTags.map(_value => { return { id: _value.text, value: _value.text }}));
@@ -66,6 +67,8 @@
                 });
             }
         });
+
+        passwordGeneratorConfiguration = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.passwordGeneratorConfiguration, true) ?? passwordGeneratorConfiguration;
 
         password = credentialData.password;
         passwordRepeat = credentialData.password;

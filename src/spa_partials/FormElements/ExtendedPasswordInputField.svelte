@@ -25,7 +25,7 @@
     export let placeholder = '';
     export let label;
     export let errors: IFormFieldError[] = [];
-    export let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
+    export let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface | undefined = undefined;
 
     let showPasswordValue = false;
 </script>

@@ -32,7 +32,7 @@
             const settingValue = extendedSettings[settingId];
             await ExtensionSettingsService.updatePartialExtensionSettings(settingId, settingValue);
         }
-        NotyService.notySuccess('Settings updated successfully');
+        NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
         lockSaveButton = false;
     }
 
@@ -69,7 +69,7 @@
     {:else}
         <Card additionalClasses="text-left mb-6 space-y-3 w-full">
             <p>
-                Extended settings
+                {i18n.getMessage('extended_settings')}
             </p>
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                  id="ignoreProtocol"
@@ -92,7 +92,7 @@
             {#if lockSaveButton}
                 <Icon data={refresh} scale={1.3} spin="{true}"/>
             {:else}
-                Save settings
+                {i18n.getMessage('save_settings')}
             {/if}
         </OnClickButton>
     {/if}
