@@ -41,9 +41,11 @@ export class RemoteCallableFunctions {
         username?: string
     })
         : RemoteCallableFunctionReturnTypes[RemoteCallableFunctionNames.enterLoginDetails] => {
-        LegacyFormManagerService.fillPassword(
-            args.username ?? args.email,
-            args.password
+        LegacyFormManagerService.fillFields(
+            args.username,
+            args.email,
+            args.password,
+            args.otp
         );
         return true;
     }

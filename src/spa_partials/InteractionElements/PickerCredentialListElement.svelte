@@ -15,9 +15,11 @@
     } as unknown as Credential;
 
     const callback = () => {
-        LegacyFormManagerService.fillPassword(
-            decryptedPartialCredentialData.username ?? decryptedPartialCredentialData.email ?? undefined,
-            decryptedPartialCredentialData.password ?? undefined
+        LegacyFormManagerService.fillFields(
+            decryptedPartialCredentialData.username ?? undefined,
+            decryptedPartialCredentialData.email ?? undefined,
+            decryptedPartialCredentialData.password ?? undefined,
+            decryptedPartialCredentialData.otp ?? undefined
         );
         PasswordPickerService.hidePicker();
     };

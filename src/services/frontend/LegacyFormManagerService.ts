@@ -1,3 +1,12 @@
+export interface FillableLoginFormFields {
+    usernameField?: HTMLInputElement;
+    emailField?: HTMLInputElement;
+    passwordFields?: HTMLInputElement[];
+    otpField?: HTMLInputElement;
+    // this is used to store the form element that the fields belong to
+    _form: HTMLFormElement;
+}
+
 /**
  Code based on:
  @url https://web.archive.org/web/20201112012320/https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#645
@@ -88,151 +97,101 @@ export class LegacyFormManagerService {
         return pwFields;
     }
 
-    /*
-     * _getFormFields
-     *
-     * Returns the username and password fields found in the form.
-     * Can handle complex forms by trying to figure out what the
-     * relevant fields are.
-     *
-     * Returns: [usernameField, newPasswordField, oldPasswordField]
-     *
-     * usernameField may be null.
-     * newPasswordField will always be non-null.
-     * oldPasswordField may be null. If null, newPasswordField is just
-     * "theLoginField". If not null, the form is apparently a
-     * change-password field, with oldPasswordField containing the password
-     * that is being changed.
-     */
-    private static getFormFields = (form: HTMLFormElement, isSubmission: boolean, skipNonVisibleFields: boolean = true) => {
-        const formInputElements = form.querySelectorAll('input');
+    public static couldBeUsernameField = (field: HTMLInputElement) => {
+        const usernameFieldNames = ["username", "user", "login", "nickname", "nick"];
+        return field.type.toLowerCase() === "text" && usernameFieldNames.some(name => field.name.toLowerCase().includes(name));
+    }
 
-        // Locate the password field(s) in the form. Up to 3 supported.
-        // If there's no password field, there's nothing for us to do.
-        let pwFields = this._getTypedFields(formInputElements, isSubmission, skipNonVisibleFields, 'password');
-
-        // try not to give up; may it's only a username field; let's use pwFields for other possible fields of type text
-        // TODO: this is a hack; we should find a better way to do this; unused code since it's not working for the later method code
-        /*if (!pwFields || pwFields.length === 0) {
-            //return [null, null, null];
-            pwFields = this._getTypedFields(
-                formInputElements, 
-                isSubmission, 
-                'text',
-                ['username', 'user', 'login', 'nickname', 'nick', 'email', 'emailaddress', 'mail']
-            );
-        }*/
-
-        if (!pwFields || pwFields.length === 0) {
-            return [null, null, null];
-        }
-
-
-        // Locate the username field in the form by searching backwards
-        // from the first passwordfield, assume the first text field is the
-        // username. We might not find a username field if the user is
-        // already logged in to the site.
-        let usernameField = null;
-        for (let i = pwFields[0].indexOfAllFormInputElements - 1; i >= 0; i--) {
-            if (!this.isElementVisible(formInputElements[i])) {
-                continue;
-            }
-            if (formInputElements[i].type.toLowerCase() === "text" || formInputElements[i].type.toLowerCase() === "email") {
-                usernameField = formInputElements[i];
-                break;
-            }
-        }
-
-        if (!usernameField) {
-            console.debug('(form (' + form.action + ') ignored -- no username field found)');
-        }
-
-
-        // If we're not submitting a form (it's a page load), there are no
-        // password field values for us to use for identifying fields. So,
-        // just assume the first password field is the one to be filled in.
-        if (!isSubmission || pwFields.length === 1) {
-            const res = [usernameField, pwFields[0].element];
-            // todo: is this stupid? refactor!
-            if (pwFields[1]) {
-                res.push(pwFields[1].element);
-            } else {
-                res.push(null);
-            }
-            return res;
-        }
-
-
-        // Try to figure out WTF is in the form based on the password values.
-        let oldPasswordField, newPasswordField;
-        const pw1 = pwFields[0].element.value;
-        const pw2 = pwFields[1].element.value;
-        const pw3 = (pwFields[2] ? pwFields[2].element.value : null);
-
-        if (pwFields.length === 3) {
-            // Look for two identical passwords, that's the new password
-
-            if (pw1 === pw2 && pw2 === pw3) {
-                // All 3 passwords the same? Weird! Treat as if 1 pw field.
-                newPasswordField = pwFields[0].element;
-                oldPasswordField = null;
-            } else if (pw1 === pw2) {
-                newPasswordField = pwFields[0].element;
-                oldPasswordField = pwFields[2].element;
-            } else if (pw2 === pw3) {
-                oldPasswordField = pwFields[0].element;
-                newPasswordField = pwFields[2].element;
-            } else if (pw1 === pw3) {
-                // A bit odd, but could make sense with the right page layout.
-                newPasswordField = pwFields[0].element;
-                oldPasswordField = pwFields[1].element;
-            } else {
-                // We can't tell which of the 3 passwords should be saved.
-                console.debug("(form ignored -- all 3 pw fields differ)");
-                return [null, null, null];
-            }
-        } else { // pwFields.length == 2
-            if (pw1 === pw2) {
-                // Treat as if 1 pw field
-                newPasswordField = pwFields[0].element;
-                oldPasswordField = null;
-            } else {
-                // Just assume that the 2nd password is the new password
-                oldPasswordField = pwFields[0].element;
-                newPasswordField = pwFields[1].element;
-            }
-        }
-
-        return [usernameField, newPasswordField, oldPasswordField];
+    public static couldBeOtpField = (field: HTMLInputElement) => {
+        const otpFieldNames = ["otp", "one-time-password", "one-time-passcode", "one-time-pass", "totp", "authenticator", "token"];
+        return (field.type.toLowerCase() === "text" || field.type.toLowerCase() === "number") && (
+            (field.hasAttribute("autocomplete") && field.getAttribute("autocomplete")?.toLowerCase() === "one-time-code") ||
+            otpFieldNames.some(name => field.name.toLowerCase().includes(name))
+        );
     }
 
     /**
-     * todo: needs refactoring; we should use a more type safe approach, since username (or email - who knows?) and password fields are not determined by the type of the field
-     * @param isSubmission
+     * @param form - The form to get the fields for.
+     * @param isSubmission - Whether the form is being submitted (to skip empty fields).
+     * @param skipNonVisibleFields - Whether to skip non-visible fields (default: true).
+     * @returns The needed / supported fields for the given form.
      */
-    public static getLoginFields = (isSubmission: boolean = false, skipNonVisibleFields: boolean = true) => {
-        const loginForms = [];
+    private static getTypedFormFields = (form: HTMLFormElement, isSubmission: boolean, skipNonVisibleFields: boolean = true): FillableLoginFormFields => {
+        const formInputElements = form.querySelectorAll('input');
+        const fields: FillableLoginFormFields = {
+            _form: form
+        };
 
-        for (const form of document.forms) {
-            const result = LegacyFormManagerService.getFormFields(form, isSubmission, skipNonVisibleFields);
-            const usernameField = result[0];
-            const passwordField = result[1];
+        const pwFields = this._getTypedFields(formInputElements, isSubmission, skipNonVisibleFields, 'password');
+        if (pwFields && pwFields.length > 0) {
+            fields.passwordFields = pwFields.map(field => field.element);
 
-            // Need a valid password field to do anything.
-            if (passwordField === null) {
-                continue;
+            // Locate the first possible username, email and otp field in the form by searching backwards
+            // from the first password field. Assume the first text field is the username.
+            // We might not find a username field if the user is already logged in to the site.
+            for (let i = pwFields[0].indexOfAllFormInputElements - 1; i >= 0; i--) {
+                if (!this.isElementVisible(formInputElements[i])) {
+                    continue;
+                }
+                if (this.couldBeUsernameField(formInputElements[i])) {
+                    fields.usernameField = formInputElements[i];
+                    break;
+                }
             }
-
-            const res = [usernameField, passwordField];
-            if (result[2]) {
-                res.push(result[2]);
-            } else {
-                res.push(null);
+            for (let i = pwFields[0].indexOfAllFormInputElements - 1; i >= 0; i--) {
+                if (!this.isElementVisible(formInputElements[i])) {
+                    continue;
+                }
+                if (formInputElements[i].type.toLowerCase() === "email") {
+                    fields.emailField = formInputElements[i];
+                    break;
+                }
             }
-            loginForms.push(res);
+            for (let i = pwFields[0].indexOfAllFormInputElements - 1; i >= 0; i--) {
+                if (!this.isElementVisible(formInputElements[i])) {
+                    continue;
+                }
+                if (this.couldBeOtpField(formInputElements[i])) {
+                    fields.otpField = formInputElements[i];
+                    break;
+                }
+            }
+        } else {
+            // use first matching fields for the other field types if no password field is found
+            const emailFields = this._getTypedFields(formInputElements, isSubmission, skipNonVisibleFields, 'email');
+            if (emailFields && emailFields.length > 0 && !fields.emailField) {
+                fields.emailField = emailFields[0].element;
+            }
+            const textFields = this._getTypedFields(formInputElements, isSubmission, skipNonVisibleFields, 'text');
+            if (textFields && textFields.length > 0) {
+                for (const textField of textFields) {
+                    if (!fields.usernameField && this.couldBeUsernameField(textField.element)) {
+                        fields.usernameField = textField.element;
+                    } else if (!fields.otpField && this.couldBeOtpField(textField.element)) {
+                        fields.otpField = textField.element;
+                    } else if (fields.passwordFields && fields.otpField) {
+                        // we found a username and otp field, so we can stop searching
+                        break;
+                    }
+                }
+            }
         }
 
-        return loginForms;
+        // if backward search 
+
+        return fields;
+    }
+
+    /**
+     * Forms without any compatible fields are ignored / filtered out.
+     * @param isSubmission - Whether the form is being submitted (to skip empty fields).
+     * @param skipNonVisibleFields - Whether to skip non-visible fields (default: true).
+     * @returns Array of identified login fields grouped by form.
+     */
+    public static getLoginFieldsPerForm = (isSubmission: boolean = false, skipNonVisibleFields: boolean = true): FillableLoginFormFields[] => {
+        return Array.from(document.forms).map((form: HTMLFormElement) => 
+            this.getTypedFormFields(form, isSubmission, skipNonVisibleFields)
+        ).filter(fields => fields.usernameField || fields.emailField || fields.passwordFields || fields.otpField);
     }
 
     /**
@@ -257,35 +216,51 @@ export class LegacyFormManagerService {
         });
     }
 
-    public static fillPassword = (user?: string, password?: string) => {
-        const loginFields = LegacyFormManagerService.getLoginFields();
-        if (loginFields) {
-            for (let i = 0; i < loginFields.length; i++) {
-                const fields = loginFields[i];
-                if (!fields || (!fields[0] && !fields[1] && !fields[2])) {
+    /**
+     * Fills the fields with the given values if they are found.
+     * @param username - The username to fill.
+     * @param email - The email to fill.
+     * @param password - The password to fill.
+     * @param otp - The otp to fill.
+     */
+    public static fillFields = (username?: string, email?: string, password?: string, otp?: string) => {
+        const loginFieldsByForm = LegacyFormManagerService.getLoginFieldsPerForm();
+        if (loginFieldsByForm && loginFieldsByForm.length > 0) {
+            for (let i = 0; i < loginFieldsByForm.length; i++) {
+                const fields = loginFieldsByForm[i];
+                // we should not abort if one of the fields is not found, we should just skip it
+                /*if (!fields || (!fields[0] && !fields[1] && !fields[2])) {
                     continue;
-                }
-                if (user && fields[0]) {
-                    fields[0].value = user;
-                    if (fields[0].offsetParent) {
-                        LegacyFormManagerService.dispatchEvents(fields[0]);
+                }*/
+                if (username && fields.usernameField) {
+                    fields.usernameField.value = username;
+                    if (fields.usernameField.offsetParent) {
+                        LegacyFormManagerService.dispatchEvents(fields.usernameField);
                     }
                 }
-                if (password && fields[1]) {
-                    fields[1].value = password;
-                    if (fields[1].offsetParent) {
-                        LegacyFormManagerService.dispatchEvents(fields[1]);
+                if (email && fields.emailField) {
+                    fields.emailField.value = email;
+                    if (fields.emailField.offsetParent) {
+                        LegacyFormManagerService.dispatchEvents(fields.emailField);
                     }
                 }
-                if (password && fields[2]) {
-                    fields[2].value = password;
-                    if (fields[2].offsetParent) {
-                        LegacyFormManagerService.dispatchEvents(fields[2]);
+                if (password && fields.passwordFields) {
+                    fields.passwordFields.forEach(field => {
+                        field.value = password;
+                        if (field.offsetParent) {
+                            LegacyFormManagerService.dispatchEvents(field);
+                        }
+                    });
+                }
+                if (otp && fields.otpField) {
+                    fields.otpField.value = otp;
+                    if (fields.otpField.offsetParent) {
+                        LegacyFormManagerService.dispatchEvents(fields.otpField);
                     }
                 }
             }
         } else {
-            console.error('The fillPassword was called, but no login fields could be found');
+            console.error('No fields found to fill');
         }
     }
 }

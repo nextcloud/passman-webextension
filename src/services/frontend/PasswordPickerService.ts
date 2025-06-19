@@ -1,4 +1,4 @@
-import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
+import { LegacyFormManagerService, type FillableLoginFormFields } from "~services/frontend/LegacyFormManagerService";
 import { sendToBackground } from "@plasmohq/messaging";
 import {
     type DecryptedPartialCredentialData,
@@ -30,9 +30,9 @@ export class PasswordPickerService {
 
         console.log("initPickerForPage");
         const pageUrl = window.location.href;
-        const loginFields = LegacyFormManagerService.getLoginFields();
+        const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
         console.log(pageUrl);
-        console.log(loginFields);
+        console.log(loginFieldsPerForm);
 
         // todo: fetch enablePasswordPicker from settings
         const enablePasswordPicker = true;
@@ -44,19 +44,16 @@ export class PasswordPickerService {
         }
         */
 
-        if (loginFields.length > 0) {
-            for (const loginField of loginFields) {
-                if (loginField == null || !loginField[0]) {
-                    continue;
-                }
-                const form = LegacyFormManagerService.getFormFromElement(loginField[0]);
+        if (loginFieldsPerForm.length > 0) {
+            for (const loginFields of loginFieldsPerForm) {
+                const form = loginFields._form;
                 if (enablePasswordPicker && form) {
                     PasswordPickerService.createPasswordPicker(form);
                 }
 
                 //Password miner
-                form?.addEventListener("submit", () => {
-                    PasswordPickerService.onFormSubmittedCallback(loginField)
+                loginFields._form.addEventListener("submit", () => {
+                    PasswordPickerService.onFormSubmittedCallback(loginFields)
                 }, {
                     capture: true
                 });
@@ -78,9 +75,11 @@ export class PasswordPickerService {
                 }).then(async (value) => {
                     if (value.autofillEnabled === true && PasswordPickerService.decryptedPartialCredentialData.length === 1) {
                         const credentialToAutofill = PasswordPickerService.decryptedPartialCredentialData[0];
-                        LegacyFormManagerService.fillPassword(
-                            credentialToAutofill.username ?? credentialToAutofill.email ?? undefined,
-                            credentialToAutofill.password ?? undefined
+                        LegacyFormManagerService.fillFields(
+                            credentialToAutofill.username ?? undefined,
+                            credentialToAutofill.email ?? undefined,
+                            credentialToAutofill.password ?? undefined,
+                            credentialToAutofill.otp ?? undefined
                         );
                     }
                 });
@@ -210,9 +209,9 @@ export class PasswordPickerService {
         }
     }
 
-    public static onFormSubmittedCallback = (loginField: (HTMLInputElement | null)[]) => {
+    public static onFormSubmittedCallback = (loginFields: FillableLoginFormFields) => {
         console.log("onFormSubmittedCallback");
-        console.log(loginField);
+        console.log(loginFields);
     }
 
     public static searchCredentialsForPicker = (searchInput: string): Promise<GetCredentialsListMessagingResponse> => {
