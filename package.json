@@ -15,7 +15,7 @@
     "package-ff": "plasmo package --target=firefox-mv2"
   },
   "dependencies": {
-    "@plasmohq/messaging": "^0.7.1",
+    "@plasmohq/messaging": "^0.7.2",
     "@plasmohq/storage": "^1.15.0",
     "idb-keyval": "^6.2.2",
     "js-sha512": "^0.9.0",
@@ -26,24 +26,24 @@
     "svelte-preprocess": "^5.1.4"
   },
   "devDependencies": {
-    "@binsky/passman-client-ts": "^0.2.0",
+    "@binsky/passman-client-ts": "^0.2.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "@melt-ui/pp": "^0.3.2",
     "@melt-ui/svelte": "^0.86.6",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/chrome": "^0.0.309",
-    "@types/node": "^22.15.30",
+    "@types/node": "^22.15.32",
     "@types/pouchdb": "^6.4.2",
     "@types/pouchdb-adapter-memory": "^6.1.6",
     "@types/pouchdb-find": "^7.3.3",
-    "@typescript-eslint/parser": "^8.33.1",
+    "@typescript-eslint/parser": "^8.34.1",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
     "@zxcvbn-ts/language-en": "^3.0.2",
     "autoprefixer": "^10.4.21",
-    "eslint-plugin-svelte": "^3.9.1",
+    "eslint-plugin-svelte": "^3.9.3",
     "eslint-plugin-tailwindcss": "^3.18.0",
-    "postcss": "^8.5.4",
+    "postcss": "^8.5.6",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
@@ -51,10 +51,10 @@
     "svelte-forms": "^2.3.1",
     "svelte-select": "^5.8.3",
     "svelte-time": "^0.9.0",
-    "svelty-picker": "5",
+    "svelty-picker": "^5.2.12",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.33.1"
+    "typescript-eslint": "^8.34.1"
   },
   "manifest": {
     "host_permissions": [
