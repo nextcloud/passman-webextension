@@ -1,7 +1,7 @@
 {
   "name": "passman-webextension-v3",
   "displayName": "Passman Webextension v3",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A modern webextension for the Passman Nextcloud app",
   "author": "Timo Triebensky <timo@binsky.org>",
   "packageManager": "pnpm@8.10.2",
