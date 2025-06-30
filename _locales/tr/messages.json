@@ -176,7 +176,7 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Tarayıcı otomatik doldurması devre dışı bırakılsın",
+        "message": "Tarayıcı otomatik doldurması kapatılsın",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
@@ -372,15 +372,15 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Sayfa devre dışı bırakılsın",
+        "message": "Sayfayı kullanımdan kaldır",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Site devre dışı bırakılsın",
+        "message": "Siteyi kullanımdan kaldır",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Geçerli sayfa ya da tüm site için Passman devre dışı bırakılsın mı?",
+        "message": "Passman geçerli sayfa ya da tüm site için kullanımdan kaldırılsın mı?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
