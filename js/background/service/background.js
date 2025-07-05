@@ -630,10 +630,17 @@ var background = (function () {
             return;
         }
         var result = false;
-        if (_self[msg.method]) {
-            result = _self[msg.method](msg.args, sender);
+        var methods = _self;
+        var call = msg.method;
+        if (call.startsWith('passkey.')) {
+            /** global: passkey */
+            methods = passkey;
+            call = call.slice(8); // strip 'passkey.'
+        }
+        if (methods[call]) {
+            result = methods[call](msg.args, sender);
         } else {
-            console.warn('[NOT FOUND] Method call', msg.method, 'args: ', msg.args);
+            console.warn('[NOT FOUND] Method call', call, 'args: ', msg.args);
         }
 
         sendResponse(result);

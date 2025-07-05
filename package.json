@@ -17,7 +17,8 @@
     "jasmine-core": "^5.1.1",
     "jshint-stylish": "^2.2.1",
     "load-grunt-tasks": "^5.1.0",
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "@protontech/pass-rust-core": "^0.21.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

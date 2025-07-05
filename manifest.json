@@ -41,6 +41,7 @@
       "/js/lib/otp.js",
       "/js/lib/passwordgen.js",
       "/js/background/service/contextMenu.js",
+      "/js/background/service/passkey.js",
       "/js/background/service/background.js",
       "/js/background/service/httpAuth.js"
     ]
@@ -70,6 +71,7 @@
     "webRequest",
     "webRequestBlocking"
   ],
+  "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {
       "matches": [
@@ -92,7 +94,8 @@
         "/js/lib/parseTLD.js",
         "/js/lib/data/tlds.js",
         "/js/lib/domchanged.js",
-        "/js/background/inject/inject.js"
+        "/js/background/inject/inject.js",
+        "/js/background/inject/passkey.js"
       ],
       "css":[
         "/css/doorhanger-iframe.css"

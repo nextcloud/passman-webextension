@@ -95,10 +95,12 @@ module.exports = function (grunt) {
                     '!*.md',
                     '!*.zip',
                     '!swagger.yaml',
-                    '!.tx'
+                    '!.tx',
+                    'node_modules/@protontech/**/worker/*.js',
+                    'node_modules/@protontech/**/worker/*.wasm'
                 ],
                 dest: 'dist/'
-            }
+	    }
         },
         compress: {
             dist: {
