@@ -19,6 +19,9 @@
         <div class="edit" ng-click="editCredential(credential)">
             <div class="mdi mdi-pencil"></div>
         </div>
+        <div class="extra" ng-if="credential.passkey">
+	    Passkey <span class="mdi mdi-periscope"></span> available
+        </div>
 
     </div>
 </div>

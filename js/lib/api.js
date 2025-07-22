@@ -2,6 +2,9 @@
 
 window.PAPI = (function () {
     var _encryptedFields = ['description', 'username', 'password', 'files', 'custom_fields', 'otp', 'email', 'tags', 'url'];
+    // label string to identify stored passkey
+    const PKKEY = '<>PASSKEY<>';
+
     var encryption_config = {
         adata: "",
         iter: 1000,
@@ -57,6 +60,13 @@ window.PAPI = (function () {
                 }
 
             }
+            const idx =  credential.custom_fields.findIndex((o) => o.label == PKKEY);
+            if (idx >= 0) {
+                credential.passkey = JSON.parse(credential.custom_fields[idx].value);
+                // delete the field so it doesn't show up in the editor
+                credential.custom_fields.splice(idx, 1);
+            }
+
             return credential;
 
         },
@@ -91,6 +101,14 @@ window.PAPI = (function () {
             };
         },
         encryptCredential: function (credential, _key) {
+            if (credential.passkey != null) {
+                credential.custom_fields.push({
+                    label: PKKEY,
+                    value: JSON.stringify(credential.passkey),
+                });
+                delete credential.passkey;
+            }
+
             for (var i = 0; i < _encryptedFields.length; i++) {
                 var field = _encryptedFields[i];
                 var fieldValue = credential[field];

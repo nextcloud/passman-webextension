@@ -345,7 +345,18 @@ var background = (function () {
         return getCredentialsByUrl(req.url)[0];
     }
 
+    function savePasskey(k) {
+        if (k.account == null) {
+            k.account = getSetting('accounts')[0];
+            k.vault_id = k.account.vault.vault_id;
+        }
+        saveCredential(k);
+    }
+
     _window.getCredentialForHTTPAuth = getCredentialForHTTPAuth;
+
+    _window.getCredentialsForPasskey = (dom) => getCredentialsByUrl('https://' + dom);
+    _window.savePasskey = savePasskey;
 
     var mined_data = [];
 

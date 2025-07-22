@@ -29,8 +29,6 @@ const passkey = (function () {
         }
     }
 
-    const passes = [];
-
     var wasmFile = fetch('/node_modules/@protontech/pass-rust-core/worker/proton_pass_web_bg.wasm');
     var passjs = import('/node_modules/@protontech/pass-rust-core/worker/proton_pass_web_bg.js').then(async function (ret) {
         var wasm = await WebAssembly.instantiateStreaming(wasmFile, {'./proton_pass_web_bg.js': ret})
@@ -59,13 +57,44 @@ const passkey = (function () {
         await passjs;
     }
 
+    function getPasses(domain) {
+        const logins = background.getCredentialsForPasskey(domain);
+        return logins.map((x) => x.passkey)
+            .filter((x) => x != null);
+    }
+
     _export.generate = async function (args, sender) {
         ensureCore();
 
         console.log('in generate_passkey core = ', core != null);
         console.log('request = ', args.request);
+
+        request = JSON.parse(args.request);
+
+        const name = request.user.name ?? request.user.displayName;
+
         var ret = await core.generate_passkey(args.domain, args.request);
-        passes.push(new Passkey(ret));
+        if (ret == null)
+            return ret;
+
+        /* in case we have a non passkey login we're converting to passkey */
+        logins = background.getCredentialsForPasskey(args.domain)
+            .filter((x) => x.username == name);
+
+        var credential;
+
+        if (logins.length == 0) {
+            credential = PAPI.newCredential();
+            credential.passkey = new Passkey(ret);
+            credential.username = name;
+            credential.password = '';
+            credential.url = 'https://' + args.domain;
+            credential.label = sender.tab.title;
+        } else {
+            credential = logins[0];
+            credential.passkey = new Passkey(ret);
+        }
+        background.savePasskey(credential);
         return ret;
     };
 
@@ -96,6 +125,7 @@ const passkey = (function () {
         ensureCore();
 
         console.log('in passkey query, args = ', args);
+        const passes = getPasses(args.domain);
         const keys = passes.filter((p) => (p.domain == args.domain  &&
                                            (args.userId == null || p.userId == args.userId)))
               .map((x) => ({
