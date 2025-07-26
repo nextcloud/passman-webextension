@@ -8,11 +8,11 @@
   "scripts": {
     "prebuild": "node ./assets/helper_scripts/update-tld-rules.js",
     "dev": "plasmo dev --verbose",
-    "dev-ff": "plasmo dev --target=firefox-mv2",
+    "dev-ff": "plasmo dev --target=firefox-mv3",
     "build": "plasmo build",
-    "build-ff": "plasmo build --target=firefox-mv2",
+    "build-ff": "plasmo build --target=firefox-mv3",
     "package": "plasmo package",
-    "package-ff": "plasmo package --target=firefox-mv2"
+    "package-ff": "plasmo package --target=firefox-mv3"
   },
   "dependencies": {
     "@plasmohq/messaging": "^0.7.2",
@@ -68,14 +68,20 @@
     "web_accessible_resources": [
       {
         "resources": [
-          "assets/content_styles/*.css"
+          "assets/content_styles/*.css",
+          "assets/content_styles/*.scss"
         ],
         "matches": [
           "http://*/*",
           "https://*/*"
         ]
       }
-    ]
+    ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "{5258e630-6a3c-11f0-81fa-a87eea04a880}"
+      }
+    }
   },
   "trustedDependencies": [
     "@parcel/watcher",

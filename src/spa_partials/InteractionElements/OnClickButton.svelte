@@ -8,11 +8,17 @@
     export let disabled = false;
 
     export let small = false;
+
+    // Create a wrapper function that doesn't pass the callback into the button event
+    const handleClick = (event) => {
+        event.preventDefault(); // Optional: prevent default behavior
+        callback();
+    };
 </script>
 
 <button
         {title}
-        on:click={callback}
+        on:click={handleClick}
         {disabled}
         {tabindex}
         class="text-primary-light-button-text border border-gray-300 hover:bg-base-200 font-medium rounded-lg

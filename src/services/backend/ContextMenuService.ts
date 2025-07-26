@@ -157,14 +157,13 @@ export default class ContextMenuService {
         id: ContextMenuItemId | string,
         title: string,
         parentId?: string | number,
-        onclick?: (info: browser.Menus.OnClickData, tab: browser.Tabs.Tab) => void,
     ) => {
         browser.contextMenus.create({
             id,
             title,
             contexts: ['page'],
             parentId,
-            onclick
+            // cannot use onclick here since event pages cannot use the onclick property and must use menus.onClicked instead (in Firefox)
         });
     }
 

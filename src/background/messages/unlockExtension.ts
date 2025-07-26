@@ -9,25 +9,32 @@ import ExtensionUnlockService from "~services/ExtensionUnlockService";
  * @param res
  */
 const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
-    const status = await ExtensionUnlockService.unlock(req.body.extensionUnlockPassword);
-    if (status && req.body.refreshAfterUnlock) {
-        await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
-            console.log("backendPassmanClient", backendPassmanClient);
-            if (backendPassmanClient) {
-                return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
-                    try {
-                        if (defaultVaultInfo) {
-                            await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, false);
-                            backendPassmanClient.preloadVaults();
-                        } else {
-                            console.error('No vault info provided by ExtensionSettingsService.getPartialExtensionSettings');
-                        }
-                    } catch (exception) {
-                        console.error('Could not get or decrypt vault');
+    let status = false;
+    try {
+        status = await ExtensionUnlockService.unlock(req.body.extensionUnlockPassword);
+
+        if (status && req.body.refreshAfterUnlock) {
+            try {
+                const backendPassmanClient = await ExtensionSettingsService.getBackendPassmanClient();
+                console.log("backendPassmanClient", backendPassmanClient);
+
+                if (backendPassmanClient) {
+                    const defaultVaultInfo = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo);
+
+                    if (defaultVaultInfo) {
+                        await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, false);
+                        await backendPassmanClient.preloadVaults();
+                    } else {
+                        console.error('No vault info provided by ExtensionSettingsService.getPartialExtensionSettings');
                     }
-                });
+                }
+            } catch (exception) {
+                console.error('Could not get or decrypt vault:', exception);
+                // Don't fail the entire unlock process if vault refresh fails
             }
-        });    
+        }
+    } catch (error) {
+        console.error('Error in unlockExtension handler:', error);
     }
 
     res.send({
