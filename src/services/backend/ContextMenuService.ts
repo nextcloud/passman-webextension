@@ -5,6 +5,7 @@ import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/
 import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+import browser from "webextension-polyfill";
 
 enum ContextMenuItemId {
     GENERATE_PASSWORD = 'GENERATE_PASSWORD',
@@ -26,7 +27,7 @@ export default class ContextMenuService {
         ExtensionUnlockService.isUnlocked().then((isUnlocked) => {
             ContextMenuService.reCreateContextMenuParentItems(isUnlocked);
         });
-        chrome.contextMenus.onClicked.addListener(async (info: chrome.contextMenus.OnClickData, tab?: chrome.tabs.Tab) => {
+        browser.contextMenus.onClicked.addListener(async (info: browser.Menus.OnClickData, tab?: browser.Tabs.Tab) => {
             switch (info.menuItemId) {
                 case ContextMenuItemId.COPY_GENERATED_PASSWORD:
                     // Send a message to the content script of the specified or currently active tab
@@ -110,7 +111,7 @@ export default class ContextMenuService {
         });
     }
 
-    private static sendToContentScriptCopyToClipboard = (copyText: string, tab?: chrome.tabs.Tab) => {
+    private static readonly sendToContentScriptCopyToClipboard = (copyText: string, tab?: browser.Tabs.Tab) => {
         // Send a message to the content script of the specified or currently active tab
         return sendToContentScript({
             tabId: tab?.id,
@@ -122,8 +123,8 @@ export default class ContextMenuService {
         });
     }
 
-    public static removeAllContextMenuItems = () => {
-        chrome.contextMenus.removeAll();
+    public static readonly removeAllContextMenuItems = () => {
+        browser.contextMenus.removeAll();
     }
 
     /**
@@ -131,7 +132,7 @@ export default class ContextMenuService {
      * If isUnlocked is set to false, only the (vault independent) password generator items will be created.
      * @param isUnlocked
      */
-    public static reCreateContextMenuParentItems = (isUnlocked = true) => {
+    public static readonly reCreateContextMenuParentItems = (isUnlocked = true) => {
         ContextMenuService.removeAllContextMenuItems();
         ContextMenuService.initPasswordGeneratorMenu();
 
@@ -146,19 +147,19 @@ export default class ContextMenuService {
         }
     }
 
-    private static initPasswordGeneratorMenu = () => {
+    private static readonly initPasswordGeneratorMenu = () => {
         ContextMenuService.createContextMenuItem(ContextMenuItemId.GENERATE_PASSWORD, 'Generate password');
         ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_GENERATED_PASSWORD, 'And copy to clipboard', ContextMenuItemId.GENERATE_PASSWORD);
         ContextMenuService.createContextMenuItem(ContextMenuItemId.FILL_GENERATED_PASSWORD, 'And fill fields', ContextMenuItemId.GENERATE_PASSWORD);
     }
 
-    private static createContextMenuItem = (
+    private static readonly createContextMenuItem = (
         id: ContextMenuItemId | string,
         title: string,
         parentId?: string | number,
-        onclick?: (info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) => void,
+        onclick?: (info: browser.Menus.OnClickData, tab: browser.Tabs.Tab) => void,
     ) => {
-        chrome.contextMenus.create({
+        browser.contextMenus.create({
             id,
             title,
             contexts: ['page'],
@@ -171,7 +172,7 @@ export default class ContextMenuService {
      * Does not include any vault or extension unlock check. That has to be done before by the caller!
      * @param credentials
      */
-    public static updateActiveTabSpecificContextMenuItems = (credentials: Credential[]) => {
+    public static readonly updateActiveTabSpecificContextMenuItems = (credentials: Credential[]) => {
         const fields = [
             { credentialFieldName: 'username' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_USERNAME, atLeastOneCredentialFieldFound: false },
             { credentialFieldName: 'email' as CredentialField, parentMenuItemId: ContextMenuItemId.COPY_EMAIL, atLeastOneCredentialFieldFound: false },
@@ -218,11 +219,11 @@ export default class ContextMenuService {
         for (let f = 0; f < fields.length; f++) {
             const field = fields[f];
             if (field.atLeastOneCredentialFieldFound === false) {
-                chrome.contextMenus.remove(field.parentMenuItemId);
+                browser.contextMenus.remove(field.parentMenuItemId);
             }
         }
         if (!foundAtLeastOneAutofillableCredential) {
-            chrome.contextMenus.remove(ContextMenuItemId.AUTO_FILL);
+            browser.contextMenus.remove(ContextMenuItemId.AUTO_FILL);
         }
     }
 }

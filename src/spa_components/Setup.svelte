@@ -5,6 +5,7 @@
     import ExtensionUnlockService from "~services/ExtensionUnlockService";
     import { push } from "~Router.svelte";
     import { i18n } from "~lib/i18n";
+    import browser from "webextension-polyfill";
 
     export let params: { isInPopup: string };
 
@@ -21,7 +22,7 @@
     }
 
     function openOptionsPage() {
-        chrome.runtime.openOptionsPage();
+        browser.runtime.openOptionsPage();
     }
 </script>
 

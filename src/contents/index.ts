@@ -1,11 +1,13 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
 import contentStylesText from "data-text:../../assets/content_styles/content.scss";
+import browser from "webextension-polyfill";
 
 // Modified message listener with error handling
-chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) {
     try {
-        console.log("[content script] Received message from background script:", message);
+        console.log("[content script] Received message from background script:", _message);
+        const message = _message as any;
 
         if (message.name === RemoteCallableFunctions.remoteFunctionCallMessageName) {
             if (message.body.method && message.body.method in RemoteCallableFunctionNames) {
@@ -18,11 +20,12 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
                 }
             }
         }
-        return true; // Keep the message channel open for async responses
     } catch (e) {
         console.error("[content script] Error processing message:", e);
-        return false;
+        sendResponse(null);
+        // no false response allowed by the polyfill api; try null instead and holding the channel open by returning true
     }
+    return true; // Keep the message channel open for async responses
 });
 
 // create closed shadow root container (needed since plasmo-csui does not support closed shadow roots - or it does but it is not working!)

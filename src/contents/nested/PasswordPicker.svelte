@@ -17,8 +17,6 @@
     import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
     import { i18n } from "~lib/i18n";
 
-    const runtime = chrome.runtime;
-
     export let shadowRootContainerId: string;
 
     /**

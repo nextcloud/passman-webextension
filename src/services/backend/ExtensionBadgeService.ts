@@ -3,11 +3,12 @@ import { CustomCredentialFilterService } from "~services/CustomCredentialFilterS
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import ContextMenuService from "~services/backend/ContextMenuService";
 import { i18n } from "~lib/i18n";
+import browser from "webextension-polyfill";
 
 export class ExtensionBadgeService {
     public static readonly DEFAULT_BADGE_BG_COLOR = '#0082c9';
 
-    public static updateAllTabsIcon = (isFrontendCall = false) => {
+    public static readonly updateAllTabsIcon = (isFrontendCall = false) => {
         ExtensionUnlockService.isUnlocked().then((isUnlocked) => {
             if (isUnlocked) {
                 ExtensionUnlockService.getUnlockedDefaultVault(isFrontendCall).then(async (vault) => {
@@ -16,7 +17,7 @@ export class ExtensionBadgeService {
                             await vault.refresh(true);
                         }
 
-                        chrome.tabs.query({}).then(async (tabs) => {
+                        browser.tabs.query({}).then(async (tabs) => {
                             for (const tab of tabs) {
                                 await ExtensionBadgeService.createIconForTab(tab, true, vault, isFrontendCall);
                             }
@@ -36,7 +37,7 @@ export class ExtensionBadgeService {
      * @param vault
      * @param isFrontendCall
      */
-    public static createIconForTab = async (tab: chrome.tabs.Tab, ignoreUnlockedCheck = false, vault?: Vault, isFrontendCall = false) => {
+    public static readonly createIconForTab = async (tab: browser.Tabs.Tab, ignoreUnlockedCheck = false, vault?: Vault, isFrontendCall = false) => {
         if (!vault) {
             vault = await ExtensionUnlockService.getUnlockedDefaultVault(isFrontendCall);
             if (vault) {
@@ -58,34 +59,34 @@ export class ExtensionBadgeService {
             ContextMenuService.updateActiveTabSpecificContextMenuItems(credentialsForTab);
         }
 
-        await chrome.action.setBadgeText({
+        await browser.action.setBadgeText({
             text: credentialAmount.toString(),
             tabId: tab.id
         });
-        await chrome.action.setBadgeBackgroundColor({
+        await browser.action.setBadgeBackgroundColor({
             color: ExtensionBadgeService.DEFAULT_BADGE_BG_COLOR,
             tabId: tab.id
         });
 
         const plural = (credentialAmount === 1) ? i18n.getMessage('credential') : i18n.getMessage('credentials');
-        await chrome.action.setTitle({
+        await browser.action.setTitle({
             title: i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString().toLowerCase()]),
             tabId: tab.id
         });
     }
 
-    public static displayLockIcons = () => {
-        chrome.tabs.query({}).then(async (tabs) => {
+    public static readonly displayLockIcons = () => {
+        browser.tabs.query({}).then(async (tabs) => {
             for (const tab of tabs) {
-                await chrome.action.setBadgeText({
+                await browser.action.setBadgeText({
                     text: '🔑',
                     tabId: tab.id
                 });
-                await chrome.action.setBadgeBackgroundColor({
+                await browser.action.setBadgeBackgroundColor({
                     color: '#ff0000',
                     tabId: tab.id
                 });
-                await chrome.action.setTitle({
+                await browser.action.setTitle({
                     title: i18n.getMessage('browser_action_title_locked'),
                     tabId: tab.id
                 });

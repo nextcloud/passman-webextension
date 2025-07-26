@@ -18,6 +18,7 @@
     import NotyService from "~services/frontend/NotyService";
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import { i18n } from "~lib/i18n";
+    import browser from "webextension-polyfill";
 
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
@@ -65,7 +66,7 @@
     }
 
     const openOptionsPage = () => {
-        chrome.runtime.openOptionsPage();
+        browser.runtime.openOptionsPage();
     }
 
     const applyCredentialFilter = async (searchInput: string | null) => {
@@ -94,10 +95,10 @@
     onMount(() => {
         ExtensionSettingsService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
-                overwriteInputFilterByTabUrlPromise = chrome.tabs.query({
+                overwriteInputFilterByTabUrlPromise = browser.tabs.query({
                     currentWindow: true,
                     active: true
-                }).then(function (activeTabs: chrome.tabs.Tab[]) {
+                }).then(function (activeTabs: browser.Tabs.Tab[]) {
                     return activeTabs[0].url;
                 });
 

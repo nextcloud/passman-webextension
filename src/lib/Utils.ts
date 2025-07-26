@@ -1,3 +1,5 @@
+import browser from "webextension-polyfill";
+
 export default class Utils {
     public static debounce = (func: (...args: any[]) => void, timeout = 300) => {
         let timer: NodeJS.Timeout;
@@ -9,8 +11,8 @@ export default class Utils {
         };
     };
     public static isInPopup = () => {
-        return (typeof chrome != undefined && chrome.extension) ?
-            chrome.extension.getViews({ type: "popup" }).length > 0 : null;
+        return (typeof browser != undefined && browser.extension) ?
+            browser.extension.getViews({ type: "popup" }).length > 0 : null;
     };
 }
 
