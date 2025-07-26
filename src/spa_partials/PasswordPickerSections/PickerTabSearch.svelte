@@ -2,8 +2,8 @@
     import type { GetCredentialsListMessagingResponse } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
     import PickerCredentialListElement from "~spa_partials/InteractionElements/PickerCredentialListElement.svelte";
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     let searchResponse: GetCredentialsListMessagingResponse | null = null;
 
     const searchInputCallback = (event: Event) => {

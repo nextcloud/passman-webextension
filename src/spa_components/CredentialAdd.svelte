@@ -15,8 +15,8 @@
     import EditCustomFields from "~spa_partials/CredentialEditSections/EditCustomFields.svelte";
     import EditOTP from "~spa_partials/CredentialEditSections/EditOTP.svelte";
     import EditFiles from "~spa_partials/CredentialEditSections/EditFiles.svelte";
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     let pageIsLoading = true;
     let lockSaveButton = false;
     let vault: Vault | null = null;

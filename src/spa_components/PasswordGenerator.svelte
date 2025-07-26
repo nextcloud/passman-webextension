@@ -10,8 +10,8 @@
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
     import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
     import NotyService from "~services/frontend/NotyService";
-    
-    const i18n = chrome.i18n;
+    import { i18n } from "~lib/i18n";
+
     let password = '';
     let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
     let initDone = false;

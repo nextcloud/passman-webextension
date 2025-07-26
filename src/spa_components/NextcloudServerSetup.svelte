@@ -17,8 +17,8 @@
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
     import NotyService from "~services/frontend/NotyService";
     import extensionUnlockStateStore, { ExtensionUnlockState } from '~stores/extensionUnlockStateStore';
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
     const token = field('token', '', [required()], { checkOnInit: true });

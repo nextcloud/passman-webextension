@@ -9,11 +9,11 @@
     import { CustomMathsService } from "@binsky/passman-client-ts/lib/Service/CustomMathsService";
     import InPlaceEdit from "../FormElements/InPlaceEdit.svelte";
     import Utils from "~lib/Utils";
+    import { i18n } from "~lib/i18n";
 
     export let credentialData: CredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload
 
-    const i18n = chrome.i18n;
     const isInPopup = Utils.isInPopup();
 
     let isUploading = false;
@@ -21,7 +21,7 @@
     const handleDrop = (event: DragEvent) => {
         event.preventDefault();
         event.stopPropagation();
-        
+
         const files = event.dataTransfer?.files;
         if (files && files.length > 0 && credential) {
             const input = document.getElementById('file-upload') as HTMLInputElement;
@@ -70,7 +70,7 @@
                     size: localFile.size
                 };
                 const uploadResponse = await credential.encryptUploadFile(plainFile);
-                
+
                 if (uploadResponse) {
                     plainFile.file_id = uploadResponse.file_id;
                     plainFile.guid = uploadResponse.guid;
@@ -123,7 +123,7 @@
             </div>
         {:else}
             <div class="flex flex-col items-center justify-center w-full">
-                <label for="file-upload" 
+                <label for="file-upload"
                     class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-neutral dark:hover:border-gray-500 dark:hover:bg-neutral/80"
                     on:dragenter={handleDragEnter}
                     on:dragover={handleDragOver}

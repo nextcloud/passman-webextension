@@ -15,10 +15,11 @@
     import NotyService from "~services/frontend/NotyService";
     import Select from 'svelte-select';
     import Utils from "~lib/Utils";
+    import { i18n } from "~lib/i18n";
+
     export let credentialData: DecryptedCredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload
 
-    const i18n = chrome.i18n;
     const isInPopup = Utils.isInPopup();
     let newFieldLabel = '';
     let newFieldValueText = '';
@@ -207,7 +208,7 @@
             <div class="space-x-2">
                 <OnClickButton callback={addNewField} title="{i18n.getMessage('custom_fields_header_add')}"
                                 disabled={
-                                    lockAddButton || 
+                                    lockAddButton ||
                                     (
                                         newFieldType !== 'file' &&
                                         (newFieldLabel === '' || newFieldValueText === '')

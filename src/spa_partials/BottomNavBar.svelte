@@ -4,8 +4,7 @@
     import { circleONotch, cogs, search } from "svelte-awesome/package/icons";
     import OnClickButton from "./InteractionElements/OnClickButton.svelte";
     import gitlabImage from "data-base64:~../assets/images/gitlab.svg";
-
-    const i18n = chrome.i18n;
+    import { i18n } from "~lib/i18n";
 </script>
 
 <div class="flex flex-nowrap items-center justify-center space-x-4 border-t py-2">

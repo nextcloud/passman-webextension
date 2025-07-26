@@ -11,9 +11,9 @@
     import SimpleDropdownSelectBox from "~spa_partials/FormElements/SimpleDropdownSelectBox.svelte";
     import { OTPAlgorithmOptions } from "@binsky/passman-client-ts/lib/Interfaces/Credential/OTPConfigInterface";
     import type { ChangeEventHandler } from "svelte/elements";
+    import { i18n } from "~lib/i18n";
 
     export let credentialData: CredentialInterface;
-    const i18n = chrome.i18n;
     let otpToken: string;
 
     const syncSecret: ChangeEventHandler<HTMLInputElement|HTMLTextAreaElement> = (event) => {

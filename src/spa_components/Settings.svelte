@@ -12,8 +12,8 @@
     import NotyService from "~services/frontend/NotyService";
     import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
     import packageJson from "../../package.json";
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     const extensionVersion = packageJson.version;
     let extendedSettings: { [key: number]: boolean } = {
         [ExtensionSettingsOptions.ignoreProtocol]: false,

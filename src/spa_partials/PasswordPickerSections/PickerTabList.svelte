@@ -5,10 +5,10 @@
     import type {
         DecryptedPartialCredentialData
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { i18n } from "~lib/i18n";
 
     export let selectedSection: PASSWORD_PICKER_SECTIONS = PASSWORD_PICKER_SECTIONS.LIST;
 
-    const i18n = chrome.i18n;
     let allDecryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
     onMount(() => {

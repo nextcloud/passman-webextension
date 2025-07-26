@@ -17,8 +17,8 @@
     import type { GetCredentialsForVaultMessagingResponse } from "~background/messages/getCredentialsForVault";
     import NotyService from "~services/frontend/NotyService";
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
     let errorMessage: string | null = null;

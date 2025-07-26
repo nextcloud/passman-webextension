@@ -12,11 +12,11 @@
     import type { FileInterface } from "@binsky/passman-client-ts/lib/Interfaces/File/FileInterface";
     import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
     import InlineMiniLoading from "~spa_components/LineLoading.svelte";
+    import { i18n } from "~lib/i18n";
 
     export let credential: Credential;
     export let hideDefaultDatetimeFields: boolean = true;
 
-    const i18n = chrome.i18n;
     let expire_time_formatted: string;
     let created_formatted: string;
     let changed_formatted: string;

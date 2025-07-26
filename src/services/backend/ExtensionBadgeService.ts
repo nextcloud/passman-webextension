@@ -2,6 +2,7 @@ import ExtensionUnlockService from "~services/ExtensionUnlockService";
 import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import ContextMenuService from "~services/backend/ContextMenuService";
+import { i18n } from "~lib/i18n";
 
 export class ExtensionBadgeService {
     public static readonly DEFAULT_BADGE_BG_COLOR = '#0082c9';
@@ -66,9 +67,9 @@ export class ExtensionBadgeService {
             tabId: tab.id
         });
 
-        const plural = (credentialAmount === 1) ? chrome.i18n.getMessage('credential') : chrome.i18n.getMessage('credentials');
+        const plural = (credentialAmount === 1) ? i18n.getMessage('credential') : i18n.getMessage('credentials');
         await chrome.action.setTitle({
-            title: chrome.i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString().toLowerCase()]),
+            title: i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString().toLowerCase()]),
             tabId: tab.id
         });
     }
@@ -85,7 +86,7 @@ export class ExtensionBadgeService {
                     tabId: tab.id
                 });
                 await chrome.action.setTitle({
-                    title: chrome.i18n.getMessage('browser_action_title_locked'),
+                    title: i18n.getMessage('browser_action_title_locked'),
                     tabId: tab.id
                 });
             }

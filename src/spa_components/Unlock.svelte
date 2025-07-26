@@ -7,8 +7,8 @@
     import { sendToBackground } from "@plasmohq/messaging";
     import Loading from "./Loading.svelte";
     import { onMount } from "svelte";
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     let extensionUnlockPassword = '';
     let errors: string[] = [];
     let inUnlockRequest = false;
@@ -33,7 +33,7 @@
                     $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
                 } else {
                     errors = [
-                        chrome.i18n.getMessage("invalid_master_password")
+                        i18n.getMessage("invalid_master_password")
                     ];
                     $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
                 }
@@ -59,19 +59,19 @@
             </h2>
 
             <CustomInputField placeholder="{i18n.getMessage('password')}" label=""
-                bind:value={extensionUnlockPassword} 
+                bind:value={extensionUnlockPassword}
                 tabindex={1}
                 type="password"
                 bind:ref={extensionUnlockPasswordInputRef}
             />
             <ShowGenericErrors bind:errors/>
             <div class="flex space-x-2 justify-center items-center">
-                <OnClickButton callback={unlock} title="{i18n.getMessage('unlock')}" tabindex="2" 
+                <OnClickButton callback={unlock} title="{i18n.getMessage('unlock')}" tabindex="2"
                     disabled={extensionUnlockPassword === '' || inUnlockRequest} additionalClasses="hover:border-blue-500"
                 >
                     {i18n.getMessage("unlock")}
                 </OnClickButton>
-                <OnClickButton callback={() => unlock(false)} title="{i18n.getMessage('unlock_without_refresh')}" tabindex="2" 
+                <OnClickButton callback={() => unlock(false)} title="{i18n.getMessage('unlock_without_refresh')}" tabindex="2"
                     disabled={extensionUnlockPassword === '' || inUnlockRequest} small={true}
                     additionalClasses="py-1 text-xs h-fit hover:border-blue-500"
                 >

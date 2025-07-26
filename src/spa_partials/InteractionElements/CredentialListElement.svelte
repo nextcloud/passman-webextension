@@ -11,11 +11,11 @@
     import { onMount } from "svelte";
     import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
     import CredentialDetails from "~spa_partials/CredentialDetails.svelte";
+    import { i18n } from "~lib/i18n";
 
     export let credential: Credential;
     let editLink = '';
     let showExpandedView = false;
-    const i18n = chrome.i18n;
 
     const copyOTPToClipboard = () => {
         ClipboardService.copyToClipboardWithNotification(OTPService.updateOTP(credential.otp), 'OTP');

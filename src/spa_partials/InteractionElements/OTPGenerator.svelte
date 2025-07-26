@@ -4,6 +4,7 @@
     import type { OTPConfigInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/OTPConfigInterface";
     import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
     import NotyService from "~services/frontend/NotyService";
+    import { i18n } from "~lib/i18n";
 
     export let otp: OTPConfigInterface;
     export let token: string;
@@ -21,7 +22,7 @@
                     token = OTPService.updateOTP(otp);
                 } catch (e) {
                     console.error(e);
-                    NotyService.notyError(chrome.i18n.getMessage('otp_configuration_invalid'));
+                    NotyService.notyError(i18n.getMessage('otp_configuration_invalid'));
                 }
             }
         }

@@ -6,11 +6,11 @@
     } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
     import CustomCheckboxField from "../FormElements/CustomCheckboxField.svelte";
     import MySveltyPicker from "../InteractionElements/MySveltyPicker.svelte";
+    import { i18n } from "~lib/i18n";
 
     export let credentialData: CredentialInterface;
     export let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface;
 
-    const i18n = chrome.i18n;
     let expire_time_string: string = "";
     let initDone = false;
 

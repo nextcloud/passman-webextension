@@ -13,6 +13,7 @@
     import EditPasswordIntegrationForGeneral from "./EditPasswordIntegrationForGeneral.svelte";
     import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+    import { i18n } from "~lib/i18n";
 
     interface DefiniteTagInterface extends TagInterface {
         text: string;
@@ -20,7 +21,6 @@
 
     export let credentialData: DecryptedCredentialInterface;
 
-    const i18n = chrome.i18n;
     let password = "", passwordRepeat = "";
     let initDone = false;
     let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
@@ -142,10 +142,10 @@
                         </button>
                     </div>
                 {/each}
-                <input 
-                    use:melt={$input} 
-                    type="text" 
-                    placeholder="Add a tag" 
+                <input
+                    use:melt={$input}
+                    type="text"
+                    placeholder="Add a tag"
                     class="flex-1 min-w-[120px] outline-none bg-transparent"
                 />
             </div>

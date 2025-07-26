@@ -15,8 +15,8 @@
         DecryptedPartialCredentialData
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
+    import { i18n } from "~lib/i18n";
 
-    const i18n = chrome.i18n;
     const runtime = chrome.runtime;
 
     export let shadowRootContainerId: string;
@@ -68,10 +68,10 @@
 
                     // Get the composed path of the click event
                     const path = event.composedPath();
-                    
+
                     // Check if the click was inside our root container
                     const wasInsidePicker = path.some(node => {
-                        return node instanceof Element && 
+                        return node instanceof Element &&
                                node.id === shadowRootContainerId;
                     });
 

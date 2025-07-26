@@ -4,10 +4,10 @@
     import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
     import ExtensionUnlockService from "~services/ExtensionUnlockService";
     import { push } from "~Router.svelte";
+    import { i18n } from "~lib/i18n";
 
     export let params: { isInPopup: string };
 
-    const i18n = chrome.i18n;
     let newExtensionUnlockPassword = '';
     let isExtensionUnlocked = false;
     let processNewUnlockPassword = false;
