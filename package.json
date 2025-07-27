@@ -9,6 +9,7 @@
     "prebuild": "node ./assets/helper_scripts/update-tld-rules.js",
     "dev": "plasmo dev --verbose",
     "dev-ff": "plasmo dev --target=firefox-mv3",
+    "dev-build-ff": "plasmo build --target=firefox-mv3 --no-minify",
     "build": "plasmo build",
     "build-ff": "plasmo build --target=firefox-mv3",
     "package": "plasmo package",

@@ -64,6 +64,49 @@ You can start editing the popup by modifying `popup.tsx`. It should auto-update 
 
 For further guidance, [visit our Documentation](https://docs.plasmo.com/)
 
+## Extension development in Firefox needs some adjustments
+
+I recommend installing the [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
+or at least using another browser profile to get a clean development environment.
+
+### The working way
+
+Since the plasmo dev server does not work in Firefox, you'll need to build the extension every time you make a change.
+
+```bash
+bun run dev-build-ff
+```
+
+This command will build the extension but prevents the code from being minified to make it easier to debug.
+
+Open the `about:debugging` page in Firefox and load the `build/firefox-mv3-prod` folder as temporary extension.
+
+### The not working way using the plasmo dev server
+
+When using the plasmo dev server with `bun run dev-ff`, a firefox-mv3 app is built and a plasmo server is started.
+That plasmo server causes this error in Firefox: `Reading manifest: Error processing content_security_policy.extension_pages: ‘script-src’ directive contains a forbidden http: protocol source` which can only be solved (at least at the moment) by manually removing `http://localhost` from the created manifest.json file in `build/firefox-mv3-dev/manifest.json`.
+It should look like this afterwards:
+```
+"content_security_policy":{"extension_pages":"script-src 'self';object-src 'self';"}
+```
+It seems that even starting the dev server with `--no-hmr` does not help.
+
+I was playing around with disabling SCP to get the dev server working, but it did not help.
+
+What I have tried:
+
+**Do never disable SCP in your productive Firefox!!!! never!** (use an extra browser for development instead!)
+
+Then open `about:config`, set:
+
+- `security.csp.enable` to `false`
+- `security.mixed_content.block_active_content` to `false`
+- `network.websocket.allowInsecureFromHTTPS` to `true`
+
+and load `dist/firefox-mv3-dev` as temporary extension.
+
+I had hoped that this would work, but it did not.
+
 ## Making production build
 
 Run the following:
