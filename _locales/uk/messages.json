@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - Менеджер паролів для NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Шукати",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Для цього сайту не знайдено облікових даних.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Облікові дані не знайдено",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Нотатки",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Недійсна відповідь від сервера: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Будь ласка, введіть свої облікові дані Nextcloud / ownCloud",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Зберегти сайт",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Генератор паролів",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Згенеруйте пароль",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Перемикання видимості",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Розширені параметри",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Використовуйте пароль",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Після створення облікового запису ви можете редагувати його в Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Довжина пароля",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Мінімальна кількість цифр",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Уникайте двозначних символів",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Вимагати кожен тип символів",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Додати обліковий запис",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Облікові записи",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Мітка",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Логін",
+        "description": "Username"
+    },
+    "email": {
+        "message": "Електронна пошта",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Додати",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Обліковий запис створено",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL-адреса",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Пароль",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Пароль (повторити)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Виявлено новий логін",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Виявлено зміну пароля користувача",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ знайдено для цієї сторінки",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Пасажир - заблоковано",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Виявлено зміну URL-адреси для",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "посвідчення",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "повноваження",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Таймер оновлення [с]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Ігнорувати протокол для зіставлення сайтів",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Ігнорувати субдомен для зіставлення сайтів",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Ігнорувати порт для зіставлення сайтів",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Ви використовуєте HTTP! Облікові дані для входу будуть надіслані звичайним текстом. Ваші облікові дані Passman все ще зашифровані.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Ігнорувати шлях для збігу з сайтом",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Увімкнути автоматичне заповнення форми",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Увімкнути автоматичне відправлення форми після вибору рахунку",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Попросити оновити URL-адресу облікового запису, якщо вона не збігається з поточною URL-адресою",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Вимкнути автозаповнення браузера",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Введіть домен або TLD для ігнорування та натисніть ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Увімкнути вибір паролю",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Коли пароль знайдено, перейдіть до списку, а не до останньої активної вкладки",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Приховати розширені параметри",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Показати розширені параметри",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Увімкнути режим налагодження",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Зберегти",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Збереження",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Обліковий запис збережено",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Оновлені облікові дані",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Сайт ігнорується",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL-адресу проігноровано",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Оновити",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ігнорувати сайт",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Збережіть облікові дані для цього сайту",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Шукати дані авторизації",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Ласкаво просимо до веб-розширення Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL сервер",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Почнімо!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Цей майстер допоможе вам налаштувати розширення та синхронізувати всі ваші паролі.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Скасувати",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Сховище за замовчуванням",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Виберіть сховище, яке ви хочете синхронізувати з веб-браузером.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Введіть головний пароль",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Цей пароль буде використано для шифрування всіх ваших налаштувань у розширенні. Ви можете зберегти цей пароль локально, але він буде збережений у файлі PLAINTEXT.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Запам'ятайте головний пароль",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Увага! Ваш головний пароль буде збережено у відкритому вигляді.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Готово",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Користувацькі поля",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Загальна",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Значення",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Список",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Редагувати",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Налаштування сервера",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Налаштування сховища",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Встановити головний пароль",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Завершити",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Якщо хочете, не забудьте зробити пожертву",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Закрити",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Попередній",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Назад",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Копіювати",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Наступний",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Продовжити",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Пожертвувати кошти",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Налаштування сервера Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Виберіть сховище за замовчуванням",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ігноровані сайти / URL-адреси",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Вимкнути сторінку",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Вимкнути сайт",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Ви хочете вимкнути Passman для поточної сторінки або для всього сайту?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Жоден сайт не проігноровано",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Пароль для сховища",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Будь ласка, заповніть етикетку",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Недійсне посилання на сервер",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ігнорувати сайт / сторінку",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Паролі не збігаються",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Недійсний ключ від сховища!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Порожній майстер-ключ!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "Одноразовий пароль",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Налаштування",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Після завершення процесу налаштування ви можете додати більше акаунтів.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Обліковий запис додано.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Виберіть сховище",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Вилучити",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Пошук",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Обліковий запис видалено",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Якщо програма підбору паролів не зможе знайти жодних облікових даних, вона перейде до пункту:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Вибачте, сховищ не знайдено. Будь ласка, створіть сховище за допомогою програми Nextcloud / ownCloud і спробуйте ще раз.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Ви можете скинути пароль. Це призведе до скидання розширення до стану за замовчуванням.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Забули пароль?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Скинути розширення",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Так, я впевнена!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Ви не маєте права редагувати цей обліковий запис.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Неправильні налаштування сервера",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Оновити список облікових даних",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Developent залежить від пожертв, будь ласка, підтримайте нас",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Подовження замка",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Розширення Passman заблоковано, розблокуйте, щоб використовувати його",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Неправильний головний пароль!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Розблокувати",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Ми знайшли облікові дані $AMOUNT$ для цього сайту",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Зберегти в $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Збереження в $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "Облікові дані $AMOUNT$ в базі даних",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman реєструє вас як $USERNAME$.",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Сховище",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Додати кастомне поле",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "текст",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
