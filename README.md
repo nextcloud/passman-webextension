@@ -12,20 +12,39 @@ It uses [Svelte](https://svelte.dev/) for the UI, and [Typescript](https://www.t
 
 The so called project "Passman Webextension v3" will replace the current Passman extension, once it's finished. Until then, you can use this one to test it.
 
+## Features
+- Ability to connect to a (single) Nextcloud instance and Passman vault
+- Extension popup
+    - Show a list of all vault credentials (with search and automatic filtering for the current page)
+    - Ability to add new credentials
+    - Ability to edit and delete existing credentials
+    - Password generator
+    - Extension settings
+- Auto fill form fields on websites (for a single matching credential)
+    - (using webextension content scripts)
+- Password picker (the password picker is a small in-page-popup that can be opened by clicking a small icon in detected input fields)
+    - Search / select a credential to fill the input field
+- Support for all Chromium-based browsers (Chrome, Vivaldi, Brave, etc.), the Firefox browser and its derivatives (like Waterfox, Floorp, etc.) supporting manifest v3
+
 # Getting Started as Tester
 
 Please be careful with this, since it is a development version and might not work as expected. Expect bugs and missing features.
 
 **Do always backup your vault!!!**
 
-Since google takes some time to approve the new extension, you can test it already today using the following manual steps:
+You can easily get the latest released developer version of the extension from
+- the chrome web store: https://chromewebstore.google.com/detail/passman-webextension-v3/ofngoamnbkaglfcpacagjdlmdhachdlc
+- the firefox addon store: (coming soon)
+- the [releases page](https://gitlab.com/binsky08/passman-webextension-v3/-/releases)
+
+To load the extension manually (not from a store - you won't get updates from there) use the following manual steps:
 
 1. Download the latest version of the extension from the [releases page](https://gitlab.com/binsky08/passman-webextension-v3/-/releases)
-    - optionally you can ownload the very latest (development) version of the extension from the [artifacts page](https://gitlab.com/binsky08/passman-webextension-v3/-/artifacts) (use the latest build artifact with a size of ~ 3-4 MB called `artifacts.zip`)
+    - optionally you can download the very latest (development) version of the extension from the [artifacts page](https://gitlab.com/binsky08/passman-webextension-v3/-/artifacts) (use the latest build artifact with a size of ~4 MB called `artifacts.zip`)
 2. Unzip the file into an empty folder of your choice (`passman-webextension-v3` could be a good name)
-3. Open the extension page in your browser (e.g. chrome://extensions/)
+3. Open the extension page in your browser ([chrome://extensions/](chrome://extensions/) or [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox) in Firefox)
 4. Enable "Developer mode" if it is not already enabled
-5. Click on "Load unpacked"
+5. Click on "Load unpacked" (in Chromium) or "Load temporary add-on" (in Firefox)
 6. Select the unzipped folder
 7. You should now see the extension icon in the toolbar
 
@@ -126,3 +145,5 @@ The easiest way to deploy your Plasmo extension is to use the built-in [bpp](htt
 ## Troubleshooting
 
 If you have a general build error, try / check the workaround described here: https://github.com/parcel-bundler/watcher/issues/159
+
+Sometimes the build fails with a segfault error. I have absolutely no idea why. But try running `pnpm run build` instead.
