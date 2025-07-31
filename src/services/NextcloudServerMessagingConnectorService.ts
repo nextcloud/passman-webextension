@@ -13,7 +13,7 @@ export class NextcloudServerMessagingConnectorService {
         // this regex tests like: '/vaults/' + guid
         return new RegExp(`\/${action}\/[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$`).test(requestUrl);
     }
-    
+
     /**
      * Extract GUID from a URL that ends with a GUID
      */
@@ -70,34 +70,39 @@ export class NextcloudServerMessagingConnectorService {
                 }
             }
             // Handle credential operations
-            else if (this.endsWithActionAndAnyGuid('credentials', requestUrl)) {
-                console.log('found credential response operation');
-
+            else if (requestUrl.endsWith('/credentials') || this.endsWithActionAndAnyGuid('credentials', requestUrl)) {
                 const typedResponse = json as EncryptedOwnedCredentialFromServerInterface;
-                const credentialGuid = this.extractGuidFromUrl(requestUrl);
 
-                console.log('found credential response operation for credential guid: ' + credentialGuid, typedResponse);
+                // it's a get, patch or delete operation if there's a guid in the url
+                const credentialGuidFromUrl = this.extractGuidFromUrl(requestUrl);
+                console.log('found credential response operation with credential guid from url:', credentialGuidFromUrl, typedResponse);
 
-                
-                if (credentialGuid && typedResponse.vault_id) {
+                if (typedResponse.vault_id) {
                     if (passmanClient.preloadedVaults.length === 0) {
                         // Refresh the vault list
                         await passmanClient.preloadVaults(false, true);
                     }
                     const preloadedVault = passmanClient.preloadedVaults.find(vault => vault.id === typedResponse.vault_id);
-                    if (preloadedVault && requestMethod !== 'GET') {
-                        // Refresh the vault containing this credential
+                    if (preloadedVault) {
+                        if (requestMethod === 'GET') {
+                            // ignore specific credential get requests here for now; usually they only prepare change write operations
+                            // add later if needed, but credentials are already implicitly cached in the vault response
+                            return;
+                        }
+
+                        // Refresh the vault containing this credential (since we had an add, update or deletion operation)
                         const cachedObjectVault = passmanClient.fullFeaturedVaultObjectCache.find(vault => vault.guid === preloadedVault.guid);
                         let vaultKey = undefined;
                         if (cachedObjectVault) {
                             vaultKey = cachedObjectVault.vaultKey;
                             await cachedObjectVault.clearRequestCache();
                         }
+                        // fetch new, full vault data to get a clean, consistent and definitely correct state
                         const vault = await passmanClient.getFullVaultByGuid(preloadedVault.guid, false, vaultKey);
                         // todo: fix the following block. I don't know why, but it causes a strange decryption error in an updated credential. Maybe it's a side-effect and another issue.
                         /*if (vault) {
                             for (const credential of vault.credentials) {
-                                if (credential.guid === credentialGuid) {
+                                if (credential.guid === credentialGuidFromUrl) {
                                     console.log(credential);
                                     credential.clearDecryptedDataCache();   // should not be necessary, but just to be sure
                                     await credential.refresh();
@@ -105,20 +110,24 @@ export class NextcloudServerMessagingConnectorService {
                                 }
                             }
                         }*/
-                        
+
                         const cachePrefix = 'cache-getJson-';
                         const requestCacheHandler = passmanClient.server.persistence.getRequestCacheHandler();
                         if (requestCacheHandler) {
                             try {
-                                await requestCacheHandler.set(cachePrefix + '/credentials/' + credentialGuid, undefined);
                                 await requestCacheHandler.set(cachePrefix + '/vaults/' + preloadedVault.guid, undefined);
-                                console.log('cleared backend request cache for credential guid: ' + credentialGuid, 'and vault guid: ' + preloadedVault.guid);
+                                if (credentialGuidFromUrl) {
+                                    await requestCacheHandler.set(cachePrefix + '/credentials/' + credentialGuidFromUrl, undefined);
+                                    console.log('cleared backend request cache for credential guid: ' + credentialGuidFromUrl, 'and vault guid: ' + preloadedVault.guid);
+                                } else {
+                                    console.log('cleared backend request cache for vault guid: ' + preloadedVault.guid);
+                                }
                             } catch (e) {
                                 console.warn('Failed to cache ' + requestUrl, e);
                             }
                         }
                     } else {
-                        console.log('no preloaded vault found for credential guid: ' + credentialGuid);
+                        console.log('no preloaded vault found for credential guid: ' + credentialGuidFromUrl);
                     }
                 }
             }
@@ -179,7 +188,7 @@ export class NextcloudServerMessagingConnectorService {
 
                 console.log('found credential response operation for credential guid: ' + credentialGuid, typedResponse);
 
-                
+
                 if (credentialGuid && typedResponse.vault_id) {
                     if (passmanClient.preloadedVaults.length === 0) {
                         // Refresh the vault list
