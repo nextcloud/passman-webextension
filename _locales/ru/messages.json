@@ -272,7 +272,7 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Введите главный пароль",
+        "message": "Введите мастер пароль",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
@@ -280,11 +280,11 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Запомнить главный пароль",
+        "message": "Запомнить мастер пароль",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Предупреждение! Мастер-пароль будет сохранён открытым текстом.",
+        "message": "Внимание! Мастер-пароль будет сохранён в открытом виде.",
         "description": "Remember master password"
     },
     "done": {
@@ -320,7 +320,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Установить главный пароль",
+        "message": "Установить мастер пароль",
         "description": "Set a master password"
     },
     "finish": {
@@ -412,7 +412,7 @@
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Пустой главный ключ!",
+        "message": "Пустой мастер ключ!",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -496,7 +496,7 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Неверный главный пароль!",
+        "message": "Неверный мастер пароль!",
         "description": "When the master password is invalid"
     },
     "unlock": {
