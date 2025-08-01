@@ -13,15 +13,20 @@
     import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
     import InlineMiniLoading from "~spa_components/LineLoading.svelte";
     import { i18n } from "~lib/i18n";
+    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    import NotyService from "~services/frontend/NotyService";
+    import refresh from "svelte-awesome/icons/refresh";
 
     export let credential: Credential;
     export let hideDefaultDatetimeFields: boolean = true;
+    export let onCredChangedCallback: () => void;
 
     let expire_time_formatted: string;
     let created_formatted: string;
     let changed_formatted: string;
     let otp_token: string;
     let show_loading_for_file_id: number | undefined = undefined;
+    let deletion_in_progress = false;
 
     const downloadFile = async (file: FileInterface) => {
         if (!show_loading_for_file_id) {
@@ -33,6 +38,29 @@
             }
             show_loading_for_file_id = undefined;
         }
+    }
+
+    const markAsDeleted = () => {
+        deletion_in_progress = true;
+        credential.delete_time = new Date().getTime() / 1000;
+        credential.update().then(value => {
+            if (value) {
+                NotyService.notySuccess(i18n.getMessage('credential_deleted'));
+                if (onCredChangedCallback) {
+                    onCredChangedCallback();
+                }
+            } else {
+                const msg = 'Unknown error occurred while deleting a credential';
+                NotyService.notyError(msg);
+                console.error(msg);
+            }
+        }, rejectionReason => {
+            const msg = 'An error occurred while deleting a credential';
+            NotyService.notyError(msg);
+            console.error(msg, rejectionReason);
+        }).finally(() => {
+            deletion_in_progress = false;
+        });
     }
 </script>
 
@@ -216,4 +244,15 @@
             </div>
         </div>
     {/if}
+    <div>
+        <OnClickButton callback={markAsDeleted} title={i18n.getMessage('mark_credential_deleted')} small={true}
+                       additionalClasses="bg-red-600 text-white" disabled={deletion_in_progress}>
+            <span>
+                {#if deletion_in_progress}
+                    <Icon data={refresh} scale={1.3} spin="{true}"/>
+                {/if}
+                {i18n.getMessage('delete')}
+            </span>
+        </OnClickButton>
+    </div>
 {/if}

@@ -14,6 +14,8 @@
     import { i18n } from "~lib/i18n";
 
     export let credential: Credential;
+    export let onCredChangedCallback: () => void;
+
     let editLink = '';
     let showExpandedView = false;
 
@@ -71,7 +73,7 @@
 
         {#if showExpandedView}
             <div class="border-t mt-1 p-1 space-y-1.5">
-                <CredentialDetails bind:credential/>
+                <CredentialDetails bind:credential bind:onCredChangedCallback/>
             </div>
         {/if}
     </div>

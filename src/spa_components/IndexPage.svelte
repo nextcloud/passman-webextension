@@ -189,7 +189,7 @@
                 {/if}
 
                 {#each filteredCredentials as credential}
-                    <CredentialListElement bind:credential/>
+                    <CredentialListElement bind:credential onCredChangedCallback={() => refreshCredentialList(true)}/>
                 {/each}
                 {#if !errorMessage && filteredCredentials.length === 0}
                     <span class="text-gray-400 mt-4">

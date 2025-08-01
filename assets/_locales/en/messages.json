@@ -619,6 +619,10 @@
     "message": "Credential deleted",
     "description": "Credential deleted"
   },
+  "mark_credential_deleted": {
+    "message": "Mark credential as deleted",
+    "description": "Mark credential as deleted"
+  },
   "select_password_picker_default_tab": {
     "message": "When the Password picker is unable to find any credentials, it will go to:",
     "description": "Select password picker default tab"
