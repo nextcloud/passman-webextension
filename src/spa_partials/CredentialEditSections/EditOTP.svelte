@@ -12,9 +12,11 @@
     import { OTPAlgorithmOptions } from "@binsky/passman-client-ts/lib/Interfaces/Credential/OTPConfigInterface";
     import type { ChangeEventHandler } from "svelte/elements";
     import { i18n } from "~lib/i18n";
+    import Utils from "~lib/Utils";
 
     export let credentialData: CredentialInterface;
     let otpToken: string;
+    const isInPopup = Utils.isInPopup();
 
     const syncSecret: ChangeEventHandler<HTMLInputElement|HTMLTextAreaElement> = (event) => {
         if (credentialData.otp == null || (credentialData.otp as string) === '{}' || Object.keys(credentialData.otp).length === 0) {
@@ -71,9 +73,20 @@
             <CustomInputField label="{i18n.getMessage('otp_secret')}" value={OTPService.getSecretString(credentialData.otp.secret)}
                               onchange={syncSecret}/>
         </div>
-        <div class="mt-2 mb-4">
-            <input type="file" on:change={readQRFromInput}/>
-        </div>
+        {#if isInPopup}
+            <div class="space-y-2">
+                <p class="text-sm text-gray-500">
+                    {i18n.getMessage('error_file_upload_popup')}
+                </p>
+                <p class="text-sm text-gray-500">
+                    {i18n.getMessage('error_file_upload_popup_2')}
+                </p>
+            </div>
+        {:else}
+            <div class="mt-2 mb-4">
+                <input type="file" on:change={readQRFromInput}/>
+            </div>
+        {/if}
         {#if credentialData.otp != null}
             {#if credentialData.otp.qr_uri != null && credentialData.otp.qr_uri.image != null}
                 <div class="mt-2">
