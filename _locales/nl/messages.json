@@ -200,7 +200,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Debugmodus inschakelen",
+        "message": "Foutopsporingsmodus inschakelen",
         "description": "Enable debug mode"
     },
     "save": {
