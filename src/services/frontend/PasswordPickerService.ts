@@ -48,7 +48,7 @@ export class PasswordPickerService {
             for (const loginFields of loginFieldsPerForm) {
                 const form = loginFields._form;
                 if (enablePasswordPicker && form) {
-                    PasswordPickerService.createPasswordPicker(form);
+                    PasswordPickerService.createPasswordPicker(form, loginFields);
                 }
 
                 //Password miner
@@ -203,10 +203,16 @@ export class PasswordPickerService {
         }
     }
 
-    public static createPasswordPicker = (form: HTMLFormElement) => {
-        for (let element of form.getElementsByTagName('input')) {
-            PasswordPickerService.createFormIcon(element, form);
+    public static createPasswordPicker = (form: HTMLFormElement, loginFields: FillableLoginFormFields) => {
+        for (const input of [...(loginFields.passwordFields ?? []), loginFields.emailField, loginFields.usernameField, loginFields.otpField]) {
+            if (input) {
+                PasswordPickerService.createFormIcon(input, form);
+            }
         }
+        // not sure what the initial idea was, but creating a picker icon for each input element is not a good idea
+        /*for (let element of form.getElementsByTagName('input')) {
+            PasswordPickerService.createFormIcon(element, form);
+        }*/
     }
 
     public static onFormSubmittedCallback = (loginFields: FillableLoginFormFields) => {
