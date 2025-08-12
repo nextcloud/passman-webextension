@@ -1,7 +1,7 @@
 {
   "name": "passman-webextension-v3",
   "displayName": "Passman Webextension v3",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A modern webextension for the Passman Nextcloud app",
   "author": "Timo Triebensky <timo@binsky.org>",
   "packageManager": "pnpm@8.10.2",
@@ -27,17 +27,17 @@
     "svelte-preprocess": "^5.1.4"
   },
   "devDependencies": {
-    "@binsky/passman-client-ts": "^0.2.1",
-    "@ianvs/prettier-plugin-sort-imports": "^4.5.1",
+    "@binsky/passman-client-ts": "^0.2.2",
+    "@ianvs/prettier-plugin-sort-imports": "^4.6.1",
     "@melt-ui/pp": "^0.3.2",
     "@melt-ui/svelte": "^0.86.6",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
-    "@types/node": "^22.16.5",
+    "@types/node": "^22.17.1",
     "@types/pouchdb": "^6.4.2",
     "@types/pouchdb-adapter-memory": "^6.1.6",
     "@types/pouchdb-find": "^7.3.3",
     "@types/webextension-polyfill": "^0.12.3",
-    "@typescript-eslint/parser": "^8.38.0",
+    "@typescript-eslint/parser": "^8.39.1",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
     "@zxcvbn-ts/language-en": "^3.0.2",
@@ -56,7 +56,7 @@
     "tailwindcss": "^3.4.17",
     "tailwindcss-scoped-preflight": "^3.4.12",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.38.0",
+    "typescript-eslint": "^8.39.1",
     "webextension-polyfill": "^0.12.0"
   },
   "manifest": {
