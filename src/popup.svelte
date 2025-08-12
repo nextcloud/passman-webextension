@@ -42,12 +42,12 @@
 </script>
 
 {#if $extensionUnlockStateStore !== undefined}
-    <div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
+    <div class="twp-passman-webextension h-[28rem] w-[28rem] text-sm overflow-y-auto">
         <Router {routes}/>
         <Toaster />
     </div>
 {:else}
-    <div class="h-[28rem] w-[28rem] text-sm overflow-y-auto">
+    <div class="twp-passman-webextension h-[28rem] w-[28rem] text-sm overflow-y-auto">
         <Loading/>
     </div>
 {/if}

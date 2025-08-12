@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    margin: 0;
+}
+
 .link {
     cursor: pointer;
     text-decoration-line: underline;

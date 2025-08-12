@@ -1,3 +1,5 @@
+import { scopedPreflightStyles, isolateInsideOfContainer } from 'tailwindcss-scoped-preflight';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -14,5 +16,11 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        scopedPreflightStyles({
+            isolationStrategy: isolateInsideOfContainer('.twp-passman-webextension', {
+                except: '.no-twp-passman-webextension', // optional, to exclude some elements under .twp-passman-webextension from being preflighted, like external markup
+            }),
+        }),
+    ],
 }

@@ -37,7 +37,7 @@
     });
 </script>
 
-<div class="w-full h-screen flex flex-col justify-between">
+<div class="twp-passman-webextension w-full h-screen flex flex-col justify-between">
     <div class="flex-1 overflow-y-auto m-auto w-[28rem] text-sm">
         <Router {routes}/>
     </div>

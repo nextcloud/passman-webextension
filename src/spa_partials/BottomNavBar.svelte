@@ -7,7 +7,7 @@
     import { i18n } from "~lib/i18n";
 </script>
 
-<div class="flex flex-nowrap items-center justify-center space-x-4 border-t py-2">
+<div class="twp-passman-webextension flex flex-nowrap items-center justify-center space-x-4 border-t py-2">
     <InternalHrefLinkButton href="/home" title="{i18n.getMessage('credentials')}" small={true}
                             additionalClasses="flex flex-col items-center min-w-24 h-[52px]">
         <Icon data={search} scale={1.4}/>

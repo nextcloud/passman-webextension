@@ -65,6 +65,7 @@ const createIsolatedContainer = () => {
     const style = document.createElement("style");
     style.textContent = contentStylesText;
     mount.appendChild(style);
+    mount.classList.add("twp-passman-webextension");
 
     document.body.appendChild(mount);
 
