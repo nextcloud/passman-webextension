@@ -15,17 +15,24 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
 
                 const methodName = message.body.method as RemoteCallableFunctionNames;
                 const response = RemoteCallableFunctions.getRemoteCallableFunction(methodName)(message.body.args);
-                if (response) {
-                    sendResponse(response);
-                }
+                
+                // Always send a response to prevent channel closure errors
+                sendResponse(response ?? true);
+            } else {
+                // Send a response for unrecognized methods
+                sendResponse(null);
             }
+        } else {
+            // Send a response for unrecognized messages
+            sendResponse(null);
         }
     } catch (e) {
         console.error("[content script] Error processing message:", e);
         sendResponse(null);
-        // no false response allowed by the polyfill api; try null instead and holding the channel open by returning true
     }
-    return true; // Keep the message channel open for async responses
+    
+    // Always return true to indicate we will respond (even if synchronously)
+    return true;
 });
 
 // Use regular DOM with isolation instead of Shadow DOM
