@@ -34,7 +34,8 @@ Please be careful with this, since it is a development version and might not wor
 
 You can easily get the latest released developer version of the extension from
 - the chrome web store: https://chromewebstore.google.com/detail/passman-webextension-v3/ofngoamnbkaglfcpacagjdlmdhachdlc
-- the firefox addon store: (coming soon)
+- the firefox addon store: https://addons.mozilla.org/de/firefox/addon/passman-webextension-v3/
+    - after installation in Firefox you need to disable and enable the extension manually in [about:addons](about:addons) to fix the service worker [issue #16](https://gitlab.com/binsky08/passman-webextension-v3/-/issues/16)
 - the [releases page](https://gitlab.com/binsky08/passman-webextension-v3/-/releases)
 
 To load the extension manually (not from a store - you won't get updates from there) use the following manual steps:
