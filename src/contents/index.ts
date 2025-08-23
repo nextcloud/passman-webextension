@@ -42,11 +42,13 @@ mount.id = shadowRootContainerId;
 document.body.appendChild(mount);
 
 const shadowRoot = mount.attachShadow({ mode: "closed" });
-shadowRoot.adoptedStyleSheets = [];
-
 const passwordPickerContainer = document.createElement("div");
+passwordPickerContainer.classList.add("twp-passman-webextension");
 shadowRoot.appendChild(passwordPickerContainer);
 
+// it seems the contentStylesText import (that's used here) is causing that warning when building the extension:
+// DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+// More info: https://sass-lang.com/d/legacy-js-api
 const style = document.createElement("style");
 style.textContent = contentStylesText;
 shadowRoot.appendChild(style);
