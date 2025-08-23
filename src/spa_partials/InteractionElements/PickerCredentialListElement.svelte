@@ -26,7 +26,7 @@
 </script>
 
 {#if (decryptedPartialCredentialData)}
-    <div class="border-2 rounded-lg p-2 m-1 w-[98%] cursor-pointer" aria-hidden="true"
+    <div class="border-2 rounded-lg p-2 my-1 w-full cursor-pointer" aria-hidden="true"
          on:click={callback} on:keypress={() => {}} title="Click to auto fill">
         <div class="flex space-x-1" style="padding-left: 2px;">
             <div class="basis-2/12 flex items-center justify-center cursor-pointer">

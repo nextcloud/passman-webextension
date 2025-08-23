@@ -19,6 +19,7 @@
     import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import { i18n } from "~lib/i18n";
     import browser from "webextension-polyfill";
+    import CustomStorageService, { CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY } from "~services/CustomStorageService";
 
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
@@ -105,7 +106,15 @@
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
                         if (defaultVaultInfo) {
-                            let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
+                            const getUnsafeLocalStorage = await CustomStorageService.getUnsafeLocalStorage();
+                            let getCachedIfPossible = true;
+
+                            if ((await getUnsafeLocalStorage.get(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY)) === "true") {
+                                getCachedIfPossible = false;
+                                getUnsafeLocalStorage.remove(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY);
+                            }
+
+                            let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, getCachedIfPossible);
                             if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                                 myVault.vaultKey = defaultVaultInfo.password;
 

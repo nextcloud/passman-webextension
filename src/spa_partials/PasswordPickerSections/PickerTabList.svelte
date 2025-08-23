@@ -7,7 +7,7 @@
     } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { i18n } from "~lib/i18n";
 
-    export let selectedSection: PASSWORD_PICKER_SECTIONS = PASSWORD_PICKER_SECTIONS.LIST;
+    export let selectedSection: PASSWORD_PICKER_SECTIONS;
 
     let allDecryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 

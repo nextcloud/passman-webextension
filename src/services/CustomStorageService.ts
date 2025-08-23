@@ -8,6 +8,8 @@ import { get as idb_get, set as idb_set, del as idb_del } from 'idb-keyval';
 import ExtensionPassmanClientPersistenceService from "./ExtensionPassmanClientPersistenceService";
 import { customIndexedDBService } from "./CustomIndexedDBService";
 
+export const CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY = 'contentScriptModifiedCredentials';
+
 export default class CustomStorageService {
     private static sessionStorage: Storage;
     private static unsafeLocalStorage: Storage;

@@ -6,6 +6,16 @@ import {
     GetCredentialsListMessagingFilterType,
     type GetCredentialsListMessagingResponse
 } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
+import type {
+    CreateCredentialForPickerMessagingResponse
+} from "~background/messages/createCredentialForPicker";
+import type {
+    GetPasswordGeneratorConfigurationMessagingRequest,
+    GetPasswordGeneratorConfigurationMessagingResponse
+} from "~background/messages/getPasswordGeneratorConfiguration";
+import type { DecryptedCredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
+import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
+import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import passwordPickerIcon from "data-base64:~../assets/images/passwordPickerIcon.svg";
 
 export enum PASSWORD_PICKER_SECTIONS {
@@ -232,5 +242,77 @@ export class PasswordPickerService {
             console.log('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
             return value;
         });
+    }
+
+    public static createCredentialFromPicker = (credentialData: Partial<DecryptedCredentialInterface>): Promise<CreateCredentialForPickerMessagingResponse> => {
+        return sendToBackground({
+            name: "createCredentialForPicker",
+            body: {
+                credentialData: credentialData
+            }
+        }).then(async (value: CreateCredentialForPickerMessagingResponse) => {
+            console.log('Credential creation result:', value);
+            if (value.status && value.decryptedPartialCredentialData) {
+                // this way we don't need to reload the full picker data, but just add the new credential to the list
+                PasswordPickerService.decryptedPartialCredentialData.push(value.decryptedPartialCredentialData);
+            }
+            return value;
+        });
+    }
+
+    public static getFormDataFromCurrentPage = (): { label?: string, username?: string, email?: string, password?: string, url?: string } => {
+        const pageUrl = window.location.href;
+        const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
+        
+        let formData: { label?: string, username?: string, email?: string, password?: string, url?: string } = {
+            url: pageUrl
+        };
+
+        if (loginFieldsPerForm.length > 0) {
+            const loginFields = loginFieldsPerForm[0]; // Use first form found
+            
+            // Extract username
+            if (loginFields.usernameField?.value) {
+                formData.username = loginFields.usernameField.value;
+            }
+
+            // Extract email
+            if (loginFields.emailField?.value) {
+                formData.email = loginFields.emailField.value;
+            }
+            
+            // Extract password
+            if (loginFields.passwordFields && loginFields.passwordFields.length > 0) {
+                formData.password = loginFields.passwordFields[0].value;
+            }
+            
+            // Generate label from domain
+            try {
+                const urlObj = new URL(pageUrl);
+                formData.label = urlObj.hostname;
+            } catch {
+                formData.label = pageUrl;
+            }
+        }
+
+        return formData;
+    }
+
+    public static getPasswordGeneratorConfiguration = async (): Promise<PasswordGeneratorConfigurationInterface> => {
+        try {
+            const configResponse = await sendToBackground<GetPasswordGeneratorConfigurationMessagingRequest, GetPasswordGeneratorConfigurationMessagingResponse>({
+                name: "getPasswordGeneratorConfiguration",
+                body: {}
+            });
+            
+            if (configResponse.status && configResponse.passwordGeneratorConfiguration) {
+                return configResponse.passwordGeneratorConfiguration;
+            }
+        } catch (error) {
+            console.error('Error getting password generator configuration:', error);
+        }
+        
+        // Return default configuration as fallback
+        return PasswordGeneratorService.getDefaultConfig();
     }
 }

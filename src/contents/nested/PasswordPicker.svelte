@@ -102,12 +102,12 @@
 {#if extensionIsUnlocked}
     <div id="password_picker" style="{customPickerStyle}">
         <div class="tabs">
-            <!--<div class="tab add" data-name="add" aria-hidden="true"
+            <div class="tab add" data-name="add" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.ADD}>
                 <span class="picker-fa" title={i18n.getMessage("add_account")}>
                     <Icon data={plus} scale={1.0}/>
                 </span>
-            </div>-->
+            </div>
             <div class="tab list" data-name="list" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.LIST}>
                 <span class="picker-fa" title={i18n.getMessage("accounts")}>
@@ -138,11 +138,10 @@
                 </span>
             </div>
         </div>
-        <div class="tab-content">
+        <div class="tab-content p-2">
             {#if pickerPopupIsOpen}
                 {#if selectedSection === PASSWORD_PICKER_SECTIONS.ADD}
-                    add section
-                    <PickerTabAdd/>
+                    <PickerTabAdd bind:selectedSection/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.LIST}
                     <PickerTabList bind:selectedSection/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.SEARCH}
