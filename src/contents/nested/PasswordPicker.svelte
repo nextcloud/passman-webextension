@@ -69,8 +69,9 @@
 
                     // Check if the click was inside our root container
                     const wasInsidePicker = path.some(node => {
-                        return node instanceof Element &&
-                               node.id === shadowRootContainerId;
+                        // Avoid instanceof Element across realms (Firefox Xray)
+                        return (node as Node)?.nodeType === Node.ELEMENT_NODE &&
+                               (node as Element).id === shadowRootContainerId;
                     });
 
                     if (!wasInsidePicker) {
