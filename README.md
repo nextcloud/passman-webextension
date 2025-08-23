@@ -65,12 +65,9 @@ Optionally use pnpm (recommended by Plasmo, but not me): https://pnpm.io/install
 bun install
 ```
 
-If you get something like this: `Blocked 4 postinstalls. Run 'bun pm untrusted' for details`, make sure to run these postinstalls:
+If you get something like this: `Blocked 1 postinstall. Run 'bun pm untrusted' for details`, you can just ignore it. All required packages that needs to be trusted are already declared at `trustedDependencies` in the `package.json`.
 
-```bash
-bun pm untrusted
-bun pm trust --all
-```
+Sure, if you have build issues, run `bun pm untrusted` and the postinstalls with `bun pm trust --all`, but this should not be needed! - on my system it causes some issues with the build process (and ends in a segfault).
 
 ### Run the development server
 
@@ -137,14 +134,37 @@ bun run build
 
 This should create a production bundle for your extension, ready to be zipped and published to the stores.
 
-For some reason the build failed with bun v1.2.3 but worked with bun v1.1.31.
-
 ## Submit to the webstores
 
 The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
 
 ## Troubleshooting
 
-If you have a general build error, try / check the workaround described here: https://github.com/parcel-bundler/watcher/issues/159
+- If you have a general build error, try / check the workaround described here: https://github.com/parcel-bundler/watcher/issues/159
 
-Sometimes the build fails with a segfault error. I have absolutely no idea why. But try running `pnpm run build` instead.
+- Sometimes the build fails with a segfault error. I did some investigations and found out that it is caused by the `@swc/core` package (at least on my system).
+    - I have no idea why, but it seems to be a problem with the `@swc/core` package.
+        - Try to remove node_modules and bun.lock and run `bun i` again.
+    - I have tried to (force) use the `@swc/wasm` package instead, but I didn't get it work.
+    - Since swc in only used by bun, try running `pnpm run build` instead.
+
+If you want to go into further segvault investigation, you can use the following command to get started with some information:
+
+Use `gdb` to get a backtrace of the segfault:
+```bash
+gdb $(command -v bun) core
+(gdb) run dev-build-ff
+(gdb) bt
+```
+
+Use `strace` to get more information about the child processes that are possibly causing the segfault:
+
+```bash
+strace -f -tt -s 2000 -y -o /tmp/segv.log bun run dev-build-ff
+
+pids=( $(grep -E 'killed by SIGSEGV' /tmp/segv.log | awk -F: '{print $1}' | awk '{print $1}' | sort -u) )
+
+for i in "${pids[@]}"; do grep -n "^${i} " /tmp/segv.log | grep execve | head -1; done
+```
+
+(increase the strace `-s` parameter to get more information like to `-s 200000`, but this will create a larger log file around 2 GB or even more)
