@@ -4,6 +4,7 @@
 module.exports = {
     plugins: {
         tailwindcss: {},
-        autoprefixer: {}
+        autoprefixer: {},
+        'postcss-rem-to-pixel': { rootValue: 16 }, // lock to 16px = 1rem
     }
 }
