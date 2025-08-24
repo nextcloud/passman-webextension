@@ -120,13 +120,13 @@
                     <Icon data={search} scale={1.0}/>
                 </span>
             </div>
-            <!--<div class="tab generate" data-name="generate" aria-hidden="true"
+            <div class="tab generate" data-name="generate" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
                 <span class="picker-fa" title={i18n.getMessage("password_generator")} style="padding-bottom: 7px;">
                     <Icon data={refresh} scale={1.0}/>
                 </span>
             </div>
-            <div class="tab ignore" data-name="ignore" aria-hidden="true"
+            <!--<div class="tab ignore" data-name="ignore" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.IGNORE}>
                 <span class="picker-fa" title={i18n.getMessage("ignore_site_tab")} style="padding-bottom: 7px;">
                     <Icon data={ban} scale={1.0}/>
@@ -147,7 +147,6 @@
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.SEARCH}
                     <PickerTabSearch/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.GENERATE}
-                    generate section
                     <PickerTabGenerate/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.IGNORE}
                     ignore section
