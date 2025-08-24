@@ -44,6 +44,44 @@ document.body.appendChild(mount);
 const shadowRoot = mount.attachShadow({ mode: "closed" });
 const passwordPickerContainer = document.createElement("div");
 passwordPickerContainer.classList.add("twp-passman-webextension");
+
+// workaround to prevent host pages from stealing the keydown event for our picker inputs
+// see https://gitlab.com/binsky08/passman-webextension-v3/-/issues/22
+passwordPickerContainer.addEventListener(
+    "keydown",
+    (e: KeyboardEvent) => {
+        console.log("keydown in closed shadow twp-passman-webextension container:", e.key, e.target);
+
+        const target = e.target as HTMLElement;
+
+        // only forward to inputs/textareas/content-editables
+        if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target.isContentEditable) {
+            // only handle character keys (skip modifiers, arrows, etc.)
+            if (e.key.length === 1) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                // fix IDE type errors
+                const _target = target as HTMLInputElement;
+
+                // insert character at cursor
+                const start = _target.selectionStart ?? _target.value.length;
+                const end = _target.selectionEnd ?? _target.value.length;
+                const before = _target.value.substring(0, start);
+                const after = _target.value.substring(end);
+                _target.value = before + e.key + after;
+
+                // move cursor
+                _target.selectionStart = _target.selectionEnd = start + 1;
+
+                // fire input event so frameworks detect change
+                const inputEvent = new Event("input", { bubbles: true, composed: true });
+                _target.dispatchEvent(inputEvent);
+            }
+        }
+    },
+    true // use capture so it runs before GitLab's document listeners
+);
 shadowRoot.appendChild(passwordPickerContainer);
 
 // it seems the contentStylesText import (that's used here) is causing that warning when building the extension:
