@@ -50,8 +50,6 @@ passwordPickerContainer.classList.add("twp-passman-webextension");
 passwordPickerContainer.addEventListener(
     "keydown",
     (e: KeyboardEvent) => {
-        console.log("keydown in closed shadow twp-passman-webextension container:", e.key, e.target);
-
         const target = e.target as HTMLElement;
 
         // only forward to inputs/textareas/content-editables
