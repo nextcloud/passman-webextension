@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "HTTP kullanıyorsunuz! Oturum açma kimlik doğrulama bilgileriniz düz metin olarak gönderilecek. Passman kimlik doğrulama bilgileriniz şifrelenmiş durumda.",
+        "message": "HTTP kullanıyorsunuz! Oturum açma kimlik doğrulama bilgileriniz düz yazı olarak gönderilecek. Passman kimlik doğrulama bilgileriniz şifrelenmiş durumda.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -284,7 +284,7 @@
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Uyarı! Ana parolanız düz metin olarak kaydedilecek.",
+        "message": "Uyarı! Ana parolanız düz yazı olarak kaydedilecek.",
         "description": "Remember master password"
     },
     "done": {
@@ -532,7 +532,7 @@
         "description": "Add a custom field"
     },
     "text": {
-        "message": "metin",
+        "message": "yazı",
         "description": "To describe a textual input field"
     },
     "extName": {
