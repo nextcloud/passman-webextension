@@ -144,15 +144,15 @@
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Ignorer protokol for matchning af site",
+        "message": "Ignorer protokol for matchning af websted",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Ignorer underdomæne for matchning af site",
+        "message": "Ignorer underdomæne for matchning af websted",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Ignorer port for matchning af site",
+        "message": "Ignorer port for matchning af websted",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
@@ -160,7 +160,7 @@
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignorer sti for matchning af site",
+        "message": "Ignorer sti for matchning af websted",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
@@ -220,7 +220,7 @@
         "description": "updated, lowercase"
     },
     "site_ignored": {
-        "message": "Ignoreret sted",
+        "message": "Websted ignoreret",
         "description": "Site ignored"
     },
     "url_ignored": {
@@ -228,7 +228,7 @@
         "description": "URL ignored"
     },
     "update": {
-        "message": "Opdater",
+        "message": "Opdatér",
         "description": "Update"
     },
     "ignore_site": {
@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Vælg den boks, du vil holde synkroniseret med webbrowseren.",
+        "message": "Vælg den boks, som du vil holde synkroniseret med webbrowseren.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,7 +276,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Denne adgangskode vil blive brugt til at kryptere alle dine indstillinger i udvidelsen. Du kan vælge at gemme denne adgangskode lokalt, men den vil blive gemt i KLAR TEKST.",
+        "message": "Denne adgangskode vil blive brugt til at kryptere alle dine indstillinger i udvidelsen. Du kan vælge at gemme denne adgangskode lokalt, men den vil blive gemt i REN TEKST.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -308,7 +308,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Rediger",
+        "message": "Redigér",
         "description": "Edit"
     },
     "server_settings": {
@@ -320,7 +320,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Sæt Master adgangskode",
+        "message": "Sæt hovedadgangskode",
         "description": "Set a master password"
     },
     "finish": {
