@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman – O xestor de contrasinais para NextCloud / ownCloud",
+        "message": "Passman — O xestor de contrasinais para NextCloud / ownCloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -120,11 +120,11 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman – $CREDENTIAL_AMOUNT$ $PLURAL$ atopado para esta páxina",
+        "message": "Passman — $CREDENTIAL_AMOUNT$ $PLURAL$ atopado para esta páxina",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman – Bloqueado",
+        "message": "Passman — Bloqueado",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
