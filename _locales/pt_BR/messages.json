@@ -124,7 +124,7 @@
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Bloqueado",
+        "message": "Passman - Trancado",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
@@ -488,11 +488,11 @@
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Bloquear extensão",
+        "message": "Trancar extensão",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "A extensão Passman está bloqueada, desbloqueie para usar",
+        "message": "A extensão Passman está trancada, destranque para usar",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
@@ -500,7 +500,7 @@
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "Desbloquear",
+        "message": "Destrancar",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
