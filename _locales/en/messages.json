@@ -4,7 +4,7 @@
     "description": "Extension name"
   },
   "extDescription": {
-    "message": "Passman - The password manager for NextCloud / ownCloud",
+    "message": "Passman - The password manager for Nextcloud/ownCloud",
     "description": "Extension description"
   },
   "search_for": {
@@ -38,7 +38,7 @@
     }
   },
   "please_enter_nextcloud_credentials": {
-    "message": "Please enter your Nextcloud / ownCloud credentials",
+    "message": "Please enter your Nextcloud/ownCloud credentials",
     "description": "No credentials found for the current site"
   },
   "save_site": {
@@ -384,15 +384,15 @@
     "description": "Donate"
   },
   "nextcloud_settings": {
-    "message": "Nextcloud / ownCloud server settings",
-    "description": "Nextcloud / ownCloud server settings"
+    "message": "Nextcloud/ownCloud server settings",
+    "description": "Nextcloud/ownCloud server settings"
   },
   "select_default_vault": {
     "message": "Select default vault",
     "description": "Select default vault"
   },
   "ignored_sites": {
-    "message": "Ignored sites / URLs",
+    "message": "Ignored sites/URLs",
     "description": "Ignored sites"
   },
   "disable_page": {
@@ -424,7 +424,7 @@
     "description": "Invalid server URL"
   },
   "ignore_site_tab": {
-    "message": "Ignore site / page",
+    "message": "Ignore site/page",
     "description": "Invalid server URL"
   },
   "no_password_match": {
@@ -476,7 +476,7 @@
     "description": "Select password picker default tab"
   },
   "no_vaults": {
-    "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+    "message": "Sorry,no vaults found. Please create a vault via the Nextcloud/ownCloud app and try again.",
     "description": "Search"
   },
   "msg_reset_extension": {
