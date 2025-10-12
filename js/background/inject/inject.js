@@ -381,6 +381,36 @@ $j(document).ready(function () {
 
     _this.copyText = copyText;
 
+    function httpAuthRequest(args, sender, sendResponse) {
+        var login = args.data.login;
+        var requestDetails = args.data.requestDetails;
+        var username = (login.username) ? login.username : login.email;
+        var identity;
+
+        if (login.username && login.email)
+        {
+            identity = login.username + " (" + login.email + ")";
+        } else {
+            identity = username;
+        }
+
+        var useLogin = confirm("Passman: Login as " + identity + " on " + requestDetails.url + "?");
+        var credentials = null;
+
+        if (useLogin) {
+            credentials = {
+                username: username,
+                password: login.password
+            };
+        }
+
+        sendResponse({
+            credentials: credentials
+        });
+    }
+
+    _this.httpAuthRequest = httpAuthRequest;
+
     function init() {
         checkForMined();
         initForms();
@@ -403,10 +433,10 @@ $j(document).ready(function () {
         }
     }, 10);
 
-    API.runtime.onMessage.addListener(function (msg, sender) {
+    API.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         //console.log('Method call', msg.method);
         if (_this[msg.method]) {
-            _this[msg.method](msg.args, sender);
+            _this[msg.method](msg.args, sender, sendResponse);
         }
     });
 });

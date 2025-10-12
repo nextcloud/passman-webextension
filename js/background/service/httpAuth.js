@@ -37,7 +37,7 @@
     }
 
     var auth_tries = [];
-    var provideCredentialsSync = function (requestDetails) {
+    var provideCredentialsSync = function (requestDetails, asyncCallback) {
         if (!auth_tries[requestDetails.requestId]) {
             auth_tries[requestDetails.requestId] = 0;
         }
@@ -48,23 +48,50 @@
         // assume our credentials were bad, and give up.
         if (pendingRequests.indexOf(requestDetails.requestId) === -1) {
             pendingRequests.push(requestDetails.requestId);
-            return {
-                authCredentials: {
-                    username: (login.username) ? login.username : login.email ,
-                    password: login.password
-                }
-            };
+            if (login) {
+                var data = {
+                    login: login,
+                    requestDetails: requestDetails
+                };
+                API.tabs.sendMessage(requestDetails.tabId, {
+                    method: 'httpAuthRequest',
+                    args: {
+                        data: data
+                    }
+                }).then(function (response) {
+                    var result;
+                    if (response != null) {
+                        var credentials = response.credentials;
+                        if (credentials != null) {
+                            result = {
+                                authCredentials: credentials
+                            };
+                        }
+                    } else {
+                        var username = (login.username) ? login.username : login.email;
+                        result = {
+                            authCredentials: {
+                                username: username,
+                                password: login.password
+                            }
+                        };
+                    }
+                    asyncCallback(result);
+                });
+            } else {
+                asyncCallback(undefined);
+            }
 
         } else {
             console.warn("bad credentials for: " + requestDetails.url + ', Showing login dialog');
             //return {cancel: true};
-            return undefined;
+            asyncCallback(undefined);
         }
 
     };
 
 
-    API.webRequest.onAuthRequired.addListener(provideCredentialsSync, {urls: ["<all_urls>"]}, ["blocking"]);
+    API.webRequest.onAuthRequired.addListener(provideCredentialsSync, {urls: ["<all_urls>"]}, ["asyncBlocking"]);
 
     API.webRequest.onCompleted.addListener(
         completed,
