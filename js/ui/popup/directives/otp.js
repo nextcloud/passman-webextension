@@ -54,7 +54,7 @@
                     }
 
                     for (i = 0; i + 4 <= bits.length; i += 4) {
-                        var chunk = bits.substr(i, 4);
+                        var chunk = bits.slice(i, i + 4);
                         hex = hex + parseInt(chunk, 2).toString(16);
                     }
                     return hex;
