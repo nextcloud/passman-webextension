@@ -280,7 +280,7 @@
     "description": "Let's begin!"
   },
   "intro_text": {
-    "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
+    "message": "This wizard will guide you through the steps to set up the extension and keep all your passwords synchronized.",
     "description": "Cancel"
   },
   "cancel": {
