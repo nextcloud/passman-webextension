@@ -177,6 +177,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .pwField .mdi-content-copy ~ input {
   width: calc(100% - 96px); }
 
+.custom_field .mdi-content-copy ~ input {
+  width: calc(100% - 64px); }
+
 .mdi-content-copy ~ input {
   width: calc(100% - 32px); }
 
@@ -744,8 +747,10 @@ label, .switch-label, label:not(.input-checkbox):not(.label) {
   border-right: 1px solid #333333; }
 
 .tab-wrap .tab-label-content label.tab-title {
-  padding: 16px 90px;
-  margin-bottom: 0; }
+  padding-top: 18px;
+  margin-bottom: 14px;
+  width: 100%;
+  text-align: center; }
 
 .tab-wrap .tab-label-content.account .tab-content.active {
   margin-top: 10px; }
