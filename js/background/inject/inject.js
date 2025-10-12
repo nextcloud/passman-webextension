@@ -130,11 +130,13 @@ $j(document).ready(function () {
     }
 
     function getMaxZ() {
-        return Math.max.apply(null,
+        var maxIndex = Math.max.apply(null,
             $j.map($j('body *'), function (e) {
                 if ($j(e).css('position') !== 'static')
                     return parseInt($j(e).css('z-index')) || 1;
             }));
+        maxIndex = maxIndex>0?maxIndex:9999;
+        return maxIndex;
     }
 
     var activeForm;

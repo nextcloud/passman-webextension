@@ -79,17 +79,34 @@
                     PAPI.username = $scope.settings.nextcloud_username;
                     PAPI.password = $scope.settings.nextcloud_password;
                     PAPI.getVaults(function (vaults) {
-                        if (vaults.hasOwnProperty('error')) {
-                            var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
-                            $scope.errors.push(errors);
-                            notify(errors);
-                            callback(false);
-                        }
-                        else {
-                            $scope.vaults = vaults;
-                            callback(true);
-                        }
-                        $scope.$apply();
+			if(angular.equals(vaults, [])) {
+			    // retry if returns empty
+			    PAPI.getVaults(function(vaults) {
+				if (vaults.hasOwnProperty('error')) {
+				    var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
+				    $scope.errors.push(errors);
+				    notify(errors);
+				    callback(false);
+				}
+				else {
+				    $scope.vaults = vaults;
+				    callback(true);
+				}
+				$scope.$apply();
+			    });
+			} else {
+                            if (vaults.hasOwnProperty('error')) {
+				var errors = API.i18n.getMessage('invalid_response_from_server', [vaults.result.status, vaults.result.statusText]);
+				$scope.errors.push(errors);
+				notify(errors);
+				callback(false);
+                            }
+                            else {	
+				$scope.vaults = vaults;
+				callback(true);
+                            }
+                            $scope.$apply();
+			}
                     });
                 },
                 vault: function (callback) {
