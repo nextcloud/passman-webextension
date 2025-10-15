@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - Meneja nywila kwa NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Tafuta kwa",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Hakuna vitambulisho vilivyopatikana vya tovuti hii.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Hakuna vitambulisho vilivyopatikana",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Vidokezo",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Jibu lisilo sahihi kutoka kwa seva: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Tafadhali weka kitambulisho chako cha Nextcloud / ownCloud",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Hifadhi tovuti",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Kizalisha nywila",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Tengeneza nenosiri",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Geuza mwonekano",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Geuza chaguo mahiri",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Tumia nenosiri",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Baada ya kuunda, unaweza kuhariri kitambulisho katika Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Urefu wa nenosiri",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Kiwango cha chini cha tarakimu",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Epuka wahusika wenye utata",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Inahitaji kila aina ya wahusika",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Ongeza akaunti",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Akaunti",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Lebo",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Jina la mtumiaji",
+        "description": "Username"
+    },
+    "email": {
+        "message": "Barua pepe",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Ongeza",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Kitambulisho kimeundwa",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Nenosiri",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Nenosiri(rudia)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Imepatikana kuingia mpya",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Imepatikana nenosiri lililobadilishwa kwa mtumiaji",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ imepatikana kwa ukurasa huu",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Imefungwa",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "URL iliyobadilishwa iligunduliwa kwa",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "Kitambulisho",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "Vitambulisho",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Kipima muda upya [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Puuza itifaki ya kulinganisha tovuti",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Puuza kikoa kidogo kwa kulinganisha tovuti",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Puuza mlango kwa kulinganisha tovuti",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Unatumia HTTP! Vitambulisho vya kuingia vitatumwa kwa maandishi wazi. Vitambulisho vyako vya Passman bado vimesimbwa kwa njia fiche.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Puuza njia ya kulinganisha tovuti",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Washa ujazaji wa fomu kiotomatiki ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Washa fomu ya kuwasilisha kiotomatiki baada ya kuchagua akaunti",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Uliza kusasisha URL ya kitambulisho ikiwa hailingani na URL ya sasa",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Lemaza kujaza kiotomatiki kwa kivinjari",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Ingiza kikoa au TLD ili kupuuza na ubonyeze  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Washa kichagua nenosiri",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Nenosiri linapopatikana, nenda kwenye orodha badala ya kichupo amilifu cha mwisho",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Ficha chaguzi za hali ya juu",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Onyesha chaguo za juu",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Washa hali ya utatuzi",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Hifadhi",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Inahifadhi",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Kitambulisho kimehifadhiwa",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Kitambulisho kimesasishwa ",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Tovuti imepuuzwa",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL imepuuzwa",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Sasisha",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Puuza tovuti",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Hifadhi sifa za tovuti hii",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Tafuta vitambulisho",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Karibu kwenye kiendelezi cha wavuti cha Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL ya seva",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Hebu tuanze!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Mchawi huu utakuongoza katika hatua za kusanidi kiendelezi na kuweka manenosiri yako yote yakiwa yameoanishwa.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Ghaili",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Vault chaguo-msingi",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Chagua vault ambayo ungependa kusawazisha na kivinjari.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Weka nenosiri kuu",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Nenosiri hili litatumika kusimba kwa njia fiche mipangilio yako yote kwenye kiendelezi. Unaweza kuchagua kuhifadhi nenosiri hili ndani ya nchi, lakini litahifadhiwa katika PLAINTEXT.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Kumbuka nenosiri kuu",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Onyo! Nenosiri lako kuu litahifadhiwa katika maandishi wazi.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Imefanyika",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Viwanja Maalum",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Kuu",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Thamani",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Orodha",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Hariri",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Server settings",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Mipangilio ya vault",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Pangilia nenosiri kuu",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Maliza",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Ukipenda usisahau kuchangia",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Funga",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Iliyopita",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Rudi",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Nakala",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Ijayo",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Endelea",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Changia",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Mipangilio ya seva ya Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Chagua vault chaguo-msingi",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Tovuti / URL zilizopuuzwa",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Zima ukurasa",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Zima tovuti",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Je, ungependa kuzima Passman kwa ukurasa wa sasa, au kwa tovuti nzima?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Hakuna tovuti zilizopuuzwa",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Nenosiri la Vault",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Tafadhali jaza lebo",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Seva ya URL si halali",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Puuza tovuti / ukurasa",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Manenosiri hayalingani",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Ufunguo batili wa vault!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Kitufe kikuu kitupu!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Mipangilio",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Baada ya mchakato wa usanidi kukamilika, unaweza kuongeza akaunti zaidi.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Akaunti imeongezwa",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Chagua vault",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Futa",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Tafuta",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Kitambulisho kimefutwa",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Wakati kiteua Nenosiri hakiwezi kupata kitambulisho chochote, kitaenda kwa:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Samahani, hakuna vaults zilizopatikana. Tafadhali fungua kihifadhi kupitia programu ya Nextcloud / ownCloud na ujaribu tena.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Unaweza kuweka upya nenosiri lako. Hii itaweka upya kiendelezi kwa hali yake chaguomsingi.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Umesahau nenosiri?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Weka upya kiendelezi",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Ndiyo, nina uhakika!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Huna ruhusa ya kuhariri kitambulisho hiki.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Mipangilio ya seva isiyo sahihi",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Onyesha upya orodha ya vitambulisho",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Msanidi hutegemea michango, tafadhali tuunge mkono",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Funga kiendelezi",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Kiendelezi cha Passman kimefungwa, fungua ili kukitumia",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Nenosiri kuu batili!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Fugua",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Tumepata vitambulisho vya $AMOUNT$ vya tovuti hii",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Hifadhi kwa $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": " Inahifadhi kwa $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ vitambulisho katika hifadhidata",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman anakuingiza kama $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Vault",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Ongeza uga maalum",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "maandishi",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
