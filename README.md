@@ -168,3 +168,9 @@ for i in "${pids[@]}"; do grep -n "^${i} " /tmp/segv.log | grep execve | head -1
 ```
 
 (increase the strace `-s` parameter to get more information like to `-s 200000`, but this will create a larger log file around 2 GB or even more)
+
+## The migration from Plasmo to WXT
+```
+cd ~/Entwicklung
+bunx wxt@latest init passman-webextension-v3-wxt
+```

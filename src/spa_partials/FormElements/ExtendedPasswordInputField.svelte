@@ -10,7 +10,7 @@
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
     import refresh from "svelte-awesome/icons/refresh";
     import CopyClipboardButton from "../InteractionElements/CopyClipboardButton.svelte";
-    import { i18n } from "~lib/i18n";
+    import { i18n } from "~/lib/i18n";
 
     export let required = false;
     export let readonly = false;

@@ -1,11 +1,11 @@
 import { sha512 } from "js-sha512";
-import CustomStorageService from "~services/CustomStorageService";
-import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+import CustomStorageService from "./CustomStorageService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
-import { ExtensionBadgeService } from "~services/backend/ExtensionBadgeService";
-import ContextMenuService from "~services/backend/ContextMenuService";
+import { ExtensionBadgeService } from "./backend/ExtensionBadgeService";
+import ContextMenuService from "./backend/ContextMenuService";
 import type { PassmanClient } from "@binsky/passman-client-ts/lib/PassmanClient";
-import type { BackendPassmanClient } from "~lib/BackendPassmanClient";
+import type { BackendPassmanClient } from "../lib/BackendPassmanClient";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';

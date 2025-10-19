@@ -1,6 +1,6 @@
 <script lang="ts">
-    import passmanImage from "data-base64:~../assets/images/passman.svg";
-    import passmanBlueWhiteImage from "data-base64:~../assets/images/passman-blue-white.svg";
+    import passmanImage from "~/assets/images/passman.svg";
+    import passmanBlueWhiteImage from "~/assets/images/passman-blue-white.svg";
 
     export let show: boolean = true;
 </script>

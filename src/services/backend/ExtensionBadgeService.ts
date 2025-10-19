@@ -1,8 +1,8 @@
-import ExtensionUnlockService from "~services/ExtensionUnlockService";
-import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
+import ExtensionUnlockService from "@/services/ExtensionUnlockService";
+import { CustomCredentialFilterService } from "@/services/CustomCredentialFilterService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
-import ContextMenuService from "~services/backend/ContextMenuService";
-import { i18n } from "~lib/i18n";
+import ContextMenuService from "@/services/backend/ContextMenuService";
+import { i18n } from "@/lib/i18n";
 import browser from "webextension-polyfill";
 
 export class ExtensionBadgeService {

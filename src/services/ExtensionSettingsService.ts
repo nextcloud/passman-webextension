@@ -1,11 +1,11 @@
-import CustomStorageService from "~services/CustomStorageService";
+import CustomStorageService from "./CustomStorageService";
 import { PassmanClient } from "@binsky/passman-client-ts";
 import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
-import { NextcloudServerMessagingConnector } from "~lib/NextcloudServerMessagingConnector";
-import { CustomPassmanClientLoggingService } from "~services/frontend/CustomPassmanClientLoggingService";
-import { BackendPassmanClient } from "~lib/BackendPassmanClient";
+import { NextcloudServerMessagingConnector } from "../lib/NextcloudServerMessagingConnector";
+import { CustomPassmanClientLoggingService } from "./frontend/CustomPassmanClientLoggingService";
+import { BackendPassmanClient } from "../lib/BackendPassmanClient";
 import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 

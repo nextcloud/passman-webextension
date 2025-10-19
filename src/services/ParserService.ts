@@ -1,4 +1,4 @@
-import tlds from 'assets/tlds.json';
+import tlds from '~/../public/tlds.json';
 
 export class ParserService {
     public static processURL = (inputUrl: string, ignoreProtocol: boolean, ignoreSubdomain: boolean, ignorePath: boolean, ignorePort: boolean) => {

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let additionalClasses = '';
 	export let paddingClasses = 'p-4 sm:p-6 xl:p-8';
 </script>

@@ -1,10 +1,10 @@
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import { sendToContentScript } from "@plasmohq/messaging";
-import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "~contents/remoteCallableFunctions";
-import ExtensionUnlockService from "~services/ExtensionUnlockService";
+import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
+import ExtensionUnlockService from "../ExtensionUnlockService";
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
-import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "../ExtensionSettingsService";
 import browser from "webextension-polyfill";
 
 enum ContextMenuItemId {

@@ -1,23 +1,25 @@
 <script lang="ts">
     import { field, form } from 'svelte-forms';
     import { min, required } from 'svelte-forms/validators';
-    import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
-    import Card from "~spa_partials/Card.svelte";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
+    import Card from "~/spa_partials/Card.svelte";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
-    import ExtensionUnlockService from "~services/ExtensionUnlockService";
-    import { push } from "~Router.svelte";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+    import ExtensionUnlockService from "~/services/ExtensionUnlockService";
+    // @ts-expect-error
+    import { push } from "~/Router.svelte";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import Select from 'svelte-select';
     import type {
         NextcloudServerInfoInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
-    import NotyService from "~services/frontend/NotyService";
-    import extensionUnlockStateStore, { ExtensionUnlockState } from '~stores/extensionUnlockStateStore';
-    import { i18n } from "~lib/i18n";
+    import NotyService from "~/services/frontend/NotyService";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from '~/stores/extensionUnlockStateStore';
+    import { i18n } from "~/lib/i18n";
+    import { sendMessage } from "@/entrypoints/background/messaging";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -52,10 +54,7 @@
             persistence: ''
         };
 
-        sendToBackground({
-            name: "addNewServerConnection",
-            body: loginData
-        }).then(async (value) => {
+        sendMessage('addNewServerConnection', loginData).then(async (value) => {
             console.log(value.status);
             console.log(value.message);
             console.log(value.vaultSelectionList);
@@ -80,17 +79,15 @@
             return;
         }
         lockDefaultVaultButton = true;
-        sendToBackground({
-            name: "setDefaultVault",
-            body: {
-                guid: selectedVaultInfo.guid,
-                password: selectedVaultPassword
-            }
+
+        sendMessage('setDefaultVault', {
+            guid: selectedVaultInfo.guid,
+            password: selectedVaultPassword
         }).then((value) => {
             if (value.status) {
                 ExtensionUnlockService.isSetupDone().then((isSetupDone) => {
                     if (!isSetupDone) {
-                        $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
+                        extensionUnlockStateStore.set(ExtensionUnlockState.UNLOCKED);
                         ExtensionUnlockService.setSetupDone().then(() => {
                             push('/home');
                         });
@@ -105,12 +102,11 @@
 
     const reloadPossibleVaultsInfo = async () => {
         lockDefaultVaultButton = true;
-        return sendToBackground({
-            name: "getPossibleVaultsInfo"
-        }).then((value) => {
+
+        return sendMessage('getPossibleVaultsInfo', undefined).then((value) => {
             if (value.status) {
                 vaultSelectionList = value.vaultSelectionList;
-            } else {
+            } else if (value.errorMessage !== null) {
                 vaultErrorMessage = value.errorMessage;
             }
 

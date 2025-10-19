@@ -1,16 +1,16 @@
-<script>
+<script lang="ts">
     export let callback = () => {
         undefined;
     };
     export let additionalClasses = '';
-    export let tabindex = undefined;
+    export let tabindex: number | undefined = undefined;
     export let title = '';
     export let disabled = false;
 
     export let small = false;
 
     // Create a wrapper function that doesn't pass the callback into the button event
-    const handleClick = (event) => {
+    const handleClick = (event: Event) => {
         event.preventDefault(); // Optional: prevent default behavior
         callback();
     };

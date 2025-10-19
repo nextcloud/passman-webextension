@@ -1,10 +1,10 @@
 <script lang="ts">
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
-    import { circleONotch, cogs, search } from "svelte-awesome/package/icons";
+    import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import { circleONotch, cogs, search } from "svelte-awesome/icons";
     import OnClickButton from "./InteractionElements/OnClickButton.svelte";
-    import gitlabImage from "data-base64:~../assets/images/gitlab.svg";
-    import { i18n } from "~lib/i18n";
+    import gitlabImage from "~/assets/images/gitlab.svg";
+    import { i18n } from "~/lib/i18n";
 </script>
 
 <div class="twp-passman-webextension flex flex-nowrap items-center justify-center space-x-4 border-t py-2">

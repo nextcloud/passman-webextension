@@ -2,14 +2,14 @@
     import type { CredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CredentialInterface";
     import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import type { FileInterface } from "@binsky/passman-client-ts/lib/Interfaces/File/FileInterface";
-    import NotyService from "~services/frontend/NotyService";
+    import NotyService from "~/services/frontend/NotyService";
     import trashO from "svelte-awesome/icons/trashO";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import Time from "svelte-time";
     import { CustomMathsService } from "@binsky/passman-client-ts/lib/Service/CustomMathsService";
     import InPlaceEdit from "../FormElements/InPlaceEdit.svelte";
-    import Utils from "~lib/Utils";
-    import { i18n } from "~lib/i18n";
+    import Utils from "~/lib/Utils";
+    import { i18n } from "~/lib/i18n";
 
     export let credentialData: CredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload

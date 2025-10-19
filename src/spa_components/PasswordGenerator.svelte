@@ -1,16 +1,16 @@
 <script lang="ts">
-    import PasswordMeter from "~spa_partials/PasswordMeter.svelte";
+    import PasswordMeter from "~/spa_partials/PasswordMeter.svelte";
     import { onMount } from "svelte";
-    import ExtendedPasswordInputField from "~spa_partials/FormElements/ExtendedPasswordInputField.svelte";
+    import ExtendedPasswordInputField from "~/spa_partials/FormElements/ExtendedPasswordInputField.svelte";
     import type {
         PasswordGeneratorConfigurationInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
-    import CustomCheckboxField from "~spa_partials/FormElements/CustomCheckboxField.svelte";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
-    import NotyService from "~services/frontend/NotyService";
-    import { i18n } from "~lib/i18n";
+    import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
+    import NotyService from "~/services/frontend/NotyService";
+    import { i18n } from "~/lib/i18n";
 
     let password = '';
     let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();

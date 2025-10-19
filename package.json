@@ -2,18 +2,20 @@
   "name": "passman-webextension-v3",
   "displayName": "Passman Webextension v3",
   "version": "0.0.5",
+  "type": "module",
   "description": "A modern webextension for the Passman Nextcloud app",
   "author": "Timo Triebensky <timo@binsky.org>",
   "packageManager": "pnpm@8.10.2",
   "scripts": {
-    "prebuild": "node ./assets/helper_scripts/update-tld-rules.js",
-    "dev": "plasmo dev --verbose",
-    "dev-ff": "plasmo dev --target=firefox-mv3",
-    "dev-build-ff": "plasmo build --target=firefox-mv3 --no-minify",
-    "build": "plasmo build",
-    "build-ff": "plasmo build --target=firefox-mv3",
-    "package": "plasmo package",
-    "package-ff": "plasmo package --target=firefox-mv3"
+    "prebuild": "node public/helper_scripts/update-tld-rules.js",
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "postinstall": "wxt prepare"
   },
   "dependencies": {
     "@plasmohq/messaging": "^0.7.2",
@@ -22,27 +24,32 @@
     "js-sha512": "^0.9.0",
     "plasmo": "^0.90.5",
     "regexparam": "^3.0.0",
-    "svelte": "^4.2.20",
-    "svelte-french-toast": "^1.2.0",
+    "svelte": "^5.41.0",
     "svelte-preprocess": "^5.1.4"
   },
   "devDependencies": {
     "@binsky/passman-client-ts": "^0.2.2",
-    "@ianvs/prettier-plugin-sort-imports": "^4.6.2",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@melt-ui/pp": "^0.3.2",
     "@melt-ui/svelte": "^0.86.6",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
-    "@types/node": "^22.17.2",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.14",
+    "@tsconfig/svelte": "^5.0.5",
+    "@types/node": "^22.18.11",
     "@types/pouchdb": "^6.4.2",
     "@types/pouchdb-adapter-memory": "^6.1.6",
     "@types/pouchdb-find": "^7.3.3",
-    "@types/webextension-polyfill": "^0.12.3",
-    "@typescript-eslint/parser": "^8.40.0",
+    "@types/webextension-polyfill": "^0.12.4",
+    "@typescript-eslint/parser": "^8.46.1",
+    "@webext-core/messaging": "^2.3.0",
+    "@wxt-dev/module-svelte": "^2.0.4",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
     "@zxcvbn-ts/language-en": "^3.0.2",
     "autoprefixer": "^10.4.21",
-    "eslint-plugin-svelte": "^3.11.0",
+    "eslint-plugin-svelte": "^3.12.4",
     "eslint-plugin-tailwindcss": "^3.18.2",
     "postcss": "^8.5.6",
     "postcss-rem-to-pixel": "^4.1.2",
@@ -50,41 +57,22 @@
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "svelte-awesome": "3.3.4",
+    "svelte-check": "^4.3.3",
     "svelte-forms": "^2.3.1",
     "svelte-select": "^5.8.3",
+    "svelte-sonner": "^1.0.5",
     "svelte-time": "^0.9.0",
     "svelty-picker": "^5.2.12",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.14",
     "tailwindcss-scoped-preflight": "^3.4.12",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.40.0",
-    "webextension-polyfill": "^0.12.0"
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1",
+    "webextension-polyfill": "^0.12.0",
+    "wxt": "^0.20.11"
   },
-  "manifest": {
-    "host_permissions": [
-      "https://*/*"
-    ],
-    "default_locale": "en",
-    "permissions": [
-      "contextMenus"
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [
-          "assets/content_styles/*.css",
-          "assets/content_styles/*.scss"
-        ],
-        "matches": [
-          "http://*/*",
-          "https://*/*"
-        ]
-      }
-    ],
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "{5258e630-6a3c-11f0-81fa-a87eea04a880}"
-      }
-    }
+  "overrides": {
+    "@wxt-dev/storage": "1.2.0"
   },
   "trustedDependencies": [
     "@parcel/watcher",

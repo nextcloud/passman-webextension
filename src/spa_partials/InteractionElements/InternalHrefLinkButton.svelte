@@ -1,5 +1,6 @@
-<script>
-    import { link } from "~Router.svelte";
+<script lang="ts">
+    // @ts-expect-error
+    import { link } from "~/Router.svelte";
 
     export let additionalClasses = '';
     export let href = '';

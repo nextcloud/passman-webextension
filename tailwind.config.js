@@ -1,10 +1,10 @@
 import { scopedPreflightStyles, isolateInsideOfContainer } from 'tailwindcss-scoped-preflight';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
         "./src/**/*.{html,js,svelte,ts}",
-        "./assets/**/*.{css,scss}"
+        "./public/**/*.{css,scss}"
     ],
     darkMode: "media",
     theme: {

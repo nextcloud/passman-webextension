@@ -7,7 +7,7 @@
 	export let disabled = false;
 
 	export let id;
-	export let value;
+	export let value: boolean;
 	export let name = '';
 	export let placeholder = '';
 	export let label;

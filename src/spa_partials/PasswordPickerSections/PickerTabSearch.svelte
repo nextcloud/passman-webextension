@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { GetCredentialsListMessagingResponse } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
-    import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
-    import PickerCredentialListElement from "~spa_partials/InteractionElements/PickerCredentialListElement.svelte";
-    import { i18n } from "~lib/i18n";
+    import type { GetCredentialsListMessagingResponse } from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { PasswordPickerService } from "~/services/frontend/PasswordPickerService";
+    import PickerCredentialListElement from "~/spa_partials/InteractionElements/PickerCredentialListElement.svelte";
+    import { i18n } from "~/lib/i18n";
 
     let searchResponse: GetCredentialsListMessagingResponse | null = null;
 

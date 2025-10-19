@@ -3,7 +3,7 @@
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
     import type { DecryptedCredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
     import { onMount } from "svelte";
-    import PasswordMeter from "~spa_partials/PasswordMeter.svelte";
+    import PasswordMeter from "~/spa_partials/PasswordMeter.svelte";
     import exclamationCircle from "svelte-awesome/icons/exclamationCircle";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
@@ -12,8 +12,8 @@
     import type { TagInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/TagInterface";
     import EditPasswordIntegrationForGeneral from "./EditPasswordIntegrationForGeneral.svelte";
     import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
-    import { i18n } from "~lib/i18n";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import { i18n } from "~/lib/i18n";
 
     interface DefiniteTagInterface extends TagInterface {
         text: string;
@@ -133,17 +133,17 @@
     </div>
     <div class="mt-2">
         {#if initDone}
-            <div use:melt={$root} class="flex flex-wrap gap-2 p-2 border border-gray-200 rounded-md">
+            <div use:melt={melt($root)} class="flex flex-wrap gap-2 p-2 border border-gray-200 rounded-md">
                 {#each $tagsStore as t}
-                    <div use:melt={$tag(t)} class="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
+                    <div use:melt={melt($tag(t))} class="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
                         <span>{t.value}</span>
-                        <button use:melt={$deleteTrigger(t)} class="text-gray-500 hover:text-gray-700">
+                        <button use:melt={melt($deleteTrigger(t))} class="text-gray-500 hover:text-gray-700">
                             ×
                         </button>
                     </div>
                 {/each}
                 <input
-                    use:melt={$input}
+                    use:melt={melt($input)}
                     type="text"
                     placeholder="Add a tag"
                     class="flex-1 min-w-[120px] outline-none bg-transparent"

@@ -3,7 +3,7 @@
     import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
     import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
     import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
-    import Utils from "~lib/Utils";
+    import Utils from "~/lib/Utils";
 
     export let password = '';
     export let score = 0;
