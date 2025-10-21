@@ -25,6 +25,9 @@ function fixSvelteSonnerPlugin() {
 export default defineConfig({
     srcDir: 'src',
     modules: ['@wxt-dev/module-svelte'],
+    zip: {
+        artifactTemplate: "{{name}}-prod-{{browser}}.zip"
+    },
     manifest: {
         host_permissions: [
             "https://*/*",
