@@ -1,5 +1,4 @@
 <script lang="ts">
-    import type { CredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CredentialInterface";
     import { onMount } from "svelte";
     import type {
         PasswordGeneratorConfigurationInterface
@@ -7,8 +6,11 @@
     import CustomCheckboxField from "../FormElements/CustomCheckboxField.svelte";
     import MySveltyPicker from "../InteractionElements/MySveltyPicker.svelte";
     import { i18n } from "~/lib/i18n";
+    import {
+        DecryptedCredentialInterface
+    } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
 
-    export let credentialData: CredentialInterface;
+    export let credentialData: DecryptedCredentialInterface;
     export let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface;
 
     let expire_time_string: string = "";

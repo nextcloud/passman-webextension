@@ -1,5 +1,7 @@
 <script lang="ts">
-    import type { CredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CredentialInterface";
+    import {
+        DecryptedCredentialInterface
+    } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
     import OtpGenerator from "~/spa_partials/InteractionElements/OTPGenerator.svelte";
     import CopyClipboardButton from "../InteractionElements/CopyClipboardButton.svelte";
     import CustomInputField from "../FormElements/CustomInputField.svelte";
@@ -14,7 +16,7 @@
     import { i18n } from "~/lib/i18n";
     import Utils from "~/lib/Utils";
 
-    export let credentialData: CredentialInterface;
+    export let credentialData: DecryptedCredentialInterface;
     let otpToken: string;
     const isInPopup = Utils.isInPopup();
 
