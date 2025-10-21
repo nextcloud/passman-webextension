@@ -8,12 +8,13 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
     import ExtendedPasswordInputField from "../FormElements/ExtendedPasswordInputField.svelte";
-    import { createTagsInput, melt, type Tag } from '@melt-ui/svelte';
+    import { type Tag } from "@binsky/melt/builders";
     import type { TagInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/TagInterface";
     import EditPasswordIntegrationForGeneral from "./EditPasswordIntegrationForGeneral.svelte";
     import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import { i18n } from "~/lib/i18n";
+    import { TagsInputOverwrite } from "@/lib/TagsInputOverwrite.svelte";
 
     interface DefiniteTagInterface extends TagInterface {
         text: string;
@@ -25,16 +26,38 @@
     let initDone = false;
     let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
     let showExtendedPasswordSettings = false;
-    const {
-        elements: { root, input, tag, deleteTrigger },
-        states: { tags: tagsStore }
-    } = createTagsInput({
+    let tagsReactivity = 0;
+
+    let tagsInput = new TagsInputOverwrite({
         unique: true,
         add: (tag: string) => {
             if (tag.length <= 2) return Promise.reject('Tag must be longer than 2 characters');
             return { id: tag, value: tag };
+        },
+        onTagsChange: (tags: Tag[]) => {
+            console.log("onTagsChange", tags);
+            tagsReactivity++;
+
+            if (initDone) {
+                // sync back this way, since we don't have any tagsStore.subscribe logic like in melt-ui for Svelte 4
+                credentialData.tags = tags.map(value => {
+                    return { text: value.value }
+                });
+            }
         }
     });
+
+    const newTagsInput = async (tags: Tag[]) => {
+        // always remove all current tags
+        for (const tag of [...tagsInput.tags]) {
+            await tagsInput.removeTag(tag);
+        }
+        // then add the new tags
+        for (const tag of tags) {
+            await tagsInput.addTag(tag.value);
+        }
+        tagsReactivity++;
+    }
 
     const markAsCompromised = () => {
         console.log('markAsCompromised');
@@ -56,17 +79,10 @@
     onMount(async () => {
         if (credentialData?.tags) {
             let filteredTags: DefiniteTagInterface[] = credentialData.tags.filter(tag => tag.text !== undefined) as DefiniteTagInterface[];
-            tagsStore.set(filteredTags.map(_value => { return { id: _value.text, value: _value.text }}));
+            await newTagsInput(filteredTags.map(_value => { return { id: _value.text, value: _value.text }}));
         } else {
-            tagsStore.set([]);
+            await newTagsInput([]);
         }
-        tagsStore.subscribe(tags => {
-            if (initDone) {
-                credentialData.tags = tags.map(value => {
-                    return { text: value.value }
-                });
-            }
-        });
 
         passwordGeneratorConfiguration = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.passwordGeneratorConfiguration, true) ?? passwordGeneratorConfiguration;
 
@@ -133,17 +149,20 @@
     </div>
     <div class="mt-2">
         {#if initDone}
-            <div use:melt={melt($root)} class="flex flex-wrap gap-2 p-2 border border-gray-200 rounded-md">
-                {#each $tagsStore as t}
-                    <div use:melt={melt($tag(t))} class="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
-                        <span>{t.value}</span>
-                        <button use:melt={melt($deleteTrigger(t))} class="text-gray-500 hover:text-gray-700">
-                            ×
-                        </button>
-                    </div>
-                {/each}
+            <div {...tagsInput.root} class="flex flex-wrap gap-2 p-2 border border-gray-200 rounded-md">
+                {#key tagsReactivity}
+                    {#each tagsInput.tags as tag (tag.id)}
+                        {@const tagItem = tagsInput.getTagItem({ tag })}
+                        <div {...tagItem.tag} class="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
+                            <span>{tag.value}</span>
+                            <button {...tagItem.deleteTrigger} aria-label={`remove ${tag.value} tag`} class="text-gray-500 hover:text-gray-700">
+                                ×
+                            </button>
+                        </div>
+                    {/each}
+                {/key}
                 <input
-                    use:melt={melt($input)}
+                    {...tagsInput.input}
                     type="text"
                     placeholder="Add a tag"
                     class="flex-1 min-w-[120px] outline-none bg-transparent"

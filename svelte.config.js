@@ -1,13 +1,7 @@
-import { preprocessMeltUI } from '@melt-ui/pp'
-
 const config = {
     extensions: ['.svelte'],
     compilerOptions: {},
-    preprocess: [
-        preprocessMeltUI() // must be last
-    ]
+    preprocess: []
 };
 
 export default config;
-
-
