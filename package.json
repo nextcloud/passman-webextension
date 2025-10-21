@@ -7,7 +7,7 @@
   "author": "Timo Triebensky <timo@binsky.org>",
   "packageManager": "pnpm@8.10.2",
   "scripts": {
-    "prebuild": "node public/helper_scripts/update-tld-rules.js",
+    "prebuild": "node public/helper_scripts/update-tld-rules.cjs",
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
     "build": "wxt build",
