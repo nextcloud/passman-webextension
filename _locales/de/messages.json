@@ -376,7 +376,7 @@
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Webauftritt deaktivieren",
+        "message": "Seite deaktivieren",
         "description": "Disable site"
     },
     "disable_picker_text": {
