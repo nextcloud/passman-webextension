@@ -17,7 +17,7 @@
         DecryptedPartialCredentialData
     } from "@/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
 
-    export let shadowRootContainerId: string;
+    let shadowRootContainerId: string;
 
     /**
      * State whether the password picker (in place overlay popup) is open or not.
@@ -46,6 +46,10 @@
     const hidePickerCallback = () => {
         customPickerStyle = "display: none;";
         pickerPopupIsOpen = false;
+    }
+
+    export const setShadowRootContainerId = (_shadowRootContainerId: string) => {
+        shadowRootContainerId = _shadowRootContainerId;
     }
 
     export const loadPickerForCurrentTab = () => {
@@ -154,3 +158,7 @@
         </div>
     </div>
 {/if}
+
+<style>
+    @import "../../../../public/content_styles/content.scss";
+</style>

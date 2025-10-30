@@ -82,7 +82,7 @@ export default defineConfig({
             postcss: {
                 plugins: [
                     // tailwindcss(),
-                    // require('autoprefixer'),
+                    require('autoprefixer'),
                     require('postcss-rem-to-pixel')({
                         rootValue: 16
                     })

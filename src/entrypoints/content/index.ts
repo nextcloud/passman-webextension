@@ -1,8 +1,10 @@
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "./remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
-//import contentStylesText from "data-text:../../../assets/content_styles/content.scss";
 import browser from "webextension-polyfill";
 import { mount, unmount } from "svelte";
+
+import "../../../public/content_styles/content.scss";
+import "../../../public/content_styles/password_picker.scss";
 
 // Modified message listener with error handling
 browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) {
@@ -36,11 +38,7 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
     return true;
 });
 
-// create closed shadow root container (needed since plasmo-csui does not support closed shadow roots - or it does but it is not working!)
 const shadowRootContainerId = "picker-root-container";
-const _mount = document.createElement("div");
-_mount.id = shadowRootContainerId;
-document.body.appendChild(_mount);
 
 // password picker will be checked and initialized by PasswordPicker.svelte if it is in content directory;
 // since we moved it to nested directory, we need to check for it here
@@ -58,6 +56,7 @@ export default defineContentScript({
             name: 'example-ui',
             position: 'inline',
             anchor: 'body',
+            //mode: 'closed',
             onMount: (container) => {
                 // Create the Svelte app inside the UI container
                 // @ts-ignore
@@ -70,7 +69,10 @@ export default defineContentScript({
             },
         });
 
+        ui.shadowHost.id = shadowRootContainerId;
+
         // 4. Mount the UI
         ui.mount();
+        ui.mounted?.setShadowRootContainerId(shadowRootContainerId);
     },
 });
