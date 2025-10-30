@@ -1,6 +1,6 @@
-import ExtensionUnlockService from "../../services/ExtensionUnlockService";
-import { ExtensionBadgeService } from "../../services/backend/ExtensionBadgeService";
-import ContextMenuService from "../../services/backend/ContextMenuService";
+import ExtensionUnlockService from "@/services/ExtensionUnlockService";
+import { ExtensionBadgeService } from "@/services/backend/ExtensionBadgeService";
+import ContextMenuService from "@/services/backend/ContextMenuService";
 import browser from "webextension-polyfill";
 
 // Import all message handlers to register them
@@ -17,6 +17,7 @@ import './messages/getAutofillEnabledState';
 import './messages/createCredentialForPicker';
 import './messages/addNewServerConnection';
 import './messages/getCredentialsForVault';
+import { executeOnMessageListenerRegistration } from "@/entrypoints/background/messaging";
 
 export default defineBackground(() => {
     // Executed when background is loaded
@@ -52,6 +53,8 @@ export default defineBackground(() => {
             });
         });
     });
+
+    executeOnMessageListenerRegistration();
 
     ContextMenuService.reInit();
 });
