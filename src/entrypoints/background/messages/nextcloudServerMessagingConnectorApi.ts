@@ -12,8 +12,8 @@ export interface NextcloudServerMessagingConnectorApiRequest {
 export interface NextcloudServerMessagingConnectorApiResponse {
     response: {
         status: number,
-        json: string,
-        headers: Headers
+        json: object | null,
+        headers: {[p: string]: string} // serializable Headers entries
     } | null,
     error: {
         name: string,
@@ -39,10 +39,11 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
             error = err;
         });
 
-    let json = null;
+    let json: object | null = null;
     try {
         json = response ? await response.json() : null;
-    } catch (_) {
+    } catch (responseToJsonError) {
+        console.warn('Failed getting response json, may intended, but shouldn\'t completely pass in silence', responseToJsonError);
     }
 
     // Get request method and URL for response classification
@@ -58,8 +59,14 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
 
     // Update background PassmanClient based on response
     if (response && error === null && json && backendPassmanClient !== null) {
-        console.log('updating background PassmanClient based on response', response, json, requestMethod, requestUrl, backendPassmanClient);
-        await NextcloudServerMessagingConnectorService.updateBackgroundPassmanClient(requestMethod, requestUrl, json, backendPassmanClient);
+        console.debug('updating background PassmanClient based on response', response, json, requestMethod, requestUrl, backendPassmanClient);
+        try {
+            await NextcloudServerMessagingConnectorService.updateBackgroundPassmanClient(requestMethod, requestUrl, json, backendPassmanClient);
+        } catch (e) {
+            console.error('failure while running updateBackgroundPassmanClient', e);
+            // escalate, since it should not quietly pass when internal state does not update correctly
+            throw e;
+        }
     }
 
     if (error !== null) {
@@ -78,7 +85,7 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
         response: response ? {
             status: response.status,
             json,
-            headers: response.headers
+            headers: Object.fromEntries(response.headers.entries())
         } : null,
         error: error ? {
             name: error.name,
