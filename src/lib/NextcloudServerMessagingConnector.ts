@@ -7,7 +7,6 @@ import type {
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { NextcloudServer } from "@binsky/passman-client-ts/lib/Model/NextcloudServer";
 import CustomStorageService from "@/services/CustomStorageService";
-import { DefaultPersistenceService } from "@binsky/passman-client-ts/lib/Service/DefaultPersistenceService";
 import { NextcloudServerMessagingConnectorService } from "@/services/NextcloudServerMessagingConnectorService";
 import ExtensionSettingsService from "@/services/ExtensionSettingsService";
 import { sendMessage } from "@/entrypoints/background/messaging";
@@ -23,10 +22,9 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      */
     constructor(serverData: NextcloudServerInfoInterface, logger: LoggingHandlerInterface) {
         super(serverData, logger, CustomStorageService.getExtensionPassmanClientPersistenceService());
-        // super(serverData, logger, new DefaultPersistenceService()); // disable caching for this frontend (popup) instance
     }
 
-    private handleConnectorJsonResponse = async <T>(response: any, errorCallback: (response: Error) => void): Promise<T | void> => {
+    private readonly handleConnectorJsonResponse = <T>(response: any, errorCallback: (response: Error) => void): T | void => {
         if (response.error) {
             return errorCallback(response.error);
         }
@@ -74,7 +72,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                 credentials: 'omit',
             }
         }).then(async (value) => {
-            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
             // todo: check again if we can use this here; got a request loop here last time, so it's disabled for now
             /*await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
                 'GET',
@@ -111,7 +109,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                 credentials: 'omit',
             }
         }).then(async (value) => {
-            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
             await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
                 'DELETE',
                 this.getApiUrl() + endpoint,
@@ -143,7 +141,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                 body: JSON.stringify(data),
             }
         }).then(async (value) => {
-            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
             await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
                 method,
                 this.getApiUrl() + endpoint,
