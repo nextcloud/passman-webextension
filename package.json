@@ -9,11 +9,11 @@
   "scripts": {
     "prebuild": "node public/helper_scripts/update-tld-rules.cjs",
     "dev": "wxt",
-    "dev:firefox": "wxt -b firefox",
+    "dev:firefox": "wxt -b firefox --mv2",
     "build": "wxt build",
-    "build:firefox": "wxt build -b firefox",
+    "build:firefox": "wxt build -b firefox --mv3",
     "zip": "wxt zip",
-    "zip:firefox": "wxt zip -b firefox",
+    "zip:firefox": "wxt zip -b firefox --mv3",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "postinstall": "wxt prepare"
   },
