@@ -103,6 +103,7 @@
     <div class="mt-4">
         <p class="text-sm text-gray-500 text-center">
             {i18n.getMessage('extension_version')}: {extensionVersion}
+            (mv{import.meta.env.MANIFEST_VERSION}/{import.meta.env.BROWSER})
         </p>
     </div>
 </div>
