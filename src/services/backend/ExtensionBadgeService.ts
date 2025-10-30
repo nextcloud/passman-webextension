@@ -5,6 +5,12 @@ import ContextMenuService from "@/services/backend/ContextMenuService";
 import { i18n } from "@/lib/i18n";
 import browser from "webextension-polyfill";
 
+/**
+ * Required manifest-specific browser action assignment, since webextension-polyfill does not yet have a solution for it.
+ * https://github.com/mozilla/webextension-polyfill/issues/329
+ */
+const browserAction = import.meta.env.MANIFEST_VERSION === 2 ? browser.browserAction : browser.action;
+
 export class ExtensionBadgeService {
     public static readonly DEFAULT_BADGE_BG_COLOR = '#0082c9';
 
@@ -59,17 +65,17 @@ export class ExtensionBadgeService {
             ContextMenuService.updateActiveTabSpecificContextMenuItems(credentialsForTab);
         }
 
-        await browser.action.setBadgeText({
+        await browserAction.setBadgeText({
             text: credentialAmount.toString(),
             tabId: tab.id
         });
-        await browser.action.setBadgeBackgroundColor({
+        await browserAction.setBadgeBackgroundColor({
             color: ExtensionBadgeService.DEFAULT_BADGE_BG_COLOR,
             tabId: tab.id
         });
 
         const plural = (credentialAmount === 1) ? i18n.getMessage('credential') : i18n.getMessage('credentials');
-        await browser.action.setTitle({
+        await browserAction.setTitle({
             title: i18n.getMessage('browser_action_title_login', [credentialAmount.toString(), plural.toString().toLowerCase()]),
             tabId: tab.id
         });
@@ -78,15 +84,15 @@ export class ExtensionBadgeService {
     public static readonly displayLockIcons = () => {
         browser.tabs.query({}).then(async (tabs) => {
             for (const tab of tabs) {
-                await browser.action.setBadgeText({
+                await browserAction.setBadgeText({
                     text: '🔑',
                     tabId: tab.id
                 });
-                await browser.action.setBadgeBackgroundColor({
+                await browserAction.setBadgeBackgroundColor({
                     color: '#ff0000',
                     tabId: tab.id
                 });
-                await browser.action.setTitle({
+                await browserAction.setTitle({
                     title: i18n.getMessage('browser_action_title_locked'),
                     tabId: tab.id
                 });
