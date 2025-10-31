@@ -22,7 +22,7 @@
         {disabled}
         {tabindex}
         class="text-primary-light-button-text border border-gray-300 hover:bg-base-200 font-medium rounded-lg
-	text-sm dark:hover:bg-neutral {small
+	text-sm dark:hover:bg-neutral cursor-pointer {small
 		? 'px-2 py-1'
 		: 'px-3 py-2'} text-center w-auto disabled:opacity-70 disabled:pointer-events-none {additionalClasses}"
 >
