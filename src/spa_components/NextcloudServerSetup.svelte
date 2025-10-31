@@ -6,7 +6,6 @@
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     // @ts-expect-error

@@ -18,8 +18,6 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@plasmohq/messaging": "^0.7.2",
-    "@plasmohq/storage": "^1.15.0",
     "idb-keyval": "^6.2.2",
     "js-sha512": "^0.9.0",
     "plasmo": "^0.90.5",

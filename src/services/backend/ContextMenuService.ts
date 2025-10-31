@@ -1,11 +1,11 @@
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-import { sendToContentScript } from "@plasmohq/messaging";
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
 import ExtensionUnlockService from "../ExtensionUnlockService";
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "../ExtensionSettingsService";
 import browser from "webextension-polyfill";
+import { sendMessage } from "@/entrypoints/background/messaging";
 
 enum ContextMenuItemId {
     GENERATE_PASSWORD = 'GENERATE_PASSWORD',
@@ -36,9 +36,9 @@ export default class ContextMenuService {
                     ), tab);
                     break;
                 case ContextMenuItemId.FILL_GENERATED_PASSWORD:
-                    await sendToContentScript({
-                        tabId: tab?.id,
-                        body: {
+                    await sendMessage(
+                        RemoteCallableFunctions.remoteFunctionCallMessageName,
+                        {
                             method: RemoteCallableFunctionNames.enterLoginDetails,
                             args: {
                                 password: PasswordGeneratorService.generate(
@@ -46,15 +46,17 @@ export default class ContextMenuService {
                                 )
                             }
                         },
-                        name: RemoteCallableFunctions.remoteFunctionCallMessageName
-                    });
+                        tab?.id
+                    );
                     break;
                 case ContextMenuItemId.RELOAD_PICKER:
-                    await sendToContentScript({
-                        tabId: tab?.id,
-                        body: { method: RemoteCallableFunctionNames.reloadPicker },
-                        name: RemoteCallableFunctions.remoteFunctionCallMessageName
-                    });
+                    await sendMessage(
+                        RemoteCallableFunctions.remoteFunctionCallMessageName,
+                        {
+                            method: RemoteCallableFunctionNames.reloadPicker,
+                        },
+                        tab?.id
+                    );
                     break;
                 default:
                     // a credential specific context menu item has been clicked
@@ -91,9 +93,9 @@ export default class ContextMenuService {
                                 await ContextMenuService.sendToContentScriptCopyToClipboard(otp, tab);
                                 break;
                             case ContextMenuItemId.AUTO_FILL:
-                                await sendToContentScript({
-                                    tabId: tab?.id,
-                                    body: {
+                                await sendMessage(
+                                    RemoteCallableFunctions.remoteFunctionCallMessageName,
+                                    {
                                         method: RemoteCallableFunctionNames.enterLoginDetails,
                                         args: {
                                             username: credential.username,
@@ -102,8 +104,8 @@ export default class ContextMenuService {
                                             otp: OTPService.updateOTP(credential.otp),
                                         }
                                     },
-                                    name: RemoteCallableFunctions.remoteFunctionCallMessageName
-                                });
+                                    tab?.id
+                                );
                                 break;
                         }
                     }
@@ -113,14 +115,14 @@ export default class ContextMenuService {
 
     private static readonly sendToContentScriptCopyToClipboard = (copyText: string, tab?: browser.Tabs.Tab) => {
         // Send a message to the content script of the specified or currently active tab
-        return sendToContentScript({
-            tabId: tab?.id,
-            body: {
+        return sendMessage(
+            RemoteCallableFunctions.remoteFunctionCallMessageName,
+            {
                 method: RemoteCallableFunctionNames.copyText,
                 args: copyText
             },
-            name: RemoteCallableFunctions.remoteFunctionCallMessageName
-        });
+            tab?.id
+        );
     }
 
     public static readonly removeAllContextMenuItems = () => {

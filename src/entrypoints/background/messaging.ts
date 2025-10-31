@@ -32,6 +32,10 @@ import {
     GetCredentialsForVaultMessagingRequest,
     GetCredentialsForVaultMessagingResponse
 } from "@/entrypoints/background/messages/getCredentialsForVault";
+import {
+    RemoteCallableFunctionMessagingRequest,
+    RemoteCallableFunctions
+} from "@/entrypoints/content/remoteCallableFunctions";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -59,6 +63,9 @@ interface ProtocolMap {
     addNewServerConnection(data: AddNewServerConnectionRequest): AddNewServerConnectionResponse;
 
     getCredentialsForVault(data: GetCredentialsForVaultMessagingRequest): GetCredentialsForVaultMessagingResponse;
+
+    // content script
+    [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;
 }
 
 type MyMessageListenerDto<TType extends keyof ProtocolMap> = {
