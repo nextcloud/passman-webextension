@@ -47,17 +47,17 @@ export class RemoteCallableFunctions {
 
     private static reloadPickerCallback: () => void;
 
-    public static getRemoteCallableFunction = <K extends RemoteCallableFunctionNames>(functionName: K): RemoteCallableFunctionTypes[K] => {
+    public static readonly getRemoteCallableFunction = <K extends RemoteCallableFunctionNames>(functionName: K): RemoteCallableFunctionTypes[K] => {
         // @ts-ignore
         return RemoteCallableFunctions[functionName];
     }
 
-    private static copyText: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.copyText] = (text)
+    private static readonly copyText: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.copyText] = (text)
         : RemoteCallableFunctionReturnTypes[RemoteCallableFunctionNames.copyText] => {
         ClipboardService.copyToClipboard(text);
     }
 
-    private static enterLoginDetails: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.enterLoginDetails] = (args)
+    private static readonly enterLoginDetails: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.enterLoginDetails] = (args)
         : RemoteCallableFunctionReturnTypes[RemoteCallableFunctionNames.enterLoginDetails] => {
         LegacyFormManagerService.fillFields(
             args.username,
@@ -68,12 +68,12 @@ export class RemoteCallableFunctions {
         return true;
     }
 
-    private static reloadPicker: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.reloadPicker] = () => {
+    private static readonly reloadPicker: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.reloadPicker] = () => {
         console.debug('Reloading picker for current tab, because of remote function call');
         return this.reloadPickerCallback();
     }
 
-    public static setReloadPickerCallback = (callback: () => void) => {
+    public static readonly setReloadPickerCallback = (callback: () => void) => {
         this.reloadPickerCallback = callback;
     }
 }

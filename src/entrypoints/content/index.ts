@@ -1,4 +1,8 @@
-import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "./remoteCallableFunctions";
+import {
+    RemoteCallableFunctionMessagingRequest,
+    RemoteCallableFunctionNames,
+    RemoteCallableFunctions
+} from "./remoteCallableFunctions";
 import PasswordPicker from "./nested/PasswordPicker.svelte";
 import browser from "webextension-polyfill";
 import { mount, unmount } from "svelte";
@@ -10,14 +14,20 @@ import "../../../public/content_styles/password_picker.scss";
 browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) {
     try {
         console.log("[content script] Received message from background script:", _message);
-        const message = _message as any;
+        const message = _message as {
+            data: RemoteCallableFunctionMessagingRequest
+            type: string,
+            id: number,
+            timestamp: number
+        };
 
-        if (message.name === RemoteCallableFunctions.remoteFunctionCallMessageName) {
-            if (message.body.method && message.body.method in RemoteCallableFunctionNames) {
-                console.log("do remoteFunctionCall:", message.body.method);
+        if (message.type === RemoteCallableFunctions.remoteFunctionCallMessageName) {
+            if (message.data.method && message.data.method in RemoteCallableFunctionNames) {
+                console.log("do remoteFunctionCall:", message.data.method);
 
-                const methodName = message.body.method as RemoteCallableFunctionNames;
-                const response = RemoteCallableFunctions.getRemoteCallableFunction(methodName)(message.body.args);
+                const methodName = message.data.method;
+                // @ts-expect-error - TypeScript can't correlate method with args type, but discriminated union guarantees correctness
+                const response = RemoteCallableFunctions.getRemoteCallableFunction(methodName)(message.data.args);
 
                 // Always send a response to prevent channel closure errors
                 sendResponse(response ?? true);
