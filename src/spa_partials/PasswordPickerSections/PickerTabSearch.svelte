@@ -23,9 +23,11 @@
             title={i18n.getMessage("search_for")} on:input={searchInputCallback}
         >
         {#if searchResponse}
-            {#each searchResponse.decryptedPartialCredentialData as decryptedPartialCredentialData (decryptedPartialCredentialData.guid)}
-                <PickerCredentialListElement bind:decryptedPartialCredentialData/>
-            {/each}
+            {#key searchResponse}
+                {#each searchResponse.decryptedPartialCredentialData as decryptedPartialCredentialData (decryptedPartialCredentialData.guid)}
+                    <PickerCredentialListElement bind:decryptedPartialCredentialData/>
+                {/each}
+            {/key}
         {/if}
     </div>
 </div>
