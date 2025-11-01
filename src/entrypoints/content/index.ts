@@ -50,6 +50,47 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
 
 const shadowRootContainerId = "picker-root-container";
 
+/**
+ * workaround to prevent host pages from stealing the keydown event for our picker inputs while using a closed shadow root
+ * see https://gitlab.com/binsky08/passman-webextension-v3/-/issues/22
+ * @param e
+ */
+const keydownListenerForClosedShadowRootCompatibility = (e: KeyboardEvent) => {
+    let target = e.target as HTMLElement;
+    // firefox workaround:
+    // @ts-ignore
+    if (e.originalTarget !== undefined) {
+        // @ts-ignore
+        target = e.originalTarget;
+    }
+
+    // only forward to inputs/textareas/content-editables
+    if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target.isContentEditable) {
+        // only handle character keys (skip modifiers, arrows, etc.)
+        if (e.key.length === 1) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            // fix IDE type errors
+            const _target = target as HTMLInputElement;
+
+            // insert character at cursor
+            const start = _target.selectionStart ?? _target.value.length;
+            const end = _target.selectionEnd ?? _target.value.length;
+            const before = _target.value.substring(0, start);
+            const after = _target.value.substring(end);
+            _target.value = before + e.key + after;
+
+            // move cursor
+            _target.selectionStart = _target.selectionEnd = start + 1;
+
+            // fire input event so frameworks detect change
+            const inputEvent = new Event("input", { bubbles: true, composed: true });
+            _target.dispatchEvent(inputEvent);
+        }
+    }
+}
+
 export default defineContentScript({
     matches: ['<all_urls>'],
     // 2. Set cssInjectionMode
@@ -61,7 +102,7 @@ export default defineContentScript({
             name: 'example-ui',
             position: 'inline',
             anchor: 'body',
-            //mode: 'closed',
+            mode: 'closed',
             onMount: (container) => {
                 // Create the Svelte app inside the UI container
                 // @ts-ignore
@@ -75,6 +116,8 @@ export default defineContentScript({
         });
 
         ui.shadowHost.id = shadowRootContainerId;
+        // ui.shadowHost.addEventListener("keydown", keydownListenerForClosedShadowRootCompatibility);
+        ui.uiContainer.addEventListener("keydown", keydownListenerForClosedShadowRootCompatibility);
 
         // 4. Mount the UI
         ui.mount();
