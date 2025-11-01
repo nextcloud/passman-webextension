@@ -95,7 +95,15 @@ export default defineConfig({
             compilerOptions: {
                 hmr: false
             },
-            configFile: 'svelte.config.js'
+            configFile: 'svelte.config.js',
+            onwarn: (warning, handler) => {
+                // Ignore css-unused-selector warnings for PasswordPicker.svelte (it has embedded tailwind preflight styles)
+                if (warning.code === 'css_unused_selector' && warning.filename?.includes('PasswordPicker.svelte')) {
+                    return;
+                }
+                // Handle all other warnings normally
+                handler(warning);
+            }
         }
     }
 });
