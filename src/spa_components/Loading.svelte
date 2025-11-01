@@ -6,7 +6,7 @@
 </script>
 
 {#if show}
-    <div class="ring w-[50vw] md:w-[15em] md:h-[15em] h-[50vw] flex justify-center items-center">
+    <div class="ring w-[50vw] md:w-[15em] md:h-[15em] h-[50vw] flex justify-center items-center dark:!bg-gray-600">
         <img src="{passmanBlueWhiteImage}" class="text-center opacity-20 w-4/6 pt-8 absolute dark:hidden" alt="">
         <img src="{passmanImage}" class="text-center opacity-20 w-4/6 pt-8 absolute hidden dark:inline-block" alt="">
         <span></span>
