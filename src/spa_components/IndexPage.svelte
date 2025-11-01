@@ -157,7 +157,7 @@
         </InternalHrefLinkButton>
         <div class="">
             <input bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
-                   class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-primary-focus
+                   class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-b-primary-focus
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
         </div>
