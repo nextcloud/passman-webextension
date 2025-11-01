@@ -34,7 +34,7 @@
 </script>
 
 {#if (credential && editLink !== '')}
-    <div class="border-2 rounded-lg p-1 m-1 w-[95%]">
+    <div class="border-2 border-gray-200 dark:border-gray-500 rounded-lg p-1 m-1 w-[95%]">
         <div class="flex space-x-1">
             <div class="basis-1/12 flex items-center justify-center cursor-pointer" role="button" tabindex="0"
                  on:click={toggleExpandedCredentialView} on:keypress={toggleExpandedCredentialView}>
@@ -73,7 +73,7 @@
         </div>
 
         {#if showExpandedView}
-            <div class="border-t mt-1 p-1 space-y-1.5">
+            <div class="border-t border-gray-200 dark:border-gray-500 mt-1 p-1 space-y-1.5">
                 <CredentialDetails bind:credential bind:onCredChangedCallback/>
             </div>
         {/if}

@@ -146,7 +146,7 @@
 </script>
 
 <div class="h-full overflow-y-hidden flex flex-col">
-    <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
+    <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b border-gray-200 dark:border-gray-500 p-2 bg-white">
         <OnClickButton callback={refreshCredentialList} title={i18n.getMessage('refresh_credential_list')} additionalClasses="w-12"
                        disabled={!vault}>
             <Icon data={refresh} scale={1.3}/>
