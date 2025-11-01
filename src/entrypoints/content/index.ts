@@ -66,7 +66,21 @@ const keydownListenerForClosedShadowRootCompatibility = (e: KeyboardEvent) => {
 
     // only forward to inputs/textareas/content-editables
     if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target.isContentEditable) {
-        // only handle character keys (skip modifiers, arrows, etc.)
+        // Check if this is a key combination with modifiers (Ctrl, Cmd, Alt)
+        const hasModifier = e.ctrlKey || e.metaKey || e.altKey;
+
+        // Allow browser default behavior for:
+        // - Key combinations (Ctrl+V, Ctrl+C, Ctrl+X, Ctrl+A, etc.)
+        // - Special keys (Enter, Tab, Escape, Backspace, Delete, Arrow keys, etc.)
+        if (hasModifier || e.key.length !== 1) {
+            // Only stop propagation to prevent host page from stealing the event
+            // but allow default browser behavior for clipboard operations, etc.
+            e.stopPropagation();
+            return;
+        }
+
+        // For plain character keys without modifiers, manually insert them
+        // This is necessary because some host pages prevent default on all keydown events
         if (e.key.length === 1) {
             e.stopPropagation();
             e.preventDefault();
