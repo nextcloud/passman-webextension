@@ -6,7 +6,7 @@
   import Router, { push } from "@/Router.svelte";
   import extensionUnlockStateStore, { ExtensionUnlockState } from "@/stores/extensionUnlockStateStore";
   import BottomNavBar from "@/spa_partials/BottomNavBar.svelte";
-  import { Toaster } from "svelte-sonner";
+  import Toaster from "@/spa_partials/Toaster.svelte";
   import Loading from '@/spa_components/Loading.svelte';
   import { sendMessage } from "@/entrypoints/background/messaging";
 
@@ -43,7 +43,7 @@
 {#if $extensionUnlockStateStore !== undefined}
   <div class="twp-passman-webextension h-[28rem] w-[28rem] text-sm overflow-y-auto">
     <Router {routes}/>
-    <Toaster position="bottom-left" richColors />
+    <Toaster rootExtraClasses="mb-14" itemPadding="p-2" />
   </div>
 {:else}
   <div class="twp-passman-webextension h-[28rem] w-[28rem] text-sm overflow-y-auto">

@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Import svelte-sonner styles (workaround for build issue) */
-@import './svelte-sonner-styles.css';
-
 body {
     margin: 0;
 }

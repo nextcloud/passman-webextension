@@ -1,11 +1,29 @@
 import type { IFormFieldError } from "@binsky/passman-client-ts/lib/Exception/FormFieldError";
-import { toast } from "svelte-sonner";
+import { addToast } from "@/spa_partials/Toaster.svelte";
 
 export default class NotyService {
-    public static notySuccess = (msg: string) => toast.success(msg);
-    public static notyError = (msg: string) => toast.error(msg);
+    public static readonly notyInfo = (message: string, title?: string) => addToast({
+        message,
+        title,
+        type: "info"
+    });
+    public static readonly notySuccess = (message: string, title?: string) => addToast({
+        message,
+        title,
+        type: "success"
+    });
+    public static readonly notyWarning = (message: string, title?: string) => addToast({
+        message,
+        title,
+        type: "warning"
+    });
+    public static readonly notyError = (message: string, title?: string) => addToast({
+        message,
+        title,
+        type: "error"
+    });
 
-    public static notyFormFieldErrors = (errors: IFormFieldError[]) => {
+    public static readonly notyFormFieldErrors = (errors: IFormFieldError[]) => {
         errors.forEach((error: IFormFieldError) => NotyService.notyError(error.error));
     };
 }

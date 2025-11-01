@@ -1,26 +1,6 @@
 import { defineConfig } from 'wxt';
 import tailwindcss from "@tailwindcss/vite";
 
-// Workaround plugin for svelte-sonner CSS module issue
-function fixSvelteSonnerPlugin() {
-    return {
-        name: 'fix-svelte-sonner',
-        enforce: 'pre' as const,
-        resolveId(id: string) {
-            // Intercept the problematic virtual CSS module
-            if (id.includes('svelte-sonner') && id.includes('?svelte&type=style')) {
-                return id;
-            }
-        },
-        load(id: string) {
-            // Return empty CSS for svelte-sonner style modules
-            if (id.includes('svelte-sonner') && id.includes('?svelte&type=style')) {
-                return '';
-            }
-        }
-    };
-}
-
 // See https://wxt.dev/api/config.html
 export default defineConfig({
     srcDir: 'src',
@@ -60,12 +40,11 @@ export default defineConfig({
     },
     vite: () => ({
         optimizeDeps: {
-            exclude: ['svelte-sonner'],
             // Include the linked CommonJS package for ESM conversion
             include: ['@binsky/passman-client-ts']
         },
         ssr: {
-            noExternal: ['svelte-sonner', '@binsky/passman-client-ts']
+            noExternal: ['@binsky/passman-client-ts']
         },
         build: {
             commonjsOptions: {
@@ -75,7 +54,6 @@ export default defineConfig({
             }
         },
         plugins: [
-            fixSvelteSonnerPlugin(),
             tailwindcss()
         ],
         css: {

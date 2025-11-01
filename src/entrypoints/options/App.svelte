@@ -6,7 +6,7 @@
   import Router, { push } from "@/Router.svelte";
   import extensionUnlockStateStore, { ExtensionUnlockState } from "@/stores/extensionUnlockStateStore";
   import BottomNavBar from "@/spa_partials/BottomNavBar.svelte";
-  import { Toaster } from "svelte-sonner";
+  import Toaster from "@/spa_partials/Toaster.svelte";
   import { sendMessage } from "@/entrypoints/background/messaging";
 
   onMount(async () => {
@@ -46,4 +46,4 @@
     </div>
   {/if}
 </div>
-<Toaster position="bottom-left" richColors />
+<Toaster rootExtraClasses="mb-14" itemPadding="p-2" />
