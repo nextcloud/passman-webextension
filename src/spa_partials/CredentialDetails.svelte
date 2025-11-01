@@ -62,6 +62,13 @@
             deletion_in_progress = false;
         });
     }
+
+    const addProtocolIfMissing = (url: string) => {
+        if (!/^https?:\/\//i.test(url)) {
+            url = "https://" + url;
+        }
+        return url;
+    }
 </script>
 
 {#if credential}
@@ -124,8 +131,8 @@
                 <div class="basis-3/12 grow font-semibold">{i18n.getMessage('url')}</div>
                 <div class="basis-8/12 break-all">
                     {credential.url}
-                    <a href="{credential.url}" target="_blank"
-                       class="cursor-pointer px-0.5">
+                    <a href="{addProtocolIfMissing(credential.url)}" title="{addProtocolIfMissing(credential.url)}"
+                       target="_blank" class="cursor-pointer px-0.5">
                         <Icon data={externalLink} scale={1.0}/>
                     </a>
                 </div>
