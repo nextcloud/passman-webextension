@@ -6,7 +6,8 @@ export default defineConfig({
     srcDir: 'src',
     modules: ['@wxt-dev/module-svelte'],
     zip: {
-        artifactTemplate: "{{name}}-prod-{{browser}}.zip"
+        artifactTemplate: "{{name}}-prod-{{browser}}.zip",
+        sourcesTemplate: "{{name}}-prod-sources.zip"
     },
     manifest: {
         host_permissions: [
