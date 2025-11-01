@@ -5,7 +5,7 @@
   "type": "module",
   "description": "A modern webextension for the Passman Nextcloud app",
   "author": "Timo Triebensky <timo@binsky.org>",
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "bun@1.3.1",
   "scripts": {
     "prebuild": "node public/helper_scripts/update-tld-rules.cjs",
     "dev": "wxt",
@@ -72,10 +72,8 @@
   },
   "trustedDependencies": [
     "@parcel/watcher",
-    "esbuild",
-    "lmdb",
-    "msgpackr-extract",
-    "sharp",
+    "@swc/core",
+    "spawn-sync",
     "svelte-preprocess"
   ]
 }
