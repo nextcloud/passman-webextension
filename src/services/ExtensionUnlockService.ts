@@ -5,7 +5,10 @@ import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import { ExtensionBadgeService } from "./backend/ExtensionBadgeService";
 import ContextMenuService from "./backend/ContextMenuService";
 import type { PassmanClient } from "@binsky/passman-client-ts/lib/PassmanClient";
-import type { BackendPassmanClient } from "../lib/BackendPassmanClient";
+import type { BackendPassmanClient } from "@/lib/BackendPassmanClient";
+import browser from "webextension-polyfill";
+import { sendMessage } from "@/entrypoints/background/messaging";
+import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -19,6 +22,7 @@ export default class ExtensionUnlockService {
                 if (extensionUnlockPasswordHash === sha512(password)) {
                     await CustomStorageService.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
                     ExtensionBadgeService.updateAllTabsIcon(isFrontendCall);
+                    this.notifyReloadContentScriptPicker();
                     return true;
                 }
                 return false;
@@ -35,6 +39,22 @@ export default class ExtensionUnlockService {
         ExtensionSettingsService.updateBackendPassmanClient(null);
         ExtensionBadgeService.displayLockIcons();
         ContextMenuService.reCreateContextMenuParentItems(false);
+        this.notifyReloadContentScriptPicker();
+    }
+
+    protected static notifyReloadContentScriptPicker() {
+        // Query the current active tab
+        browser.tabs.query({ active: true, currentWindow: true }).then(async (tabs) => {
+            if (tabs[0]?.id) {
+                await sendMessage(
+                    RemoteCallableFunctions.remoteFunctionCallMessageName,
+                    {
+                        method: RemoteCallableFunctionNames.reloadPicker,
+                    },
+                    tabs[0]?.id
+                );
+            }
+        });
     }
 
     /**

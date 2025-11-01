@@ -25,6 +25,7 @@ export class PasswordPickerService {
     private static showPickerCallback: (left: number, top: number, maxZ: any) => void;
     private static hidePickerCallback: () => void;
     public static decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
+    protected static modifiedInputElementsIconRemovalCallbacks: (() => void)[] = [];
 
     public static initPickerForPage = (
         showPickerCallback: (left: number, top: number, maxZ: any) => void,
@@ -85,6 +86,11 @@ export class PasswordPickerService {
                 });
             });
         }
+    }
+
+    public static readonly unloadPicker = () => {
+        PasswordPickerService.modifiedInputElementsIconRemovalCallbacks.forEach(cb => cb());
+        PasswordPickerService.modifiedInputElementsIconRemovalCallbacks = [];
     }
 
     public static readonly hidePicker = () => {
@@ -192,13 +198,30 @@ export class PasswordPickerService {
             const width = el.offsetWidth;
             const height = el.offsetHeight;
 
+            // Store original styles to restore later
+            const originalBackgroundImage = el.style.backgroundImage;
+            const originalBackgroundRepeat = el.style.backgroundRepeat;
+            const originalStyle = el.getAttribute('style') || '';
+
             el.style.backgroundImage = 'url("' + passwordPickerIcon + '")';
             el.style.backgroundRepeat = 'no-repeat';
             el.style.cssText = el.getAttribute('style') + ' background-position: right 3px center !important;';
 
-            el.removeEventListener('click', PasswordPickerService.onFormIconClick);
-            el.addEventListener('click', function (event) {
+            const clickHandler = function (event: MouseEvent) {
                 PasswordPickerService.onFormIconClick(event, { width: width, height: height, el: el, form: form });
+            };
+
+            el.removeEventListener('click', PasswordPickerService.onFormIconClick);
+            el.addEventListener('click', clickHandler);
+
+            PasswordPickerService.modifiedInputElementsIconRemovalCallbacks.push(() => {
+                // Remove the click event listener
+                el.removeEventListener('click', clickHandler);
+
+                // Restore original styles
+                el.style.backgroundImage = originalBackgroundImage;
+                el.style.backgroundRepeat = originalBackgroundRepeat;
+                el.setAttribute('style', originalStyle);
             });
         }
     }

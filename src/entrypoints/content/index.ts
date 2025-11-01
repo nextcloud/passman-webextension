@@ -50,11 +50,6 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
 
 const shadowRootContainerId = "picker-root-container";
 
-// password picker will be checked and initialized by PasswordPicker.svelte if it is in content directory;
-// since we moved it to nested directory, we need to check for it here
-//const app = new PasswordPicker();
-//RemoteCallableFunctions.setReloadPickerCallback(app.loadPickerForCurrentTab);
-
 export default defineContentScript({
     matches: ['<all_urls>'],
     // 2. Set cssInjectionMode

@@ -16,6 +16,7 @@
     import type {
         DecryptedPartialCredentialData
     } from "@/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
 
     let shadowRootContainerId: string;
 
@@ -84,12 +85,17 @@
 
                 PasswordPickerService.initPickerForPage(showPickerCallback, hidePickerCallback);
                 console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
+            } else {
+                // unload password picker icons in input fields
+                PasswordPickerService.unloadPicker();
             }
         });
     }
 
     // this is injected and executed on every page / tab load
     onMount(() => {
+        RemoteCallableFunctions.setReloadPickerCallback(loadPickerForCurrentTab);
+
         document.addEventListener('visibilitychange', function (event) {
             if (!document.hidden && !extensionIsUnlocked) {
                 // tab is now visible and extension was not unlocked before current visibility change
