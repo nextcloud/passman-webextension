@@ -6,10 +6,6 @@
 /.pnp
 .pnp.js
 
-# bun
-bun.lockb
-bun.lock
-
 # testing
 /coverage
 
