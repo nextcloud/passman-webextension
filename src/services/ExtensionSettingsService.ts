@@ -3,9 +3,9 @@ import { PassmanClient } from "@binsky/passman-client-ts";
 import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
-import { NextcloudServerMessagingConnector } from "../lib/NextcloudServerMessagingConnector";
+import { NextcloudServerMessagingConnector } from "@/lib/NextcloudServerMessagingConnector";
 import { CustomPassmanClientLoggingService } from "./frontend/CustomPassmanClientLoggingService";
-import { BackendPassmanClient } from "../lib/BackendPassmanClient";
+import { BackendPassmanClient } from "@/lib/BackendPassmanClient";
 import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 
@@ -47,12 +47,26 @@ export default class ExtensionSettingsService {
         })
     };
 
+    /**
+     * @param key
+     * @param value
+     * @throws DOMException
+     */
     public static updatePartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K, value: ExtensionSettings[K]) => {
-        const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
-        extensionSettings[key] = value;
-        return ExtensionSettingsService.updateExtensionSettings(extensionSettings);
+        try {
+            const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
+            extensionSettings[key] = value;
+            return ExtensionSettingsService.updateExtensionSettings(extensionSettings);
+        } catch (e) {
+            CustomStorageService.closeSecureStorage();
+            console.error('Tried to access and update SecureStorage without a password set.');
+            throw e;
+        }
     };
 
+    /**
+     * @throws DOMException OperationError from SecureStorage.get(...) when trying to decrypt with an invalid key
+     */
     public static getExtensionSettings = async () => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
             return ((await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY)) ?? {}) as ExtensionSettings
@@ -92,8 +106,14 @@ export default class ExtensionSettingsService {
     }
 
     public static getPartialExtensionSettings = async <K extends ExtensionSettingsOptions>(key: K, tryDefault: boolean = false): Promise<ExtensionSettings[K] | null> => {
-        const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
-        return extensionSettings[key] ?? (tryDefault ? await ExtensionSettingsService.getDefaultForExtensionSetting(key) : null);
+        let extensionSettings = null;
+        try {
+            extensionSettings = await ExtensionSettingsService.getExtensionSettings();
+        } catch (e) {
+            // we may get a SecureStorage access without password, this is expected for some edge-cases
+            // usually no need to log or to inform the user
+        }
+        return extensionSettings?.[key] ?? (tryDefault ? await ExtensionSettingsService.getDefaultForExtensionSetting(key) : null);
     };
 
     public static getBackendPassmanClient = async () => {

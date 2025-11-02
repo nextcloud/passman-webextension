@@ -16,6 +16,10 @@ export class SecureStorage extends Storage {
         this.cryptoKey = null;
     }
 
+    get isPasswordSet(): boolean {
+        return this.secret !== undefined;
+    }
+
     private async getEncryptionKey(): Promise<CryptoKey> {
         if (this.cryptoKey) return this.cryptoKey;
         const enc = new TextEncoder().encode(this.secret);
@@ -38,6 +42,10 @@ export class SecureStorage extends Storage {
         await super.set(key, data);
     }
 
+    /**
+     * @param key
+     * @throws DOMException OperationError when trying to decrypt with an invalid key
+     */
     async get<T>(key: string): Promise<T | undefined> {
         const data = await super.get<{ iv: number[]; value: string }>(key);
         if (!data) return undefined;

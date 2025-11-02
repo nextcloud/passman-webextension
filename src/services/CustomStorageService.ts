@@ -41,6 +41,9 @@ export default class CustomStorageService {
         if (!this.secureStorage) {
             this.secureStorage = new SecureStorage();
             this.secureStorage.setNamespace(DEFAULT_STORAGE_NAMESPACE);
+        }
+        if (!this.secureStorage.isPasswordSet) {
+            // set password (if possible) for fresh created or cached secureStorage instance without a password set
             const extensionUnlockPassword = await this.getSessionStorage().get(ExtensionUnlockService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
             if (extensionUnlockPassword) {
                 this.secureStorage.setPassword(
