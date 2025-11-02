@@ -112,5 +112,5 @@ release:
         --tag-name $CI_COMMIT_TAG \
         --description "Release $CI_COMMIT_TAG of the Passman Webextension v3" \
         --assets-link "{\"name\":\"passman-webextension-v3_chrome-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_chrome-mv3-prod_${CI_COMMIT_TAG}.zip\"}" \
-        --assets-link "{\"name\":\"passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip\"}"
+        --assets-link "{\"name\":\"passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip\"}" \
         --assets-link "{\"name\":\"passman-webextension-v3_sources-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_sources-mv3-prod_${CI_COMMIT_TAG}.zip\"}"
