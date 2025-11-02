@@ -36,6 +36,7 @@ dist/
 # wxt
 .output
 .wxt
+.env.submit
 
 # typescript
 .tsbuildinfo

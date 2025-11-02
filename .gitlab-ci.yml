@@ -58,6 +58,47 @@ persist-release-artifacts:
     - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-chrome.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/latest/passman-webextension-v3_chrome-mv3-prod.zip"'
     - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-firefox.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/latest/passman-webextension-v3_firefox-mv3-prod.zip"'
 
+publish:
+  stage: release
+  needs:
+    - install
+    - build
+  rules:
+    - if: $CI_COMMIT_TAG
+  dependencies:
+    - build
+  variables:
+    SECURE_FILES_DOWNLOAD_PATH: './'
+  script:
+    - apk add curl bash
+    - curl -s https://gitlab.com/gitlab-org/incubation-engineering/mobile-devops/download-secure-files/-/raw/main/installer | bash
+    # Setup .env.submit file from secure file storage
+    # If you stored the file contents as CI/CD variable ENV_SUBMIT, uncomment the next line:
+    # - echo "$ENV_SUBMIT" > .env.submit
+    # Or if the file is available in the repository, copy it:
+    - |
+      if [ -f "env.submit" ]; then
+        cp env.submit .env.submit
+      elif [ -n "$ENV_SUBMIT" ]; then
+        echo "$ENV_SUBMIT" > .env.submit
+      else
+        echo "Error: .env.submit file not found. Please ensure env.submit is in the repo root or ENV_SUBMIT CI variable is set."
+        exit 1
+      fi
+    - echo "Running dry-run to test submission configuration..."
+    - |
+      bunx wxt submit --dry-run \
+        --chrome-zip .output/passman-webextension-v3-prod-chrome.zip \
+        --firefox-zip .output/passman-webextension-v3-prod-firefox.zip \
+        --firefox-sources-zip .output/passman-webextension-v3-prod-sources.zip \
+        || (echo "Dry-run failed. Check your .env.submit configuration." && exit 1)
+    - echo "Dry-run successful. Submitting to stores..."
+    - |
+      bunx wxt submit \
+        --chrome-zip .output/passman-webextension-v3-prod-chrome.zip \
+        --firefox-zip .output/passman-webextension-v3-prod-firefox.zip \
+        --firefox-sources-zip .output/passman-webextension-v3-prod-sources.zip
+
 release:
   stage: release
   image: registry.gitlab.com/gitlab-org/release-cli:latest
