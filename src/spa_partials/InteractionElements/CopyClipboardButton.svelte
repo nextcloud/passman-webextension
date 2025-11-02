@@ -2,8 +2,8 @@
     import type { IconType } from "svelte-awesome/components/Icon.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import clipboard from "svelte-awesome/icons/clipboard";
-    import ClipboardService from "~services/frontend/ClipboardService";
-    import { i18n } from "~lib/i18n";
+    import ClipboardService from "~/services/frontend/ClipboardService";
+    import { i18n } from "~/lib/i18n";
 
     export let value: string;
     export let icon: IconType = clipboard;

@@ -3,8 +3,8 @@
     import { onDestroy, onMount } from "svelte";
     import type { OTPConfigInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/OTPConfigInterface";
     import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
-    import NotyService from "~services/frontend/NotyService";
-    import { i18n } from "~lib/i18n";
+    import NotyService from "~/services/frontend/NotyService";
+    import { i18n } from "~/lib/i18n";
 
     export let otp: OTPConfigInterface;
     export let token: string;

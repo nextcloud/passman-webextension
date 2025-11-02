@@ -1,6 +1,6 @@
-import { Storage } from "@plasmohq/storage";
-import { SecureStorage } from "@plasmohq/storage/dist/secure";
-import ExtensionUnlockService from "~services/ExtensionUnlockService";
+import { Storage } from "@/lib/storage";
+import { SecureStorage } from "@/lib/secure-storage";
+import ExtensionUnlockService from "./ExtensionUnlockService";
 import type {
     RequestCachingHandlerInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
@@ -10,6 +10,9 @@ import { customIndexedDBService } from "./CustomIndexedDBService";
 
 export const CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY = 'contentScriptModifiedCredentials';
 
+// todo: empty atm, but we should use a namespace (may need a migration logic)
+export const DEFAULT_STORAGE_NAMESPACE = '';
+
 export default class CustomStorageService {
     private static sessionStorage: Storage;
     private static unsafeLocalStorage: Storage;
@@ -18,16 +21,14 @@ export default class CustomStorageService {
 
     public static getSessionStorage() {
         if (!this.sessionStorage) {
-            this.sessionStorage = new Storage({
-                area: "session"
-            });
+            this.sessionStorage = new Storage("session", DEFAULT_STORAGE_NAMESPACE);
         }
         return this.sessionStorage;
     }
 
     public static getUnsafeLocalStorage() {
         if (!this.unsafeLocalStorage) {
-            this.unsafeLocalStorage = new Storage();
+            this.unsafeLocalStorage = new Storage("local", DEFAULT_STORAGE_NAMESPACE);
         }
         return this.unsafeLocalStorage;
     }
@@ -39,9 +40,10 @@ export default class CustomStorageService {
     public static async getSecureStorage() {
         if (!this.secureStorage) {
             this.secureStorage = new SecureStorage();
+            this.secureStorage.setNamespace(DEFAULT_STORAGE_NAMESPACE);
             const extensionUnlockPassword = await this.getSessionStorage().get(ExtensionUnlockService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
             if (extensionUnlockPassword) {
-                await this.secureStorage.setPassword(
+                this.secureStorage.setPassword(
                     extensionUnlockPassword
                 );
             }
@@ -56,7 +58,7 @@ export default class CustomStorageService {
     }
 
     public static async clearSessionStorage() {
-        return this.getSessionStorage().clear(true);
+        return this.getSessionStorage().clear();
     }
 
     /**

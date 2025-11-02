@@ -1,4 +1,4 @@
-import NotyService from "~services/frontend/NotyService";
+import NotyService from "../../services/frontend/NotyService";
 
 export default class ClipboardService {
 

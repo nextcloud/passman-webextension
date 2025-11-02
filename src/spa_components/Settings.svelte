@@ -1,18 +1,19 @@
 <script lang="ts">
-    import Card from "~spa_partials/Card.svelte";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    import Card from "~/spa_partials/Card.svelte";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
-    import ExtensionUnlockService from "~services/ExtensionUnlockService";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
-    import CustomCheckboxField from "~spa_partials/FormElements/CustomCheckboxField.svelte";
-    import { push } from "~Router.svelte";
-    import Loading from "~spa_components/Loading.svelte";
-    import NotyService from "~services/frontend/NotyService";
-    import NextcloudServerSetup from "~spa_components/NextcloudServerSetup.svelte";
+    import ExtensionUnlockService from "~/services/ExtensionUnlockService";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
+    // @ts-expect-error
+    import { push } from "~/Router.svelte";
+    import Loading from "~/spa_components/Loading.svelte";
+    import NotyService from "~/services/frontend/NotyService";
+    import NextcloudServerSetup from "~/spa_components/NextcloudServerSetup.svelte";
     import packageJson from "../../package.json";
-    import { i18n } from "~lib/i18n";
+    import { i18n } from "~/lib/i18n";
 
     const extensionVersion = packageJson.version;
     let extendedSettings: { [key: number]: boolean } = {
@@ -102,6 +103,7 @@
     <div class="mt-4">
         <p class="text-sm text-gray-500 text-center">
             {i18n.getMessage('extension_version')}: {extensionVersion}
+            (mv{import.meta.env.MANIFEST_VERSION}/{import.meta.env.BROWSER})
         </p>
     </div>
 </div>

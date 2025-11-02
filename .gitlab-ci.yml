@@ -32,14 +32,13 @@ build:
     - apk add nodejs npm
     - npm install -g node-gyp
     - bun run prebuild
-    - bun run build
-    - bun run build-ff
-    - bun run package
-    - bun run package-ff
+    - bun run zip
+    - bun run zip:firefox
   artifacts:
     paths:
-      - build/chrome-mv3-prod.zip
-      - build/firefox-mv3-prod.zip
+      - .output/passman-webextension-v3-prod-chrome.zip
+      - .output/passman-webextension-v3-prod-firefox.zip
+      - .output/passman-webextension-v3-prod-sources.zip
     expire_in: 1 week
 
 persist-release-artifacts:
@@ -52,11 +51,12 @@ persist-release-artifacts:
   script:
     - apk add curl jq
     - echo "Upload release $CI_COMMIT_TAG ($CI_COMMIT_SHA) into generic package registry"
-    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file build/chrome-mv3-prod.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_chrome-mv3-prod_${CI_COMMIT_TAG}.zip"'
-    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file build/firefox-mv3-prod.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip"'
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-chrome.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_chrome-mv3-prod_${CI_COMMIT_TAG}.zip"'
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-firefox.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip"'
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-sources.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_sources-mv3-prod_${CI_COMMIT_TAG}.zip"'
     - echo "Upload release $CI_COMMIT_TAG ($CI_COMMIT_SHA) as latest version into generic package registry"
-    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file build/chrome-mv3-prod.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/latest/passman-webextension-v3_chrome-mv3-prod.zip"'
-    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file build/firefox-mv3-prod.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/latest/passman-webextension-v3_firefox-mv3-prod.zip"'
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-chrome.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/latest/passman-webextension-v3_chrome-mv3-prod.zip"'
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file .output/passman-webextension-v3-prod-firefox.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/latest/passman-webextension-v3_firefox-mv3-prod.zip"'
 
 release:
   stage: release
@@ -74,3 +74,4 @@ release:
         --description "Release $CI_COMMIT_TAG of the Passman Webextension v3" \
         --assets-link "{\"name\":\"passman-webextension-v3_chrome-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_chrome-mv3-prod_${CI_COMMIT_TAG}.zip\"}" \
         --assets-link "{\"name\":\"passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_firefox-mv3-prod_${CI_COMMIT_TAG}.zip\"}"
+        --assets-link "{\"name\":\"passman-webextension-v3_sources-mv3-prod_${CI_COMMIT_TAG}.zip\",\"url\":\"${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/passman-webextension-v3/$CI_COMMIT_TAG/passman-webextension-v3_sources-mv3-prod_${CI_COMMIT_TAG}.zip\"}"

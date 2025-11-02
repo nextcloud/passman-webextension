@@ -1,21 +1,22 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
-    import Loading from "~spa_components/Loading.svelte";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import Loading from "~/spa_components/Loading.svelte";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
-    import NotyService from "~services/frontend/NotyService";
+    import NotyService from "~/services/frontend/NotyService";
     import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import type { DecryptedCredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
-    import { CREDENTIAL_EDIT_SECTIONS } from "~lib/Utils";
-    import EditGeneral from "~spa_partials/CredentialEditSections/EditGeneral.svelte";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    import { CREDENTIAL_EDIT_SECTIONS } from "~/lib/Utils";
+    import EditGeneral from "~/spa_partials/CredentialEditSections/EditGeneral.svelte";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import { refresh, save } from "svelte-awesome/package/icons";
-    import { push } from "~Router.svelte";
-    import EditCustomFields from "~spa_partials/CredentialEditSections/EditCustomFields.svelte";
-    import EditOTP from "~spa_partials/CredentialEditSections/EditOTP.svelte";
-    import EditFiles from "~spa_partials/CredentialEditSections/EditFiles.svelte";
-    import { i18n } from "~lib/i18n";
+    import { refresh, save } from "svelte-awesome/icons";
+    // @ts-expect-error
+    import { push } from "~/Router.svelte";
+    import EditCustomFields from "~/spa_partials/CredentialEditSections/EditCustomFields.svelte";
+    import EditOTP from "~/spa_partials/CredentialEditSections/EditOTP.svelte";
+    import EditFiles from "~/spa_partials/CredentialEditSections/EditFiles.svelte";
+    import { i18n } from "~/lib/i18n";
 
     let pageIsLoading = true;
     let lockSaveButton = false;

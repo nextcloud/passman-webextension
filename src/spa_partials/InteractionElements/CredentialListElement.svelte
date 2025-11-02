@@ -1,17 +1,18 @@
 <script lang="ts">
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-    import CredentialIcon from "~spa_partials/CredentialIcon.svelte";
-    import { clockO, envelopeO, key, pencil, userO } from "svelte-awesome/package/icons";
+    import CredentialIcon from "~/spa_partials/CredentialIcon.svelte";
+    import { clockO, envelopeO, key, pencil, userO } from "svelte-awesome/icons";
     import CredentialListElementCopyButton
-        from "~spa_partials/InteractionElements/CredentialListElementCopyButton.svelte";
+        from "~/spa_partials/InteractionElements/CredentialListElementCopyButton.svelte";
     import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
-    import ClipboardService from "~services/frontend/ClipboardService";
+    import ClipboardService from "~/services/frontend/ClipboardService";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import { link } from "~Router.svelte";
+    // @ts-expect-error
+    import { link } from "~/Router.svelte";
     import { onMount } from "svelte";
     import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
-    import CredentialDetails from "~spa_partials/CredentialDetails.svelte";
-    import { i18n } from "~lib/i18n";
+    import CredentialDetails from "~/spa_partials/CredentialDetails.svelte";
+    import { i18n } from "~/lib/i18n";
 
     export let credential: Credential;
     export let onCredChangedCallback: () => void;
@@ -33,7 +34,7 @@
 </script>
 
 {#if (credential && editLink !== '')}
-    <div class="border-2 rounded-lg p-1 m-1 w-[95%]">
+    <div class="border-2 border-gray-200 dark:border-gray-500 rounded-lg p-1 m-1 w-[95%]">
         <div class="flex space-x-1">
             <div class="basis-1/12 flex items-center justify-center cursor-pointer" role="button" tabindex="0"
                  on:click={toggleExpandedCredentialView} on:keypress={toggleExpandedCredentialView}>
@@ -72,7 +73,7 @@
         </div>
 
         {#if showExpandedView}
-            <div class="border-t mt-1 p-1 space-y-1.5">
+            <div class="border-t border-gray-200 dark:border-gray-500 mt-1 p-1 space-y-1.5">
                 <CredentialDetails bind:credential bind:onCredChangedCallback/>
             </div>
         {/if}

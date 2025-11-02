@@ -1,5 +1,5 @@
 import type { SpecificVaultInformationFromServerInterface } from "@binsky/passman-client-ts/lib/Interfaces/Vault/SpecificVaultInformationFromServerInterface";
-import type { BackendPassmanClient } from "~lib/BackendPassmanClient";
+import type { BackendPassmanClient } from "~/lib/BackendPassmanClient";
 import type { VaultCreateServerResponseInterface } from "@binsky/passman-client-ts/lib/Interfaces/Vault/VaultCreateServerResponseInterface";
 import type { VaultDeleteResponseInterface } from "@binsky/passman-client-ts/lib/Interfaces/Vault/VaultDeleteResponseInterface";
 import type { EncryptedOwnedCredentialFromServerInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/EncryptedOwnedCredentialFromServerInterface";

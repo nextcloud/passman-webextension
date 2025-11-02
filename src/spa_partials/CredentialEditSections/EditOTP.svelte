@@ -1,20 +1,22 @@
 <script lang="ts">
-    import type { CredentialInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CredentialInterface";
-    import OtpGenerator from "~spa_partials/InteractionElements/OTPGenerator.svelte";
+    import {
+        DecryptedCredentialInterface
+    } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
+    import OtpGenerator from "~/spa_partials/InteractionElements/OTPGenerator.svelte";
     import CopyClipboardButton from "../InteractionElements/CopyClipboardButton.svelte";
     import CustomInputField from "../FormElements/CustomInputField.svelte";
     import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
     import { onMount } from "svelte";
-    import NotyService from "~services/frontend/NotyService";
+    import NotyService from "~/services/frontend/NotyService";
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
     import InPlaceEdit from "../FormElements/InPlaceEdit.svelte";
-    import SimpleDropdownSelectBox from "~spa_partials/FormElements/SimpleDropdownSelectBox.svelte";
+    import SimpleDropdownSelectBox from "~/spa_partials/FormElements/SimpleDropdownSelectBox.svelte";
     import { OTPAlgorithmOptions } from "@binsky/passman-client-ts/lib/Interfaces/Credential/OTPConfigInterface";
     import type { ChangeEventHandler } from "svelte/elements";
-    import { i18n } from "~lib/i18n";
-    import Utils from "~lib/Utils";
+    import { i18n } from "~/lib/i18n";
+    import Utils from "~/lib/Utils";
 
-    export let credentialData: CredentialInterface;
+    export let credentialData: DecryptedCredentialInterface;
     let otpToken: string;
     const isInPopup = Utils.isInPopup();
 

@@ -2,10 +2,10 @@
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import type {
         DecryptedPartialCredentialData
-    } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
-    import { LegacyFormManagerService } from "~services/frontend/LegacyFormManagerService";
-    import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
-    import CredentialIcon from "~spa_partials/CredentialIcon.svelte";
+    } from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { LegacyFormManagerService } from "~/services/frontend/LegacyFormManagerService";
+    import { PasswordPickerService } from "~/services/frontend/PasswordPickerService";
+    import CredentialIcon from "~/spa_partials/CredentialIcon.svelte";
 
     export let decryptedPartialCredentialData: DecryptedPartialCredentialData;
     let fakeCredentialObjectForIcon = {

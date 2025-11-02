@@ -6,11 +6,10 @@ import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { NextcloudServer } from "@binsky/passman-client-ts/lib/Model/NextcloudServer";
-import { sendToBackground } from "@plasmohq/messaging";
-import CustomStorageService from "~services/CustomStorageService";
-import { DefaultPersistenceService } from "@binsky/passman-client-ts/lib/Service/DefaultPersistenceService";
-import { NextcloudServerMessagingConnectorService } from "~services/NextcloudServerMessagingConnectorService";
-import ExtensionSettingsService from "~services/ExtensionSettingsService";
+import CustomStorageService from "@/services/CustomStorageService";
+import { NextcloudServerMessagingConnectorService } from "@/services/NextcloudServerMessagingConnectorService";
+import ExtensionSettingsService from "@/services/ExtensionSettingsService";
+import { sendMessage } from "@/entrypoints/background/messaging";
 
 export class NextcloudServerMessagingConnector extends NextcloudServer implements NextcloudServerInterface {
 
@@ -23,10 +22,9 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      */
     constructor(serverData: NextcloudServerInfoInterface, logger: LoggingHandlerInterface) {
         super(serverData, logger, CustomStorageService.getExtensionPassmanClientPersistenceService());
-        // super(serverData, logger, new DefaultPersistenceService()); // disable caching for this frontend (popup) instance
     }
 
-    private handleConnectorJsonResponse = async <T>(response: any, errorCallback: (response: Error) => void): Promise<T | void> => {
+    private readonly handleConnectorJsonResponse = <T>(response: any, errorCallback: (response: Error) => void): T | void => {
         if (response.error) {
             return errorCallback(response.error);
         }
@@ -64,20 +62,17 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
             }
         }
 
-        return sendToBackground({
-            name: "nextcloudServerMessagingConnectorApi",
-            body: {
-                url: this.getApiUrl() + endpoint,
-                init: {
-                    headers: {
-                        Accept: 'application/json',
-                        Authorization: `Basic ${this.getEncodedLogin()}`
-                    },
-                    credentials: 'omit',
-                }
+        return sendMessage('nextcloudServerMessagingConnectorApi', {
+            url: this.getApiUrl() + endpoint,
+            init: {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: `Basic ${this.getEncodedLogin()}`
+                },
+                credentials: 'omit',
             }
         }).then(async (value) => {
-            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
             // todo: check again if we can use this here; got a request loop here last time, so it's disabled for now
             /*await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
                 'GET',
@@ -104,20 +99,17 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      * @param errorCallback
      */
     deleteJson = async <T>(endpoint: string, errorCallback: (response: Error) => void): Promise<T | void> => {
-        return sendToBackground({
-            name: "nextcloudServerMessagingConnectorApi",
-            body: {
-                url: this.getApiUrl() + endpoint,
-                init: {
-                    method: 'DELETE',
-                    headers: {
-                        Authorization: `Basic ${this.getEncodedLogin()}`
-                    },
-                    credentials: 'omit',
-                }
+        return sendMessage('nextcloudServerMessagingConnectorApi', {
+            url: this.getApiUrl() + endpoint,
+            init: {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Basic ${this.getEncodedLogin()}`
+                },
+                credentials: 'omit',
             }
         }).then(async (value) => {
-            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
             await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
                 'DELETE',
                 this.getApiUrl() + endpoint,
@@ -136,23 +128,20 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      * @param method
      */
     postJson = async <T>(endpoint: string, data: [] | object | null, errorCallback: (response: Error) => void, method: string = 'POST'): Promise<T | void> => {
-        return sendToBackground({
-            name: "nextcloudServerMessagingConnectorApi",
-            body: {
-                url: this.getApiUrl() + endpoint,
-                init: {
-                    method: method,
-                    headers: {
-                        Accept: 'application/json',
-                        Authorization: `Basic ${this.getEncodedLogin()}`,
-                        "Content-Type": "application/json",
-                    },
-                    credentials: 'omit',
-                    body: JSON.stringify(data),
-                }
+        return sendMessage('nextcloudServerMessagingConnectorApi', {
+            url: this.getApiUrl() + endpoint,
+            init: {
+                method: method,
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: `Basic ${this.getEncodedLogin()}`,
+                    "Content-Type": "application/json",
+                },
+                credentials: 'omit',
+                body: JSON.stringify(data),
             }
         }).then(async (value) => {
-            const jsonResponse = await this.handleConnectorJsonResponse<T>(value, errorCallback);
+            const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
             await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
                 method,
                 this.getApiUrl() + endpoint,

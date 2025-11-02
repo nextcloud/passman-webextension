@@ -1,5 +1,5 @@
-import { ParserService } from "~services/ParserService";
-import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+import { ParserService } from "./ParserService";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 
 export class CustomCredentialFilterService {

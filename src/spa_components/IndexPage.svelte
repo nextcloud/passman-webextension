@@ -1,25 +1,26 @@
 <script lang="ts">
-    import { sendToBackground } from "@plasmohq/messaging";
     import { onMount } from "svelte";
-    import { push } from "~Router.svelte";
-    import { externalLink, lock, plus, close } from "svelte-awesome/package/icons";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
+    // @ts-expect-error
+    import { push } from "~/Router.svelte";
+    import { externalLink, lock, plus, close } from "svelte-awesome/icons";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import refresh from "svelte-awesome/icons/refresh";
-    import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~services/ExtensionSettingsService";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-    import CredentialListElement from "~spa_partials/InteractionElements/CredentialListElement.svelte";
-    import Loading from "~spa_components/Loading.svelte";
+    import CredentialListElement from "~/spa_partials/InteractionElements/CredentialListElement.svelte";
+    import Loading from "~/spa_components/Loading.svelte";
     import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
-    import { CustomCredentialFilterService } from "~services/CustomCredentialFilterService";
-    import type { GetCredentialsForVaultMessagingResponse } from "~background/messages/getCredentialsForVault";
-    import NotyService from "~services/frontend/NotyService";
-    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
-    import { i18n } from "~lib/i18n";
+    import { CustomCredentialFilterService } from "~/services/CustomCredentialFilterService";
+    import type { GetCredentialsForVaultMessagingResponse } from "~/entrypoints/background/messages/getCredentialsForVault";
+    import NotyService from "~/services/frontend/NotyService";
+    import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import { i18n } from "~/lib/i18n";
     import browser from "webextension-polyfill";
-    import CustomStorageService, { CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY } from "~services/CustomStorageService";
+    import CustomStorageService, { CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY } from "~/services/CustomStorageService";
+    import { sendMessage } from "@/entrypoints/background/messaging";
 
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
@@ -31,10 +32,8 @@
     let initialLoadIsDone = false;
 
     const lockExtension = () => {
-        sendToBackground({
-            name: "lockExtension"
-        }).then(() => {
-            $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
+        sendMessage('lockExtension').then(() => {
+            extensionUnlockStateStore.set(ExtensionUnlockState.LOCKED);
             if (credentials) {
                 vault = null;
                 credentials = null;
@@ -46,11 +45,8 @@
 
     const refreshCredentialList = (getCachedIfPossible: boolean = false) => {
         pageIsLoading = true;
-        sendToBackground({
-            name: "getCredentialsForVault",
-            body: {
-                getCachedIfPossible: getCachedIfPossible
-            }
+        sendMessage('getCredentialsForVault', {
+            getCachedIfPossible: getCachedIfPossible
         }).then((response: GetCredentialsForVaultMessagingResponse) => {
             if (response.status && vault) {
                 credentials = [];
@@ -150,7 +146,7 @@
 </script>
 
 <div class="h-full overflow-y-hidden flex flex-col">
-    <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
+    <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b border-gray-200 dark:border-gray-500 p-2 bg-white">
         <OnClickButton callback={refreshCredentialList} title={i18n.getMessage('refresh_credential_list')} additionalClasses="w-12"
                        disabled={!vault}>
             <Icon data={refresh} scale={1.3}/>
@@ -161,7 +157,7 @@
         </InternalHrefLinkButton>
         <div class="">
             <input bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
-                   class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-primary-focus
+                   class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-b-primary-focus
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
         </div>

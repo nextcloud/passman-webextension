@@ -1,13 +1,13 @@
 <script lang="ts">
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
-    import { circleONotch, cogs, search } from "svelte-awesome/package/icons";
+    import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import { circleONotch, cogs, search } from "svelte-awesome/icons";
     import OnClickButton from "./InteractionElements/OnClickButton.svelte";
-    import gitlabImage from "data-base64:~../assets/images/gitlab.svg";
-    import { i18n } from "~lib/i18n";
+    import gitlabImage from "~/assets/images/gitlab.svg";
+    import { i18n } from "~/lib/i18n";
 </script>
 
-<div class="twp-passman-webextension flex flex-nowrap items-center justify-center space-x-4 border-t py-2">
+<div class="twp-passman-webextension flex flex-nowrap items-center justify-center space-x-4 border-t border-gray-200 dark:border-gray-500 py-2">
     <InternalHrefLinkButton href="/home" title="{i18n.getMessage('credentials')}" small={true}
                             additionalClasses="flex flex-col items-center min-w-24 h-[52px]">
         <Icon data={search} scale={1.4}/>

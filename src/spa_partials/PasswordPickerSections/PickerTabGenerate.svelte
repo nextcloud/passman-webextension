@@ -2,11 +2,11 @@
     import { onMount } from "svelte";
     import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
     import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
-    import { PasswordPickerService } from "~services/frontend/PasswordPickerService";
-    import PasswordMeter from "~spa_partials/PasswordMeter.svelte";
-    import ExtendedPasswordInputField from "~spa_partials/FormElements/ExtendedPasswordInputField.svelte";
-    import { i18n } from "~lib/i18n";
-    import CustomCheckboxField from "~spa_partials/FormElements/CustomCheckboxField.svelte";
+    import { PasswordPickerService } from "~/services/frontend/PasswordPickerService";
+    import PasswordMeter from "~/spa_partials/PasswordMeter.svelte";
+    import ExtendedPasswordInputField from "~/spa_partials/FormElements/ExtendedPasswordInputField.svelte";
+    import { i18n } from "~/lib/i18n";
+    import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
 
     let passwordGeneratorConfiguration: PasswordGeneratorConfigurationInterface = PasswordGeneratorService.getDefaultConfig();
     let password = '';

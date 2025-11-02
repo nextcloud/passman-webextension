@@ -1,20 +1,20 @@
 <script lang="ts">
     import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-    import SecretField from "~spa_partials/FormElements/SecretField.svelte";
-    import CopyClipboardButton from "~spa_partials/InteractionElements/CopyClipboardButton.svelte";
+    import SecretField from "~/spa_partials/FormElements/SecretField.svelte";
+    import CopyClipboardButton from "~/spa_partials/InteractionElements/CopyClipboardButton.svelte";
     import Time from "svelte-time";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import externalLink from "svelte-awesome/icons/externalLink";
     import exclamationCircle from "svelte-awesome/icons/exclamationCircle";
-    import TagsView from "~spa_partials/TagsView.svelte";
-    import OTPGenerator from "~spa_partials/InteractionElements/OTPGenerator.svelte";
+    import TagsView from "~/spa_partials/TagsView.svelte";
+    import OTPGenerator from "~/spa_partials/InteractionElements/OTPGenerator.svelte";
     import { CustomMathsService } from "@binsky/passman-client-ts/lib/Service/CustomMathsService";
     import type { FileInterface } from "@binsky/passman-client-ts/lib/Interfaces/File/FileInterface";
     import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
-    import InlineMiniLoading from "~spa_components/LineLoading.svelte";
-    import { i18n } from "~lib/i18n";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
-    import NotyService from "~services/frontend/NotyService";
+    import InlineMiniLoading from "~/spa_components/LineLoading.svelte";
+    import { i18n } from "~/lib/i18n";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
+    import NotyService from "~/services/frontend/NotyService";
     import refresh from "svelte-awesome/icons/refresh";
 
     export let credential: Credential;
@@ -61,6 +61,13 @@
         }).finally(() => {
             deletion_in_progress = false;
         });
+    }
+
+    const addProtocolIfMissing = (url: string) => {
+        if (!/^https?:\/\//i.test(url)) {
+            url = "https://" + url;
+        }
+        return url;
     }
 </script>
 
@@ -124,8 +131,8 @@
                 <div class="basis-3/12 grow font-semibold">{i18n.getMessage('url')}</div>
                 <div class="basis-8/12 break-all">
                     {credential.url}
-                    <a href="{credential.url}" target="_blank"
-                       class="cursor-pointer px-0.5">
+                    <a href="{addProtocolIfMissing(credential.url)}" title="{addProtocolIfMissing(credential.url)}"
+                       target="_blank" class="cursor-pointer px-0.5">
                         <Icon data={externalLink} scale={1.0}/>
                     </a>
                 </div>

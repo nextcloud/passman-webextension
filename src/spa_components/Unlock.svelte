@@ -1,13 +1,14 @@
 <script lang="ts">
-    import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
-    import ShowGenericErrors from "~spa_partials/FormElements/ShowGenericErrors.svelte";
-    import { push } from "~Router.svelte";
-    import extensionUnlockStateStore, { ExtensionUnlockState } from "~stores/extensionUnlockStateStore";
-    import { sendToBackground } from "@plasmohq/messaging";
+    import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
+    import ShowGenericErrors from "~/spa_partials/FormElements/ShowGenericErrors.svelte";
+    // @ts-expect-error
+    import { push } from "~/Router.svelte";
+    import extensionUnlockStateStore, { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
     import Loading from "./Loading.svelte";
     import { onMount } from "svelte";
-    import { i18n } from "~lib/i18n";
+    import { i18n } from "~/lib/i18n";
+    import { sendMessage } from "@/entrypoints/background/messaging";
 
     let extensionUnlockPassword = '';
     let errors: string[] = [];
@@ -21,21 +22,18 @@
     const unlock = (refreshAfterUnlock = true) => {
         if (!inUnlockRequest) {
             inUnlockRequest = true;
-            sendToBackground({
-                name: "unlockExtension",
-                body: {
-                    extensionUnlockPassword,
-                    refreshAfterUnlock
-                }
+            sendMessage('unlockExtension', {
+                extensionUnlockPassword,
+                refreshAfterUnlock
             }).then((value) => {
                 if (value.status) {
                     push('/home');
-                    $extensionUnlockStateStore = ExtensionUnlockState.UNLOCKED;
+                    extensionUnlockStateStore.set(ExtensionUnlockState.UNLOCKED);
                 } else {
                     errors = [
                         i18n.getMessage("invalid_master_password")
                     ];
-                    $extensionUnlockStateStore = ExtensionUnlockState.LOCKED;
+                    extensionUnlockStateStore.set(ExtensionUnlockState.LOCKED);
                 }
                 inUnlockRequest = false;
             });
@@ -66,12 +64,12 @@
             />
             <ShowGenericErrors bind:errors/>
             <div class="flex space-x-2 justify-center items-center">
-                <OnClickButton callback={unlock} title="{i18n.getMessage('unlock')}" tabindex="2"
+                <OnClickButton callback={unlock} title="{i18n.getMessage('unlock')}" tabindex={2}
                     disabled={extensionUnlockPassword === '' || inUnlockRequest} additionalClasses="hover:border-blue-500"
                 >
                     {i18n.getMessage("unlock")}
                 </OnClickButton>
-                <OnClickButton callback={() => unlock(false)} title="{i18n.getMessage('unlock_without_refresh')}" tabindex="2"
+                <OnClickButton callback={() => unlock(false)} title="{i18n.getMessage('unlock_without_refresh')}" tabindex={2}
                     disabled={extensionUnlockPassword === '' || inUnlockRequest} small={true}
                     additionalClasses="py-1 text-xs h-fit hover:border-blue-500"
                 >

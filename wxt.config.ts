@@ -1,0 +1,88 @@
+import { defineConfig } from 'wxt';
+import tailwindcss from "@tailwindcss/vite";
+
+// See https://wxt.dev/api/config.html
+export default defineConfig({
+    srcDir: 'src',
+    modules: ['@wxt-dev/module-svelte'],
+    zip: {
+        artifactTemplate: "{{name}}-prod-{{browser}}.zip",
+        sourcesTemplate: "{{name}}-prod-sources.zip"
+    },
+    manifest: {
+        host_permissions: [
+            "https://*/*",
+            "<all_urls>",
+        ],
+        default_locale: "en",
+        permissions: [
+            "contextMenus",
+            "storage",
+            "tabs",
+            "scripting"
+        ],
+        web_accessible_resources: [
+            {
+                "resources": [
+                    "assets/content_styles/*.css",
+                    "assets/content_styles/*.scss"
+                ],
+                "matches": [
+                    "http://*/*",
+                    "https://*/*"
+                ]
+            }
+        ],
+        browser_specific_settings: {
+            "gecko": {
+                "id": "{5258e630-6a3c-11f0-81fa-a87eea04a880}"
+            }
+        }
+    },
+    vite: () => ({
+        optimizeDeps: {
+            // Include the linked CommonJS package for ESM conversion
+            include: ['@binsky/passman-client-ts']
+        },
+        ssr: {
+            noExternal: ['@binsky/passman-client-ts']
+        },
+        build: {
+            commonjsOptions: {
+                // Ensure proper CommonJS to ESM conversion for the linked package
+                include: [/node_modules/, /passman-client-ts/],
+                transformMixedEsModules: true
+            }
+        },
+        plugins: [
+            tailwindcss()
+        ],
+        css: {
+            postcss: {
+                plugins: [
+                    // tailwindcss(),
+                    require('autoprefixer'),
+                    require('postcss-rem-to-pixel')({
+                        rootValue: 16
+                    })
+                ]
+            }
+        }
+    }),
+    svelte: {
+        vite: {
+            compilerOptions: {
+                hmr: false
+            },
+            configFile: 'svelte.config.js',
+            onwarn: (warning, handler) => {
+                // Ignore css-unused-selector warnings for PasswordPicker.svelte (it has embedded tailwind preflight styles)
+                if (warning.code === 'css_unused_selector' && warning.filename?.includes('PasswordPicker.svelte')) {
+                    return;
+                }
+                // Handle all other warnings normally
+                handler(warning);
+            }
+        }
+    }
+});

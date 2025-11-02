@@ -1,10 +1,11 @@
 <script lang="ts">
-    import OnClickButton from "~spa_partials/InteractionElements/OnClickButton.svelte";
-    import InternalHrefLinkButton from "~spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
-    import CustomInputField from "~spa_partials/FormElements/CustomInputField.svelte";
-    import ExtensionUnlockService from "~services/ExtensionUnlockService";
-    import { push } from "~Router.svelte";
-    import { i18n } from "~lib/i18n";
+    import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
+    import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
+    import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
+    import ExtensionUnlockService from "~/services/ExtensionUnlockService";
+    // @ts-expect-error
+    import { push } from "~/Router.svelte";
+    import { i18n } from "~/lib/i18n";
     import browser from "webextension-polyfill";
 
     export let params: { isInPopup: string };

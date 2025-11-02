@@ -1,12 +1,12 @@
 <script lang="ts">
-    import passmanImage from "data-base64:~../assets/images/passman.svg";
-    import passmanBlueWhiteImage from "data-base64:~../assets/images/passman-blue-white.svg";
+    import passmanImage from "~/assets/images/passman.svg";
+    import passmanBlueWhiteImage from "~/assets/images/passman-blue-white.svg";
 
     export let show: boolean = true;
 </script>
 
 {#if show}
-    <div class="ring w-[50vw] md:w-[15em] md:h-[15em] h-[50vw] flex justify-center items-center">
+    <div class="ring w-[50vw] md:w-[15em] md:h-[15em] h-[50vw] flex justify-center items-center dark:!bg-gray-600">
         <img src="{passmanBlueWhiteImage}" class="text-center opacity-20 w-4/6 pt-8 absolute dark:hidden" alt="">
         <img src="{passmanImage}" class="text-center opacity-20 w-4/6 pt-8 absolute hidden dark:inline-block" alt="">
         <span></span>

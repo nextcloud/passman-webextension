@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { PASSWORD_PICKER_SECTIONS, PasswordPickerService } from "~services/frontend/PasswordPickerService";
+    import { PASSWORD_PICKER_SECTIONS, PasswordPickerService } from "~/services/frontend/PasswordPickerService";
     import { onMount } from "svelte";
-    import PickerCredentialListElement from "~spa_partials/InteractionElements/PickerCredentialListElement.svelte";
+    import PickerCredentialListElement from "~/spa_partials/InteractionElements/PickerCredentialListElement.svelte";
     import type {
         DecryptedPartialCredentialData
-    } from "~background/messages/getPartiallyDecryptedFilteredCredentialsList";
-    import { i18n } from "~lib/i18n";
+    } from "@/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import { i18n } from "~/lib/i18n";
 
     export let selectedSection: PASSWORD_PICKER_SECTIONS;
 

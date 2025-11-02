@@ -12,10 +12,10 @@
     import CustomInputField from "../FormElements/CustomInputField.svelte";
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
     import type { FileInterface } from "@binsky/passman-client-ts/lib/Interfaces/File/FileInterface";
-    import NotyService from "~services/frontend/NotyService";
+    import NotyService from "~/services/frontend/NotyService";
     import Select from 'svelte-select';
-    import Utils from "~lib/Utils";
-    import { i18n } from "~lib/i18n";
+    import Utils from "~/lib/Utils";
+    import { i18n } from "~/lib/i18n";
 
     export let credentialData: DecryptedCredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload
