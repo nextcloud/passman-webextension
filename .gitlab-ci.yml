@@ -88,14 +88,12 @@ publish:
     - echo "Running dry-run to test submission configuration..."
     - |
       bunx wxt submit --dry-run \
-        --chrome-zip .output/passman-webextension-v3-prod-chrome.zip \
         --firefox-zip .output/passman-webextension-v3-prod-firefox.zip \
         --firefox-sources-zip .output/passman-webextension-v3-prod-sources.zip \
         || (echo "Dry-run failed. Check your .env.submit configuration." && exit 1)
     - echo "Dry-run successful. Submitting to stores..."
     - |
       bunx wxt submit \
-        --chrome-zip .output/passman-webextension-v3-prod-chrome.zip \
         --firefox-zip .output/passman-webextension-v3-prod-firefox.zip \
         --firefox-sources-zip .output/passman-webextension-v3-prod-sources.zip
 
