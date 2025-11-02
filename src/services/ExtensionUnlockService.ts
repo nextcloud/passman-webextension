@@ -25,7 +25,7 @@ export default class ExtensionUnlockService {
                     const secureStorage = new SecureStorage();
                     secureStorage.setPassword(password);
                     const storageKey = await secureStorage.decryptStorageKey(password);
-                    
+
                     if (!storageKey) {
                         console.error("Failed to decrypt storage key during unlock");
                         return false;
@@ -57,13 +57,18 @@ export default class ExtensionUnlockService {
         // Query the current active tab
         browser.tabs.query({ active: true, currentWindow: true }).then(async (tabs) => {
             if (tabs[0]?.id) {
-                await sendMessage(
-                    RemoteCallableFunctions.remoteFunctionCallMessageName,
-                    {
-                        method: RemoteCallableFunctionNames.reloadPicker,
-                    },
-                    tabs[0]?.id
-                );
+                try {
+                    await sendMessage(
+                        RemoteCallableFunctions.remoteFunctionCallMessageName,
+                        {
+                            method: RemoteCallableFunctionNames.reloadPicker,
+                        },
+                        tabs[0]?.id
+                    );
+                } catch (e) {
+                    // fails for non-content-injectable tabs like "chrome://extensions/"
+                    console.warn("notifyReloadContentScriptPicker failed due to an error. This usually fails for non-content-injectable tabs.", e);
+                }
             }
         });
     }
@@ -102,7 +107,7 @@ export default class ExtensionUnlockService {
         // Verify old password
         const oldPasswordHash = await CustomStorageService.getUnsafeLocalStorage()
             .get<string>(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY);
-        
+
         if (!oldPasswordHash || oldPasswordHash !== sha512(oldPassword)) {
             return false;
         }
@@ -111,7 +116,7 @@ export default class ExtensionUnlockService {
         const secureStorage = new SecureStorage();
         secureStorage.setPassword(oldPassword);
         const storageKey = await secureStorage.decryptStorageKey(oldPassword);
-        
+
         if (!storageKey) {
             console.error("Failed to decrypt storage key with old password");
             return false;
