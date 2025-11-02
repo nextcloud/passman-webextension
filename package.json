@@ -1,7 +1,7 @@
 {
   "name": "passman-webextension-v3",
   "displayName": "Passman Webextension v3",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "type": "module",
   "description": "A modern webextension for the Passman Nextcloud app",
   "author": "Timo Triebensky <timo@binsky.org>",
@@ -20,7 +20,6 @@
   "dependencies": {
     "idb-keyval": "^6.2.2",
     "js-sha512": "^0.9.0",
-    "plasmo": "^0.90.5",
     "regexparam": "^3.0.0",
     "svelte": "^5.43.2",
     "svelte-preprocess": "^5.1.4"
