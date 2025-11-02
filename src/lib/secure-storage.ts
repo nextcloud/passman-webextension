@@ -27,6 +27,7 @@ export class SecureStorage extends Storage {
 
     /**
      * Generate a secure random encryption key for storage.
+     * The key must be extractable so it can be exported for encryption with the password.
      * @returns A 256-bit (32-byte) random key as CryptoKey
      */
     public static async generateStorageKey(): Promise<CryptoKey> {
@@ -35,7 +36,7 @@ export class SecureStorage extends Storage {
             "raw",
             keyMaterial,
             { name: "AES-GCM" },
-            false,
+            true, // Must be extractable to allow export for password-based encryption
             ["encrypt", "decrypt"]
         );
     }
@@ -124,11 +125,12 @@ export class SecureStorage extends Storage {
                 encryptedBytes
             );
 
+            // Import as extractable so it can be re-encrypted when changing passwords
             return await crypto.subtle.importKey(
                 "raw",
                 decrypted,
                 { name: "AES-GCM" },
-                false,
+                true,
                 ["encrypt", "decrypt"]
             );
         } catch (error) {
