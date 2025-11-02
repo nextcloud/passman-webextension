@@ -10,6 +10,6 @@ export interface GetAutofillEnabledStateResponse {
 
 onMessage('getAutofillEnabledState', async () => {
     return {
-        autofillEnabled: await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.autofillEnabled)
+        autofillEnabled: await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.autofillEnabled, true)
     };
 });

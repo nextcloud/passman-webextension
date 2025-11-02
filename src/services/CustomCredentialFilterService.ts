@@ -17,10 +17,10 @@ export class CustomCredentialFilterService {
         }
 
         // todo: check if the default of false is acceptable here (may be better to some defined defaults from the extension settings?)
-        const ignoreProtocol = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreProtocol) ?? false;
-        const ignoreSubdomain = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreSubdomain) ?? false;
-        const ignorePath = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePath) ?? false;
-        const ignorePort = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePort) ?? false;
+        const ignoreProtocol = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreProtocol, true) ?? false;
+        const ignoreSubdomain = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreSubdomain, true) ?? false;
+        const ignorePath = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePath, true) ?? true;
+        const ignorePort = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePort, true) ?? false;
 
         const url = ParserService.processURL(userTabUrl, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
 
