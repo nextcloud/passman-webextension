@@ -36,6 +36,9 @@ import {
     RemoteCallableFunctionMessagingRequest,
     RemoteCallableFunctions
 } from "@/entrypoints/content/remoteCallableFunctions";
+import {
+    GetEnableEmailAsUsernameFallbackFillingStateResponse
+} from '@/entrypoints/background/messages/getEnableEmailAsUsernameFallbackFillingState';
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -57,6 +60,8 @@ interface ProtocolMap {
     getExtensionUnlockState(): GetExtensionUnlockStateResponse;
 
     getAutofillEnabledState(): GetAutofillEnabledStateResponse;
+
+    getEnableEmailAsUsernameFallbackFillingState(): GetEnableEmailAsUsernameFallbackFillingStateResponse;
 
     createCredentialForPicker(data?: CreateCredentialForPickerMessagingRequest): CreateCredentialForPickerMessagingResponse;
 

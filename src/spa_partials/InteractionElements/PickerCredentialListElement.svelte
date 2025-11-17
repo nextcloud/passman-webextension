@@ -8,6 +8,8 @@
     import CredentialIcon from "~/spa_partials/CredentialIcon.svelte";
 
     export let decryptedPartialCredentialData: DecryptedPartialCredentialData;
+    export let enableEmailAsUsernameFallbackFilling: boolean;
+
     let fakeCredentialObjectForIcon = {
         icon: decryptedPartialCredentialData.icon,
         acl: decryptedPartialCredentialData.is_shared_with_others ?? false,
@@ -19,7 +21,8 @@
             decryptedPartialCredentialData.username ?? undefined,
             decryptedPartialCredentialData.email ?? undefined,
             decryptedPartialCredentialData.password ?? undefined,
-            decryptedPartialCredentialData.otp ?? undefined
+            decryptedPartialCredentialData.otp ?? undefined,
+            enableEmailAsUsernameFallbackFilling
         );
         PasswordPickerService.hidePicker();
     };

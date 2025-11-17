@@ -5,6 +5,7 @@
     import { i18n } from "~/lib/i18n";
 
     let searchResponse: GetCredentialsListMessagingResponse | null = null;
+    export let enableEmailAsUsernameFallbackFilling: boolean;
 
     const searchInputCallback = (event: Event) => {
         const searchInput = (event.target as HTMLInputElement).value;
@@ -25,7 +26,7 @@
         {#if searchResponse}
             {#key searchResponse}
                 {#each searchResponse.decryptedPartialCredentialData as decryptedPartialCredentialData (decryptedPartialCredentialData.guid)}
-                    <PickerCredentialListElement bind:decryptedPartialCredentialData/>
+                    <PickerCredentialListElement bind:decryptedPartialCredentialData bind:enableEmailAsUsernameFallbackFilling/>
                 {/each}
             {/key}
         {/if}

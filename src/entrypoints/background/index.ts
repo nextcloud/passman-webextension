@@ -14,6 +14,7 @@ import './messages/getPasswordGeneratorConfiguration';
 import './messages/getPartiallyDecryptedFilteredCredentialsList';
 import './messages/getExtensionUnlockState';
 import './messages/getAutofillEnabledState';
+import './messages/getEnableEmailAsUsernameFallbackFillingState';
 import './messages/createCredentialForPicker';
 import './messages/addNewServerConnection';
 import './messages/getCredentialsForVault';

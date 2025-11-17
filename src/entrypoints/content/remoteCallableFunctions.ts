@@ -12,7 +12,8 @@ export type EnterLoginDetailsArgs = {
     email?: string,
     otp?: string,
     password?: string,
-    username?: string
+    username?: string,
+    enableEmailAsUsernameFallbackFilling?: boolean
 };
 
 // Define argument types for all functions
@@ -63,7 +64,8 @@ export class RemoteCallableFunctions {
             args.username,
             args.email,
             args.password,
-            args.otp
+            args.otp,
+            args.enableEmailAsUsernameFallbackFilling
         );
         return true;
     }

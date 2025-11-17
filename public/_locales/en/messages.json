@@ -840,5 +840,9 @@
   "extension_version": {
     "message": "Extension version",
     "description": "Extension version"
+  },
+  "enable_email_as_username_fallback_filling": {
+    "message": "Enable email as username fallback filling (and vice versa)",
+    "description": "Enable email as username fallback filling (and vice versa)"
   }
 }

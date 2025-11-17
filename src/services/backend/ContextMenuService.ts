@@ -102,6 +102,7 @@ export default class ContextMenuService {
                                             email: credential.email,
                                             password: credential.password,
                                             otp: OTPService.updateOTP(credential.otp),
+                                            enableEmailAsUsernameFallbackFilling: await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling, true) ?? true
                                         }
                                     },
                                     tab?.id

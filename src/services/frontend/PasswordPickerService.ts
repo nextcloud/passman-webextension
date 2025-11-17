@@ -29,7 +29,8 @@ export class PasswordPickerService {
 
     public static initPickerForPage = (
         showPickerCallback: (left: number, top: number, maxZ: any) => void,
-        hidePickerCallback: () => void
+        hidePickerCallback: () => void,
+        enableEmailAsUsernameFallbackFilling: boolean
     ) => {
         PasswordPickerService.showPickerCallback = showPickerCallback;
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
@@ -80,7 +81,8 @@ export class PasswordPickerService {
                             credentialToAutofill.username ?? undefined,
                             credentialToAutofill.email ?? undefined,
                             credentialToAutofill.password ?? undefined,
-                            credentialToAutofill.otp ?? undefined
+                            credentialToAutofill.otp ?? undefined,
+                            enableEmailAsUsernameFallbackFilling
                         );
                     }
                 });

@@ -111,6 +111,7 @@ export class LegacyFormManagerService {
     }
 
     /**
+     * Don't do any magic here, just get the fields from the form and return them in a structured way.
      * @param form - The form to get the fields for.
      * @param isSubmission - Whether the form is being submitted (to skip empty fields).
      * @param skipNonVisibleFields - Whether to skip non-visible fields (default: true).
@@ -223,7 +224,7 @@ export class LegacyFormManagerService {
      * @param password - The password to fill.
      * @param otp - The otp to fill.
      */
-    public static fillFields = (username?: string, email?: string, password?: string, otp?: string) => {
+    public static fillFields = (username?: string, email?: string, password?: string, otp?: string, enableEmailAsUsernameFallbackFilling: boolean = true) => {
         const loginFieldsByForm = LegacyFormManagerService.getLoginFieldsPerForm();
         if (loginFieldsByForm && loginFieldsByForm.length > 0) {
             for (let i = 0; i < loginFieldsByForm.length; i++) {
@@ -256,6 +257,25 @@ export class LegacyFormManagerService {
                     fields.otpField.value = otp;
                     if (fields.otpField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.otpField);
+                    }
+                }
+
+                // fallback username and email filling logic to fill email as username if no username field is found (and the other way around)
+                // only when we don't have both field types available, we should check if we can fill the other field type, if still empty
+                if (enableEmailAsUsernameFallbackFilling) {
+                    if (!fields.emailField && fields.usernameField && !username && email) {
+                        // initial username field was not filled and email value wasn't used yet, so we can try to fill it as username
+                        fields.usernameField.value = email;
+                        if (fields.usernameField.offsetParent) {
+                            LegacyFormManagerService.dispatchEvents(fields.usernameField);
+                        }
+                    }
+                    if (!fields.usernameField && fields.emailField && !email && username) {
+                        // initial email field was not filled and username value wasn't used yet, so we can try to fill it as email
+                        fields.emailField.value = username;
+                        if (fields.emailField.offsetParent) {
+                            LegacyFormManagerService.dispatchEvents(fields.emailField);
+                        }
                     }
                 }
             }

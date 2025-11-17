@@ -31,6 +31,7 @@
     let selectedSection: PASSWORD_PICKER_SECTIONS = PASSWORD_PICKER_SECTIONS.LIST;
 
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
+    let enableEmailAsUsernameFallbackFilling: boolean = true;
 
     const showPickerCallback = (left: number, top: number, maxZ: any) => {
         decryptedPartialCredentialData = PasswordPickerService.decryptedPartialCredentialData;
@@ -83,8 +84,12 @@
                     }
                 });
 
-                PasswordPickerService.initPickerForPage(showPickerCallback, hidePickerCallback);
-                console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
+                sendMessage('getEnableEmailAsUsernameFallbackFillingState').then(async (value) => {
+                    enableEmailAsUsernameFallbackFilling = value.enableEmailAsUsernameFallbackFilling ?? true;
+
+                    PasswordPickerService.initPickerForPage(showPickerCallback, hidePickerCallback, enableEmailAsUsernameFallbackFilling);
+                    console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
+                });
             } else {
                 // unload password picker icons in input fields
                 PasswordPickerService.unloadPicker();
@@ -151,9 +156,9 @@
                 {#if selectedSection === PASSWORD_PICKER_SECTIONS.ADD}
                     <PickerTabAdd bind:selectedSection/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.LIST}
-                    <PickerTabList bind:selectedSection/>
+                    <PickerTabList bind:selectedSection bind:enableEmailAsUsernameFallbackFilling/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.SEARCH}
-                    <PickerTabSearch/>
+                    <PickerTabSearch bind:enableEmailAsUsernameFallbackFilling/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.GENERATE}
                     <PickerTabGenerate/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.IGNORE}

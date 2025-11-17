@@ -8,6 +8,7 @@
     import { i18n } from "~/lib/i18n";
 
     export let selectedSection: PASSWORD_PICKER_SECTIONS;
+    export let enableEmailAsUsernameFallbackFilling: boolean;
 
     let allDecryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
@@ -20,7 +21,7 @@
     {#if allDecryptedPartialCredentialData && allDecryptedPartialCredentialData.length > 0}
         <div class="flex flex-col items-center justify-center">
             {#each allDecryptedPartialCredentialData as decryptedPartialCredentialData (decryptedPartialCredentialData.guid)}
-                <PickerCredentialListElement bind:decryptedPartialCredentialData/>
+                <PickerCredentialListElement bind:decryptedPartialCredentialData bind:enableEmailAsUsernameFallbackFilling/>
             {/each}
         </div>
     {:else}

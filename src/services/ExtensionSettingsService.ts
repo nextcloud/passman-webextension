@@ -18,6 +18,7 @@ export enum ExtensionSettingsOptions {
     ignorePath,
     ignorePort,
     autofillEnabled,
+    enableEmailAsUsernameFallbackFilling,
     passwordGeneratorConfiguration
 }
 
@@ -33,6 +34,7 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.ignorePath]: boolean,
     [ExtensionSettingsOptions.ignorePort]: boolean,
     [ExtensionSettingsOptions.autofillEnabled]: boolean,
+    [ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]: boolean,
     [ExtensionSettingsOptions.passwordGeneratorConfiguration]: PasswordGeneratorConfigurationInterface,
 }
 
@@ -94,6 +96,9 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.autofillEnabled:
                 returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling:
+                returnValue = true as ExtensionSettings[K];
                 break;
             case ExtensionSettingsOptions.passwordGeneratorConfiguration:
                 returnValue = PasswordGeneratorService.getDefaultConfig() as ExtensionSettings[K];

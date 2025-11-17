@@ -22,6 +22,7 @@
         [ExtensionSettingsOptions.ignorePath]: true,
         [ExtensionSettingsOptions.ignorePort]: false,
         [ExtensionSettingsOptions.autofillEnabled]: false,
+        [ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]: true,
     };
 
 
@@ -54,6 +55,8 @@
                         ?? extendedSettings[ExtensionSettingsOptions.ignorePort];
                     extendedSettings[ExtensionSettingsOptions.autofillEnabled] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.autofillEnabled)
                         ?? extendedSettings[ExtensionSettingsOptions.autofillEnabled];
+                    extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling];
                 } else {
                     push('/unlock');
                 }
@@ -89,6 +92,9 @@
             <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
                                  id="enable_autofill"
                                  label="{i18n.getMessage('enable_autofill')}"/>
+            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
+                                 id="enableEmailAsUsernameFallbackFilling"
+                                 label="{i18n.getMessage('enable_email_as_username_fallback_filling')}"/>
         </Card>
 
         <OnClickButton callback="{save}">
