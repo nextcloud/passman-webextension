@@ -25,6 +25,8 @@
                     NotyService.notyError(i18n.getMessage('otp_configuration_invalid'));
                 }
             }
+        } else if (!otp.period) {
+            OTPService.mergeDefaultOTPConfig(otp);
         }
     };
     const createTimer = () => {
