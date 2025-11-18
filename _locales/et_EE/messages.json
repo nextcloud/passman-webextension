@@ -460,7 +460,7 @@
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Unustasid parooli?",
+        "message": "Kas unustasid salasõna?",
         "description": "Search"
     },
     "reset_extension": {
