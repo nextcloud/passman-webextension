@@ -21,6 +21,12 @@ export class DynamicFormDetectionService {
     // Callbacks
     private static onFormDetectedCallback: (() => void) | null = null;
     private static onUrlChangedCallback: ((newUrl: string, oldUrl: string) => void) | null = null;
+    
+    // Throttling and debouncing
+    private static formCheckTimeout: number | null = null;
+    private static lastFormCheckTime: number = 0;
+    private static readonly FORM_CHECK_THROTTLE_MS = 2000; // Maximum time between checks, no matter the debounce delay
+    private static readonly FORM_CHECK_DEBOUNCE_MS = 500; // Debounce delay
 
     /**
      * Sets the callback to be invoked when new forms are detected
@@ -57,55 +63,95 @@ export class DynamicFormDetectionService {
             let shouldCheckForms = false;
 
             for (const mutation of mutations) {
-                // Check if new forms were added
-                if (mutation.addedNodes.length > 0) {
-                    for (const node of Array.from(mutation.addedNodes)) {
-                        if (node.nodeType === Node.ELEMENT_NODE) {
-                            const element = node as Element;
-                            
-                            // Check if a form was added
-                            if (element.tagName === 'FORM') {
-                                shouldCheckForms = true;
-                                break;
-                            }
-                            
-                            // Check if a form or input field was added within this element
-                            if (element.querySelector && (
-                                element.querySelector('form') ||
-                                element.querySelector('input[type="password"]') ||
-                                element.querySelector('input[type="email"]') ||
-                                element.querySelector('input[type="text"]')
-                            )) {
-                                shouldCheckForms = true;
-                                break;
-                            }
+                // Only care about childList changes (nodes being added), ignore attribute/text changes
+                // This prevents triggering on every click that changes classes/attributes
+                if (mutation.type !== 'childList' || mutation.addedNodes.length === 0) {
+                    continue;
+                }
+
+                for (const node of Array.from(mutation.addedNodes)) {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        const element = node as Element;
+                        
+                        // Check if a form was added
+                        if (element.tagName === 'FORM') {
+                            shouldCheckForms = true;
+                            break;
+                        }
+                        
+                        // Check if a form or input field was added within this element
+                        if (element.querySelector && (
+                            element.querySelector('form') ||
+                            element.querySelector('input[type="password"]') ||
+                            element.querySelector('input[type="email"]') ||
+                            element.querySelector('input[type="text"]')
+                        )) {
+                            shouldCheckForms = true;
+                            break;
                         }
                     }
                 }
 
                 // Also check if input fields were added to existing forms
                 if (mutation.target && mutation.target instanceof HTMLFormElement) {
-                    shouldCheckForms = true;
+                    // Only trigger if actual input elements were added
+                    const addedInputs = Array.from(mutation.addedNodes).some(node => 
+                        node.nodeType === Node.ELEMENT_NODE && 
+                        (node as Element).tagName === 'INPUT'
+                    );
+                    if (addedInputs) {
+                        shouldCheckForms = true;
+                    }
                 }
             }
 
             if (shouldCheckForms && DynamicFormDetectionService.onFormDetectedCallback) {
-                // Debounce: wait a bit for the DOM to settle (SPAs might add multiple elements)
-                setTimeout(() => {
-                    if (DynamicFormDetectionService.onFormDetectedCallback) {
-                        DynamicFormDetectionService.onFormDetectedCallback();
-                    }
-                }, 100);
+                // Use throttling + debouncing to prevent rapid-fire calls
+                DynamicFormDetectionService.throttledFormCheck();
             }
         });
 
         // Start observing the document body for changes
+        // Only observe childList changes (nodes being added/removed)
+        // Don't observe attributes or characterData - these fire too often on clicks
         if (document.body) {
             DynamicFormDetectionService.mutationObserver.observe(document.body, {
-                childList: true,
-                subtree: true
+                childList: true,    // Only watch for nodes being added/removed
+                subtree: true,      // Watch all descendants
+                // Explicitly don't observe attributes or characterData to reduce noise
             });
             console.log("enabled mutation observer");
+        }
+    }
+
+    /**
+     * Throttled and debounced form check to prevent rapid-fire calls
+     */
+    private static throttledFormCheck = () => {
+        const now = Date.now();
+        const timeSinceLastCheck = now - DynamicFormDetectionService.lastFormCheckTime;
+        
+        // Clear existing timeout
+        if (DynamicFormDetectionService.formCheckTimeout !== null) {
+            clearTimeout(DynamicFormDetectionService.formCheckTimeout);
+            DynamicFormDetectionService.formCheckTimeout = null;
+        }
+        
+        // If enough time has passed since last check, execute immediately
+        if (timeSinceLastCheck >= DynamicFormDetectionService.FORM_CHECK_THROTTLE_MS) {
+            DynamicFormDetectionService.lastFormCheckTime = now;
+            if (DynamicFormDetectionService.onFormDetectedCallback) {
+                DynamicFormDetectionService.onFormDetectedCallback();
+            }
+        } else {
+            // Otherwise, debounce and wait
+            DynamicFormDetectionService.formCheckTimeout = window.setTimeout(() => {
+                DynamicFormDetectionService.lastFormCheckTime = Date.now();
+                if (DynamicFormDetectionService.onFormDetectedCallback) {
+                    DynamicFormDetectionService.onFormDetectedCallback();
+                }
+                DynamicFormDetectionService.formCheckTimeout = null;
+            }, DynamicFormDetectionService.FORM_CHECK_DEBOUNCE_MS);
         }
     }
 
@@ -122,6 +168,12 @@ export class DynamicFormDetectionService {
         if (DynamicFormDetectionService.mutationObserver) {
             DynamicFormDetectionService.mutationObserver.disconnect();
             DynamicFormDetectionService.mutationObserver = null;
+        }
+
+        // Clear any pending form check timeout
+        if (DynamicFormDetectionService.formCheckTimeout !== null) {
+            clearTimeout(DynamicFormDetectionService.formCheckTimeout);
+            DynamicFormDetectionService.formCheckTimeout = null;
         }
     }
 
@@ -279,6 +331,9 @@ export class DynamicFormDetectionService {
         DynamicFormDetectionService.currentUrl = '';
         DynamicFormDetectionService.onFormDetectedCallback = null;
         DynamicFormDetectionService.onUrlChangedCallback = null;
+
+        // Reset throttling state
+        DynamicFormDetectionService.lastFormCheckTime = 0;
     }
 
     /**
