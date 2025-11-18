@@ -12,6 +12,7 @@ import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-cl
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import passwordPickerIcon from "~/assets/images/passwordPickerIcon.svg";
 import { sendMessage } from "@/entrypoints/background/messaging";
+import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDetectionService";
 
 export enum PASSWORD_PICKER_SECTIONS {
     ADD,
@@ -27,6 +28,9 @@ export class PasswordPickerService {
     public static decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     protected static modifiedInputElementsIconRemovalCallbacks: (() => void)[] = [];
 
+    /**
+     * Initializes the password picker for the current page
+     */
     public static initPickerForPage = (
         showPickerCallback: (left: number, top: number, maxZ: any) => void,
         hidePickerCallback: () => void,
@@ -36,10 +40,24 @@ export class PasswordPickerService {
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
 
         console.log("initPickerForPage");
+
+        // Initialize current URL in detection service
+        DynamicFormDetectionService.setCurrentUrl(window.location.href);
+
+        // Process existing forms immediately
+        PasswordPickerService.processLoginForms(enableEmailAsUsernameFallbackFilling);
+
+        // Set up observer for dynamically added forms (SPA support)
+        PasswordPickerService.setupFormObserver(enableEmailAsUsernameFallbackFilling);
+    }
+
+    /**
+     * Processes login forms and sets up password pickers for them
+     */
+    private static processLoginForms = (enableEmailAsUsernameFallbackFilling: boolean) => {
         const pageUrl = window.location.href;
         const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
-        console.log(pageUrl);
-        console.log(loginFieldsPerForm);
+        console.log("Processing login forms", pageUrl, loginFieldsPerForm);
 
         // todo: fetch enablePasswordPicker from settings
         const enablePasswordPicker = true;
@@ -54,6 +72,15 @@ export class PasswordPickerService {
         if (loginFieldsPerForm.length > 0) {
             for (const loginFields of loginFieldsPerForm) {
                 const form = loginFields._form;
+                
+                // Skip if we've already processed this form
+                if (DynamicFormDetectionService.isFormProcessed(form)) {
+                    continue;
+                }
+
+                // Mark form as processed
+                DynamicFormDetectionService.markFormAsProcessed(form);
+
                 if (enablePasswordPicker && form) {
                     PasswordPickerService.createPasswordPicker(form, loginFields);
                 }
@@ -66,33 +93,87 @@ export class PasswordPickerService {
                 });
             }
 
-            sendMessage('getPartiallyDecryptedFilteredCredentialsList', {
-                filterText: pageUrl,
-                filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
-                getCachedIfPossible: true
-            }).then(async (value) => {
-                console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
-                PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
-
-                sendMessage('getAutofillEnabledState').then(async (value) => {
-                    if (value.autofillEnabled === true && PasswordPickerService.decryptedPartialCredentialData.length === 1) {
-                        const credentialToAutofill = PasswordPickerService.decryptedPartialCredentialData[0];
-                        LegacyFormManagerService.fillFields(
-                            credentialToAutofill.username ?? undefined,
-                            credentialToAutofill.email ?? undefined,
-                            credentialToAutofill.password ?? undefined,
-                            credentialToAutofill.otp ?? undefined,
-                            enableEmailAsUsernameFallbackFilling
-                        );
-                    }
+            // Only fetch credentials if we haven't already (to avoid duplicate requests)
+            if (PasswordPickerService.decryptedPartialCredentialData.length === 0) {
+                sendMessage('getPartiallyDecryptedFilteredCredentialsList', {
+                    filterText: pageUrl,
+                    filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
+                    getCachedIfPossible: true
+                }).then(async (value) => {
+                    console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
+                    PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
+                    PasswordPickerService.performAutofillIfEnabled(enableEmailAsUsernameFallbackFilling);
                 });
-            });
+            } else {
+                // no need to refetch decrypted credential data, if we already have it
+                PasswordPickerService.performAutofillIfEnabled(enableEmailAsUsernameFallbackFilling);
+            }
         }
+    }
+
+    private static performAutofillIfEnabled = (enableEmailAsUsernameFallbackFilling: boolean) => {
+        sendMessage('getAutofillEnabledState').then(async (value) => {
+            if (value.autofillEnabled === true && PasswordPickerService.decryptedPartialCredentialData.length === 1) {
+                const credentialToAutofill = PasswordPickerService.decryptedPartialCredentialData[0];
+                LegacyFormManagerService.fillFields(
+                    credentialToAutofill.username ?? undefined,
+                    credentialToAutofill.email ?? undefined,
+                    credentialToAutofill.password ?? undefined,
+                    credentialToAutofill.otp ?? undefined,
+                    enableEmailAsUsernameFallbackFilling
+                );
+            }
+        });
+    }
+
+    /**
+     * Sets up dynamic form detection using DynamicFormDetectionService
+     */
+    private static setupFormObserver = (enableEmailAsUsernameFallbackFilling: boolean) => {
+        // Set up callback for when new forms are detected
+        DynamicFormDetectionService.setFormDetectedCallback(() => {
+            PasswordPickerService.processLoginForms(enableEmailAsUsernameFallbackFilling);
+        });
+
+        // Set up callback for when URL changes (SPA navigation)
+        DynamicFormDetectionService.setUrlChangedCallback((newUrl, oldUrl) => {
+            console.log("URL changed from", oldUrl, "to", newUrl);
+            DynamicFormDetectionService.resetProcessedForms();
+
+            // todo: resetting decryptedPartialCredentialData usually only needed if ExtensionSettingsOptions.ignorePath is false
+            // may introduce a "getPickerRelevantExtensionSettings" message to get all the relevant settings for the picker
+            PasswordPickerService.decryptedPartialCredentialData = [];
+            PasswordPickerService.processLoginForms(enableEmailAsUsernameFallbackFilling);
+        });
+
+        // Enable all detection features individually
+        // todo: integrate per page detection feature customization in the upcoming page rules feature
+        // - DynamicFormDetectionService.enableMutationObserver()
+        // - DynamicFormDetectionService.enableUrlPopstateCheck()
+        // - DynamicFormDetectionService.enableUrlIntervalCheck(1000) // or disable this one if inefficient
+
+        // todo: can we somehow measure the performance impact of the mutation observer?
+        // Cince this is the most effective way to detect dynamically added forms and input fields, this is the default behavior for now
+        DynamicFormDetectionService.enableMutationObserver();
+
+        // Since the popstate check is less effective than the mutation observer, it is disabled by default,
+        // but for pages with performance issues due to the mutation observer, it could be enabled manually by the user instead of the observer.
+        // DynamicFormDetectionService.enableUrlPopstateCheck();
+
+        // Optionally enable interval check
+        // (more reliable than the popstate check, but disabled by default as it's less efficient than the popstate check and less effective than the mutation observer)
+        // DynamicFormDetectionService.enableUrlIntervalCheck(1000);
     }
 
     public static readonly unloadPicker = () => {
         PasswordPickerService.modifiedInputElementsIconRemovalCallbacks.forEach(cb => cb());
         PasswordPickerService.modifiedInputElementsIconRemovalCallbacks = [];
+        
+        // Clean up dynamic form detection service
+        DynamicFormDetectionService.cleanup();
+        
+        // Clear credentials data
+        PasswordPickerService.decryptedPartialCredentialData = [];
     }
 
     public static readonly hidePicker = () => {
