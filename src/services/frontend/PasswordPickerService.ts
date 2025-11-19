@@ -174,7 +174,12 @@ export class PasswordPickerService {
                 DynamicFormDetectionService.triggerManualFormDetection();
             }
         };
-        const eventTypes: (keyof DocumentEventMap)[] = ['click', 'input', 'change', 'submit'];
+        const eventTypes: (keyof DocumentEventMap)[] = [
+            'click',
+            'submit',
+            /* 'change', // disable change and input events to prevent rapid-fire calls during user typing
+            'input' */
+        ];
         for (const type of eventTypes) {
             document.addEventListener(type, manualDetectionHandler, true);
             PasswordPickerService.globalEventUnsubscribers.push(() => {
