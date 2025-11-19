@@ -27,7 +27,6 @@ export class PasswordPickerService {
     private static hidePickerCallback: () => void;
     public static decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     protected static modifiedInputElementsIconRemovalCallbacks: (() => void)[] = [];
-    private static globalEventUnsubscribers: (() => void)[] = [];
 
     /**
      * Initializes the password picker for the current page
@@ -163,29 +162,8 @@ export class PasswordPickerService {
             DynamicFormDetectionService.enableMutationObserver();
         } */
         
-        // else use default behavior: event based mutation observation (with debouncing and throttling) and form detection
-
-        // Hook into button and input events to trigger form detection when MutationObserver is not used
-        const manualDetectionHandler = (event: Event) => {
-            // Only trigger manual detection when the mutation observer is currently disabled and the event is a plausible form interaction
-            const state = DynamicFormDetectionService.getState();
-            if (!state.mutationObserverEnabled && DynamicFormDetectionService.isPlausibleFormInteraction(event)) {
-                console.debug("triggering manual form detection for event", event);
-                DynamicFormDetectionService.triggerManualFormDetection();
-            }
-        };
-        const eventTypes: (keyof DocumentEventMap)[] = [
-            'click',
-            'submit',
-            /* 'change', // disable change and input events to prevent rapid-fire calls during user typing
-            'input' */
-        ];
-        for (const type of eventTypes) {
-            document.addEventListener(type, manualDetectionHandler, true);
-            PasswordPickerService.globalEventUnsubscribers.push(() => {
-                document.removeEventListener(type, manualDetectionHandler, true);
-            });
-        }
+        // else use default behavior: event based form detection (with debouncing and throttling)
+        DynamicFormDetectionService.enableUserEventDetection();
 
         // Since the popstate check is less effective than the mutation observer, it is disabled by default,
         // but for pages with performance issues due to the mutation observer, it could be enabled manually by the user instead of the observer.
@@ -199,10 +177,6 @@ export class PasswordPickerService {
     public static readonly unloadPicker = () => {
         PasswordPickerService.modifiedInputElementsIconRemovalCallbacks.forEach(cb => cb());
         PasswordPickerService.modifiedInputElementsIconRemovalCallbacks = [];
-        
-        // Remove global event listeners
-        PasswordPickerService.globalEventUnsubscribers.forEach(cb => cb());
-        PasswordPickerService.globalEventUnsubscribers = [];
         
         // Clean up dynamic form detection service
         DynamicFormDetectionService.cleanup();

@@ -12,11 +12,13 @@ export class DynamicFormDetectionService {
     private static popstateHandler: ((event: PopStateEvent) => void) | null = null;
     private static currentUrl: string = '';
     private static processedForms: WeakSet<HTMLFormElement> = new WeakSet();
+    private static globalEventUnsubscribers: (() => void)[] = [];
     
     // Feature flags
     private static mutationObserverEnabled: boolean = false;
     private static urlIntervalCheckEnabled: boolean = false;
     private static urlPopstateCheckEnabled: boolean = false;
+    private static userEventDetectionEnabled: boolean = false;
     
     // Callbacks
     private static onFormDetectedCallback: (() => void) | null = null;
@@ -222,8 +224,6 @@ export class DynamicFormDetectionService {
             return; // Already disabled
         }
 
-        DynamicFormDetectionService.mutationObserverEnabled = false;
-
         if (DynamicFormDetectionService.mutationObserver) {
             DynamicFormDetectionService.mutationObserver.disconnect();
             DynamicFormDetectionService.mutationObserver = null;
@@ -234,6 +234,8 @@ export class DynamicFormDetectionService {
             clearTimeout(DynamicFormDetectionService.formCheckTimeout);
             DynamicFormDetectionService.formCheckTimeout = null;
         }
+
+        DynamicFormDetectionService.mutationObserverEnabled = false;
     }
 
     /**
@@ -265,12 +267,12 @@ export class DynamicFormDetectionService {
             return; // Already disabled
         }
 
-        DynamicFormDetectionService.urlIntervalCheckEnabled = false;
-
         if (DynamicFormDetectionService.urlCheckInterval !== null) {
             clearInterval(DynamicFormDetectionService.urlCheckInterval);
             DynamicFormDetectionService.urlCheckInterval = null;
         }
+
+        DynamicFormDetectionService.urlIntervalCheckEnabled = false;
     }
 
     /**
@@ -304,12 +306,54 @@ export class DynamicFormDetectionService {
             return; // Already disabled
         }
 
-        DynamicFormDetectionService.urlPopstateCheckEnabled = false;
-
         if (DynamicFormDetectionService.popstateHandler) {
             window.removeEventListener('popstate', DynamicFormDetectionService.popstateHandler);
             DynamicFormDetectionService.popstateHandler = null;
         }
+
+        DynamicFormDetectionService.urlPopstateCheckEnabled = false;
+    }
+
+    public static enableUserEventDetection = () => {
+        if (DynamicFormDetectionService.userEventDetectionEnabled) {
+            return; // Already enabled
+        }
+
+        DynamicFormDetectionService.userEventDetectionEnabled = true;
+
+        // Hook into button and input events to trigger form detection when MutationObserver is not used
+        const manualDetectionHandler = (event: Event) => {
+            // Only trigger manual detection when the mutation observer is currently disabled and the event is a plausible form interaction
+            const state = DynamicFormDetectionService.getState();
+            if (!state.mutationObserverEnabled && DynamicFormDetectionService.isPlausibleFormInteraction(event)) {
+                console.debug("triggering manual form detection for event", event);
+                DynamicFormDetectionService.triggerManualFormDetection();
+            }
+        };
+        const eventTypes: (keyof DocumentEventMap)[] = [
+            'click',
+            'submit',
+            /* 'change', // disable change and input events to prevent rapid-fire calls during user typing
+            'input' */
+        ];
+        for (const type of eventTypes) {
+            document.addEventListener(type, manualDetectionHandler, true);
+            DynamicFormDetectionService.globalEventUnsubscribers.push(() => {
+                document.removeEventListener(type, manualDetectionHandler, true);
+            });
+        }
+    }
+
+    public static disableUserEventDetection = () => {
+        if (!DynamicFormDetectionService.userEventDetectionEnabled) {
+            return; // Already disabled
+        }
+
+        // Remove global event listeners
+        DynamicFormDetectionService.globalEventUnsubscribers.forEach(cb => cb());
+        DynamicFormDetectionService.globalEventUnsubscribers = [];
+
+        DynamicFormDetectionService.userEventDetectionEnabled = false;
     }
 
     /**
@@ -363,13 +407,15 @@ export class DynamicFormDetectionService {
     }
 
     /**
-     * Enables all detection features
+     * Enables all detection features.
+     * Tip: don't do it! If you wanna go crazy just use the mutation observer. Enabling all features is stupid! Trust me.
      * @param urlCheckIntervalMs - Interval in milliseconds for URL checking (default: 1000)
      */
     public static enableAll = (urlCheckIntervalMs: number = 1000) => {
         DynamicFormDetectionService.enableMutationObserver();
         DynamicFormDetectionService.enableUrlIntervalCheck(urlCheckIntervalMs);
         DynamicFormDetectionService.enableUrlPopstateCheck();
+        DynamicFormDetectionService.enableUserEventDetection();
     }
 
     /**
@@ -379,6 +425,7 @@ export class DynamicFormDetectionService {
         DynamicFormDetectionService.disableMutationObserver();
         DynamicFormDetectionService.disableUrlIntervalCheck();
         DynamicFormDetectionService.disableUrlPopstateCheck();
+        DynamicFormDetectionService.disableUserEventDetection();
     }
 
     /**
