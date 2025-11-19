@@ -233,13 +233,13 @@ export class LegacyFormManagerService {
                 /*if (!fields || (!fields[0] && !fields[1] && !fields[2])) {
                     continue;
                 }*/
-                if (username && fields.usernameField) {
+                if (username && fields.usernameField && !fields.usernameField.value) {
                     fields.usernameField.value = username;
                     if (fields.usernameField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.usernameField);
                     }
                 }
-                if (email && fields.emailField) {
+                if (email && fields.emailField && !fields.emailField.value) {
                     fields.emailField.value = email;
                     if (fields.emailField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.emailField);
@@ -247,13 +247,16 @@ export class LegacyFormManagerService {
                 }
                 if (password && fields.passwordFields) {
                     fields.passwordFields.forEach(field => {
+                        if (field.value) {
+                            return;
+                        }
                         field.value = password;
                         if (field.offsetParent) {
                             LegacyFormManagerService.dispatchEvents(field);
                         }
                     });
                 }
-                if (otp && fields.otpField) {
+                if (otp && fields.otpField && !fields.otpField.value) {
                     fields.otpField.value = otp;
                     if (fields.otpField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.otpField);
@@ -263,14 +266,14 @@ export class LegacyFormManagerService {
                 // fallback username and email filling logic to fill email as username if no username field is found (and the other way around)
                 // only when we don't have both field types available, we should check if we can fill the other field type, if still empty
                 if (enableEmailAsUsernameFallbackFilling) {
-                    if (!fields.emailField && fields.usernameField && !username && email) {
+                    if (!fields.emailField && fields.usernameField && !fields.usernameField.value && !username && email) {
                         // initial username field was not filled and email value wasn't used yet, so we can try to fill it as username
                         fields.usernameField.value = email;
                         if (fields.usernameField.offsetParent) {
                             LegacyFormManagerService.dispatchEvents(fields.usernameField);
                         }
                     }
-                    if (!fields.usernameField && fields.emailField && !email && username) {
+                    if (!fields.usernameField && fields.emailField && !fields.emailField.value && !email && username) {
                         // initial email field was not filled and username value wasn't used yet, so we can try to fill it as email
                         fields.emailField.value = username;
                         if (fields.emailField.offsetParent) {
