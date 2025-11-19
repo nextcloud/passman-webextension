@@ -63,6 +63,12 @@ export class DynamicFormDetectionService {
             return false;
         }
 
+        // Ignore synthetic events (including those dispatched by our own autofill logic)
+        // Only user-generated events have isTrusted === true
+        if (!event.isTrusted) {
+            return false;
+        }
+
         // Ignore interactions inside our own picker UI
         const path = (event as any).composedPath?.() as (EventTarget[] | undefined);
         if (path && path.some(node =>
