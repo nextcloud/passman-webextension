@@ -36,10 +36,63 @@ export class DynamicFormDetectionService {
     }
 
     /**
+     * Public trigger that reuses internal throttling/debouncing for manual form detection
+     * (e.g. from button/input/submit events when MutationObserver is disabled)
+     */
+    public static triggerManualFormDetection = () => {
+        // If no callback is registered, there is nothing to do
+        if (!DynamicFormDetectionService.onFormDetectedCallback) {
+            return;
+        }
+        DynamicFormDetectionService.throttledFormCheck();
+    }
+
+    /**
      * Sets the callback to be invoked when URL changes are detected
      */
     public static setUrlChangedCallback = (callback: ((newUrl: string, oldUrl: string) => void) | null) => {
         DynamicFormDetectionService.onUrlChangedCallback = callback;
+    }
+
+    /**
+     * Checks if an event is a plausible form interaction as a form detection trigger
+     */
+    public static isPlausibleFormInteraction = (event: Event): boolean => {
+        const target = event.target as Element | null;
+        if (!target || target.nodeType !== Node.ELEMENT_NODE) {
+            return false;
+        }
+
+        // Ignore interactions inside our own picker UI
+        const path = (event as any).composedPath?.() as (EventTarget[] | undefined);
+        if (path && path.some(node =>
+            node instanceof Element &&
+            ((node as Element).id === 'password_picker')
+        )) {
+            return false;
+        }
+
+        // Find the first relevant element in the path
+        const relevant = (path ?? [target]).find(node =>
+            node instanceof HTMLInputElement ||
+            node instanceof HTMLButtonElement ||
+            node instanceof HTMLFormElement
+        ) as Element | undefined;
+
+        if (!relevant) {
+            return false;
+        }
+
+        // For inputs, only react to typical login-related field types
+        if (relevant instanceof HTMLInputElement) {
+            const type = relevant.type?.toLowerCase?.() ?? '';
+            const allowedTypes = ['text', 'email', 'password', 'number', 'tel', 'search'];
+            if (!allowedTypes.includes(type)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -120,7 +173,7 @@ export class DynamicFormDetectionService {
                 subtree: true,      // Watch all descendants
                 // Explicitly don't observe attributes or characterData to reduce noise
             });
-            console.log("enabled mutation observer");
+            console.debug("enabled mutation observer");
         }
     }
 
@@ -234,7 +287,7 @@ export class DynamicFormDetectionService {
         };
 
         window.addEventListener('popstate', DynamicFormDetectionService.popstateHandler);
-        console.log("enabled url popstate check");
+        console.debug("enabled url popstate check");
     }
 
     /**

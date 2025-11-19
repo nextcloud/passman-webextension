@@ -27,6 +27,7 @@ export class PasswordPickerService {
     private static hidePickerCallback: () => void;
     public static decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     protected static modifiedInputElementsIconRemovalCallbacks: (() => void)[] = [];
+    private static globalEventUnsubscribers: (() => void)[] = [];
 
     /**
      * Initializes the password picker for the current page
@@ -39,7 +40,7 @@ export class PasswordPickerService {
         PasswordPickerService.showPickerCallback = showPickerCallback;
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
 
-        console.log("initPickerForPage");
+        console.debug("initPickerForPage");
 
         // Initialize current URL in detection service
         DynamicFormDetectionService.setCurrentUrl(window.location.href);
@@ -57,7 +58,7 @@ export class PasswordPickerService {
     private static processLoginForms = (enableEmailAsUsernameFallbackFilling: boolean) => {
         const pageUrl = window.location.href;
         const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
-        console.log("Processing login forms", pageUrl, loginFieldsPerForm);
+        console.debug("Processing login forms", pageUrl, loginFieldsPerForm);
 
         // todo: fetch enablePasswordPicker from settings
         const enablePasswordPicker = true;
@@ -75,8 +76,10 @@ export class PasswordPickerService {
                 
                 // Skip if we've already processed this form
                 if (DynamicFormDetectionService.isFormProcessed(form)) {
+                    console.debug("skipping form", form, "because it has already been processed");
                     continue;
                 }
+                console.debug("processing form", form);
 
                 // Mark form as processed
                 DynamicFormDetectionService.markFormAsProcessed(form);
@@ -100,7 +103,7 @@ export class PasswordPickerService {
                     filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
                     getCachedIfPossible: true
                 }).then(async (value) => {
-                    console.log('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
+                    console.debug('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
                     PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
                     PasswordPickerService.performAutofillIfEnabled(enableEmailAsUsernameFallbackFilling);
                 });
@@ -137,7 +140,7 @@ export class PasswordPickerService {
 
         // Set up callback for when URL changes (SPA navigation)
         DynamicFormDetectionService.setUrlChangedCallback((newUrl, oldUrl) => {
-            console.log("URL changed from", oldUrl, "to", newUrl);
+            console.debug("URL changed from", oldUrl, "to", newUrl);
             DynamicFormDetectionService.resetProcessedForms();
 
             // todo: resetting decryptedPartialCredentialData usually only needed if ExtensionSettingsOptions.ignorePath is false
@@ -154,7 +157,30 @@ export class PasswordPickerService {
 
         // todo: can we somehow measure the performance impact of the mutation observer?
         // Cince this is the most effective way to detect dynamically added forms and input fields, this is the default behavior for now
-        DynamicFormDetectionService.enableMutationObserver();
+
+        // todo implement per page setting: mutationObserveralwaysOnMode
+        /* if (mutationObserveralwaysOnMode) {
+            DynamicFormDetectionService.enableMutationObserver();
+        } */
+        
+        // else use default behavior: event based mutation observation (with debouncing and throttling) and form detection
+
+        // Hook into button and input events to trigger form detection when MutationObserver is not used
+        const manualDetectionHandler = (event: Event) => {
+            // Only trigger manual detection when the mutation observer is currently disabled and the event is a plausible form interaction
+            const state = DynamicFormDetectionService.getState();
+            if (!state.mutationObserverEnabled && DynamicFormDetectionService.isPlausibleFormInteraction(event)) {
+                console.debug("triggering manual form detection for event", event);
+                DynamicFormDetectionService.triggerManualFormDetection();
+            }
+        };
+        const eventTypes: (keyof DocumentEventMap)[] = ['click', 'input', 'change', 'submit'];
+        for (const type of eventTypes) {
+            document.addEventListener(type, manualDetectionHandler, true);
+            PasswordPickerService.globalEventUnsubscribers.push(() => {
+                document.removeEventListener(type, manualDetectionHandler, true);
+            });
+        }
 
         // Since the popstate check is less effective than the mutation observer, it is disabled by default,
         // but for pages with performance issues due to the mutation observer, it could be enabled manually by the user instead of the observer.
@@ -168,6 +194,10 @@ export class PasswordPickerService {
     public static readonly unloadPicker = () => {
         PasswordPickerService.modifiedInputElementsIconRemovalCallbacks.forEach(cb => cb());
         PasswordPickerService.modifiedInputElementsIconRemovalCallbacks = [];
+        
+        // Remove global event listeners
+        PasswordPickerService.globalEventUnsubscribers.forEach(cb => cb());
+        PasswordPickerService.globalEventUnsubscribers = [];
         
         // Clean up dynamic form detection service
         DynamicFormDetectionService.cleanup();
@@ -231,7 +261,7 @@ export class PasswordPickerService {
         for (const element of form.getElementsByTagName('input')) {
             if (element == el) {
                 // we found the element, the user has initially clicked on
-                console.log("we found the element, the user has initially clicked on", element);
+                console.debug("we found the element, the user has initially clicked on", element);
                 clickField = element;
             }
             /*if (element.type == 'password') {
@@ -322,8 +352,8 @@ export class PasswordPickerService {
     }
 
     public static onFormSubmittedCallback = (loginFields: FillableLoginFormFields) => {
-        console.log("onFormSubmittedCallback");
-        console.log(loginFields);
+        console.debug("onFormSubmittedCallback");
+        console.debug(loginFields);
     }
 
     public static searchCredentialsForPicker = (searchInput: string): Promise<GetCredentialsListMessagingResponse> => {
@@ -332,7 +362,7 @@ export class PasswordPickerService {
             filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
             getCachedIfPossible: true
         }).then(async (value) => {
-            console.log('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
+            console.debug('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
             return value;
         });
     }
@@ -341,7 +371,7 @@ export class PasswordPickerService {
         return sendMessage('createCredentialForPicker', {
             credentialData: credentialData
         }).then(async (value: CreateCredentialForPickerMessagingResponse) => {
-            console.log('Credential creation result:', value);
+            console.debug('Credential creation result:', value);
             if (value.status && value.decryptedPartialCredentialData) {
                 // this way we don't need to reload the full picker data, but just add the new credential to the list
                 PasswordPickerService.decryptedPartialCredentialData.push(value.decryptedPartialCredentialData);
