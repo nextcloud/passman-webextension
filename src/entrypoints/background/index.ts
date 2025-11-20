@@ -18,6 +18,7 @@ import './messages/getEnableEmailAsUsernameFallbackFillingState';
 import './messages/createCredentialForPicker';
 import './messages/addNewServerConnection';
 import './messages/getCredentialsForVault';
+import './messages/getPickerPageSettings';
 import { executeOnMessageListenerRegistration } from "@/entrypoints/background/messaging";
 
 export default defineBackground(() => {

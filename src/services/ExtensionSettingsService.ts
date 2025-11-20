@@ -8,6 +8,7 @@ import { CustomPassmanClientLoggingService } from "./frontend/CustomPassmanClien
 import { BackendPassmanClient } from "@/lib/BackendPassmanClient";
 import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
+import { PageRulesStorageInterface } from "./PageRulesService";
 
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,
@@ -18,8 +19,13 @@ export enum ExtensionSettingsOptions {
     ignorePath,
     ignorePort,
     autofillEnabled,
+    passwordGeneratorConfiguration,
     enableEmailAsUsernameFallbackFilling,
-    passwordGeneratorConfiguration
+
+    /**
+     * Do not access this setting directly, use PageRulesService instead!
+     */
+    pageRules
 }
 
 export interface ExtensionSettings {
@@ -36,6 +42,7 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.autofillEnabled]: boolean,
     [ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]: boolean,
     [ExtensionSettingsOptions.passwordGeneratorConfiguration]: PasswordGeneratorConfigurationInterface,
+    [ExtensionSettingsOptions.pageRules]: PageRulesStorageInterface
 }
 
 export default class ExtensionSettingsService {
