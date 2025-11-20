@@ -21,6 +21,12 @@
         NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
     }
 
+    const reset = async () => {
+        passwordGeneratorConfiguration = PasswordGeneratorService.getDefaultConfig();
+        await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.passwordGeneratorConfiguration, passwordGeneratorConfiguration);
+        NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
+    }
+
     onMount(() => {
         ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.passwordGeneratorConfiguration, true).then(async (storedPasswordGeneratorConfiguration) => {
             passwordGeneratorConfiguration = storedPasswordGeneratorConfiguration ?? passwordGeneratorConfiguration;
@@ -76,10 +82,14 @@
                                  label={i18n.getMessage('require_every_character_type')}
                                  id="requireEveryCharType"/>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 gap-2 flex">
             <OnClickButton disabled={!initDone}
                            callback="{updateDefaultConfiguration}">
                 {i18n.getMessage('update_default_settings')}
+            </OnClickButton>
+            <OnClickButton disabled={!initDone}
+                           callback="{reset}">
+                {i18n.getMessage('reset_settings')}
             </OnClickButton>
         </div>
     </div>

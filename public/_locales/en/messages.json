@@ -643,6 +643,10 @@
     "message": "Reset extension",
     "description": "Search"
   },
+  "reset_settings": {
+    "message": "Reset settings",
+    "description": "Reset settings button label"
+  },
   "iam_sure": {
     "message": "Yes, I'm sure!",
     "description": "Search"
