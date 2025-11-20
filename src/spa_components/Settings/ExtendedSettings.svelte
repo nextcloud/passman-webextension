@@ -11,8 +11,7 @@
     import { push } from "~/Router.svelte";
     import Loading from "~/spa_components/Loading.svelte";
     import NotyService from "~/services/frontend/NotyService";
-    import NextcloudServerSetup from "~/spa_components/NextcloudServerSetup.svelte";
-    import packageJson from "../../package.json";
+    import packageJson from "../../../package.json";
     import { i18n } from "~/lib/i18n";
 
     const extensionVersion = packageJson.version;
@@ -68,48 +67,45 @@
     });
 </script>
 
-<NextcloudServerSetup/>
-<div class="mx-auto flex flex-col p-5 w-full items-center justify-center">
-    {#if pageIsLoading}
-        <Loading/>
-    {:else}
-        <Card additionalClasses="text-left mb-6 space-y-3 w-full">
-            <p>
-                {i18n.getMessage('extended_settings')}
-            </p>
-            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
-                                 id="ignoreProtocol"
-                                 label="{i18n.getMessage('ignore_protocol')}"/>
-            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreSubdomain]}
-                                 id="ignoreSubdomain"
-                                 label="{i18n.getMessage('ignore_subdomain')}"/>
-            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePath]}
-                                 id="ignorePath"
-                                 label="{i18n.getMessage('ignore_path')}"/>
-            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePort]}
-                                 id="ignorePort"
-                                 label="{i18n.getMessage('ignore_port')}"/>
-            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
-                                 id="enable_autofill"
-                                 label="{i18n.getMessage('enable_autofill')}"/>
-            <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
-                                 id="enableEmailAsUsernameFallbackFilling"
-                                 label="{i18n.getMessage('enable_email_as_username_fallback_filling')}"/>
-        </Card>
-
-        <OnClickButton callback="{save}">
-            {#if lockSaveButton}
-                <Icon data={refresh} scale={1.3} spin="{true}"/>
-            {:else}
-                {i18n.getMessage('save_settings')}
-            {/if}
-        </OnClickButton>
-    {/if}
-
-    <div class="mt-4">
-        <p class="text-sm text-gray-500 text-center">
-            {i18n.getMessage('extension_version')}: {extensionVersion}
-            (mv{import.meta.env.MANIFEST_VERSION}/{import.meta.env.BROWSER})
+{#if pageIsLoading}
+    <Loading/>
+{:else}
+    <Card additionalClasses="text-left mb-6 space-y-3 w-full">
+        <p>
+            {i18n.getMessage('extended_settings')}
         </p>
-    </div>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
+                                id="ignoreProtocol"
+                                label="{i18n.getMessage('ignore_protocol')}"/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreSubdomain]}
+                                id="ignoreSubdomain"
+                                label="{i18n.getMessage('ignore_subdomain')}"/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePath]}
+                                id="ignorePath"
+                                label="{i18n.getMessage('ignore_path')}"/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePort]}
+                                id="ignorePort"
+                                label="{i18n.getMessage('ignore_port')}"/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
+                                id="enable_autofill"
+                                label="{i18n.getMessage('enable_autofill')}"/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
+                                id="enableEmailAsUsernameFallbackFilling"
+                                label="{i18n.getMessage('enable_email_as_username_fallback_filling')}"/>
+    </Card>
+
+    <OnClickButton callback="{save}">
+        {#if lockSaveButton}
+            <Icon data={refresh} scale={1.3} spin="{true}"/>
+        {:else}
+            {i18n.getMessage('save_settings')}
+        {/if}
+    </OnClickButton>
+{/if}
+
+<div class="mt-4">
+    <p class="text-sm text-gray-500 text-center">
+        {i18n.getMessage('extension_version')}: {extensionVersion}
+        (mv{import.meta.env.MANIFEST_VERSION}/{import.meta.env.BROWSER})
+    </p>
 </div>

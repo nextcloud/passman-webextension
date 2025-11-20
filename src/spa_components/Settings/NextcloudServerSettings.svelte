@@ -4,6 +4,7 @@
     import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
     import Card from "~/spa_partials/Card.svelte";
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
+    import Loading from "~/spa_components/Loading.svelte";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
@@ -34,6 +35,7 @@
     let selectedVaultPassword: string | null = null;
     let lockLoginButton = false;
     let lockDefaultVaultButton = false;
+    let isSetupDone: boolean|null = null;
 
     const login = async (): Promise<void> => {
         lockLoginButton = true;
@@ -84,8 +86,8 @@
             password: selectedVaultPassword
         }).then((value) => {
             if (value.status) {
-                ExtensionUnlockService.isSetupDone().then((isSetupDone) => {
-                    if (!isSetupDone) {
+                ExtensionUnlockService.isSetupDone().then((_isSetupDone) => {
+                    if (!_isSetupDone) {
                         extensionUnlockStateStore.set(ExtensionUnlockState.UNLOCKED);
                         ExtensionUnlockService.setSetupDone().then(() => {
                             push('/home');
@@ -117,7 +119,8 @@
         ExtensionUnlockService.isUnlocked().then((isUnlocked) => {
             lockLoginButton = !isUnlocked;
 
-            ExtensionUnlockService.isSetupDone().then(async (isSetupDone) => {
+            ExtensionUnlockService.isSetupDone().then(async (_isSetupDone) => {
+                isSetupDone = _isSetupDone;
                 if (isSetupDone) {
                     // populate input fields with current settings
                     await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo)
@@ -158,7 +161,9 @@
     });
 </script>
 
-<div class="mx-auto flex flex-col p-5 w-full items-center justify-center">
+{#if (!serverSettingsValidated && isSetupDone !== false) }
+    <Loading/>
+{:else}
     <Card additionalClasses="text-left mb-6 space-y-3 w-full">
         <p>
             This extension requires the
@@ -176,7 +181,7 @@
         </div>
         <div class="mt-2">
             <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
-                              type="password"/>
+                                type="password"/>
         </div>
         <div class="mt-4">
             <OnClickButton disabled={!$myForm.valid || lockLoginButton} callback="{login}">
@@ -195,46 +200,47 @@
             {errorMessage}
         </div>
     </Card>
-    {#if serverSettingsValidated}
-        <Card additionalClasses="text-left space-y-3 w-full">
-            <p>
-                {i18n.getMessage('default_vault_desc')}
-            </p>
-            <div class="mt-2">
-                <label for="vaults_select"
-                       class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
-                    {i18n.getMessage('select_default_vault')}
-                </label>
-                <div class="my-2">
-                    {#key vaultSelectionList}
-                        <Select
-                                disabled={lockDefaultVaultButton}
-                                multiple={false}
-                                label="name"
-                                itemId="guid"
-                                items={vaultSelectionList}
-                                bind:value={selectedVaultInfo}
-                                id="vaults_select"
-                                --height="38px"
-                        />
-                    {/key}
-                </div>
+{/if}
+
+{#if serverSettingsValidated}
+    <Card additionalClasses="text-left space-y-3 w-full">
+        <p>
+            {i18n.getMessage('default_vault_desc')}
+        </p>
+        <div class="mt-2">
+            <label for="vaults_select"
+                    class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('select_default_vault')}
+            </label>
+            <div class="my-2">
+                {#key vaultSelectionList}
+                    <Select
+                            disabled={lockDefaultVaultButton}
+                            multiple={false}
+                            label="name"
+                            itemId="guid"
+                            items={vaultSelectionList}
+                            bind:value={selectedVaultInfo}
+                            id="vaults_select"
+                            --height="38px"
+                    />
+                {/key}
             </div>
-            <div class="mt-2">
-                <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
-                                  type="password"/>
-            </div>
-            <div class="mt-2 text-red-600">
-                {vaultErrorMessage}
-            </div>
-            <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
-                           callback="{setDefaultVault}">
-                {#if lockDefaultVaultButton}
-                    <Icon data={refresh} scale={1.3} spin="{true}"/>
-                {:else}
-                    {i18n.getMessage('save_default_vault_settings')}
-                {/if}
-            </OnClickButton>
-        </Card>
-    {/if}
-</div>
+        </div>
+        <div class="mt-2">
+            <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
+                                type="password"/>
+        </div>
+        <div class="mt-2 text-red-600">
+            {vaultErrorMessage}
+        </div>
+        <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
+                        callback="{setDefaultVault}">
+            {#if lockDefaultVaultButton}
+                <Icon data={refresh} scale={1.3} spin="{true}"/>
+            {:else}
+                {i18n.getMessage('save_default_vault_settings')}
+            {/if}
+        </OnClickButton>
+    </Card>
+{/if}

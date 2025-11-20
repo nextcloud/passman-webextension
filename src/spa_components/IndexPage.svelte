@@ -177,7 +177,7 @@
                 {#await overwriteInputFilterByTabUrlPromise then resolvedOverwriteInputFilterByTabUrl}
                     {#if resolvedOverwriteInputFilterByTabUrl}
                         <div class="text-gray-400 mb-1">
-                            <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2" on:click={() => {
+                            <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" on:click={() => {
                                 overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
                                 applyCredentialFilter(searchInput ?? '');
                             }}>

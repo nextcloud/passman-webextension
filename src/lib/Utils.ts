@@ -14,6 +14,12 @@ export default class Utils {
         return (typeof browser != undefined && browser.extension) ?
             browser.extension.getViews({ type: "popup" }).length > 0 : null;
     };
+    public static titleCase = (s: string) => {
+        return s.toLowerCase()
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+    }
 }
 
 export enum CREDENTIAL_EDIT_SECTIONS {

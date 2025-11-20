@@ -833,6 +833,26 @@
     "message": "Extended settings",
     "description": "Extended settings"
   },
+  "extended_settings_description": {
+    "message": "Setup global extended settings",
+    "description": "Extended settings card description"
+  },
+  "nextcloud_server_setup": {
+    "message": "Nextcloud server setup",
+    "description": "Nextcloud server setup"
+  },
+  "nextcloud_server_setup_description": {
+    "message": "Setup your Nextcloud server and vault credentials",
+    "description": "Nextcloud server setup card description"
+  },
+  "page_rules": {
+    "message": "Page rules",
+    "description": "Page rules"
+  },
+  "page_rules_description": {
+    "message": "Setup page specific rules to customize the global extension behavior",
+    "description": "Page rules card description"
+  },
   "save_default_vault_settings": {
     "message": "Save default vault settings",
     "description": "Save default vault settings button label"
