@@ -1,5 +1,6 @@
 import { defineConfig } from 'wxt';
 import tailwindcss from "@tailwindcss/vite";
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
@@ -71,6 +72,7 @@ export default defineConfig({
     }),
     svelte: {
         vite: {
+            preprocess: [vitePreprocess({ script: true, style: true })],
             compilerOptions: {
                 hmr: false
             },
