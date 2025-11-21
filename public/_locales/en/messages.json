@@ -251,6 +251,10 @@
     "message": "Ignore path for site matching",
     "description": "Ignore path for site matching"
   },
+  "ignore_page": {
+    "message": "Ignore this page when suggesting credentials",
+    "description": "Checkbox label for ignoring a specific page"
+  },
   "enable_autofill": {
     "message": "Enable form auto fill (for a single matching credential)",
     "description": "Enable auto fill of forms"
@@ -852,6 +856,114 @@
   "page_rules_description": {
     "message": "Setup page specific rules to customize the global extension behavior",
     "description": "Page rules card description"
+  },
+  "page_rules_existing_rules": {
+    "message": "Saved page rules",
+    "description": "Heading for the list of saved page rules"
+  },
+  "page_rules_no_rules": {
+    "message": "No page rules defined yet",
+    "description": "Shown when there are no page rules"
+  },
+  "page_rules_url_label": {
+    "message": "Page URL",
+    "description": "Label for page rule URL input"
+  },
+  "page_rules_url_placeholder": {
+    "message": "https://example.com/login",
+    "description": "Placeholder for page rule URL input"
+  },
+  "page_rules_new_rule": {
+    "message": "New rule",
+    "description": "Label for creating a new page rule"
+  },
+  "page_rules_save_rule": {
+    "message": "Save rule",
+    "description": "Label for saving a new page rule"
+  },
+  "page_rules_update_rule": {
+    "message": "Update rule",
+    "description": "Label for updating an existing page rule"
+  },
+  "page_rules_delete_rule": {
+    "message": "Delete rule",
+    "description": "Label for deleting a page rule"
+  },
+  "page_rules_rule_saved": {
+    "message": "Page rule saved",
+    "description": "Success notification when saving a page rule"
+  },
+  "page_rules_rule_deleted": {
+    "message": "Page rule deleted",
+    "description": "Success notification when deleting a page rule"
+  },
+  "page_rules_override_section": {
+    "message": "Override global settings",
+    "description": "Heading for page rule override settings"
+  },
+  "page_rules_search_label": {
+    "message": "Search rules",
+    "description": "Label for the page rules search input"
+  },
+  "page_rules_search_placeholder": {
+    "message": "Filter by URL...",
+    "description": "Placeholder for the page rules search input"
+  },
+  "page_rules_no_results": {
+    "message": "No page rules match your search",
+    "description": "Shown when no rules match the applied filter"
+  },
+  "page_rules_cancel_edit": {
+    "message": "Abort",
+    "description": "Button label to go back to the page rules list"
+  },
+  "page_rules_use_global": {
+    "message": "Use global setting",
+    "description": "Select option label for inheriting from global settings"
+  },
+  "page_rules_force_enable": {
+    "message": "Force enable",
+    "description": "Select option label for forcing setting to enabled"
+  },
+  "page_rules_force_disable": {
+    "message": "Force disable",
+    "description": "Select option label for forcing setting to disabled"
+  },
+  "page_rules_selected_rule": {
+    "message": "Currently editing: $PAGE_URL$",
+    "description": "Indicator for the page rule that is being edited",
+    "placeholders": {
+      "page_url": {
+        "content": "$1",
+        "example": "https://example.com/login"
+      }
+    }
+  },
+  "page_rules_url_required": {
+    "message": "Page URL is required",
+    "description": "Error message when the page rule URL is missing"
+  },
+  "page_rules_load_failed": {
+    "message": "Failed to load page rules",
+    "description": "Error message when page rules fail to load"
+  },
+  "page_rules_save_failed": {
+    "message": "Failed to save page rule",
+    "description": "Error message when page rule save fails"
+  },
+  "page_rules_delete_failed": {
+    "message": "Failed to delete page rule",
+    "description": "Error message when page rule delete fails"
+  },
+  "page_rules_overrides_count": {
+    "message": "Overrides: $COUNT$",
+    "description": "Summary text that shows how many overrides a page rule has",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "save_default_vault_settings": {
     "message": "Save default vault settings",

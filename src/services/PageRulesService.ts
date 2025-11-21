@@ -27,7 +27,7 @@ export interface PageRulesInterface {
 export default class PageRulesService {
     private static pageRulesCache: PageRulesStorageInterface | null = null;
 
-    protected static getFreshPageRules = (): PageRulesInterface => {
+    public static getFreshPageRules = (): PageRulesInterface => {
         return {
             ignorePage: false,
             enableAutosubmit: false,
@@ -54,6 +54,16 @@ export default class PageRulesService {
         const pageRules = await PageRulesService.getAllPageRules();
         pageRules[pageUrl] = { ...await this.getPageRules(pageUrl), ...updatePageRules };
         // is this necessary? it SHOULD be a object reference, not a copy of the object
+        PageRulesService.pageRulesCache = pageRules;
+        await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.pageRules, pageRules);
+    }
+
+    public static deletePageRules = async (pageUrl: string) => {
+        const pageRules = await PageRulesService.getAllPageRules();
+        if (pageRules[pageUrl] === undefined) {
+            return;
+        }
+        delete pageRules[pageUrl];
         PageRulesService.pageRulesCache = pageRules;
         await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.pageRules, pageRules);
     }
