@@ -33,7 +33,7 @@
                 <Icon data={bars} scale={1.2} class="pt-[2px]"/>
                 <span class="text-lg font-semibold">{Utils.titleCase(i18n.getMessage('page_rules'))}</span>
             </span>
-            <p class="text-sm text-gray-500 mt-2">{i18n.getMessage('page_rules_description')}</p>
+            <p class="text-xs text-gray-500 mt-2">{i18n.getMessage('page_rules_description')}</p>
         </Card>
     </button>
     <button onclick={() => selectSettingsSection(SETTINGS_SECTIONS.EXTENDED_SETTINGS)} class="cursor-pointer hover:bg-gray-100 hover:shadow-md transition-all duration-300">

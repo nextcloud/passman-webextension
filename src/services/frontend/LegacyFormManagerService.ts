@@ -15,6 +15,7 @@ export interface FillableLoginFormFields {
  */
 export class LegacyFormManagerService {
     public static skippedInvisibleFieldsDetected: boolean = false;
+    public static enableAutosubmitAfterFilling: boolean = false;
 
     /**
      *
@@ -228,6 +229,7 @@ export class LegacyFormManagerService {
         const loginFieldsByForm = LegacyFormManagerService.getLoginFieldsPerForm();
         if (loginFieldsByForm && loginFieldsByForm.length > 0) {
             for (let i = 0; i < loginFieldsByForm.length; i++) {
+                let somethingFilled = false;
                 const fields = loginFieldsByForm[i];
                 // we should not abort if one of the fields is not found, we should just skip it
                 /*if (!fields || (!fields[0] && !fields[1] && !fields[2])) {
@@ -238,12 +240,14 @@ export class LegacyFormManagerService {
                     if (fields.usernameField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.usernameField);
                     }
+                    somethingFilled = true;
                 }
                 if (email && fields.emailField && !fields.emailField.value) {
                     fields.emailField.value = email;
                     if (fields.emailField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.emailField);
                     }
+                    somethingFilled = true;
                 }
                 if (password && fields.passwordFields) {
                     fields.passwordFields.forEach(field => {
@@ -254,6 +258,7 @@ export class LegacyFormManagerService {
                         if (field.offsetParent) {
                             LegacyFormManagerService.dispatchEvents(field);
                         }
+                        somethingFilled = true;
                     });
                 }
                 if (otp && fields.otpField && !fields.otpField.value) {
@@ -261,6 +266,7 @@ export class LegacyFormManagerService {
                     if (fields.otpField.offsetParent) {
                         LegacyFormManagerService.dispatchEvents(fields.otpField);
                     }
+                    somethingFilled = true;
                 }
 
                 // fallback username and email filling logic to fill email as username if no username field is found (and the other way around)
@@ -272,6 +278,7 @@ export class LegacyFormManagerService {
                         if (fields.usernameField.offsetParent) {
                             LegacyFormManagerService.dispatchEvents(fields.usernameField);
                         }
+                        somethingFilled = true;
                     }
                     if (!fields.usernameField && fields.emailField && !fields.emailField.value && !email && username) {
                         // initial email field was not filled and username value wasn't used yet, so we can try to fill it as email
@@ -279,7 +286,13 @@ export class LegacyFormManagerService {
                         if (fields.emailField.offsetParent) {
                             LegacyFormManagerService.dispatchEvents(fields.emailField);
                         }
+                        somethingFilled = true;
                     }
+                }
+
+                if (somethingFilled && LegacyFormManagerService.enableAutosubmitAfterFilling) {
+                    console.debug("auto-submitting form after filling", fields._form);
+                    fields._form.submit();
                 }
             }
         } else {

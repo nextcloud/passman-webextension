@@ -854,7 +854,7 @@
     "description": "Page rules"
   },
   "page_rules_description": {
-    "message": "Setup page specific rules to customize the global extension behavior",
+    "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
     "description": "Page rules card description"
   },
   "page_rules_existing_rules": {
@@ -870,7 +870,7 @@
     "description": "Label for page rule URL input"
   },
   "page_rules_url_placeholder": {
-    "message": "https://example.com/login",
+    "message": "example.com",
     "description": "Placeholder for page rule URL input"
   },
   "page_rules_new_rule": {
@@ -935,7 +935,7 @@
     "placeholders": {
       "page_url": {
         "content": "$1",
-        "example": "https://example.com/login"
+        "example": "example.com"
       }
     }
   },

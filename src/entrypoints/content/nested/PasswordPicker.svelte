@@ -17,6 +17,7 @@
         DecryptedPartialCredentialData
     } from "@/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
+    import type { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
 
     let shadowRootContainerId: string;
 
@@ -84,10 +85,12 @@
                     }
                 });
 
-                sendMessage('getEnableEmailAsUsernameFallbackFillingState').then(async (value) => {
-                    enableEmailAsUsernameFallbackFilling = value.enableEmailAsUsernameFallbackFilling ?? true;
-
-                    PasswordPickerService.initPickerForPage(showPickerCallback, hidePickerCallback, enableEmailAsUsernameFallbackFilling);
+                sendMessage('getPickerPageSettings').then(async (value: GetPickerPageSettingsResponse) => {
+                    PasswordPickerService.initPickerForPage(
+                        showPickerCallback,
+                        hidePickerCallback,
+                        value
+                    );
                     console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
                 });
             } else {

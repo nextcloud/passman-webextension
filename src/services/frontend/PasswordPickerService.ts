@@ -13,6 +13,7 @@ import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/
 import passwordPickerIcon from "~/assets/images/passwordPickerIcon.svg";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDetectionService";
+import { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
 
 export enum PASSWORD_PICKER_SECTIONS {
     ADD,
@@ -34,7 +35,7 @@ export class PasswordPickerService {
     public static initPickerForPage = (
         showPickerCallback: (left: number, top: number, maxZ: any) => void,
         hidePickerCallback: () => void,
-        enableEmailAsUsernameFallbackFilling: boolean
+        pickerPageSettings: GetPickerPageSettingsResponse
     ) => {
         PasswordPickerService.showPickerCallback = showPickerCallback;
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
@@ -45,16 +46,16 @@ export class PasswordPickerService {
         DynamicFormDetectionService.setCurrentUrl(window.location.href);
 
         // Process existing forms immediately
-        PasswordPickerService.processLoginForms(enableEmailAsUsernameFallbackFilling);
+        PasswordPickerService.processLoginForms(pickerPageSettings);
 
         // Set up observer for dynamically added forms (SPA support)
-        PasswordPickerService.setupFormObserver(enableEmailAsUsernameFallbackFilling);
+        PasswordPickerService.setupFormObserver(pickerPageSettings);
     }
 
     /**
      * Processes login forms and sets up password pickers for them
      */
-    private static processLoginForms = (enableEmailAsUsernameFallbackFilling: boolean) => {
+    private static processLoginForms = (pickerPageSettings: GetPickerPageSettingsResponse) => {
         const pageUrl = window.location.href;
         const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
         console.debug("Processing login forms", pageUrl, loginFieldsPerForm);
@@ -62,12 +63,12 @@ export class PasswordPickerService {
         // todo: fetch enablePasswordPicker from settings
         const enablePasswordPicker = true;
 
-        // todo: check ignored sites / urls here
-        /*
-        if (!settings.hasOwnProperty('ignored_sites') || settings.ignored_sites.findUrl(url).length !== 0) {
+        // If the page is ignored, we don't need to process any forms
+        if (pickerPageSettings.mergedPageRules.ignorePage) {
             return;
         }
-        */
+
+        LegacyFormManagerService.enableAutosubmitAfterFilling = pickerPageSettings.mergedPageRules.enableAutosubmit ?? false;
 
         if (loginFieldsPerForm.length > 0) {
             for (const loginFields of loginFieldsPerForm) {
@@ -104,11 +105,11 @@ export class PasswordPickerService {
                 }).then(async (value) => {
                     console.debug('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
                     PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
-                    PasswordPickerService.performAutofillIfEnabled(enableEmailAsUsernameFallbackFilling);
+                    PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules.enableEmailAsUsernameFallbackFilling ?? true);
                 });
             } else {
                 // no need to refetch decrypted credential data, if we already have it
-                PasswordPickerService.performAutofillIfEnabled(enableEmailAsUsernameFallbackFilling);
+                PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules.enableEmailAsUsernameFallbackFilling ?? true);
             }
         }
     }
@@ -131,10 +132,10 @@ export class PasswordPickerService {
     /**
      * Sets up dynamic form detection using DynamicFormDetectionService
      */
-    private static setupFormObserver = (enableEmailAsUsernameFallbackFilling: boolean) => {
+    private static setupFormObserver = (pickerPageSettings: GetPickerPageSettingsResponse) => {
         // Set up callback for when new forms are detected
         DynamicFormDetectionService.setFormDetectedCallback(() => {
-            PasswordPickerService.processLoginForms(enableEmailAsUsernameFallbackFilling);
+            PasswordPickerService.processLoginForms(pickerPageSettings);
         });
 
         // Set up callback for when URL changes (SPA navigation)
@@ -142,36 +143,33 @@ export class PasswordPickerService {
             console.debug("URL changed from", oldUrl, "to", newUrl);
             DynamicFormDetectionService.resetProcessedForms();
 
-            // todo: resetting decryptedPartialCredentialData usually only needed if ExtensionSettingsOptions.ignorePath is false
-            // may introduce a "getPickerRelevantExtensionSettings" message to get all the relevant settings for the picker
-            PasswordPickerService.decryptedPartialCredentialData = [];
-            PasswordPickerService.processLoginForms(enableEmailAsUsernameFallbackFilling);
+            // Resetting decryptedPartialCredentialData is usually only needed if ignorePath is false, because we then need to refetch the credentials
+            if (!pickerPageSettings.mergedPageRules.ignorePath) {
+                PasswordPickerService.decryptedPartialCredentialData = [];
+            }
+            PasswordPickerService.processLoginForms(pickerPageSettings);
         });
 
-        // Enable all detection features individually
-        // todo: integrate per page detection feature customization in the upcoming page rules feature
-        // - DynamicFormDetectionService.enableMutationObserver()
-        // - DynamicFormDetectionService.enableUrlPopstateCheck()
-        // - DynamicFormDetectionService.enableUrlIntervalCheck(1000) // or disable this one if inefficient
-
+        // Enable all detection features individually, based on the extension settings, merged with the page rules
         // todo: can we somehow measure the performance impact of the mutation observer?
-        // Cince this is the most effective way to detect dynamically added forms and input fields, this is the default behavior for now
 
-        // todo implement per page setting: mutationObserveralwaysOnMode
-        /* if (mutationObserveralwaysOnMode) {
+        if (pickerPageSettings.mergedPageRules.enableUserEventBasedFormDetection) {
+            // Only trigger manual detection when the mutation observer is currently disabled
+            // todo: check if this "nor state check" is actually still needed (because we now have the page rules feature)
+            DynamicFormDetectionService.enableUserEventDetection();
+        }
+
+        if (pickerPageSettings.mergedPageRules.enableFormDetectionOnUrlPopstateEvents) {
+            DynamicFormDetectionService.enableUrlPopstateCheck();
+        }
+
+        if (pickerPageSettings.mergedPageRules.enableFormDetectionOnUrlChangesByInterval) {
+            DynamicFormDetectionService.enableUrlIntervalCheck(1000);
+        }
+
+        if (pickerPageSettings.mergedPageRules.enableFormDetectionByMutationObserver) {
             DynamicFormDetectionService.enableMutationObserver();
-        } */
-        
-        // else use default behavior: event based form detection (with debouncing and throttling)
-        DynamicFormDetectionService.enableUserEventDetection();
-
-        // Since the popstate check is less effective than the mutation observer, it is disabled by default,
-        // but for pages with performance issues due to the mutation observer, it could be enabled manually by the user instead of the observer.
-        // DynamicFormDetectionService.enableUrlPopstateCheck();
-
-        // Optionally enable interval check
-        // (more reliable than the popstate check, but disabled by default as it's less efficient than the popstate check and less effective than the mutation observer)
-        // DynamicFormDetectionService.enableUrlIntervalCheck(1000);
+        }
     }
 
     public static readonly unloadPicker = () => {
@@ -208,10 +206,7 @@ export class PasswordPickerService {
         // only open iframe, if the mouse clicked at the passman icon in the input element
         // using data.height as replacement for the icon width, since it is automatically resized to fill the element height
         if (offsetRight < data.height) {
-            // todo: implement
             PasswordPickerService.showPasswordPicker(data.el, data.form);
-
-            //alert("the password picker should open up now - if it was implemented");
         }
     }
 

@@ -51,24 +51,34 @@ export default class PageRulesService {
      */
     public static getPageRules = async (pageUrl: string) => {
         const pageRules = await PageRulesService.getAllPageRules();
-        return pageRules[pageUrl] ?? this.getFreshPageRules();
+        return pageRules[PageRulesService.urlToOrigin(pageUrl)] ?? this.getFreshPageRules();
     }
 
     public static setPageRules = async (pageUrl: string, updatePageRules: Partial<PageRulesInterface>) => {
+        const originUrl = PageRulesService.urlToOrigin(pageUrl);
         const pageRules = await PageRulesService.getAllPageRules();
-        pageRules[pageUrl] = { ...await this.getPageRules(pageUrl), ...updatePageRules };
+        pageRules[originUrl] = { ...await this.getPageRules(originUrl), ...updatePageRules };
         // is this necessary? it SHOULD be a object reference, not a copy of the object
         PageRulesService.pageRulesCache = pageRules;
         await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.pageRules, pageRules);
     }
 
     public static deletePageRules = async (pageUrl: string) => {
+        const originUrl = PageRulesService.urlToOrigin(pageUrl);
         const pageRules = await PageRulesService.getAllPageRules();
-        if (pageRules[pageUrl] === undefined) {
+        if (pageRules[originUrl] === undefined) {
             return;
         }
-        delete pageRules[pageUrl];
+        delete pageRules[originUrl];
         PageRulesService.pageRulesCache = pageRules;
         await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.pageRules, pageRules);
+    }
+
+    /**
+     * Convert input url to origin url without protocol prefix
+     */
+    public static urlToOrigin = (url: string) => {
+        // unfortunatly we need to add the protocol prefix, because the URL constructor expects a full url
+        return new URL('https://' + (url.split('://')[1] ?? url)).origin.split('://')[1];
     }
 }

@@ -163,6 +163,23 @@
         const value = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions[key]);
         return value ? i18n.getMessage('page_rules_global_value_enabled') : i18n.getMessage('page_rules_global_value_disabled');
     };
+
+    const fixFormUrlToOrigin = () => {
+        if (formUrl.trim() === '') {
+            return;
+        }
+        formUrl = PageRulesService.urlToOrigin(formUrl);
+    };
+
+    const formUrlIsValid = () => {
+        try {
+            return formUrl.trim() !== '' && !formUrl.includes('://') && PageRulesService.urlToOrigin(formUrl) === formUrl;
+        } catch (error) {
+            console.debug('Failed to validate form url', error);
+            return false;
+        }
+        return false;
+    };
 </script>
 
 <div class="space-y-5">
@@ -184,6 +201,7 @@
                 label="{i18n.getMessage('page_rules_url_label')}"
                 placeholder="{i18n.getMessage('page_rules_url_placeholder')}"
                 bind:value={formUrl}
+                onchange={fixFormUrlToOrigin}
         />
     </div>
 
@@ -231,7 +249,7 @@
     <div class="flex flex-wrap gap-3">
         <OnClickButton
                 callback={save}
-                disabled={isSaving || !formUrl.trim()}
+                disabled={isSaving || !formUrl.trim() || !formUrlIsValid()}
         >
             {#if isSaving}
                 <Icon data={refresh} scale={1.0} spin="{true}"/>
