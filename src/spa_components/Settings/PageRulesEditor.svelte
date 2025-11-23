@@ -7,6 +7,7 @@
     import refresh from "svelte-awesome/icons/refresh";
     import { i18n } from "~/lib/i18n";
     import PageRulesService, { type PageRulesInterface } from "~/services/PageRulesService";
+    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
 
     type OverrideKey = keyof Pick<PageRulesInterface,
         'ignoreProtocol' |
@@ -157,6 +158,11 @@
             initialUrl: initialUrl
         });
     };
+
+    const getGlobalValueState = async (key: OverrideKey): Promise<string> => {
+        const value = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions[key]);
+        return value ? i18n.getMessage('page_rules_global_value_enabled') : i18n.getMessage('page_rules_global_value_disabled');
+    };
 </script>
 
 <div class="space-y-5">
@@ -194,6 +200,8 @@
         />
     </div>
 
+    <hr class="my-4 border-gray-200"/>
+
     <div class="space-y-3">
         <p class="text-sm font-semibold">{i18n.getMessage('page_rules_override_section')}</p>
         <div class="grid gap-4 md:grid-cols-2">
@@ -204,12 +212,14 @@
                     </label>
                     <select
                             id={`override-${field.key}`}
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-1.5
                              focus:ring-cyan-600 focus:border-cyan-600 dark:bg-neutral dark:text-primary-dark-text"
                             bind:value={overrideSelectValues[field.key]}
                             on:change={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as OverrideSelectionValue)}
                     >
-                        <option value="inherit">{i18n.getMessage('page_rules_use_global')}</option>
+                        <option value="inherit">
+                            {i18n.getMessage('page_rules_use_global')} {#await getGlobalValueState(field.key) then state}({state}){/await}
+                        </option>
                         <option value="true">{i18n.getMessage('page_rules_force_enable')}</option>
                         <option value="false">{i18n.getMessage('page_rules_force_disable')}</option>
                     </select>
