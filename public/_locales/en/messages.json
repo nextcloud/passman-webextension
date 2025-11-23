@@ -980,5 +980,45 @@
   "enable_email_as_username_fallback_filling": {
     "message": "Enable email as username fallback filling (and vice versa)",
     "description": "Enable email as username fallback filling (and vice versa)"
+  },
+  "form_detection_settings": {
+    "message": "Form detection settings",
+    "description": "Form detection settings"
+  },
+  "enable_user_event_based_form_detection": {
+    "message": "Enable user event based form detection",
+    "description": "Enable user event based form detection"
+  },
+  "enable_user_event_based_form_detection_description": {
+    "message": "Listen to some special user events with debouncing and throttling logic",
+    "description": "Description for user event based form detection"
+  },
+  "enable_form_detection_on_url_popstate_events": {
+    "message": "Enable form detection on URL popstate events",
+    "description": "Enable form detection on URL popstate events"
+  },
+  "enable_form_detection_on_url_popstate_events_description": {
+    "message": "Basically useful for SPAs (but not necessarily)",
+    "description": "Description for detection on URL popstate events"
+  },
+  "enable_form_detection_on_url_changes_by_interval": {
+    "message": "Enable form detection on URL changes, checked by interval (of 1s)",
+    "description": "Enable form detection on URL changes by interval"
+  },
+  "enable_form_detection_by_mutation_observer": {
+    "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+    "description": "Enable form detection by mutation observer"
+  },
+  "enable_form_detection_by_mutation_observer_description": {
+    "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+    "description": "Description for detection by mutation observer"
+  },
+  "page_rules_global_value_enabled": {
+    "message": "enabled",
+    "description": "Shown when global setting is enabled"
+  },
+  "page_rules_global_value_disabled": {
+    "message": "disabled",
+    "description": "Shown when global setting is disabled"
   }
 }

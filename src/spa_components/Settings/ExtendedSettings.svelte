@@ -22,6 +22,10 @@
         [ExtensionSettingsOptions.ignorePort]: false,
         [ExtensionSettingsOptions.autofillEnabled]: false,
         [ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]: true,
+        [ExtensionSettingsOptions.enableUserEventBasedFormDetection]: true,
+        [ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]: false,
+        [ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]: false,
+        [ExtensionSettingsOptions.enableFormDetectionByMutationObserver]: false,
     };
 
 
@@ -56,6 +60,14 @@
                         ?? extendedSettings[ExtensionSettingsOptions.autofillEnabled];
                     extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling)
                         ?? extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling];
+                    extendedSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableUserEventBasedFormDetection)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection];
+                    extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents];
+                    extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval];
+                    extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionByMutationObserver)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver];
                 } else {
                     push('/unlock');
                 }
@@ -71,9 +83,7 @@
     <Loading/>
 {:else}
     <Card additionalClasses="text-left mb-6 space-y-3 w-full">
-        <p>
-            {i18n.getMessage('extended_settings')}
-        </p>
+        <h2 class="text-xl font-semibold">{i18n.getMessage('extended_settings')}</h2>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                 id="ignoreProtocol"
                                 label="{i18n.getMessage('ignore_protocol')}"/>
@@ -92,6 +102,25 @@
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
                                 id="enableEmailAsUsernameFallbackFilling"
                                 label="{i18n.getMessage('enable_email_as_username_fallback_filling')}"/>
+        
+        <hr class="my-4 border-gray-200"/>
+
+        <h3 class="text-lg font-semibold">{i18n.getMessage('form_detection_settings')}</h3>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection]}
+                                id="enableUserEventBasedFormDetection"
+                                label="{i18n.getMessage('enable_user_event_based_form_detection')}"/>
+        <p class="description-text">{i18n.getMessage('enable_user_event_based_form_detection_description')}</p>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]}
+                                id="enableFormDetectionOnUrlPopstateEvents"
+                                label="{i18n.getMessage('enable_form_detection_on_url_popstate_events')}"/>
+        <p class="description-text">{i18n.getMessage('enable_form_detection_on_url_popstate_events_description')}</p>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]}
+                                id="enableFormDetectionOnUrlChangesByInterval"
+                                label="{i18n.getMessage('enable_form_detection_on_url_changes_by_interval')}"/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver]}
+                                id="enableFormDetectionByMutationObserver"
+                                label="{i18n.getMessage('enable_form_detection_by_mutation_observer')}"/>
+        <p class="description-text">{i18n.getMessage('enable_form_detection_by_mutation_observer_description')}</p>
     </Card>
 
     <OnClickButton callback="{save}">
@@ -109,3 +138,16 @@
         (mv{import.meta.env.MANIFEST_VERSION}/{import.meta.env.BROWSER})
     </p>
 </div>
+
+<style>
+    .description-text {
+        /* text-sm */
+        font-size: var(--text-xs) /* 12px */;
+        line-height: var(--tw-leading, var(--text-sm--line-height) /* calc(1.25 / 0.875) ≈ 1.428571 */);
+
+        color: #6b7280 /* text-gray-500 */;
+
+        padding-left: 2rem;
+        margin-top: -0.5rem;
+    }
+</style>

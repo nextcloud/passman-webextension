@@ -14,7 +14,11 @@
         'ignorePath' |
         'ignorePort' |
         'autofillEnabled' |
-        'enableEmailAsUsernameFallbackFilling'
+        'enableEmailAsUsernameFallbackFilling' |
+        'enableUserEventBasedFormDetection' |
+        'enableFormDetectionOnUrlPopstateEvents' |
+        'enableFormDetectionOnUrlChangesByInterval' |
+        'enableFormDetectionByMutationObserver'
     >;
 
     type OverrideSelectionValue = 'inherit' | 'true' | 'false';
@@ -28,6 +32,22 @@
         {
             key: 'enableEmailAsUsernameFallbackFilling',
             labelKey: 'enable_email_as_username_fallback_filling'
+        },
+        {
+            key: 'enableUserEventBasedFormDetection',
+            labelKey: 'enable_user_event_based_form_detection'
+        },
+        {
+            key: 'enableFormDetectionOnUrlPopstateEvents',
+            labelKey: 'enable_form_detection_on_url_popstate_events'
+        },
+        {
+            key: 'enableFormDetectionOnUrlChangesByInterval',
+            labelKey: 'enable_form_detection_on_url_changes_by_interval'
+        },
+        {
+            key: 'enableFormDetectionByMutationObserver',
+            labelKey: 'enable_form_detection_by_mutation_observer'
         }
     ];
 
@@ -54,7 +74,11 @@
         ignorePath: 'inherit',
         ignorePort: 'inherit',
         autofillEnabled: 'inherit',
-        enableEmailAsUsernameFallbackFilling: 'inherit'
+        enableEmailAsUsernameFallbackFilling: 'inherit',
+        enableUserEventBasedFormDetection: 'inherit',
+        enableFormDetectionOnUrlPopstateEvents: 'inherit',
+        enableFormDetectionOnUrlChangesByInterval: 'inherit',
+        enableFormDetectionByMutationObserver: 'inherit'
     };
 
     let previousInitialRule: PageRulesInterface | null = null;
@@ -81,7 +105,11 @@
             ignorePath: booleanToSelectValue(rule.ignorePath),
             ignorePort: booleanToSelectValue(rule.ignorePort),
             autofillEnabled: booleanToSelectValue(rule.autofillEnabled),
-            enableEmailAsUsernameFallbackFilling: booleanToSelectValue(rule.enableEmailAsUsernameFallbackFilling)
+            enableEmailAsUsernameFallbackFilling: booleanToSelectValue(rule.enableEmailAsUsernameFallbackFilling),
+            enableUserEventBasedFormDetection: booleanToSelectValue(rule.enableUserEventBasedFormDetection),
+            enableFormDetectionOnUrlPopstateEvents: booleanToSelectValue(rule.enableFormDetectionOnUrlPopstateEvents),
+            enableFormDetectionOnUrlChangesByInterval: booleanToSelectValue(rule.enableFormDetectionOnUrlChangesByInterval),
+            enableFormDetectionByMutationObserver: booleanToSelectValue(rule.enableFormDetectionByMutationObserver)
         };
     };
 

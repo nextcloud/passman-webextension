@@ -22,6 +22,10 @@ export interface PageRulesInterface {
     ignorePort?: EventuallyPageRulesState<boolean>,
     autofillEnabled?: EventuallyPageRulesState<boolean>,
     enableEmailAsUsernameFallbackFilling?: EventuallyPageRulesState<boolean>,
+    enableUserEventBasedFormDetection? : EventuallyPageRulesState<boolean>,
+    enableFormDetectionOnUrlPopstateEvents? : EventuallyPageRulesState<boolean>,
+    enableFormDetectionOnUrlChangesByInterval? : EventuallyPageRulesState<boolean>,
+    enableFormDetectionByMutationObserver? : EventuallyPageRulesState<boolean>,
 }
 
 export default class PageRulesService {

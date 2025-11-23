@@ -10,6 +10,9 @@ import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-cl
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import { PageRulesStorageInterface } from "./PageRulesService";
 
+/**
+ * Do not change the order, once defined! Todo: needs migration for for string keys.
+ */
 export enum ExtensionSettingsOptions {
     nextcloudServerAuthInfo,
     defaultVaultInfo,
@@ -25,7 +28,15 @@ export enum ExtensionSettingsOptions {
     /**
      * Do not access this setting directly, use PageRulesService instead!
      */
-    pageRules
+    pageRules,
+
+    /**
+     * Use this as form detection default strategy since it should cover most cases by best performance ratio.
+     */
+    enableUserEventBasedFormDetection,
+    enableFormDetectionOnUrlPopstateEvents,
+    enableFormDetectionOnUrlChangesByInterval,
+    enableFormDetectionByMutationObserver,
 }
 
 export interface ExtensionSettings {
@@ -42,7 +53,11 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.autofillEnabled]: boolean,
     [ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]: boolean,
     [ExtensionSettingsOptions.passwordGeneratorConfiguration]: PasswordGeneratorConfigurationInterface,
-    [ExtensionSettingsOptions.pageRules]: PageRulesStorageInterface
+    [ExtensionSettingsOptions.pageRules]: PageRulesStorageInterface,
+    [ExtensionSettingsOptions.enableUserEventBasedFormDetection]: boolean,
+    [ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]: boolean,
+    [ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]: boolean,
+    [ExtensionSettingsOptions.enableFormDetectionByMutationObserver]: boolean,
 }
 
 export default class ExtensionSettingsService {
@@ -109,6 +124,18 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.passwordGeneratorConfiguration:
                 returnValue = PasswordGeneratorService.getDefaultConfig() as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enableUserEventBasedFormDetection:
+                returnValue = true as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents:
+                returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval:
+                returnValue = false as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enableFormDetectionByMutationObserver:
+                returnValue = false as ExtensionSettings[K];
                 break;
             default:
                 returnValue = null;
