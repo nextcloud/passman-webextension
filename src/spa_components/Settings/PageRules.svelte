@@ -75,8 +75,8 @@
         }
         lockSaveButton = true;
         try {
-            if (editorMode === 'edit' && initialUrl && initialUrl !== normalizedUrl) {
-                await PageRulesService.deletePageRules(initialUrl);
+            if (editorMode === 'edit' && event.detail.initialUrl && event.detail.initialUrl !== normalizedUrl) {
+                await PageRulesService.deletePageRules(event.detail.initialUrl);
             }
             await PageRulesService.setPageRules(normalizedUrl, { ...event.detail.rule });
             await loadPageRules();
@@ -91,12 +91,12 @@
     };
 
     const handleEditorDelete = async (event: CustomEvent<{ initialUrl: string }>) => {
-        if (editorMode !== 'edit' || !initialUrl) {
+        if (editorMode !== 'edit' || !event.detail.initialUrl) {
             return;
         }
         lockDeleteButton = true;
         try {
-            await PageRulesService.deletePageRules(initialUrl);
+            await PageRulesService.deletePageRules(event.detail.initialUrl);
             await loadPageRules();
             NotyService.notySuccess(i18n.getMessage('page_rules_rule_deleted'));
             openListView();
@@ -199,7 +199,7 @@
                             <li>
                                 <button
                                         type="button"
-                                        class="w-full text-left px-3 py-2 flex flex-col gap-1 transition hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-primary-focus dark:hover:bg-neutral"
+                                        class="w-full text-left px-3 py-2 flex flex-col gap-1 transition cursor-pointer hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-primary-focus dark:hover:bg-neutral"
                                         on:click={() => startEdit(url)}
                                 >
                                     <span class="font-medium wrap-break-word">{url}</span>

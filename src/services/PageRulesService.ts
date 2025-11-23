@@ -28,6 +28,10 @@ export interface PageRulesInterface {
     enableFormDetectionByMutationObserver? : EventuallyPageRulesState<boolean>,
 }
 
+/**
+ * This service is used to get and set page rules for the current page.
+ * Todo: due to challenges in cache sync between frontend and background scripts, we currently do not use a cache. Fix that in future!
+ */
 export default class PageRulesService {
     private static pageRulesCache: PageRulesStorageInterface | null = null;
 
@@ -39,10 +43,11 @@ export default class PageRulesService {
     }
 
     public static getAllPageRules = async () => {
-        if (!PageRulesService.pageRulesCache) {
+        /*if (!PageRulesService.pageRulesCache) {
             PageRulesService.pageRulesCache = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.pageRules) ?? {};
         }
-        return PageRulesService.pageRulesCache;
+        return PageRulesService.pageRulesCache;*/
+        return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.pageRules) ?? {};
     }
 
     /**
@@ -59,7 +64,7 @@ export default class PageRulesService {
         const pageRules = await PageRulesService.getAllPageRules();
         pageRules[originUrl] = { ...await this.getPageRules(originUrl), ...updatePageRules };
         // is this necessary? it SHOULD be a object reference, not a copy of the object
-        PageRulesService.pageRulesCache = pageRules;
+        // PageRulesService.pageRulesCache = pageRules;
         await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.pageRules, pageRules);
     }
 
@@ -70,7 +75,7 @@ export default class PageRulesService {
             return;
         }
         delete pageRules[originUrl];
-        PageRulesService.pageRulesCache = pageRules;
+        // PageRulesService.pageRulesCache = pageRules;
         await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.pageRules, pageRules);
     }
 
