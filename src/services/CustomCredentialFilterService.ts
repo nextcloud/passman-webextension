@@ -1,6 +1,7 @@
 import { ParserService } from "./ParserService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
+import PageRulesService from "./PageRulesService";
 
 export class CustomCredentialFilterService {
     /**
@@ -16,11 +17,12 @@ export class CustomCredentialFilterService {
             return found_list;
         }
 
-        // todo: check if the default of false is acceptable here (may be better to some defined defaults from the extension settings?)
-        const ignoreProtocol = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreProtocol, true) ?? false;
-        const ignoreSubdomain = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignoreSubdomain, true) ?? false;
-        const ignorePath = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePath, true) ?? true;
-        const ignorePort = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.ignorePort, true) ?? false;
+        const combinedSettings = await PageRulesService.getCombinedSettingsResponse(userTabUrl);
+
+        const ignoreProtocol = combinedSettings.mergedPageRules.ignoreProtocol ?? false;
+        const ignoreSubdomain = combinedSettings.mergedPageRules.ignoreSubdomain ?? false;
+        const ignorePath = combinedSettings.mergedPageRules.ignorePath ?? true;
+        const ignorePort = combinedSettings.mergedPageRules.ignorePort ?? false;
 
         const url = ParserService.processURL(userTabUrl, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
 

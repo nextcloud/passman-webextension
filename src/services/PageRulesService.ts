@@ -28,6 +28,24 @@ export interface PageRulesInterface {
     enableFormDetectionByMutationObserver? : EventuallyPageRulesState<boolean>,
 }
 
+export interface CombinedSettingsResponse {
+    /**
+     * The page rules that are set for the current page.
+     */
+    originalPageRules: PageRulesInterface;
+
+    /**
+     * The original extension settings that are allowed to be overwritten by the page rules.
+     */
+    originalOverwritableExtensionSettings: Omit<PageRulesInterface, 'ignorePage' | 'enableAutosubmit'>;
+
+    /**
+     * The page rules that are merged with the global extension settings (that are allowed to be transferred to the content script).
+     * Ready to be just applied within the content script.
+     */
+    mergedPageRules: PageRulesInterface;
+}
+
 /**
  * This service is used to get and set page rules for the current page.
  * Todo: due to challenges in cache sync between frontend and background scripts, we currently do not use a cache. Fix that in future!
@@ -85,5 +103,40 @@ export default class PageRulesService {
     public static urlToOrigin = (url: string) => {
         // unfortunatly we need to add the protocol prefix, because the URL constructor expects a full url
         return new URL('https://' + (url.split('://')[1] ?? url)).origin.split('://')[1];
+    }
+
+    public static getCombinedSettingsResponse = async (pageUrl: string): Promise<CombinedSettingsResponse> => {
+        const urlOrigin = PageRulesService.urlToOrigin(pageUrl);
+        const extensionSettings = await ExtensionSettingsService.getExtensionSettings();
+        const originalPageRules = await PageRulesService.getPageRules(urlOrigin);
+        const pageRulesWithoutUndefinedKeys: Partial<PageRulesInterface> = Object.fromEntries(Object.entries(originalPageRules).filter(([key, value]) => value !== undefined));
+        const originalOverwritableExtensionSettings = {
+            ignoreProtocol: extensionSettings[ExtensionSettingsOptions.ignoreProtocol],
+            ignoreSubdomain: extensionSettings[ExtensionSettingsOptions.ignoreSubdomain],
+            ignorePath: extensionSettings[ExtensionSettingsOptions.ignorePath],
+            ignorePort: extensionSettings[ExtensionSettingsOptions.ignorePort],
+            autofillEnabled: extensionSettings[ExtensionSettingsOptions.autofillEnabled],
+            enableEmailAsUsernameFallbackFilling: extensionSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling],
+            enableUserEventBasedFormDetection: extensionSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection],
+            enableFormDetectionOnUrlPopstateEvents: extensionSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents],
+            enableFormDetectionOnUrlChangesByInterval: extensionSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval],
+            enableFormDetectionByMutationObserver: extensionSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver],
+        };
+
+        /**
+         * How mergedPageRules work:
+         * 1. Start with the original page rules to ensure all keys are present
+         * 2. Add the global extension settings that override some of the original page rules
+         * 3. Since we actually want to override the global settings with the page rules, add them again, but without undefined keys, so we use the globals there
+         */
+        return {
+            originalPageRules: originalPageRules,
+            originalOverwritableExtensionSettings,
+            mergedPageRules: {
+                ...originalPageRules,
+                ...originalOverwritableExtensionSettings,
+                ...pageRulesWithoutUndefinedKeys,
+            },
+        };
     }
 }
