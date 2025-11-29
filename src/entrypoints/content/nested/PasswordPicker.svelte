@@ -3,13 +3,12 @@
     import { PASSWORD_PICKER_SECTIONS, PasswordPickerService } from "~/services/frontend/PasswordPickerService";
     import { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import { ban, list, plus, search, times } from "svelte-awesome/icons";
-    import refresh from "svelte-awesome/icons/refresh";
+    import { sliders, list, plus, search, times, circleONotch } from "svelte-awesome/icons";
     import PickerTabAdd from "~/spa_partials/PasswordPickerSections/PickerTabAdd.svelte";
     import PickerTabList from "~/spa_partials/PasswordPickerSections/PickerTabList.svelte";
     import PickerTabSearch from "~/spa_partials/PasswordPickerSections/PickerTabSearch.svelte";
     import PickerTabGenerate from "~/spa_partials/PasswordPickerSections/PickerTabGenerate.svelte";
-    import PickerTabIgnore from "~/spa_partials/PasswordPickerSections/PickerTabIgnore.svelte";
+    import PickerTabPageRules from "~/spa_partials/PasswordPickerSections/PickerTabPageRules.svelte";
     import { LegacyFormManagerService } from "~/services/frontend/LegacyFormManagerService";
     import { i18n } from "~/lib/i18n";
     import { sendMessage } from "@/entrypoints/background/messaging";
@@ -139,15 +138,15 @@
             <div class="tab generate" data-name="generate" aria-hidden="true"
                  on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
                 <span class="picker-fa" title={i18n.getMessage("password_generator")} style="padding-bottom: 7px;">
-                    <Icon data={refresh} scale={1.0}/>
+                    <Icon data={circleONotch} scale={1.0}/>
                 </span>
             </div>
-            <!--<div class="tab ignore" data-name="ignore" aria-hidden="true"
-                 on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.IGNORE}>
-                <span class="picker-fa" title={i18n.getMessage("ignore_site_tab")} style="padding-bottom: 7px;">
-                    <Icon data={ban} scale={1.0}/>
+            <div class="tab page-rules" data-name="page-rules" aria-hidden="true"
+                 on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.PAGE_RULES}>
+                <span class="picker-fa" title={i18n.getMessage("page_rules")} style="padding-bottom: 7px;">
+                    <Icon data={sliders} scale={1.0}/>
                 </span>
-            </div>-->
+            </div>
             <div class="tab close pull-right" aria-hidden="true" on:click={hidePickerCallback}>
                 <span class="picker-fa" title={i18n.getMessage("close")} style="padding-bottom: 7px;">
                     <Icon data={times} scale={1.0}/>
@@ -164,9 +163,8 @@
                     <PickerTabSearch bind:enableEmailAsUsernameFallbackFilling/>
                 {:else if selectedSection === PASSWORD_PICKER_SECTIONS.GENERATE}
                     <PickerTabGenerate/>
-                {:else if selectedSection === PASSWORD_PICKER_SECTIONS.IGNORE}
-                    ignore section
-                    <PickerTabIgnore/>
+                {:else if selectedSection === PASSWORD_PICKER_SECTIONS.PAGE_RULES}
+                    <PickerTabPageRules/>
                 {/if}
             {/if}
         </div>

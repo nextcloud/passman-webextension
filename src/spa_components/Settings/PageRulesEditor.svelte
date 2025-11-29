@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher, onMount } from "svelte";
     import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
     import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
@@ -42,7 +42,9 @@
         overrideSelectValues = buildOverrideSelectValuesFromRule(rule);
     };
 
-    syncOverrideSelectValuesFromRule(formRule);
+    onMount(() => {
+        syncOverrideSelectValuesFromRule(formRule);
+    });
 
     $: if (initialRule !== previousInitialRule) {
         formRule = {
@@ -160,7 +162,7 @@
                             id={`override-${field.key}`}
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-1.5
                              focus:ring-cyan-600 focus:border-cyan-600 dark:bg-neutral dark:text-primary-dark-text"
-                            bind:value={overrideSelectValues[field.key]}
+                            value={overrideSelectValues[field.key]}
                             on:change={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as PageRuleOverrideSelection)}
                     >
                         <option value="inherit">

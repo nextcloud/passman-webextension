@@ -20,7 +20,7 @@ export enum PASSWORD_PICKER_SECTIONS {
     LIST,
     SEARCH,
     GENERATE,
-    IGNORE
+    PAGE_RULES
 }
 
 export class PasswordPickerService {

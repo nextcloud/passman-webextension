@@ -11,6 +11,11 @@ export interface GetPickerPageSettingsResponse {
     originalPageRules: PageRulesInterface;
 
     /**
+     * The original extension settings that are allowed to be overwritten by the page rules.
+     */
+    originalOverwritableExtensionSettings: Omit<PageRulesInterface, 'ignorePage' | 'enableAutosubmit'>;
+
+    /**
      * The page rules that are merged with the global extension settings (that are allowed to be transferred to the content script).
      * Ready to be just applied within the content script.
      */
@@ -35,6 +40,18 @@ onMessage('getPickerPageSettings', async (request) => {
 
     const originalPageRules = await PageRulesService.getPageRules(urlOrigin);
     const pageRulesWithoutUndefinedKeys: Partial<PageRulesInterface> = Object.fromEntries(Object.entries(originalPageRules).filter(([key, value]) => value !== undefined));
+    const originalOverwritableExtensionSettings = {
+        ignoreProtocol: extensionSettings[ExtensionSettingsOptions.ignoreProtocol],
+        ignoreSubdomain: extensionSettings[ExtensionSettingsOptions.ignoreSubdomain],
+        ignorePath: extensionSettings[ExtensionSettingsOptions.ignorePath],
+        ignorePort: extensionSettings[ExtensionSettingsOptions.ignorePort],
+        autofillEnabled: extensionSettings[ExtensionSettingsOptions.autofillEnabled],
+        enableEmailAsUsernameFallbackFilling: extensionSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling],
+        enableUserEventBasedFormDetection: extensionSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection],
+        enableFormDetectionOnUrlPopstateEvents: extensionSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents],
+        enableFormDetectionOnUrlChangesByInterval: extensionSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval],
+        enableFormDetectionByMutationObserver: extensionSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver],
+    };
 
     /**
      * How mergedPageRules work:
@@ -44,20 +61,10 @@ onMessage('getPickerPageSettings', async (request) => {
      */
     return {
         originalPageRules: originalPageRules,
+        originalOverwritableExtensionSettings,
         mergedPageRules: {
             ...originalPageRules,
-            ...{
-                ignoreProtocol: extensionSettings[ExtensionSettingsOptions.ignoreProtocol],
-                ignoreSubdomain: extensionSettings[ExtensionSettingsOptions.ignoreSubdomain],
-                ignorePath: extensionSettings[ExtensionSettingsOptions.ignorePath],
-                ignorePort: extensionSettings[ExtensionSettingsOptions.ignorePort],
-                autofillEnabled: extensionSettings[ExtensionSettingsOptions.autofillEnabled],
-                enableEmailAsUsernameFallbackFilling: extensionSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling],
-                enableUserEventBasedFormDetection: extensionSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection],
-                enableFormDetectionOnUrlPopstateEvents: extensionSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents],
-                enableFormDetectionOnUrlChangesByInterval: extensionSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval],
-                enableFormDetectionByMutationObserver: extensionSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver],
-            },
+            ...originalOverwritableExtensionSettings,
             ...pageRulesWithoutUndefinedKeys,
         },
     };

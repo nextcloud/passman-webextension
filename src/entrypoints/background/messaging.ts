@@ -40,6 +40,7 @@ import {
     GetEnableEmailAsUsernameFallbackFillingStateResponse
 } from '@/entrypoints/background/messages/getEnableEmailAsUsernameFallbackFillingState';
 import { GetPickerPageSettingsResponse } from './messages/getPickerPageSettings';
+import { UpdatePickerPageSettingsRequest } from './messages/updatePickerPageSettings';
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -71,6 +72,8 @@ interface ProtocolMap {
     getCredentialsForVault(data: GetCredentialsForVaultMessagingRequest): GetCredentialsForVaultMessagingResponse;
 
     getPickerPageSettings(): GetPickerPageSettingsResponse;
+
+    updatePickerPageSettings(data: UpdatePickerPageSettingsRequest): Promise<void>;
 
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;

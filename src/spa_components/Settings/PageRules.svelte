@@ -13,6 +13,7 @@
     import PageRulesEditor from "./PageRulesEditor.svelte";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
+    import { DEFAULT_OVERRIDE_SELECT_VALUES } from "~/lib/pageRules/pageRulesOverrides";
 
     let pageIsLoading = true;
     let pageRules: PageRulesStorageInterface = {};
@@ -28,7 +29,7 @@
     let filteredPageRuleEntries: [string, PageRulesInterface][] = [];
 
     const overridesCount = (rule: PageRulesInterface) => {
-        return ['ignoreProtocol', 'ignoreSubdomain', 'ignorePath', 'ignorePort', 'autofillEnabled', 'enableEmailAsUsernameFallbackFilling']
+        return Object.keys(DEFAULT_OVERRIDE_SELECT_VALUES)
             .reduce((count, key) => {
                 const value = rule[key as keyof PageRulesInterface];
                 return value === undefined ? count : count + 1;

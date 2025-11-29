@@ -901,6 +901,34 @@
     "message": "Override global settings",
     "description": "Heading for page rule override settings"
   },
+  "page_rules_picker_current_site": {
+    "message": "Current site",
+    "description": "Label that shows current origin in picker tab"
+  },
+  "page_rules_picker_intro": {
+    "message": "Adjust how Passman behaves on this page.",
+    "description": "Intro text for picker page rules tab"
+  },
+  "page_rules_picker_reset": {
+    "message": "Reset changes",
+    "description": "Reset button label in picker page rules tab"
+  },
+  "page_rules_picker_loading": {
+    "message": "Loading page settings...",
+    "description": "Loading label for picker page rules tab"
+  },
+  "page_rules_picker_retry": {
+    "message": "Retry",
+    "description": "Retry button label for picker page rules tab"
+  },
+  "page_rules_picker_load_error": {
+    "message": "Unable to load page rules for this site",
+    "description": "Error shown when picker tab cannot fetch page rules"
+  },
+  "page_rules_picker_save_error": {
+    "message": "Saving page rules failed",
+    "description": "Error shown when picker tab cannot save page rules"
+  },
   "page_rules_search_label": {
     "message": "Search rules",
     "description": "Label for the page rules search input"

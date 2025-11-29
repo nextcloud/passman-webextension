@@ -8,7 +8,7 @@
 </script>
 <script lang="ts">
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
-    import { server, bars, cog, cogs } from "svelte-awesome/icons";
+    import { server, sliders, cog, cogs } from "svelte-awesome/icons";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
@@ -47,7 +47,7 @@
     </OnClickButton>
     <OnClickButton callback={() => selectSettingsSection(SETTINGS_SECTIONS.PAGE_RULES)} additionalClasses="w-12"
         title={Utils.titleCase(i18n.getMessage('page_rules'))}>
-        <Icon data={bars} scale={1.3}/>
+        <Icon data={sliders} scale={1.3}/>
     </OnClickButton>
     <OnClickButton callback={() => selectSettingsSection(SETTINGS_SECTIONS.EXTENDED_SETTINGS)} additionalClasses="w-12"
         title={Utils.titleCase(i18n.getMessage('extended_settings'))}>
