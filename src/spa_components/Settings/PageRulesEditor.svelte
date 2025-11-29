@@ -8,54 +8,18 @@
     import { i18n } from "~/lib/i18n";
     import PageRulesService, { type PageRulesInterface } from "~/services/PageRulesService";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
-
-    type OverrideKey = keyof Pick<PageRulesInterface,
-        'ignoreProtocol' |
-        'ignoreSubdomain' |
-        'ignorePath' |
-        'ignorePort' |
-        'autofillEnabled' |
-        'enableEmailAsUsernameFallbackFilling' |
-        'enableUserEventBasedFormDetection' |
-        'enableFormDetectionOnUrlPopstateEvents' |
-        'enableFormDetectionOnUrlChangesByInterval' |
-        'enableFormDetectionByMutationObserver'
-    >;
-
-    type OverrideSelectionValue = 'inherit' | 'true' | 'false';
-
-    const overrideFieldDefinitions: { key: OverrideKey, labelKey: string }[] = [
-        { key: 'ignoreProtocol', labelKey: 'ignore_protocol' },
-        { key: 'ignoreSubdomain', labelKey: 'ignore_subdomain' },
-        { key: 'ignorePath', labelKey: 'ignore_path' },
-        { key: 'ignorePort', labelKey: 'ignore_port' },
-        { key: 'autofillEnabled', labelKey: 'enable_autofill' },
-        {
-            key: 'enableEmailAsUsernameFallbackFilling',
-            labelKey: 'enable_email_as_username_fallback_filling'
-        },
-        {
-            key: 'enableUserEventBasedFormDetection',
-            labelKey: 'enable_user_event_based_form_detection'
-        },
-        {
-            key: 'enableFormDetectionOnUrlPopstateEvents',
-            labelKey: 'enable_form_detection_on_url_popstate_events'
-        },
-        {
-            key: 'enableFormDetectionOnUrlChangesByInterval',
-            labelKey: 'enable_form_detection_on_url_changes_by_interval'
-        },
-        {
-            key: 'enableFormDetectionByMutationObserver',
-            labelKey: 'enable_form_detection_by_mutation_observer'
-        }
-    ];
+    import {
+        PAGE_RULE_OVERRIDE_FIELDS,
+        type PageRuleOverrideKey,
+        type PageRuleOverrideSelection,
+        buildOverrideSelectValuesFromRule,
+        pageRuleOverrideSelectionToBoolean
+    } from "~/lib/pageRules/pageRulesOverrides";
 
     const dispatch = createEventDispatcher<{
-        save: { url: string, rule: PageRulesInterface },
+        save: { initialUrl: string, url: string, rule: PageRulesInterface },
         cancel: void,
-        delete: void
+        delete: { initialUrl: string }
     }>();
 
     export let mode: 'create' | 'edit' = 'create';
@@ -69,49 +33,13 @@
         ...initialRule
     };
 
-    let overrideSelectValues: Record<OverrideKey, OverrideSelectionValue> = {
-        ignoreProtocol: 'inherit',
-        ignoreSubdomain: 'inherit',
-        ignorePath: 'inherit',
-        ignorePort: 'inherit',
-        autofillEnabled: 'inherit',
-        enableEmailAsUsernameFallbackFilling: 'inherit',
-        enableUserEventBasedFormDetection: 'inherit',
-        enableFormDetectionOnUrlPopstateEvents: 'inherit',
-        enableFormDetectionOnUrlChangesByInterval: 'inherit',
-        enableFormDetectionByMutationObserver: 'inherit'
-    };
+    let overrideSelectValues: Record<PageRuleOverrideKey, PageRuleOverrideSelection> = buildOverrideSelectValuesFromRule(formRule);
 
     let previousInitialRule: PageRulesInterface | null = null;
     let previousInitialUrl: string = initialUrl;
 
-    const booleanToSelectValue = (value: boolean | undefined): OverrideSelectionValue => {
-        if (value === undefined) {
-            return 'inherit';
-        }
-        return value ? 'true' : 'false';
-    };
-
-    const selectValueToBoolean = (value: OverrideSelectionValue): boolean | undefined => {
-        if (value === 'inherit') {
-            return undefined;
-        }
-        return value === 'true';
-    };
-
     const syncOverrideSelectValuesFromRule = (rule: PageRulesInterface) => {
-        overrideSelectValues = {
-            ignoreProtocol: booleanToSelectValue(rule.ignoreProtocol),
-            ignoreSubdomain: booleanToSelectValue(rule.ignoreSubdomain),
-            ignorePath: booleanToSelectValue(rule.ignorePath),
-            ignorePort: booleanToSelectValue(rule.ignorePort),
-            autofillEnabled: booleanToSelectValue(rule.autofillEnabled),
-            enableEmailAsUsernameFallbackFilling: booleanToSelectValue(rule.enableEmailAsUsernameFallbackFilling),
-            enableUserEventBasedFormDetection: booleanToSelectValue(rule.enableUserEventBasedFormDetection),
-            enableFormDetectionOnUrlPopstateEvents: booleanToSelectValue(rule.enableFormDetectionOnUrlPopstateEvents),
-            enableFormDetectionOnUrlChangesByInterval: booleanToSelectValue(rule.enableFormDetectionOnUrlChangesByInterval),
-            enableFormDetectionByMutationObserver: booleanToSelectValue(rule.enableFormDetectionByMutationObserver)
-        };
+        overrideSelectValues = buildOverrideSelectValuesFromRule(rule);
     };
 
     syncOverrideSelectValuesFromRule(formRule);
@@ -130,10 +58,10 @@
         previousInitialUrl = initialUrl;
     }
 
-    const handleOverrideChange = (key: OverrideKey, selection: OverrideSelectionValue) => {
+    const handleOverrideChange = (key: PageRuleOverrideKey, selection: PageRuleOverrideSelection) => {
         formRule = {
             ...formRule,
-            [key]: selectValueToBoolean(selection)
+            [key]: pageRuleOverrideSelectionToBoolean(selection)
         };
         overrideSelectValues = {
             ...overrideSelectValues,
@@ -159,7 +87,7 @@
         });
     };
 
-    const getGlobalValueState = async (key: OverrideKey): Promise<string> => {
+    const getGlobalValueState = async (key: PageRuleOverrideKey): Promise<string> => {
         const value = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions[key]);
         return value ? i18n.getMessage('page_rules_global_value_enabled') : i18n.getMessage('page_rules_global_value_disabled');
     };
@@ -223,7 +151,7 @@
     <div class="space-y-3">
         <p class="text-sm font-semibold">{i18n.getMessage('page_rules_override_section')}</p>
         <div class="grid gap-4 md:grid-cols-2">
-            {#each overrideFieldDefinitions as field}
+            {#each PAGE_RULE_OVERRIDE_FIELDS as field}
                 <div class="flex flex-col space-y-1">
                     <label for={`override-${field.key}`} class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text">
                         {i18n.getMessage(field.labelKey)}
@@ -233,7 +161,7 @@
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-1.5
                              focus:ring-cyan-600 focus:border-cyan-600 dark:bg-neutral dark:text-primary-dark-text"
                             bind:value={overrideSelectValues[field.key]}
-                            on:change={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as OverrideSelectionValue)}
+                            on:change={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as PageRuleOverrideSelection)}
                     >
                         <option value="inherit">
                             {i18n.getMessage('page_rules_use_global')} {#await getGlobalValueState(field.key) then state}({state}){/await}
