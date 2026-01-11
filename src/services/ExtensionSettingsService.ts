@@ -176,7 +176,7 @@ export default class ExtensionSettingsService {
         if (!ExtensionSettingsService.localPassmanClient) {
             const logger = new CustomPassmanClientLoggingService();
             ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
-                null as unknown as NextcloudServerInfoInterface,
+                {} as unknown as NextcloudServerInfoInterface,
                 new NextcloudServerMessagingConnector(
                     await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface,
                     logger

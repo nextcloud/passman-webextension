@@ -8,11 +8,20 @@ import { DefaultLoggingService } from "@binsky/passman-client-ts/lib/Service/Def
 
 export class BackendPassmanClient extends PassmanClient {
     public static createInstance = async (
-        serverData: NextcloudServerInfoInterface, 
-        nextcloudServer?: NextcloudServerInterface, 
-        logger?: LoggingHandlerInterface, 
+        serverData: NextcloudServerInfoInterface,
+        nextcloudServer?: NextcloudServerInterface,
+        logger?: LoggingHandlerInterface,
         persistence?: PersistenceInterface
     ): Promise<BackendPassmanClient> => {
+        // automatic probing if backendAppId is not explicitly set
+        if (!serverData.backendAppId) {
+            const successfulProbing = await this.getServerBackendAppId(serverData);
+            if (successfulProbing) {
+                serverData.backendAppId = successfulProbing;
+                nextcloudServer?.setTemporaryBackendAppId(successfulProbing);
+            }
+        }
+
         if (!logger) {
             logger = new DefaultLoggingService()
         }
