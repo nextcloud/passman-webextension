@@ -292,7 +292,7 @@
         "description": "Done"
     },
     "custom_fields": {
-        "message": "自定義欄位",
+        "message": "自訂欄位",
         "description": "Custom fields"
     },
     "general": {
@@ -528,7 +528,7 @@
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "添加自定義欄位",
+        "message": "添加自訂欄位",
         "description": "Add a custom field"
     },
     "text": {
