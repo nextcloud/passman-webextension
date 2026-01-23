@@ -184,7 +184,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Увімкнути вибір паролю",
+        "message": "Увімкнути вибір пароля",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
