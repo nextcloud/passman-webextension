@@ -42,8 +42,10 @@
              */
             var initApp = function () {
                 API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
-                    //First check attributes
+                    // If no password is set or the vault is locked, redirect to the lock screen
+                    // to prevent leaking credential data to unauthenticated users.
                     if (!isPasswordSet) {
+                        window.location = '#!/locked';
                         return;
                     }
 
@@ -73,4 +75,3 @@
             };
         }]);
 }());
-
