@@ -33,16 +33,22 @@
      * Controller of the passmanApp
      */
     angular.module('passmanExtension')
-        .controller('SearchCtrl', ['$scope', function ($scope) {
+        .controller('SearchCtrl', ['$scope', '$location', function ($scope, $location) {
             $scope.found_credentials = false;
             $scope.searchText = '';
             $scope.search = function () {
-                API.runtime.sendMessage(API.runtime.id, {
-                    'method': 'searchCredential',
-                    args: $scope.searchText
-                }).then(function (result) {
-                    $scope.found_credentials = result;
-                    $scope.$apply();
+                API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
+                    if (!isPasswordSet) {
+                        window.location = '#!/locked';
+                        return;
+                    }
+                    API.runtime.sendMessage(API.runtime.id, {
+                        'method': 'searchCredential',
+                        args: $scope.searchText
+                    }).then(function (result) {
+                        $scope.found_credentials = result;
+                        $scope.$apply();
+                    });
                 });
             };
 

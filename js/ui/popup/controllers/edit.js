@@ -34,18 +34,24 @@
      */
     angular.module('passmanExtension')
         .controller('EditCtrl', ['$scope', '$routeParams', '$timeout', 'notify', function ($scope, $routeParams, $timeout, notify) {
-            API.runtime.sendMessage(API.runtime.id, {
-                method: "getCredentialByGuid",
-                args: $routeParams.guid
-            }).then(function (credential) {
-                $scope.canEdit = true;
-                if(credential.hasOwnProperty('acl')) {
-                    var permissions = new SharingACL(credential.acl.permissions.permission);
-                    $scope.canEdit = permissions.hasPermission(0x02);
+            API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
+                if (!isPasswordSet) {
+                    window.location = '#!/locked';
+                    return;
                 }
-                $scope.credential = credential;
-                $scope.credential.password_repeat = angular.copy(credential.password);
-                $scope.$apply();
+                API.runtime.sendMessage(API.runtime.id, {
+                    method: "getCredentialByGuid",
+                    args: $routeParams.guid
+                }).then(function (credential) {
+                    $scope.canEdit = true;
+                    if(credential.hasOwnProperty('acl')) {
+                        var permissions = new SharingACL(credential.acl.permissions.permission);
+                        $scope.canEdit = permissions.hasPermission(0x02);
+                    }
+                    $scope.credential = credential;
+                    $scope.credential.password_repeat = angular.copy(credential.password);
+                    $scope.$apply();
+                });
             });
 
             var storage = new API.Storage();

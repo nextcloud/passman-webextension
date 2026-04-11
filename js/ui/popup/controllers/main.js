@@ -71,11 +71,17 @@
 
             $scope.refreshing_credentials = false;
             $scope.refresh = function () {
-                $scope.refreshing_credentials = true;
-                API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
-                    setTimeout(function () {
-                        port.postMessage("credential_amount");
-                    }, 1900);
+                API.runtime.sendMessage(API.runtime.id, {method: "getMasterPasswordSet"}).then(function (isPasswordSet) {
+                    if (!isPasswordSet) {
+                        window.location = '#!/locked';
+                        return;
+                    }
+                    $scope.refreshing_credentials = true;
+                    API.runtime.sendMessage(API.runtime.id, {method: "getCredentials"}).then(function () {
+                        setTimeout(function () {
+                            port.postMessage("credential_amount");
+                        }, 1900);
+                    });
                 });
             };
 
