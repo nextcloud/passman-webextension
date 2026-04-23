@@ -36,7 +36,27 @@
         .controller('SearchCtrl', ['$scope', function ($scope) {
             $scope.found_credentials = false;
             $scope.searchText = '';
+            $scope.isLocked = false;
+
+            // Check if extension is locked before any operation
+            API.runtime.sendMessage(API.runtime.id, {
+                'method': 'getVaultSettings'
+            }).then(function (settings) {
+                if (!settings || !settings.unlocked) {
+                    $scope.isLocked = true;
+                    window.location = '#!/locked';
+                    $scope.$apply();
+                }
+            }).catch(function () {
+                $scope.isLocked = true;
+                window.location = '#!/locked';
+            });
+
             $scope.search = function () {
+                if ($scope.isLocked) {
+                    window.location = '#!/locked';
+                    return;
+                }
                 API.runtime.sendMessage(API.runtime.id, {
                     'method': 'searchCredential',
                     args: $scope.searchText
