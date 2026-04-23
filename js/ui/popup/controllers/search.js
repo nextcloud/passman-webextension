@@ -36,6 +36,19 @@
         .controller('SearchCtrl', ['$scope', function ($scope) {
             $scope.found_credentials = false;
             $scope.searchText = '';
+
+            // Security fix: verify the vault is unlocked before allowing any search.
+            // If the vault is locked (getMasterPasswordSet returns false), redirect
+            // to the lock screen to prevent unauthenticated access to credentials.
+            API.runtime.sendMessage(API.runtime.id, {method: 'getMasterPasswordSet'}).then(function (isPasswordSet) {
+                if (!isPasswordSet) {
+                    window.location = '#!/locked';
+                    return;
+                }
+                // Vault is unlocked — search is allowed
+                $scope.$apply();
+            });
+
             $scope.search = function () {
                 API.runtime.sendMessage(API.runtime.id, {
                     'method': 'searchCredential',
@@ -52,4 +65,3 @@
 
         }]);
 }());
-
