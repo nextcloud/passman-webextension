@@ -47,6 +47,12 @@ var background = (function () {
             getSettings();
         } else {
             displayLogoutIcons();
+            // Clear isInstalled so popup doesn't redirect to locked after browser restart
+            if (_self.settings) {
+                delete _self.settings.isInstalled;
+                storage.set('settings', _self.settings);
+            }
+            testMasterPasswordAgainst = null;
         }
 
     }
