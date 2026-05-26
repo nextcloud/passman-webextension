@@ -312,7 +312,7 @@
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Serveri seaded",
+        "message": "Serveri seadistused",
         "description": "Server Settings"
     },
     "vault_settings": {
@@ -420,7 +420,7 @@
         "description": "One time password"
     },
     "settings": {
-        "message": "Seaded",
+        "message": "Seadistused",
         "description": "Settings"
     },
     "extra_accounts": {
@@ -456,7 +456,7 @@
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Sa võid oma salasõna lähtestada, aga sellega ka brauserilaiendus viiakse algolekusse.",
+        "message": "Sa võid oma salasõna lähtestada, aga sellega viiakse brauserilaiendus ka algolekusse.",
         "description": "Search"
     },
     "forgot_password": {
