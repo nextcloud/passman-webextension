@@ -4,35 +4,35 @@
         "description": "Extension description"
     },
     "search_for": {
-        "message": "جستجو کنید",
+        "message": "جستجو",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "هیچ گواهی نامه ای برای این سایت یافت نشد",
+        "message": "هیچ اطلاعات اعتباری برای این سایت یافت نشد",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "هیچ مدرکی یافت نشد",
+        "message": "هیچ اطلاعات اعتباری یافت نشد",
         "description": "No credentials found for the current site"
     },
     "notes": {
-        "message": "یادداشت ها",
+        "message": "یادداشت‌ها",
         "description": "No credentials found for the current site"
     },
     "invalid_response_from_server": {
-        "message": "پاسخ نامعتبر از سرور:[$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "پاسخ نامعتبر از سرور: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "لطفاً اعتبارنامه نکست کلود / ownCloud خود را وارد کنید",
+        "message": "لطفاً اطلاعات اعتباری نکست‌کلود / ownCloud خود را وارد کنید",
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "سایت را ذخیره کنید",
+        "message": "ذخیره سایت",
         "description": "Save site"
     },
     "password_generator": {
-        "message": "تولید کننده رمز عبور",
+        "message": "تولیدکننده رمز عبور",
         "description": "Password generator"
     },
     "generate_password": {
@@ -96,7 +96,7 @@
         "description": "Add"
     },
     "credential_created": {
-        "message": "اعتبارنامه ایجاد شده",
+        "message": "اطلاعات اعتباری ایجاد شده",
         "description": "Credential created"
     },
     "url": {
@@ -136,7 +136,7 @@
         "description": "credential"
     },
     "credentials": {
-        "message": "اعتبارنامه",
+        "message": "اطلاعات اعتباری",
         "description": "credentials"
     },
     "refresh_timer": {
@@ -156,7 +156,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "شما از HTTP استفاده می کنید! اعتبارنامه ورود به متن ساده ارسال می شود. اعتبارنامه Passman شما هنوز رمزگذاری شده است.",
+        "message": "شما از HTTP استفاده می کنید! اطلاعات اعتباری ورود به متن ساده ارسال می شود. اطلاعات اعتباری Passman شما هنوز رمزگذاری شده است.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -236,11 +236,11 @@
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "اعتبارنامه را برای این سایت ذخیره کنید",
+        "message": "اطلاعات اعتباری را برای این سایت ذخیره کنید",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "اعتبارنامه را جستجو کنید",
+        "message": "اطلاعات اعتباری را جستجو کنید",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
@@ -272,7 +272,7 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "رمز ورود استاد را وارد کنید",
+        "message": "رمز عبور اصلی را وارد کنید",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "رمز ورود استاد را بخاطر بسپار",
+        "message": "رمز عبور اصلی را بخاطر بسپار",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -320,7 +320,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "رمز ورود استاد را تنظیم کنید",
+        "message": "رمز عبور اصلی را تنظیم کنید",
         "description": "Set a master password"
     },
     "finish": {
@@ -444,7 +444,7 @@
         "description": "Search"
     },
     "credential_deleted": {
-        "message": "اعتبارنامه حذف شد",
+        "message": "اطلاعات اعتباری حذف شد",
         "description": "Credential deleted"
     },
     "select_password_picker_default_tab": {
@@ -472,7 +472,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "شما اجازه ویرایش این اعتبارنامه ندارید.",
+        "message": "شما اجازه ویرایش این اطلاعات اعتباری ندارید.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -480,7 +480,7 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "لیست اعتبارنامه تازه کردن",
+        "message": "لیست اطلاعات اعتباری تازه کردن",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
@@ -496,15 +496,15 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "رمز ورود استاد نامعتبر است!",
+        "message": "رمز عبور اصلی نادرست است!",
         "description": "When the master password is invalid"
     },
     "unlock": {
-        "message": "باز کردن",
+        "message": "باز کردن قفل",
         "description": "Unlock"
     },
     "credentials_found_for_site": {
-        "message": "ما پیدا کرده ایم $AMOUNT$ اعتبار این سایت",
+        "message": "$AMOUNT$ اطلاعات اعتباری برای این سایت پیدا شد",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -512,23 +512,23 @@
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "صرفه جویی در $VAULT_NAME$",
+        "message": "در حال ذخیره‌سازی در $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ اعتبارنامه در پایگاه داده",
+        "message": "$AMOUNT$ اطلاعات اعتباری در پایگاه داده",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman شما را به عنوان ورود به سیستم وارد می کند $USERNAME$",
+        "message": "پاسمن شما را با نام کاربری $USERNAME$ وارد می‌کند",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "طاق",
+        "message": "گاوصندوق",
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "یک فیلد سفارشی افزودن",
+        "message": "افزودن فیلد سفارشی",
         "description": "Add a custom field"
     },
     "text": {
