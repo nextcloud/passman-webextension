@@ -160,7 +160,7 @@
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
+        "message": "Ignore o caminho para site coincidente",
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
@@ -180,7 +180,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Entre um domínio ou TLD a ignorar e pressione  ",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
@@ -212,7 +212,7 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Credential saved",
+        "message": "Credencial salva",
         "description": "saved, lowercase"
     },
     "credential_updated": {
@@ -252,7 +252,7 @@
         "description": "Server URL"
     },
     "begin": {
-        "message": "Let's begin!",
+        "message": "Vamos começar!",
         "description": "Let's begin!"
     },
     "intro_text": {
@@ -280,7 +280,7 @@
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Remember master password",
+        "message": "Lembrar a senha mestra",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -336,7 +336,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Prev",
+        "message": "Prév",
         "description": "Previous"
     },
     "back": {
@@ -464,7 +464,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Resetar extensão",
         "description": "Search"
     },
     "iam_sure": {
@@ -484,7 +484,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "O desenvolvimento depende de doações. Por favor, ajude-nos.",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -524,7 +524,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Cofre",
         "description": "Vault"
     },
     "add_custom_field": {
