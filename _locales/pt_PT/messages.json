@@ -164,7 +164,7 @@
         "description": "Ignore path for site matching"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
+        "message": "Ativar auto preenchimento",
         "description": "Disable auto fill of forms"
     },
     "enable_autosubmit": {
@@ -200,7 +200,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "Ativar modo de depuração",
         "description": "Enable debug mode"
     },
     "save": {
@@ -268,11 +268,11 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Select the vault that you want to keep in sync with the webbrowser.",
+        "message": "Selecione o cofre que deseja manter em sincronia com o navegador web.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Enter master password",
+        "message": "Entre a senha mestra",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
@@ -324,7 +324,7 @@
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Finish",
+        "message": "Concluir",
         "description": "Finish"
     },
     "done_donate": {
@@ -372,11 +372,11 @@
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Desativar página",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Desativar site",
         "description": "Disable site"
     },
     "disable_picker_text": {
@@ -408,7 +408,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Invalid vault key!",
+        "message": "Chave do cofre inválida!",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -424,7 +424,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "Após a instalação, você pode adicionar mais contas.",
         "description": "Search"
     },
     "account_added": {
@@ -452,7 +452,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Desculpe, não foram encontrados cofres. Crie um cofre através do aplicativo Nextcloud / ownCloud e tente novamente.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -480,7 +480,7 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Refresh credential list",
+        "message": "Atualizar lista de credenciais",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
@@ -496,7 +496,7 @@
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Invalid master password!",
+        "message": "Senha mestra inválida!",
         "description": "When the master password is invalid"
     },
     "unlock": {
@@ -528,7 +528,7 @@
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Adicionar um campo personalizado",
         "description": "Add a custom field"
     },
     "text": {
