@@ -1,7 +1,7 @@
 import { ParserService } from "./ParserService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-import PageRulesService from "./PageRulesService";
+import PageRulesService, { CombinedSettingsResponse } from "./PageRulesService";
 
 export class CustomCredentialFilterService {
     /**
@@ -9,6 +9,7 @@ export class CustomCredentialFilterService {
      * Returns an empty array, if the tab url is missing or an empty string.
      * @param userTabUrl
      * @param credentials All credentials, to filter for. (Usually all credentials of the vault.)
+     * @returns An array of credentials that can be associated with the given tab url, or null if an error occurred.
      */
     public static getCredentialsByUrl = async (userTabUrl: string, credentials: Credential[]) => {
         let found_list: Credential[] = [];
@@ -17,31 +18,45 @@ export class CustomCredentialFilterService {
             return found_list;
         }
 
-        const combinedSettings = await PageRulesService.getCombinedSettingsResponse(userTabUrl);
+        let combinedSettings: CombinedSettingsResponse;
+        try {
+            new URL(userTabUrl);
+            combinedSettings = await PageRulesService.getCombinedSettingsResponse(userTabUrl);
+        } catch (e) {
+            // early return, since the tab url is not a valid, parseable URL
+            return null;
+        }
 
         const ignoreProtocol = combinedSettings.mergedPageRules.ignoreProtocol ?? false;
         const ignoreSubdomain = combinedSettings.mergedPageRules.ignoreSubdomain ?? false;
         const ignorePath = combinedSettings.mergedPageRules.ignorePath ?? true;
         const ignorePort = combinedSettings.mergedPageRules.ignorePort ?? false;
 
-        const url = ParserService.processURL(userTabUrl, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
+        try {
+            const url = ParserService.processURL(userTabUrl, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
 
-        for (const credential of credentials) {
-            let credential_url = credential.url;
-            if (credential_url && credential_url !== '' && userTabUrl && !/^(ht)tps?:\/\//i.test(credential_url)) {
-                try {
-                    const protocol = userTabUrl.split('://').shift();
-                    credential_url = protocol + "://" + credential_url;
-                } catch (e) {
-                    //ignore
+            for (const credential of credentials) {
+                let credential_url = credential.url;
+                if (credential_url && credential_url !== '' && userTabUrl && !/^(ht)tps?:\/\//i.test(credential_url)) {
+                    try {
+                        const protocol = userTabUrl.split('://').shift();
+                        credential_url = protocol + "://" + credential_url;
+                    } catch (e) {
+                        //ignore
+                    }
+                }
+                credential_url = ParserService.processURL(credential_url, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
+                if (credential_url) {
+                    if (credential_url.split("\n").indexOf(url) !== -1) {
+                        found_list.push(credential);
+                    }
                 }
             }
-            credential_url = ParserService.processURL(credential_url, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
-            if (credential_url) {
-                if (credential_url.split("\n").indexOf(url) !== -1) {
-                    found_list.push(credential);
-                }
-            }
+        } catch (e) {
+            // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
+            console.debug("Error processing URL", e);
+            // instead of panicking, just return null to indicate an error
+            return null;
         }
 
         return found_list;
