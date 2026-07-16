@@ -4,6 +4,7 @@ import { CustomCredentialFilterService } from "~/services/CustomCredentialFilter
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import type { IconInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/IconInterface";
 import { onMessage } from "@/entrypoints/background/messaging";
+import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 
 export enum GetCredentialsListMessagingFilterType {
     DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -62,11 +63,15 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                                 await myVault.refresh();
                             }
 
+                            let customFilteredCredentials = [];
                             if (body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
-                                filteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials);
+                                customFilteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials) ?? [];
                             } else {
-                                filteredCredentials = CustomCredentialFilterService.getCredentialsByLabel(body.filterText, myVault.credentials);
+                                customFilteredCredentials = CustomCredentialFilterService.getCredentialsByLabel(body.filterText, myVault.credentials);
                             }
+
+                            // apply the default filters after our custom filters
+                            filteredCredentials = CredentialFilterService.getFilteredCredentials(customFilteredCredentials ?? [], FILTERS.SHOW_ALL);
                             status = true;
                         } else {
                             errorMessage = 'Could not decrypt vault';
