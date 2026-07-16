@@ -36,13 +36,4 @@ export class BackendPassmanClient extends PassmanClient {
             return new this(serverData, nextcloudServer, logger, persistence);
         }
     };
-
-    /**
-     * This is a vault feature and should not be used / placed in this class. Todo: check usage and migrate if required.
-     * @deprecated validate if this is really required where it is used; add the use-case to this comment
-     */
-    get fullFeaturedVaultObjectCache() {
-        // try direct access to the protected property
-        return this.activeConnection?.['_fullFeaturedVaultObjectCache'];
-    }
 }
