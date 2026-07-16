@@ -14,6 +14,7 @@ import passwordPickerIcon from "~/assets/images/passwordPickerIcon.svg";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDetectionService";
 import { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
+import type { PageRulesInterface } from "@/services/PageRulesService";
 
 export enum PASSWORD_PICKER_SECTIONS {
     ADD,
@@ -105,16 +106,19 @@ export class PasswordPickerService {
                 }).then(async (value) => {
                     console.debug('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
                     PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
-                    PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules.enableEmailAsUsernameFallbackFilling ?? true);
+                    PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules);
                 });
             } else {
                 // no need to refetch decrypted credential data, if we already have it
-                PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules.enableEmailAsUsernameFallbackFilling ?? true);
+                PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules);
             }
         }
     }
 
-    private static performAutofillIfEnabled = (enableEmailAsUsernameFallbackFilling: boolean) => {
+    private static performAutofillIfEnabled = (pageRules: PageRulesInterface) => {
+        if (pageRules.autofillEnabled === false) {
+            return;
+        }
         sendMessage('getAutofillEnabledState').then(async (value) => {
             if (value.autofillEnabled === true && PasswordPickerService.decryptedPartialCredentialData.length === 1) {
                 const credentialToAutofill = PasswordPickerService.decryptedPartialCredentialData[0];
@@ -123,7 +127,7 @@ export class PasswordPickerService {
                     credentialToAutofill.email ?? undefined,
                     credentialToAutofill.password ?? undefined,
                     credentialToAutofill.otp ?? undefined,
-                    enableEmailAsUsernameFallbackFilling
+                    pageRules.enableEmailAsUsernameFallbackFilling ?? true
                 );
             }
         });
