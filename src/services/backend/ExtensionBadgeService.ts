@@ -4,6 +4,7 @@ import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import ContextMenuService from "@/services/backend/ContextMenuService";
 import { i18n } from "@/lib/i18n";
 import browser from "webextension-polyfill";
+import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 
 /**
  * Required manifest-specific browser action assignment, since webextension-polyfill does not yet have a solution for it.
@@ -58,7 +59,8 @@ export class ExtensionBadgeService {
             return;
         }
 
-        const credentialsForTab = await CustomCredentialFilterService.getCredentialsByUrl(url, vault.credentials);
+        const credentialsForUrl = await CustomCredentialFilterService.getCredentialsByUrl(url, vault.credentials);
+        const credentialsForTab = CredentialFilterService.getFilteredCredentials(credentialsForUrl ?? [], FILTERS.SHOW_ALL);
         const credentialAmount = credentialsForTab?.length ?? 0;
 
         if (tab.active) {

@@ -74,7 +74,7 @@
                 await CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
                     .then(async (credentials) => {
                         if (credentials) {
-                            filteredCredentials = credentials;
+                            filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL);
                         } else {
                             // error processing the tab url, just remove the url filter flag and continue with the regular search filter
                             overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
