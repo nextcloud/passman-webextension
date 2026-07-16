@@ -1,5 +1,8 @@
 import type { DecryptedDataCachingHandlerInterface } from '@binsky/passman-client-ts/lib/Interfaces/DecryptedDataCachingHandlerInterface';
 
+/**
+ * IndexedBD like interface for in-memory decrypted-field cache.
+ */
 export class CustomIndexedDBService implements DecryptedDataCachingHandlerInterface {
     private static instance: CustomIndexedDBService | null = null;
     private cache: Map<string, Map<string, string | number | boolean | null>>;

@@ -73,11 +73,12 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
         // Injecting a fallback error message if required
         error.message = error.message !== null && error.message !== '' ? error.message : 'Unknown error';
 
-        // may we can populate cached data here
+        // Offline fallback:
+        // Theoretically we could populate/return cached data here, but callers should use PassmanClient.getFullVaultByGuid(guid, true) instead,
+        // which reads the shared IndexedDB model store before hitting the network. Not toooo much magic here.
         // just 401 is not a valid reason to get cached data
         if (!response || response.status === undefined || response.status > 401) {
-            // todo: check if cache is enabled and not yet timed out
-            // CustomStorageService.getIndexedDBRequestCachingHandler()
+            // If we'd really wanna do that, we could optionally surface model-store data here when forceDisableOfflineCache is false
         }
     }
 

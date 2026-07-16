@@ -6,7 +6,7 @@
 
 ## About the project
 
-This is an approach of a more modern webextension for the Passman Nextcloud app, using the [WXT](https://wxt.dev/) framework.
+This is an approach of a more modern webextension for the [Passman](https://github.com/nextcloud/passman) Nextcloud app, using the [WXT](https://wxt.dev/) framework.
 
 It uses [Svelte](https://svelte.dev/) for the UI, and [Typescript](https://www.typescriptlang.org/) at all, since it is just very good! :)
 

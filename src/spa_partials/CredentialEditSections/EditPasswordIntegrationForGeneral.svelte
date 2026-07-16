@@ -6,7 +6,7 @@
     import CustomCheckboxField from "../FormElements/CustomCheckboxField.svelte";
     import MySveltyPicker from "../InteractionElements/MySveltyPicker.svelte";
     import { i18n } from "~/lib/i18n";
-    import {
+    import type {
         DecryptedCredentialInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
 

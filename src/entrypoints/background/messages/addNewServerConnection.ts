@@ -3,6 +3,7 @@ import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { BackendPassmanClient } from "~/lib/BackendPassmanClient";
+import CustomStorageService from "~/services/CustomStorageService";
 import { onMessage } from '../messaging';
 
 export type AddNewServerConnectionRequest = NextcloudServerInfoInterface;
@@ -20,7 +21,13 @@ onMessage('addNewServerConnection', async (message) => {
 
     try {
         if (message.data) {
-            const backendPassmanClient = await BackendPassmanClient.createInstance(message.data);
+            // wire model-store persistence so that preloadVaults / getFullVaultByGuid persist DTOs from first login
+            const backendPassmanClient = await BackendPassmanClient.createInstance(
+                message.data,
+                undefined,
+                undefined,
+                CustomStorageService.getExtensionPassmanClientPersistenceService()
+            );
             if (await backendPassmanClient.preloadVaults(true)) {
                 ExtensionSettingsService.updateBackendPassmanClient(backendPassmanClient);
                 await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo, message.data);

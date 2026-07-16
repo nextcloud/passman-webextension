@@ -26,18 +26,23 @@ export class BackendPassmanClient extends PassmanClient {
             logger = new DefaultLoggingService()
         }
         if (persistence?.autoRestoreOnReconstruction()) {
-            let passmanClient = new this(serverData, nextcloudServer ?? new NextcloudServer(serverData, logger, persistence), logger, persistence);
-            const requestCacheHandler = persistence?.getRequestCacheHandler();
-            if (requestCacheHandler) {
-                await passmanClient.restoreFromCacheHandler(requestCacheHandler);
+            if (persistence.getModelStore() === undefined && persistence.getRequestCacheHandler() === undefined) {
+                throw new Error("autoRestoreOnReconstruction() is enabled but neither a model store nor a request cache handler is configured. Provide getModelStore() (preferred) or getRequestCacheHandler(), or disable autoRestoreOnReconstruction() from the PersistenceInterface.");
             }
+            const passmanClient = new this(serverData, nextcloudServer ?? new NextcloudServer(serverData, logger, persistence), logger, persistence);
+            await passmanClient.activeConnection.restore();
             return passmanClient;
         } else {
             return new this(serverData, nextcloudServer, logger, persistence);
         }
     };
 
+    /**
+     * This is a vault feature and should not be used / placed in this class. Todo: check usage and migrate if required.
+     * @deprecated validate if this is really required where it is used; add the use-case to this comment
+     */
     get fullFeaturedVaultObjectCache() {
-        return this._fullFeaturedVaultObjectCache;
+        // try direct access to the protected property
+        return this.activeConnection?.['_fullFeaturedVaultObjectCache'];
     }
 }
