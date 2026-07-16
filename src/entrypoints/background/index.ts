@@ -1,6 +1,7 @@
 import ExtensionUnlockService from "@/services/ExtensionUnlockService";
 import { ExtensionBadgeService } from "@/services/backend/ExtensionBadgeService";
 import ContextMenuService from "@/services/backend/ContextMenuService";
+import ExtensionMigrationService from "@/services/ExtensionMigrationService";
 import browser from "webextension-polyfill";
 
 // Import all message handlers to register them
@@ -32,6 +33,15 @@ export default defineBackground(() => {
             // on extension update
             ExtensionBadgeService.updateAllTabsIcon();
         }
+
+        ExtensionMigrationService.runOnInstalled(details).catch((e) => {
+            console.warn('[migration] runOnInstalled failed', e);
+        });
+    });
+
+    // Catch upgrades that missed onInstalled
+    ExtensionMigrationService.runOnStartup().catch((e) => {
+        console.warn('[migration] runOnStartup failed', e);
     });
 
     browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
