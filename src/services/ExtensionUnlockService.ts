@@ -159,6 +159,10 @@ export default class ExtensionUnlockService {
             });
     }
 
+    /**
+     * The extension is unlocked if the extension session storage contains an extension unlock password.
+     * This is fine as it's in only extension-accessible memory, only written by the extension.
+     */
     public static isUnlocked() {
         return CustomStorageService.getSessionStorage()
             .get(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY)
