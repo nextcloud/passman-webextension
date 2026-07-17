@@ -27,6 +27,7 @@
             }
         } else if (!otp.period) {
             OTPService.mergeDefaultOTPConfig(otp);
+            otp = otp; // notify bind:otp parent of nested mutation
         }
     };
     const createTimer = () => {
