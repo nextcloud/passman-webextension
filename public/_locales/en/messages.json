@@ -1048,5 +1048,55 @@
   "page_rules_global_value_disabled": {
     "message": "disabled",
     "description": "Shown when global setting is disabled"
+  },
+  "offline_cache": {
+    "message": "Offline cache",
+    "description": "Offline cache section heading in extended settings"
+  },
+  "offline_cache_description": {
+    "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+    "description": "Explains what the offline model-store cache is"
+  },
+  "offline_cache_size": {
+    "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+    "description": "Shows approximate IndexedDB offline cache size",
+    "placeholders": {
+      "size": {
+        "content": "$1",
+        "example": "1.2 MB"
+      },
+      "credentials": {
+        "content": "$2",
+        "example": "42"
+      },
+      "vaults": {
+        "content": "$3",
+        "example": "2"
+      }
+    }
+  },
+  "offline_cache_size_loading": {
+    "message": "Measuring offline cache…",
+    "description": "Shown while estimating IndexedDB size"
+  },
+  "offline_cache_size_unavailable": {
+    "message": "Could not measure offline cache size",
+    "description": "Error measuring IndexedDB size"
+  },
+  "clear_offline_cache": {
+    "message": "Clear offline cache",
+    "description": "Button to delete the passman-model-store IndexedDB"
+  },
+  "clear_offline_cache_confirm": {
+    "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+    "description": "Confirm dialog before clearing offline IndexedDB cache"
+  },
+  "offline_cache_cleared_successfully": {
+    "message": "Offline cache cleared",
+    "description": "Success toast after clearing offline cache"
+  },
+  "offline_cache_clear_failed": {
+    "message": "Failed to clear offline cache",
+    "description": "Error toast after failing to clear offline cache"
   }
 }
