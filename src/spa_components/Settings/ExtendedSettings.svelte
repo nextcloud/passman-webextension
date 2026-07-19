@@ -13,6 +13,8 @@
     import NotyService from "~/services/frontend/NotyService";
     import packageJson from "../../../package.json";
     import { i18n } from "~/lib/i18n";
+    import CustomStorageService from "~/services/CustomStorageService";
+    import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
 
     const extensionVersion = packageJson.version;
     let extendedSettings: { [key: number]: boolean } = {
@@ -31,6 +33,51 @@
 
     let lockSaveButton = false;
     let pageIsLoading = true;
+    let offlineCacheSize: IndexedDbModelStoreSizeEstimate | null = null;
+    let offlineCacheSizeError = false;
+    let offlineCacheSizeLoading = false;
+    let clearingOfflineCache = false;
+
+    const formatBytes = (bytes: number): string => {
+        if (bytes < 1024) {
+            return `${bytes} B`;
+        }
+        if (bytes < 1024 * 1024) {
+            return `${(bytes / 1024).toFixed(1)} KB`;
+        }
+        return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    };
+
+    const refreshOfflineCacheSize = async () => {
+        offlineCacheSizeLoading = true;
+        offlineCacheSizeError = false;
+        try {
+            offlineCacheSize = await CustomStorageService.estimateOfflineModelStoreSize();
+        } catch (e) {
+            console.error(e);
+            offlineCacheSize = null;
+            offlineCacheSizeError = true;
+        } finally {
+            offlineCacheSizeLoading = false;
+        }
+    };
+
+    const clearOfflineCache = async () => {
+        if (!confirm(i18n.getMessage('clear_offline_cache_confirm'))) {
+            return;
+        }
+        clearingOfflineCache = true;
+        try {
+            await CustomStorageService.clearOfflineModelStore();
+            NotyService.notySuccess(i18n.getMessage('offline_cache_cleared_successfully'));
+            await refreshOfflineCacheSize();
+        } catch (e) {
+            console.error(e);
+            NotyService.notyError(i18n.getMessage('offline_cache_clear_failed'));
+        } finally {
+            clearingOfflineCache = false;
+        }
+    };
 
     const save = async () => {
         lockSaveButton = true;
@@ -68,6 +115,7 @@
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval];
                     extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionByMutationObserver)
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver];
+                    await refreshOfflineCacheSize();
                 } else {
                     push('/unlock');
                 }
@@ -121,6 +169,35 @@
                                 id="enableFormDetectionByMutationObserver"
                                 label="{i18n.getMessage('enable_form_detection_by_mutation_observer')}"/>
         <p class="description-text">{i18n.getMessage('enable_form_detection_by_mutation_observer_description')}</p>
+
+        <hr class="my-4 border-gray-200"/>
+
+        <h3 class="text-lg font-semibold">{i18n.getMessage('offline_cache')}</h3>
+        <p class="text-xs text-gray-500">{i18n.getMessage('offline_cache_description')}</p>
+        {#if offlineCacheSizeLoading}
+            <p class="text-sm text-gray-500">{i18n.getMessage('offline_cache_size_loading')}</p>
+        {:else if offlineCacheSizeError}
+            <p class="text-sm text-red-600">{i18n.getMessage('offline_cache_size_unavailable')}</p>
+        {:else if offlineCacheSize}
+            <p class="text-sm text-gray-600">
+                {i18n.getMessage('offline_cache_size', [
+                    formatBytes(offlineCacheSize.bytes),
+                    String(offlineCacheSize.credentialCount),
+                    String(offlineCacheSize.vaultCount),
+                ])}
+            </p>
+        {/if}
+        <OnClickButton
+            callback={clearOfflineCache}
+            disabled={clearingOfflineCache}
+            additionalClasses="border-red-300 text-red-600"
+        >
+            {#if clearingOfflineCache}
+                <Icon data={refresh} scale={1.3} spin="{true}"/>
+            {:else}
+                {i18n.getMessage('clear_offline_cache')}
+            {/if}
+        </OnClickButton>
     </Card>
 
     <OnClickButton callback="{save}">

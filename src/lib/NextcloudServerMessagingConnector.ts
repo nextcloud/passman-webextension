@@ -43,25 +43,14 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
 
     /**
      * Do a response typed get request in the background service worker.
+     * Caching is handled by the shared IndexedDB model store on PassmanClient (getFullVaultByGuid / restore),
+     * not by raw GET JSON request-cache keys, as it was before.
      * @param endpoint
      * @param errorCallback
-     * @param getCachedIfPossible
+     * @deprecated request cache will no longer be used; find a new solution for this if required here.
+     * @param getCachedIfPossible unused here; model-store reads happen at the PassmanClient layer
      */
     getJson = async <T>(endpoint: string, errorCallback: (response: Error) => void, getCachedIfPossible: boolean = false): Promise<T | void> => {
-        const cachePrefix = 'cache-getJson-';
-        const requestCacheHandler = this.persistence.getRequestCacheHandler();
-        if (getCachedIfPossible && requestCacheHandler) {
-            const cachedValue = await requestCacheHandler.get(cachePrefix + endpoint);
-            if (cachedValue && cachedValue !== '') {
-                try {
-                    return JSON.parse(cachedValue) as T;
-                } catch (e) {
-                    // ignore all exceptions, just continue with the non-cached request logic
-                    console.debug(e);
-                }
-            }
-        }
-
         return sendMessage('nextcloudServerMessagingConnectorApi', {
             url: this.getApiUrl() + endpoint,
             init: {
@@ -80,15 +69,6 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                 jsonResponse,
                 await ExtensionSettingsService.getPopupPassmanClient()
             );*/
-
-            const requestCacheHandler = this.persistence.getRequestCacheHandler();
-            if (requestCacheHandler) {
-                try {
-                    await requestCacheHandler.set(cachePrefix + endpoint, JSON.stringify(jsonResponse));
-                } catch (e) {
-                    console.warn('Failed to cache ' + endpoint, e);
-                }
-            }
             return jsonResponse;
         });
     };

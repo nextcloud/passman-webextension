@@ -1,14 +1,12 @@
 import { Storage } from "@/lib/storage";
 import { SecureStorage } from "@/lib/secure-storage";
 import ExtensionUnlockService from "./ExtensionUnlockService";
-import type {
-    RequestCachingHandlerInterface
-} from "@binsky/passman-client-ts/lib/Interfaces/RequestCachingHandlerInterface";
-import { get as idb_get, set as idb_set, del as idb_del } from 'idb-keyval';
 import ExtensionPassmanClientPersistenceService from "./ExtensionPassmanClientPersistenceService";
-import { customIndexedDBService } from "./CustomIndexedDBService";
-
-export const CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY = 'contentScriptModifiedCredentials';
+import { customIndexedDBService as inMemoryOnlyIndexedDBService } from "./CustomIndexedDBService";
+import {
+    IndexedDbModelStore,
+    type IndexedDbModelStoreSizeEstimate,
+} from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
 
 // todo: empty atm, but we should use a namespace (may need a migration logic)
 export const DEFAULT_STORAGE_NAMESPACE = '';
@@ -17,7 +15,8 @@ export default class CustomStorageService {
     private static sessionStorage: Storage;
     private static unsafeLocalStorage: Storage;
     private static secureStorage?: SecureStorage;
-    private static requestCachingHandler: RequestCachingHandlerInterface;
+    private static extensionPersistenceService?: ExtensionPassmanClientPersistenceService;
+    private static modelStore?: IndexedDbModelStore;
 
     public static getSessionStorage() {
         if (!this.sessionStorage) {
@@ -65,56 +64,50 @@ export default class CustomStorageService {
     }
 
     /**
-     * Get request cache handler that uses the volatile session storage backend.
-     */
-    public static getSessionRequestCachingHandler() {
-        if (!this.requestCachingHandler) {
-            this.requestCachingHandler = {
-                set: async function (key: string, value: string): Promise<void> {
-                    if (value === undefined) {
-                        await CustomStorageService.getSessionStorage().remove(key);
-                    } else {
-                        await CustomStorageService.getSessionStorage().set(key, value);
-                    }
-                },
-                get: function (key: string): Promise<string | undefined> {
-                    return CustomStorageService.getSessionStorage().get(key);
-                }
-            };
-        }
-        return this.requestCachingHandler;
-    }
-
-    /**
-     * Get request cache handler that uses the Indexed DB backend to avoid "Error: QUOTA_BYTES_PER_ITEM quota exceeded"
-     * (which will occur by storing too big values in local storage).
-     */
-    public static getIndexedDBRequestCachingHandler() {
-        if (!this.requestCachingHandler) {
-            this.requestCachingHandler = {
-                set: function (key: string, value: string): Promise<void> {
-                    if (value === undefined) {
-                        return idb_del(key);
-                    } else {
-                        return idb_set(key, value);
-                    }
-                },
-                get: function (key: string): Promise<string | undefined> {
-                    return idb_get(key);
-                }
-            };
-        }
-        return this.requestCachingHandler;
-    }
-
-    /**
-     * todo: test decrypted data caching handler implementation
+     * Persistence for PassmanClient: IndexedDB model store (+ optional decrypted-field cache).
+     * Reuses one instance so background and popup share the same store configuration.
      */
     public static getExtensionPassmanClientPersistenceService() {
-        return new ExtensionPassmanClientPersistenceService(
-            true,
-            CustomStorageService.getIndexedDBRequestCachingHandler(),
-            customIndexedDBService
-        );
+        if (!this.extensionPersistenceService) {
+            this.modelStore = new IndexedDbModelStore(
+                IndexedDbModelStore.DEFAULT_DB_NAME,
+                (reason) => {
+                    // Offline DTO cache was lost or the IDB connection died; drop decrypted-field cache too to prevent showing stale data.
+                    console.warn(
+                        `[CustomStorageService] Model store IndexedDB "${IndexedDbModelStore.DEFAULT_DB_NAME}" reopened after unexpected loss (${reason}). Offline cache will refill on next network fetch.`
+                    );
+                    inMemoryOnlyIndexedDBService.clear();
+                }
+            );
+            this.extensionPersistenceService = new ExtensionPassmanClientPersistenceService(
+                true,
+                this.modelStore,
+                inMemoryOnlyIndexedDBService
+            );
+        }
+        return this.extensionPersistenceService;
+    }
+
+    private static getOfflineModelStore(): IndexedDbModelStore {
+        const persistence = this.getExtensionPassmanClientPersistenceService();
+        const store = (this.modelStore ?? persistence.getModelStore()) as IndexedDbModelStore;
+        this.modelStore = store;
+        return store;
+    }
+
+    /**
+     * Approximate size of the passman-model-store IndexedDB offline cache.
+     */
+    public static async estimateOfflineModelStoreSize(): Promise<IndexedDbModelStoreSizeEstimate> {
+        return this.getOfflineModelStore().estimateSize();
+    }
+
+    /**
+     * Deletes the offline model-store IndexedDB and clears the in-memory decrypted-field cache.
+     * Vault data is refilled from the server on the next fetch.
+     */
+    public static async clearOfflineModelStore(): Promise<void> {
+        await this.getOfflineModelStore().clearDatabase();
+        inMemoryOnlyIndexedDBService.clear();
     }
 }

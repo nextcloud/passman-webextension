@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {
+    import type {
         DecryptedCredentialInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
     import Credential from "@binsky/passman-client-ts/lib/Model/Credential";

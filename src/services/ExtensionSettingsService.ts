@@ -175,17 +175,16 @@ export default class ExtensionSettingsService {
     public static getPopupPassmanClient = async () => {
         if (!ExtensionSettingsService.localPassmanClient) {
             const logger = new CustomPassmanClientLoggingService();
+            const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface;
+            const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+            // Shared IndexedDB model store with the background client; restore fills preloaded/full vaults offline
+            // Both clients will work on the same IndexedDB model store, so they will share the same vaults. Transactions are handled automatically by our backing library.
             ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
-                {} as unknown as NextcloudServerInfoInterface,
-                new NextcloudServerMessagingConnector(
-                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface,
-                    logger
-                ),
-                logger
+                nextcloudServerData,
+                new NextcloudServerMessagingConnector(nextcloudServerData, logger),
+                logger,
+                persistence
             );
-
-            // todo: try to get serialized vaults fomr the backend passman client and fill them into this one
-            // ExtensionSettingsService.localPassmanClient.
         }
 
         return ExtensionSettingsService.localPassmanClient;

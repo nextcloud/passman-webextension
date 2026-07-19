@@ -42,7 +42,6 @@
     const handleOverrideChange = (key: PageRuleOverrideKey, selection: PageRuleOverrideSelection) => {
         formRule = {
             ...formRule,
-            // [key]: pageRuleOverrideSelectionToBoolean(selection)
             [key]: selection
         };
         overrideSelectValues = {

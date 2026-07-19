@@ -6,7 +6,6 @@ import type {
 import type { DecryptedPartialCredentialData } from "./getPartiallyDecryptedFilteredCredentialsList";
 import { ExtensionBadgeService } from "~/services/backend/ExtensionBadgeService";
 import browser from "webextension-polyfill";
-import CustomStorageService, { CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY } from "~/services/CustomStorageService";
 import { onMessage } from "@/entrypoints/background/messaging";
 
 export interface CreateCredentialForPickerMessagingRequest {
@@ -90,9 +89,10 @@ onMessage('createCredentialForPicker', async (message) => {
 
                                 // Refresh all tab badges to show updated credential counts
                                 ExtensionBadgeService.createIconForTab(senderTab, false, myVault);
-
-                                // Force the popup to refresh credentials (without cache) on next open
-                                CustomStorageService.getUnsafeLocalStorage().set(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY, "true");
+                                // credential.save() already upserted into the shared IndexedDB model store;
+                                // popup opens via getFullVaultByGuid(..., true) / restore — no forced network refresh.
+                                // keep it here as a reference for the future if required. maybe use it for a new feature.
+                                // CustomStorageService.getUnsafeLocalStorage().set(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY, "true");
                             } else {
                                 errorMessage = 'Failed to save credential';
                             }

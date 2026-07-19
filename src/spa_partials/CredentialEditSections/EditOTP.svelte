@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {
+    import type {
         DecryptedCredentialInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
     import OtpGenerator from "~/spa_partials/InteractionElements/OTPGenerator.svelte";
@@ -38,6 +38,8 @@
     const updateGenerateQRCode = () => {
         try {
             OTPService.updateQRFromCurrentOTPValues(credentialData.otp);
+            // in-place nested mutation — reassign so Svelte invalidates
+            credentialData.otp = credentialData.otp;
         } catch (e) {
             console.error(e);
             NotyService.notyError(i18n.getMessage("otp_configuration_invalid"));
@@ -90,7 +92,7 @@
             </div>
         {/if}
         {#if credentialData.otp != null}
-            {#if credentialData.otp.qr_uri != null && credentialData.otp.qr_uri.image != null}
+            {#if credentialData.otp.qr_uri?.image != null}
                 <div class="mt-2">
                     <img src={credentialData.otp.qr_uri.image} class="border-white border-2 bg-white"
                          alt="otp qr code"/>

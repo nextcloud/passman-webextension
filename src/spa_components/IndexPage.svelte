@@ -19,7 +19,6 @@
     import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import { i18n } from "~/lib/i18n";
     import browser from "webextension-polyfill";
-    import CustomStorageService, { CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY } from "~/services/CustomStorageService";
     import { sendMessage } from "@/entrypoints/background/messaging";
 
     let searchInput: string | null = null;
@@ -66,15 +65,27 @@
         browser.runtime.openOptionsPage();
     }
 
-    const applyCredentialFilter = async (searchInput: string | null) => {
+    const applyCredentialFilter = async (searchInput: string | null, isRecursiveCall = false) => {
         filteredCredentials = [];
 
         if (vault && credentials && credentials.length > 0) {
             const overwriteInputFilterByTabUrl = await overwriteInputFilterByTabUrlPromise;
             if (overwriteInputFilterByTabUrl && searchInput === null) {
                 await CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
-                    .then((credentials) => {
-                        filteredCredentials = credentials;
+                    .then(async (credentials) => {
+                        if (credentials) {
+                            filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL);
+                        } else {
+                            // error processing the tab url, just remove the url filter flag and continue with the regular search filter
+                            overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
+                            console.debug("Error processing tab URL, removing url filter flag and continuing with regular search filter");
+                            if (!isRecursiveCall) {
+                                // only apply the filter recursively if it's not a recursive call
+                                // otherwise we would end up in an infinite loop
+                                // should never happen since we also set overwriteInputFilterByTabUrlPromise, but just to be sure
+                                await applyCredentialFilter(searchInput, true);
+                            }
+                        }
                     });
             } else {
                 // reset tab url search filter when entering a custom search value the first time
@@ -96,21 +107,23 @@
                     currentWindow: true,
                     active: true
                 }).then(function (activeTabs: browser.Tabs.Tab[]) {
-                    return activeTabs[0].url;
+                    if (Array.isArray(activeTabs) && activeTabs.length !== 0) {
+                        // check for a parseable URL as early as possible to avoid handling in multiple follow-up code paths
+                        try {
+                            new URL(activeTabs[0].url);
+                            return activeTabs[0].url;
+                        } catch (e) {
+                            // ignore, just return null to indicate an error
+                        }
+                    }
+                    return null;
                 });
 
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
                         if (defaultVaultInfo) {
-                            const getUnsafeLocalStorage = await CustomStorageService.getUnsafeLocalStorage();
-                            let getCachedIfPossible = true;
-
-                            if ((await getUnsafeLocalStorage.get(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY)) === "true") {
-                                getCachedIfPossible = false;
-                                getUnsafeLocalStorage.remove(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY);
-                            }
-
-                            let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, getCachedIfPossible);
+                            // Always prefer memory / shared IndexedDB model store with the option to recreate the vault from cached DTOs, when opening the popup
+                            let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
                             if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                                 myVault.vaultKey = defaultVaultInfo.password;
 
