@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@binsky/melt": "^0.42.0",
-    "@binsky/passman-client-ts": "^0.3.0-dev.2",
+    "@binsky/passman-client-ts": "^0.3.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
@@ -45,7 +45,7 @@
     "@zxcvbn-ts/language-common": "^3.0.4",
     "@zxcvbn-ts/language-en": "^3.0.2",
     "autoprefixer": "^10.5.4",
-    "eslint-plugin-svelte": "^3.20.0",
+    "eslint-plugin-svelte": "^3.21.0",
     "eslint-plugin-tailwindcss": "^3.18.3",
     "postcss": "^8.5.19",
     "postcss-rem-to-pixel": "^4.1.2",
