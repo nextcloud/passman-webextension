@@ -1,4 +1,4 @@
-import ExtensionSettingsService from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
 import { onMessage } from '../messaging';
 
 export type GetPossibleVaultsInfoRequest = {
@@ -16,7 +16,7 @@ onMessage('getPossibleVaultsInfo', async (message) => {
     let errorMessage = null;
     let vaultSelectionList: { guid: string, name: string }[] = [];
 
-    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+    await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
         if (backendPassmanClient) {
             try {
                 await backendPassmanClient.preloadVaults(true, message.data?.getCachedIfPossible === true);

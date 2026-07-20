@@ -1,4 +1,5 @@
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
 import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import type {
     DecryptedCredentialInterface
@@ -49,7 +50,7 @@ onMessage('createCredentialForPicker', async (message) => {
         };
     }
 
-    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+    await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
         if (backendPassmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {

@@ -1,4 +1,5 @@
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
 import ExtensionUnlockService from "~/services/ExtensionUnlockService";
 import { onMessage } from '../messaging';
 
@@ -24,7 +25,7 @@ onMessage('unlockExtension', async (message) => {
 
         if (status && message.data.refreshAfterUnlock) {
             try {
-                const backendPassmanClient = await ExtensionSettingsService.getBackendPassmanClient();
+                const backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
                 console.log("backendPassmanClient", backendPassmanClient);
 
                 if (backendPassmanClient) {

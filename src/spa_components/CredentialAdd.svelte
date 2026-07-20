@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import PassmanClientService from "~/services/PassmanClientService";
     import Loading from "~/spa_components/Loading.svelte";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import NotyService from "~/services/frontend/NotyService";
@@ -62,7 +63,7 @@
     }
 
     onMount(() => {
-        ExtensionSettingsService.getPopupPassmanClient().then(async (popupPassmanClient) => {
+        PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     if (!defaultVaultInfo?.guid) {

@@ -8,6 +8,7 @@
     import refresh from "svelte-awesome/icons/refresh";
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import PassmanClientService from "~/services/PassmanClientService";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import CredentialListElement from "~/spa_partials/InteractionElements/CredentialListElement.svelte";
@@ -101,7 +102,7 @@
     $: vault && credentials && applyCredentialFilter(searchInput ?? '');
 
     onMount(() => {
-        ExtensionSettingsService.getPopupPassmanClient().then(async (popupPassmanClient) => {
+        PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
                 overwriteInputFilterByTabUrlPromise = browser.tabs.query({
                     currentWindow: true,

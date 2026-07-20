@@ -1,4 +1,5 @@
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
 import type {
     SerializableTransferCredentialInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/Credential/SerializableTransferCredentialInterface";
@@ -24,7 +25,7 @@ onMessage('getCredentialsForVault', async (message) => {
     let serializedCredentials: SerializableTransferCredentialInterface[] = [];
     console.log("handler", message);
 
-    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+    await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
         console.log("backendPassmanClient", backendPassmanClient);
         if (backendPassmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {

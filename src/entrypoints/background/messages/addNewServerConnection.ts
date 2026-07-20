@@ -1,51 +1,111 @@
-import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
+import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { BackendPassmanClient } from "~/lib/BackendPassmanClient";
 import CustomStorageService from "~/services/CustomStorageService";
+import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/PassmanServerConnection";
 import { onMessage } from '../messaging';
 
-export type AddNewServerConnectionRequest = NextcloudServerInfoInterface;
+export interface AddNewServerConnectionRequest extends NextcloudServerInfoInterface {
+    /** When true (default), the new/updated connection becomes the active one. */
+    makeActive?: boolean;
+}
 
 export interface AddNewServerConnectionResponse {
     status: boolean;
     message: string;
     vaultSelectionList: { guid: string, name: string }[];
+    connectionId?: string;
 }
 
 onMessage('addNewServerConnection', async (message) => {
     let status = false;
     let responseMessage = '';
     let vaultSelectionList: { guid: string, name: string }[] = [];
+    let connectionId: string | undefined;
 
     try {
-        if (message.data) {
-            // wire model-store persistence so that preloadVaults / getFullVaultByGuid persist DTOs from first login
-            const backendPassmanClient = await BackendPassmanClient.createInstance(
-                message.data,
-                undefined,
-                undefined,
-                CustomStorageService.getExtensionPassmanClientPersistenceService()
-            );
-            if (await backendPassmanClient.preloadVaults(true)) {
-                ExtensionSettingsService.updateBackendPassmanClient(backendPassmanClient);
-                await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo, message.data);
+        if (!message.data) {
+            return {
+                status: false,
+                message: "No server info provided",
+                vaultSelectionList
+            };
+        }
 
-                for (let preloadedVault of backendPassmanClient.preloadedVaults) {
+        const { makeActive: makeActiveFlag, ...rawServerData } = message.data;
+        const makeActive = makeActiveFlag !== false;
+        // Mutable copy — createInstance/addConnection may set backendAppId via probing
+        const serverData: NextcloudServerInfoInterface = {
+            baseUrl: rawServerData.baseUrl,
+            user: rawServerData.user,
+            token: rawServerData.token,
+            persistence: rawServerData.persistence ?? '',
+            backendAppId: rawServerData.backendAppId,
+        };
+
+        const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+        let backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
+
+        if (backendPassmanClient) {
+            const directoryBefore = await ServerConnectionDirectoryService.getDirectory();
+            const connection = await backendPassmanClient.addConnection(serverData, undefined, undefined, persistence);
+            connectionId = connection.connectionId;
+            const wasAlreadyInDirectory = directoryBefore.connections.some(
+                (c) => PassmanServerConnection.buildConnectionId(c) === connectionId
+            );
+
+            if (await connection.preloadVaults(true)) {
+                await ServerConnectionDirectoryService.upsertServerConnection(serverData, makeActive);
+                if (makeActive) {
+                    backendPassmanClient.setActiveConnection(connectionId);
+                    await ServerConnectionDirectoryService.syncActiveConnectionMirrors(connectionId);
+                }
+
+                for (const preloadedVault of connection.preloadedVaults) {
                     vaultSelectionList.push({
                         guid: preloadedVault.guid,
                         name: preloadedVault.name
                     });
                 }
+                status = true;
+                responseMessage = "Login succeeded";
+            } else {
+                if (wasAlreadyInDirectory) {
+                    // addConnection overwrote the in-memory entry; rebuild from persisted directory
+                    PassmanClientService.invalidatePassmanClients();
+                } else {
+                    backendPassmanClient.removeConnection(connectionId);
+                }
+                responseMessage = "Login failed";
+            }
+        } else {
+            backendPassmanClient = await BackendPassmanClient.createInstance(
+                serverData,
+                undefined,
+                undefined,
+                persistence
+            );
 
+            if (await backendPassmanClient.preloadVaults(true)) {
+                connectionId = backendPassmanClient.activeConnection.connectionId;
+                PassmanClientService.updateBackendPassmanClient(backendPassmanClient);
+                await ServerConnectionDirectoryService.upsertServerConnection(serverData, true);
+                await ServerConnectionDirectoryService.syncActiveConnectionMirrors(connectionId);
+
+                for (const preloadedVault of backendPassmanClient.preloadedVaults) {
+                    vaultSelectionList.push({
+                        guid: preloadedVault.guid,
+                        name: preloadedVault.name
+                    });
+                }
                 status = true;
                 responseMessage = "Login succeeded";
             } else {
                 responseMessage = "Login failed";
             }
-        } else {
-            responseMessage = "No server info provided";
         }
     } catch (e) {
         console.error(e);
@@ -59,6 +119,7 @@ onMessage('addNewServerConnection', async (message) => {
     return {
         status,
         message: responseMessage,
-        vaultSelectionList
+        vaultSelectionList,
+        connectionId
     };
 });

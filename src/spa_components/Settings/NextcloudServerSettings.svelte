@@ -12,6 +12,7 @@
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import PassmanClientService from "~/services/PassmanClientService";
     import Select from 'svelte-select';
     import type {
         NextcloudServerInfoInterface
@@ -20,6 +21,7 @@
     import extensionUnlockStateStore, { ExtensionUnlockState } from '~/stores/extensionUnlockStateStore';
     import { i18n } from "~/lib/i18n";
     import { sendMessage } from "@/entrypoints/background/messaging";
+    import type { ServerConnectionListItem } from "@/entrypoints/background/messages/listServerConnections";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -35,7 +37,59 @@
     let selectedVaultPassword: string | null = null;
     let lockLoginButton = false;
     let lockDefaultVaultButton = false;
+    let lockDirectoryAction = false;
     let isSetupDone: boolean|null = null;
+    let connections: ServerConnectionListItem[] = [];
+    /** When setup is done: show add form instead of only the directory list. */
+    let showAddConnectionForm = false;
+
+    const clearFormFields = () => {
+        server.set('');
+        user.set('');
+        token.set('');
+    };
+
+    const populateFormFromActiveConnection = async () => {
+        const settings = await ExtensionSettingsService.getPartialExtensionSettings(
+            ExtensionSettingsOptions.nextcloudServerAuthInfo
+        );
+        if (settings) {
+            server.set(settings.baseUrl);
+            user.set(settings.user);
+            token.set(settings.token);
+        }
+    };
+
+    const loadConnectionDirectory = async () => {
+        const result = await sendMessage('listServerConnections');
+        if (result.status) {
+            connections = result.connections;
+        } else if (result.errorMessage) {
+            NotyService.notyError(result.errorMessage);
+        }
+    };
+
+    const loadActiveVaultSelection = async () => {
+        selectedVaultInfo = null;
+        selectedVaultPassword = null;
+        vaultErrorMessage = '';
+        await reloadPossibleVaultsInfo();
+        const defaultVaultInfo = await ExtensionSettingsService.getPartialExtensionSettings(
+            ExtensionSettingsOptions.defaultVaultInfo
+        );
+        if (!defaultVaultInfo) {
+            return;
+        }
+        for (const info of vaultSelectionList) {
+            if (info.guid === defaultVaultInfo.guid) {
+                selectedVaultInfo = info;
+                break;
+            }
+        }
+        if (selectedVaultInfo) {
+            selectedVaultPassword = defaultVaultInfo.password;
+        }
+    };
 
     const login = async (): Promise<void> => {
         lockLoginButton = true;
@@ -43,27 +97,34 @@
         successMessage = '';
 
         if (!$server.value.startsWith('https://') && !$server.value.startsWith('http://')) {
-            // throw new ConfigurationError('Base URL (or protocol) is invalid');
-            // inject with https:// instead of throwing an error
             $server.value = 'https://'.concat($server.value);
         }
 
-        const loginData: NextcloudServerInfoInterface = {
+        const loginData: NextcloudServerInfoInterface & { makeActive?: boolean } = {
             baseUrl: $server.value,
             user: $user.value,
             token: $token.value,
-            persistence: ''
+            persistence: '',
+            makeActive: true,
         };
 
         sendMessage('addNewServerConnection', loginData).then(async (value) => {
-            console.log(value.status);
-            console.log(value.message);
-            console.log(value.vaultSelectionList);
-
             if (value.status) {
+                // Mutate this realm's client; background already updated the SW client.
+                const authInfo = await ExtensionSettingsService.getPartialExtensionSettings(
+                    ExtensionSettingsOptions.nextcloudServerAuthInfo
+                );
+                if (authInfo) {
+                    await PassmanClientService.ensureConnectionLocally(authInfo, true);
+                }
                 successMessage = value.message;
                 vaultSelectionList = value.vaultSelectionList;
                 serverSettingsValidated = true;
+                showAddConnectionForm = false;
+                if (isSetupDone) {
+                    await loadConnectionDirectory();
+                    await loadActiveVaultSelection();
+                }
             } else {
                 errorMessage = value.message;
             }
@@ -75,7 +136,6 @@
     const setDefaultVault = () => {
         if (!selectedVaultInfo) {
             console.error('No selected vault info found');
-            // todo: we need this as translated error message here (any in may other places)
             NotyService.notyError('No selected vault info found');
             return;
         }
@@ -92,6 +152,8 @@
                         ExtensionUnlockService.setSetupDone().then(() => {
                             push('/home');
                         });
+                    } else {
+                        NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
                     }
                 });
             }
@@ -115,6 +177,59 @@
         });
     };
 
+    const switchConnection = async (connectionId: string) => {
+        lockDirectoryAction = true;
+        errorMessage = '';
+        const result = await sendMessage('setActiveServerConnection', { connectionId });
+        if (result.status) {
+            PassmanClientService.applyActiveConnectionLocally(connectionId);
+            showAddConnectionForm = false;
+            await loadConnectionDirectory();
+            await populateFormFromActiveConnection();
+            await loadActiveVaultSelection();
+            serverSettingsValidated = true;
+            NotyService.notySuccess(i18n.getMessage('server_connection_switched'));
+        } else {
+            NotyService.notyError(result.errorMessage ?? i18n.getMessage('server_connection_switch_failed'));
+        }
+        lockDirectoryAction = false;
+    };
+
+    const removeConnection = async (connectionId: string) => {
+        if (!confirm(i18n.getMessage('server_connection_remove_confirm'))) {
+            return;
+        }
+        lockDirectoryAction = true;
+        const result = await sendMessage('removeServerConnection', { connectionId });
+        if (result.status) {
+            if (result.activeConnectionId) {
+                PassmanClientService.dropConnectionLocally(connectionId, result.activeConnectionId);
+            }
+            await loadConnectionDirectory();
+            await populateFormFromActiveConnection();
+            await loadActiveVaultSelection();
+            serverSettingsValidated = true;
+            NotyService.notySuccess(i18n.getMessage('server_connection_removed'));
+        } else {
+            NotyService.notyError(result.errorMessage ?? i18n.getMessage('server_connection_remove_failed'));
+        }
+        lockDirectoryAction = false;
+    };
+
+    const startAddConnection = () => {
+        showAddConnectionForm = true;
+        clearFormFields();
+        errorMessage = '';
+        successMessage = '';
+    };
+
+    const cancelAddConnection = async () => {
+        showAddConnectionForm = false;
+        errorMessage = '';
+        successMessage = '';
+        await populateFormFromActiveConnection();
+    };
+
     onMount(() => {
         ExtensionUnlockService.isUnlocked().then((isUnlocked) => {
             lockLoginButton = !isUnlocked;
@@ -122,38 +237,9 @@
             ExtensionUnlockService.isSetupDone().then(async (_isSetupDone) => {
                 isSetupDone = _isSetupDone;
                 if (isSetupDone) {
-                    // populate input fields with current settings
-                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo)
-                        .then((settings) => {
-                            if (settings) {
-                                server.set(settings.baseUrl);
-                                user.set(settings.user);
-                                token.set(settings.token);
-                            } else {
-                                NotyService.notyError("Could not get Nextcloud server settings");
-                            }
-                        });
-                    await reloadPossibleVaultsInfo();
-                    await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then((defaultVaultInfo) => {
-                        if (!defaultVaultInfo) {
-                            console.error('No default vault info found');
-                            // todo: we need this as translated error message here (any in may other places)
-                            NotyService.notyError('No default vault info found');
-                            return;
-                        }
-                        for (let info of vaultSelectionList) {
-                            if (info.guid === defaultVaultInfo.guid) {
-                                selectedVaultInfo = info;
-                                break;
-                            }
-                        }
-                        if (selectedVaultInfo) {
-                            // inject vault password only if the selected vault could be found
-                            selectedVaultPassword = defaultVaultInfo.password
-                        }
-                    });
-
-                    // todo: should we set this true, even if defaultVaultInfo was not found in the previous call?
+                    await loadConnectionDirectory();
+                    await populateFormFromActiveConnection();
+                    await loadActiveVaultSelection();
                     serverSettingsValidated = true;
                 }
             });
@@ -174,7 +260,75 @@
             No data is transferred to sources other than the specified Nextcloud server.
         </p>
     </Card>
+
+    {#if isSetupDone}
+        <Card additionalClasses="text-left w-full mb-6 space-y-3">
+            <h3 class="text-base font-medium text-primary-light-text dark:text-primary-dark-text">
+                {i18n.getMessage('server_connections')}
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                {i18n.getMessage('server_connections_desc')}
+            </p>
+            <ul class="divide-y divide-gray-200 dark:divide-gray-600">
+                {#each connections as connection (connection.connectionId)}
+                    <li class="py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <div class="min-w-0">
+                            <div class="font-medium break-all mb-1">
+                                {connection.baseUrl}
+                            </div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 truncate">
+                                {connection.user}
+                                {#if connection.selectedDefaultVaultName}
+                                    · {connection.selectedDefaultVaultName}
+                                {/if}
+                                {#if connection.isActive}
+                                    &nbsp;·&nbsp;
+                                    <span class="text-xs font-normal text-green-700 dark:text-green-400">
+                                        ({i18n.getMessage('server_connection_active')})
+                                    </span>
+                                {/if}
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 shrink-0">
+                            {#if !connection.isActive}
+                                <OnClickButton
+                                    small={true}
+                                    disabled={lockDirectoryAction}
+                                    callback={() => switchConnection(connection.connectionId)}
+                                >
+                                    {i18n.getMessage('server_connection_switch')}
+                                </OnClickButton>
+                            {/if}
+                            <OnClickButton
+                                small={true}
+                                disabled={lockDirectoryAction || connections.length <= 1}
+                                callback={() => removeConnection(connection.connectionId)}
+                                additionalClasses={connections.length <= 1 ? '' : 'text-red-600'}
+                            >
+                                {i18n.getMessage('server_connection_remove')}
+                            </OnClickButton>
+                        </div>
+                    </li>
+                {/each}
+            </ul>
+            {#if !showAddConnectionForm}
+                <OnClickButton disabled={lockDirectoryAction} callback={startAddConnection}>
+                    {i18n.getMessage('server_connection_add')}
+                </OnClickButton>
+            {/if}
+        </Card>
+    {/if}
+
     <Card additionalClasses="text-left w-full mb-6">
+        {#if isSetupDone}
+            <h3 class="text-base font-medium mb-3 text-primary-light-text dark:text-primary-dark-text">
+                {#if showAddConnectionForm}
+                    {i18n.getMessage('server_connection_add')}
+                {:else}
+                    {i18n.getMessage('server_connection_edit_active')}
+                {/if}
+            </h3>
+        {/if}
         <CustomInputField label="{i18n.getMessage('server_url')}" bind:value={$server.value}/>
         <div class="mt-2">
             <CustomInputField label="{i18n.getMessage('username')}" bind:value={$user.value}/>
@@ -183,7 +337,7 @@
             <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
                                 type="password"/>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 flex flex-wrap gap-2">
             <OnClickButton disabled={!$myForm.valid || lockLoginButton} callback="{login}">
                 {#if lockLoginButton}
                     <Icon data={refresh} scale={1.3} spin="{true}"/>
@@ -191,6 +345,11 @@
                     {i18n.getMessage('save')}
                 {/if}
             </OnClickButton>
+            {#if showAddConnectionForm}
+                <OnClickButton disabled={lockLoginButton} callback={cancelAddConnection}>
+                    {i18n.getMessage('cancel')}
+                </OnClickButton>
+            {/if}
         </div>
 
         <div class="mt-2 text-green-600">

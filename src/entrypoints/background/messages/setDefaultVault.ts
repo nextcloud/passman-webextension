@@ -1,4 +1,5 @@
-import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
+import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
 
 export interface SetDefaultVaultRequest {
@@ -15,7 +16,7 @@ onMessage('setDefaultVault', async (message) => {
     let status = false;
     let errorMessage = null;
 
-    await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+    await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
         if (backendPassmanClient) {
             await backendPassmanClient.preloadVaults(true, true);
             // do not request cached vault here to prevent calling vault.refresh() later on it
@@ -25,10 +26,11 @@ onMessage('setDefaultVault', async (message) => {
                     if (!!message.data.password && vault.testVaultKey(message.data.password)) {
                         status = true;
                         vault.vaultKey = message.data.password;
-                        await ExtensionSettingsService.updatePartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo, {
+                        await ServerConnectionDirectoryService.setDefaultVaultForActiveConnection({
                             guid: message.data.guid,
+                            name: vault.name,
                             password: message.data.password
-                        })
+                        });
                     } else {
                         errorMessage = "setDefaultVault message: selected vault could not be decrypted with the given password";
                         console.error(errorMessage);

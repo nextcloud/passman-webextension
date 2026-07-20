@@ -8,7 +8,7 @@ import type {
 import { NextcloudServer } from "@binsky/passman-client-ts/lib/Model/NextcloudServer";
 import CustomStorageService from "@/services/CustomStorageService";
 import { NextcloudServerMessagingConnectorService } from "@/services/NextcloudServerMessagingConnectorService";
-import ExtensionSettingsService from "@/services/ExtensionSettingsService";
+import PassmanClientService from "@/services/PassmanClientService";
 import { sendMessage } from "@/entrypoints/background/messaging";
 
 export class NextcloudServerMessagingConnector extends NextcloudServer implements NextcloudServerInterface {
@@ -67,7 +67,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
                 'GET',
                 this.getApiUrl() + endpoint,
                 jsonResponse,
-                await ExtensionSettingsService.getPopupPassmanClient()
+                await PassmanClientService.getPopupPassmanClient()
             );*/
             return jsonResponse;
         });
@@ -90,12 +90,17 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
             }
         }).then(async (value) => {
             const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
-            await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
-                'DELETE',
-                this.getApiUrl() + endpoint,
-                jsonResponse,
-                await ExtensionSettingsService.getPopupPassmanClient()
-            );
+            const popupClient = await PassmanClientService.getPopupPassmanClient();
+            if (popupClient) {
+                await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
+                    'DELETE',
+                    this.getApiUrl() + endpoint,
+                    jsonResponse,
+                    popupClient
+                );
+            } else {
+                this.logger.onWarning('Could not get popup passman client, skipping popup update after deleteJson');
+            }
             return jsonResponse;
         });
     };
@@ -122,12 +127,17 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
             }
         }).then(async (value) => {
             const jsonResponse = this.handleConnectorJsonResponse<T>(value, errorCallback);
-            await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
-                method,
-                this.getApiUrl() + endpoint,
-                jsonResponse,
-                await ExtensionSettingsService.getPopupPassmanClient()
-            );
+            const popupClient = await PassmanClientService.getPopupPassmanClient();
+            if (popupClient) {
+                await NextcloudServerMessagingConnectorService.updatePopupPassmanClient(
+                    method,
+                    this.getApiUrl() + endpoint,
+                    jsonResponse,
+                    popupClient
+                );
+            } else {
+                this.logger.onWarning('Could not get popup passman client, skipping popup update after postJson');
+            }
             return jsonResponse;
         });
     };

@@ -1098,5 +1098,53 @@
   "offline_cache_clear_failed": {
     "message": "Failed to clear offline cache",
     "description": "Error toast after failing to clear offline cache"
+  },
+  "server_connections": {
+    "message": "Saved servers",
+    "description": "Heading for the Nextcloud connection directory list"
+  },
+  "server_connections_desc": {
+    "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+    "description": "Description under the connection directory heading"
+  },
+  "server_connection_active": {
+    "message": "active",
+    "description": "Label marker for the currently active server connection"
+  },
+  "server_connection_switch": {
+    "message": "Switch",
+    "description": "Button to make another saved server the active connection"
+  },
+  "server_connection_remove": {
+    "message": "Remove",
+    "description": "Button to remove a saved server connection"
+  },
+  "server_connection_add": {
+    "message": "Add server",
+    "description": "Button / heading to add another Nextcloud server connection"
+  },
+  "server_connection_edit_active": {
+    "message": "Active server credentials",
+    "description": "Heading for editing the currently active Nextcloud server login"
+  },
+  "server_connection_remove_confirm": {
+    "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+    "description": "Confirm dialog before removing a server connection"
+  },
+  "server_connection_switched": {
+    "message": "Switched active server",
+    "description": "Success toast after switching the active Nextcloud connection"
+  },
+  "server_connection_switch_failed": {
+    "message": "Could not switch server",
+    "description": "Error toast when switching the active connection fails"
+  },
+  "server_connection_removed": {
+    "message": "Server removed",
+    "description": "Success toast after removing a server connection"
+  },
+  "server_connection_remove_failed": {
+    "message": "Could not remove server",
+    "description": "Error toast when removing a server connection fails"
   }
 }

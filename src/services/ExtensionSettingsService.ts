@@ -1,14 +1,16 @@
 import CustomStorageService from "./CustomStorageService";
-import { PassmanClient } from "@binsky/passman-client-ts";
 import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
-import { NextcloudServerMessagingConnector } from "@/lib/NextcloudServerMessagingConnector";
-import { CustomPassmanClientLoggingService } from "./frontend/CustomPassmanClientLoggingService";
-import { BackendPassmanClient } from "@/lib/BackendPassmanClient";
 import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import { PageRulesStorageInterface } from "./PageRulesService";
+
+export type DefaultVaultInfo = {
+    guid: string,
+    name: string,
+    password: string
+};
 
 /**
  * Do not change the order, once defined! Todo: needs migration for for string keys.
@@ -37,14 +39,18 @@ export enum ExtensionSettingsOptions {
     enableFormDetectionOnUrlPopstateEvents,
     enableFormDetectionOnUrlChangesByInterval,
     enableFormDetectionByMutationObserver,
+
+    /** Saved Nextcloud server connections (directory). */
+    nextcloudServerConnections,
+    /** connectionId of the active Nextcloud server connection. */
+    activeConnectionId,
+    /** Default vault info keyed by connectionId. */
+    defaultVaultInfoByConnection,
 }
 
 export interface ExtensionSettings {
     [ExtensionSettingsOptions.nextcloudServerAuthInfo]: NextcloudServerInfoInterface,
-    [ExtensionSettingsOptions.defaultVaultInfo]: {
-        guid: string,
-        password: string
-    },
+    [ExtensionSettingsOptions.defaultVaultInfo]: DefaultVaultInfo,
     [ExtensionSettingsOptions.offlineCacheEnabled]: boolean,
     [ExtensionSettingsOptions.ignoreProtocol]: boolean,
     [ExtensionSettingsOptions.ignoreSubdomain]: boolean,
@@ -58,12 +64,20 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]: boolean,
     [ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]: boolean,
     [ExtensionSettingsOptions.enableFormDetectionByMutationObserver]: boolean,
+    [ExtensionSettingsOptions.nextcloudServerConnections]: NextcloudServerInfoInterface[],
+    [ExtensionSettingsOptions.activeConnectionId]: string,
+    [ExtensionSettingsOptions.defaultVaultInfoByConnection]: Record<string, DefaultVaultInfo>,
 }
 
+/**
+ * Encrypted extension settings storage.
+ *
+ * Partial previous functionality now in dedicated services:
+ * Connection directory mutations: {@link ServerConnectionDirectoryService}.
+ * In-memory PassmanClient lifecycle: {@link PassmanClientService}.
+ */
 export default class ExtensionSettingsService {
     private static readonly EXTENSION_SETTINGS_ACCESS_KEY: string = 'ExtensionSettings';
-    private static backendPassmanClient: BackendPassmanClient | null = null;
-    private static localPassmanClient: PassmanClient | null = null;
 
     public static updateExtensionSettings = async (extensionSettings: ExtensionSettings) => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
@@ -93,7 +107,7 @@ export default class ExtensionSettingsService {
      */
     public static getExtensionSettings = async () => {
         return await CustomStorageService.getSecureStorage().then(async (myStorage) => {
-            return ((await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY)) ?? {}) as ExtensionSettings
+            return ((await myStorage.get(ExtensionSettingsService.EXTENSION_SETTINGS_ACCESS_KEY)) ?? {}) as ExtensionSettings;
         })
     };
 
@@ -137,6 +151,12 @@ export default class ExtensionSettingsService {
             case ExtensionSettingsOptions.enableFormDetectionByMutationObserver:
                 returnValue = false as ExtensionSettings[K];
                 break;
+            case ExtensionSettingsOptions.nextcloudServerConnections:
+                returnValue = ([] as NextcloudServerInfoInterface[]) as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.defaultVaultInfoByConnection:
+                returnValue = ({} as Record<string, DefaultVaultInfo>) as ExtensionSettings[K];
+                break;
             default:
                 returnValue = null;
                 break;
@@ -153,44 +173,5 @@ export default class ExtensionSettingsService {
             // usually no need to log or to inform the user
         }
         return extensionSettings?.[key] ?? (tryDefault ? await ExtensionSettingsService.getDefaultForExtensionSetting(key) : null);
-    };
-
-    public static getBackendPassmanClient = async () => {
-        if (!ExtensionSettingsService.backendPassmanClient) {
-            const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo);
-            if (nextcloudServerData) {
-                const logger = new CustomPassmanClientLoggingService();
-                ExtensionSettingsService.backendPassmanClient = await BackendPassmanClient.createInstance(
-                    nextcloudServerData,
-                    undefined,
-                    logger,
-                    CustomStorageService.getExtensionPassmanClientPersistenceService()
-                );
-            }
-        }
-
-        return ExtensionSettingsService.backendPassmanClient;
-    };
-
-    public static getPopupPassmanClient = async () => {
-        if (!ExtensionSettingsService.localPassmanClient) {
-            const logger = new CustomPassmanClientLoggingService();
-            const nextcloudServerData = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.nextcloudServerAuthInfo) as NextcloudServerInfoInterface;
-            const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
-            // Shared IndexedDB model store with the background client; restore fills preloaded/full vaults offline
-            // Both clients will work on the same IndexedDB model store, so they will share the same vaults. Transactions are handled automatically by our backing library.
-            ExtensionSettingsService.localPassmanClient = await PassmanClient.createInstance(
-                nextcloudServerData,
-                new NextcloudServerMessagingConnector(nextcloudServerData, logger),
-                logger,
-                persistence
-            );
-        }
-
-        return ExtensionSettingsService.localPassmanClient;
-    };
-
-    public static updateBackendPassmanClient = (backendPassmanClient: BackendPassmanClient | null) => {
-        ExtensionSettingsService.backendPassmanClient = backendPassmanClient;
     };
 }

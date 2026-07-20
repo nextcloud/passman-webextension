@@ -1,4 +1,4 @@
-import ExtensionSettingsService from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
 import { NextcloudServerMessagingConnectorService } from "~/services/NextcloudServerMessagingConnectorService";
 import { onMessage } from '../messaging';
 
@@ -51,7 +51,7 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
     const requestUrl = message.data.url;
 
     // Get BackendPassmanClient instance
-    const backendPassmanClient = await ExtensionSettingsService.getBackendPassmanClient();
+    const backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
     if (!backendPassmanClient) {
         // half-critical since the backendPassmanClient (e.g. cache) can not be updated, but we should not fail here. Response evaluation is not part if this specific condition.
         error = new Error('Could not get BackendPassmanClient instance');

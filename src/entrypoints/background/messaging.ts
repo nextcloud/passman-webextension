@@ -41,6 +41,17 @@ import {
 } from '@/entrypoints/background/messages/getEnableEmailAsUsernameFallbackFillingState';
 import { GetPickerPageSettingsResponse } from './messages/getPickerPageSettings';
 import { UpdatePickerPageSettingsRequest } from './messages/updatePickerPageSettings';
+import {
+    SetActiveServerConnectionRequest,
+    SetActiveServerConnectionResponse
+} from "@/entrypoints/background/messages/setActiveServerConnection";
+import {
+    RemoveServerConnectionRequest,
+    RemoveServerConnectionResponse
+} from "@/entrypoints/background/messages/removeServerConnection";
+import {
+    ListServerConnectionsResponse
+} from "@/entrypoints/background/messages/listServerConnections";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -68,6 +79,12 @@ interface ProtocolMap {
     createCredentialForPicker(data?: CreateCredentialForPickerMessagingRequest): CreateCredentialForPickerMessagingResponse;
 
     addNewServerConnection(data: AddNewServerConnectionRequest): AddNewServerConnectionResponse;
+
+    setActiveServerConnection(data: SetActiveServerConnectionRequest): SetActiveServerConnectionResponse;
+
+    removeServerConnection(data: RemoveServerConnectionRequest): RemoveServerConnectionResponse;
+
+    listServerConnections(): ListServerConnectionsResponse;
 
     getCredentialsForVault(data: GetCredentialsForVaultMessagingRequest): GetCredentialsForVaultMessagingResponse;
 

@@ -1,4 +1,5 @@
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+import PassmanClientService from "~/services/PassmanClientService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import { CustomCredentialFilterService } from "~/services/CustomCredentialFilterService";
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
@@ -45,7 +46,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         errorMessage = 'Invalid request (check request body)';
     } else {
         const body = message.data;
-        await ExtensionSettingsService.getBackendPassmanClient().then(async (backendPassmanClient) => {
+        await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
             if (backendPassmanClient) {
                 return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     if (!defaultVaultInfo) {

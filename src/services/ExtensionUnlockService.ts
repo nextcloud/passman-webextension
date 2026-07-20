@@ -1,6 +1,7 @@
 import { sha512 } from "js-sha512";
 import CustomStorageService from "./CustomStorageService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
+import PassmanClientService from "./PassmanClientService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import { ExtensionBadgeService } from "./backend/ExtensionBadgeService";
 import ContextMenuService from "./backend/ContextMenuService";
@@ -47,7 +48,7 @@ export default class ExtensionUnlockService {
     public static async lock() {
         await CustomStorageService.clearSessionStorage();
         CustomStorageService.closeSecureStorage();
-        ExtensionSettingsService.updateBackendPassmanClient(null);
+        PassmanClientService.invalidatePassmanClients();
         ExtensionBadgeService.displayLockIcons();
         ContextMenuService.reCreateContextMenuParentItems(false);
         this.notifyReloadContentScriptPicker();
@@ -179,9 +180,9 @@ export default class ExtensionUnlockService {
             if (isUnlocked) {
                 let passmanClientPromise: Promise<PassmanClient> | Promise<BackendPassmanClient | null>;
                 if (isFrontendCall) {
-                    passmanClientPromise = ExtensionSettingsService.getPopupPassmanClient();
+                    passmanClientPromise = PassmanClientService.getPopupPassmanClient();
                 } else {
-                    passmanClientPromise = ExtensionSettingsService.getBackendPassmanClient();
+                    passmanClientPromise = PassmanClientService.getBackendPassmanClient();
                 }
                 return await passmanClientPromise.then(async (passmanClient) => {
                     if (passmanClient) {
