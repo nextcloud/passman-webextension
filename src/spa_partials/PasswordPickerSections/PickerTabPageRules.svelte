@@ -5,27 +5,31 @@
     import { i18n } from "~/lib/i18n";
     import { sendMessage } from "@/entrypoints/background/messaging";
     import type { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
+    import type { UpdatePickerPageSettingsRequest } from "@/entrypoints/background/messages/updatePickerPageSettings";
     import {
         PAGE_RULE_ALL_KEYS,
         PAGE_RULE_OVERRIDE_FIELDS,
         type PageRuleOverrideKey,
         type PageRuleOverrideSelection,
         buildOverrideSelectValuesFromRule,
-        pageRuleOverrideSelectionToBoolean
+        pageRuleOverrideBooleanToSelection,
+        pageRuleOverrideSelectionToBoolean,
     } from "~/lib/pageRules/pageRulesOverrides";
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
 
-    let currentOrigin = '';
-    let isLoading = true;
-    let loadError: string | null = null;
-    let isSaving = false;
-    let saveError: string | null = null;
+    let currentOrigin = $state('');
+    let isLoading = $state(true);
+    let loadError = $state<string | null>(null);
+    let isSaving = $state(false);
+    let saveError = $state<string | null>(null);
 
-    let originalPageRules: PageRulesInterface = PageRulesService.getFreshPageRules();
-    let originalOverwritableExtensionSettings: Omit<PageRulesInterface, 'ignorePage' | 'enableAutosubmit'> | undefined = undefined;
-    let formRule: PageRulesInterface = PageRulesService.getFreshPageRules();
+    let originalPageRules = $state<PageRulesInterface>(PageRulesService.getFreshPageRules());
+    let originalOverwritableExtensionSettings = $state<Omit<PageRulesInterface, 'ignorePage' | 'enableAutosubmit'> | undefined>(undefined);
+    let formRule = $state<PageRulesInterface>(PageRulesService.getFreshPageRules());
 
-    let overrideSelectValues: Record<PageRuleOverrideKey, PageRuleOverrideSelection> = buildOverrideSelectValuesFromRule(formRule);
+    let overrideSelectValues = $state<Record<PageRuleOverrideKey, PageRuleOverrideSelection>>(
+        buildOverrideSelectValuesFromRule(PageRulesService.getFreshPageRules())
+    );
 
     const syncOverrideSelectValuesFromRule = (rule: PageRulesInterface) => {
         overrideSelectValues = buildOverrideSelectValuesFromRule(rule);
@@ -35,19 +39,28 @@
         return PAGE_RULE_ALL_KEYS.every((key) => (a[key] ?? undefined) === (b[key] ?? undefined));
     };
 
-    let hasUnsavedChanges = false;
-
-    $: hasUnsavedChanges = !rulesAreEqual(formRule, originalPageRules);
+    const hasUnsavedChanges = $derived(!rulesAreEqual(formRule, originalPageRules));
 
     const handleOverrideChange = (key: PageRuleOverrideKey, selection: PageRuleOverrideSelection) => {
         formRule = {
             ...formRule,
-            [key]: selection
+            [key]: pageRuleOverrideSelectionToBoolean(selection)
         };
         overrideSelectValues = {
             ...overrideSelectValues,
             [key]: selection
         };
+    };
+
+    const formRuleToUpdatePayload = (rule: PageRulesInterface): UpdatePickerPageSettingsRequest['updatedPageRules'] => {
+        const payload: UpdatePickerPageSettingsRequest['updatedPageRules'] = {
+            ignorePage: rule.ignorePage ? 'true' : 'false',
+            enableAutosubmit: rule.enableAutosubmit ? 'true' : 'false',
+        };
+        for (const field of PAGE_RULE_OVERRIDE_FIELDS) {
+            payload[field.key] = pageRuleOverrideBooleanToSelection(rule[field.key]);
+        }
+        return payload;
     };
 
     const resetChanges = () => {
@@ -92,7 +105,7 @@
         isSaving = true;
         saveError = null;
         try {
-            await sendMessage('updatePickerPageSettings', { updatedPageRules: formRule });
+            await sendMessage('updatePickerPageSettings', { updatedPageRules: formRuleToUpdatePayload(formRule) });
             console.debug('Page rules updated for', currentOrigin);
             originalPageRules = { ...formRule };
         } catch (error) {
@@ -128,7 +141,7 @@
             <button
                     class="text-xs underline text-gray-500 hover:text-gray-300"
                     type="button"
-                    on:click={loadPageRules}
+                    onclick={loadPageRules}
             >
                 {i18n.getMessage('page_rules_picker_retry')}
             </button>
@@ -143,12 +156,12 @@
                 <CustomCheckboxField
                         bind:value={formRule.ignorePage}
                         id="picker-ignorePage"
-                        label="{i18n.getMessage('ignore_page')}"
+                        label={i18n.getMessage('ignore_page')}
                 />
                 <CustomCheckboxField
                         bind:value={formRule.enableAutosubmit}
                         id="picker-enableAutosubmit"
-                        label="{i18n.getMessage('enable_autosubmit')}"
+                        label={i18n.getMessage('enable_autosubmit')}
                 />
             </div>
 
@@ -166,7 +179,7 @@
                                     id={getOverrideSelectId(field.key)}
                                     class="rounded border border-gray-300 bg-white p-1 text-xs focus:border-primary-focus focus:outline-none focus:ring-1 focus:ring-primary-focus dark:bg-neutral dark:text-primary-dark-text"
                                     bind:value={overrideSelectValues[field.key]}
-                                    on:change={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as PageRuleOverrideSelection)}
+                                    onchange={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as PageRuleOverrideSelection)}
                             >
                                 <option value="inherit">
                                     {i18n.getMessage('page_rules_use_global')} {#await getGlobalValueState(field.key) then state}({state}){/await}
@@ -193,7 +206,7 @@
                                     id={getOverrideSelectId(field.key)}
                                     class="rounded border border-gray-300 bg-white p-1 text-xs focus:border-primary-focus focus:outline-none focus:ring-1 focus:ring-primary-focus dark:bg-neutral dark:text-primary-dark-text"
                                     bind:value={overrideSelectValues[field.key]}
-                                    on:change={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as PageRuleOverrideSelection)}
+                                    onchange={(event) => handleOverrideChange(field.key, (event.currentTarget as HTMLSelectElement).value as PageRuleOverrideSelection)}
                             >
                                 <option value="inherit">
                                     {i18n.getMessage('page_rules_use_global')} {#await getGlobalValueState(field.key) then state}({state}){/await}
