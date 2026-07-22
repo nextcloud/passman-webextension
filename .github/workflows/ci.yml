@@ -1,0 +1,129 @@
+name: CI
+
+on:
+  push:
+    branches: [v3, main]
+    tags: ["*"]
+  pull_request:
+    branches: [v3, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Prebuild (TLD rules)
+        run: bun run prebuild
+
+      - name: Zip Chrome extension
+        run: bun run zip
+
+      - name: Zip Firefox extension
+        run: bun run zip:firefox
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: extension-builds
+          path: |
+            .output/passman-webextension-prod-chrome.zip
+            .output/passman-webextension-prod-firefox.zip
+            .output/passman-webextension-prod-sources.zip
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: Create GitHub Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v8
+        with:
+          name: extension-builds
+          path: .output
+
+      - name: Prepare release assets
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          mv .output/passman-webextension-prod-chrome.zip \
+            ".output/passman-webextension_chrome-mv3-prod_${TAG}.zip"
+          mv .output/passman-webextension-prod-firefox.zip \
+            ".output/passman-webextension_firefox-mv3-prod_${TAG}.zip"
+          mv .output/passman-webextension-prod-sources.zip \
+            ".output/passman-webextension_sources-mv3-prod_${TAG}.zip"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v3
+        with:
+          name: Release ${{ github.ref_name }}
+          body: Release ${{ github.ref_name }} of the Passman Webextension
+          files: |
+            .output/passman-webextension_chrome-mv3-prod_${{ github.ref_name }}.zip
+            .output/passman-webextension_firefox-mv3-prod_${{ github.ref_name }}.zip
+            .output/passman-webextension_sources-mv3-prod_${{ github.ref_name }}.zip
+          fail_on_unmatched_files: true
+          generate_release_notes: true
+
+  publish:
+    name: Submit to stores
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v8
+        with:
+          name: extension-builds
+          path: .output
+
+      - name: Write store credentials
+        env:
+          ENV_SUBMIT: ${{ secrets.ENV_SUBMIT }}
+        run: |
+          if [ -z "$ENV_SUBMIT" ]; then
+            echo "Error: ENV_SUBMIT secret is not set."
+            exit 1
+          fi
+          printf '%s\n' "$ENV_SUBMIT" > .env.submit
+
+      - name: Dry-run store submission
+        run: |
+          bunx wxt submit --dry-run \
+            --firefox-zip .output/passman-webextension-prod-firefox.zip \
+            --firefox-sources-zip .output/passman-webextension-prod-sources.zip
+
+      - name: Submit to stores
+        run: |
+          bunx wxt submit \
+            --firefox-zip .output/passman-webextension-prod-firefox.zip \
+            --firefox-sources-zip .output/passman-webextension-prod-sources.zip
