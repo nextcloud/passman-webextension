@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - An bainisteoir pasfhocail do NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Cuardaigh le haghaidh",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Níor aimsíodh aon dintiúir don suíomh seo.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Níor aimsíodh aon dintiúir",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Nótaí",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Freagra neamhbhailí ón bhfreastalaí: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Cuir isteach do dhintiúir Nextcloud / ownCloud le do thoil",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Sábháil suíomh",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Gineadóir pasfhocal",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Gin pasfhocal",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Scoránaigh infheictheacht",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Scoránaigh roghanna casta",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Úsáid pasfhocal",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Tar éis é a chruthú, is féidir leat an dintiúir a chur in eagar i Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Fad pasfhocal",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Íosmhéid na digití",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Seachain carachtair débhríoch",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "A cheangal ar gach cineál carachtar",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Cuir cuntas leis",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Cuntais",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Lipéad",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Ainm úsáideora",
+        "description": "Username"
+    },
+    "email": {
+        "message": "R-phost",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Cuir",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Dintiúir cruthaithe",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Pasfhocal",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Pasfhocal (athrá)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Braitheadh ​​logáil isteach nua",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Braitheadh ​​pasfhocal athraithe don úsáideoir",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ aimsithe don leathanach seo",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Faoi ghlas",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Braitheadh ​​URL athraithe le haghaidh",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "dintiúir",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "dintiúir",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Athnuaigh an t-amadóir[s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Déan neamhaird de phrótacal maidir le meaitseáil suíomh",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Déan neamhaird de fhofhearann ​​le haghaidh meaitseáil suíomh",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Déan neamhaird de phort le haghaidh meaitseála suímh",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Tá tú ag úsáid HTTP! Seolfar dintiúir logáil isteach i ngnáth-théacs. Tá do dhintiúir Passman fós criptithe.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Déan neamhaird de chonair na meaitseála suímh",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Cumasaigh uathlíon an fhoirm",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Cumasaigh an fhoirm a thíolacadh go huathoibríoch tar éis an cuntas a phiocadh",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Iarr an URL inchreidte a nuashonrú mura n-oireann sé leis an URL reatha",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Díchumasaigh líonadh uathoibríoch an bhrabhsálaí",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Cuir isteach fearann ​​nó TLD chun neamhaird a dhéanamh agus brúigh  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Cumasaigh roghnóir pasfhocail",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Nuair a aimsítear pasfhocal, téigh go dtí an liosta seachas an cluaisín gníomhach deiridh",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Folaigh roghanna casta",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Taispeáin roghanna casta",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Cumasaigh mód dífhabhtaithe",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Sábháil",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Shábháil",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Sábháladh an dintiúir",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Dintiúir nuashonraithe",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Neamhaird ar an suíomh",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "Neamhaird ar URL",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Nuashonrú",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Déan neamhaird de shuíomh",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Sábháil dintiúir don suíomh seo",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Dintiúir cuardaigh",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Fáilte chuig an síneadh gréasáin Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL an fhreastalaí",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "A ligean ar tosú!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Treoróidh an draoi seo tú trí na céimeanna chun an síneadh a shocrú agus do phasfhocail go léir a choinneáil sioncronaithe.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Cealaigh",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Cruinneachán réamhshocraithe",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Roghnaigh an cruinneachán is mian leat a choinneáil i gcomhar leis an mbrabhsálaí gréasáin.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Cuir isteach máistir phasfhocal",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Úsáidfear an pasfhocal seo chun do shocruithe go léir a chriptiú san iarmhír. Is féidir leat an focal faire seo a shábháil go háitiúil, ach déanfar é a shábháil i PLAINTEXT.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Cuimhnigh máistir phasfhocal",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Rabhadh! Stórálfar do mháistir passfhocal i ngnáth-théacs.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Déanta",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Réimsí an Chustaim",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Ginearálta",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Luach",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Liosta",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Cuir in eagar",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Socruithe freastalaí",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Socruithe cruinneachán",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Socraigh Máistir phasfhocal",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Críochnaigh",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Más mian leat, ná déan dearmad a bhronnadh",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Dún",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Roimhe seo",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Ar ais",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Cóip",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Ar aghaidh",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Leanúint ar aghaidh",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Síntiúis",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Socruithe freastalaí Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Roghnaigh cruinneachán réamhshocraithe",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Suímh / URLanna neamhairde",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Díchumasaigh leathanach",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Díchumasaigh suíomh",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Ar mhaith leat Passman a dhíchumasú don leathanach reatha, nó don suíomh Gréasáin ar fad?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Níor tugadh neamhaird ar shuíomh ar bith",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Focal faire cruinneachán",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Líon isteach lipéad le do thoil",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "URL freastalaí neamhbhailí",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Déan neamhaird de shuíomh / leathanach",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Ní hionann pasfhocail",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Eochair cruinneachán neamhbhailí!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Máistir eochair folamh!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Socruithe",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Nuair a bheidh an próiseas socraithe críochnaithe, is féidir leat níos mó cuntas a chur leis.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Cuntas curtha leis.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Roghnaigh cruinneachán",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Scrios",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Cuardach",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Scriosadh an dintiúir",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Nuair nach bhfuil an roghnóir Pasfhocal in ann aon dintiúir a aimsiú, rachaidh sé chuig:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Ár leithscéal, níor aimsíodh boghtaí. Cruthaigh cruinneachán tríd an aip Nextcloud / ownCloud agus bain triail eile as le do thoil.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Is féidir leat do phasfhocal a athshocrú. Athshocróidh sé seo an síneadh go dtí a staid réamhshocraithe.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Dearmad ar pasfhocal?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Athshocraigh síneadh",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Sea, tá mé cinnte!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Níl cead agat an scríbhinn seo a chur in eagar.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Socruithe freastalaí neamhbhailí",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Athnuaigh an liosta creidiúnaithe",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Braitheann forbairt ar shíntiúis, le do thoil tacú linn",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Síneadh glasála",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Tá síneadh Passman faoi ghlas, díghlasáil chun é a úsáid",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Máistir phasfhocal neamhbhailí!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Díghlasáil",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Tá dintiúir $AMOUNT$ aimsithe againn don suíomh seo",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Sábháil go $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Shábháil ar $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ dintiúir sa bhunachar sonraí",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Tá Passman ag logáil isteach ort mar $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Cruinneachán",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Cuir réimse saincheaptha leis",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "téacs",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Paisinéir",
+        "description": "Extension name"
+    }
+}

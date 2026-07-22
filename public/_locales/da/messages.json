@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - Adgangskodemanageren til NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Søg efter",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Ingen legitimationsoplysninger fundet for dette websted.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Ingen legitimationsoplysninger fundet",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Noter",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Ugyldigt svar fra server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Angiv venligt dine Nextcloud / ownCloud legitimationsoplysninger",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Gem side",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Adgangskode generator",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Generer adgangskode",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Toggle synlighed",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Toggle avancerede indstillinger",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Brug adgangskode",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Efter oprettelse af dem, så kan du redigere legitimationsoplysningerne i Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Adgangskode længde",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Minumun antal af tal",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Undgå tvetydige karakterer ",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Forlang alle tegn typer",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Tilføj konto",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Konti",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Label",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Brugernavn",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Tilføj",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Legitimationsoplysninger oprettet",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "Url",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Adgangskode",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Adgangskode (gentag)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Nyt login opdaget",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Ændring i adgangskode for bruger opdaget",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ fundet for denne side",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Låst",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Fundet ændret URL for",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "Legitimationsoplysninger ",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "legitimationsoplysninger",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Genopfrisk timer [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Ignorer protokol for matchning af websted",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Ignorer underdomæne for matchning af websted",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Ignorer port for matchning af websted",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Du anvender HTTP! Log på legitimationsoplysninger som vil blive sendt i klartekst. Dine Passman legitimationsoplysninger  er stadig krypteret.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Ignorer sti for matchning af websted",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Aktivér automatisk udfyldning",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Aktivér automatisk indsendelse af formular efter valg af konto",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Efterspørg opdatering af legitimationsoplysningers URL, hvis den ikke matcher den aktuelle URL",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Deaktivér automatisk udfyldning i browser",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Indtast et domæne eller TLD du vil ignorere, og tryk på  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Aktivér adgangskodevælger",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Når en adgangskode er fundet, skal du gå til listen i stedet for den sidste aktive fane",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Skjul avancerede indstillinger",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Vis avancerede indstillinger",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Aktivér fejlretningstilstand",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Gem",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Gemmer",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Legitimationsoplysninger gemt",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Legitimationsoplysninger opdateret",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Websted ignoreret",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignoreret",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Opdatér",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignorer side",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Gem legitimationsoplysninger for denne side",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Søg legitimationsoplysninger",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Velkommen til Passman webextension",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "Server URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Lad os begynde!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Denne guide vil guide dig gennem trinene for at konfigurere udvidelsen og holde alle dine adgangskoder synkroniseret.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Annuller",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Standardboks",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Vælg den boks, som du vil holde synkroniseret med webbrowseren.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Indtast master adgangskode",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Denne adgangskode vil blive brugt til at kryptere alle dine indstillinger i udvidelsen. Du kan vælge at gemme denne adgangskode lokalt, men den vil blive gemt i REN TEKST.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Husk master adgangskode",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Advarsel! Din hovedadgangskode vil blive gemt i klartekst.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Færdig",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Brugerdefinerede felter",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Generelt",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Værdi",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Liste",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Redigér",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Serverindstillinger",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Indstillinger for boks",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Sæt hovedadgangskode",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Færdig",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Glem ikke at donere, hvis du kan lide Passman",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Luk",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Forrige",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Tilbage",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopiér",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Næste",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Fortsæt",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Doner",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / ownCloud server indstillinger",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Vælg standardboks",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ignorerede steder / URL'er",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Deaktiver side",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Deaktiver side",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Ønsker du at deaktivere Passman for den aktuelle side, eller for hele hjemmesiden?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Ingen sider ignoreret",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Boksadgangskode",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Udfyld venligst en etiket",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Ugyldig server adresse",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignorer side",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Adgangskoderne stemmer ikke overens",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Ugyldig boks nøgle!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Tom master adgangskode!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Indstillinger",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Efter opsætningen er afsluttet, kan du tilføje flere konti.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Konto tilføjet.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Vælg boks",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Slet",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Søg",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Legitimationsoplysninger slettet",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Når adgangskodevælgeren ikke kan finde nogen legitimationsoplysninger, så vil den gå til:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Beklager, ingen boks fundet. Opret en boks via Nextcloud / ownCloud-appen og prøv igen.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Du kan nulstille din adgangskode. Dette vil nulstille udvidelsen til dens standardtilstand.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Glemt adgangskode?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Nulstil udvidelse",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Ja, jeg er sikker!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Du har ikke tilladelse til at redigere disse legitimationsoplysninger ",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Ugyldige server indstillinger",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Genopfrisk liste medlegitimationsoplysninger",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Udvikling afhænger af donationer, støt os hvis du kan",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Lås udvidelse",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Passman udvidelse er låst, lås op for at bruge det",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Ugyldig master adgangskode",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Lås op",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Vi har fundet $AMOUNT$ legitimationsoplysninger  for dette websted",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Gem til $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Gemmer til $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ legitimationsoplysninger t databasen",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Passman logger dig ind som $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Boks",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Tilføj et brugerdefineret felt",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "tekst",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}

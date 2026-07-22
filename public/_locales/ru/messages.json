@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman — Управление паролями для NextCloud и ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Поиск",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Не найдено записей, соответствующих этому сайту.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Записей не найдено",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Заметки",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Неверный ответ сервера:  [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Введите свои данные для входа в Nextcloud или ownCloud",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Сохранить сайт",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Создание пароля",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Создать пароль",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Переключить видимость",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Переключить дополнительные настройки",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Использовать пароль",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "После создания вы сможете редактировать записи  в Passman.",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Длина пароля",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Минимальное число цифр",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Избегать неоднозначных символов",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Требовать тип каждого символа",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Добавить аккаунт",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Аккаунты",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Метка",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Имя пользователя",
+        "description": "Username"
+    },
+    "email": {
+        "message": "Эл. почта",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Добавить",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Запись создана",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Пароль",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Повторите пароль",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Определён новый логин",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Определено изменение пароля для пользователя",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ найдено для этой страницы",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman — Заблокировано",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Определено изменение URL для",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "запись",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "записи",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Таймер обновления [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Игнорировать протокол при поиске соответствий",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Игнорировать поддомен при поиске соответствий",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Игнорировать номер порта при поиске соответствий",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Вы используете протокол HTTP! Учётные данные будут отправлены простым текстом. Данные для входа, сохранённые в Passman, остаются зашифрованными.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Игнорировать путь при поиске соответствий",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Включить автозаполнение форм",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Автоматическая отправка формы после выбора аккаунта",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Запрашивать обновление ссылки в записи, если она отличается от сохранённой",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Отключить автоматическое заполненеие форм в браузере",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Введите домен или домен верхнего уровня, который следует игнорировать и нажмите  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Включить выбор пароля",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "При нахождении пароля, переключаться в список, а не последнюю открытую вкладку.",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Скрыть расширенные настройки",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Показать расширенные настройки",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Включить режим отладки",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Сохранить",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Сохранение",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Запись сохранена",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Запись обновлена",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Сайт игнорируется",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ингорируется",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Обновить",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Игнорировать сайт",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Сохранить запись для этого сайта",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Найти запись",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Добро пожаловать в приложение Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL сервера",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Начнём!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Мастер поможет настроить дополнение и синхронизацию паролей.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Отмена",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Хранилище по умолчанию",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Выберите хранилище, которое будет сихнронизироваться с браузером. ",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Введите мастер пароль",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Этот пароль используется для шифрования всех ваших настроек в приложении. Вы можете сохранить этот пароль локально, но он будет сохранён ОТКРЫТЫМ ТЕКСТОМ.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Запомнить мастер пароль",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Внимание! Мастер-пароль будет сохранён в открытом виде.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Готово",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Пользовательские поля",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Основные",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Значение",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Список",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Править",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Настройки сервера",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Настройки хранилища",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Установить мастер пароль",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Завершить",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Если вам нравится это приложение, не забудьте поддержать его разработку",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Закрыть",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Предыдущий",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Назад",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Копировать",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Следующий",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Продолжить",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Пожертвовать",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Настройки сервера Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Выбрать хранилище по умолчанию",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Игнорируемые сайты / адреса URL",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Отключить на странице",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Отключить для сайта",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Не использовать Passman только на текущей странице или на всех страницах веб-сайта?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Не найдено игнорируемых сайтов.",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Пароль хранилища",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Заполните название!",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Неверный URL сервера",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Игнорировать сайт / страницу",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Пароли не совпадают",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Неверный ключ хранилища!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Пустой мастер ключ!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP (одноразовый пароль)",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Параметры",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Дополнительные аккаунты можно будет добавить после завершения настройки.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Учётная запись добавлена.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Выберите хранилище",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Удалить",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Поиск",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Запись удалена",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Подбор паролей: Если не найдено ни одной записи, переходить:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Не удалось найти ни одного хранилища. Создайте новое хранилище, используя приложение для Nextcloud/ownCloud, и попробуйте снова.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Вы можете сбросить свой пароль. Это также сбросит расширение на его первоначальное значение.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Забыли пароль?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Сбросить расширение",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Да, я уверен!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Недостаточно прав для изменения этой записи.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Неверные настройки сервера",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Обновить список записей",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Разработчики зависят от пожертвований, пожалуйста, поддержите нас",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Заблокировать расширение",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Расширение Passman заблокировано, разблокируйте для использования.",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Неверный мастер пароль!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Разблокировать",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Найдено  $AMOUNT$ записей для этого сайта",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Сохранить в $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Сохранение в $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ записей в базе данных",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Менеджер паролей авторизует Вас как $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Хранилице",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Добавить пользовательское поле",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "текст",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}

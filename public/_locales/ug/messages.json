@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "پارولچى - NextCloud / ownCloud ئۈچۈن پارول باشقۇرغۇچى",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "ئىزدە",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "بۇ توربەتنىڭ ھېچقانداق پارولى تېپىلمىدى.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "ھېچقانداق پارول تېپىلمىدى",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "ئىزاھاتلار",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "مۇلازىمېتىردىن ئىناۋەتسىز جاۋاپ كەلدى: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "سىزنىڭ Nextcloud / ownCloud پاروللىرىڭىزنى كىرگۈزۈڭ",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "بەتنى ساقلاڭ",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "پارول ھاسىل قىلغۇچ",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "پارول ھاسىل قىل",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "كۆرۈنۈشچانلىقىنى ئالماشتۇر",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "ئىلغار تاللاشلارنى ئالماشتۇر",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "پارول ئىشلەت",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "پارول قۇرغاندىن كىيىن، ئۇنى پارولچىدىن تەھرىرلىيەلەيسىز",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "پارولنىڭ ئۇزۇنلۇقى",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "ئەڭ تۆۋەن سان",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "مۈجمەل ھەرپلەردىن ساقلىنىڭ",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "ھەر بىر ھەرپ تىپىنى تەلەپ قىلىدۇ",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "ھېسابات قوشۇڭ",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "ھېساباتلار",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "بەلگە",
+        "description": "Label"
+    },
+    "username": {
+        "message": "ئىشلەتكۈچى ئاتى",
+        "description": "Username"
+    },
+    "email": {
+        "message": "ئېلخەت",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "قوش",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "پارول قۇرۇلدى",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "ئىم",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "پارول (قايتىلا)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "يېڭى كىرىش بايقالدى",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "ئىشلەتكۈچىنىڭ ئۆزگەرگەن پارولى بايقالدى",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "پارولچى - بۇ بەتنىڭ $CREDENTIAL_AMOUNT$ $PLURAL$ تېپىلدى",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "پارولچى - قۇلۇپلاندى",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "ئۆزگەرگەن URL بايقالدى",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "پارول",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "پاروللار",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "يېڭىلاش ۋاقىت سانىغۇچ",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "توربەت ماسلاشتۇرۇش كىلىشىمنامىسىغا كارىڭ بولمىسۇن",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "توربەت ماسلاشتۇرۇش تارماق دائىرىگە كارىڭ بولمىسۇن",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "توربەت ماسلاشتۇرۇش كىرىش ئېغىزىغا كارىڭ بولمىسۇن",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "سىز HTTP نى ئىشلىتىۋاتىسىز! كىرىش پارولى ئاددىي تېكىستتە يوللىنىلىدۇ. سىزنىڭ پارولچى ھېساباتلىرىڭىز يەنىلا شىفىرلىنىدۇ.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "توربەت ماسلاشتۇرۇش يولىغا كارىڭ بولمىسۇن",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "جەدىۋەلنى ئاپتۇماتىك تولدۇرۇشنى قوزغات",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "ھېساباتنى تاللىغاندىن كىيىن جەدىۋەلنى ئاپتۇماتىك تاپشۇرۇشنى قوزغات",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "ئەگەر نۆۋەتتىكى URL گە ماس كەلمىسە پارولنى يېڭىلاشنى سورا",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "تور كۆرگۈچنىڭ ئاپتۇماتىك تولدۇرۇشىنى تاقا",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "بىر دائىرە ياكى ئاساسىي دائىرە كىرگۈزۈپ ئاتلاپ كەت ھەمدە   نى باس",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "پارول تاللىغۇچنى قوزغات",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "بىر پارول تېپىلغاندا ئاخىرقى ئاكتىپ بەتكۈچكە ئەمەس تىزىملىككە بار",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "ئىلغار تاللاشلارنى يوشۇر",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "ئىلغار تاللاشلارنى كۆرسەت",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "مەسىلە بىر-تەرەپ قىلىش ھالىتىنى قوزغىتىڭ",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "ساقلا",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "ساقلاۋاتىدۇ",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "پارول ساقلاندى",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "پارول يېڭىلاندى",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "بەتكە كارى بولمىدى",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL گە كارى بولمىدى",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "يېڭىلا",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "بەتكە پەرۋا قىلما",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "بۇ تور بەتنىڭ پارولىنى ساقلا",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "پاروللارنى ئىزدە",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "پارولچى تور كېڭەيتىلمىسىگە مەرھەمەت",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "مۇلازىمېتىر URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "باشلايلى!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "بۇ كۆرسەتمە سىزگە پاروللىرىڭىزنى ساقلاشنى قەدەممۇ-قەدەم چۈشەندۈرۈپ بېرىدۇ ھەمدە بارلىق پاروللىرىڭىزنى ماس-قەدەملەيدۇ.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "ۋاز كەچ",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "كۆڭۈلدىكى قىممىتى",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "سىز بۇ تور كېڭەيتىلمىسى بىلەن ماس-قەدەملىمەكچى بولغان بىر خەزىنە تاللاڭ.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "ئاساسىي پارولنى كىرگۈز",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "بۇ پارول كېڭەيتىلمىدىكى بارلىق تەڭشەكلەرنى شىفىرلاش ئۈچۈن ئىشلىتىلىدۇ. سىز بۇ پارولنى يەرلىكتە ساقلاشنى تاللىيالايسىز، بىراق ئۇ ئاددىي تېكىستتە ساقلىنىدۇ.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "ئاساسىي پارولنى ئەستە ساقلا",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "ئاگاھلاندۇرۇش! سىزنىڭ ئاساسىي پارولىڭىز ئاددىي تېكىستتە ساقلاندى.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "تامام",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "خاس ئورۇنلار",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "ئادەتتىكى",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "قىممەت",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "تىزىملىك",
+        "description": "List"
+    },
+    "edit": {
+        "message": "تەھرىر",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "مۇلازىمېتىر تەڭشىكى",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "خەزىنە تەڭشەكلىرى",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "ئاساسىي پارولنى بەلگىلە",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "تاماملا",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "ئەگەر ياقتۇرسىڭىز، ئىئانە قىلىشتىن ئىككىلەنمەڭ",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "ياپ",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "ئالدىنقى",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "قايتىش",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "كۆچۈرۈڭ",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "كېيىنكى",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "داۋاملاشتۇر",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "ئىئانە قىلىڭ",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / ownCloud مۇلازىمېتىر تەڭشەكلىرى",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "سۈكۈتتىكى خەزىنىنى تاللا",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "كارى بولمىغان بەتلەر / URL لەر",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "بەتنى چەكلە",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "بەتنى چەكلە",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "پارولچىنى نۆۋەتتىكى بەتكە تاقامسىز ياكى بارلىك توربەتكىمۇ؟",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "ھېچقانداق بەتلەر نەزەردىن ساقىت بولمىدى",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "خەزىنە پارولى",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "بىر بەلگە تولدۇرۇڭ",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "مۇلازىمېتىر URL ئىناۋەتسىز",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "بەت / بەتكە پەرۋا قىلما",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "پارول ماس كەلمەيدۇ",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "ئىناۋەتسىز خەزىنە ئاچقۇچى!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "قۇرۇق ئاساسىي پارول",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "تەڭشەكلەر",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "قاچىلاش جەريانى تاماملانغاندىن كىيىن، تېخىمۇ كۆپ ھېسابات قۇشالايسىز.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "ھېسابات قوشۇلدى.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "خەزىنە تاللا",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "ئۆچۈر",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "ئىزدە",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "پارول ئۆچۈرۈلدى",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "پارولچى ھېچقانداق پارولنى تاپالمىغاندا، ئۇ بارىدۇ:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "كەچۈرۈڭ، ھېچقانداق خەزىنە تېپىلمىدى. بىر خەزىنىنى Nextcloud / ownCloud ئەپ ئارقىلىق قۇرۇڭ ھەمدە قايتا سىناڭ.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "پارولىڭىزنى ئەسلىگە قايتۇرالايسىز. بۇ كېڭەيتىلمىنى سۈكۈتتىكى ھالىتىگە قايتۇرىدۇ.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "پارولنى ئۇنتۇپ قالدىڭىزمۇ؟",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "كېڭەيتىلمىنى ئەسلىگە قايتۇر",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "شۇنداق، جەزىملەشتۈرىمەن!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "بۇ پارولنى تەھرىرلەش رۇخسىتىڭىز يوق.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "ئىناۋەتسىز مۇلازىمېتىر تەڭشەكلىرى",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "پارول تىزىملىكىنى يېڭىلا",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "تەرەققىي قىلدۇرۇش ئىئانىگە باغلىق، بىزنى قوللاڭ",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "كېڭەيتىلمىنى قۇلۇپلا",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "پارولچى كېڭەيتىلمىسى قۇلۇپلاندى، ئۇنى ئىشلىتىش ئۈچۈن قۇلۇپنى ئاچ",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "ئىناۋەتسىز ئاساىي پارول!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "قۇلۇپ ئېچىش",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "بۇ بەتنىڭ $AMOUNT$ پارولىنى تاپتۇق",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "$VAULT_NAME$ غا ساقلا",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "$VAULT_NAME$ غا ساقلاۋاتىدۇ",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "سانداندا $AMOUNT$ پارول بار",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "پارولچى سىزنى $USERNAME$ سۈپىتىدە كىرگۈزۋاتىدۇ",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "خەزىنە",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "خاس ئورۇن قوش",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "تېكىست",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "پارولچى",
+        "description": "Extension name"
+    }
+}

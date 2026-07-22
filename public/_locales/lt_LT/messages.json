@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "„Passman“ – slaptažodžių tvarkyklė, skirta „NextCloud“ / „ownCloud“",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Ieškoti",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Šioje svetainėje nerasta jokių prisijungimo duomenų.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Nerasta jokių prisijungimo duomenų",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Užrašai",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Neteisingas atsakymas iš serverio: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Įveskite savo „Nextcloud“ / „ownCloud“ prisijungimo duomenis",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Išsaugoti svetainę",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Slaptažodžių generatorius",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Generuoti slaptažodį",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Perjungti matomumą",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Perjungti išplėstines parinktis",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Naudoti slaptažodį",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Sukūrę jį, galite redaguoti prisijungimo duomenis „Passman“",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Slaptažodžio ilgis",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Mažiausias skaitmenų skaičius",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Venkite nevienareikšmių simbolių",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Reikalauti visų simbolių tipų",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Pridėti paskyrą",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Paskyros",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Etiketė",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Naudotojo vardas",
+        "description": "Username"
+    },
+    "email": {
+        "message": "El. paštas",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Pridėti",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Prisijungimo duomenys sukurti",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Slaptažodis",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Slaptažodis (pakartokite)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Aptiktas naujas prisijungimas",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Aptiktas pakeistas vartotojo slaptažodis",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman – $CREDENTIAL_AMOUNT$ $PLURAL$ rasta šiame puslapyje",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "„Passman“ – Užrakinta",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Aptiktas pasikeitęs URL adresas",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "prisijungimo duomenys ",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "prisijungimo duomenys ",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Atnaujinimo laikmatis [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Ignoruoti svetainių atitikimo protokolą",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Ignoruoti subdomeną atliekant svetainių atitikimą",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Ignoruoti prievadą, kai atitinka svetainę",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Jūs naudojate HTTP! Prisijungimo duomenys bus siunčiami paprastu tekstu. Jūsų „Passman“ prisijungimo duomenys vis dar yra šifruojami.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Ignoruoti svetainės atitikimo kelią",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Įjungti automatinį formos užpildymą",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Įjungti automatinį formos išsiuntimą po paskyros pasirinkimo",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Paprašykite atnaujinti prisijungimo duomenų URL, jei jis nesutampa su dabartiniu URL",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Išjungti naršyklės automatinį užpildymą",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Įveskite domeno vardą arba TLD, kurį norite ignoruoti, ir paspauskite  ",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Įjungti slaptažodžio parinkiklį",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Kai slaptažodis randamas, pereikite į sąrašą, o ne į paskutinį aktyvų skirtuką",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Slėpti išplėstines parinktis",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Rodyti išplėstines parinktis",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Įjungti derinimo veikseną",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Įrašyti",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Įrašoma",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Prisijungimo duomenys išsaugoti",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Prisijungimo duomenys atnaujinti",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Svetainė ignoruota",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "URL ignoruotas",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Atnaujinti",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Ignoruoti svetainę",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Išsaugoti prisijungimo duomenis šiai svetainei",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Ieškoti prisijungimo duomenų",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Sveiki atvykę į „Passman“ internetinį plėtinį",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "Serverio URL",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Pradėkime!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Šis vedlys padės jums atlikti visus veiksmus, reikalingus plėtiniui nustatyti ir sinchronizuoti visus jūsų slaptažodžius.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Atsisakyti",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Numatytoji slėptuvė",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Pasirinkite slėptuvę, kurią norite sinchronizuoti su žiniatinklio naršykle.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Įvesti pagrindinį slaptažodį",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Šis slaptažodis bus naudojamas visų jūsų plėtinio nustatymų šifravimui. Galite pasirinkti išsaugoti šį slaptažodį lokaliai, tačiau jis bus išsaugotas PAPRASTU TEKSTU.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Prisiminti pagrindinį slaptažodį",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Įspėjimas! Jūsų pagrindinis slaptažodis bus laikomas grynojo teksto pavidalu.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Atlikta",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Nestandartiniai laukai",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Bendra",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Reikšmė",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Sąrašas",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Redaguoti",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Serverio nustatymai",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Slėptuvės nustatymai",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Nustatyti pagrindinį slaptažodį",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Užbaigti",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Jeigu jums patinka, nepamirškite paaukoti",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Užverti",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Ankstesnis",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Atgal",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Kopijuoti",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Kitas",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Tęsti",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Paaukoti",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Nextcloud / ownCloud serverio nustatymai",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Pasirinkite numatytąją slėptuvę",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Ignoruojamos svetainės / URL adresai",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Išjungti puslapį",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Išjungti svetainę",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Ar norite išjungti „Passman“ šiam puslapiui ar visai svetainei?",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Nė viena svetainė nebuvo ignoruota",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Slėptuvės slaptažodis",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Prašome užpildyti etiketę",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Neteisingas serverio URL",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Ignoruoti svetainę / puslapį",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Slaptažodžiai nesutampa",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Neteisingas slėptuvės raktas!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Pagrindinis raktas tuščias!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Nustatymai",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Kai sąrankos procesas bus užbaigtas, galėsite pridėti daugiau paskyrų.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Paskyra pridėta.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Pasirinkite slėptuvę",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Ištrinti",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Ieškoti",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Prisijungimo duomenys ištrinti",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Jei slaptažodžių parinkiklis neranda jokių prisijungimo duomenų, ji pereis į:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Atleiskite, nerasta jokių slėptuvių. Susikurkite slėptuvę per Nextcloud / ownCloud programėlę ir bandykite dar kartą.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Galite atkurti slaptažodį. Tai atkurs plėtinį į numatytuosius nustatymus.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Pamiršote slaptažodį?",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Atkurti plėtinį",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Taip, esu tikras!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Jūs neturite leidimo redaguoti šių prisijungimo duomenų.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Neteisingi serverio nustatymai",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Atnaujinti prisijungimo duomenų sąrašą",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Vystymasis priklauso nuo aukų, prašome paremti mus",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Užrakto plėtinys",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "„Passman“ plėtinys užrakintas, atrakinkite, kad galėtumėte juo naudotis",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Pagrindinis slaptažodis neteisingas!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Atrakinti",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Radome $AMOUNT$ šios svetainės prisijungimo duomenis",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Įrašyti į $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Įrašoma į $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ prisijungimo duomenys duomenų bazėje",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "„Passman“ jus prijungia kaip $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Slėptuvė",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Pridėti tinkintus laukus",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "tekstas",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}

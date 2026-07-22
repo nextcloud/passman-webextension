@@ -1,0 +1,542 @@
+{
+    "extDescription": {
+        "message": "Passman - Ο διαχειριστής συνθηματικών για το NextCloud / ownCloud",
+        "description": "Extension description"
+    },
+    "search_for": {
+        "message": "Αναζήτηση για",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found_for_site": {
+        "message": "Δεν βρέθηκαν διαπιστευτήρια σε αυτή τη σελίδα.",
+        "description": "No credentials found for the current site"
+    },
+    "no_credentials_found": {
+        "message": "Δεν βρέθηκαν διαπιστευτήρια",
+        "description": "No credentials found for the current site"
+    },
+    "notes": {
+        "message": "Σημειώσεις",
+        "description": "No credentials found for the current site"
+    },
+    "invalid_response_from_server": {
+        "message": "Μη έγκυρη απάντηση διακομιστή: [$STATUS_CODE$] $STATUS_TEXT$",
+        "description": "No credentials found for the current site"
+    },
+    "please_enter_nextcloud_credentials": {
+        "message": "Παρακαλούμε εισάγετε τα διαπιστευτήριά σας για το Nextcloud / ownCloud",
+        "description": "No credentials found for the current site"
+    },
+    "save_site": {
+        "message": "Αποθήκευση σελίδας",
+        "description": "Save site"
+    },
+    "password_generator": {
+        "message": "Δημιουργία συνθηματικού",
+        "description": "Password generator"
+    },
+    "generate_password": {
+        "message": "Δημιουργία συνθηματικού",
+        "description": "Generate password"
+    },
+    "toggle_visibility": {
+        "message": "Εναλλαγή ορατότητας",
+        "description": "Toggle visibility"
+    },
+    "toggle_advanced": {
+        "message": "Εναλλαγή επιλογών για προχωρημένους",
+        "description": "Toggle advanced options"
+    },
+    "use_generated_password": {
+        "message": "Χρήση συνθηματικού",
+        "description": "Use password"
+    },
+    "add_hint": {
+        "message": "Μετά τη δημιουργία, μπορείτε να επεξεργαστείτε την πιστοποίηση στο Passman",
+        "description": "After creating it, you can edit the credential in Passman"
+    },
+    "pw_length": {
+        "message": "Μέγεθος συνθηματικού",
+        "description": "Password length"
+    },
+    "min_digits": {
+        "message": "Ελάχιστη ποσότητα ψηφίων",
+        "description": "Minimum amount of digits"
+    },
+    "avoid_ambiguous": {
+        "message": "Αποφύγετε ασαφής χαρακτήρες",
+        "description": "Avoid ambiguous characters"
+    },
+    "require_every_character_type": {
+        "message": "Απαιτείται κάθε τύπος χαρακτήρων",
+        "description": "Require every character type"
+    },
+    "add_account": {
+        "message": "Προσθήκη λογαριασμού",
+        "description": "Add account"
+    },
+    "accounts": {
+        "message": "Λογαριασμοί",
+        "description": "Accounts"
+    },
+    "label": {
+        "message": "Ετικέτα",
+        "description": "Label"
+    },
+    "username": {
+        "message": "Όνομα χρήστη",
+        "description": "Username"
+    },
+    "email": {
+        "message": "E-mail",
+        "description": "E-mail"
+    },
+    "add": {
+        "message": "Προσθήκη",
+        "description": "Add"
+    },
+    "credential_created": {
+        "message": "Δημιουργία διαπιστευτηρίων",
+        "description": "Credential created"
+    },
+    "url": {
+        "message": "URL",
+        "description": "URL"
+    },
+    "password": {
+        "message": "Συνθηματικό",
+        "description": "Password"
+    },
+    "password_repeat": {
+        "message": "Συνθηματικό (επανάλληψη)",
+        "description": "Password"
+    },
+    "detected_new_login": {
+        "message": "Ανιχνεύθηκε νέα είσοδος",
+        "description": "Detected new login"
+    },
+    "detected_changed_login": {
+        "message": "Ανιχνεύθηκε αλλαγμένο συνθηματικό για τον χρήστη",
+        "description": "Detected changed password for user"
+    },
+    "browser_action_title_login": {
+        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ βρέθηκαν για αυτή τη σελίδα",
+        "description": "String for the browser action"
+    },
+    "browser_action_title_locked": {
+        "message": "Passman - Κλειδώθηκε",
+        "description": "Browser extension title when the extension is locked"
+    },
+    "detected_changed_url": {
+        "message": "Ανιχτεύτικε αλλαγή διεύθυνσης URL για",
+        "description": "Detected changed URL for"
+    },
+    "credential": {
+        "message": "διαπιστευτήρια",
+        "description": "credential"
+    },
+    "credentials": {
+        "message": "διαπιστευτήρια",
+        "description": "credentials"
+    },
+    "refresh_timer": {
+        "message": "Χρόνος ανανέωσης [s]",
+        "description": "Password"
+    },
+    "ignore_protocol": {
+        "message": "Αγνόηση πρωτοκόλλου για αντιστοίχιση ιστότοπου",
+        "description": "Ignore protocol for site matching"
+    },
+    "ignore_subdomain": {
+        "message": "Αγνοήστε τον υποτομέα για αντιστοίχιση ιστότοπων",
+        "description": "Password"
+    },
+    "ignore_port": {
+        "message": "Αγνοήστε τη θύρα για αντιστοίχιση ιστότοπου",
+        "description": "Ignore port for site matching"
+    },
+    "http_warning": {
+        "message": "Χρησιμοποιείτε HTTP! Τα διαπιστευτήρια σύνδεσης θα αποστέλλονται σε απλό κείμενο. Τα διαπιστευτήρια Passman εξακολουθούν να είναι κρυπτογραφημένα.",
+        "description": "Warning for http connections"
+    },
+    "ignore_path": {
+        "message": "Αγνοήστε τη διαδρομή για αντιστοίχιση ιστότοπου",
+        "description": "Ignore path for site matching"
+    },
+    "enable_autofill": {
+        "message": "Ενεργοποίηση αυτόματης συμπλήρωσης",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_autosubmit": {
+        "message": "Ενεργοποιήστε τη φόρμα αυτόματης υποβολής μετά την επιλογή λογαριασμού",
+        "description": "Enable form auto submit"
+    },
+    "enable_update_url": {
+        "message": "Ζητήστε να ενημερώσετε τη διεύθυνση URL διαπιστευτηρίων αν δεν ταιριάζει με την τρέχουσα διεύθυνση URL",
+        "description": "Enable form auto submit"
+    },
+    "disable_browser_autofill": {
+        "message": "Απενεργοποίηση αυτόματης συμπλήρωσης του περιηγητή",
+        "description": "Disable auto fill of forms"
+    },
+    "ignore_site_placeholder": {
+        "message": "Εισαγάγετε έναν τομέα ή το TLD για να αγνοήσετε και πατήστε ↵",
+        "description": "Disable auto fill of forms"
+    },
+    "enable_password_picker": {
+        "message": "Ενεργοποιήστε τον επιλογέα κωδικών πρόσβασης",
+        "description": "Disable password picker"
+    },
+    "password_picker_gotolist": {
+        "message": "Όταν εντοπιστεί ένας κωδικός πρόσβασης, μεταβείτε στη λίστα αντί για την τελευταία ενεργή καρτέλα",
+        "description": "Disable password picker"
+    },
+    "hide_adv": {
+        "message": "Απόκρυψη επιλογών για προχωρημένους",
+        "description": "Disable password picker"
+    },
+    "show_adv": {
+        "message": "Εμφάνιση επιλογών για προχωρημένους",
+        "description": "Disable password picker"
+    },
+    "enable_debug": {
+        "message": "Ενεργοποιήστε τη λειτουργία εντοπισμού σφαλμάτων",
+        "description": "Enable debug mode"
+    },
+    "save": {
+        "message": "Αποθήκευση",
+        "description": "Save"
+    },
+    "saving": {
+        "message": "Γίνεται αποθήκευση",
+        "description": "Saving"
+    },
+    "credential_saved": {
+        "message": "Αποθηκεύτηκαν τα διαπιστευτήρια",
+        "description": "saved, lowercase"
+    },
+    "credential_updated": {
+        "message": "Ενημερώθηκαν τα διαπιστευτήρια",
+        "description": "updated, lowercase"
+    },
+    "site_ignored": {
+        "message": "Αγνόηση ιστότοπου",
+        "description": "Site ignored"
+    },
+    "url_ignored": {
+        "message": "Αγνόηση URL",
+        "description": "URL ignored"
+    },
+    "update": {
+        "message": "Ενημέρωση",
+        "description": "Update"
+    },
+    "ignore_site": {
+        "message": "Αγνόηση ιστότοπου",
+        "description": "Update"
+    },
+    "btn_save_site": {
+        "message": "Αποθήκευση διαπιστευτηριων για την ιστοσελίδα",
+        "description": "Save credentials for this site"
+    },
+    "btn_search": {
+        "message": "Αναζήτηση διαπιστευτηρίων",
+        "description": "Search credentials"
+    },
+    "welcome_to_passman": {
+        "message": "Καλώ ήλθατε στην επέκταση Passman",
+        "description": "Intro at the setup"
+    },
+    "server_url": {
+        "message": "URL διακομιστή",
+        "description": "Server URL"
+    },
+    "begin": {
+        "message": "Ας αρχίσουμε!",
+        "description": "Let's begin!"
+    },
+    "intro_text": {
+        "message": "Ο οδηγός θα σας καθοδηγήσει στα βήματα για να ρυθμίσετε την επέκταση και να διατηρήσετε όλους τους κωδικούς σας συγχρονισμένους.",
+        "description": "Cancel"
+    },
+    "cancel": {
+        "message": "Ακύρωση",
+        "description": "Cancel"
+    },
+    "default_vault": {
+        "message": "Προεπιλεγμένη κρύπτη",
+        "description": "Default vault"
+    },
+    "default_vault_desc": {
+        "message": "Επιλέξτε την κρύπτη που θέλετε να συγχρονίζεται με τον φυλλομετρητή ιστού.",
+        "description": "Select the vault that you want to keep in sync with the webbrowser."
+    },
+    "enter_master_password": {
+        "message": "Εισάγετε πρωτεύον συνθηματικό",
+        "description": "Enter master password"
+    },
+    "enter_master_password_desc": {
+        "message": "Ο κωδικός πρόσβασης θα χρησιμοποιηθεί για κρυπτογράφηση όλων των ρυθμίσεων της επέκτασης. Μπορείτε να επιλέξετε να αποθηκεύσετε αυτόν τον κωδικό τοπικά, αλλά θα αποθηκευτεί σε ΑΠΛΟ ΚΕΙΜΕΝΟ.",
+        "description": "Enter master password"
+    },
+    "remember_master_password": {
+        "message": "Απομνημόνευση του πρωτεύων συνθηματικού",
+        "description": "Remember master password"
+    },
+    "master_pw_warning": {
+        "message": "Προειδοποίηση! Το κύριο συνθηματικό σας θα αποθηκευτεί σε απλό κείμενο.",
+        "description": "Remember master password"
+    },
+    "done": {
+        "message": "Ολοκληρώθηκε",
+        "description": "Done"
+    },
+    "custom_fields": {
+        "message": "Προσαρμοσμένα πεδία",
+        "description": "Custom fields"
+    },
+    "general": {
+        "message": "Γενικά",
+        "description": "Custom fields"
+    },
+    "value": {
+        "message": "Τιμή",
+        "description": "Custom fields"
+    },
+    "list": {
+        "message": "Λίστα",
+        "description": "List"
+    },
+    "edit": {
+        "message": "Επεξεργασία",
+        "description": "Edit"
+    },
+    "server_settings": {
+        "message": "Ρυθμίσεις διακομιστή",
+        "description": "Server Settings"
+    },
+    "vault_settings": {
+        "message": "Ρυθμίσεις κρύπτης",
+        "description": "Vault settings"
+    },
+    "master_password": {
+        "message": "Ορισμός πρωτεύοντος συνθηματικού",
+        "description": "Set a master password"
+    },
+    "finish": {
+        "message": "Ολοκλήρωση",
+        "description": "Finish"
+    },
+    "done_donate": {
+        "message": "Εάν σας αρέσει, μην ξεχάσετε να κάνετε δωρεά",
+        "description": "If you like, don't forget to donate"
+    },
+    "close": {
+        "message": "Κλείσιμο",
+        "description": "Close"
+    },
+    "prev": {
+        "message": "Προηγ",
+        "description": "Previous"
+    },
+    "back": {
+        "message": "Πίσω",
+        "description": "Back"
+    },
+    "copy": {
+        "message": "Αντιγραφή",
+        "description": "Copy"
+    },
+    "next": {
+        "message": "Επόμενο",
+        "description": "Next"
+    },
+    "continue": {
+        "message": "Συνέχεια",
+        "description": "Continue"
+    },
+    "donate": {
+        "message": "Δωρεά",
+        "description": "Donate"
+    },
+    "nextcloud_settings": {
+        "message": "Ρυθμίσεις διακομιστή Nextcloud / ownCloud",
+        "description": "Nextcloud / ownCloud server settings"
+    },
+    "select_default_vault": {
+        "message": "Επιλέξτε προεπιλεγμένη κρύπτη",
+        "description": "Select default vault"
+    },
+    "ignored_sites": {
+        "message": "Αγνοήθηκαν ιστότοποι / URLs",
+        "description": "Ignored sites"
+    },
+    "disable_page": {
+        "message": "Απενεργοποίηση σελίδας",
+        "description": "Disable page"
+    },
+    "disable_site": {
+        "message": "Απενεργοποίηση ιστότοπου",
+        "description": "Disable site"
+    },
+    "disable_picker_text": {
+        "message": "Θέλετε να απενεργοποιήσετε το Passman για την τρέχουσα σελίδα, ή για όλο τον ιστότοπο;",
+        "description": "Would you like to disable Passman for the current page, or for the entire website?"
+    },
+    "no_sites_ignored": {
+        "message": "Κανείς ιστότοπος δεν αγνοήθηκε",
+        "description": "No sites ignored"
+    },
+    "vault_password": {
+        "message": "Κωδικός πρόσβασης θησαυροφυλακίου ",
+        "description": "Vault password"
+    },
+    "label_required": {
+        "message": "Παρακαλώ συμπληρώστε την ετικέτα",
+        "description": "When comparing passwords"
+    },
+    "invalid_host": {
+        "message": "Μη έγκυρη URL διακομιστή",
+        "description": "Invalid server URL"
+    },
+    "ignore_site_tab": {
+        "message": "Αγνόηση ιστότοπου / σελίδας",
+        "description": "Invalid server URL"
+    },
+    "no_password_match": {
+        "message": "Δεν ταιριάζουν τα συνθηματικά",
+        "description": "When comparing passwords"
+    },
+    "invalid_vault_password": {
+        "message": "Μή έγκυρο κλειδί κρύπτης!",
+        "description": "Vault password"
+    },
+    "empty_master_key": {
+        "message": "Εκκαθάριση κυρίως κλειδιού!",
+        "description": "Empty master key!"
+    },
+    "one_time_password": {
+        "message": "OTP",
+        "description": "One time password"
+    },
+    "settings": {
+        "message": "Ρυθμίσεις",
+        "description": "Settings"
+    },
+    "extra_accounts": {
+        "message": "Μόλις ολοκληρωθεί η εγκατάσταση, μπορείτε να προσθέσετε και άλλους λογαριασμούς.",
+        "description": "Search"
+    },
+    "account_added": {
+        "message": "Προστέθηκε ο λογαριασμός.",
+        "description": "Search"
+    },
+    "select_vault": {
+        "message": "Επιλέξτε κρύπτη",
+        "description": "Search"
+    },
+    "delete": {
+        "message": "Διαγραφή",
+        "description": "Delete"
+    },
+    "search": {
+        "message": "Αναζήτηση",
+        "description": "Search"
+    },
+    "credential_deleted": {
+        "message": "Τα διαπιστευτήρια διαγράφηκαν",
+        "description": "Credential deleted"
+    },
+    "select_password_picker_default_tab": {
+        "message": "Όταν η επιλογή Κωδικών πρόσβασης δεν μπορέσει να βρει διαπιστευτήρια, θα πάει σε:",
+        "description": "Select password picker default tab"
+    },
+    "no_vaults": {
+        "message": "Λυπούμαστε, δεν βρέθηκαν κρύπτες. Δημιουργήστε μια κρύπτη μέσω της εφαρμογής Nextcloud / ownCloud και δοκιμάστε ξανά.",
+        "description": "Search"
+    },
+    "msg_reset_extension": {
+        "message": "Μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας. Αυτό θα επαναφέρει την επέκταση στην προεπιλεγμένη κατάσταση.",
+        "description": "Search"
+    },
+    "forgot_password": {
+        "message": "Ξεχάσατε το συνθηματικό;",
+        "description": "Search"
+    },
+    "reset_extension": {
+        "message": "Επαναφορά επέκτασης",
+        "description": "Search"
+    },
+    "iam_sure": {
+        "message": "Ναι, είμαι σίγουρος!",
+        "description": "Search"
+    },
+    "edit_insufficient_permissions": {
+        "message": "Δεν έχετε την άδεια να επεξεργαστείτε αυτήν την πιστοποίηση.",
+        "description": "You don't have permissions to edit this credential."
+    },
+    "invalid_server_settings": {
+        "message": "Μη έγκυρες ρυθμίσεις διακομιστή",
+        "description": "Search"
+    },
+    "refresh_credential_list": {
+        "message": "Ανανέωση της λίστας διαπιστευτηρίων",
+        "description": "Refresh the credential list"
+    },
+    "donate_button_title": {
+        "message": "Η ανάπτυξη εξαρτάται από δωρεές, παρακαλούμε να υποστηρίξετε μας",
+        "description": "Title on the PayPal button"
+    },
+    "lock_extension": {
+        "message": "Κλείδωμα επέκτασης",
+        "description": "Title on the PayPal button"
+    },
+    "extension_locked": {
+        "message": "Το πρόσθετο Passman κλειδώθηκε και πρέπει να το ξεκλειδώσετε για να το χρησιμοποιήσετε",
+        "description": "When the extension is locked, and requires an unlock to use it"
+    },
+    "invalid_master_password": {
+        "message": "Μη έγκυρο πρωτεύον συνθηματικό!",
+        "description": "When the master password is invalid"
+    },
+    "unlock": {
+        "message": "Ξεκλείδωμα",
+        "description": "Unlock"
+    },
+    "credentials_found_for_site": {
+        "message": "Βρήκαμε  $AMOUNT$ διαπιστευτήρια για αυτόν τον ιστότοπο",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "save_to": {
+        "message": "Αποθήκευση στο $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "saving_to": {
+        "message": "Αποθήκευση στο  $VAULT_NAME$",
+        "description": "Amount of the credentials found for the current site"
+    },
+    "credentials_in_db": {
+        "message": "$AMOUNT$ διαπιστευτήρια στην βάση δεδομένων",
+        "description": "Amount of the credentials in the database"
+    },
+    "auto_login": {
+        "message": "Το Passman σας συνδέει ώς  $USERNAME$",
+        "description": "Amount of the credentials in the database"
+    },
+    "vault": {
+        "message": "Κρύπτη",
+        "description": "Vault"
+    },
+    "add_custom_field": {
+        "message": "Προσθήκη προσαρμοσμένου πεδίου",
+        "description": "Add a custom field"
+    },
+    "text": {
+        "message": "κείμενο",
+        "description": "To describe a textual input field"
+    },
+    "extName": {
+        "message": "Passman",
+        "description": "Extension name"
+    }
+}
