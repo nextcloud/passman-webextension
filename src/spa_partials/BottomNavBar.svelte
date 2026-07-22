@@ -1,9 +1,8 @@
 <script lang="ts">
     import Icon from "svelte-awesome/components/Icon.svelte";
     import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
-    import { circleONotch, cogs, search } from "svelte-awesome/icons";
+    import { circleONotch, cogs, github, search } from "svelte-awesome/icons";
     import OnClickButton from "./InteractionElements/OnClickButton.svelte";
-    import gitlabImage from "~/assets/images/gitlab.svg";
     import { i18n } from "~/lib/i18n";
 </script>
 
@@ -30,9 +29,9 @@
         </span>
     </InternalHrefLinkButton>
     <OnClickButton callback={() => {
-        window.open('https://gitlab.com/binsky08/passman-webextension-v3/-/issues', '_blank');
+        window.open('https://github.com/nextcloud/passman-webextension/issues', '_blank');
     }} title="Report an issue" small={true} additionalClasses="flex flex-col items-center min-w-24 py-1 h-[52px]">
-        <img src="{gitlabImage}" alt="GitLab" class="w-6 object-center" />
+        <Icon data={github} alt="GitHub" scale={1.5}/>
         <!-- no translation needed; will be removed in the future -->
         <span class="text-xs mt-1">
             Issues

@@ -46,9 +46,7 @@
                 <p class="text-sm text-amber-700">
                     This extension is under active development.<br>
                     There will be bugs, but you can help fix them!
-                    You are welcome to open an issue on <a href="https://gitlab.com/binsky08/passman-webextension-v3/-/issues" target="_blank" class="font-medium underline hover:text-amber-800 transition-colors">GitLab</a>.
-                    <br>
-                    As soon as the extension is stable, I will provide it as an update to the existing Passman extension.
+                    You are welcome to open an issue on <a href="https://github.com/nextcloud/passman-webextension/issues" target="_blank" class="font-medium underline hover:text-amber-800 transition-colors">GitHub</a>.
                 </p>
             </div>
         </div>

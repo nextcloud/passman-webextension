@@ -1,6 +1,6 @@
 {
-  "name": "passman-webextension-v3",
-  "displayName": "Passman Webextension v3",
+  "name": "passman-webextension",
+  "displayName": "Passman Webextension",
   "version": "0.3.0",
   "type": "module",
   "description": "A modern webextension for the Passman Nextcloud app",

@@ -348,7 +348,7 @@
     "description": "Search credentials"
   },
   "welcome_to_passman": {
-    "message": "Welcome to the Passman Webextension v3",
+    "message": "Welcome to the Passman Webextension",
     "description": "Intro at the setup"
   },
   "server_url": {

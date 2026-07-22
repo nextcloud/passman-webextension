@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "passman-webextension-v3",
+      "name": "passman-webextension",
       "dependencies": {
         "js-sha512": "^0.9.0",
         "regexparam": "^3.0.0",
