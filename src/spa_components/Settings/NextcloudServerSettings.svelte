@@ -135,8 +135,8 @@
 
     const setDefaultVault = () => {
         if (!selectedVaultInfo) {
-            console.error('No selected vault info found');
-            NotyService.notyError('No selected vault info found');
+            console.error(i18n.getMessage('no_selected_vault_info_found'));
+            NotyService.notyError(i18n.getMessage('no_selected_vault_info_found'));
             return;
         }
         lockDefaultVaultButton = true;
@@ -252,13 +252,19 @@
 {:else}
     <Card additionalClasses="text-left mb-6 space-y-3 w-full">
         <p>
-            This extension requires the
-            <a href="https://apps.nextcloud.com/apps/passman" class="link" target="_blank">Passman App</a>
-            to be installed on your Nextcloud server.
+            {@html i18n.getMessage('passman_app_required', [
+                '<a href="https://apps.nextcloud.com/apps/passman" class="link" target="_blank">',
+                '</a>'
+            ])}
         </p>
         <p>
-            No data is transferred to sources other than the specified Nextcloud server.
+            {i18n.getMessage('no_data_transferred_elsewhere')}
         </p>
+        {#if !isSetupDone}
+            <p>
+                {i18n.getMessage("extra_accounts")}
+            </p>
+        {/if}
     </Card>
 
     {#if isSetupDone}

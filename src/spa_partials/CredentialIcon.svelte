@@ -4,6 +4,7 @@
     import lock from "svelte-awesome/icons/lock";
     import shareAlt from "svelte-awesome/icons/shareAlt";
     import shareAltSquare from "svelte-awesome/icons/shareAltSquare";
+    import { i18n } from "~/lib/i18n";
 
     export let credential: Credential;
     export let isSmall = "true";
@@ -33,7 +34,7 @@
 
 {#if credential}
     {#if iconUrl !== ''}
-        <img alt="icon" src="{iconUrl}" class="{isSmall === 'true' ? 'w-[16px]' : 'w-12'} h-fit inline-block {additionalClasses}">
+        <img alt="{i18n.getMessage('credential_icon')}" src="{iconUrl}" class="{isSmall === 'true' ? 'w-[16px]' : 'w-12'} h-fit inline-block {additionalClasses}">
     {:else}
         <div class="{isSmall === 'true' ? 'w-[16px]' : 'w-12'} inline-block text-center {additionalClasses}">
             {#if credential.acl}

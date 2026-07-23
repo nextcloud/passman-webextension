@@ -95,7 +95,7 @@
             {#if credentialData.otp.qr_uri?.image != null}
                 <div class="mt-2">
                     <img src={credentialData.otp.qr_uri.image} class="border-white border-2 bg-white"
-                         alt="otp qr code"/>
+                         alt="{i18n.getMessage('otp_qr_code')}"/>
                 </div>
             {/if}
             {#if credentialData.otp.secret}

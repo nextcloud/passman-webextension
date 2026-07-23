@@ -4,6 +4,7 @@
     import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
     import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
     import Utils from "~/lib/Utils";
+    import { i18n } from "~/lib/i18n";
 
     export let password = '';
     export let score = 0;
@@ -35,19 +36,19 @@
         switch (score) {
             case 2:
                 progressColorClass = 'bg-orange-500';
-                textScore = 'weak';
+                textScore = i18n.getMessage('password_strength_weak');
                 break;
             case 3:
                 progressColorClass = 'bg-yellow-400';
-                textScore = 'good';
+                textScore = i18n.getMessage('password_strength_good');
                 break;
             case 4:
                 progressColorClass = 'bg-green-500';
-                textScore = 'strong';
+                textScore = i18n.getMessage('password_strength_strong');
                 break;
             default:
                 progressColorClass = 'bg-red-600';
-                textScore = 'poor';
+                textScore = i18n.getMessage('password_strength_poor');
         }
     }
 

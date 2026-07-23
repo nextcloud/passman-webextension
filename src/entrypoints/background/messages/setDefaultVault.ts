@@ -1,6 +1,7 @@
 import PassmanClientService from "~/services/PassmanClientService";
 import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export interface SetDefaultVaultRequest {
     guid: string;
@@ -32,16 +33,16 @@ onMessage('setDefaultVault', async (message) => {
                             password: message.data.password
                         });
                     } else {
-                        errorMessage = "setDefaultVault message: selected vault could not be decrypted with the given password";
+                        errorMessage = i18n.getMessage('vault_decrypt_failed_with_password');
                         console.error(errorMessage);
                     }
                 } else {
-                    errorMessage = "setDefaultVault message: could not get selected vault by guid";
+                    errorMessage = i18n.getMessage('could_not_get_selected_vault_by_guid');
                     console.error(errorMessage);
                 }
             });
         } else {
-            errorMessage = "setDefaultVault message: could not get passman client";
+            errorMessage = i18n.getMessage('could_not_get_passman_client');
             console.error(errorMessage);
         }
     });

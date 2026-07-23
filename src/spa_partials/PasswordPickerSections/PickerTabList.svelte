@@ -36,7 +36,7 @@
                 {i18n.getMessage("search")}
             </div>
             <div class="clearfix"></div>
-            <div class="btn btn-secondary gen" title="generate_password" data-name="generate" aria-hidden="true"
+            <div class="btn btn-secondary gen" title="{i18n.getMessage('generate_password')}" data-name="generate" aria-hidden="true"
                 on:click={() => selectedSection = PASSWORD_PICKER_SECTIONS.GENERATE}>
                 {i18n.getMessage("password_generator")}
             </div>

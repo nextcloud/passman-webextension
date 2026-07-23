@@ -212,11 +212,11 @@
     "description": "Create new credential button label for the new credential page"
   },
   "credential": {
-    "message": "Credential",
+    "message": "credential",
     "description": "credential"
   },
   "credentials": {
-    "message": "Credentials",
+    "message": "credentials",
     "description": "credentials"
   },
   "compromised_notice": {
@@ -257,7 +257,7 @@
   },
   "enable_autofill": {
     "message": "Enable form auto fill (for a single matching credential)",
-    "description": "Enable auto fill of forms"
+    "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
   },
   "enable_autosubmit": {
     "message": "Enable form auto submit after picking account",
@@ -321,7 +321,7 @@
   },
   "open_options_page": {
     "message": "Open options page",
-    "description": "Open options page button label"
+    "description": "Open options page button label for the browser extension options page"
   },
   "site_ignored": {
     "message": "Site ignored",
@@ -625,7 +625,7 @@
   },
   "mark_credential_deleted": {
     "message": "Mark credential as deleted",
-    "description": "Mark credential as deleted"
+    "description": "Mark credential as deleted button label"
   },
   "select_password_picker_default_tab": {
     "message": "When the Password picker is unable to find any credentials, it will go to:",
@@ -685,11 +685,11 @@
   },
   "unlock": {
     "message": "Unlock",
-    "description": "Unlock"
+    "description": "Unlock button label"
   },
   "unlock_without_refresh": {
     "message": "Unlock without refresh",
-    "description": "Unlock without refresh"
+    "description": "Unlock without refresh button label"
   },
   "credentials_found_for_site": {
     "message": "We've found $AMOUNT$ credentials for this site",
@@ -1146,5 +1146,291 @@
   "server_connection_remove_failed": {
     "message": "Could not remove server",
     "description": "Error toast when removing a server connection fails"
+  },
+  "setup_dev_warning": {
+    "message": "This extension is under active development.$BR$There will be bugs, but you can help fix them! You are welcome to open an issue on $LINK_START$GitHub$LINK_END$.",
+    "description": "Development warning shown on the setup welcome screen",
+    "placeholders": {
+      "br": {
+        "content": "$1",
+        "example": "<br>"
+      },
+      "link_start": {
+        "content": "$2",
+        "example": "<a href=\"https://github.com/nextcloud/passman-webextension/issues\">"
+      },
+      "link_end": {
+        "content": "$3",
+        "example": "</a>"
+      }
+    }
+  },
+  "set_extension_unlock_password": {
+    "message": "Set a new extension unlock password",
+    "description": "Label for the extension unlock password field during setup"
+  },
+  "save_password_and_unlock": {
+    "message": "Save password & unlock",
+    "description": "Button to save the extension unlock password and unlock during setup"
+  },
+  "passman_app_required": {
+    "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+    "description": "Notice that the Passman Nextcloud app must be installed",
+    "placeholders": {
+      "link_start": {
+        "content": "$1",
+        "example": "<a href=\"https://apps.nextcloud.com/apps/passman\">"
+      },
+      "link_end": {
+        "content": "$2",
+        "example": "</a>"
+      }
+    }
+  },
+  "no_data_transferred_elsewhere": {
+    "message": "No data is transferred to sources other than the specified Nextcloud server.",
+    "description": "Privacy notice on the server settings card"
+  },
+  "no_selected_vault_info_found": {
+    "message": "No selected vault info found",
+    "description": "Error when selected vault metadata is missing"
+  },
+  "could_not_decrypt_vault": {
+    "message": "Could not decrypt vault",
+    "description": "Error when vault decryption fails"
+  },
+  "no_default_vault_info_found": {
+    "message": "No default vault info found",
+    "description": "Error when default vault metadata is missing"
+  },
+  "could_not_get_or_decrypt_vault": {
+    "message": "Could not get or decrypt vault",
+    "description": "Error when loading or decrypting the vault fails"
+  },
+  "unknown_error_refresh_credential_list": {
+    "message": "Unknown error in refreshCredentialList",
+    "description": "Fallback error when refreshing the credential list fails without a message"
+  },
+  "expected_extension_page_not_found": {
+    "message": "Expected extension page not found",
+    "description": "Shown when a routed extension page does not exist"
+  },
+  "report_an_issue": {
+    "message": "Report an issue",
+    "description": "Title / tooltip for the issues button in the bottom navigation"
+  },
+  "issues": {
+    "message": "Issues",
+    "description": "Short label for the issues button in the bottom navigation"
+  },
+  "github": {
+    "message": "GitHub",
+    "description": "GitHub product / platform name"
+  },
+  "click_to_auto_fill": {
+    "message": "Click to auto fill",
+    "description": "Tooltip on a password picker credential to auto-fill the form"
+  },
+  "add_a_tag": {
+    "message": "Add a tag",
+    "description": "Placeholder for the credential tags input"
+  },
+  "remove_tag": {
+    "message": "Remove $TAG$ tag",
+    "description": "Accessible label for removing a credential tag",
+    "placeholders": {
+      "tag": {
+        "content": "$1",
+        "example": "work"
+      }
+    }
+  },
+  "click_to_add": {
+    "message": "-- Click to add --",
+    "description": "Placeholder shown for empty in-place editable fields"
+  },
+  "no_field_to_copy": {
+    "message": "No $FIELDNAME$ to copy",
+    "description": "Tooltip when a credential field has no value to copy",
+    "placeholders": {
+      "fieldname": {
+        "content": "$1",
+        "example": "password"
+      }
+    }
+  },
+  "could_not_find_selected_credential": {
+    "message": "Could not find selected credential",
+    "description": "Error when the selected credential cannot be loaded for editing"
+  },
+  "credential_delete_unknown_error": {
+    "message": "Unknown error occurred while deleting a credential",
+    "description": "Fallback error when credential deletion fails without details"
+  },
+  "credential_delete_error": {
+    "message": "An error occurred while deleting a credential",
+    "description": "Error when credential deletion fails"
+  },
+  "password_strength_poor": {
+    "message": "poor",
+    "description": "Password strength meter label"
+  },
+  "password_strength_weak": {
+    "message": "weak",
+    "description": "Password strength meter label"
+  },
+  "password_strength_good": {
+    "message": "good",
+    "description": "Password strength meter label"
+  },
+  "password_strength_strong": {
+    "message": "strong",
+    "description": "Password strength meter label"
+  },
+  "dismiss_alert": {
+    "message": "Dismiss alert",
+    "description": "Accessible label for dismissing a toast / alert"
+  },
+  "credential_icon": {
+    "message": "Credential icon",
+    "description": "Alt text for a credential favicon / icon"
+  },
+  "otp_qr_code": {
+    "message": "OTP QR code",
+    "description": "Alt text for the OTP configuration QR code image"
+  },
+  "context_menu_auto_fill": {
+    "message": "Auto fill",
+    "description": "Browser context menu item to auto-fill credentials"
+  },
+  "context_menu_copy_username": {
+    "message": "Copy username",
+    "description": "Browser context menu item to copy username"
+  },
+  "context_menu_copy_email": {
+    "message": "Copy email",
+    "description": "Browser context menu item to copy email"
+  },
+  "context_menu_copy_password": {
+    "message": "Copy password",
+    "description": "Browser context menu item to copy password"
+  },
+  "context_menu_copy_url": {
+    "message": "Copy URL",
+    "description": "Browser context menu item to copy URL"
+  },
+  "context_menu_copy_otp": {
+    "message": "Copy OTP",
+    "description": "Browser context menu item to copy one-time password"
+  },
+  "context_menu_reload_password_picker": {
+    "message": "Reload password picker",
+    "description": "Browser context menu item to reload the password picker"
+  },
+  "context_menu_and_copy_to_clipboard": {
+    "message": "And copy to clipboard",
+    "description": "Browser context menu submenu item under Generate password"
+  },
+  "context_menu_and_fill_fields": {
+    "message": "And fill fields",
+    "description": "Browser context menu submenu item under Generate password"
+  },
+  "field_copied_to_clipboard": {
+    "message": "$FIELDNAME$ copied to clipboard",
+    "description": "Success toast after copying a field to the clipboard",
+    "placeholders": {
+      "fieldname": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "failed_to_copy_field": {
+    "message": "Failed to copy $FIELDNAME$",
+    "description": "Error toast when copying a field to the clipboard fails",
+    "placeholders": {
+      "fieldname": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "unknown_error_checking_lock_state": {
+    "message": "Unknown error while checking extension lock state!",
+    "description": "Alert when extension lock-state check fails unexpectedly"
+  },
+  "login_succeeded": {
+    "message": "Login succeeded",
+    "description": "Success message after Nextcloud login"
+  },
+  "login_failed": {
+    "message": "Login failed",
+    "description": "Error message after Nextcloud login failure"
+  },
+  "no_server_info_provided": {
+    "message": "No server info provided",
+    "description": "Error when server connection details are missing"
+  },
+  "unknown_error": {
+    "message": "Unknown error",
+    "description": "Generic unknown error fallback"
+  },
+  "no_credential_data_provided": {
+    "message": "No credential data provided",
+    "description": "Error when creating a credential without payload data"
+  },
+  "no_source_tab_found": {
+    "message": "No source tab found",
+    "description": "Error when the originating browser tab cannot be resolved"
+  },
+  "failed_to_save_credential": {
+    "message": "Failed to save credential",
+    "description": "Error when saving a new credential fails"
+  },
+  "could_not_get_backend_passman_client": {
+    "message": "Could not get backend passman client",
+    "description": "Error when the backend Passman client is unavailable"
+  },
+  "invalid_request_check_body": {
+    "message": "Invalid request (check request body)",
+    "description": "Error for an invalid extension message request body"
+  },
+  "could_not_get_default_vault_info": {
+    "message": "Could not get default vault info",
+    "description": "Error when default vault info cannot be loaded"
+  },
+  "no_connection_id_provided": {
+    "message": "No connectionId provided",
+    "description": "Error when a server connection id is missing from the request"
+  },
+  "could_not_get_passman_client": {
+    "message": "Could not get passman client",
+    "description": "Error when the Passman client instance is unavailable"
+  },
+  "no_managed_connection_with_id": {
+    "message": "No managed connection with id $CONNECTION_ID$",
+    "description": "Error when a saved server connection id cannot be found",
+    "placeholders": {
+      "connection_id": {
+        "content": "$1",
+        "example": "abc-123"
+      }
+    }
+  },
+  "vault_decrypt_failed_with_password": {
+    "message": "Selected vault could not be decrypted with the given password",
+    "description": "Error when the provided vault password is wrong"
+  },
+  "could_not_get_selected_vault_by_guid": {
+    "message": "Could not get selected vault by guid",
+    "description": "Error when the selected vault cannot be resolved by GUID"
+  },
+  "no_vault_info_in_extension_settings": {
+    "message": "No vault info provided by extension settings",
+    "description": "Error when vault info is missing from extension settings"
+  },
+  "could_not_get_password_generator_configuration": {
+    "message": "Could not get custom password generator configuration",
+    "description": "Error when loading password generator settings fails"
   }
 }

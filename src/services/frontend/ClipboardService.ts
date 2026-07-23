@@ -1,4 +1,5 @@
 import NotyService from "../../services/frontend/NotyService";
+import { i18n } from "~/lib/i18n";
 
 export default class ClipboardService {
 
@@ -10,10 +11,10 @@ export default class ClipboardService {
     public static copyToClipboardWithNotification = (value: string, fieldTitle: string) => {
         navigator.clipboard.writeText(value).then(() => {
             /* Resolved - text copied to clipboard successfully */
-            NotyService.notySuccess(fieldTitle + ' copied to clipboard');
+            NotyService.notySuccess(i18n.getMessage('field_copied_to_clipboard', [fieldTitle]));
         }, () => {
             /* Rejected - text failed to copy to the clipboard */
-            NotyService.notyError('Failed to copy ' + fieldTitle);
+            NotyService.notyError(i18n.getMessage('failed_to_copy_field', [fieldTitle]));
         });
     }
 

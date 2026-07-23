@@ -7,6 +7,7 @@ import { BackendPassmanClient } from "~/lib/BackendPassmanClient";
 import CustomStorageService from "~/services/CustomStorageService";
 import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/PassmanServerConnection";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export interface AddNewServerConnectionRequest extends NextcloudServerInfoInterface {
     /** When true (default), the new/updated connection becomes the active one. */
@@ -30,7 +31,7 @@ onMessage('addNewServerConnection', async (message) => {
         if (!message.data) {
             return {
                 status: false,
-                message: "No server info provided",
+                message: i18n.getMessage('no_server_info_provided'),
                 vaultSelectionList
             };
         }
@@ -71,7 +72,7 @@ onMessage('addNewServerConnection', async (message) => {
                     });
                 }
                 status = true;
-                responseMessage = "Login succeeded";
+                responseMessage = i18n.getMessage('login_succeeded');
             } else {
                 if (wasAlreadyInDirectory) {
                     // addConnection overwrote the in-memory entry; rebuild from persisted directory
@@ -79,7 +80,7 @@ onMessage('addNewServerConnection', async (message) => {
                 } else {
                     backendPassmanClient.removeConnection(connectionId);
                 }
-                responseMessage = "Login failed";
+                responseMessage = i18n.getMessage('login_failed');
             }
         } else {
             backendPassmanClient = await BackendPassmanClient.createInstance(
@@ -102,9 +103,9 @@ onMessage('addNewServerConnection', async (message) => {
                     });
                 }
                 status = true;
-                responseMessage = "Login succeeded";
+                responseMessage = i18n.getMessage('login_succeeded');
             } else {
-                responseMessage = "Login failed";
+                responseMessage = i18n.getMessage('login_failed');
             }
         }
     } catch (e) {
@@ -112,7 +113,7 @@ onMessage('addNewServerConnection', async (message) => {
         if (e instanceof Error) {
             responseMessage = e.message;
         } else {
-            responseMessage = "Unknown error";
+            responseMessage = i18n.getMessage('unknown_error');
         }
     }
 

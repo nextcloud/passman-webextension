@@ -1,6 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher, onMount } from 'svelte';
     import SecretField from "./SecretField.svelte";
+    import { i18n } from "~/lib/i18n";
 
     export let value: any, required = true, forceDblClick = false;
     export let isSecret: boolean = false;
@@ -57,7 +58,7 @@
         {#if isSecret}
             <SecretField bind:value={valueToEdit}/>
         {:else}
-            {!valueToEdit || valueToEdit === '' ? '-- Click to add --' : valueToEdit}
+            {!valueToEdit || valueToEdit === '' ? i18n.getMessage('click_to_add') : valueToEdit}
         {/if}
     </button>
 {/if}

@@ -1,5 +1,6 @@
 import PassmanClientService from "~/services/PassmanClientService";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export type GetPossibleVaultsInfoRequest = {
     getCachedIfPossible?: boolean;
@@ -33,11 +34,11 @@ onMessage('getPossibleVaultsInfo', async (message) => {
                 if (exception instanceof Error) {
                     errorMessage = exception.message;
                 } else {
-                    errorMessage = "Unknown error";
+                    errorMessage = i18n.getMessage('unknown_error');
                 }
             }
         } else {
-            errorMessage = "setDefaultVault message: could not get passman client";
+            errorMessage = i18n.getMessage('could_not_get_passman_client');
             console.error(errorMessage);
         }
     });

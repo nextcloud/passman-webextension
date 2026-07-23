@@ -9,6 +9,7 @@
   import Toaster from "@/spa_partials/Toaster.svelte";
   import Loading from '@/spa_components/Loading.svelte';
   import { sendMessage } from "@/entrypoints/background/messaging";
+  import { i18n } from "~/lib/i18n";
 
   onMount(async () => {
     sendMessage('getExtensionUnlockState').then((value) => {
@@ -29,8 +30,8 @@
           push('/home');
           break;
         default:
-          console.error("Unknown error while checking extension lock state!");
-          alert("Unknown error while checking extension lock state!");
+          console.error(i18n.getMessage('unknown_error_checking_lock_state'));
+          alert(i18n.getMessage('unknown_error_checking_lock_state'));
       }
       $extensionUnlockStateStore = value.status;
     }, (error) => {

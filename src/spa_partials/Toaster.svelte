@@ -38,6 +38,7 @@
 
 <script lang="ts">
     import { Progress } from "@binsky/melt/components";
+    import { i18n } from "~/lib/i18n";
 
     type Props = {
         position?: ToastPosition;
@@ -192,7 +193,7 @@
                 <!-- Close Button -->
                 <button
                         {...toast.close}
-                        aria-label="dismiss alert"
+                        aria-label="{i18n.getMessage('dismiss_alert')}"
                         class="shrink-0 rounded-md p-1 transition-colors
                            hover:bg-black/5 dark:hover:bg-white/10
                            focus:outline-none focus:ring-2 focus:ring-offset-2

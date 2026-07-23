@@ -1,6 +1,7 @@
 import PassmanClientService from "~/services/PassmanClientService";
 import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export interface SetActiveServerConnectionRequest {
     connectionId: string;
@@ -18,18 +19,18 @@ onMessage('setActiveServerConnection', async (message) => {
     try {
         const connectionId = message.data?.connectionId;
         if (!connectionId) {
-            errorMessage = "No connectionId provided";
+            errorMessage = i18n.getMessage('no_connection_id_provided');
             return { status, errorMessage };
         }
 
         const backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
         if (!backendPassmanClient) {
-            errorMessage = "Could not get passman client";
+            errorMessage = i18n.getMessage('could_not_get_passman_client');
             return { status, errorMessage };
         }
 
         if (!backendPassmanClient.getConnection(connectionId)) {
-            errorMessage = `No managed connection with id ${connectionId}`;
+            errorMessage = i18n.getMessage('no_managed_connection_with_id', [connectionId]);
             return { status, errorMessage };
         }
 
@@ -38,7 +39,7 @@ onMessage('setActiveServerConnection', async (message) => {
         status = true;
     } catch (e) {
         console.error(e);
-        errorMessage = e instanceof Error ? e.message : "Unknown error";
+        errorMessage = e instanceof Error ? e.message : i18n.getMessage('unknown_error');
     }
 
     return { status, errorMessage };

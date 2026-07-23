@@ -30,11 +30,10 @@
     </InternalHrefLinkButton>
     <OnClickButton callback={() => {
         window.open('https://github.com/nextcloud/passman-webextension/issues', '_blank');
-    }} title="Report an issue" small={true} additionalClasses="flex flex-col items-center min-w-24 py-1 h-[52px]">
-        <Icon data={github} alt="GitHub" scale={1.5}/>
-        <!-- no translation needed; will be removed in the future -->
+    }} title="{i18n.getMessage('report_an_issue')}" small={true} additionalClasses="flex flex-col items-center min-w-24 py-1 h-[52px]">
+        <Icon data={github} scale={1.5}/>
         <span class="text-xs mt-1">
-            Issues
+            {i18n.getMessage('issues')}
         </span>
     </OnClickButton>
 </div>

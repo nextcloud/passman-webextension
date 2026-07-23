@@ -1,6 +1,7 @@
 import PassmanClientService from "~/services/PassmanClientService";
 import { NextcloudServerMessagingConnectorService } from "~/services/NextcloudServerMessagingConnectorService";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export interface NextcloudServerMessagingConnectorApiRequest {
     url: string,
@@ -71,7 +72,7 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
 
     if (error !== null) {
         // Injecting a fallback error message if required
-        error.message = error.message !== null && error.message !== '' ? error.message : 'Unknown error';
+        error.message = error.message !== null && error.message !== '' ? error.message : i18n.getMessage('unknown_error');
 
         // Offline fallback:
         // Theoretically we could populate/return cached data here, but callers should use PassmanClient.getFullVaultByGuid(guid, true) instead,

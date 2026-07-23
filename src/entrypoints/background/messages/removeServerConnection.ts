@@ -1,6 +1,7 @@
 import PassmanClientService from "~/services/PassmanClientService";
 import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export interface RemoveServerConnectionRequest {
     connectionId: string;
@@ -20,7 +21,7 @@ onMessage('removeServerConnection', async (message) => {
     try {
         const connectionId = message.data?.connectionId;
         if (!connectionId) {
-            errorMessage = "No connectionId provided";
+            errorMessage = i18n.getMessage('no_connection_id_provided');
             return { status, errorMessage };
         }
 
@@ -37,7 +38,7 @@ onMessage('removeServerConnection', async (message) => {
         status = true;
     } catch (e) {
         console.error(e);
-        errorMessage = e instanceof Error ? e.message : "Unknown error";
+        errorMessage = e instanceof Error ? e.message : i18n.getMessage('unknown_error');
     }
 
     return { status, errorMessage, activeConnectionId };

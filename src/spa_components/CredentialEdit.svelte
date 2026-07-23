@@ -100,14 +100,14 @@
                                 await credential.refresh();
                                 credentialData = credential.exportData();
                             } else {
-                                NotyService.notyError('Could not find selected credential');
+                                NotyService.notyError(i18n.getMessage('could_not_find_selected_credential'));
                             }
                         } else {
-                            NotyService.notyError('Could not decrypt vault');
+                            NotyService.notyError(i18n.getMessage('could_not_decrypt_vault'));
                         }
                     } catch (exception) {
                         console.error(exception);
-                        NotyService.notyError('Could not get or decrypt vault');
+                        NotyService.notyError(i18n.getMessage('could_not_get_or_decrypt_vault'));
                     }
                     pageIsLoading = false;
                 });

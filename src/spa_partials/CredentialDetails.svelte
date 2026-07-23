@@ -50,12 +50,12 @@
                     onCredChangedCallback();
                 }
             } else {
-                const msg = 'Unknown error occurred while deleting a credential';
+                const msg = i18n.getMessage('credential_delete_unknown_error');
                 NotyService.notyError(msg);
                 console.error(msg);
             }
         }, rejectionReason => {
-            const msg = 'An error occurred while deleting a credential';
+            const msg = i18n.getMessage('credential_delete_error');
             NotyService.notyError(msg);
             console.error(msg, rejectionReason);
         }).finally(() => {

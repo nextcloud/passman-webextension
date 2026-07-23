@@ -6,6 +6,7 @@
     import { LegacyFormManagerService } from "~/services/frontend/LegacyFormManagerService";
     import { PasswordPickerService } from "~/services/frontend/PasswordPickerService";
     import CredentialIcon from "~/spa_partials/CredentialIcon.svelte";
+    import { i18n } from "~/lib/i18n";
 
     export let decryptedPartialCredentialData: DecryptedPartialCredentialData;
     export let enableEmailAsUsernameFallbackFilling: boolean;
@@ -30,7 +31,7 @@
 
 {#if (decryptedPartialCredentialData)}
     <div class="border-2 rounded-lg p-2 my-1 w-full cursor-pointer" aria-hidden="true"
-         on:click={callback} on:keypress={() => {}} title="Click to auto fill">
+         on:click={callback} on:keypress={() => {}} title="{i18n.getMessage('click_to_auto_fill')}">
         <div class="flex space-x-1" style="padding-left: 2px;">
             <div class="basis-2/12 flex items-center justify-center cursor-pointer">
                 <CredentialIcon credential="{fakeCredentialObjectForIcon}" isSmall="false" bigScaleIconNumber={2}

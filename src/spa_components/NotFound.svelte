@@ -1,5 +1,7 @@
 <script lang="ts">
-    console.debug("Expected extension page not found");
+    import { i18n } from "~/lib/i18n";
+
+    console.debug(i18n.getMessage("expected_extension_page_not_found"));
 </script>
 
-Expected extension page not found
+{i18n.getMessage("expected_extension_page_not_found")}

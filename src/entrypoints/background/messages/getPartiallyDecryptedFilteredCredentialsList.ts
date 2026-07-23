@@ -6,6 +6,7 @@ import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import type { IconInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/IconInterface";
 import { onMessage } from "@/entrypoints/background/messaging";
 import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
+import { i18n } from "~/lib/i18n";
 
 export enum GetCredentialsListMessagingFilterType {
     DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -43,14 +44,14 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
     if (message.data === undefined || !message.data.filterText || message.data.filterType === undefined || message.data.getCachedIfPossible === undefined) {
-        errorMessage = 'Invalid request (check request body)';
+        errorMessage = i18n.getMessage('invalid_request_check_body');
     } else {
         const body = message.data;
         await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
             if (backendPassmanClient) {
                 return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     if (!defaultVaultInfo) {
-                        errorMessage = 'Could not get default vault info';
+                        errorMessage = i18n.getMessage('could_not_get_default_vault_info');
                         return;
                     }
 
@@ -75,10 +76,10 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                             filteredCredentials = CredentialFilterService.getFilteredCredentials(customFilteredCredentials ?? [], FILTERS.SHOW_ALL);
                             status = true;
                         } else {
-                            errorMessage = 'Could not decrypt vault';
+                            errorMessage = i18n.getMessage('could_not_decrypt_vault');
                         }
                     } catch (exception) {
-                        errorMessage = 'Could not get or decrypt vault';
+                        errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                     }
                 });
             }

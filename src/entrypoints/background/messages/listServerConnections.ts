@@ -3,6 +3,7 @@ import ServerConnectionDirectoryService from "~/services/ServerConnectionDirecto
 import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/PassmanServerConnection";
 import type { NextcloudServerBackendAppId } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export interface ServerConnectionListItem {
     connectionId: string;
@@ -44,7 +45,7 @@ onMessage('listServerConnections', async () => {
         status = true;
     } catch (e) {
         console.error(e);
-        errorMessage = e instanceof Error ? e.message : "Unknown error";
+        errorMessage = e instanceof Error ? e.message : i18n.getMessage('unknown_error');
     }
 
     return { status, connections, errorMessage };

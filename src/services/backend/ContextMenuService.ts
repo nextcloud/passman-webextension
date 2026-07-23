@@ -6,6 +6,7 @@ import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "../ExtensionSettingsService";
 import browser from "webextension-polyfill";
 import { sendMessage } from "@/entrypoints/background/messaging";
+import { i18n } from "~/lib/i18n";
 
 enum ContextMenuItemId {
     GENERATE_PASSWORD = 'GENERATE_PASSWORD',
@@ -140,20 +141,20 @@ export default class ContextMenuService {
         ContextMenuService.initPasswordGeneratorMenu();
 
         if (isUnlocked) {
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.AUTO_FILL, 'Auto fill');
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_USERNAME, 'Copy username');
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_EMAIL, 'Copy email');
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_PASSWORD, 'Copy password');
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_URL, 'Copy URL');
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_OTP, 'Copy OTP');
-            ContextMenuService.createContextMenuItem(ContextMenuItemId.RELOAD_PICKER, 'Reload password picker');
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.AUTO_FILL, i18n.getMessage('context_menu_auto_fill'));
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_USERNAME, i18n.getMessage('context_menu_copy_username'));
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_EMAIL, i18n.getMessage('context_menu_copy_email'));
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_PASSWORD, i18n.getMessage('context_menu_copy_password'));
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_URL, i18n.getMessage('context_menu_copy_url'));
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_OTP, i18n.getMessage('context_menu_copy_otp'));
+            ContextMenuService.createContextMenuItem(ContextMenuItemId.RELOAD_PICKER, i18n.getMessage('context_menu_reload_password_picker'));
         }
     }
 
     private static readonly initPasswordGeneratorMenu = () => {
-        ContextMenuService.createContextMenuItem(ContextMenuItemId.GENERATE_PASSWORD, 'Generate password');
-        ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_GENERATED_PASSWORD, 'And copy to clipboard', ContextMenuItemId.GENERATE_PASSWORD);
-        ContextMenuService.createContextMenuItem(ContextMenuItemId.FILL_GENERATED_PASSWORD, 'And fill fields', ContextMenuItemId.GENERATE_PASSWORD);
+        ContextMenuService.createContextMenuItem(ContextMenuItemId.GENERATE_PASSWORD, i18n.getMessage('generate_password'));
+        ContextMenuService.createContextMenuItem(ContextMenuItemId.COPY_GENERATED_PASSWORD, i18n.getMessage('context_menu_and_copy_to_clipboard'), ContextMenuItemId.GENERATE_PASSWORD);
+        ContextMenuService.createContextMenuItem(ContextMenuItemId.FILL_GENERATED_PASSWORD, i18n.getMessage('context_menu_and_fill_fields'), ContextMenuItemId.GENERATE_PASSWORD);
     }
 
     private static readonly createContextMenuItem = (

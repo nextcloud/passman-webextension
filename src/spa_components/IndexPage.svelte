@@ -56,7 +56,7 @@
                 }
                 filteredCredentials = [];
             } else {
-                NotyService.notyError(response.errorMessage ?? 'Unknown error in refreshCredentialList');
+                NotyService.notyError(response.errorMessage ?? i18n.getMessage('unknown_error_refresh_credential_list'));
             }
             pageIsLoading = false;
         });
@@ -138,14 +138,14 @@
                                 filteredCredentials = [];
                                 await applyCredentialFilter(null);
                             } else {
-                                errorMessage = 'Could not decrypt vault';
+                                errorMessage = i18n.getMessage('could_not_decrypt_vault');
                             }
                         } else {
-                            errorMessage = 'No default vault info found';
+                            errorMessage = i18n.getMessage('no_default_vault_info_found');
                         }
                     } catch (exception) {
                         console.error(exception);
-                        errorMessage = 'Could not get or decrypt vault';
+                        errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                     }
                     pageIsLoading = false;
                     initialLoadIsDone = true;

@@ -4,6 +4,7 @@ import type {
     SerializableTransferCredentialInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/Credential/SerializableTransferCredentialInterface";
 import { onMessage } from '../messaging';
+import { i18n } from "~/lib/i18n";
 
 export type GetCredentialsForVaultMessagingConfiguration = {
     vaultGuid: string
@@ -46,13 +47,13 @@ onMessage('getCredentialsForVault', async (message) => {
                             }
                             status = true;
                         } else {
-                            errorMessage = 'Could not decrypt vault';
+                            errorMessage = i18n.getMessage('could_not_decrypt_vault');
                         }
                     } else {
-                        errorMessage = 'No vault info provided by ExtensionSettingsService.getPartialExtensionSettings';
+                        errorMessage = i18n.getMessage('no_vault_info_in_extension_settings');
                     }
                 } catch (exception) {
-                    errorMessage = 'Could not get or decrypt vault';
+                    errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                 }
             });
         }

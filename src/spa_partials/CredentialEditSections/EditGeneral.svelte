@@ -155,7 +155,10 @@
                         {@const tagItem = tagsInput.getTagItem({ tag })}
                         <div {...tagItem.tag} class="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
                             <span>{tag.value}</span>
-                            <button {...tagItem.deleteTrigger} aria-label={`remove ${tag.value} tag`} class="text-gray-500 hover:text-gray-700 cursor-pointer">
+                            <button {...tagItem.deleteTrigger}
+                                aria-label={i18n.getMessage('remove_tag', [tag.value])} title={i18n.getMessage('remove_tag', [tag.value])}
+                                class="text-gray-500 hover:text-gray-700 cursor-pointer"
+                            >
                                 ×
                             </button>
                         </div>
@@ -164,7 +167,7 @@
                 <input
                     {...tagsInput.input}
                     type="text"
-                    placeholder="Add a tag"
+                    placeholder="{i18n.getMessage('add_a_tag')}"
                     class="flex-1 min-w-[120px] outline-none bg-transparent"
                 />
             </div>

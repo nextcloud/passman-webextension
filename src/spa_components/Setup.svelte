@@ -34,7 +34,6 @@
     <p>
         {i18n.getMessage("intro_text")}
     </p>
-    <!--no support planned for extra accounts {i18n.getMessage("extra_accounts")} -->
     <div class="bg-amber-50 border-l-4 border-amber-400 py-3 px-2 my-4 rounded-r-lg shadow-sm">
         <div class="flex">
             <div class="flex-shrink-0">
@@ -44,9 +43,11 @@
             </div>
             <div class="ml-3">
                 <p class="text-sm text-amber-700">
-                    This extension is under active development.<br>
-                    There will be bugs, but you can help fix them!
-                    You are welcome to open an issue on <a href="https://github.com/nextcloud/passman-webextension/issues" target="_blank" class="font-medium underline hover:text-amber-800 transition-colors">GitHub</a>.
+                    {@html i18n.getMessage('setup_dev_warning', [
+                        '<br>',
+                        '<a href="https://github.com/nextcloud/passman-webextension/issues" target="_blank" class="font-medium underline hover:text-amber-800 transition-colors">',
+                        '</a>'
+                    ])}
                 </p>
             </div>
         </div>
@@ -63,14 +64,13 @@
                 {i18n.getMessage("begin")}
             </InternalHrefLinkButton>
         {:else}
-            <CustomInputField label="Set a new extension unlock password"
+            <CustomInputField label="{i18n.getMessage('set_extension_unlock_password')}"
                             bind:value={newExtensionUnlockPassword}
                             tabindex={1}
                             type="password"/>
-            <OnClickButton callback={setUnlockPassword} title="{i18n.getMessage('begin')}"
+            <OnClickButton callback={setUnlockPassword} title="{i18n.getMessage('save_password_and_unlock')}"
                         disabled={newExtensionUnlockPassword === '' || processNewUnlockPassword}>
-                <!-- TODO: i18n -->
-                Save password & unlock
+                {i18n.getMessage('save_password_and_unlock')}
             </OnClickButton>
         {/if}
     {/if}

@@ -8,6 +8,7 @@ import type { DecryptedPartialCredentialData } from "./getPartiallyDecryptedFilt
 import { ExtensionBadgeService } from "~/services/backend/ExtensionBadgeService";
 import browser from "webextension-polyfill";
 import { onMessage } from "@/entrypoints/background/messaging";
+import { i18n } from "~/lib/i18n";
 
 export interface CreateCredentialForPickerMessagingRequest {
     credentialData: Partial<DecryptedCredentialInterface>;
@@ -36,14 +37,14 @@ onMessage('createCredentialForPicker', async (message) => {
     }
 
     if (!credentialData) {
-        errorMessage = 'No credential data provided';
+        errorMessage = i18n.getMessage('no_credential_data_provided');
         return {
             status,
             errorMessage
         };
     }
     if (!senderTab) {
-        errorMessage = 'No source tab found';
+        errorMessage = i18n.getMessage('no_source_tab_found');
         return {
             status,
             errorMessage
@@ -65,7 +66,7 @@ onMessage('createCredentialForPicker', async (message) => {
 
                             // Validate required fields
                             if (!credentialData.label || credentialData.label.length === 0) {
-                                errorMessage = 'Label is required';
+                                errorMessage = i18n.getMessage('label_required');
                                 return;
                             }
 
@@ -95,21 +96,21 @@ onMessage('createCredentialForPicker', async (message) => {
                                 // keep it here as a reference for the future if required. maybe use it for a new feature.
                                 // CustomStorageService.getUnsafeLocalStorage().set(CONTENT_SCRIPT_MODIFIED_CREDENTIALS_KEY, "true");
                             } else {
-                                errorMessage = 'Failed to save credential';
+                                errorMessage = i18n.getMessage('failed_to_save_credential');
                             }
                         } else {
-                            errorMessage = 'Could not decrypt vault';
+                            errorMessage = i18n.getMessage('could_not_decrypt_vault');
                         }
                     } else {
-                        errorMessage = 'No default vault info found';
+                        errorMessage = i18n.getMessage('no_default_vault_info_found');
                     }
                 } catch (exception) {
                     console.error(exception);
-                    errorMessage = 'Could not get or decrypt vault';
+                    errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                 }
             });
         } else {
-            errorMessage = 'Could not get backend passman client';
+            errorMessage = i18n.getMessage('could_not_get_backend_passman_client');
         }
     });
 
