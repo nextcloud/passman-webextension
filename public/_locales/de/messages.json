@@ -268,7 +268,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Wähle den Tresor aus, den du mit dem Browser synchronisieren möchten.",
+        "message": "Wähle den Tresor aus, den du mit dem Browser synchronisieren möchtest.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {

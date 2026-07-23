@@ -357,11 +357,11 @@
   },
   "begin": {
     "message": "Let's begin!",
-    "description": "Let's begin!"
+    "description": "Primary CTA on the setup welcome screen"
   },
   "intro_text": {
-    "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronized.",
-    "description": "Cancel"
+    "message": "Your Nextcloud passwords, ready in the browser. A short setup connects this extension to your Passman vault.",
+    "description": "Supporting sentence under the setup welcome title"
   },
   "cancel": {
     "message": "Cancel",
@@ -849,6 +849,14 @@
     "message": "Setup your Nextcloud server and vault credentials",
     "description": "Nextcloud server setup card description"
   },
+  "setup_server_step_title": {
+    "message": "Connect your server",
+    "description": "Hero title on the initial Nextcloud server setup step"
+  },
+  "setup_server_step_intro": {
+    "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+    "description": "Supporting sentence on the initial Nextcloud server setup step"
+  },
   "page_rules": {
     "message": "Page rules",
     "description": "Page rules"
@@ -1148,7 +1156,7 @@
     "description": "Error toast when removing a server connection fails"
   },
   "setup_dev_warning": {
-    "message": "This extension is under active development.$BR$There will be bugs, but you can help fix them! You are welcome to open an issue on $LINK_START$GitHub$LINK_END$.",
+    "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
     "description": "Development warning shown on the setup welcome screen",
     "placeholders": {
       "br": {
@@ -1166,12 +1174,16 @@
     }
   },
   "set_extension_unlock_password": {
-    "message": "Set a new extension unlock password",
+    "message": "Choose an unlock password",
     "description": "Label for the extension unlock password field during setup"
   },
+  "setup_unlock_password_hint": {
+    "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+    "description": "Helper text under the unlock password field on the setup welcome screen"
+  },
   "save_password_and_unlock": {
-    "message": "Save password & unlock",
-    "description": "Button to save the extension unlock password and unlock during setup"
+    "message": "Save & continue",
+    "description": "Button to save the extension unlock password and continue setup"
   },
   "passman_app_required": {
     "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",

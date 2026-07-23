@@ -7,6 +7,8 @@
     import { push } from "~/Router.svelte";
     import { i18n } from "~/lib/i18n";
     import browser from "webextension-polyfill";
+    import passmanBlueWhiteImage from "~/assets/images/passman-blue-white.svg";
+    import passmanImage from "~/assets/images/passman.svg";
 
     export let params: { isInPopup: string };
 
@@ -27,51 +29,92 @@
     }
 </script>
 
-<div class="flex h-full flex-col items-center justify-center space-y-4 p-10">
-    <h2 class="text-2xl font-semibold text-gray-700 text-center mb-2">
-        {i18n.getMessage("welcome_to_passman")}
-    </h2>
-    <p>
-        {i18n.getMessage("intro_text")}
-    </p>
-    <div class="bg-amber-50 border-l-4 border-amber-400 py-3 px-2 my-4 rounded-r-lg shadow-sm">
-        <div class="flex">
-            <div class="flex-shrink-0">
-                <svg class="h-5 w-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+<div class="flex h-full flex-col items-center justify-center px-6 py-8">
+    <div class="setup-fancy flex w-full max-w-sm flex-col items-center text-center">
+        <div class="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#007ac7] shadow-md shadow-[#007ac7]/25">
+            <img src="{passmanImage}" class="h-12 w-12 dark:hidden" alt="{i18n.getMessage('extName')}"/>
+            <img src="{passmanBlueWhiteImage}" class="hidden h-12 w-12 dark:block" alt="{i18n.getMessage('extName')}"/>
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
+            {i18n.getMessage("welcome_to_passman")}
+        </h2>
+        <p class="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            {i18n.getMessage("intro_text")}
+        </p>
+
+        <div class="mt-6 w-full">
+            <!-- Popup closes too easily for multi-step setup — send users to the options page. -->
+            {#if (params && params.isInPopup === '1')}
+                <OnClickButton
+                    callback={openOptionsPage}
+                    title="{i18n.getMessage('begin')}"
+                    additionalClasses="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                >
+                    {i18n.getMessage("begin")}
+                </OnClickButton>
+            {:else if isExtensionUnlocked}
+                <InternalHrefLinkButton
+                    href="/setup/server"
+                    additionalClasses="inline-flex w-full justify-center border-primary text-primary hover:bg-primary hover:text-white"
+                >
+                    {i18n.getMessage("begin")}
+                </InternalHrefLinkButton>
+            {:else}
+                <form on:submit|preventDefault={setUnlockPassword}>
+                    <div class="w-full space-y-3 rounded-xl border border-gray-200 bg-white p-4 text-left shadow-sm dark:border-gray-600 dark:bg-gray-800/60">
+                        <CustomInputField
+                            label="{i18n.getMessage('set_extension_unlock_password')}"
+                            bind:value={newExtensionUnlockPassword}
+                            tabindex={1}
+                            type="password"
+                        />
+                        <p class="text-xs leading-snug text-gray-500 dark:text-gray-400">
+                            {i18n.getMessage('setup_unlock_password_hint')}
+                        </p>
+                        <OnClickButton
+                            callback={setUnlockPassword}
+                            title="{i18n.getMessage('save_password_and_unlock')}"
+                            disabled={newExtensionUnlockPassword === '' || processNewUnlockPassword}
+                            additionalClasses="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                        >
+                            {i18n.getMessage('save_password_and_unlock')}
+                        </OnClickButton>
+                    </div>
+                </form>
+            {/if}
+        </div>
+
+        <div class="mt-5 w-full rounded-lg border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-left dark:border-amber-500/30 dark:bg-amber-950/40">
+            <div class="flex gap-2.5">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                 </svg>
-            </div>
-            <div class="ml-3">
-                <p class="text-sm text-amber-700">
+                <p class="text-xs leading-relaxed text-amber-800 dark:text-amber-200/90">
                     {@html i18n.getMessage('setup_dev_warning', [
                         '<br>',
-                        '<a href="https://github.com/nextcloud/passman-webextension/issues" target="_blank" class="font-medium underline hover:text-amber-800 transition-colors">',
+                        '<a href="https://github.com/nextcloud/passman-webextension/issues" target="_blank" class="font-medium underline underline-offset-2 hover:text-amber-950 dark:hover:text-amber-50 transition-colors">',
                         '</a>'
                     ])}
                 </p>
             </div>
         </div>
     </div>
-
-    <!-- we are not doing setup in the small popup that closes when clicking somewhere outside of it; bad user experience -->
-    {#if (params && params.isInPopup === '1')}
-        <OnClickButton callback={openOptionsPage} title="{i18n.getMessage('begin')}">
-            {i18n.getMessage("begin")}
-        </OnClickButton>
-    {:else}
-        {#if isExtensionUnlocked}
-            <InternalHrefLinkButton href="/setup/server">
-                {i18n.getMessage("begin")}
-            </InternalHrefLinkButton>
-        {:else}
-            <CustomInputField label="{i18n.getMessage('set_extension_unlock_password')}"
-                            bind:value={newExtensionUnlockPassword}
-                            tabindex={1}
-                            type="password"/>
-            <OnClickButton callback={setUnlockPassword} title="{i18n.getMessage('save_password_and_unlock')}"
-                        disabled={newExtensionUnlockPassword === '' || processNewUnlockPassword}>
-                {i18n.getMessage('save_password_and_unlock')}
-            </OnClickButton>
-        {/if}
-    {/if}
 </div>
+
+<style>
+    .setup-fancy {
+        animation: setup-fancy-in 420ms ease-out both;
+    }
+
+    @keyframes setup-fancy-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

@@ -7,7 +7,7 @@
     import Loading from "~/spa_components/Loading.svelte";
     import refresh from "svelte-awesome/icons/refresh";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import { onMount } from "svelte";
+    import { onMount, tick } from "svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
@@ -42,6 +42,12 @@
     let connections: ServerConnectionListItem[] = [];
     /** When setup is done: show add form instead of only the directory list. */
     let showAddConnectionForm = false;
+    let vaultSelectionSection: HTMLElement | undefined;
+
+    const scrollToVaultSelection = async () => {
+        await tick();
+        vaultSelectionSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
     const clearFormFields = () => {
         server.set('');
@@ -129,6 +135,7 @@
                     await loadConnectionDirectory();
                     await loadActiveVaultSelection();
                 }
+                await scrollToVaultSelection();
             } else {
                 errorMessage = value.message;
             }
@@ -376,46 +383,48 @@
 {/if}
 
 {#if serverSettingsValidated}
-    <Card additionalClasses="text-left space-y-3 w-full">
-        <form on:submit|preventDefault={setDefaultVault}>
-            <p>
-                {i18n.getMessage('default_vault_desc')}
-            </p>
-            <div class="mt-2">
-                <label for="vaults_select"
-                        class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
-                    {i18n.getMessage('select_default_vault')}
-                </label>
-                <div class="my-2">
-                    {#key vaultSelectionList}
-                        <Select
-                                disabled={lockDefaultVaultButton}
-                                multiple={false}
-                                label="name"
-                                itemId="guid"
-                                items={vaultSelectionList}
-                                bind:value={selectedVaultInfo}
-                                id="vaults_select"
-                                --height="38px"
-                        />
-                    {/key}
+    <div bind:this={vaultSelectionSection}>
+        <Card additionalClasses="text-left space-y-3 w-full">
+            <form on:submit|preventDefault={setDefaultVault}>
+                <p>
+                    {i18n.getMessage('default_vault_desc')}
+                </p>
+                <div class="mt-2">
+                    <label for="vaults_select"
+                            class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                        {i18n.getMessage('select_default_vault')}
+                    </label>
+                    <div class="my-2">
+                        {#key vaultSelectionList}
+                            <Select
+                                    disabled={lockDefaultVaultButton}
+                                    multiple={false}
+                                    label="name"
+                                    itemId="guid"
+                                    items={vaultSelectionList}
+                                    bind:value={selectedVaultInfo}
+                                    id="vaults_select"
+                                    --height="38px"
+                            />
+                        {/key}
+                    </div>
                 </div>
-            </div>
-            <div class="mt-2">
-                <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
-                                    type="password"/>
-            </div>
-            <div class="mt-2 text-red-600">
-                {vaultErrorMessage}
-            </div>
-            <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
-                            callback="{setDefaultVault}">
-                {#if lockDefaultVaultButton}
-                    <Icon data={refresh} scale={1.3} spin="{true}"/>
-                {:else}
-                    {i18n.getMessage('save_default_vault_settings')}
-                {/if}
-            </OnClickButton>
-        </form>
-    </Card>
+                <div class="mt-2">
+                    <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
+                                        type="password"/>
+                </div>
+                <div class="mt-2 text-red-600">
+                    {vaultErrorMessage}
+                </div>
+                <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
+                                callback="{setDefaultVault}">
+                    {#if lockDefaultVaultButton}
+                        <Icon data={refresh} scale={1.3} spin="{true}"/>
+                    {:else}
+                        {i18n.getMessage('save_default_vault_settings')}
+                    {/if}
+                </OnClickButton>
+            </form>
+        </Card>
+    </div>
 {/if}
