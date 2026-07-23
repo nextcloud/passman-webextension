@@ -1,14 +1,13 @@
 # Passman Webextension
 
-> **Migration notice:** Development is moving from GitLab ([binsky08/passman-webextension-v3](https://gitlab.com/binsky08/passman-webextension-v3)) into the official Nextcloud repository ([nextcloud/passman-webextension](https://github.com/nextcloud/passman-webextension)) on branch `v3` (planned to become `master`). The legacy MV2 extension remains on `master` until cutover. During the transition, store listings and some links may be incorrect or still use the temporary “v3” name.
+> **Migration notice:** Development is moving from GitLab ([binsky08/passman-webextension-v3](https://gitlab.com/binsky08/passman-webextension-v3)) into the official Nextcloud repository ([nextcloud/passman-webextension](https://github.com/nextcloud/passman-webextension)). The legacy MV2 extension remains on the `legacy-v2` branch. During the transition, store listings and some links may be incorrect or still use the temporary “v3” name.
 
 [Latest Release](https://github.com/nextcloud/passman-webextension/releases)
 [CI Status](https://github.com/nextcloud/passman-webextension/actions)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://opensource.org/license/agpl-v3)
 
 
-### Old extension links (deprecated)
-![Build Status](https://passman.cc/webextension-version.php)
+Legacy version: ![Build Status](https://passman.cc/webextension-version.php)
 
 
 [![Chrome webstore](https://img.passman.cc/assets/chromewebstore.png)](https://chrome.google.com/webstore/detail/passman/hlpjhlifkgmoibhollggngbbhbejecph) | [![AMO](https://img.passman.cc/assets/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/passman/)    
@@ -23,6 +22,8 @@ This is a modern, fully rewritten webextension for the [Passman](https://github.
 It uses [Svelte](https://svelte.dev/) for the UI and [TypeScript](https://www.typescriptlang.org/) throughout.
 
 The previous (legacy) extension source remains available on the [`master` branch](https://github.com/nextcloud/passman-webextension/tree/master).
+
+Try a Passman demo [here](https://demo.passman.cc) to test the browser extension against.
 
 ## Features
 
@@ -44,31 +45,34 @@ The previous (legacy) extension source remains available on the [`master` branch
 
 - Page rules
     - Ability to overwrite global settings and extension behavior for a specific website
-- Passkey support (coming soon - very soon)
+- Passkey support (coming soon)
 
-# Getting Started as Tester
+## Impressions
+<img width="440" height="577" alt="image" src="https://github.com/user-attachments/assets/58653ac6-e06c-4d65-a328-5fcecbba5431" />
+<img width="440" height="509" alt="image" src="https://github.com/user-attachments/assets/867a735f-0fec-4219-a3a7-bac5647997ef" />
 
-Please be careful with this, since it is a development version and might no longer be updated after the migration.
+## Support Passman
+Passman is open source and lives from contributions like [pull request](https://github.com/nextcloud/passman-webextension/pulls),
+but we’ll also gladly accept a Club Mate *or pizza!*
 
-**Do always backup your vault!!!**
+Please consider donating:
+* [Patreon](https://www.patreon.com/passman)
+* [Ko-Fi](https://ko-fi.com/passman)
 
-You can easily get the latest released developer version of the extension from
+## Contributing
+Pull requests and [issues](https://github.com/nextcloud/passman-webextension/issues) are welcome. Fork the repo, make your changes, and open a [pull request](https://github.com/nextcloud/passman-webextension/pulls).
 
-- the chrome web store: [https://chromewebstore.google.com/detail/passman-webextension-v3/ofngoamnbkaglfcpacagjdlmdhachdlc](https://chromewebstore.google.com/detail/passman-webextension-v3/ofngoamnbkaglfcpacagjdlmdhachdlc)
-- the firefox addon store: [https://addons.mozilla.org/de/firefox/addon/passman-webextension-v3/](https://addons.mozilla.org/de/firefox/addon/passman-webextension-v3/)
-- the [releases page](https://github.com/nextcloud/passman-webextension/releases)
+## Development
 
-# Development
+### Getting Started
 
-## Getting Started
-
-### Precondition: Get bun installed
+#### Precondition: Get bun installed
 
 Take a look at to documentation for installation instructions: [https://bun.sh/docs/installation](https://bun.sh/docs/installation)
 
 Bun is the recommended package manager for this project, but something like pnpm should also work well.
 
-### Install dependencies
+#### Install dependencies
 
 ```bash
 bun install
@@ -78,7 +82,7 @@ If you get something like this: `Blocked 1 postinstall. Run 'bun pm untrusted' f
 
 Sure, if you have build issues, run `bun pm untrusted` and the postinstalls with `bun pm trust --all`, but this should not be needed! - on my system it causes some issues with the build process (and ends in a segfault).
 
-### Run the development server
+#### Run the development server
 
 ```bash
 bun run dev
@@ -90,7 +94,7 @@ The extension will auto-reload as you make changes. You can start editing entryp
 
 For further guidance, [visit the WXT Documentation](https://wxt.dev/)
 
-## Extension development in Firefox
+### Extension development in Firefox
 
 I recommend installing the [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
 or at least using another browser profile to get a clean development environment.
@@ -105,7 +109,7 @@ Open the `about:debugging` page in Firefox and load the `.output/firefox-mv2-dev
 
 Note that the release version for Firefox is using manifest v3, but the development version is using manifest v2 due to "dev mode" compatibility reasons.
 
-## Making production build
+### Making production build
 
 Run the following:
 
@@ -116,7 +120,7 @@ bun run build:firefox
 
 This should create production bundles for the extension, ready to be zipped and published to the stores.
 
-## Submit to the webstores
+### Submit to the webstores
 
 You can build and zip the extension using:
 
