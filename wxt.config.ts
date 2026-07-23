@@ -1,6 +1,11 @@
 import { defineConfig } from 'wxt';
 import tailwindcss from "@tailwindcss/vite";
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const { fixLocalePlaceholders } = require('./scripts/fix-locales.cjs');
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
@@ -9,6 +14,14 @@ export default defineConfig({
     zip: {
         artifactTemplate: "{{name}}-prod-{{browser}}.zip",
         sourcesTemplate: "{{name}}-prod-sources.zip"
+    },
+    hooks: {
+        // Transifex locales often omit Chrome i18n `placeholders`; patch only the
+        // built output so source translations stay untouched.
+        'build:done'(wxt) {
+            const localesDir = path.join(wxt.config.outDir, '_locales');
+            fixLocalePlaceholders(localesDir, { quiet: true });
+        },
     },
     manifest: {
         host_permissions: [
