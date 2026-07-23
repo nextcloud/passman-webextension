@@ -21,6 +21,7 @@
     import { i18n } from "~/lib/i18n";
     import browser from "webextension-polyfill";
     import { sendMessage } from "@/entrypoints/background/messaging";
+    import Utils from "~/lib/Utils";
 
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
@@ -30,6 +31,7 @@
     let filteredCredentials: Credential[] = [];
     let pageIsLoading = true;
     let initialLoadIsDone = false;
+    const isInPopup = Utils.isInPopup();
 
     const lockExtension = () => {
         sendMessage('lockExtension').then(() => {
@@ -104,21 +106,26 @@
     onMount(() => {
         PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
-                overwriteInputFilterByTabUrlPromise = browser.tabs.query({
-                    currentWindow: true,
-                    active: true
-                }).then(function (activeTabs: browser.Tabs.Tab[]) {
-                    if (Array.isArray(activeTabs) && activeTabs.length !== 0) {
-                        // check for a parseable URL as early as possible to avoid handling in multiple follow-up code paths
-                        try {
-                            new URL(activeTabs[0].url);
-                            return activeTabs[0].url;
-                        } catch (e) {
-                            // ignore, just return null to indicate an error
+                // Only filter by the active tab URL in the popup; options page should show all credentials
+                if (isInPopup) {
+                    overwriteInputFilterByTabUrlPromise = browser.tabs.query({
+                        currentWindow: true,
+                        active: true
+                    }).then(function (activeTabs: browser.Tabs.Tab[]) {
+                        if (Array.isArray(activeTabs) && activeTabs.length !== 0) {
+                            // check for a parseable URL as early as possible to avoid handling in multiple follow-up code paths
+                            try {
+                                new URL(activeTabs[0].url);
+                                return activeTabs[0].url;
+                            } catch (e) {
+                                // ignore, just return null to indicate an error
+                            }
                         }
-                    }
-                    return null;
-                });
+                        return null;
+                    });
+                } else {
+                    overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
+                }
 
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     try {
