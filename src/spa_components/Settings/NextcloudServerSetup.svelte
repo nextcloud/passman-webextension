@@ -9,13 +9,14 @@
     <div class="setup-fancy flex w-full max-w-md flex-col items-center">
         <div class="mb-5 flex flex-col items-center text-center">
             <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#007ac7] shadow-md shadow-[#007ac7]/25">
-                <img src="{passmanImage}" class="h-9 w-9 dark:hidden" alt="{i18n.getMessage('extName')}"/>
-                <img src="{passmanBlueWhiteImage}" class="hidden h-9 w-9 dark:block" alt="{i18n.getMessage('extName')}"/>
+                <!-- <img src="{passmanImage}" class="h-9 w-9 dark:hidden" alt="{i18n.getMessage('extName')}"/>
+                <img src="{passmanBlueWhiteImage}" class="hidden h-9 w-9 dark:block" alt="{i18n.getMessage('extName')}"/> -->
+                <img src="{passmanImage}" class="h-9 w-9" alt="{i18n.getMessage('extName')}"/>
             </div>
-            <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
+            <h2 class="text-2xl font-bold tracking-tight text-gray-800">
                 {i18n.getMessage('setup_server_step_title')}
             </h2>
-            <p class="mt-2 max-w-sm text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            <p class="mt-2 max-w-sm text-sm leading-relaxed text-gray-600">
                 {i18n.getMessage('setup_server_step_intro')}
             </p>
         </div>
