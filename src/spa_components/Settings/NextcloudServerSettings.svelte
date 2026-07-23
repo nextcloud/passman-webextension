@@ -92,6 +92,10 @@
     };
 
     const login = async (): Promise<void> => {
+        if (!$myForm.valid || lockLoginButton) {
+            return;
+        }
+
         lockLoginButton = true;
         errorMessage = '';
         successMessage = '';
@@ -134,9 +138,11 @@
     };
 
     const setDefaultVault = () => {
-        if (!selectedVaultInfo) {
-            console.error(i18n.getMessage('no_selected_vault_info_found'));
-            NotyService.notyError(i18n.getMessage('no_selected_vault_info_found'));
+        if (!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton) {
+            if (!selectedVaultInfo) {
+                console.error(i18n.getMessage('no_selected_vault_info_found'));
+                NotyService.notyError(i18n.getMessage('no_selected_vault_info_found'));
+            }
             return;
         }
         lockDefaultVaultButton = true;
@@ -335,28 +341,30 @@
                 {/if}
             </h3>
         {/if}
-        <CustomInputField label="{i18n.getMessage('server_url')}" bind:value={$server.value}/>
-        <div class="mt-2">
-            <CustomInputField label="{i18n.getMessage('username')}" bind:value={$user.value}/>
-        </div>
-        <div class="mt-2">
-            <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
-                                type="password"/>
-        </div>
-        <div class="mt-4 flex flex-wrap gap-2">
-            <OnClickButton disabled={!$myForm.valid || lockLoginButton} callback="{login}">
-                {#if lockLoginButton}
-                    <Icon data={refresh} scale={1.3} spin="{true}"/>
-                {:else}
-                    {i18n.getMessage('save')}
-                {/if}
-            </OnClickButton>
-            {#if showAddConnectionForm}
-                <OnClickButton disabled={lockLoginButton} callback={cancelAddConnection}>
-                    {i18n.getMessage('cancel')}
+        <form on:submit|preventDefault={login}>
+            <CustomInputField label="{i18n.getMessage('server_url')}" bind:value={$server.value}/>
+            <div class="mt-2">
+                <CustomInputField label="{i18n.getMessage('username')}" bind:value={$user.value}/>
+            </div>
+            <div class="mt-2">
+                <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
+                                    type="password"/>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <OnClickButton disabled={!$myForm.valid || lockLoginButton} callback="{login}">
+                    {#if lockLoginButton}
+                        <Icon data={refresh} scale={1.3} spin="{true}"/>
+                    {:else}
+                        {i18n.getMessage('save')}
+                    {/if}
                 </OnClickButton>
-            {/if}
-        </div>
+                {#if showAddConnectionForm}
+                    <OnClickButton disabled={lockLoginButton} callback={cancelAddConnection}>
+                        {i18n.getMessage('cancel')}
+                    </OnClickButton>
+                {/if}
+            </div>
+        </form>
 
         <div class="mt-2 text-green-600">
             {successMessage}
@@ -369,43 +377,45 @@
 
 {#if serverSettingsValidated}
     <Card additionalClasses="text-left space-y-3 w-full">
-        <p>
-            {i18n.getMessage('default_vault_desc')}
-        </p>
-        <div class="mt-2">
-            <label for="vaults_select"
-                    class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
-                {i18n.getMessage('select_default_vault')}
-            </label>
-            <div class="my-2">
-                {#key vaultSelectionList}
-                    <Select
-                            disabled={lockDefaultVaultButton}
-                            multiple={false}
-                            label="name"
-                            itemId="guid"
-                            items={vaultSelectionList}
-                            bind:value={selectedVaultInfo}
-                            id="vaults_select"
-                            --height="38px"
-                    />
-                {/key}
+        <form on:submit|preventDefault={setDefaultVault}>
+            <p>
+                {i18n.getMessage('default_vault_desc')}
+            </p>
+            <div class="mt-2">
+                <label for="vaults_select"
+                        class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                    {i18n.getMessage('select_default_vault')}
+                </label>
+                <div class="my-2">
+                    {#key vaultSelectionList}
+                        <Select
+                                disabled={lockDefaultVaultButton}
+                                multiple={false}
+                                label="name"
+                                itemId="guid"
+                                items={vaultSelectionList}
+                                bind:value={selectedVaultInfo}
+                                id="vaults_select"
+                                --height="38px"
+                        />
+                    {/key}
+                </div>
             </div>
-        </div>
-        <div class="mt-2">
-            <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
-                                type="password"/>
-        </div>
-        <div class="mt-2 text-red-600">
-            {vaultErrorMessage}
-        </div>
-        <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
-                        callback="{setDefaultVault}">
-            {#if lockDefaultVaultButton}
-                <Icon data={refresh} scale={1.3} spin="{true}"/>
-            {:else}
-                {i18n.getMessage('save_default_vault_settings')}
-            {/if}
-        </OnClickButton>
+            <div class="mt-2">
+                <CustomInputField label="{i18n.getMessage('vault_password')}" bind:value={selectedVaultPassword}
+                                    type="password"/>
+            </div>
+            <div class="mt-2 text-red-600">
+                {vaultErrorMessage}
+            </div>
+            <OnClickButton disabled={!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton}
+                            callback="{setDefaultVault}">
+                {#if lockDefaultVaultButton}
+                    <Icon data={refresh} scale={1.3} spin="{true}"/>
+                {:else}
+                    {i18n.getMessage('save_default_vault_settings')}
+                {/if}
+            </OnClickButton>
+        </form>
     </Card>
 {/if}
