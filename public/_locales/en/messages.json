@@ -212,12 +212,12 @@
     "description": "Create new credential button label for the new credential page"
   },
   "credential": {
-    "message": "credential",
-    "description": "credential"
+    "message": "Credential",
+    "description": "Credential singular form"
   },
   "credentials": {
-    "message": "credentials",
-    "description": "credentials"
+    "message": "Credentials",
+    "description": "Credentials menu item label"
   },
   "compromised_notice": {
     "message": "This password is compromised. You can only remove this warning by changing the password.",
