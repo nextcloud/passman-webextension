@@ -24,6 +24,8 @@ export default defineConfig({
         },
     },
     manifest: {
+        name: "__MSG_extName__",
+        description: "__MSG_extDescription__",
         host_permissions: [
             "https://*/*",
             "<all_urls>",
