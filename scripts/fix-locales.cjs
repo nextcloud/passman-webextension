@@ -12,12 +12,112 @@
  * Usage:
  *   node scripts/fix-locales.cjs <localesDir>
  *
- * Only writes into the given directory (typically `.output/.../_locales`).
+ * Prefer the WXT `build:publicAssets` hook (see wxt.config.ts) so output locales
+ * are patched on every public-asset copy, including watch rebuilds. The CLI is
+ * for manual fixes of an on-disk `_locales` directory only.
  * Never modify Transifex-managed source files under `public/_locales` except `en`.
  */
 
 const fs = require('fs');
 const path = require('path');
+
+const MESSAGES_RELATIVE_RE = /^_locales[/\\]([^/\\]+)[/\\]messages\.json$/;
+
+/**
+ * Copy missing `placeholders` from English entries into a locale messages object.
+ *
+ * @param {Record<string, any>} en
+ * @param {Record<string, any>} localeData
+ * @returns {number} Number of keys that received placeholders
+ */
+function applyPlaceholdersFromEnglish(en, localeData) {
+    let keysFixed = 0;
+
+    for (const translateKey of Object.keys(localeData)) {
+        const enEntry = en[translateKey];
+        const localeEntry = localeData[translateKey];
+        // Original script incorrectly checked translateKey.hasOwnProperty(...).
+        // Intent: copy English placeholders when the translated entry lacks them.
+        if (
+            enEntry
+            && localeEntry
+            && Object.prototype.hasOwnProperty.call(enEntry, 'placeholders')
+            && !Object.prototype.hasOwnProperty.call(localeEntry, 'placeholders')
+        ) {
+            localeEntry.placeholders = enEntry.placeholders;
+            keysFixed += 1;
+        }
+    }
+
+    return keysFixed;
+}
+
+/**
+ * Patch non-English locale messages.json entries in a WXT public-assets list
+ * in place, replacing them with fixed relativeDest/contents objects so the copy
+ * step writes corrected output without touching source files.
+ *
+ * @param {Array<object>} files WXT ResolvedPublicFile list (mutated in place)
+ * @param {{ quiet?: boolean }} [options]
+ * @returns {{ filesFixed: number, keysFixed: number }}
+ */
+function patchPublicLocaleAssets(files, options = {}) {
+    const quiet = options.quiet === true;
+    const enIndex = files.findIndex((file) => {
+        const match = MESSAGES_RELATIVE_RE.exec(file.relativeDest);
+        return match?.[1] === 'en';
+    });
+
+    if (enIndex === -1) {
+        throw new Error('English locale not found in public assets (_locales/en/messages.json)');
+    }
+
+    const enFile = files[enIndex];
+    const enSource = 'contents' in enFile && enFile.contents != null
+        ? String(enFile.contents)
+        : fs.readFileSync(enFile.absoluteSrc, 'utf8');
+    const en = JSON.parse(enSource);
+
+    let filesFixed = 0;
+    let keysFixed = 0;
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const match = MESSAGES_RELATIVE_RE.exec(file.relativeDest);
+        if (!match || match[1] === 'en') {
+            continue;
+        }
+
+        const source = 'contents' in file && file.contents != null
+            ? String(file.contents)
+            : fs.readFileSync(file.absoluteSrc, 'utf8');
+        const localeData = JSON.parse(source);
+        const fixedKeys = applyPlaceholdersFromEnglish(en, localeData);
+
+        if (fixedKeys === 0) {
+            continue;
+        }
+
+        files[i] = {
+            relativeDest: file.relativeDest,
+            contents: `${JSON.stringify(localeData, null, 4)}\n`,
+        };
+        filesFixed += 1;
+        keysFixed += fixedKeys;
+    }
+
+    if (!quiet) {
+        console.log(
+            `Locale placeholder fix complete: ${keysFixed} key(s) in ${filesFixed} file(s) via build:publicAssets`
+        );
+    } else if (keysFixed > 0) {
+        console.log(
+            `Locale placeholder fix complete: ${keysFixed} key(s) in ${filesFixed} file(s) via build:publicAssets`
+        );
+    }
+
+    return { filesFixed, keysFixed };
+}
 
 /**
  * @param {string} localesDir Absolute or relative path to an `_locales` directory
@@ -48,31 +148,15 @@ function fixLocalePlaceholders(localesDir, options = {}) {
         }
 
         const jsonData = JSON.parse(fs.readFileSync(file, 'utf8'));
-        let changed = false;
+        const fixedKeys = applyPlaceholdersFromEnglish(en, jsonData);
 
-        for (const translateKey of Object.keys(jsonData)) {
-            const enEntry = en[translateKey];
-            const localeEntry = jsonData[translateKey];
-            // Original script incorrectly checked translateKey.hasOwnProperty(...).
-            // Intent: copy English placeholders when the translated entry lacks them.
-            if (
-                enEntry
-                && localeEntry
-                && Object.prototype.hasOwnProperty.call(enEntry, 'placeholders')
-                && !Object.prototype.hasOwnProperty.call(localeEntry, 'placeholders')
-            ) {
-                localeEntry.placeholders = enEntry.placeholders;
-                changed = true;
-                keysFixed += 1;
-                if (!quiet) {
-                    console.log(`Fixed ${file} translate key: ${translateKey}`);
-                }
-            }
-        }
-
-        if (changed) {
+        if (fixedKeys > 0) {
             fs.writeFileSync(file, `${JSON.stringify(jsonData, null, 4)}\n`, 'utf8');
             filesFixed += 1;
+            keysFixed += fixedKeys;
+            if (!quiet) {
+                console.log(`Fixed ${file}: ${fixedKeys} key(s)`);
+            }
         }
     }
 
@@ -89,7 +173,11 @@ function fixLocalePlaceholders(localesDir, options = {}) {
     return { filesFixed, keysFixed };
 }
 
-module.exports = { fixLocalePlaceholders };
+module.exports = {
+    applyPlaceholdersFromEnglish,
+    fixLocalePlaceholders,
+    patchPublicLocaleAssets,
+};
 
 if (require.main === module) {
     const localesDir = process.argv[2];
