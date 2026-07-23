@@ -9,7 +9,7 @@
   "scripts": {
     "prebuild": "node public/helper_scripts/update-tld-rules.cjs",
     "dev": "wxt",
-    "dev:firefox": "wxt -b firefox --mv2",
+    "dev:firefox": "wxt -b firefox --mv3",
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox --mv3",
     "zip": "wxt zip",
