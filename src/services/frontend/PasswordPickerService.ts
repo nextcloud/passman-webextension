@@ -13,6 +13,7 @@ import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/
 import passwordPickerIcon from "~/assets/images/passwordPickerIcon.svg";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDetectionService";
+import { DoorhangerService } from "~/services/frontend/DoorhangerService";
 import { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
 import type { PageRulesInterface } from "@/services/PageRulesService";
 
@@ -51,6 +52,9 @@ export class PasswordPickerService {
 
         // Set up observer for dynamically added forms (SPA support)
         PasswordPickerService.setupFormObserver(pickerPageSettings);
+
+        // Evaluate pending doorhanger after reload / content-script reinjection
+        DoorhangerService.init();
     }
 
     /**
@@ -152,6 +156,8 @@ export class PasswordPickerService {
                 PasswordPickerService.decryptedPartialCredentialData = [];
             }
             PasswordPickerService.processLoginForms(pickerPageSettings);
+
+            DoorhangerService.onUrlChanged(newUrl, oldUrl);
         });
 
         // Enable all detection features individually, based on the extension settings, merged with the page rules
@@ -182,6 +188,8 @@ export class PasswordPickerService {
         
         // Clean up dynamic form detection service
         DynamicFormDetectionService.cleanup();
+
+        DoorhangerService.unload();
         
         // Clear credentials data
         PasswordPickerService.decryptedPartialCredentialData = [];
@@ -330,8 +338,8 @@ export class PasswordPickerService {
     }
 
     public static onFormSubmittedCallback = (loginFields: FillableLoginFormFields) => {
-        console.debug("onFormSubmittedCallback");
-        console.debug(loginFields);
+        console.debug("onFormSubmittedCallback", loginFields);
+        void DoorhangerService.cacheFromFormSubmit(loginFields);
     }
 
     public static searchCredentialsForPicker = (searchInput: string): Promise<GetCredentialsListMessagingResponse> => {
