@@ -17,6 +17,15 @@ import {
 import type { CreateCredentialForPickerMessagingResponse } from "~/entrypoints/background/messages/createCredentialForPicker";
 import type { UpdateCredentialForDoorhangerMessagingResponse } from "~/entrypoints/background/messages/updateCredentialForDoorhanger";
 import { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
+import {
+    DEFAULT_DOORHANGER_SETTINGS,
+    type DoorhangerSettings
+} from "~/lib/doorhanger/doorhangerSettings";
+
+export type DoorhangerShowPayload = {
+    offer: Extract<DoorhangerOffer, { show: true }>;
+    settings: DoorhangerSettings;
+};
 
 /**
  * Content-script orchestration for Doorhanger capture, success detection,
@@ -25,7 +34,7 @@ import { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
 export class DoorhangerService {
     private static successHandledForCaptureAt: number | null = null;
     private static delayedEvaluateTimeouts: number[] = [];
-    private static onOfferCallback: ((offer: Extract<DoorhangerOffer, { show: true }>) => void) | null = null;
+    private static onOfferCallback: ((payload: DoorhangerShowPayload) => void) | null = null;
     private static onUrlMatchedCredentialsCallback: ((credentials: DecryptedPartialCredentialData[]) => void) | null = null;
     private static onCredentialUpsertCallback: ((credential: DecryptedPartialCredentialData) => void) | null = null;
 
@@ -33,7 +42,7 @@ export class DoorhangerService {
     private static readonly POST_SUBMIT_EVALUATE_DELAYS_MS = [400, 1200, 3000];
 
     public static setOnOfferCallback = (
-        callback: ((offer: Extract<DoorhangerOffer, { show: true }>) => void) | null
+        callback: ((payload: DoorhangerShowPayload) => void) | null
     ): void => {
         DoorhangerService.onOfferCallback = callback;
     }
@@ -187,6 +196,15 @@ export class DoorhangerService {
         return DoorhangerMatchService.resolveOffer(pending, urlMatchedCredentials);
     }
 
+    public static getSettings = async (): Promise<DoorhangerSettings> => {
+        try {
+            return await sendMessage('getDoorhangerSettings');
+        } catch (error) {
+            console.error('[Doorhanger] getDoorhangerSettings failed', error);
+            return { ...DEFAULT_DOORHANGER_SETTINGS };
+        }
+    }
+
     /**
      * Create a new credential in the default vault from the pending capture (reuses createCredentialForPicker).
      */
@@ -277,13 +295,17 @@ export class DoorhangerService {
             return;
         }
 
+        const settings = await DoorhangerService.getSettings();
+        console.debug('[Doorhanger] using settings:', settings);
+
         if (DoorhangerService.onOfferCallback) {
-            DoorhangerService.onOfferCallback(offer);
+            DoorhangerService.onOfferCallback({ offer, settings });
         } else {
             console.debug('[Doorhanger] offer ready; UI not wired yet', {
                 label: offer.pending.label,
                 updateCandidates: offer.updateCandidates.length,
-                preselectedGuid: offer.preselectedGuid
+                preselectedGuid: offer.preselectedGuid,
+                settings
             });
         }
     }

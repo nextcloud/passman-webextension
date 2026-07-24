@@ -7,6 +7,7 @@
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
+    import Select from 'svelte-select';
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import Loading from "~/spa_components/Loading.svelte";
@@ -15,9 +16,16 @@
     import { i18n } from "~/lib/i18n";
     import CustomStorageService from "~/services/CustomStorageService";
     import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
+    import {
+        DEFAULT_DOORHANGER_GRAVITY,
+        DEFAULT_DOORHANGER_LAYOUT,
+        normalizeDoorhangerSettings,
+        type DoorhangerGravity,
+        type DoorhangerLayout
+    } from "~/lib/doorhanger/doorhangerSettings";
 
     const extensionVersion = packageJson.version;
-    let extendedSettings: { [key: number]: boolean } = {
+    let extendedSettings: { [key: number]: boolean | string } = {
         [ExtensionSettingsOptions.ignoreProtocol]: false,
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
         [ExtensionSettingsOptions.ignorePath]: true,
@@ -28,8 +36,41 @@
         [ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]: false,
         [ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]: false,
         [ExtensionSettingsOptions.enableFormDetectionByMutationObserver]: false,
+        [ExtensionSettingsOptions.doorhangerLayout]: DEFAULT_DOORHANGER_LAYOUT,
+        [ExtensionSettingsOptions.doorhangerGravity]: DEFAULT_DOORHANGER_GRAVITY,
     };
 
+    const doorhangerLayoutOptions: { [key: string]: string } = {
+        card: i18n.getMessage('doorhanger_layout_card'),
+        topRow: i18n.getMessage('doorhanger_layout_top_row'),
+    };
+    const doorhangerGravityOptions: { [key: string]: string } = {
+        'top-right': i18n.getMessage('doorhanger_gravity_top_right'),
+        'top-left': i18n.getMessage('doorhanger_gravity_top_left'),
+        'bottom-right': i18n.getMessage('doorhanger_gravity_bottom_right'),
+        'bottom-left': i18n.getMessage('doorhanger_gravity_bottom_left'),
+    };
+    const doorhangerLayoutItems = Object.entries(doorhangerLayoutOptions).map(([key, value]) => ({
+        label: value,
+        value: key,
+    }));
+    const doorhangerGravityItems = Object.entries(doorhangerGravityOptions).map(([key, value]) => ({
+        label: value,
+        value: key,
+    }));
+    let doorhangerLayoutSelectValue = {
+        label: doorhangerLayoutOptions[DEFAULT_DOORHANGER_LAYOUT],
+        value: DEFAULT_DOORHANGER_LAYOUT,
+    };
+    let doorhangerGravitySelectValue = {
+        label: doorhangerGravityOptions[DEFAULT_DOORHANGER_GRAVITY],
+        value: DEFAULT_DOORHANGER_GRAVITY,
+    };
+
+    $: () => {
+        extendedSettings[ExtensionSettingsOptions.doorhangerLayout] = doorhangerLayoutSelectValue.value;
+        extendedSettings[ExtensionSettingsOptions.doorhangerGravity] = doorhangerGravitySelectValue.value;
+    };
 
     let lockSaveButton = false;
     let pageIsLoading = true;
@@ -81,11 +122,13 @@
 
     const save = async () => {
         lockSaveButton = true;
+        console.log(extendedSettings);
         for (let i of Object.keys(extendedSettings)) {
             const settingId = parseInt(i) as ExtensionSettingsOptions;
             const settingValue = extendedSettings[settingId];
             await ExtensionSettingsService.updatePartialExtensionSettings(settingId, settingValue);
         }
+
         NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
         lockSaveButton = false;
     }
@@ -115,6 +158,14 @@
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval];
                     extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionByMutationObserver)
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver];
+                    
+                    doorhangerLayoutSelectValue.value = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.doorhangerLayout)
+                        ?? doorhangerLayoutSelectValue.value;
+                    doorhangerLayoutSelectValue.label = doorhangerLayoutOptions[doorhangerLayoutSelectValue.value];
+                    doorhangerGravitySelectValue.value = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.doorhangerGravity)
+                        ?? doorhangerGravitySelectValue.value;
+                    doorhangerGravitySelectValue.label = doorhangerGravityOptions[doorhangerGravitySelectValue.value];
+
                     await refreshOfflineCacheSize();
                 } else {
                     push('/unlock');
@@ -169,6 +220,57 @@
                                 id="enableFormDetectionByMutationObserver"
                                 label="{i18n.getMessage('enable_form_detection_by_mutation_observer')}"/>
         <p class="description-text">{i18n.getMessage('enable_form_detection_by_mutation_observer_description')}</p>
+
+        <hr class="my-4 border-gray-200"/>
+
+        <h3 class="text-lg font-semibold">{i18n.getMessage('doorhanger_settings')}</h3>
+        <p class="text-xs text-gray-500">{i18n.getMessage('doorhanger_settings_description')}</p>
+        <div class="mt-2">
+            <label for="doorhangerLayout"
+                   class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('doorhanger_layout')}
+            </label>
+            <div class="my-2">
+                <Select
+                    multiple={false}
+                    clearable={false}
+                    searchable={false}
+                    showChevron={true}
+                    label="label"
+                    itemId="value"
+                    items={doorhangerLayoutItems}
+                    bind:value={doorhangerLayoutSelectValue}
+                    id="doorhangerLayout"
+                    --height="35px"
+                    --font-size="14px"
+                    containerStyles="height: 35px;"
+                />
+            </div>
+            <p class="description-text pl-0!">{i18n.getMessage('doorhanger_layout_description')}</p>
+        </div>
+        <div class="mt-2">
+            <label for="doorhangerGravity"
+                   class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('doorhanger_gravity')}
+            </label>
+            <div class="my-2">
+                <Select
+                    multiple={false}
+                    clearable={false}
+                    searchable={false}
+                    showChevron={true}
+                    label="label"
+                    itemId="value"
+                    items={doorhangerGravityItems}
+                    bind:value={doorhangerGravitySelectValue}
+                    id="doorhangerGravity"
+                    --height="35px"
+                    --font-size="14px"
+                    containerStyles="height: 35px;"
+                />
+            </div>
+            <p class="description-text pl-0!">{i18n.getMessage('doorhanger_gravity_description')}</p>
+        </div>
 
         <hr class="my-4 border-gray-200"/>
 

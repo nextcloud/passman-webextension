@@ -1,14 +1,24 @@
 import { onMessage } from "@/entrypoints/background/messaging";
+import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
 import {
-    DEFAULT_DOORHANGER_SETTINGS,
+    normalizeDoorhangerSettings,
     type DoorhangerSettings
 } from "~/lib/doorhanger/doorhangerSettings";
 
 export type GetDoorhangerSettingsResponse = DoorhangerSettings;
 
 /**
- * Returns Doorhanger layout/gravity.
+ * Returns Doorhanger layout/gravity from extension settings.
  */
 onMessage('getDoorhangerSettings', async () => {
-    return { ...DEFAULT_DOORHANGER_SETTINGS };
+    const layout = await ExtensionSettingsService.getPartialExtensionSettings(
+        ExtensionSettingsOptions.doorhangerLayout,
+        true
+    );
+    const gravity = await ExtensionSettingsService.getPartialExtensionSettings(
+        ExtensionSettingsOptions.doorhangerGravity,
+        true
+    );
+
+    return normalizeDoorhangerSettings(layout, gravity);
 });

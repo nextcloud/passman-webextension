@@ -1,27 +1,26 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { times, plus } from "svelte-awesome/icons";
     import { i18n } from "~/lib/i18n";
     import { DoorhangerService } from "~/services/frontend/DoorhangerService";
     import type { DoorhangerOffer } from "~/services/frontend/DoorhangerMatchService";
     import {
-        DEFAULT_DOORHANGER_GRAVITY,
-        DEFAULT_DOORHANGER_LAYOUT,
-        type DoorhangerGravity,
-        type DoorhangerLayout
+        DEFAULT_DOORHANGER_SETTINGS,
+        type DoorhangerSettings
     } from "~/lib/doorhanger/doorhangerSettings";
-    import { sendMessage } from "@/entrypoints/background/messaging";
 
     type Props = {
         offer: Extract<DoorhangerOffer, { show: true }>;
+        settings?: DoorhangerSettings;
         onClose: () => void;
     };
 
-    let { offer, onClose }: Props = $props();
+    let {
+        offer,
+        settings = DEFAULT_DOORHANGER_SETTINGS,
+        onClose
+    }: Props = $props();
 
-    let layout = $state<DoorhangerLayout>(DEFAULT_DOORHANGER_LAYOUT);
-    let gravity = $state<DoorhangerGravity>(DEFAULT_DOORHANGER_GRAVITY);
     let selectedGuid = $state<string | null>(null);
     let isBusy = $state(false);
     let errorMessage = $state("");
@@ -63,7 +62,8 @@
         [offer.pending.username, offer.pending.email].filter(Boolean).join(" · ")
     );
     const maskedPassword = $derived(maskPassword(offer.pending.password));
-    const rootClass = $derived(`layout-${layout} gravity-${gravity}`);
+    const layout = $derived(settings.layout ?? DEFAULT_DOORHANGER_SETTINGS.layout);
+    const gravity = $derived(settings.gravity ?? DEFAULT_DOORHANGER_SETTINGS.gravity);
 
     const dismiss = async () => {
         if (isBusy) {
@@ -112,20 +112,16 @@
         }
         isBusy = false;
     };
-
-    onMount(() => {
-        sendMessage("getDoorhangerSettings").then((settings) => {
-            layout = settings.layout ?? DEFAULT_DOORHANGER_LAYOUT;
-            gravity = settings.gravity ?? DEFAULT_DOORHANGER_GRAVITY;
-        }).catch((error) => {
-            console.warn("[Doorhanger] getDoorhangerSettings failed, using defaults", error);
-        });
-    });
 </script>
 
 <div
     id="passman_doorhanger"
-    class={rootClass}
+    class:layout-card={layout === "card"}
+    class:layout-topRow={layout === "topRow"}
+    class:gravity-top-right={gravity === "top-right"}
+    class:gravity-top-left={gravity === "top-left"}
+    class:gravity-bottom-right={gravity === "bottom-right"}
+    class:gravity-bottom-left={gravity === "bottom-left"}
     role="dialog"
     aria-label={title}
 >

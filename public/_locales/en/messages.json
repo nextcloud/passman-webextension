@@ -1464,5 +1464,53 @@
   "doorhanger_unnamed_credential": {
     "message": "Untitled credential",
     "description": "Fallback label when a doorhanger update candidate has no label"
+  },
+  "doorhanger_settings": {
+    "message": "Doorhanger",
+    "description": "Extended settings section title for doorhanger appearance"
+  },
+  "doorhanger_settings_description": {
+    "message": "Choose how the post-login save/update prompt is shown on websites.",
+    "description": "Description under the doorhanger settings section"
+  },
+  "doorhanger_layout": {
+    "message": "Layout",
+    "description": "Label for doorhanger layout dropdown"
+  },
+  "doorhanger_layout_description": {
+    "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+    "description": "Help text for doorhanger layout setting"
+  },
+  "doorhanger_layout_card": {
+    "message": "Card",
+    "description": "Doorhanger layout option: floating card"
+  },
+  "doorhanger_layout_top_row": {
+    "message": "Top row",
+    "description": "Doorhanger layout option: full-width top banner"
+  },
+  "doorhanger_gravity": {
+    "message": "Position",
+    "description": "Label for doorhanger gravity/position dropdown"
+  },
+  "doorhanger_gravity_description": {
+    "message": "Corner for the card layout, or content alignment for the top row layout.",
+    "description": "Help text for doorhanger gravity setting"
+  },
+  "doorhanger_gravity_top_right": {
+    "message": "Top right",
+    "description": "Doorhanger gravity option"
+  },
+  "doorhanger_gravity_top_left": {
+    "message": "Top left",
+    "description": "Doorhanger gravity option"
+  },
+  "doorhanger_gravity_bottom_right": {
+    "message": "Bottom right",
+    "description": "Doorhanger gravity option"
+  },
+  "doorhanger_gravity_bottom_left": {
+    "message": "Bottom left",
+    "description": "Doorhanger gravity option"
   }
 }

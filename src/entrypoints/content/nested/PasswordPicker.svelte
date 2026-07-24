@@ -11,8 +11,7 @@
     import PickerTabPageRules from "~/spa_partials/PasswordPickerSections/PickerTabPageRules.svelte";
     import Doorhanger from "./Doorhanger.svelte";
     import { LegacyFormManagerService } from "~/services/frontend/LegacyFormManagerService";
-    import { DoorhangerService } from "~/services/frontend/DoorhangerService";
-    import type { DoorhangerOffer } from "~/services/frontend/DoorhangerMatchService";
+    import { DoorhangerService, type DoorhangerShowPayload } from "~/services/frontend/DoorhangerService";
     import { i18n } from "~/lib/i18n";
     import { sendMessage } from "@/entrypoints/background/messaging";
     import type {
@@ -20,6 +19,10 @@
     } from "@/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
     import type { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
+    import {
+        DEFAULT_DOORHANGER_SETTINGS,
+        type DoorhangerSettings
+    } from "~/lib/doorhanger/doorhangerSettings";
 
     let shadowRootContainerId: string;
 
@@ -36,7 +39,8 @@
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     let enableEmailAsUsernameFallbackFilling: boolean = true;
 
-    let doorhangerOffer: Extract<DoorhangerOffer, { show: true }> | null = null;
+    let doorhangerOffer: DoorhangerShowPayload['offer'] | null = null;
+    let doorhangerSettings: DoorhangerSettings = { ...DEFAULT_DOORHANGER_SETTINGS };
 
     const showPickerCallback = (left: number, top: number, maxZ: any) => {
         decryptedPartialCredentialData = PasswordPickerService.decryptedPartialCredentialData;
@@ -49,8 +53,9 @@
         pickerPopupIsOpen = false;
     }
 
-    const showDoorhanger = (offer: Extract<DoorhangerOffer, { show: true }>) => {
-        doorhangerOffer = offer;
+    const showDoorhanger = (payload: DoorhangerShowPayload) => {
+        doorhangerSettings = payload.settings;
+        doorhangerOffer = payload.offer;
     };
 
     const hideDoorhanger = () => {
@@ -129,7 +134,11 @@
 
 {#if extensionIsUnlocked}
     {#if doorhangerOffer}
-        <Doorhanger offer={doorhangerOffer} onClose={hideDoorhanger}/>
+        <Doorhanger
+            offer={doorhangerOffer}
+            settings={doorhangerSettings}
+            onClose={hideDoorhanger}
+        />
     {/if}
 
     <div id="password_picker" style="{customPickerStyle}">
