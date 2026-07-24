@@ -2,10 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [v3, main]
+    branches: [master]
     tags: ["*"]
   pull_request:
-    branches: [v3, main]
+    branches: [master]
   workflow_dispatch:
 
 concurrency:
@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   build:
+    # Only skip direct pushes from Nextcloud bot (e.g. Transifex l10n commits)
+    if: github.event_name != 'push' || github.actor != 'nextcloud-bot'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
