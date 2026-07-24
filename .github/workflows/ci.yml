@@ -30,6 +30,18 @@ jobs:
       - name: Prebuild (TLD rules)
         run: bun run prebuild
 
+      # Warnings are allowed; only errors fail the job (svelte-check --threshold error).
+      - name: Type check
+        run: bun run check-errors
+
+      - name: Build Chrome extension
+        if: github.event_name == 'pull_request'
+        run: bun run build
+
+      - name: Build Firefox extension
+        if: github.event_name == 'pull_request'
+        run: bun run build:firefox
+
       - name: Zip Chrome extension
         run: bun run zip
 
