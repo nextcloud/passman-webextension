@@ -5,7 +5,10 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import ExtensionSettingsService, {
+        ExtensionSettingsOptions,
+        type ExtensionSettings,
+    } from "~/services/ExtensionSettingsService";
     import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
     import Select from 'svelte-select';
     // @ts-expect-error
@@ -21,8 +24,23 @@
         DEFAULT_DOORHANGER_LAYOUT,
     } from "~/lib/doorhanger/doorhangerSettings";
 
+    type ExtendedSettingsForm = Pick<ExtensionSettings,
+        | ExtensionSettingsOptions.ignoreProtocol
+        | ExtensionSettingsOptions.ignoreSubdomain
+        | ExtensionSettingsOptions.ignorePath
+        | ExtensionSettingsOptions.ignorePort
+        | ExtensionSettingsOptions.autofillEnabled
+        | ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling
+        | ExtensionSettingsOptions.enableUserEventBasedFormDetection
+        | ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents
+        | ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval
+        | ExtensionSettingsOptions.enableFormDetectionByMutationObserver
+        | ExtensionSettingsOptions.doorhangerLayout
+        | ExtensionSettingsOptions.doorhangerGravity
+    >;
+
     const extensionVersion = packageJson.version;
-    let extendedSettings = $state<{ [key: number]: boolean | string }>({
+    let extendedSettings = $state<ExtendedSettingsForm>({
         [ExtensionSettingsOptions.ignoreProtocol]: false,
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
         [ExtensionSettingsOptions.ignorePath]: true,
@@ -120,10 +138,9 @@
     const save = async () => {
         lockSaveButton = true;
         console.log(extendedSettings);
-        for (let i of Object.keys(extendedSettings)) {
-            const settingId = parseInt(i) as ExtensionSettingsOptions;
-            const settingValue = extendedSettings[settingId];
-            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, settingValue);
+        for (const key of Object.keys(extendedSettings)) {
+            const settingId = Number(key) as keyof ExtendedSettingsForm;
+            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);
         }
 
         NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
