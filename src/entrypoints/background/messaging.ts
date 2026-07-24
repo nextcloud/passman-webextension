@@ -62,6 +62,10 @@ import {
 import {
     ClearPendingDoorhangerCredentialResponse
 } from "@/entrypoints/background/messages/clearPendingDoorhangerCredential";
+import {
+    UpdateCredentialForDoorhangerMessagingRequest,
+    UpdateCredentialForDoorhangerMessagingResponse
+} from "@/entrypoints/background/messages/updateCredentialForDoorhanger";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -107,6 +111,8 @@ interface ProtocolMap {
     getPendingDoorhangerCredential(): GetPendingDoorhangerCredentialResponse;
 
     clearPendingDoorhangerCredential(): ClearPendingDoorhangerCredentialResponse;
+
+    updateCredentialForDoorhanger(data: UpdateCredentialForDoorhangerMessagingRequest): UpdateCredentialForDoorhangerMessagingResponse;
 
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;

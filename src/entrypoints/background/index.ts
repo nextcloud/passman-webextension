@@ -27,6 +27,7 @@ import './messages/updatePickerPageSettings';
 import './messages/cachePendingDoorhangerCredential';
 import './messages/getPendingDoorhangerCredential';
 import './messages/clearPendingDoorhangerCredential';
+import './messages/updateCredentialForDoorhanger';
 import { executeOnMessageListenerRegistration } from "@/entrypoints/background/messaging";
 import { DoorhangerPendingCredentialService } from "@/services/backend/DoorhangerPendingCredentialService";
 

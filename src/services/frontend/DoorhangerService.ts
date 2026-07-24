@@ -4,22 +4,46 @@ import {
     DoorhangerSuccessDetectionService,
     type DoorhangerSuccessDetectionResult
 } from "~/services/frontend/DoorhangerSuccessDetectionService";
+import {
+    DoorhangerMatchService,
+    type DoorhangerOffer
+} from "~/services/frontend/DoorhangerMatchService";
 import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDetectionService";
 import { sendMessage } from "@/entrypoints/background/messaging";
+import {
+    GetCredentialsListMessagingFilterType,
+    type DecryptedPartialCredentialData
+} from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+import type { CreateCredentialForPickerMessagingResponse } from "~/entrypoints/background/messages/createCredentialForPicker";
+import type { UpdateCredentialForDoorhangerMessagingResponse } from "~/entrypoints/background/messages/updateCredentialForDoorhanger";
+import { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
 
 /**
- * Content-script orchestration for Doorhanger capture and success detection
+ * Content-script orchestration for Doorhanger capture, success detection,
+ * offer resolution, and add/update actions.
  */
 export class DoorhangerService {
     private static successHandledForCaptureAt: number | null = null;
     private static delayedEvaluateTimeouts: number[] = [];
-    private static onSuccessCallback: ((pending: PendingDoorhangerCredential) => void) | null = null;
+    private static onOfferCallback: ((offer: Extract<DoorhangerOffer, { show: true }>) => void) | null = null;
+    private static onUrlMatchedCredentialsCallback: ((credentials: DecryptedPartialCredentialData[]) => void) | null = null;
+    private static onCredentialUpsertCallback: ((credential: DecryptedPartialCredentialData) => void) | null = null;
 
     /** Delays (ms) after submit to re-check form-gone success without a URL change */
     private static readonly POST_SUBMIT_EVALUATE_DELAYS_MS = [400, 1200, 3000];
 
-    public static setOnSuccessCallback = (callback: ((pending: PendingDoorhangerCredential) => void) | null): void => {
-        DoorhangerService.onSuccessCallback = callback;
+    public static setOnOfferCallback = (
+        callback: ((offer: Extract<DoorhangerOffer, { show: true }>) => void) | null
+    ): void => {
+        DoorhangerService.onOfferCallback = callback;
+    }
+
+    public static setCredentialListCallbacks = (callbacks: {
+        onUrlMatchedCredentials?: ((credentials: DecryptedPartialCredentialData[]) => void) | null;
+        onCredentialUpsert?: ((credential: DecryptedPartialCredentialData) => void) | null;
+    } | null): void => {
+        DoorhangerService.onUrlMatchedCredentialsCallback = callbacks?.onUrlMatchedCredentials ?? null;
+        DoorhangerService.onCredentialUpsertCallback = callbacks?.onCredentialUpsert ?? null;
     }
 
     /**
@@ -86,8 +110,8 @@ export class DoorhangerService {
 
     /**
      * Fetch pending credential (if any) and run registered success detectors.
-     * On success: pause form detection and invoke the success callback.
-     * Does not clear pending (kept until dismiss/save or TTL).
+     * On success: pause form detection, resolve offer, invoke offer callback when shown.
+     * Does not clear pending on show (kept until dismiss/save or TTL).
      */
     public static evaluateAfterPossibleLogin = async (): Promise<DoorhangerSuccessDetectionResult | null> => {
         let pending: PendingDoorhangerCredential | null | undefined;
@@ -116,20 +140,103 @@ export class DoorhangerService {
 
         if (result === 'abort') {
             DoorhangerService.clearDelayedEvaluates();
-            try {
-                await sendMessage('clearPendingDoorhangerCredential');
-            } catch (error) {
-                console.error('[Doorhanger] clearPendingDoorhangerCredential failed', error);
-            }
+            await DoorhangerService.clearPending();
             return result;
         }
 
         if (result === 'success') {
-            DoorhangerService.handleSuccess(pending);
+            await DoorhangerService.handleSuccess(pending);
             return result;
         }
 
         return result;
+    }
+
+    /**
+     * Resolve add/update offer for a pending credential against URL-matched vault entries.
+     * Returns show:false when locked or when an identical perfect match already exists.
+     */
+    public static resolveOffer = async (pending: PendingDoorhangerCredential): Promise<DoorhangerOffer> => {
+        try {
+            const unlockState = await sendMessage('getExtensionUnlockState');
+            if (unlockState.status !== ExtensionUnlockState.UNLOCKED) {
+                // locked or not set up yet
+                return { show: false, reason: 'locked' };
+            }
+        } catch (error) {
+            console.error('[Doorhanger] getExtensionUnlockState failed', error);
+            return { show: false, reason: 'locked' };
+        }
+
+        let urlMatchedCredentials: DecryptedPartialCredentialData[] = [];
+
+        try {
+            const credentialsResponse = await sendMessage('getPartiallyDecryptedFilteredCredentialsList', {
+                filterText: window.location.href,
+                filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
+                getCachedIfPossible: true
+            });
+            if (credentialsResponse.status) {
+                urlMatchedCredentials = credentialsResponse.decryptedPartialCredentialData;
+                DoorhangerService.onUrlMatchedCredentialsCallback?.(urlMatchedCredentials);
+            }
+        } catch (error) {
+            console.error('[Doorhanger] getPartiallyDecryptedFilteredCredentialsList failed', error);
+        }
+
+        return DoorhangerMatchService.resolveOffer(pending, urlMatchedCredentials);
+    }
+
+    /**
+     * Create a new credential in the default vault from the pending capture (reuses createCredentialForPicker).
+     */
+    public static addFromPending = async (
+        pending: PendingDoorhangerCredential
+    ): Promise<CreateCredentialForPickerMessagingResponse> => {
+        const response = await sendMessage('createCredentialForPicker', {
+            credentialData: {
+                label: pending.label,
+                username: pending.username ?? '',
+                email: pending.email ?? '',
+                password: pending.password,
+                url: pending.url
+            }
+        });
+
+        if (response.status && response.decryptedPartialCredentialData) {
+            DoorhangerService.onCredentialUpsertCallback?.(response.decryptedPartialCredentialData);
+        }
+
+        if (response.status) {
+            await DoorhangerService.clearPending();
+        }
+
+        return response;
+    }
+
+    /**
+     * Update an existing credential in the default vault with pending identity/password.
+     */
+    public static updateFromPending = async (
+        pending: PendingDoorhangerCredential,
+        guid: string
+    ): Promise<UpdateCredentialForDoorhangerMessagingResponse> => {
+        const response = await sendMessage('updateCredentialForDoorhanger', {
+            guid,
+            username: pending.username,
+            email: pending.email,
+            password: pending.password
+        });
+
+        if (response.status && response.decryptedPartialCredentialData) {
+            DoorhangerService.onCredentialUpsertCallback?.(response.decryptedPartialCredentialData);
+        }
+
+        if (response.status) {
+            await DoorhangerService.clearPending();
+        }
+
+        return response;
     }
 
     public static clearPending = async (): Promise<void> => {
@@ -145,10 +252,12 @@ export class DoorhangerService {
     public static unload = (): void => {
         DoorhangerService.clearDelayedEvaluates();
         DoorhangerService.successHandledForCaptureAt = null;
-        DoorhangerService.onSuccessCallback = null;
+        DoorhangerService.onOfferCallback = null;
+        DoorhangerService.onUrlMatchedCredentialsCallback = null;
+        DoorhangerService.onCredentialUpsertCallback = null;
     }
 
-    private static handleSuccess = (pending: PendingDoorhangerCredential): void => {
+    private static handleSuccess = async (pending: PendingDoorhangerCredential): Promise<void> => {
         // avoid repeating success side-effects for the same capture
         if (DoorhangerService.successHandledForCaptureAt === pending.capturedAt) {
             return;
@@ -156,15 +265,25 @@ export class DoorhangerService {
         DoorhangerService.successHandledForCaptureAt = pending.capturedAt;
         DoorhangerService.clearDelayedEvaluates();
 
-        // pause form-detection overhead after a successful login (see DynamicFormDetectionService TODO)
+        // pause form-detection overhead after a successful login
         DynamicFormDetectionService.disableAll();
 
-        if (DoorhangerService.onSuccessCallback) {
-            DoorhangerService.onSuccessCallback(pending);
+        const offer = await DoorhangerService.resolveOffer(pending);
+        console.debug('[Doorhanger] offer resolved:', offer);
+
+        if (!offer.show) {
+            // identical credential already stored, or vault locked -> drop pending
+            await DoorhangerService.clearPending();
+            return;
+        }
+
+        if (DoorhangerService.onOfferCallback) {
+            DoorhangerService.onOfferCallback(offer);
         } else {
-            console.debug('[Doorhanger] login success detected; UI not wired yet', {
-                label: pending.label,
-                url: pending.url
+            console.debug('[Doorhanger] offer ready; UI not wired yet', {
+                label: offer.pending.label,
+                updateCandidates: offer.updateCandidates.length,
+                preselectedGuid: offer.preselectedGuid
             });
         }
     }
