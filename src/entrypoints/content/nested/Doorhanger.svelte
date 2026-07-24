@@ -64,6 +64,7 @@
     const maskedPassword = $derived(maskPassword(offer.pending.password));
     const layout = $derived(settings.layout ?? DEFAULT_DOORHANGER_SETTINGS.layout);
     const gravity = $derived(settings.gravity ?? DEFAULT_DOORHANGER_SETTINGS.gravity);
+    const isTopRow = $derived(layout === "topRow");
 
     const dismiss = async () => {
         if (isBusy) {
@@ -117,7 +118,7 @@
 <div
     id="passman_doorhanger"
     class:layout-card={layout === "card"}
-    class:layout-topRow={layout === "topRow"}
+    class:layout-topRow={isTopRow}
     class:gravity-top-right={gravity === "top-right"}
     class:gravity-top-left={gravity === "top-left"}
     class:gravity-bottom-right={gravity === "bottom-right"}
@@ -125,41 +126,28 @@
     role="dialog"
     aria-label={title}
 >
-    <div class="doorhanger-inner">
-        <div class="doorhanger-body">
-            <div class="doorhanger-header">
-                <div>
-                    <h2 class="doorhanger-title">{title}</h2>
-                    <p class="doorhanger-subtitle" title={offer.pending.url}>{offer.pending.label}</p>
-                </div>
-                <button
-                    type="button"
-                    class="doorhanger-close"
-                    title={i18n.getMessage("doorhanger_dismiss")}
-                    aria-label={i18n.getMessage("doorhanger_dismiss")}
-                    onclick={dismiss}
-                    disabled={isBusy}
-                >
-                    <Icon data={times} scale={1.0}/>
-                </button>
-            </div>
-
-            <div class="doorhanger-preview">
+    {#if isTopRow}
+        <div class="doorhanger-inner">
+            <div class="doorhanger-compact-info">
+                <span class="doorhanger-title">{title}</span>
+                <span class="doorhanger-sep" aria-hidden="true">·</span>
+                <span class="doorhanger-subtitle" title={offer.pending.url}>{offer.pending.label}</span>
                 {#if identityPreview}
-                    <div class="doorhanger-preview-identity">{identityPreview}</div>
+                    <span class="doorhanger-sep" aria-hidden="true">·</span>
+                    <span class="doorhanger-preview-identity">{identityPreview}</span>
                 {/if}
-                <div class="doorhanger-preview-password">{maskedPassword}</div>
+                <span class="doorhanger-sep" aria-hidden="true">·</span>
+                <span class="doorhanger-preview-password">{maskedPassword}</span>
             </div>
 
             {#if hasUpdateCandidates}
-                <label class="doorhanger-select-label" for="doorhanger-credential-select">
-                    {i18n.getMessage("doorhanger_select_credential")}
-                </label>
                 <select
                     id="doorhanger-credential-select"
                     class="doorhanger-select"
                     bind:value={selectedGuid}
                     disabled={isBusy || offer.updateCandidates.length === 1}
+                    aria-label={i18n.getMessage("doorhanger_select_credential")}
+                    title={i18n.getMessage("doorhanger_select_credential")}
                 >
                     {#each offer.updateCandidates as candidate (candidate.guid)}
                         <option value={candidate.guid}>{candidateLabel(candidate.guid)}</option>
@@ -168,41 +156,127 @@
             {/if}
 
             {#if errorMessage}
-                <p class="doorhanger-error">{errorMessage}</p>
+                <p class="doorhanger-error" title={errorMessage}>{errorMessage}</p>
             {/if}
-        </div>
 
-        <div class="doorhanger-actions">
-            {#if hasUpdateCandidates}
+            <div class="doorhanger-actions">
+                {#if hasUpdateCandidates}
+                    <button
+                        type="button"
+                        class="doorhanger-btn primary"
+                        onclick={updateSelected}
+                        disabled={isBusy || !selectedGuid}
+                    >
+                        {i18n.getMessage("update")}
+                    </button>
+                {/if}
                 <button
                     type="button"
-                    class="doorhanger-btn primary"
-                    onclick={updateSelected}
-                    disabled={isBusy || !selectedGuid}
+                    class="doorhanger-btn {hasUpdateCandidates ? 'secondary' : 'primary'}"
+                    onclick={saveNew}
+                    disabled={isBusy}
+                    title={hasUpdateCandidates ? i18n.getMessage("save") : undefined}
+                    aria-label={hasUpdateCandidates ? i18n.getMessage("save") : undefined}
                 >
-                    {i18n.getMessage("update")}
+                    {#if hasUpdateCandidates}
+                        <Icon data={plus} scale={1.2}/>
+                    {:else}
+                        {i18n.getMessage("save")}
+                    {/if}
                 </button>
-            {/if}
+            </div>
+
             <button
                 type="button"
-                class="doorhanger-btn {hasUpdateCandidates ? 'secondary' : 'primary'}"
-                onclick={saveNew}
-                disabled={isBusy}
-            >
-                {#if hasUpdateCandidates}
-                    <Icon data={plus} scale={1.3}/>
-                {:else}
-                    {i18n.getMessage("save")}
-                {/if}
-            </button>
-            <button
-                type="button"
-                class="doorhanger-btn ghost"
+                class="doorhanger-close"
+                title={i18n.getMessage("doorhanger_dismiss")}
+                aria-label={i18n.getMessage("doorhanger_dismiss")}
                 onclick={dismiss}
                 disabled={isBusy}
             >
-                {i18n.getMessage("doorhanger_dismiss")}
+                <Icon data={times} scale={1.0}/>
             </button>
         </div>
-    </div>
+    {:else}
+        <div class="doorhanger-inner">
+            <div class="doorhanger-body">
+                <div class="doorhanger-header">
+                    <div>
+                        <h2 class="doorhanger-title">{title}</h2>
+                        <p class="doorhanger-subtitle" title={offer.pending.url}>{offer.pending.label}</p>
+                    </div>
+                    <button
+                        type="button"
+                        class="doorhanger-close"
+                        title={i18n.getMessage("doorhanger_dismiss")}
+                        aria-label={i18n.getMessage("doorhanger_dismiss")}
+                        onclick={dismiss}
+                        disabled={isBusy}
+                    >
+                        <Icon data={times} scale={1.0}/>
+                    </button>
+                </div>
+
+                <div class="doorhanger-preview">
+                    {#if identityPreview}
+                        <div class="doorhanger-preview-identity">{identityPreview}</div>
+                    {/if}
+                    <div class="doorhanger-preview-password">{maskedPassword}</div>
+                </div>
+
+                {#if hasUpdateCandidates}
+                    <label class="doorhanger-select-label" for="doorhanger-credential-select">
+                        {i18n.getMessage("doorhanger_select_credential")}
+                    </label>
+                    <select
+                        id="doorhanger-credential-select"
+                        class="doorhanger-select"
+                        bind:value={selectedGuid}
+                        disabled={isBusy || offer.updateCandidates.length === 1}
+                    >
+                        {#each offer.updateCandidates as candidate (candidate.guid)}
+                            <option value={candidate.guid}>{candidateLabel(candidate.guid)}</option>
+                        {/each}
+                    </select>
+                {/if}
+
+                {#if errorMessage}
+                    <p class="doorhanger-error">{errorMessage}</p>
+                {/if}
+            </div>
+
+            <div class="doorhanger-actions">
+                {#if hasUpdateCandidates}
+                    <button
+                        type="button"
+                        class="doorhanger-btn primary"
+                        onclick={updateSelected}
+                        disabled={isBusy || !selectedGuid}
+                    >
+                        {i18n.getMessage("update")}
+                    </button>
+                {/if}
+                <button
+                    type="button"
+                    class="doorhanger-btn {hasUpdateCandidates ? 'secondary' : 'primary'}"
+                    onclick={saveNew}
+                    disabled={isBusy}
+                >
+                    {#if hasUpdateCandidates}
+                        <Icon data={plus} scale={1.3}/>
+                    {:else}
+                        {i18n.getMessage("save")}
+                    {/if}
+                </button>
+                <button
+                    type="button"
+                    class="doorhanger-btn ghost"
+                    onclick={dismiss}
+                    disabled={isBusy}
+                >
+                    {i18n.getMessage("doorhanger_dismiss")}
+                </button>
+            </div>
+        </div>
+    {/if}
 </div>
