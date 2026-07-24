@@ -64,8 +64,13 @@
         credentialData.otp = {};
     }
 
+    const getOtpQrImage = (otp: typeof credentialData.otp) => {
+        const qrUri = otp?.qr_uri;
+        return typeof qrUri === 'object' && qrUri != null ? qrUri.image : undefined;
+    }
+
     onMount(() => {
-        if (credentialData?.otp?.secret && !credentialData?.otp?.qr_uri?.image) {
+        if (credentialData?.otp?.secret && !getOtpQrImage(credentialData.otp)) {
             updateGenerateQRCode();
         }
     });
@@ -92,9 +97,10 @@
             </div>
         {/if}
         {#if credentialData.otp != null}
-            {#if credentialData.otp.qr_uri?.image != null}
+            {@const qrImage = getOtpQrImage(credentialData.otp)}
+            {#if qrImage != null}
                 <div class="mt-2">
-                    <img src={credentialData.otp.qr_uri.image} class="border-white border-2 bg-white"
+                    <img src={qrImage} class="border-white border-2 bg-white"
                          alt="{i18n.getMessage('otp_qr_code')}"/>
                 </div>
             {/if}

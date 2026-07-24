@@ -112,7 +112,7 @@
                         currentWindow: true,
                         active: true
                     }).then(function (activeTabs: browser.Tabs.Tab[]) {
-                        if (Array.isArray(activeTabs) && activeTabs.length !== 0) {
+                        if (Array.isArray(activeTabs) && activeTabs.length !== 0 && activeTabs[0].url) {
                             // check for a parseable URL as early as possible to avoid handling in multiple follow-up code paths
                             try {
                                 new URL(activeTabs[0].url);
