@@ -43,11 +43,11 @@ export class PasswordPickerService {
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
 
         // We're using the doorhanger response here to update the decryptedPartialCredentialData list in the same run; efficiency baby
-        // Keep it disabled as long as the doorhanger logic is in experimental state nt prevent unexpected password picker behavior
-        /*
         DoorhangerService.setCredentialListCallbacks({
             onUrlMatchedCredentials: (credentials) => {
-                PasswordPickerService.decryptedPartialCredentialData = credentials;
+                // Keep it disabled as long as the doorhanger logic is in experimental state nt prevent unexpected password picker behavior
+                // Main reason to keep it disabled is to be sure not to work-around picker expected credential filters
+                // PasswordPickerService.decryptedPartialCredentialData = credentials;
             },
             onCredentialUpsert: (credential) => {
                 const index = PasswordPickerService.decryptedPartialCredentialData.findIndex(
@@ -60,7 +60,6 @@ export class PasswordPickerService {
                 }
             }
         });
-        */
 
         console.debug("initPickerForPage");
 

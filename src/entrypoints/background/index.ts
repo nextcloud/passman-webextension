@@ -28,6 +28,7 @@ import './messages/cachePendingDoorhangerCredential';
 import './messages/getPendingDoorhangerCredential';
 import './messages/clearPendingDoorhangerCredential';
 import './messages/updateCredentialForDoorhanger';
+import './messages/getDoorhangerSettings';
 import { executeOnMessageListenerRegistration } from "@/entrypoints/background/messaging";
 import { DoorhangerPendingCredentialService } from "@/services/backend/DoorhangerPendingCredentialService";
 

@@ -1,0 +1,268 @@
+// Variables (aligned with password_picker.scss)
+$primary-color: #0082c9;
+$primary-hover: #0073b5;
+$text-color: #1f2937;
+$gray-100: #f9fafb;
+$gray-200: #f3f4f6;
+$gray-300: #e5e7eb;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$error-color: #ef4444;
+
+#passman_doorhanger {
+  all: initial;
+
+  position: fixed;
+  z-index: 2147483646;
+  box-sizing: border-box;
+  color: $text-color;
+  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06),
+              0 0 0 1px rgba(0, 0, 0, 0.05);
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  // --- Layout: card ---
+  &.layout-card {
+    width: min(360px, calc(100vw - 24px));
+    max-width: 360px;
+    border-radius: 12px;
+    padding: 14px 16px;
+
+    &.gravity-top-right {
+      top: 16px;
+      right: 16px;
+    }
+
+    &.gravity-top-left {
+      top: 16px;
+      left: 16px;
+    }
+
+    &.gravity-bottom-right {
+      bottom: 16px;
+      right: 16px;
+    }
+
+    &.gravity-bottom-left {
+      bottom: 16px;
+      left: 16px;
+    }
+  }
+
+  // --- Layout: top row banner ---
+  &.layout-topRow {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px 16px;
+    border-bottom: 1px solid $gray-300;
+
+    .doorhanger-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .doorhanger-body {
+      flex: 1 1 220px;
+      min-width: 0;
+    }
+
+    .doorhanger-actions {
+      flex: 0 0 auto;
+      margin-top: 0;
+    }
+
+    // gravity only affects content alignment in topRow
+    &.gravity-top-left .doorhanger-inner,
+    &.gravity-bottom-left .doorhanger-inner {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    &.gravity-top-right .doorhanger-inner,
+    &.gravity-bottom-right .doorhanger-inner {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  .doorhanger-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .doorhanger-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-color;
+  }
+
+  .doorhanger-subtitle {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: $gray-500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 280px;
+  }
+
+  .doorhanger-close {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin: -4px -4px 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: $gray-500;
+    cursor: pointer;
+
+    &:hover {
+      background: $gray-200;
+      color: $text-color;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+  }
+
+  .doorhanger-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0 0 10px;
+    padding: 8px 10px;
+    background: $gray-100;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  .doorhanger-preview-identity {
+    font-weight: 500;
+    color: $text-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .doorhanger-preview-password {
+    color: $gray-600;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    letter-spacing: 0.08em;
+  }
+
+  .doorhanger-select-label {
+    display: block;
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $gray-600;
+  }
+
+  .doorhanger-select {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 7px 10px;
+    border: 1px solid $gray-300;
+    border-radius: 8px;
+    background: #ffffff;
+    color: $text-color;
+    font: inherit;
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid rgba($primary-color, 0.35);
+      outline-offset: 1px;
+      border-color: $primary-color;
+    }
+  }
+
+  .doorhanger-error {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: $error-color;
+  }
+
+  .doorhanger-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .doorhanger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 550;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &.primary {
+      background: $primary-color;
+      color: #ffffff;
+
+      &:hover:not(:disabled) {
+        background: $primary-hover;
+      }
+    }
+
+    &.secondary {
+      background: #ffffff;
+      color: $text-color;
+      border-color: $gray-300;
+
+      &:hover:not(:disabled) {
+        background: $gray-100;
+      }
+    }
+
+    &.ghost {
+      background: transparent;
+      color: $gray-600;
+
+      &:hover:not(:disabled) {
+        background: $gray-100;
+        color: $text-color;
+      }
+    }
+  }
+}

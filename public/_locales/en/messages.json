@@ -1444,5 +1444,25 @@
   "could_not_get_password_generator_configuration": {
     "message": "Could not get custom password generator configuration",
     "description": "Error when loading password generator settings fails"
+  },
+  "doorhanger_save_title": {
+    "message": "Save login to Passman?",
+    "description": "Doorhanger title when offering to add a new credential"
+  },
+  "doorhanger_update_title": {
+    "message": "Update login in Passman?",
+    "description": "Doorhanger title when offering to update a matched credential"
+  },
+  "doorhanger_dismiss": {
+    "message": "Not now",
+    "description": "Doorhanger button to dismiss the prompt for this attempt"
+  },
+  "doorhanger_select_credential": {
+    "message": "Credential to update",
+    "description": "Label for selecting which matched credential to update"
+  },
+  "doorhanger_unnamed_credential": {
+    "message": "Untitled credential",
+    "description": "Fallback label when a doorhanger update candidate has no label"
   }
 }
