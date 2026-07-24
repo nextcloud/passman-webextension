@@ -13,6 +13,7 @@ import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/
 import passwordPickerIcon from "~/assets/images/passwordPickerIcon.svg";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDetectionService";
+import { DoorhangerService } from "~/services/frontend/DoorhangerService";
 import { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
 import type { PageRulesInterface } from "@/services/PageRulesService";
 
@@ -41,6 +42,25 @@ export class PasswordPickerService {
         PasswordPickerService.showPickerCallback = showPickerCallback;
         PasswordPickerService.hidePickerCallback = hidePickerCallback;
 
+        // We're using the doorhanger response here to update the decryptedPartialCredentialData list in the same run; efficiency baby
+        DoorhangerService.setCredentialListCallbacks({
+            onUrlMatchedCredentials: (credentials) => {
+                // Keep it disabled as long as the doorhanger logic is in experimental state nt prevent unexpected password picker behavior
+                // Main reason to keep it disabled is to be sure not to work-around picker expected credential filters
+                // PasswordPickerService.decryptedPartialCredentialData = credentials;
+            },
+            onCredentialUpsert: (credential) => {
+                const index = PasswordPickerService.decryptedPartialCredentialData.findIndex(
+                    (c) => c.guid === credential.guid
+                );
+                if (index === -1) {
+                    PasswordPickerService.decryptedPartialCredentialData.push(credential);
+                } else {
+                    PasswordPickerService.decryptedPartialCredentialData[index] = credential;
+                }
+            }
+        });
+
         console.debug("initPickerForPage");
 
         // Initialize current URL in detection service
@@ -51,6 +71,9 @@ export class PasswordPickerService {
 
         // Set up observer for dynamically added forms (SPA support)
         PasswordPickerService.setupFormObserver(pickerPageSettings);
+
+        // Evaluate pending doorhanger after reload / content-script reinjection
+        DoorhangerService.init();
     }
 
     /**
@@ -152,6 +175,8 @@ export class PasswordPickerService {
                 PasswordPickerService.decryptedPartialCredentialData = [];
             }
             PasswordPickerService.processLoginForms(pickerPageSettings);
+
+            DoorhangerService.onUrlChanged(newUrl, oldUrl);
         });
 
         // Enable all detection features individually, based on the extension settings, merged with the page rules
@@ -182,6 +207,8 @@ export class PasswordPickerService {
         
         // Clean up dynamic form detection service
         DynamicFormDetectionService.cleanup();
+
+        DoorhangerService.unload();
         
         // Clear credentials data
         PasswordPickerService.decryptedPartialCredentialData = [];
@@ -330,8 +357,8 @@ export class PasswordPickerService {
     }
 
     public static onFormSubmittedCallback = (loginFields: FillableLoginFormFields) => {
-        console.debug("onFormSubmittedCallback");
-        console.debug(loginFields);
+        console.debug("onFormSubmittedCallback", loginFields);
+        void DoorhangerService.cacheFromFormSubmit(loginFields);
     }
 
     public static searchCredentialsForPicker = (searchInput: string): Promise<GetCredentialsListMessagingResponse> => {

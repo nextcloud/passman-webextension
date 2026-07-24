@@ -52,6 +52,23 @@ import {
 import {
     ListServerConnectionsResponse
 } from "@/entrypoints/background/messages/listServerConnections";
+import {
+    CachePendingDoorhangerCredentialRequest,
+    CachePendingDoorhangerCredentialResponse
+} from "@/entrypoints/background/messages/cachePendingDoorhangerCredential";
+import {
+    GetPendingDoorhangerCredentialResponse
+} from "@/entrypoints/background/messages/getPendingDoorhangerCredential";
+import {
+    ClearPendingDoorhangerCredentialResponse
+} from "@/entrypoints/background/messages/clearPendingDoorhangerCredential";
+import {
+    UpdateCredentialForDoorhangerMessagingRequest,
+    UpdateCredentialForDoorhangerMessagingResponse
+} from "@/entrypoints/background/messages/updateCredentialForDoorhanger";
+import {
+    GetDoorhangerSettingsResponse
+} from "@/entrypoints/background/messages/getDoorhangerSettings";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -91,6 +108,16 @@ interface ProtocolMap {
     getPickerPageSettings(): GetPickerPageSettingsResponse;
 
     updatePickerPageSettings(data: UpdatePickerPageSettingsRequest): Promise<void>;
+
+    cachePendingDoorhangerCredential(data: CachePendingDoorhangerCredentialRequest): CachePendingDoorhangerCredentialResponse;
+
+    getPendingDoorhangerCredential(): GetPendingDoorhangerCredentialResponse;
+
+    clearPendingDoorhangerCredential(): ClearPendingDoorhangerCredentialResponse;
+
+    updateCredentialForDoorhanger(data: UpdateCredentialForDoorhangerMessagingRequest): UpdateCredentialForDoorhangerMessagingResponse;
+
+    getDoorhangerSettings(): GetDoorhangerSettingsResponse;
 
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;

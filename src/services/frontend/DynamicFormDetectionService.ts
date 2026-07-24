@@ -2,9 +2,7 @@
  * Service for detecting dynamically added forms and input fields in SPAs
  * Provides configurable detection mechanisms that can be enabled/disabled individually
  *
- * todo: try to implement a successful login logic to disable the detection service afterwards (to avoid unnecessary performance overhead)
- *   - e.g. by checking if the form has been submitted successfully or a login form button still exists
- *   - check the old doorhanger logic and/or reimplementation in the future
+ * After a successful login, DoorhangerService calls disableAll() to reduce overhead.
  */
 export class DynamicFormDetectionService {
     private static mutationObserver: MutationObserver | null = null;

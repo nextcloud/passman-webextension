@@ -5,8 +5,12 @@
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
-    import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
+    import ExtensionSettingsService, {
+        ExtensionSettingsOptions,
+        type ExtensionSettings,
+    } from "~/services/ExtensionSettingsService";
     import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
+    import Select from 'svelte-select';
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import Loading from "~/spa_components/Loading.svelte";
@@ -15,9 +19,28 @@
     import { i18n } from "~/lib/i18n";
     import CustomStorageService from "~/services/CustomStorageService";
     import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
+    import {
+        DEFAULT_DOORHANGER_GRAVITY,
+        DEFAULT_DOORHANGER_LAYOUT,
+    } from "~/lib/doorhanger/doorhangerSettings";
+
+    type ExtendedSettingsForm = Pick<ExtensionSettings,
+        | ExtensionSettingsOptions.ignoreProtocol
+        | ExtensionSettingsOptions.ignoreSubdomain
+        | ExtensionSettingsOptions.ignorePath
+        | ExtensionSettingsOptions.ignorePort
+        | ExtensionSettingsOptions.autofillEnabled
+        | ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling
+        | ExtensionSettingsOptions.enableUserEventBasedFormDetection
+        | ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents
+        | ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval
+        | ExtensionSettingsOptions.enableFormDetectionByMutationObserver
+        | ExtensionSettingsOptions.doorhangerLayout
+        | ExtensionSettingsOptions.doorhangerGravity
+    >;
 
     const extensionVersion = packageJson.version;
-    let extendedSettings: { [key: number]: boolean } = {
+    let extendedSettings = $state<ExtendedSettingsForm>({
         [ExtensionSettingsOptions.ignoreProtocol]: false,
         [ExtensionSettingsOptions.ignoreSubdomain]: false,
         [ExtensionSettingsOptions.ignorePath]: true,
@@ -28,15 +51,48 @@
         [ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]: false,
         [ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]: false,
         [ExtensionSettingsOptions.enableFormDetectionByMutationObserver]: false,
+        [ExtensionSettingsOptions.doorhangerLayout]: DEFAULT_DOORHANGER_LAYOUT,
+        [ExtensionSettingsOptions.doorhangerGravity]: DEFAULT_DOORHANGER_GRAVITY,
+    });
+
+    const doorhangerLayoutOptions: { [key: string]: string } = {
+        card: i18n.getMessage('doorhanger_layout_card'),
+        topRow: i18n.getMessage('doorhanger_layout_top_row'),
     };
+    const doorhangerGravityOptions: { [key: string]: string } = {
+        'top-right': i18n.getMessage('doorhanger_gravity_top_right'),
+        'top-left': i18n.getMessage('doorhanger_gravity_top_left'),
+        'bottom-right': i18n.getMessage('doorhanger_gravity_bottom_right'),
+        'bottom-left': i18n.getMessage('doorhanger_gravity_bottom_left'),
+    };
+    const doorhangerLayoutItems = Object.entries(doorhangerLayoutOptions).map(([key, value]) => ({
+        label: value,
+        value: key,
+    }));
+    const doorhangerGravityItems = Object.entries(doorhangerGravityOptions).map(([key, value]) => ({
+        label: value,
+        value: key,
+    }));
+    let doorhangerLayoutSelectValue = $state({
+        label: doorhangerLayoutOptions[DEFAULT_DOORHANGER_LAYOUT],
+        value: DEFAULT_DOORHANGER_LAYOUT,
+    });
+    let doorhangerGravitySelectValue = $state({
+        label: doorhangerGravityOptions[DEFAULT_DOORHANGER_GRAVITY],
+        value: DEFAULT_DOORHANGER_GRAVITY,
+    });
 
+    $effect(() => {
+        extendedSettings[ExtensionSettingsOptions.doorhangerLayout] = doorhangerLayoutSelectValue.value;
+        extendedSettings[ExtensionSettingsOptions.doorhangerGravity] = doorhangerGravitySelectValue.value;
+    });
 
-    let lockSaveButton = false;
-    let pageIsLoading = true;
-    let offlineCacheSize: IndexedDbModelStoreSizeEstimate | null = null;
-    let offlineCacheSizeError = false;
-    let offlineCacheSizeLoading = false;
-    let clearingOfflineCache = false;
+    let lockSaveButton = $state(false);
+    let pageIsLoading = $state(true);
+    let offlineCacheSize = $state<IndexedDbModelStoreSizeEstimate | null>(null);
+    let offlineCacheSizeError = $state(false);
+    let offlineCacheSizeLoading = $state(false);
+    let clearingOfflineCache = $state(false);
 
     const formatBytes = (bytes: number): string => {
         if (bytes < 1024) {
@@ -81,11 +137,12 @@
 
     const save = async () => {
         lockSaveButton = true;
-        for (let i of Object.keys(extendedSettings)) {
-            const settingId = parseInt(i) as ExtensionSettingsOptions;
-            const settingValue = extendedSettings[settingId];
-            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, settingValue);
+        console.log(extendedSettings);
+        for (const key of Object.keys(extendedSettings)) {
+            const settingId = Number(key) as keyof ExtendedSettingsForm;
+            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);
         }
+
         NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
         lockSaveButton = false;
     }
@@ -115,6 +172,20 @@
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval];
                     extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionByMutationObserver)
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver];
+
+                    const layoutValue = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.doorhangerLayout)
+                        ?? doorhangerLayoutSelectValue.value;
+                    doorhangerLayoutSelectValue = {
+                        value: layoutValue,
+                        label: doorhangerLayoutOptions[layoutValue],
+                    };
+                    const gravityValue = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.doorhangerGravity)
+                        ?? doorhangerGravitySelectValue.value;
+                    doorhangerGravitySelectValue = {
+                        value: gravityValue,
+                        label: doorhangerGravityOptions[gravityValue],
+                    };
+
                     await refreshOfflineCacheSize();
                 } else {
                     push('/unlock');
@@ -134,41 +205,92 @@
         <h2 class="text-xl font-semibold">{i18n.getMessage('extended_settings')}</h2>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                 id="ignoreProtocol"
-                                label="{i18n.getMessage('ignore_protocol')}"/>
+                                label={i18n.getMessage('ignore_protocol')}/>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreSubdomain]}
                                 id="ignoreSubdomain"
-                                label="{i18n.getMessage('ignore_subdomain')}"/>
+                                label={i18n.getMessage('ignore_subdomain')}/>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePath]}
                                 id="ignorePath"
-                                label="{i18n.getMessage('ignore_path')}"/>
+                                label={i18n.getMessage('ignore_path')}/>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePort]}
                                 id="ignorePort"
-                                label="{i18n.getMessage('ignore_port')}"/>
+                                label={i18n.getMessage('ignore_port')}/>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
                                 id="enable_autofill"
-                                label="{i18n.getMessage('enable_autofill')}"/>
+                                label={i18n.getMessage('enable_autofill')}/>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
                                 id="enableEmailAsUsernameFallbackFilling"
-                                label="{i18n.getMessage('enable_email_as_username_fallback_filling')}"/>
+                                label={i18n.getMessage('enable_email_as_username_fallback_filling')}/>
         
         <hr class="my-4 border-gray-200"/>
 
         <h3 class="text-lg font-semibold">{i18n.getMessage('form_detection_settings')}</h3>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableUserEventBasedFormDetection]}
                                 id="enableUserEventBasedFormDetection"
-                                label="{i18n.getMessage('enable_user_event_based_form_detection')}"/>
+                                label={i18n.getMessage('enable_user_event_based_form_detection')}/>
         <p class="description-text">{i18n.getMessage('enable_user_event_based_form_detection_description')}</p>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlPopstateEvents]}
                                 id="enableFormDetectionOnUrlPopstateEvents"
-                                label="{i18n.getMessage('enable_form_detection_on_url_popstate_events')}"/>
+                                label={i18n.getMessage('enable_form_detection_on_url_popstate_events')}/>
         <p class="description-text">{i18n.getMessage('enable_form_detection_on_url_popstate_events_description')}</p>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval]}
                                 id="enableFormDetectionOnUrlChangesByInterval"
-                                label="{i18n.getMessage('enable_form_detection_on_url_changes_by_interval')}"/>
+                                label={i18n.getMessage('enable_form_detection_on_url_changes_by_interval')}/>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver]}
                                 id="enableFormDetectionByMutationObserver"
-                                label="{i18n.getMessage('enable_form_detection_by_mutation_observer')}"/>
+                                label={i18n.getMessage('enable_form_detection_by_mutation_observer')}/>
         <p class="description-text">{i18n.getMessage('enable_form_detection_by_mutation_observer_description')}</p>
+
+        <hr class="my-4 border-gray-200"/>
+
+        <h3 class="text-lg font-semibold">{i18n.getMessage('doorhanger_settings')}</h3>
+        <p class="text-xs text-gray-500">{i18n.getMessage('doorhanger_settings_description')}</p>
+        <div class="mt-2">
+            <label for="doorhangerLayout"
+                   class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('doorhanger_layout')}
+            </label>
+            <div class="my-2">
+                <Select
+                    multiple={false}
+                    clearable={false}
+                    searchable={false}
+                    showChevron={true}
+                    label="label"
+                    itemId="value"
+                    items={doorhangerLayoutItems}
+                    bind:value={doorhangerLayoutSelectValue}
+                    id="doorhangerLayout"
+                    --height="35px"
+                    --font-size="14px"
+                    containerStyles="height: 35px;"
+                />
+            </div>
+            <p class="description-text pl-0!">{i18n.getMessage('doorhanger_layout_description')}</p>
+        </div>
+        <div class="mt-2">
+            <label for="doorhangerGravity"
+                   class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('doorhanger_gravity')}
+            </label>
+            <div class="my-2">
+                <Select
+                    multiple={false}
+                    clearable={false}
+                    searchable={false}
+                    showChevron={true}
+                    label="label"
+                    itemId="value"
+                    items={doorhangerGravityItems}
+                    bind:value={doorhangerGravitySelectValue}
+                    id="doorhangerGravity"
+                    --height="35px"
+                    --font-size="14px"
+                    containerStyles="height: 35px;"
+                />
+            </div>
+            <p class="description-text pl-0!">{i18n.getMessage('doorhanger_gravity_description')}</p>
+        </div>
 
         <hr class="my-4 border-gray-200"/>
 
@@ -193,16 +315,16 @@
             additionalClasses="border-red-300 text-red-600"
         >
             {#if clearingOfflineCache}
-                <Icon data={refresh} scale={1.3} spin="{true}"/>
+                <Icon data={refresh} scale={1.3} spin={true}/>
             {:else}
                 {i18n.getMessage('clear_offline_cache')}
             {/if}
         </OnClickButton>
     </Card>
 
-    <OnClickButton callback="{save}">
+    <OnClickButton callback={save}>
         {#if lockSaveButton}
-            <Icon data={refresh} scale={1.3} spin="{true}"/>
+            <Icon data={refresh} scale={1.3} spin={true}/>
         {:else}
             {i18n.getMessage('save_settings')}
         {/if}

@@ -9,6 +9,7 @@ import { mount, unmount } from "svelte";
 
 import "../../../public/content_styles/content.scss";
 import "../../../public/content_styles/password_picker.scss";
+import "../../../public/content_styles/doorhanger.scss";
 
 // Modified message listener with error handling
 browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) {
@@ -21,22 +22,25 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
             timestamp: number
         };
 
-        if (message.type === RemoteCallableFunctions.remoteFunctionCallMessageName) {
-            if (message.data.method && message.data.method in RemoteCallableFunctionNames) {
-                console.log("do remoteFunctionCall:", message.data.method);
+        if (message?.type !== RemoteCallableFunctions.remoteFunctionCallMessageName) {
+            // Do not handle messages other than the known message type.
+            // Returning true is required by the OnMessageListener contract, even if we don't send a response
+            return true;
+        }
 
-                const methodName = message.data.method;
-                // @ts-expect-error - TypeScript can't correlate method with args type, but discriminated union guarantees correctness
-                const response = RemoteCallableFunctions.getRemoteCallableFunction(methodName)(message.data.args);
+        console.log("[content script] Received remoteFunctionCall from background:", _message);
 
-                // Always send a response to prevent channel closure errors
-                sendResponse(response ?? true);
-            } else {
-                // Send a response for unrecognized methods
-                sendResponse(null);
-            }
+        if (message.data?.method && message.data.method in RemoteCallableFunctionNames) {
+            console.log("do remoteFunctionCall:", message.data.method);
+
+            const methodName = message.data.method;
+            // @ts-expect-error - TypeScript can't correlate method with args type, but discriminated union guarantees correctness
+            const response = RemoteCallableFunctions.getRemoteCallableFunction(methodName)(message.data.args);
+
+            // Always send a response to prevent channel closure errors
+            sendResponse(response ?? true);
         } else {
-            // Send a response for unrecognized messages
+            // Send a null response for unrecognized methods
             sendResponse(null);
         }
     } catch (e) {

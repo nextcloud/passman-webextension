@@ -5,6 +5,12 @@ import type {
 import type { PasswordGeneratorConfigurationInterface } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 import { PasswordGeneratorService } from "@binsky/passman-client-ts/lib/Service/PasswordGeneratorService";
 import { PageRulesStorageInterface } from "./PageRulesService";
+import {
+    DEFAULT_DOORHANGER_GRAVITY,
+    DEFAULT_DOORHANGER_LAYOUT,
+    type DoorhangerGravity,
+    type DoorhangerLayout
+} from "~/lib/doorhanger/doorhangerSettings";
 
 export type DefaultVaultInfo = {
     guid: string,
@@ -46,6 +52,11 @@ export enum ExtensionSettingsOptions {
     activeConnectionId,
     /** Default vault info keyed by connectionId. */
     defaultVaultInfoByConnection,
+
+    /** Doorhanger overlay layout: floating card or full-width top row. */
+    doorhangerLayout,
+    /** Doorhanger card corner / top-row content alignment. */
+    doorhangerGravity,
 }
 
 export interface ExtensionSettings {
@@ -67,6 +78,8 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.nextcloudServerConnections]: NextcloudServerInfoInterface[],
     [ExtensionSettingsOptions.activeConnectionId]: string,
     [ExtensionSettingsOptions.defaultVaultInfoByConnection]: Record<string, DefaultVaultInfo>,
+    [ExtensionSettingsOptions.doorhangerLayout]: DoorhangerLayout,
+    [ExtensionSettingsOptions.doorhangerGravity]: DoorhangerGravity,
 }
 
 /**
@@ -156,6 +169,12 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.defaultVaultInfoByConnection:
                 returnValue = ({} as Record<string, DefaultVaultInfo>) as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.doorhangerLayout:
+                returnValue = DEFAULT_DOORHANGER_LAYOUT as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.doorhangerGravity:
+                returnValue = DEFAULT_DOORHANGER_GRAVITY as ExtensionSettings[K];
                 break;
             default:
                 returnValue = null;

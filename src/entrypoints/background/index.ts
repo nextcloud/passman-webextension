@@ -24,7 +24,13 @@ import './messages/listServerConnections';
 import './messages/getCredentialsForVault';
 import './messages/getPickerPageSettings';
 import './messages/updatePickerPageSettings';
+import './messages/cachePendingDoorhangerCredential';
+import './messages/getPendingDoorhangerCredential';
+import './messages/clearPendingDoorhangerCredential';
+import './messages/updateCredentialForDoorhanger';
+import './messages/getDoorhangerSettings';
 import { executeOnMessageListenerRegistration } from "@/entrypoints/background/messaging";
+import { DoorhangerPendingCredentialService } from "@/services/backend/DoorhangerPendingCredentialService";
 
 export default defineBackground(() => {
     // Executed when background is loaded
@@ -68,6 +74,10 @@ export default defineBackground(() => {
                 }
             });
         });
+    });
+
+    browser.tabs.onRemoved.addListener((tabId) => {
+        DoorhangerPendingCredentialService.clear(tabId);
     });
 
     executeOnMessageListenerRegistration();

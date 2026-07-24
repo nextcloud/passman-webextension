@@ -9,7 +9,9 @@
     import PickerTabSearch from "~/spa_partials/PasswordPickerSections/PickerTabSearch.svelte";
     import PickerTabGenerate from "~/spa_partials/PasswordPickerSections/PickerTabGenerate.svelte";
     import PickerTabPageRules from "~/spa_partials/PasswordPickerSections/PickerTabPageRules.svelte";
+    import Doorhanger from "./Doorhanger.svelte";
     import { LegacyFormManagerService } from "~/services/frontend/LegacyFormManagerService";
+    import { DoorhangerService, type DoorhangerShowPayload } from "~/services/frontend/DoorhangerService";
     import { i18n } from "~/lib/i18n";
     import { sendMessage } from "@/entrypoints/background/messaging";
     import type {
@@ -17,6 +19,10 @@
     } from "@/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import { RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
     import type { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
+    import {
+        DEFAULT_DOORHANGER_SETTINGS,
+        type DoorhangerSettings
+    } from "~/lib/doorhanger/doorhangerSettings";
 
     let shadowRootContainerId: string;
 
@@ -33,14 +39,11 @@
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     let enableEmailAsUsernameFallbackFilling: boolean = true;
 
+    let doorhangerOffer: DoorhangerShowPayload['offer'] | null = null;
+    let doorhangerSettings: DoorhangerSettings = { ...DEFAULT_DOORHANGER_SETTINGS };
+
     const showPickerCallback = (left: number, top: number, maxZ: any) => {
         decryptedPartialCredentialData = PasswordPickerService.decryptedPartialCredentialData;
-        /*const picker = document.getElementById('password_picker');
-        console.log(picker);
-        picker.style.position = 'absolute';
-        picker.style.left = left + 'px';
-        picker.style.zIndex = "" + maxZ + 10;
-        picker.style.top = top + 'px';*/
         customPickerStyle = 'position: absolute; left: ' + left + 'px; top: ' + top + 'px; z-index: ' + maxZ + 10 + ';';
         pickerPopupIsOpen = true;
     };
@@ -49,6 +52,15 @@
         customPickerStyle = "display: none;";
         pickerPopupIsOpen = false;
     }
+
+    const showDoorhanger = (payload: DoorhangerShowPayload) => {
+        doorhangerSettings = payload.settings;
+        doorhangerOffer = payload.offer;
+    };
+
+    const hideDoorhanger = () => {
+        doorhangerOffer = null;
+    };
 
     export const setShadowRootContainerId = (_shadowRootContainerId: string) => {
         shadowRootContainerId = _shadowRootContainerId;
@@ -62,6 +74,8 @@
             if (value.status === ExtensionUnlockState.UNLOCKED) {
                 extensionIsUnlocked = true;
                 console.debug("is unlocked");
+
+                DoorhangerService.setOnOfferCallback(showDoorhanger);
 
                 document.addEventListener('click', function (event) {
                     if (!pickerPopupIsOpen) {
@@ -93,6 +107,10 @@
                     console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
                 });
             } else {
+                hideDoorhanger();
+                // DoorhangerService.unload();
+                DoorhangerService.setOnOfferCallback(null);
+
                 // unload password picker icons in input fields
                 PasswordPickerService.unloadPicker();
             }
@@ -115,6 +133,14 @@
 </script>
 
 {#if extensionIsUnlocked}
+    {#if doorhangerOffer}
+        <Doorhanger
+            offer={doorhangerOffer}
+            settings={doorhangerSettings}
+            onClose={hideDoorhanger}
+        />
+    {/if}
+
     <div id="password_picker" style="{customPickerStyle}">
         <div class="tabs">
             <div class="tab add" data-name="add" aria-hidden="true"
