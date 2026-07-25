@@ -1,3 +1,5 @@
+import { logger } from "~/services/ConsoleLoggingService";
+
 /**
  * Service for detecting dynamically added forms and input fields in SPAs
  * Provides configurable detection mechanisms that can be enabled/disabled individually
@@ -179,7 +181,7 @@ export class DynamicFormDetectionService {
                 subtree: true,      // Watch all descendants
                 // Explicitly don't observe attributes or characterData to reduce noise
             });
-            console.debug("enabled mutation observer");
+            logger.debug("enabled mutation observer");
         }
     }
 
@@ -293,7 +295,7 @@ export class DynamicFormDetectionService {
         };
 
         window.addEventListener('popstate', DynamicFormDetectionService.popstateHandler);
-        console.debug("enabled url popstate check");
+        logger.debug("enabled url popstate check");
     }
 
     /**
@@ -324,7 +326,7 @@ export class DynamicFormDetectionService {
             // Only trigger manual detection when the mutation observer is currently disabled and the event is a plausible form interaction
             const state = DynamicFormDetectionService.getState();
             if (!state.mutationObserverEnabled && DynamicFormDetectionService.isPlausibleFormInteraction(event)) {
-                console.debug("triggering manual form detection for event", event);
+                logger.debug("triggering manual form detection for event", event);
                 DynamicFormDetectionService.triggerManualFormDetection();
             }
         };

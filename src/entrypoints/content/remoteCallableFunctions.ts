@@ -1,5 +1,6 @@
 import ClipboardService from "@/services/frontend/ClipboardService";
 import { LegacyFormManagerService } from "@/services/frontend/LegacyFormManagerService";
+import { logger } from "@/services/ConsoleLoggingService";
 
 export enum RemoteCallableFunctionNames {
     copyText = "copyText",
@@ -71,7 +72,7 @@ export class RemoteCallableFunctions {
     }
 
     private static readonly reloadPicker: RemoteCallableFunctionTypes[RemoteCallableFunctionNames.reloadPicker] = () => {
-        console.debug('Reloading picker for current tab, because of remote function call');
+        logger.debug('Reloading picker for current tab, because of remote function call');
         return this.reloadPickerCallback();
     }
 

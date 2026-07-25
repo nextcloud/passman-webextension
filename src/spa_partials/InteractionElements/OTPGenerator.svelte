@@ -5,6 +5,7 @@
     import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
     import NotyService from "~/services/frontend/NotyService";
     import { i18n } from "~/lib/i18n";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let otp: OTPConfigInterface;
     export let token: string;
@@ -21,7 +22,7 @@
                 try {
                     token = OTPService.updateOTP(otp);
                 } catch (e) {
-                    console.error(e);
+                    logger.error(e);
                     NotyService.notyError(i18n.getMessage('otp_configuration_invalid'));
                 }
             }

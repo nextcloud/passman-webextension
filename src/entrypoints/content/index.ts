@@ -10,11 +10,12 @@ import { mount, unmount } from "svelte";
 import "../../../public/content_styles/content.scss";
 import "../../../public/content_styles/password_picker.scss";
 import "../../../public/content_styles/doorhanger.scss";
+import ConsoleLoggingService, { logger } from "~/services/ConsoleLoggingService";
 
 // Modified message listener with error handling
 browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) {
     try {
-        console.log("[content script] Received message from background script:", _message);
+        logger.debug("[content script] Received message from background script:", _message);
         const message = _message as {
             data: RemoteCallableFunctionMessagingRequest
             type: string,
@@ -28,10 +29,10 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
             return true;
         }
 
-        console.log("[content script] Received remoteFunctionCall from background:", _message);
+        logger.debug("[content script] Received remoteFunctionCall from background:", _message);
 
         if (message.data?.method && message.data.method in RemoteCallableFunctionNames) {
-            console.log("do remoteFunctionCall:", message.data.method);
+            logger.debug("do remoteFunctionCall:", message.data.method);
 
             const methodName = message.data.method;
             // @ts-expect-error - TypeScript can't correlate method with args type, but discriminated union guarantees correctness
@@ -44,7 +45,7 @@ browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) 
             sendResponse(null);
         }
     } catch (e) {
-        console.error("[content script] Error processing message:", e);
+        logger.error("[content script] Error processing message:", e);
         sendResponse(null);
     }
 
@@ -115,6 +116,8 @@ export default defineContentScript({
     cssInjectionMode: 'ui',
 
     async main(ctx) {
+        void ConsoleLoggingService.refreshLogLevel();
+
         // 3. Define your UI
         const ui = await createShadowRootUi(ctx, {
             name: 'example-ui',

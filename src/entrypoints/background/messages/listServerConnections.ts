@@ -4,6 +4,7 @@ import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/Pas
 import type { NextcloudServerBackendAppId } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface ServerConnectionListItem {
     connectionId: string;
@@ -44,7 +45,7 @@ onMessage('listServerConnections', async () => {
         });
         status = true;
     } catch (e) {
-        console.error(e);
+        logger.error(e);
         errorMessage = e instanceof Error ? e.message : i18n.getMessage('unknown_error');
     }
 

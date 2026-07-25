@@ -1,4 +1,5 @@
 import { Storage } from "./storage";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export class SecureStorage extends Storage {
     private cryptoKey: CryptoKey | null = null;
@@ -134,7 +135,7 @@ export class SecureStorage extends Storage {
                 ["encrypt", "decrypt"]
             );
         } catch (error) {
-            console.error("Failed to decrypt storage key:", error);
+            logger.error("Failed to decrypt storage key:", error);
             return null;
         }
     }

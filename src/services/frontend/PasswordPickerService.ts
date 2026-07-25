@@ -16,6 +16,7 @@ import { DynamicFormDetectionService } from "~/services/frontend/DynamicFormDete
 import { DoorhangerService } from "~/services/frontend/DoorhangerService";
 import { GetPickerPageSettingsResponse } from "@/entrypoints/background/messages/getPickerPageSettings";
 import type { PageRulesInterface } from "@/services/PageRulesService";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export enum PASSWORD_PICKER_SECTIONS {
     ADD,
@@ -61,7 +62,7 @@ export class PasswordPickerService {
             }
         });
 
-        console.debug("initPickerForPage");
+        logger.debug("initPickerForPage");
 
         // Initialize current URL in detection service
         DynamicFormDetectionService.setCurrentUrl(window.location.href);
@@ -82,7 +83,7 @@ export class PasswordPickerService {
     private static processLoginForms = (pickerPageSettings: GetPickerPageSettingsResponse) => {
         const pageUrl = window.location.href;
         const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
-        console.debug("Processing login forms", pageUrl, loginFieldsPerForm);
+        logger.debug("Processing login forms", pageUrl, loginFieldsPerForm);
 
         // todo: fetch enablePasswordPicker from settings
         const enablePasswordPicker = true;
@@ -100,10 +101,10 @@ export class PasswordPickerService {
                 
                 // Skip if we've already processed this form
                 if (DynamicFormDetectionService.isFormProcessed(form)) {
-                    console.debug("skipping form", form, "because it has already been processed");
+                    logger.debug("skipping form", form, "because it has already been processed");
                     continue;
                 }
-                console.debug("processing form", form);
+                logger.debug("processing form", form);
 
                 // Mark form as processed
                 DynamicFormDetectionService.markFormAsProcessed(form);
@@ -127,7 +128,7 @@ export class PasswordPickerService {
                     filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
                     getCachedIfPossible: true
                 }).then(async (value) => {
-                    console.debug('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
+                    logger.debug('Found ' + value.decryptedPartialCredentialData.length + ' logins for this site');
                     PasswordPickerService.decryptedPartialCredentialData = value.decryptedPartialCredentialData;
                     PasswordPickerService.performAutofillIfEnabled(pickerPageSettings.mergedPageRules);
                 });
@@ -167,7 +168,7 @@ export class PasswordPickerService {
 
         // Set up callback for when URL changes (SPA navigation)
         DynamicFormDetectionService.setUrlChangedCallback((newUrl, oldUrl) => {
-            console.debug("URL changed from", oldUrl, "to", newUrl);
+            logger.debug("URL changed from", oldUrl, "to", newUrl);
             DynamicFormDetectionService.resetProcessedForms();
 
             // Resetting decryptedPartialCredentialData is usually only needed if ignorePath is false, because we then need to refetch the credentials
@@ -266,7 +267,7 @@ export class PasswordPickerService {
         for (const element of form.getElementsByTagName('input')) {
             if (element == el) {
                 // we found the element, the user has initially clicked on
-                console.debug("we found the element, the user has initially clicked on", element);
+                logger.debug("we found the element, the user has initially clicked on", element);
                 clickField = element;
             }
             /*if (element.type == 'password') {
@@ -288,7 +289,7 @@ export class PasswordPickerService {
 
         //var pickerUrl = chrome.extension.getURL('/html/inject/password_picker.html');
         //var picker = document.getElementById('password_picker');
-        //console.log(picker);
+        //logger.log(picker);
         //picker.classList.add('passwordPickerIframe');
         //picker.setAttribute('scrolling', 'no');
         //picker.setAttribute('height', '385');
@@ -357,7 +358,7 @@ export class PasswordPickerService {
     }
 
     public static onFormSubmittedCallback = (loginFields: FillableLoginFormFields) => {
-        console.debug("onFormSubmittedCallback", loginFields);
+        logger.debug("onFormSubmittedCallback", loginFields);
         void DoorhangerService.cacheFromFormSubmit(loginFields);
     }
 
@@ -367,7 +368,7 @@ export class PasswordPickerService {
             filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
             getCachedIfPossible: true
         }).then(async (value) => {
-            console.debug('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
+            logger.debug('Found ' + value.decryptedPartialCredentialData.length + ' picker search results');
             return value;
         });
     }
@@ -376,7 +377,7 @@ export class PasswordPickerService {
         return sendMessage('createCredentialForPicker', {
             credentialData: credentialData
         }).then(async (value: CreateCredentialForPickerMessagingResponse) => {
-            console.debug('Credential creation result:', value);
+            logger.debug('Credential creation result:', value);
             if (value.status && value.decryptedPartialCredentialData) {
                 // this way we don't need to reload the full picker data, but just add the new credential to the list
                 PasswordPickerService.decryptedPartialCredentialData.push(value.decryptedPartialCredentialData);
@@ -431,7 +432,7 @@ export class PasswordPickerService {
                 return configResponse.passwordGeneratorConfiguration;
             }
         } catch (error) {
-            console.error('Error getting password generator configuration:', error);
+            logger.error('Error getting password generator configuration:', error);
         }
 
         // Return default configuration as fallback

@@ -8,6 +8,7 @@ import CustomStorageService from "~/services/CustomStorageService";
 import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/PassmanServerConnection";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface AddNewServerConnectionRequest extends NextcloudServerInfoInterface {
     /** When true (default), the new/updated connection becomes the active one. */
@@ -109,7 +110,7 @@ onMessage('addNewServerConnection', async (message) => {
             }
         }
     } catch (e) {
-        console.error(e);
+        logger.error(e);
         if (e instanceof Error) {
             responseMessage = e.message;
         } else {

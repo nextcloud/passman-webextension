@@ -16,6 +16,7 @@
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import NotyService from "~/services/frontend/NotyService";
     import refresh from "svelte-awesome/icons/refresh";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let credential: Credential;
     export let hideDefaultDatetimeFields: boolean = true;
@@ -34,7 +35,7 @@
             try {
                 await credential.downloadFile(file);
             } catch (e) {
-                console.error('Unexpected error during file download', e);
+                logger.error('Unexpected error during file download', e);
             }
             show_loading_for_file_id = undefined;
         }
@@ -52,12 +53,12 @@
             } else {
                 const msg = i18n.getMessage('credential_delete_unknown_error');
                 NotyService.notyError(msg);
-                console.error(msg);
+                logger.error(msg);
             }
         }, rejectionReason => {
             const msg = i18n.getMessage('credential_delete_error');
             NotyService.notyError(msg);
-            console.error(msg, rejectionReason);
+            logger.error(msg, rejectionReason);
         }).finally(() => {
             deletion_in_progress = false;
         });

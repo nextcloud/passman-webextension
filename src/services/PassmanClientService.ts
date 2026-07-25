@@ -8,6 +8,7 @@ import { BackendPassmanClient } from "@/lib/BackendPassmanClient";
 import CustomStorageService from "./CustomStorageService";
 import { CustomPopupPassmanClientLoggingService } from "./frontend/CustomPassmanClientLoggingService";
 import ServerConnectionDirectoryService from "./ServerConnectionDirectoryService";
+import { logger } from "@/services/ConsoleLoggingService";
 
 /**
  * In-memory PassmanClient lifecycle for both backend and popup JS realms.
@@ -207,7 +208,7 @@ export default class PassmanClientService {
                 );
                 return PassmanClientService.backendPassmanClient;
             } catch (e) {
-                console.error('Failed to sync backend PassmanClient roster; bootstrapping fresh', e);
+                logger.error('Failed to sync backend PassmanClient roster; bootstrapping fresh', e);
                 PassmanClientService.backendPassmanClient = null;
             }
         }
@@ -233,7 +234,7 @@ export default class PassmanClientService {
                 );
                 return PassmanClientService.popupPassmanClient;
             } catch (e) {
-                console.error('Failed to sync popup PassmanClient roster; bootstrapping fresh', e);
+                logger.error('Failed to sync popup PassmanClient roster; bootstrapping fresh', e);
                 PassmanClientService.popupPassmanClient = null;
             }
         }

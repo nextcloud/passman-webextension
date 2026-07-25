@@ -22,6 +22,7 @@
     import { i18n } from "~/lib/i18n";
     import { sendMessage } from "@/entrypoints/background/messaging";
     import type { ServerConnectionListItem } from "@/entrypoints/background/messages/listServerConnections";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     const server = field('server', '', [required(), min(8)], { checkOnInit: true });
     const user = field('user', '', [required(), min(3)], { checkOnInit: true });
@@ -147,7 +148,7 @@
     const setDefaultVault = () => {
         if (!selectedVaultPassword || !selectedVaultInfo || lockDefaultVaultButton) {
             if (!selectedVaultInfo) {
-                console.error(i18n.getMessage('no_selected_vault_info_found'));
+                logger.error(i18n.getMessage('no_selected_vault_info_found'));
                 NotyService.notyError(i18n.getMessage('no_selected_vault_info_found'));
             }
             return;

@@ -9,6 +9,7 @@
         ExtensionSettingsOptions,
         type ExtensionSettings,
     } from "~/services/ExtensionSettingsService";
+    import ConsoleLoggingService, { logger } from "~/services/ConsoleLoggingService";
     import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
     import Select from 'svelte-select';
     // @ts-expect-error
@@ -23,6 +24,11 @@
         DEFAULT_DOORHANGER_GRAVITY,
         DEFAULT_DOORHANGER_LAYOUT,
     } from "~/lib/doorhanger/doorhangerSettings";
+    import {
+        DEFAULT_EXTENSION_LOG_LEVEL,
+        EXTENSION_LOG_LEVELS,
+        type ExtensionLogLevel,
+    } from "~/lib/extensionLogLevel";
 
     type ExtendedSettingsForm = Pick<ExtensionSettings,
         | ExtensionSettingsOptions.ignoreProtocol
@@ -37,6 +43,7 @@
         | ExtensionSettingsOptions.enableFormDetectionByMutationObserver
         | ExtensionSettingsOptions.doorhangerLayout
         | ExtensionSettingsOptions.doorhangerGravity
+        | ExtensionSettingsOptions.logLevel
     >;
 
     const extensionVersion = packageJson.version;
@@ -53,6 +60,7 @@
         [ExtensionSettingsOptions.enableFormDetectionByMutationObserver]: false,
         [ExtensionSettingsOptions.doorhangerLayout]: DEFAULT_DOORHANGER_LAYOUT,
         [ExtensionSettingsOptions.doorhangerGravity]: DEFAULT_DOORHANGER_GRAVITY,
+        [ExtensionSettingsOptions.logLevel]: DEFAULT_EXTENSION_LOG_LEVEL,
     });
 
     const doorhangerLayoutOptions: { [key: string]: string } = {
@@ -65,6 +73,13 @@
         'bottom-right': i18n.getMessage('doorhanger_gravity_bottom_right'),
         'bottom-left': i18n.getMessage('doorhanger_gravity_bottom_left'),
     };
+    const logLevelOptions: Record<ExtensionLogLevel, string> = {
+        debug: i18n.getMessage('log_level_debug'),
+        log: i18n.getMessage('log_level_log'),
+        info: i18n.getMessage('log_level_info'),
+        warn: i18n.getMessage('log_level_warn'),
+        error: i18n.getMessage('log_level_error'),
+    };
     const doorhangerLayoutItems = Object.entries(doorhangerLayoutOptions).map(([key, value]) => ({
         label: value,
         value: key,
@@ -72,6 +87,10 @@
     const doorhangerGravityItems = Object.entries(doorhangerGravityOptions).map(([key, value]) => ({
         label: value,
         value: key,
+    }));
+    const logLevelItems = EXTENSION_LOG_LEVELS.map((level) => ({
+        label: logLevelOptions[level],
+        value: level,
     }));
     let doorhangerLayoutSelectValue = $state({
         label: doorhangerLayoutOptions[DEFAULT_DOORHANGER_LAYOUT],
@@ -81,10 +100,15 @@
         label: doorhangerGravityOptions[DEFAULT_DOORHANGER_GRAVITY],
         value: DEFAULT_DOORHANGER_GRAVITY,
     });
+    let logLevelSelectValue = $state({
+        label: logLevelOptions[DEFAULT_EXTENSION_LOG_LEVEL],
+        value: DEFAULT_EXTENSION_LOG_LEVEL,
+    });
 
     $effect(() => {
         extendedSettings[ExtensionSettingsOptions.doorhangerLayout] = doorhangerLayoutSelectValue.value;
         extendedSettings[ExtensionSettingsOptions.doorhangerGravity] = doorhangerGravitySelectValue.value;
+        extendedSettings[ExtensionSettingsOptions.logLevel] = logLevelSelectValue.value;
     });
 
     let lockSaveButton = $state(false);
@@ -110,7 +134,7 @@
         try {
             offlineCacheSize = await CustomStorageService.estimateOfflineModelStoreSize();
         } catch (e) {
-            console.error(e);
+            logger.error(e);
             offlineCacheSize = null;
             offlineCacheSizeError = true;
         } finally {
@@ -128,7 +152,7 @@
             NotyService.notySuccess(i18n.getMessage('offline_cache_cleared_successfully'));
             await refreshOfflineCacheSize();
         } catch (e) {
-            console.error(e);
+            logger.error(e);
             NotyService.notyError(i18n.getMessage('offline_cache_clear_failed'));
         } finally {
             clearingOfflineCache = false;
@@ -137,11 +161,12 @@
 
     const save = async () => {
         lockSaveButton = true;
-        console.log(extendedSettings);
+        logger.log("extendedSettings", extendedSettings);
         for (const key of Object.keys(extendedSettings)) {
             const settingId = Number(key) as keyof ExtendedSettingsForm;
             await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);
         }
+        await ConsoleLoggingService.setLogLevel(extendedSettings[ExtensionSettingsOptions.logLevel]);
 
         NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
         lockSaveButton = false;
@@ -184,6 +209,13 @@
                     doorhangerGravitySelectValue = {
                         value: gravityValue,
                         label: doorhangerGravityOptions[gravityValue],
+                    };
+
+                    const logLevelValue = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.logLevel)
+                        ?? DEFAULT_EXTENSION_LOG_LEVEL;
+                    logLevelSelectValue = {
+                        value: logLevelValue,
+                        label: logLevelOptions[logLevelValue],
                     };
 
                     await refreshOfflineCacheSize();
@@ -290,6 +322,33 @@
                 />
             </div>
             <p class="description-text pl-0!">{i18n.getMessage('doorhanger_gravity_description')}</p>
+        </div>
+
+        <hr class="my-4 border-gray-200"/>
+
+        <h3 class="text-lg font-semibold">{i18n.getMessage('logging_settings')}</h3>
+        <p class="text-xs text-gray-500">{i18n.getMessage('logging_settings_description')}</p>
+        <div class="mt-2">
+            <label for="logLevel"
+                   class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('log_level')}
+            </label>
+            <div class="my-2">
+                <Select
+                    multiple={false}
+                    clearable={false}
+                    searchable={false}
+                    showChevron={true}
+                    label="label"
+                    itemId="value"
+                    items={logLevelItems}
+                    bind:value={logLevelSelectValue}
+                    id="logLevel"
+                    --height="35px"
+                    --font-size="14px"
+                    containerStyles="height: 35px;"
+                />
+            </div>
         </div>
 
         <hr class="my-4 border-gray-200"/>

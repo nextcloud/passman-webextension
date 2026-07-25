@@ -12,6 +12,7 @@
     import InPlaceEdit from "../FormElements/InPlaceEdit.svelte";
     import Utils from "~/lib/Utils";
     import { i18n } from "~/lib/i18n";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let credentialData: DecryptedCredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload
@@ -58,7 +59,7 @@
 
             reader.onload = async (event) => {
                 if (!event.target?.result) {
-                    console.error("No result from FileReader");
+                    logger.error("No result from FileReader");
                     NotyService.notyError(i18n.getMessage("files_upload_failed"));
                     isUploading = false;
                     return;

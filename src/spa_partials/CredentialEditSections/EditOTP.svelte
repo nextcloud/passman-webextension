@@ -15,6 +15,7 @@
     import type { ChangeEventHandler } from "svelte/elements";
     import { i18n } from "~/lib/i18n";
     import Utils from "~/lib/Utils";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let credentialData: DecryptedCredentialInterface;
     let otpToken: string;
@@ -41,7 +42,7 @@
             // in-place nested mutation — reassign so Svelte invalidates
             credentialData.otp = credentialData.otp;
         } catch (e) {
-            console.error(e);
+            logger.error(e);
             NotyService.notyError(i18n.getMessage("otp_configuration_invalid"));
         }
     }

@@ -11,6 +11,7 @@ import browser from "webextension-polyfill";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
 import { SecureStorage } from "@/lib/secure-storage";
+import ConsoleLoggingService, { logger } from "./ConsoleLoggingService";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -28,13 +29,16 @@ export default class ExtensionUnlockService {
                     const storageKey = await secureStorage.decryptStorageKey(password);
 
                     if (!storageKey) {
-                        console.error("Failed to decrypt storage key during unlock");
+                        logger.error("Failed to decrypt storage key during unlock");
                         return false;
                     }
 
                     await CustomStorageService.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
                     ExtensionBadgeService.updateAllTabsIcon(isFrontendCall);
                     this.notifyReloadContentScriptPicker();
+                    await ConsoleLoggingService.refreshLogLevel().catch(() => {
+                        // logging should not block unlock
+                    });
                     return true;
                 }
                 return false;
@@ -68,7 +72,7 @@ export default class ExtensionUnlockService {
                     );
                 } catch (e) {
                     // fails for non-content-injectable tabs like "chrome://extensions/"
-                    console.warn("notifyReloadContentScriptPicker failed due to an error. This usually fails for non-content-injectable tabs.", e);
+                    logger.warn("notifyReloadContentScriptPicker failed due to an error. This usually fails for non-content-injectable tabs.", e);
                 }
             }
         });
@@ -119,7 +123,7 @@ export default class ExtensionUnlockService {
         const storageKey = await secureStorage.decryptStorageKey(oldPassword);
 
         if (!storageKey) {
-            console.error("Failed to decrypt storage key with old password");
+            logger.error("Failed to decrypt storage key with old password");
             return false;
         }
 
@@ -205,10 +209,10 @@ export default class ExtensionUnlockService {
                                     }
                                 } catch (exception) {
                                     // Could not get or decrypt vault
-                                    console.error(exception);
+                                    logger.error(exception);
                                 }
                             } else {
-                                console.error("No default vault info found");
+                                logger.error("No default vault info found");
                                 return;
                             }
                         });

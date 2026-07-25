@@ -1,3 +1,5 @@
+import { logger } from "~/services/ConsoleLoggingService";
+
 export interface FillableLoginFormFields {
     usernameField?: HTMLInputElement;
     emailField?: HTMLInputElement;
@@ -67,7 +69,7 @@ export class LegacyFormManagerService {
             }
 
             if (skipNonVisibleFields && !this.isElementVisible(elem)) {
-                console.debug(`ingore non visible ${type} field`, elem);
+                logger.debug(`ingore non visible ${type} field`, elem);
                 this.skippedInvisibleFieldsDetected = true;
                 continue;
             }
@@ -91,7 +93,7 @@ export class LegacyFormManagerService {
 
         // If too many fields, bail out.
         if (pwFields.length > 3) {
-            console.debug('(form ignored -- too many password fields. [got ' + pwFields.length + "])");
+            logger.debug('(form ignored -- too many password fields. [got ' + pwFields.length + "])");
             return null;
         }
 
@@ -291,12 +293,12 @@ export class LegacyFormManagerService {
                 }
 
                 if (somethingFilled && LegacyFormManagerService.enableAutosubmitAfterFilling) {
-                    console.debug("auto-submitting form after filling", fields._form);
+                    logger.debug("auto-submitting form after filling", fields._form);
                     fields._form.submit();
                 }
             }
         } else {
-            console.error('No fields found to fill');
+            logger.error('No fields found to fill');
         }
     }
 }

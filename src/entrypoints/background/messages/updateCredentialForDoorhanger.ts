@@ -5,6 +5,7 @@ import { ExtensionBadgeService } from "~/services/backend/ExtensionBadgeService"
 import browser from "webextension-polyfill";
 import { onMessage } from "@/entrypoints/background/messaging";
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface UpdateCredentialForDoorhangerMessagingRequest {
     guid: string;
@@ -31,7 +32,7 @@ onMessage('updateCredentialForDoorhanger', async (message) => {
             senderTab = await browser.tabs.get(message.sender.tab.id);
         }
     } catch (error) {
-        console.warn('Could not get sender tab:', error);
+        logger.warn('Could not get sender tab:', error);
     }
 
     if (!data?.guid || !data.password) {
@@ -91,7 +92,7 @@ onMessage('updateCredentialForDoorhanger', async (message) => {
                         errorMessage = i18n.getMessage('no_default_vault_info_found');
                     }
                 } catch (exception) {
-                    console.error(exception);
+                    logger.error(exception);
                     errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                 }
             });

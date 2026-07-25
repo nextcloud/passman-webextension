@@ -16,6 +16,7 @@
     import Select from 'svelte-select';
     import Utils from "~/lib/Utils";
     import { i18n } from "~/lib/i18n";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let credentialData: DecryptedCredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload
@@ -68,7 +69,7 @@
                 const _newSelectedLocalFile = newSelectedLocalFile;
                 reader.onload = async (event) => {
                     if (!event.target?.result) {
-                        console.error("No result from FileReader");
+                        logger.error("No result from FileReader");
                         NotyService.notyError(i18n.getMessage("files_upload_failed"));
                         return;
                     }
@@ -174,7 +175,7 @@
                     showChevron={true}
                     value={newFieldType}
                     on:change={(e) => {
-                        console.log(e);
+                        logger.log(e);
                         newFieldType = e.detail.value;
                     }}
                     id="custom_field_type_select"

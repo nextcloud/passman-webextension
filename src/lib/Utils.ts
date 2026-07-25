@@ -15,10 +15,15 @@ export default class Utils {
             browser.extension.getViews({ type: "popup" }).length > 0 : null;
     };
     public static titleCase = (s: string) => {
-        return s.toLowerCase()
-                .split(' ')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ');
+        return s.split(' ')
+            .map(word =>
+                word.split('-')
+                    .map(subword =>
+                        subword.charAt(0).toUpperCase() + subword.slice(1)
+                    )
+                    .join('-')
+            )
+            .join(' ');
     }
 }
 

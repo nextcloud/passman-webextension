@@ -8,6 +8,7 @@
         DEFAULT_DOORHANGER_SETTINGS,
         type DoorhangerSettings
     } from "~/lib/doorhanger/doorhangerSettings";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     type Props = {
         offer: Extract<DoorhangerOffer, { show: true }>;
@@ -88,7 +89,7 @@
                 errorMessage = result.errorMessage || i18n.getMessage("failed_to_save_credential");
             }
         } catch (error) {
-            console.error("[Doorhanger] add failed", error);
+            logger.error("[Doorhanger] add failed", error);
             errorMessage = i18n.getMessage("failed_to_save_credential");
         }
         isBusy = false;
@@ -108,7 +109,7 @@
                 errorMessage = result.errorMessage || i18n.getMessage("failed_to_save_credential");
             }
         } catch (error) {
-            console.error("[Doorhanger] update failed", error);
+            logger.error("[Doorhanger] update failed", error);
             errorMessage = i18n.getMessage("failed_to_save_credential");
         }
         isBusy = false;

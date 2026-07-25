@@ -10,6 +10,7 @@
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { refresh, save } from "svelte-awesome/icons";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let selectedSection: PASSWORD_PICKER_SECTIONS;
 
@@ -69,7 +70,7 @@
                 saveMessageType = "error";
             }
         } catch (error) {
-            console.error('Error creating credential:', error);
+            logger.error('Error creating credential:', error);
             saveMessage = i18n.getMessage('credential_create_error');
             saveMessageType = "error";
         }

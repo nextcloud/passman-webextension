@@ -7,6 +7,7 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "../Extension
 import browser from "webextension-polyfill";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { i18n } from "~/lib/i18n";
+import { logger } from "@/services/ConsoleLoggingService";
 
 enum ContextMenuItemId {
     GENERATE_PASSWORD = 'GENERATE_PASSWORD',
@@ -68,7 +69,7 @@ export default class ContextMenuService {
                         await vault.refresh(true);
                     }
                     if (!vault) {
-                        console.error("No vault found");
+                        logger.error("No vault found");
                         break;
                     }
 
@@ -88,9 +89,7 @@ export default class ContextMenuService {
                                 await ContextMenuService.sendToContentScriptCopyToClipboard(credential.url, tab);
                                 break;
                             case ContextMenuItemId.COPY_OTP:
-                                console.log(credential.otp);
                                 const otp = OTPService.updateOTP(credential.otp);
-                                console.log(otp);
                                 await ContextMenuService.sendToContentScriptCopyToClipboard(otp, tab);
                                 break;
                             case ContextMenuItemId.AUTO_FILL:

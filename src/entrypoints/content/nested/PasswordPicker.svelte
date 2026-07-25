@@ -23,6 +23,7 @@
         DEFAULT_DOORHANGER_SETTINGS,
         type DoorhangerSettings
     } from "~/lib/doorhanger/doorhangerSettings";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     let shadowRootContainerId: string;
 
@@ -67,13 +68,13 @@
     }
 
     export const loadPickerForCurrentTab = () => {
-        console.debug("picker svelte initialized");
+        logger.debug("picker svelte initialized");
 
         sendMessage('getExtensionUnlockState').then((value) => {
             extensionIsUnlocked = false;
             if (value.status === ExtensionUnlockState.UNLOCKED) {
                 extensionIsUnlocked = true;
-                console.debug("is unlocked");
+                logger.debug("is unlocked");
 
                 DoorhangerService.setOnOfferCallback(showDoorhanger);
 
@@ -104,7 +105,7 @@
                         hidePickerCallback,
                         value
                     );
-                    console.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
+                    logger.debug("skippedInvisibleFieldsDetected", LegacyFormManagerService.skippedInvisibleFieldsDetected);
                 });
             } else {
                 hideDoorhanger();

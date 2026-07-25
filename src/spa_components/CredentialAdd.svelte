@@ -18,6 +18,7 @@
     import EditOTP from "~/spa_partials/CredentialEditSections/EditOTP.svelte";
     import EditFiles from "~/spa_partials/CredentialEditSections/EditFiles.svelte";
     import { i18n } from "~/lib/i18n";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     let pageIsLoading = true;
     let lockSaveButton = false;
@@ -26,7 +27,7 @@
     let credentialData: DecryptedCredentialInterface | null = null;
     let selectedSection: CREDENTIAL_EDIT_SECTIONS = CREDENTIAL_EDIT_SECTIONS.GENERAL;
 
-    console.debug("Credential add");
+    logger.debug("Credential add");
 
     const openSection = (section: CREDENTIAL_EDIT_SECTIONS) => {
         selectedSection = section;
@@ -34,7 +35,7 @@
 
     const saveCredential = async () => {
         if (!credentialData || !credential) {
-            console.error("No credential / credential data found");
+            logger.error("No credential / credential data found");
             NotyService.notyError(i18n.getMessage('credential_update_error'));
             return;
         }
@@ -67,7 +68,7 @@
             if (popupPassmanClient) {
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     if (!defaultVaultInfo?.guid) {
-                        console.error("No default vault info found");
+                        logger.error("No default vault info found");
                         // I don't think we need a special translated error message here, because this is an internal error, that should really never happen
                         NotyService.notyError(i18n.getMessage('credential_create_error'));
                         pageIsLoading = false;
@@ -88,13 +89,13 @@
                             NotyService.notyError(i18n.getMessage('could_not_decrypt_vault'));
                         }
                     } catch (exception) {
-                        console.error(exception);
+                        logger.error(exception);
                         NotyService.notyError(i18n.getMessage('could_not_get_or_decrypt_vault'));
                     }
                     pageIsLoading = false;
                 });
             } else {
-                console.error("no passman client for you");
+                logger.error("no passman client for you");
                 pageIsLoading = false;
             }
         });

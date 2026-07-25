@@ -47,7 +47,7 @@
     </button>
 </div>
 
-<div class="absolute bottom-21 left-0 right-0">
+<div class="mt-4 bottom-21 left-0 right-0">
     <p class="text-sm text-gray-500 text-center">
         {i18n.getMessage('extension_version')}: {extensionVersion}
         (mv{import.meta.env.MANIFEST_VERSION}/{import.meta.env.BROWSER})

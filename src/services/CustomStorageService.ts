@@ -7,6 +7,7 @@ import {
     IndexedDbModelStore,
     type IndexedDbModelStoreSizeEstimate,
 } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
+import { logger } from "@/services/ConsoleLoggingService";
 
 // todo: empty atm, but we should use a namespace (may need a migration logic)
 export const DEFAULT_STORAGE_NAMESPACE = '';
@@ -73,7 +74,7 @@ export default class CustomStorageService {
                 IndexedDbModelStore.DEFAULT_DB_NAME,
                 (reason) => {
                     // Offline DTO cache was lost or the IDB connection died; drop decrypted-field cache too to prevent showing stale data.
-                    console.warn(
+                    logger.warn(
                         `[CustomStorageService] Model store IndexedDB "${IndexedDbModelStore.DEFAULT_DB_NAME}" reopened after unexpected loss (${reason}). Offline cache will refill on next network fetch.`
                     );
                     inMemoryOnlyIndexedDBService.clear();
