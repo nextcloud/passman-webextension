@@ -88,9 +88,7 @@ export default class ContextMenuService {
                                 await ContextMenuService.sendToContentScriptCopyToClipboard(credential.url, tab);
                                 break;
                             case ContextMenuItemId.COPY_OTP:
-                                console.log(credential.otp);
                                 const otp = OTPService.updateOTP(credential.otp);
-                                console.log(otp);
                                 await ContextMenuService.sendToContentScriptCopyToClipboard(otp, tab);
                                 break;
                             case ContextMenuItemId.AUTO_FILL:

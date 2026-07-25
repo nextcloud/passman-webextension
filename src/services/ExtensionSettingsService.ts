@@ -11,6 +11,10 @@ import {
     type DoorhangerGravity,
     type DoorhangerLayout
 } from "~/lib/doorhanger/doorhangerSettings";
+import {
+    DEFAULT_EXTENSION_LOG_LEVEL,
+    type ExtensionLogLevel,
+} from "~/lib/extensionLogLevel";
 
 export type DefaultVaultInfo = {
     guid: string,
@@ -57,6 +61,9 @@ export enum ExtensionSettingsOptions {
     doorhangerLayout,
     /** Doorhanger card corner / top-row content alignment. */
     doorhangerGravity,
+
+    /** Minimum console log level for {@link ConsoleLoggingService}. */
+    logLevel,
 }
 
 export interface ExtensionSettings {
@@ -80,6 +87,7 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.defaultVaultInfoByConnection]: Record<string, DefaultVaultInfo>,
     [ExtensionSettingsOptions.doorhangerLayout]: DoorhangerLayout,
     [ExtensionSettingsOptions.doorhangerGravity]: DoorhangerGravity,
+    [ExtensionSettingsOptions.logLevel]: ExtensionLogLevel,
 }
 
 /**
@@ -175,6 +183,9 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.doorhangerGravity:
                 returnValue = DEFAULT_DOORHANGER_GRAVITY as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.logLevel:
+                returnValue = DEFAULT_EXTENSION_LOG_LEVEL as ExtensionSettings[K];
                 break;
             default:
                 returnValue = null;
