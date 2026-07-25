@@ -10,6 +10,7 @@ import { mount, unmount } from "svelte";
 import "../../../public/content_styles/content.scss";
 import "../../../public/content_styles/password_picker.scss";
 import "../../../public/content_styles/doorhanger.scss";
+import ConsoleLoggingService from "~/services/ConsoleLoggingService";
 
 // Modified message listener with error handling
 browser.runtime.onMessage.addListener(function (_message, sender, sendResponse) {
@@ -115,6 +116,8 @@ export default defineContentScript({
     cssInjectionMode: 'ui',
 
     async main(ctx) {
+        void ConsoleLoggingService.refreshLogLevel();
+
         // 3. Define your UI
         const ui = await createShadowRootUi(ctx, {
             name: 'example-ui',

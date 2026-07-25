@@ -11,6 +11,7 @@ import browser from "webextension-polyfill";
 import { sendMessage } from "@/entrypoints/background/messaging";
 import { RemoteCallableFunctionNames, RemoteCallableFunctions } from "@/entrypoints/content/remoteCallableFunctions";
 import { SecureStorage } from "@/lib/secure-storage";
+import ConsoleLoggingService from "./ConsoleLoggingService";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY = 'extensionUnlockPassword';
@@ -35,6 +36,9 @@ export default class ExtensionUnlockService {
                     await CustomStorageService.getSessionStorage().set(this.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY, password);
                     ExtensionBadgeService.updateAllTabsIcon(isFrontendCall);
                     this.notifyReloadContentScriptPicker();
+                    await ConsoleLoggingService.refreshLogLevel().catch(() => {
+                        // logging should not block unlock
+                    });
                     return true;
                 }
                 return false;

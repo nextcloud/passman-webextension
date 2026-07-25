@@ -12,6 +12,8 @@ export const EXTENSION_LOG_LEVEL_RANK: Record<ExtensionLogLevel, number> = {
 
 const VALID_LOG_LEVELS = new Set<string>(Object.keys(EXTENSION_LOG_LEVEL_RANK));
 
+export const EXTENSION_LOG_LEVELS: readonly ExtensionLogLevel[] = Array.from(VALID_LOG_LEVELS.keys()) as readonly ExtensionLogLevel[];
+
 export function isExtensionLogLevel(value: unknown): value is ExtensionLogLevel {
     return typeof value === 'string' && VALID_LOG_LEVELS.has(value);
 }

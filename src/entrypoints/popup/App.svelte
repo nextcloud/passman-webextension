@@ -10,8 +10,11 @@
   import Loading from '@/spa_components/Loading.svelte';
   import { sendMessage } from "@/entrypoints/background/messaging";
   import { i18n } from "~/lib/i18n";
+  import ConsoleLoggingService from "~/services/ConsoleLoggingService";
 
   onMount(async () => {
+    void ConsoleLoggingService.refreshLogLevel();
+
     sendMessage('getExtensionUnlockState').then((value) => {
       // use locked as initial state; will be overridden by the actual state right after the switch
       extensionUnlockStateStore.set(ExtensionUnlockState.LOCKED);

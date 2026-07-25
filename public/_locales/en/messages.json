@@ -1512,5 +1512,37 @@
   "doorhanger_gravity_bottom_left": {
     "message": "Bottom left",
     "description": "Doorhanger gravity option"
+  },
+  "logging_settings": {
+    "message": "Logging",
+    "description": "Extended settings section title for console log level"
+  },
+  "logging_settings_description": {
+    "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+    "description": "Description under the logging settings section"
+  },
+  "log_level": {
+    "message": "Log level",
+    "description": "Label for extension console log level dropdown"
+  },
+  "log_level_debug": {
+    "message": "Debug",
+    "description": "Log level option: debug"
+  },
+  "log_level_log": {
+    "message": "Log",
+    "description": "Log level option: log"
+  },
+  "log_level_info": {
+    "message": "Info",
+    "description": "Log level option: info"
+  },
+  "log_level_warn": {
+    "message": "Warning",
+    "description": "Log level option: warn"
+  },
+  "log_level_error": {
+    "message": "Error",
+    "description": "Log level option: error"
   }
 }

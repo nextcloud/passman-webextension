@@ -2,6 +2,7 @@ import ExtensionUnlockService from "@/services/ExtensionUnlockService";
 import { ExtensionBadgeService } from "@/services/backend/ExtensionBadgeService";
 import ContextMenuService from "@/services/backend/ContextMenuService";
 import ExtensionMigrationService from "@/services/ExtensionMigrationService";
+import ConsoleLoggingService from "@/services/ConsoleLoggingService";
 import browser from "webextension-polyfill";
 
 // Import all message handlers to register them
@@ -34,6 +35,8 @@ import { DoorhangerPendingCredentialService } from "@/services/backend/Doorhange
 
 export default defineBackground(() => {
     // Executed when background is loaded
+    void ConsoleLoggingService.refreshLogLevel();
+
     browser.runtime.onInstalled.addListener((details) => {
         if (details.reason === 'install') {
             // on extension installation
