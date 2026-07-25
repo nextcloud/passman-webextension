@@ -50,7 +50,7 @@ export default defineConfig({
         ],
         browser_specific_settings: {
             "gecko": {
-                "id": "{5258e630-6a3c-11f0-81fa-a87eea04a880}"
+                "id": "{ed412846-94d6-4a82-88bd-58b83e43f06d}"
             }
         }
     },
