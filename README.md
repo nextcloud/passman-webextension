@@ -1,13 +1,8 @@
 # Passman Webextension
 
-> **Migration notice:** Development is moving from GitLab ([binsky08/passman-webextension-v3](https://gitlab.com/binsky08/passman-webextension-v3)) into the official Nextcloud repository ([nextcloud/passman-webextension](https://github.com/nextcloud/passman-webextension)). The legacy MV2 extension remains on the `legacy-v2` branch. During the transition, store listings and some links may be incorrect or still use the temporary “v3” name.
-
-[Latest Release](https://github.com/nextcloud/passman-webextension/releases)
-[CI Status](https://github.com/nextcloud/passman-webextension/actions)
+[![Latest release](https://img.shields.io/github/v/release/nextcloud/passman-webextension?sort=semver)](https://github.com/nextcloud/passman-webextension/releases)
+[![CI](https://github.com/nextcloud/passman-webextension/actions/workflows/ci.yml/badge.svg)](https://github.com/nextcloud/passman-webextension/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://opensource.org/license/agpl-v3)
-
-
-Legacy version: ![Build Status](https://passman.cc/webextension-version.php)
 
 
 [![Chrome webstore](https://img.passman.cc/assets/chromewebstore.png)](https://chrome.google.com/webstore/detail/passman/hlpjhlifkgmoibhollggngbbhbejecph) | [![AMO](https://img.passman.cc/assets/AMO-button_1.png)](https://addons.mozilla.org/en-US/firefox/addon/passman/)    
@@ -17,11 +12,11 @@ Legacy version: ![Build Status](https://passman.cc/webextension-version.php)
 
 ## About the project
 
-This is a modern, fully rewritten webextension for the [Passman](https://github.com/nextcloud/passman) Nextcloud app, using the [WXT](https://wxt.dev/) framework.
+This is a modern, fully rewritten browser extension for the [Passman](https://github.com/nextcloud/passman) Nextcloud app, using the [WXT](https://wxt.dev/) framework.
 
 It uses [Svelte](https://svelte.dev/) for the UI and [TypeScript](https://www.typescriptlang.org/) throughout.
 
-The previous (legacy) extension source remains available on the [`master` branch](https://github.com/nextcloud/passman-webextension/tree/master).
+The previous (legacy) extension source remains available on the [`legacy-v2`](https://github.com/nextcloud/passman-webextension/tree/legacy-v2) branch.
 
 Try a Passman demo [here](https://demo.passman.cc) to test the browser extension against.
 
@@ -34,7 +29,7 @@ Try a Passman demo [here](https://demo.passman.cc) to test the browser extension
   - Password generator
   - Extension settings
 - Auto fill form fields on websites (for a single matching credential)
-  - (using webextension content scripts)
+  - (using injected content scripts)
 - Password picker (the password picker is a small in-page-popup that can be opened by clicking a small icon in detected input fields)
   - Search / select a credential to fill the input field
   - Add new credentials from the password picker
@@ -45,11 +40,13 @@ Try a Passman demo [here](https://demo.passman.cc) to test the browser extension
 
 - Page rules
     - Ability to overwrite global settings and extension behavior for a specific website
+- Doorhanger
+    - After a successful login, prompts you to save or update the submitted credentials in your default vault
 - Passkey support (coming soon)
 
 ## Impressions
-<img width="440" height="577" alt="image" src="https://github.com/user-attachments/assets/58653ac6-e06c-4d65-a328-5fcecbba5431" />
-<img width="440" height="509" alt="image" src="https://github.com/user-attachments/assets/867a735f-0fec-4219-a3a7-bac5647997ef" />
+<img width="380" height="498" alt="image" src="https://raw.githubusercontent.com/nextcloud/passman-webextension/refs/heads/master/impressions/welcome.png" />
+<img width="380" height="439" alt="image" src="https://raw.githubusercontent.com/nextcloud/passman-webextension/refs/heads/master/impressions/settings.png" />
 
 ## Support Passman
 Passman is open source and lives from contributions like [pull request](https://github.com/nextcloud/passman-webextension/pulls),
