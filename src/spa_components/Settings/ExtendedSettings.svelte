@@ -9,7 +9,7 @@
         ExtensionSettingsOptions,
         type ExtensionSettings,
     } from "~/services/ExtensionSettingsService";
-    import ConsoleLoggingService from "~/services/ConsoleLoggingService";
+    import ConsoleLoggingService, { logger } from "~/services/ConsoleLoggingService";
     import CustomCheckboxField from "~/spa_partials/FormElements/CustomCheckboxField.svelte";
     import Select from 'svelte-select';
     // @ts-expect-error
@@ -134,7 +134,7 @@
         try {
             offlineCacheSize = await CustomStorageService.estimateOfflineModelStoreSize();
         } catch (e) {
-            console.error(e);
+            logger.error(e);
             offlineCacheSize = null;
             offlineCacheSizeError = true;
         } finally {
@@ -152,7 +152,7 @@
             NotyService.notySuccess(i18n.getMessage('offline_cache_cleared_successfully'));
             await refreshOfflineCacheSize();
         } catch (e) {
-            console.error(e);
+            logger.error(e);
             NotyService.notyError(i18n.getMessage('offline_cache_clear_failed'));
         } finally {
             clearingOfflineCache = false;
@@ -161,7 +161,7 @@
 
     const save = async () => {
         lockSaveButton = true;
-        console.log(extendedSettings);
+        logger.log("extendedSettings", extendedSettings);
         for (const key of Object.keys(extendedSettings)) {
             const settingId = Number(key) as keyof ExtendedSettingsForm;
             await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);

@@ -2,6 +2,7 @@ import PassmanClientService from "~/services/PassmanClientService";
 import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface SetActiveServerConnectionRequest {
     connectionId: string;
@@ -38,7 +39,7 @@ onMessage('setActiveServerConnection', async (message) => {
         await ServerConnectionDirectoryService.syncActiveConnectionMirrors(connectionId);
         status = true;
     } catch (e) {
-        console.error(e);
+        logger.error(e);
         errorMessage = e instanceof Error ? e.message : i18n.getMessage('unknown_error');
     }
 

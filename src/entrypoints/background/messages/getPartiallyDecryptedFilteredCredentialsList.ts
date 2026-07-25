@@ -7,6 +7,7 @@ import type { IconInterface } from "@binsky/passman-client-ts/lib/Interfaces/Cre
 import { onMessage } from "@/entrypoints/background/messaging";
 import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export enum GetCredentialsListMessagingFilterType {
     DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -61,7 +62,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {
                                 // should not be needed, but having no custom credential here could lead to an caching issue
-                                console.log("refresh vault");
+                                logger.log("refresh vault");
                                 await myVault.refresh();
                             }
 

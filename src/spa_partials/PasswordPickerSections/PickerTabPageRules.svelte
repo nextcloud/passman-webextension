@@ -16,6 +16,7 @@
         pageRuleOverrideSelectionToBoolean,
     } from "~/lib/pageRules/pageRulesOverrides";
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     let currentOrigin = $state('');
     let isLoading = $state(true);
@@ -78,7 +79,7 @@
         try {
             currentOrigin = PageRulesService.urlToOrigin(window.location.href);
         } catch (error) {
-            console.warn('Failed to detect current origin', error);
+            logger.warn('Failed to detect current origin', error);
             currentOrigin = window.location.hostname;
         }
         try {
@@ -91,7 +92,7 @@
             syncOverrideSelectValuesFromRule(formRule);
             originalOverwritableExtensionSettings = response.originalOverwritableExtensionSettings;
         } catch (error) {
-            console.error('Failed to load picker page rules', error);
+            logger.error('Failed to load picker page rules', error);
             loadError = i18n.getMessage('page_rules_picker_load_error');
         } finally {
             isLoading = false;
@@ -106,10 +107,10 @@
         saveError = null;
         try {
             await sendMessage('updatePickerPageSettings', { updatedPageRules: formRuleToUpdatePayload(formRule) });
-            console.debug('Page rules updated for', currentOrigin);
+            logger.debug('Page rules updated for', currentOrigin);
             originalPageRules = { ...formRule };
         } catch (error) {
-            console.error('Failed to save picker page rules', error);
+            logger.error('Failed to save picker page rules', error);
             saveError = i18n.getMessage('page_rules_picker_save_error');
         } finally {
             isSaving = false;

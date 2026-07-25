@@ -1,4 +1,5 @@
 import type { DecryptedDataCachingHandlerInterface } from '@binsky/passman-client-ts/lib/Interfaces/DecryptedDataCachingHandlerInterface';
+import { logger } from "~/services/ConsoleLoggingService";
 
 /**
  * IndexedBD like interface for in-memory decrypted-field cache.
@@ -47,7 +48,7 @@ export class CustomIndexedDBService implements DecryptedDataCachingHandlerInterf
         if (!cacheMap) {
             return undefined;
         }
-        console.log('get from cacheMap', cacheMap);
+        logger.log('get from cacheMap', cacheMap);
         return cacheMap.has(key) ? cacheMap.get(key) : undefined;
     }
 

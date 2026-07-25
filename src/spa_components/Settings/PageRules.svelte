@@ -14,6 +14,7 @@
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import { DEFAULT_OVERRIDE_SELECT_VALUES } from "~/lib/pageRules/pageRulesOverrides";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     let pageIsLoading = true;
     let pageRules: PageRulesStorageInterface = {};
@@ -84,7 +85,7 @@
             NotyService.notySuccess(i18n.getMessage('page_rules_rule_saved'));
             openListView();
         } catch (error) {
-            console.error('Failed to save page rule', error);
+            logger.error('Failed to save page rule', error);
             NotyService.notyError(i18n.getMessage('page_rules_save_failed'));
         } finally {
             lockSaveButton = false;
@@ -102,7 +103,7 @@
             NotyService.notySuccess(i18n.getMessage('page_rules_rule_deleted'));
             openListView();
         } catch (error) {
-            console.error('Failed to delete page rule', error);
+            logger.error('Failed to delete page rule', error);
             NotyService.notyError(i18n.getMessage('page_rules_delete_failed'));
         } finally {
             lockDeleteButton = false;
@@ -137,7 +138,7 @@
             try {
                 await loadPageRules();
             } catch (error) {
-                console.error('Failed to load page rules', error);
+                logger.error('Failed to load page rules', error);
                 NotyService.notyError(i18n.getMessage('page_rules_load_failed'));
             } finally {
                 pageIsLoading = false;

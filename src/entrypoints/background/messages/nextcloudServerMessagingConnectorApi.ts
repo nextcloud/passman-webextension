@@ -2,6 +2,7 @@ import PassmanClientService from "~/services/PassmanClientService";
 import { NextcloudServerMessagingConnectorService } from "~/services/NextcloudServerMessagingConnectorService";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface NextcloudServerMessagingConnectorApiRequest {
     url: string,
@@ -36,7 +37,7 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
 
     const response = await fetch(message.data.url, message.data.init)
         .catch((err: Error) => {
-            console.error('Error fetching:', err);
+            logger.error('Error fetching:', err);
             error = err;
         });
 
@@ -44,7 +45,7 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
     try {
         json = response ? await response.json() : null;
     } catch (responseToJsonError) {
-        console.warn('Failed getting response json, may intended, but shouldn\'t completely pass in silence', responseToJsonError);
+        logger.warn('Failed getting response json, may intended, but shouldn\'t completely pass in silence', responseToJsonError);
     }
 
     // Get request method and URL for response classification
@@ -60,11 +61,11 @@ onMessage('nextcloudServerMessagingConnectorApi', async (message) => {
 
     // Update background PassmanClient based on response
     if (response && error === null && json && backendPassmanClient !== null) {
-        console.debug('updating background PassmanClient based on response', response, json, requestMethod, requestUrl, backendPassmanClient);
+        logger.debug('updating background PassmanClient based on response', response, json, requestMethod, requestUrl, backendPassmanClient);
         try {
             await NextcloudServerMessagingConnectorService.updateBackgroundPassmanClient(requestMethod, requestUrl, json, backendPassmanClient);
         } catch (e) {
-            console.error('failure while running updateBackgroundPassmanClient', e);
+            logger.error('failure while running updateBackgroundPassmanClient', e);
             // escalate, since it should not quietly pass when internal state does not update correctly
             throw e;
         }

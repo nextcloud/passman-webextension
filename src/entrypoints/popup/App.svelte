@@ -10,7 +10,7 @@
   import Loading from '@/spa_components/Loading.svelte';
   import { sendMessage } from "@/entrypoints/background/messaging";
   import { i18n } from "~/lib/i18n";
-  import ConsoleLoggingService from "~/services/ConsoleLoggingService";
+  import ConsoleLoggingService, { logger } from "~/services/ConsoleLoggingService";
 
   onMount(async () => {
     void ConsoleLoggingService.refreshLogLevel();
@@ -33,12 +33,12 @@
           push('/home');
           break;
         default:
-          console.error(i18n.getMessage('unknown_error_checking_lock_state'));
+          logger.error(i18n.getMessage('unknown_error_checking_lock_state'));
           alert(i18n.getMessage('unknown_error_checking_lock_state'));
       }
       $extensionUnlockStateStore = value.status;
     }, (error) => {
-      console.error(error);
+      logger.error(error);
       alert(error);
     });
   });

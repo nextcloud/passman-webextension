@@ -2,6 +2,7 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/E
 import PassmanClientService from "~/services/PassmanClientService";
 import ExtensionUnlockService from "~/services/ExtensionUnlockService";
 import { onMessage } from '../messaging';
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface UnlockExtensionRequest {
     extensionUnlockPassword: string;
@@ -26,7 +27,7 @@ onMessage('unlockExtension', async (message) => {
         if (status && message.data.refreshAfterUnlock) {
             try {
                 const backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
-                console.log("backendPassmanClient", backendPassmanClient);
+                logger.debug("backendPassmanClient", backendPassmanClient);
 
                 if (backendPassmanClient) {
                     const defaultVaultInfo = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo);
@@ -35,16 +36,16 @@ onMessage('unlockExtension', async (message) => {
                         await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, false);
                         await backendPassmanClient.preloadVaults();
                     } else {
-                        console.error('No vault info provided by ExtensionSettingsService.getPartialExtensionSettings');
+                        logger.error('No vault info provided by ExtensionSettingsService.getPartialExtensionSettings');
                     }
                 }
             } catch (exception) {
-                console.error('Could not get or decrypt vault:', exception);
+                logger.error('Could not get or decrypt vault:', exception);
                 // Don't fail the entire unlock process if vault refresh fails
             }
         }
     } catch (error) {
-        console.error('Error in unlockExtension handler:', error);
+        logger.error('Error in unlockExtension handler:', error);
     }
 
     return {

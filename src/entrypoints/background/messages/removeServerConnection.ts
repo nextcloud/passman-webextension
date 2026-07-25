@@ -2,6 +2,7 @@ import PassmanClientService from "~/services/PassmanClientService";
 import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface RemoveServerConnectionRequest {
     connectionId: string;
@@ -37,7 +38,7 @@ onMessage('removeServerConnection', async (message) => {
 
         status = true;
     } catch (e) {
-        console.error(e);
+        logger.error(e);
         errorMessage = e instanceof Error ? e.message : i18n.getMessage('unknown_error');
     }
 

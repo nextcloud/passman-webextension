@@ -2,6 +2,7 @@ import { ParserService } from "./ParserService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import PageRulesService, { CombinedSettingsResponse } from "./PageRulesService";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export class CustomCredentialFilterService {
     /**
@@ -55,7 +56,7 @@ export class CustomCredentialFilterService {
             }
         } catch (e) {
             // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
-            console.debug("Error processing URL", e);
+            logger.debug("Error processing URL", e);
             // instead of panicking, just return null to indicate an error
             return null;
         }

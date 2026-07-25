@@ -5,6 +5,7 @@ import type {
 } from "@binsky/passman-client-ts/lib/Interfaces/Credential/SerializableTransferCredentialInterface";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export type GetCredentialsForVaultMessagingConfiguration = {
     vaultGuid: string
@@ -24,21 +25,21 @@ onMessage('getCredentialsForVault', async (message) => {
     let status = false;
     let errorMessage = null;
     let serializedCredentials: SerializableTransferCredentialInterface[] = [];
-    console.log("handler", message);
+    logger.log("handler", message);
 
     await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
-        console.log("backendPassmanClient", backendPassmanClient);
+        logger.log("backendPassmanClient", backendPassmanClient);
         if (backendPassmanClient) {
             return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                 try {
                     if (defaultVaultInfo) {
                         // get from cache by default except no-cache is explicitly requested
-                        console.log("getCachedIfPossible", message.data?.getCachedIfPossible);
+                        logger.log("getCachedIfPossible", message.data?.getCachedIfPossible);
                         let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, message.data?.getCachedIfPossible === true);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {
-                                console.log("refresh vault");
+                                logger.log("refresh vault");
                                 await myVault.refresh();
                             }
 

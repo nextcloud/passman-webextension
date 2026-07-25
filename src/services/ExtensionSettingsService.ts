@@ -15,6 +15,7 @@ import {
     DEFAULT_EXTENSION_LOG_LEVEL,
     type ExtensionLogLevel,
 } from "~/lib/extensionLogLevel";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export type DefaultVaultInfo = {
     guid: string,
@@ -118,7 +119,7 @@ export default class ExtensionSettingsService {
             return ExtensionSettingsService.updateExtensionSettings(extensionSettings);
         } catch (e) {
             CustomStorageService.closeSecureStorage();
-            console.error('Tried to access and update SecureStorage without a password set.');
+            logger.error('Tried to access and update SecureStorage without a password set.');
             throw e;
         }
     };

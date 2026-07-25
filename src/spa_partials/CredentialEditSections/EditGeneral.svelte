@@ -15,6 +15,7 @@
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import { i18n } from "~/lib/i18n";
     import { TagsInputOverwrite } from "@/lib/TagsInputOverwrite.svelte";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     interface DefiniteTagInterface extends TagInterface {
         text: string;
@@ -35,7 +36,7 @@
             return { id: tag, value: tag };
         },
         onTagsChange: (tags: Tag[]) => {
-            console.log("onTagsChange", tags);
+            logger.log("onTagsChange", tags);
             tagsReactivity++;
 
             if (initDone) {
@@ -60,7 +61,7 @@
     }
 
     const markAsCompromised = () => {
-        console.log('markAsCompromised');
+        logger.log('markAsCompromised');
         credentialData.compromised = true;
     }
 

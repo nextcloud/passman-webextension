@@ -10,6 +10,7 @@ import CustomStorageService from "@/services/CustomStorageService";
 import { NextcloudServerMessagingConnectorService } from "@/services/NextcloudServerMessagingConnectorService";
 import PassmanClientService from "@/services/PassmanClientService";
 import { sendMessage } from "@/entrypoints/background/messaging";
+import { logger } from "@/services/ConsoleLoggingService";
 
 export class NextcloudServerMessagingConnector extends NextcloudServer implements NextcloudServerInterface {
 
@@ -29,7 +30,7 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
             return errorCallback(response.error);
         }
 
-        console.log(response.response);
+        logger.log(response.response);
         if (!response.response) {
             return;
         }

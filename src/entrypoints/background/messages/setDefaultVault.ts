@@ -2,6 +2,7 @@ import PassmanClientService from "~/services/PassmanClientService";
 import ServerConnectionDirectoryService from "~/services/ServerConnectionDirectoryService";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface SetDefaultVaultRequest {
     guid: string;
@@ -34,16 +35,16 @@ onMessage('setDefaultVault', async (message) => {
                         });
                     } else {
                         errorMessage = i18n.getMessage('vault_decrypt_failed_with_password');
-                        console.error(errorMessage);
+                        logger.error(errorMessage);
                     }
                 } else {
                     errorMessage = i18n.getMessage('could_not_get_selected_vault_by_guid');
-                    console.error(errorMessage);
+                    logger.error(errorMessage);
                 }
             });
         } else {
             errorMessage = i18n.getMessage('could_not_get_passman_client');
-            console.error(errorMessage);
+            logger.error(errorMessage);
         }
     });
 

@@ -21,6 +21,7 @@ import {
     DEFAULT_DOORHANGER_SETTINGS,
     type DoorhangerSettings
 } from "~/lib/doorhanger/doorhangerSettings";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export type DoorhangerShowPayload = {
     offer: Extract<DoorhangerOffer, { show: true }>;
@@ -80,7 +81,7 @@ export class DoorhangerService {
 
         // Need a password plus at least one identity field
         if (!password || (!username && !email)) {
-            console.debug('[Doorhanger] skip cache: missing password or identity');
+            logger.debug('[Doorhanger] skip cache: missing password or identity');
             return false;
         }
 
@@ -105,14 +106,14 @@ export class DoorhangerService {
             });
 
             if (!response.status) {
-                console.debug('[Doorhanger] cache failed:', response.errorMessage);
+                logger.debug('[Doorhanger] cache failed:', response.errorMessage);
                 return false;
             }
 
             DoorhangerService.scheduleDelayedEvaluates();
             return true;
         } catch (error) {
-            console.error('[Doorhanger] cachePendingDoorhangerCredential failed', error);
+            logger.error('[Doorhanger] cachePendingDoorhangerCredential failed', error);
             return false;
         }
     }
@@ -132,7 +133,7 @@ export class DoorhangerService {
             }
             pending = response.pending;
         } catch (error) {
-            console.error('[Doorhanger] getPendingDoorhangerCredential failed', error);
+            logger.error('[Doorhanger] getPendingDoorhangerCredential failed', error);
             return null;
         }
 
@@ -145,7 +146,7 @@ export class DoorhangerService {
             currentUrl: window.location.href
         });
 
-        console.debug('[Doorhanger] success detection result:', result);
+        logger.debug('[Doorhanger] success detection result:', result);
 
         if (result === 'abort') {
             DoorhangerService.clearDelayedEvaluates();
@@ -173,7 +174,7 @@ export class DoorhangerService {
                 return { show: false, reason: 'locked' };
             }
         } catch (error) {
-            console.error('[Doorhanger] getExtensionUnlockState failed', error);
+            logger.error('[Doorhanger] getExtensionUnlockState failed', error);
             return { show: false, reason: 'locked' };
         }
 
@@ -190,7 +191,7 @@ export class DoorhangerService {
                 DoorhangerService.onUrlMatchedCredentialsCallback?.(urlMatchedCredentials);
             }
         } catch (error) {
-            console.error('[Doorhanger] getPartiallyDecryptedFilteredCredentialsList failed', error);
+            logger.error('[Doorhanger] getPartiallyDecryptedFilteredCredentialsList failed', error);
         }
 
         return DoorhangerMatchService.resolveOffer(pending, urlMatchedCredentials);
@@ -200,7 +201,7 @@ export class DoorhangerService {
         try {
             return await sendMessage('getDoorhangerSettings');
         } catch (error) {
-            console.error('[Doorhanger] getDoorhangerSettings failed', error);
+            logger.error('[Doorhanger] getDoorhangerSettings failed', error);
             return { ...DEFAULT_DOORHANGER_SETTINGS };
         }
     }
@@ -263,7 +264,7 @@ export class DoorhangerService {
         try {
             await sendMessage('clearPendingDoorhangerCredential');
         } catch (error) {
-            console.error('[Doorhanger] clearPendingDoorhangerCredential failed', error);
+            logger.error('[Doorhanger] clearPendingDoorhangerCredential failed', error);
         }
     }
 
@@ -287,21 +288,26 @@ export class DoorhangerService {
         DynamicFormDetectionService.disableAll();
 
         const offer = await DoorhangerService.resolveOffer(pending);
-        console.debug('[Doorhanger] offer resolved:', offer);
-
         if (!offer.show) {
+            logger.debug('[Doorhanger] offer resolved: hidden', offer);
             // identical credential already stored, or vault locked -> drop pending
             await DoorhangerService.clearPending();
             return;
         }
 
+        logger.debug('[Doorhanger] offer resolved: show', {
+            label: offer.pending.label,
+            updateCandidates: offer.updateCandidates.length,
+            preselectedGuid: offer.preselectedGuid,
+        });
+
         const settings = await DoorhangerService.getSettings();
-        console.debug('[Doorhanger] using settings:', settings);
+        logger.debug('[Doorhanger] using settings:', settings);
 
         if (DoorhangerService.onOfferCallback) {
             DoorhangerService.onOfferCallback({ offer, settings });
         } else {
-            console.debug('[Doorhanger] offer ready; UI not wired yet', {
+            logger.debug('[Doorhanger] offer ready; UI not wired yet', {
                 label: offer.pending.label,
                 updateCandidates: offer.updateCandidates.length,
                 preselectedGuid: offer.preselectedGuid,

@@ -22,6 +22,7 @@
     import browser from "webextension-polyfill";
     import { sendMessage } from "@/entrypoints/background/messaging";
     import Utils from "~/lib/Utils";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     let searchInput: string | null = null;
     let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
@@ -81,7 +82,7 @@
                         } else {
                             // error processing the tab url, just remove the url filter flag and continue with the regular search filter
                             overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
-                            console.debug("Error processing tab URL, removing url filter flag and continuing with regular search filter");
+                            logger.debug("Error processing tab URL, removing url filter flag and continuing with regular search filter");
                             if (!isRecursiveCall) {
                                 // only apply the filter recursively if it's not a recursive call
                                 // otherwise we would end up in an infinite loop
@@ -151,14 +152,14 @@
                             errorMessage = i18n.getMessage('no_default_vault_info_found');
                         }
                     } catch (exception) {
-                        console.error(exception);
+                        logger.error(exception);
                         errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                     }
                     pageIsLoading = false;
                     initialLoadIsDone = true;
                 });
             } else {
-                console.error("no passman client for you");
+                logger.error("no passman client for you");
                 pageIsLoading = false;
                 initialLoadIsDone = true;
             }

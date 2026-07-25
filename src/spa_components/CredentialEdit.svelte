@@ -18,6 +18,7 @@
     import EditOTP from "~/spa_partials/CredentialEditSections/EditOTP.svelte";
     import EditFiles from "~/spa_partials/CredentialEditSections/EditFiles.svelte";
     import { i18n } from "~/lib/i18n";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     export let params: { guid?: string } = {};
     let pageIsLoading = true;
@@ -27,7 +28,7 @@
     let credentialData: DecryptedCredentialInterface | null = null;
     let selectedSection: CREDENTIAL_EDIT_SECTIONS = CREDENTIAL_EDIT_SECTIONS.GENERAL;
 
-    console.debug("Credential edit");
+    logger.debug("Credential edit");
 
     const openSection = (section: CREDENTIAL_EDIT_SECTIONS) => {
         selectedSection = section;
@@ -35,7 +36,7 @@
 
     const saveCredential = async () => {
         if (!credentialData || !credential) {
-            console.error("No credential / credential data found");
+            logger.error("No credential / credential data found");
             NotyService.notyError(i18n.getMessage('credential_update_error'));
             return;
         }
@@ -63,19 +64,19 @@
     }
 
     onMount(() => {
-        console.debug(params);
+        logger.debug(params);
         PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
                     if (!defaultVaultInfo) {
-                        console.error("No default vault info found");
+                        logger.error("No default vault info found");
                         // I don't think we need a special translated error message here, because this is an internal error, that should really never happen
                         NotyService.notyError(i18n.getMessage('credential_update_error'));
                         pageIsLoading = false;
                         return;
                     }
                     if (!params.guid) {
-                        console.error("No credential guid found");
+                        logger.error("No credential guid found");
                         // todo: may we need a custom error message here
                         NotyService.notyError(i18n.getMessage('credential_update_error'));
                         pageIsLoading = false;
@@ -106,13 +107,13 @@
                             NotyService.notyError(i18n.getMessage('could_not_decrypt_vault'));
                         }
                     } catch (exception) {
-                        console.error(exception);
+                        logger.error(exception);
                         NotyService.notyError(i18n.getMessage('could_not_get_or_decrypt_vault'));
                     }
                     pageIsLoading = false;
                 });
             } else {
-                console.error("no passman client for you");
+                logger.error("no passman client for you");
                 pageIsLoading = false;
             }
         });

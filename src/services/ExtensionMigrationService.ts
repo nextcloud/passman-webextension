@@ -1,5 +1,6 @@
 import browser from "webextension-polyfill";
 import CustomStorageService from "./CustomStorageService";
+import { logger } from "~/services/ConsoleLoggingService";
 
 /**
  * One-shot / version-gated migrations for extension upgrades.
@@ -56,7 +57,7 @@ export default class ExtensionMigrationService {
             const fromPreModelStore =
                 previousVersion !== undefined &&
                 this.isVersionLessThan(previousVersion, MODEL_STORE_INTRODUCED_IN_VERSION);
-            console.info(
+            logger.info(
                 `[migration] Removed legacy IndexedDB "${LEGACY_IDB_KEYVAL_STORE_NAME}"` +
                     (previousVersion
                         ? ` (update from ${previousVersion}` +
@@ -65,7 +66,7 @@ export default class ExtensionMigrationService {
                         : " (one-shot startup cleanup)")
             );
         } catch (e) {
-            console.warn(`[migration] Failed to remove legacy IndexedDB "${LEGACY_IDB_KEYVAL_STORE_NAME}"`, e);
+            logger.warn(`[migration] Failed to remove legacy IndexedDB "${LEGACY_IDB_KEYVAL_STORE_NAME}"`, e);
             // Do not set the flag on failure so a later SW start can retry
             return;
         }

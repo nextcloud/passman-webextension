@@ -6,6 +6,7 @@ import type { EncryptedOwnedCredentialFromServerInterface } from "@binsky/passma
 import type { PassmanClient } from "@binsky/passman-client-ts/lib/PassmanClient";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
+import { logger } from "~/services/ConsoleLoggingService";
 
 /**
  * Contains some helper functions for the NextcloudServerMessagingConnector.
@@ -48,13 +49,13 @@ export class NextcloudServerMessagingConnectorService {
         }
         const preloadedVault = passmanClient.preloadedVaults.find(vault => vault.id === typedResponse.vault_id);
         if (!preloadedVault) {
-            console.log('no preloaded vault found for credential mutation', credentialGuidFromUrl, typedResponse.vault_id);
+            logger.log('no preloaded vault found for credential mutation', credentialGuidFromUrl, typedResponse.vault_id);
             return;
         }
 
         const vault = await this.getCachedVaultIfPossible(passmanClient, preloadedVault.guid);
         if (!vault) {
-            console.log('no cached vault available for incremental credential sync', preloadedVault.guid);
+            logger.log('no cached vault available for incremental credential sync', preloadedVault.guid);
             return;
         }
 
@@ -93,10 +94,11 @@ export class NextcloudServerMessagingConnectorService {
         passmanClient: BackendPassmanClient
     ) => {
         if (!json || !passmanClient) {
-            console.error('no json or passmanClient', json, passmanClient);
+            logger.error('no json or passmanClient', !!json, !!passmanClient);
+            logger.debug('no json or passmanClient', json, passmanClient);
             return;
         };
-        console.log('starting updateBackgroundPassmanClient');
+        logger.log('starting updateBackgroundPassmanClient');
         try {
             // Handle vault list updates
             if (requestMethod === 'GET' && requestUrl.endsWith('/vaults')) {
@@ -136,7 +138,7 @@ export class NextcloudServerMessagingConnectorService {
 
                 // it's a get, patch or delete operation if there's a guid in the url
                 const credentialGuidFromUrl = this.extractGuidFromUrl(requestUrl);
-                console.log('found credential response operation with credential guid from url:', credentialGuidFromUrl, typedResponse);
+                logger.log('found credential response operation with credential guid from url:', credentialGuidFromUrl, typedResponse);
 
                 if (requestMethod === 'GET') {
                     // Credential GETs only prepare write ops; Credential.refresh on the caller owns applying them
@@ -153,7 +155,7 @@ export class NextcloudServerMessagingConnectorService {
                 }
             }
         } catch (error) {
-            console.error('Error updating background PassmanClient:', error);
+            logger.error('Error updating background PassmanClient:', error);
         }
     }
 
@@ -171,10 +173,11 @@ export class NextcloudServerMessagingConnectorService {
         passmanClient: PassmanClient
     ) => {
         if (!json || !passmanClient) {
-            console.error('no json or passmanClient', json, passmanClient);
+            logger.error('no json or passmanClient', !!json, !!passmanClient);
+            logger.debug('no json or passmanClient', json, passmanClient);
             return;
         };
-        console.log('starting updatePopupPassmanClient');
+        logger.log('starting updatePopupPassmanClient');
         try {
             // Handle vault list updates
             if (requestMethod === 'GET' && requestUrl.endsWith('/vaults')) {
@@ -212,7 +215,7 @@ export class NextcloudServerMessagingConnectorService {
                 return;
             }
         } catch (error) {
-            console.error('Error updating popup PassmanClient:', error);
+            logger.error('Error updating popup PassmanClient:', error);
         }
     }
 }

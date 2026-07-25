@@ -5,6 +5,7 @@ import type {
 } from "@binsky/passman-client-ts/lib/Interfaces/PasswordGeneratorService/PasswordGeneratorConfigurationInterface";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
+import { logger } from "~/services/ConsoleLoggingService";
 
 export interface GetPasswordGeneratorConfigurationMessagingResponse {
     status: boolean;
@@ -26,7 +27,7 @@ onMessage('getPasswordGeneratorConfiguration', async () => {
 
         status = true;
     } catch (exception) {
-        console.error('Error getting custom password generator configuration:', exception);
+        logger.error('Error getting custom password generator configuration:', exception);
         errorMessage = i18n.getMessage('could_not_get_password_generator_configuration');
 
         // Provide default configuration as fallback

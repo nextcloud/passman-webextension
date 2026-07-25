@@ -15,6 +15,7 @@
         buildOverrideSelectValuesFromRule,
         pageRuleOverrideSelectionToBoolean
     } from "~/lib/pageRules/pageRulesOverrides";
+    import { logger } from "~/services/ConsoleLoggingService";
 
     const dispatch = createEventDispatcher<{
         save: { initialUrl: string, url: string, rule: PageRulesInterface },
@@ -105,7 +106,7 @@
         try {
             return formUrl.trim() !== '' && !formUrl.includes('://') && PageRulesService.urlToOrigin(formUrl) === formUrl;
         } catch (error) {
-            console.debug('Failed to validate form url', error);
+            logger.debug('Failed to validate form url', error);
             return false;
         }
         return false;
