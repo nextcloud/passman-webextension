@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for Nextcloud",
+        "message": "Passman - salasõnahaldur NextCloudi jaoks",
         "description": "Extension description"
     },
     "search_for": {
@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "description": {
-        "message": "Description",
+        "message": "Kirjeldus",
         "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
@@ -40,11 +40,11 @@
         "description": "Password generator"
     },
     "password_generation_settings": {
-        "message": "Password generation settings",
+        "message": "Salasõnaloome seadistused",
         "description": "Settings for the password generator"
     },
     "toggle_extended_password_settings": {
-        "message": "Toggle extended password settings",
+        "message": "Lülita salasõnade lisaseadistused sisse/välja",
         "description": "Toggle extended password settings"
     },
     "generate_password": {
@@ -192,11 +192,11 @@
         "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Credentials",
+        "message": "Kasutajatunnus/salasõna",
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
-        "message": "This password is compromised. You can only remove this warning by changing the password.",
+        "message": "See salasõna on rääderdatud ehk kahjustatud salajasusega. Saad selle teavituse eemaldada vaid salasõna vahetamise teel.",
         "description": "Credential compromised notice"
     },
     "mark_compromised": {
@@ -376,11 +376,11 @@
         "description": "Custom fields"
     },
     "custom_fields_types_text": {
-        "message": "Text",
+        "message": "Tekst",
         "description": "Custom field type text"
     },
     "custom_fields_types_password": {
-        "message": "Password",
+        "message": "Salasõna",
         "description": "Custom field type password"
     },
     "custom_fields_types_file": {
@@ -388,23 +388,23 @@
         "description": "Custom field type file"
     },
     "custom_fields_header_add": {
-        "message": "Add field",
+        "message": "Lisa väli",
         "description": "Custom field add"
     },
     "custom_fields_header_label": {
-        "message": "Field label",
+        "message": "Välja silt",
         "description": "Custom field label"
     },
     "custom_fields_header_value": {
-        "message": "Field value",
+        "message": "Välja väärtus",
         "description": "Custom field value"
     },
     "custom_fields_header_type": {
-        "message": "Field type",
+        "message": "Välja tüüp",
         "description": "Custom field type"
     },
     "custom_fields_error_no_file_selected": {
-        "message": "No file selected",
+        "message": "Ühtegi faili pole valitud",
         "description": "Custom field no file selected"
     },
     "general": {
@@ -544,7 +544,7 @@
         "description": "Clear OTP configuration"
     },
     "issuer": {
-        "message": "Issuer",
+        "message": "Väljastaja",
         "description": "OTP issuer"
     },
     "type": {
@@ -560,11 +560,11 @@
         "description": "OTP period"
     },
     "algorithm": {
-        "message": "Algorithm",
+        "message": "Algoritm",
         "description": "OTP algorithm"
     },
     "files": {
-        "message": "Files",
+        "message": "Failid",
         "description": "Credential files"
     },
     "settings": {
@@ -592,7 +592,7 @@
         "description": "Search"
     },
     "type_to_search": {
-        "message": "Type to search",
+        "message": "Otsimiseks kirjuta midagi",
         "description": "Type to search placeholder for the search input"
     },
     "credential_deleted": {
@@ -712,31 +712,31 @@
         "description": "File type info shown in the drag and drop upload box"
     },
     "files_upload_succeeded": {
-        "message": "File upload succeeded",
+        "message": "Faili üleslaadimine õnnestus",
         "description": "Shown when a file has been successfully uploaded"
     },
     "files_upload_failed": {
-        "message": "File upload failed",
+        "message": "Faili üleslaadimine ei õnnestunud",
         "description": "Shown when a file upload has failed"
     },
     "files_deletion_succeeded": {
-        "message": "File deletion succeeded",
+        "message": "Faili kustutamine õnnestus",
         "description": "Shown when a file has been successfully deleted"
     },
     "files_deletion_failed": {
-        "message": "File deletion failed",
+        "message": "Faili kustutamine ei õnnestunud",
         "description": "Shown when a file deletion has failed"
     },
     "files_header_name": {
-        "message": "File name",
+        "message": "Failinimi",
         "description": "Column header for file name in files table"
     },
     "files_header_created": {
-        "message": "Created at",
+        "message": "Loodud",
         "description": "Column header for creation date in files table"
     },
     "files_header_size": {
-        "message": "Size",
+        "message": "Suurus",
         "description": "Column header for file size in files table"
     },
     "error_file_upload_popup": {
@@ -796,43 +796,43 @@
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
-        "message": "Saved page rules",
+        "message": "Salvestatud lehereeglid",
         "description": "Heading for the list of saved page rules"
     },
     "page_rules_no_rules": {
-        "message": "No page rules defined yet",
+        "message": "Ühtegi lehereeglit pole veel määratletud",
         "description": "Shown when there are no page rules"
     },
     "page_rules_url_label": {
-        "message": "Page URL",
+        "message": "Lehe võrguaadress",
         "description": "Label for page rule URL input"
     },
     "page_rules_url_placeholder": {
-        "message": "example.com",
+        "message": "toredomeen.ee",
         "description": "Placeholder for page rule URL input"
     },
     "page_rules_new_rule": {
-        "message": "New rule",
+        "message": "Uus reegel",
         "description": "Label for creating a new page rule"
     },
     "page_rules_save_rule": {
-        "message": "Save rule",
+        "message": "Salvesta reegel",
         "description": "Label for saving a new page rule"
     },
     "page_rules_update_rule": {
-        "message": "Update rule",
+        "message": "Uuenda reeglit",
         "description": "Label for updating an existing page rule"
     },
     "page_rules_delete_rule": {
-        "message": "Delete rule",
+        "message": "Kustuta reegel",
         "description": "Label for deleting a page rule"
     },
     "page_rules_rule_saved": {
-        "message": "Page rule saved",
+        "message": "Lehereegel on salvestatud",
         "description": "Success notification when saving a page rule"
     },
     "page_rules_rule_deleted": {
-        "message": "Page rule deleted",
+        "message": "Lehereegel on kustutatud",
         "description": "Success notification when deleting a page rule"
     },
     "page_rules_override_section": {
@@ -856,7 +856,7 @@
         "description": "Loading label for picker page rules tab"
     },
     "page_rules_picker_retry": {
-        "message": "Retry",
+        "message": "Proovi uuesti",
         "description": "Retry button label for picker page rules tab"
     },
     "page_rules_picker_load_error": {
@@ -868,11 +868,11 @@
         "description": "Error shown when picker tab cannot save page rules"
     },
     "page_rules_search_label": {
-        "message": "Search rules",
+        "message": "Otsi reegleid",
         "description": "Label for the page rules search input"
     },
     "page_rules_search_placeholder": {
-        "message": "Filter by URL...",
+        "message": "Filtreeri võrguaadressi alusel…",
         "description": "Placeholder for the page rules search input"
     },
     "page_rules_no_results": {
@@ -968,11 +968,11 @@
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
-        "message": "enabled",
+        "message": "kasutusel",
         "description": "Shown when global setting is enabled"
     },
     "page_rules_global_value_disabled": {
-        "message": "disabled",
+        "message": "pole kasutusel",
         "description": "Shown when global setting is disabled"
     },
     "offline_cache": {
@@ -1032,7 +1032,7 @@
         "description": "Button to remove a saved server connection"
     },
     "server_connection_add": {
-        "message": "Add server",
+        "message": "Lisa server",
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
@@ -1108,11 +1108,11 @@
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
-        "message": "Report an issue",
+        "message": "Teata veast või probleemist",
         "description": "Title / tooltip for the issues button in the bottom navigation"
     },
     "issues": {
-        "message": "Issues",
+        "message": "Veahaldus",
         "description": "Short label for the issues button in the bottom navigation"
     },
     "github": {
@@ -1120,11 +1120,11 @@
         "description": "GitHub product / platform name"
     },
     "click_to_auto_fill": {
-        "message": "Click to auto fill",
+        "message": "Klõpsa automaatseks täitmiseks",
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
-        "message": "Add a tag",
+        "message": "Lisa silt",
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
@@ -1152,19 +1152,19 @@
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "poor",
+        "message": "kehv",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
-        "message": "weak",
+        "message": "nõrk",
         "description": "Password strength meter label"
     },
     "password_strength_good": {
-        "message": "good",
+        "message": "hea",
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
-        "message": "strong",
+        "message": "tugev",
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
@@ -1184,43 +1184,43 @@
         "description": "Browser context menu item to auto-fill credentials"
     },
     "context_menu_copy_username": {
-        "message": "Copy username",
+        "message": "Kopeeri kasutajanimi",
         "description": "Browser context menu item to copy username"
     },
     "context_menu_copy_email": {
-        "message": "Copy email",
+        "message": "Kopeeri e-posti aadress",
         "description": "Browser context menu item to copy email"
     },
     "context_menu_copy_password": {
-        "message": "Copy password",
+        "message": "Kopeeri salasõna",
         "description": "Browser context menu item to copy password"
     },
     "context_menu_copy_url": {
-        "message": "Copy URL",
+        "message": "Kopeeri võrguaadress",
         "description": "Browser context menu item to copy URL"
     },
     "context_menu_copy_otp": {
-        "message": "Copy OTP",
+        "message": "Kopeeri ühekordne salasõna",
         "description": "Browser context menu item to copy one-time password"
     },
     "context_menu_reload_password_picker": {
-        "message": "Reload password picker",
+        "message": "Laadi salasõnavalija uuesti",
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
-        "message": "And copy to clipboard",
+        "message": "Ja kopeeri lõikelauale",
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
-        "message": "And fill fields",
+        "message": "Ja täida väljad",
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME$ copied to clipboard",
+        "message": "„$FIELDNAME$“ väli on kopeeritud lõikelauale",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
-        "message": "Failed to copy $FIELDNAME$",
+        "message": "„$FIELDNAME$“ välja kopeerimine ei õnnestunud",
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
@@ -1240,7 +1240,7 @@
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {
-        "message": "Unknown error",
+        "message": "Tundmatu viga",
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
@@ -1294,6 +1294,106 @@
     "could_not_get_password_generator_configuration": {
         "message": "Could not get custom password generator configuration",
         "description": "Error when loading password generator settings fails"
+    },
+    "doorhanger_save_title": {
+        "message": "Save login to Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Update login in Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Not now",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Credential to update",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Untitled credential",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Doorhanger",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Layout",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Card",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Top row",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Position",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Top right",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Top left",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Bottom right",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Bottom left",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Logging",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Log level",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Debug",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Log",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Info",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Warning",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Error",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",

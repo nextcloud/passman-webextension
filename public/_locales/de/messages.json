@@ -1296,31 +1296,31 @@
         "description": "Error when loading password generator settings fails"
     },
     "doorhanger_save_title": {
-        "message": "Save login to Passman?",
+        "message": "Anmeldedaten in Passman speichern?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Update login in Passman?",
+        "message": "Anmeldedaten in Passman aktualisieren?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
-        "message": "Not now",
+        "message": "Jetzt nicht",
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Credential to update",
+        "message": "Zu aktualisierende Anmeldeinformationen",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Untitled credential",
+        "message": "Unbenannte Anmeldeinformation",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
-        "message": "Doorhanger",
+        "message": "Türhänger",
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
-        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "message": "Auswählen, wie die Speichern-/Aktualisierungsaufforderung nach dem Anmelden auf Webseiten angezeigt wird.",
         "description": "Description under the doorhanger settings section"
     },
     "doorhanger_layout": {
@@ -1328,15 +1328,15 @@
         "description": "Label for doorhanger layout dropdown"
     },
     "doorhanger_layout_description": {
-        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "message": "Die Karte schwebt in einer Ecke. Die oberste Zeile ist ein Banner in voller Breite am oberen Seitenrand.",
         "description": "Help text for doorhanger layout setting"
     },
     "doorhanger_layout_card": {
-        "message": "Card",
+        "message": "Karte",
         "description": "Doorhanger layout option: floating card"
     },
     "doorhanger_layout_top_row": {
-        "message": "Top row",
+        "message": "Oberste Reihe",
         "description": "Doorhanger layout option: full-width top banner"
     },
     "doorhanger_gravity": {
@@ -1344,24 +1344,56 @@
         "description": "Label for doorhanger gravity/position dropdown"
     },
     "doorhanger_gravity_description": {
-        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "message": "Ecke für das Kartenlayout oder Inhaltsausrichtung für das Layout der obersten Zeile.",
         "description": "Help text for doorhanger gravity setting"
     },
     "doorhanger_gravity_top_right": {
-        "message": "Top right",
+        "message": "Oben links",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_top_left": {
-        "message": "Top left",
+        "message": "Oben rechts",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_right": {
-        "message": "Bottom right",
+        "message": "Unten rechts",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_left": {
-        "message": "Bottom left",
+        "message": "Unten links",
         "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Logging",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Log level",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Debug",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Log",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Info",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Warning",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Error",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",

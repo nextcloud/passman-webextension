@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for Nextcloud",
+        "message": "„Passman“ – slaptažodžių tvarkyklė, skirta „NextCloud“",
         "description": "Extension description"
     },
     "search_for": {
@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "description": {
-        "message": "Description",
+        "message": "Aprašas",
         "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
@@ -32,7 +32,7 @@
         "description": "Save site"
     },
     "generator": {
-        "message": "Generator",
+        "message": "Generatorius",
         "description": "Password generator menu entry"
     },
     "password_generator": {
@@ -40,11 +40,11 @@
         "description": "Password generator"
     },
     "password_generation_settings": {
-        "message": "Password generation settings",
+        "message": "Slaptažodžio generavimo nustatymai",
         "description": "Settings for the password generator"
     },
     "toggle_extended_password_settings": {
-        "message": "Toggle extended password settings",
+        "message": "Perjungti išplėstinius slaptažodžio nustatymus",
         "description": "Toggle extended password settings"
     },
     "generate_password": {
@@ -84,19 +84,19 @@
         "description": "Require every character type"
     },
     "use_uppercase": {
-        "message": "Use uppercase letters",
+        "message": "Naudokite didžiąsias raides",
         "description": "Use uppercase letters"
     },
     "use_lowercase": {
-        "message": "Use lowercase letters",
+        "message": "Naudokite mažąsias raides",
         "description": "Use lowercase letters"
     },
     "use_digits": {
-        "message": "Use digits",
+        "message": "Naudoti skaitmenis",
         "description": "Use digits"
     },
     "use_special_chars": {
-        "message": "Use special characters",
+        "message": "Naudoti specialiuosius simbolius",
         "description": "Use special characters"
     },
     "add_account": {
@@ -124,7 +124,7 @@
         "description": "Add"
     },
     "credential_changed": {
-        "message": "Credential changed",
+        "message": "Prisijungimo duomenys pakeisti",
         "description": "Credential changed"
     },
     "credential_created": {
@@ -132,15 +132,15 @@
         "description": "Credential created"
     },
     "credentials_expires": {
-        "message": "Credential expires",
+        "message": "Prisijungimo duomenys nebegalioja",
         "description": "Credential expires"
     },
     "expire_date": {
-        "message": "Expiration date",
+        "message": "Galiojimo pabaigos data",
         "description": "Credential password expiration date"
     },
     "no_expire_date": {
-        "message": "No expiration date set",
+        "message": "Nenustatyta jokia galiojimo pabaigos data",
         "description": "No expiration date set for the credential password"
     },
     "url": {
@@ -180,15 +180,15 @@
         "description": "Detected changed URL for"
     },
     "edit_credential": {
-        "message": "Edit credential",
+        "message": "Redaguoti prisijungimo duomenis",
         "description": "Edit credential button label for the edit credential page"
     },
     "create_new_credential": {
-        "message": "Create new credential",
+        "message": "Sukurti naujus prisijungimo duomenis",
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Credential",
+        "message": "Prisijungimo duomenys ",
         "description": "Credential singular form"
     },
     "credentials": {
@@ -196,11 +196,11 @@
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
-        "message": "This password is compromised. You can only remove this warning by changing the password.",
+        "message": "Šis slaptažodis yra pažeistas. Šį įspėjimą galite pašalinti tik pakeisdami slaptažodį.",
         "description": "Credential compromised notice"
     },
     "mark_compromised": {
-        "message": "Mark as compromised",
+        "message": "Pažymėti kaip pažeistą",
         "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
@@ -228,11 +228,11 @@
         "description": "Ignore path for site matching"
     },
     "ignore_page": {
-        "message": "Ignore this page when suggesting credentials",
+        "message": "Ignoruoti šį puslapį siūlant prisijungimo duomenis",
         "description": "Checkbox label for ignoring a specific page"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill (for a single matching credential)",
+        "message": "Įjungti automatinį formų pildymą (kai randami vieni atitinkantys prisijungimo duomenys)",
         "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
@@ -288,15 +288,15 @@
         "description": "updated, lowercase"
     },
     "credential_update_error": {
-        "message": "An error occurred while updating the credential",
+        "message": "Atnaujinant prisijungimo duomenis įvyko klaida.",
         "description": "An error occurred while updating the credential"
     },
     "credential_create_error": {
-        "message": "An error occurred while creating the credential",
+        "message": "Kuriant prisijungimo duomenis įvyko klaida.",
         "description": "An error occurred while creating the credential"
     },
     "open_options_page": {
-        "message": "Open options page",
+        "message": "Atidaryti parinkčių puslapį",
         "description": "Open options page button label for the browser extension options page"
     },
     "site_ignored": {
@@ -324,7 +324,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman Webextension",
+        "message": "Sveiki atvykę į „Passman“ naršyklės plėtinį",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -336,7 +336,7 @@
         "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Your Nextcloud passwords, ready in the browser. A short setup connects this extension to your Passman vault.",
+        "message": "Jūsų „Nextcloud“ slaptažodžiai – pasiekiami naršyklėje. Atlikus trumpą sąranką, šis plėtinys susiejamas su jūsų „Passman“ saugykla.",
         "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
@@ -376,35 +376,35 @@
         "description": "Custom fields"
     },
     "custom_fields_types_text": {
-        "message": "Text",
+        "message": "Tekstas",
         "description": "Custom field type text"
     },
     "custom_fields_types_password": {
-        "message": "Password",
+        "message": "Slaptažodis",
         "description": "Custom field type password"
     },
     "custom_fields_types_file": {
-        "message": "File",
+        "message": "Failas",
         "description": "Custom field type file"
     },
     "custom_fields_header_add": {
-        "message": "Add field",
+        "message": "Pridėti lauką",
         "description": "Custom field add"
     },
     "custom_fields_header_label": {
-        "message": "Field label",
+        "message": "Laukelio etiketė",
         "description": "Custom field label"
     },
     "custom_fields_header_value": {
-        "message": "Field value",
+        "message": "Laukelio vertė",
         "description": "Custom field value"
     },
     "custom_fields_header_type": {
-        "message": "Field type",
+        "message": "Laukelio tipas",
         "description": "Custom field type"
     },
     "custom_fields_error_no_file_selected": {
-        "message": "No file selected",
+        "message": "Nepasirinktas joks failas",
         "description": "Custom field no file selected"
     },
     "general": {
@@ -532,19 +532,19 @@
         "description": "One time password"
     },
     "otp_configuration_invalid": {
-        "message": "Invalid OTP configuration",
+        "message": "Netinkama OTP konfigūracija",
         "description": "Invalid one time password configuration"
     },
     "otp_secret": {
-        "message": "OTP secret",
+        "message": "OTP paslaptis",
         "description": "OTP secret"
     },
     "otp_clear_all": {
-        "message": "Clear OTP configuration",
+        "message": "Išvalyti OTP konfigūraciją",
         "description": "Clear OTP configuration"
     },
     "issuer": {
-        "message": "Issuer",
+        "message": "Išdavėjas",
         "description": "OTP issuer"
     },
     "type": {
@@ -552,15 +552,15 @@
         "description": "OTP type"
     },
     "digits": {
-        "message": "Digits",
+        "message": "Skaičiai",
         "description": "OTP digits"
     },
     "period": {
-        "message": "Period",
+        "message": "Laikotarpis",
         "description": "OTP period"
     },
     "algorithm": {
-        "message": "Algorithm",
+        "message": "Algoritmas",
         "description": "OTP algorithm"
     },
     "files": {
@@ -592,7 +592,7 @@
         "description": "Search"
     },
     "type_to_search": {
-        "message": "Type to search",
+        "message": "Irašykite norėdami ieškoti",
         "description": "Type to search placeholder for the search input"
     },
     "credential_deleted": {
@@ -600,7 +600,7 @@
         "description": "Credential deleted"
     },
     "mark_credential_deleted": {
-        "message": "Mark credential as deleted",
+        "message": "Pažymėti prisijungimo duomenis kaip ištrintus",
         "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
@@ -624,7 +624,7 @@
         "description": "Search"
     },
     "reset_settings": {
-        "message": "Reset settings",
+        "message": "Atstatyti nustatymus",
         "description": "Reset settings button label"
     },
     "iam_sure": {
@@ -664,7 +664,7 @@
         "description": "Unlock button label"
     },
     "unlock_without_refresh": {
-        "message": "Unlock without refresh",
+        "message": "Atrakinti neatnaujinant",
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
@@ -700,63 +700,63 @@
         "description": "To describe a textual input field"
     },
     "copy_to_clipboard": {
-        "message": "Copy $FIELDNAME$ to clipboard",
+        "message": "Kopijuoti $FIELDNAME$ į iškarpinę",
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
-        "message": "$START_HTML_TAG$Click to upload$END_HTML_TAG$ or drag and drop",
+        "message": "$START_HTML_TAG$ spustelėkite norėdami įkelti $END_HTML_TAG$ arba tempkite ir įmeskite",
         "description": "Text shown in the drag and drop upload box"
     },
     "files_any_type_info": {
-        "message": "Any file type",
+        "message": "Bet koks failo formatas",
         "description": "File type info shown in the drag and drop upload box"
     },
     "files_upload_succeeded": {
-        "message": "File upload succeeded",
+        "message": "Failas sėkmingai įkeltas",
         "description": "Shown when a file has been successfully uploaded"
     },
     "files_upload_failed": {
-        "message": "File upload failed",
+        "message": "Failo įkėlimas nepavyko",
         "description": "Shown when a file upload has failed"
     },
     "files_deletion_succeeded": {
-        "message": "File deletion succeeded",
+        "message": "Failas sėkmingai pašalintas",
         "description": "Shown when a file has been successfully deleted"
     },
     "files_deletion_failed": {
-        "message": "File deletion failed",
+        "message": "Nepavyko ištrinti failo",
         "description": "Shown when a file deletion has failed"
     },
     "files_header_name": {
-        "message": "File name",
+        "message": "Failo pavadinimas",
         "description": "Column header for file name in files table"
     },
     "files_header_created": {
-        "message": "Created at",
+        "message": "Sukurta",
         "description": "Column header for creation date in files table"
     },
     "files_header_size": {
-        "message": "Size",
+        "message": "Dydis",
         "description": "Column header for file size in files table"
     },
     "error_file_upload_popup": {
-        "message": "Unfortunately, file upload is not supported in the popup.",
+        "message": "Deja, iššokančiajame lange failų įkėlimas nepalaikomas.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "error_file_upload_popup_2": {
-        "message": "Please use the webextension options page or another client to add files.",
+        "message": "Norėdami pridėti failų, naudokite naršyklės plėtinio nustatymų puslapį arba kitą klientą.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
-        "message": "Clear tab url filter",
+        "message": "Išvalyti skirtuko URL filtrą",
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "No matching credentials",
+        "message": "Nėra atitinkančių prisijungimo duomenų",
         "description": "No matching credentials"
     },
     "update_default_settings": {
-        "message": "Update default settings",
+        "message": "Atnaujinti numatytuosius nustatymus",
         "description": "Update default settings button label"
     },
     "save_settings": {
@@ -764,171 +764,171 @@
         "description": "Save settings button label"
     },
     "extended_settings": {
-        "message": "Extended settings",
+        "message": "Išplėstiniai nustatymai",
         "description": "Extended settings"
     },
     "extended_settings_description": {
-        "message": "Setup global extended settings",
+        "message": "Nustatyti visuotinius išplėstinius nustatymus",
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
-        "message": "Nextcloud server setup",
+        "message": "„Nextcloud“ serverio konfigūravimas",
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
-        "message": "Setup your Nextcloud server and vault credentials",
+        "message": "Nustatykite „Nextcloud“ serverį ir saugyklos prisijungimo duomenis",
         "description": "Nextcloud server setup card description"
     },
     "setup_server_step_title": {
-        "message": "Connect your server",
+        "message": "Prijunkite savo serverį",
         "description": "Hero title on the initial Nextcloud server setup step"
     },
     "setup_server_step_intro": {
-        "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+        "message": "Prisijunkite prie „Nextcloud“, tada pasirinkite „Passman“ slėptuvę, kurią ši naršyklė turėtų sinchronizuoti.",
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
-        "message": "Page rules",
+        "message": "Puslapio taisyklės",
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
+        "message": "Nustatykite konkrečiam puslapiui skirtas taisykles, kad pritaikytumėte bendrąjį plėtinio veikimą. Šiuo metu ši funkcija skirta tik domenams, o ne konkretiems keliams (tai gali būti įdiegta ateityje).",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
-        "message": "Saved page rules",
+        "message": "Išsaugotos puslapio taisyklės",
         "description": "Heading for the list of saved page rules"
     },
     "page_rules_no_rules": {
-        "message": "No page rules defined yet",
+        "message": "Dar nenustatyta jokių puslapio taisyklių",
         "description": "Shown when there are no page rules"
     },
     "page_rules_url_label": {
-        "message": "Page URL",
+        "message": "Puslapio URL",
         "description": "Label for page rule URL input"
     },
     "page_rules_url_placeholder": {
-        "message": "example.com",
+        "message": "pavyzdys.com",
         "description": "Placeholder for page rule URL input"
     },
     "page_rules_new_rule": {
-        "message": "New rule",
+        "message": "Nauja taisyklė",
         "description": "Label for creating a new page rule"
     },
     "page_rules_save_rule": {
-        "message": "Save rule",
+        "message": "Išsaugoti taisyklę",
         "description": "Label for saving a new page rule"
     },
     "page_rules_update_rule": {
-        "message": "Update rule",
+        "message": "Atnaujinti taisyklę",
         "description": "Label for updating an existing page rule"
     },
     "page_rules_delete_rule": {
-        "message": "Delete rule",
+        "message": "Ištrinti taisyklę",
         "description": "Label for deleting a page rule"
     },
     "page_rules_rule_saved": {
-        "message": "Page rule saved",
+        "message": "Puslapio taisyklė išsaugota",
         "description": "Success notification when saving a page rule"
     },
     "page_rules_rule_deleted": {
-        "message": "Page rule deleted",
+        "message": "Puslapio taisyklė ištrinta",
         "description": "Success notification when deleting a page rule"
     },
     "page_rules_override_section": {
-        "message": "Override global settings",
+        "message": "Nepaisyti visuotinių nustatymų",
         "description": "Heading for page rule override settings"
     },
     "page_rules_picker_current_site": {
-        "message": "Current site",
+        "message": "Dabartinė svetainė",
         "description": "Label that shows current origin in picker tab"
     },
     "page_rules_picker_intro": {
-        "message": "Adjust how Passman behaves on this page.",
+        "message": "Pakoreguokite „Passman“ veikimą šiame puslapyje.",
         "description": "Intro text for picker page rules tab"
     },
     "page_rules_picker_reset": {
-        "message": "Reset changes",
+        "message": "Iš naujo nustatyti pakeitimus",
         "description": "Reset button label in picker page rules tab"
     },
     "page_rules_picker_loading": {
-        "message": "Loading page settings...",
+        "message": "Įkeliami puslapio nustatymai...",
         "description": "Loading label for picker page rules tab"
     },
     "page_rules_picker_retry": {
-        "message": "Retry",
+        "message": "Pabandyti iš naujo",
         "description": "Retry button label for picker page rules tab"
     },
     "page_rules_picker_load_error": {
-        "message": "Unable to load page rules for this site",
+        "message": "Nepavyko įkelti šios svetainės puslapio taisyklių",
         "description": "Error shown when picker tab cannot fetch page rules"
     },
     "page_rules_picker_save_error": {
-        "message": "Saving page rules failed",
+        "message": "Nepavyko išsaugoti puslapio taisyklių",
         "description": "Error shown when picker tab cannot save page rules"
     },
     "page_rules_search_label": {
-        "message": "Search rules",
+        "message": "Paieškos taisyklės",
         "description": "Label for the page rules search input"
     },
     "page_rules_search_placeholder": {
-        "message": "Filter by URL...",
+        "message": "Filtruoti pagal URL...",
         "description": "Placeholder for the page rules search input"
     },
     "page_rules_no_results": {
-        "message": "No page rules match your search",
+        "message": "Jokios puslapio taisyklės neatitinka jūsų paieškos",
         "description": "Shown when no rules match the applied filter"
     },
     "page_rules_cancel_edit": {
-        "message": "Abort",
+        "message": "Nutraukti",
         "description": "Button label to go back to the page rules list"
     },
     "page_rules_use_global": {
-        "message": "Use global setting",
+        "message": "Naudoti visuotinį nustatymą",
         "description": "Select option label for inheriting from global settings"
     },
     "page_rules_force_enable": {
-        "message": "Force enable",
+        "message": "Priverstinis įjungimas",
         "description": "Select option label for forcing setting to enabled"
     },
     "page_rules_force_disable": {
-        "message": "Force disable",
+        "message": "Priverstinis išjungimas",
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
-        "message": "Currently editing: $PAGE_URL$",
+        "message": "Šiuo metu redaguojama: $PAGE_URL$",
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
-        "message": "Page URL is required",
+        "message": "Būtina nurodyti puslapio URL",
         "description": "Error message when the page rule URL is missing"
     },
     "page_rules_load_failed": {
-        "message": "Failed to load page rules",
+        "message": "Nepavyko įkelti puslapio taisyklių",
         "description": "Error message when page rules fail to load"
     },
     "page_rules_save_failed": {
-        "message": "Failed to save page rule",
+        "message": "Nepavyko išsaugoti puslapio taisyklės",
         "description": "Error message when page rule save fails"
     },
     "page_rules_delete_failed": {
-        "message": "Failed to delete page rule",
+        "message": "Nepavyko pašalinti puslapio taisyklės",
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Overrides: $COUNT$",
+        "message": "Nepaiso: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
-        "message": "Save default vault settings",
+        "message": "Įrašyti numatytuosius slėptuvės nustatymus",
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
-        "message": "Settings updated successfully",
+        "message": "Nustatymai sėkmingai atnaujinti",
         "description": "Settings updated successfully"
     },
     "extension_version": {
-        "message": "Extension version",
+        "message": "Plėtinio versija",
         "description": "Extension version"
     },
     "enable_email_as_username_fallback_filling": {
@@ -936,263 +936,263 @@
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
-        "message": "Form detection settings",
+        "message": "Formos aptikimo nustatymai",
         "description": "Form detection settings"
     },
     "enable_user_event_based_form_detection": {
-        "message": "Enable user event based form detection",
+        "message": "Įjungti formų aptikimą pagal vartotojo veiksmus",
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Listen to some special user events with debouncing and throttling logic",
+        "message": "Stebėkite specifinius vartotojo veiksmus, taikydami „debouncing“ ir „throttling“ logiką.",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
-        "message": "Enable form detection on URL popstate events",
+        "message": "Įjungti formų aptikimą įvykus URL „popstate“ įvykiams",
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Basically useful for SPAs (but not necessarily)",
+        "message": "Iš esmės naudinga „SPA“ (vienos puslapio programoms), tačiau nebūtinai",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
-        "message": "Enable form detection on URL changes, checked by interval (of 1s)",
+        "message": "Įjungti formų aptikimą pasikeitus URL; tikrinama kas 1 sekundę.",
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
-        "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+        "message": "Įgalinkite „MutationObserver“, kad aptiktumėte dinamiškai pridedamas formas ir įvesties laukus pasikeitus „DOM“.",
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
-        "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+        "message": "Efektyviausias, tačiau daugiausiai išteklių reikalaujantis būdas aptikti dinamiškai pridedamas formas ir įvesties laukus reaguojant į „DOM“ pokyčius.",
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
-        "message": "enabled",
+        "message": "įjungta",
         "description": "Shown when global setting is enabled"
     },
     "page_rules_global_value_disabled": {
-        "message": "disabled",
+        "message": "išjungta",
         "description": "Shown when global setting is disabled"
     },
     "offline_cache": {
-        "message": "Offline cache",
+        "message": "Atsijungties tarpinė atmintis",
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
-        "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+        "message": "Šifruoti slėptuvės duomenys saugomi vietoje, kad būtų galima naudotis jais neprisijungus prie tinklo. Išvalyta tarpinė atmintis automatiškai užpildoma iš naujo, kai kitą kartą įkeliate slėptuves iš serverio.",
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "message": "Numatomas dydis: $1($2 prisijungimo duomenys $3 slėptuvėse)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
-        "message": "Measuring offline cache…",
+        "message": "Matuojama atsijungties tarpinė atmintis...",
         "description": "Shown while estimating IndexedDB size"
     },
     "offline_cache_size_unavailable": {
-        "message": "Could not measure offline cache size",
+        "message": "Nepavyko išmatuoti atsijungties tarpinės atminties",
         "description": "Error measuring IndexedDB size"
     },
     "clear_offline_cache": {
-        "message": "Clear offline cache",
+        "message": "Išvalyti atsijungties tarpinę atmintį",
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
-        "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+        "message": "Ar pašalinti vietinės slėptuvės (veikiančios neprisijungus) tarpinę atmintį? Norint iš naujo įkelti slėptuves, reikės tinklo ryšio.",
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
-        "message": "Offline cache cleared",
+        "message": "Atsijungties tarpinė atmintis išvalyta",
         "description": "Success toast after clearing offline cache"
     },
     "offline_cache_clear_failed": {
-        "message": "Failed to clear offline cache",
+        "message": "Nepavyko išvalyti atsijungties tarpinės atminties",
         "description": "Error toast after failing to clear offline cache"
     },
     "server_connections": {
-        "message": "Saved servers",
+        "message": "Išsaugoti serveriai",
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "message": "Plėtinys vienu metu naudoja vieną aktyvų „Nextcloud“ serverį. Čia pridėkite atsarginį elementą, kad galėtumėte greitai persijungti, jei pagrindinis serveris taptų nepasiekiamas.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "active",
+        "message": "aktyvus",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
-        "message": "Switch",
+        "message": "Pakeisti",
         "description": "Button to make another saved server the active connection"
     },
     "server_connection_remove": {
-        "message": "Remove",
+        "message": "Šalinti",
         "description": "Button to remove a saved server connection"
     },
     "server_connection_add": {
-        "message": "Add server",
+        "message": "Pridėti serverį",
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
-        "message": "Active server credentials",
+        "message": "Aktyvaus serverio prisijungimo duomenys",
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "message": "Ar pašalinti šį įrašytą serverį iš plėtinio? Atsijungties tarpinė atmintis gali išlikti, kol bus išvalyta.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Switched active server",
+        "message": "Pakeistas aktyvus serveris",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Could not switch server",
+        "message": "Nepavyko pakeisti serverio",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
-        "message": "Server removed",
+        "message": "Serveris pašalintas",
         "description": "Success toast after removing a server connection"
     },
     "server_connection_remove_failed": {
-        "message": "Could not remove server",
+        "message": "Nepavyko pašalinti serverio",
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "message": "Ši perrašyta versija vis dar aktyviai kuriama, tad gali pasitaikyti trūkumų.$BR$ Radote klaidą? Prašome pranešti apie ją $LINK_START$„GitHub“ platformoje$LINK_END$.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Choose an unlock password",
+        "message": "Pasirinkite atrakinimo slaptažodį",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "message": "Šis slaptažodis užrakina plėtinį šiame įrenginyje ir naudojamas vietiniams nustatymams šifruoti. Tai nėra jūsų slėptuvės slaptažodis.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
-        "message": "Save & continue",
+        "message": "Išsaugoti ir tęsti",
         "description": "Button to save the extension unlock password and continue setup"
     },
     "passman_app_required": {
-        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "message": "Šiam plėtiniui reikia, kad jūsų „Nextcloud“ serveryje būtų įdiegta $LINK_START$„Passman“ programėlė$LINK_END$.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "message": "Jokie duomenys nėra perduodami į kitus šaltinius, išskyrus nurodytą „Nextcloud“ serverį.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
-        "message": "No selected vault info found",
+        "message": "Nerasta informacijos apie pasirinktą slėptuvę",
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
-        "message": "Could not decrypt vault",
+        "message": "Nepavyko iššifruoti slėptuvės",
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
-        "message": "No default vault info found",
+        "message": "Nerasta numatytoji slėptuvės informacija",
         "description": "Error when default vault metadata is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Could not get or decrypt vault",
+        "message": "Nepavyko gauti arba iššifruoti slėptuvės",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
-        "message": "Unknown error in refreshCredentialList",
+        "message": "Nežinoma klaida vykdant „refreshCredentialList“",
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
-        "message": "Expected extension page not found",
+        "message": "Nerastas tikėtinas plėtinio puslapis",
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
-        "message": "Report an issue",
+        "message": "Pranešti apie klaidą",
         "description": "Title / tooltip for the issues button in the bottom navigation"
     },
     "issues": {
-        "message": "Issues",
+        "message": "Klaidos",
         "description": "Short label for the issues button in the bottom navigation"
     },
     "github": {
-        "message": "GitHub",
+        "message": "„GitHub“",
         "description": "GitHub product / platform name"
     },
     "click_to_auto_fill": {
-        "message": "Click to auto fill",
+        "message": "Spustelėkite norėdami automatiškai užpildyti",
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
-        "message": "Add a tag",
+        "message": "Pridėti žymę",
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Remove $TAG$ tag",
+        "message": "Pašalinti $TAG$ žymą",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
-        "message": "-- Click to add --",
+        "message": "-- Spustelėkite, kad pridėtumėte --",
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "No $FIELDNAME$ to copy",
+        "message": "Nėra $FIELDNAME$, kuriuos reikėtų nukopijuoti",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Could not find selected credential",
+        "message": "Nepavyko rasti pasirinktų prisijungimo duomenų",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Unknown error occurred while deleting a credential",
+        "message": "Šalinant prisijungimo duomenis įvyko nežinoma klaida",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "An error occurred while deleting a credential",
+        "message": "Šalinant prisijungimo duomenis įvyko klaida",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "poor",
+        "message": "prastas",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
-        "message": "weak",
+        "message": "silpnas",
         "description": "Password strength meter label"
     },
     "password_strength_good": {
-        "message": "good",
+        "message": "geras",
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
-        "message": "strong",
+        "message": "stiprus",
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Dismiss alert",
+        "message": "Atmesti įspėjimą",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Credential icon",
+        "message": "Prisijungimo duomenų piktograma",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
-        "message": "OTP QR code",
+        "message": "OTP QR kodas",
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
-        "message": "Auto fill",
+        "message": "Automatinis užpildymas",
         "description": "Browser context menu item to auto-fill credentials"
     },
     "context_menu_copy_username": {
-        "message": "Copy username",
+        "message": "Nukopijuoti vartotojo vardą",
         "description": "Browser context menu item to copy username"
     },
     "context_menu_copy_email": {
-        "message": "Copy email",
+        "message": "Kopijuoti el. paštą",
         "description": "Browser context menu item to copy email"
     },
     "context_menu_copy_password": {
-        "message": "Copy password",
+        "message": "Kopijuoti slaptažodį",
         "description": "Browser context menu item to copy password"
     },
     "context_menu_copy_url": {
@@ -1200,100 +1200,200 @@
         "description": "Browser context menu item to copy URL"
     },
     "context_menu_copy_otp": {
-        "message": "Copy OTP",
+        "message": "Kopijuoti OTP",
         "description": "Browser context menu item to copy one-time password"
     },
     "context_menu_reload_password_picker": {
-        "message": "Reload password picker",
+        "message": "Iš naujo įkelti slaptažodžio rinkiklį",
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
-        "message": "And copy to clipboard",
+        "message": "Ir nukopijuoti į iškarpinę",
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
-        "message": "And fill fields",
+        "message": "Ir užpildykite laukus",
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME$ copied to clipboard",
+        "message": "$FIELDNAME$ nukopijuota į iškarpinę",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
-        "message": "Failed to copy $FIELDNAME$",
+        "message": "Nepavyko nukopijuoti $FIELDNAME$",
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
-        "message": "Unknown error while checking extension lock state!",
+        "message": "Nežinoma klaida tikrinant plėtinio užrakinimo būseną!",
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
-        "message": "Login succeeded",
+        "message": "Prisijungti pavyko",
         "description": "Success message after Nextcloud login"
     },
     "login_failed": {
-        "message": "Login failed",
+        "message": "Prisijungti nepavyko",
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
-        "message": "No server info provided",
+        "message": "Nepateikta informacija apie serverį",
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {
-        "message": "Unknown error",
+        "message": "Nežinoma klaida",
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "No credential data provided",
+        "message": "Nepateikti prisijungimo duomenys",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "No source tab found",
+        "message": "Šaltinio kortelė nerasta",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
-        "message": "Failed to save credential",
+        "message": "Nepavyko išsaugoti prisijungimo duomenų",
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Could not get backend passman client",
+        "message": "Nepavyko gauti „passman“ posistemės kliento",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
-        "message": "Invalid request (check request body)",
+        "message": "Netinkama užklausa (patikrinkite užklausos turinį)",
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
-        "message": "Could not get default vault info",
+        "message": "Nepavyko gauti numatytosios slėptuvės informacijos",
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "No connectionId provided",
+        "message": "Nenurodytas „connectionId“",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
-        "message": "Could not get passman client",
+        "message": "Nepavyko gauti „Passman“ kliento",
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "No managed connection with id $CONNECTION_ID$",
+        "message": "Nėra valdomo ryšio su ID $CONNECTION_ID$",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
-        "message": "Selected vault could not be decrypted with the given password",
+        "message": "Pasirinktos slėptuvės nepavyko iššifruoti naudojant nurodytą slaptažodį.",
         "description": "Error when the provided vault password is wrong"
     },
     "could_not_get_selected_vault_by_guid": {
-        "message": "Could not get selected vault by guid",
+        "message": "Nepavyko gauti pasirinktos slėptuvės pagal jos identifikatorių",
         "description": "Error when the selected vault cannot be resolved by GUID"
     },
     "no_vault_info_in_extension_settings": {
-        "message": "No vault info provided by extension settings",
+        "message": "Plėtinio nustatymuose nepateikta informacija apie slėptuvę",
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {
-        "message": "Could not get custom password generator configuration",
+        "message": "Nepavyko gauti pasirinktinės slaptažodžių generatoriaus konfigūracijos",
         "description": "Error when loading password generator settings fails"
+    },
+    "doorhanger_save_title": {
+        "message": "Įrašyti prisijungimo duomenis į „Passman“?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Atnaujinti prisijungimo duomenis „Passman“?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Ne dabar",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Atnaujintini prisijungimo duomenys",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Nepavadinti prisijungimo duomenys",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "„Doorhanger“",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Pasirinkite, kaip svetainėse bus rodomas raginimas išsaugoti arba atnaujinti duomenis prisijungus.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Išdėstymas",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Kortelė kybo kampe. Viršutinė eilutė yra per visą plotį einanti juosta puslapio viršuje.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Kortelė",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Viršutinė eilutė",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Pozicija",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Kampas kortelės išdėstymui arba turinio lygiavimas viršutinės eilutės išdėstymui.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Viršuje dešinėje",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Viršuje kairėje",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Bottom right",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Apačioje kairėje",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Logging",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Log level",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Debug",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Log",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Info",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Warning",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Error",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",

@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - An bainisteoir pasfhocail do NextCloud / ownCloud",
+        "message": "Passman - An bainisteoir pasfhocal do Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -15,9 +15,9 @@
         "message": "Níor aimsíodh aon dintiúir",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "Nótaí",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "Cur síos",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
         "message": "Freagra neamhbhailí ón bhfreastalaí: [$STATUS_CODE$] $STATUS_TEXT$",
@@ -31,9 +31,21 @@
         "message": "Sábháil suíomh",
         "description": "Save site"
     },
+    "generator": {
+        "message": "Gineadóir",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
         "message": "Gineadóir pasfhocal",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "Socruithe giniúna pasfhocal",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "Socruithe pasfhocail leathnaithe a scoránaigh",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "Gin pasfhocal",
@@ -71,6 +83,22 @@
         "message": "A cheangal ar gach cineál carachtar",
         "description": "Require every character type"
     },
+    "use_uppercase": {
+        "message": "Úsáid litreacha móra",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "Úsáid litreacha beaga",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "Úsáid digití",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "Úsáid carachtair speisialta",
+        "description": "Use special characters"
+    },
     "add_account": {
         "message": "Cuir cuntas leis",
         "description": "Add account"
@@ -95,13 +123,33 @@
         "message": "Cuir",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "Athraíodh an dintiúr",
+        "description": "Credential changed"
+    },
     "credential_created": {
         "message": "Dintiúir cruthaithe",
         "description": "Credential created"
     },
+    "credentials_expires": {
+        "message": "Tá an dintiúr imithe in éag",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "Dáta éaga",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "Níl aon dáta éaga socraithe",
+        "description": "No expiration date set for the credential password"
+    },
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "tags": {
+        "message": "Clibeanna",
+        "description": "Tags"
     },
     "password": {
         "message": "Pasfhocal",
@@ -131,13 +179,29 @@
         "message": "Braitheadh ​​URL athraithe le haghaidh",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "Cuir dintiúir in eagar",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "Cruthaigh dintiúir nua",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "dintiúir",
-        "description": "credential"
+        "message": "Dintiúr",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "dintiúir",
-        "description": "credentials"
+        "message": "Dintiúir",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "Tá an focal faire seo i mbaol. Ní féidir leat an rabhadh seo a bhaint ach tríd an focal faire a athrú.",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "Marcáil mar sháraithe",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
         "message": "Athnuaigh an t-amadóir[s]",
@@ -163,9 +227,13 @@
         "message": "Déan neamhaird de chonair na meaitseála suímh",
         "description": "Ignore path for site matching"
     },
+    "ignore_page": {
+        "message": "Déan neamhaird den leathanach seo agus dintiúir á moladh agat",
+        "description": "Checkbox label for ignoring a specific page"
+    },
     "enable_autofill": {
-        "message": "Cumasaigh uathlíon an fhoirm",
-        "description": "Disable auto fill of forms"
+        "message": "Cumasaigh líonadh uathoibríoch foirme (le haghaidh dintiúir mheaitseála aonair)",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
         "message": "Cumasaigh an fhoirm a thíolacadh go huathoibríoch tar éis an cuntas a phiocadh",
@@ -219,6 +287,18 @@
         "message": "Dintiúir nuashonraithe",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "Tharla earráid agus an dintiúir á nuashonrú",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "Tharla earráid agus an dintiúir á chruthú",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "Oscail leathanach na roghanna",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
         "message": "Neamhaird ar an suíomh",
         "description": "Site ignored"
@@ -244,7 +324,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Fáilte chuig an síneadh gréasáin Passman",
+        "message": "Fáilte go dtí síneadh Gréasáin Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -253,11 +333,11 @@
     },
     "begin": {
         "message": "A ligean ar tosú!",
-        "description": "Let's begin!"
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Treoróidh an draoi seo tú trí na céimeanna chun an síneadh a shocrú agus do phasfhocail go léir a choinneáil sioncronaithe.",
-        "description": "Cancel"
+        "message": "Do phasfhocail Nextcloud, réidh sa bhrabhsálaí. Ceanglaíonn socrú gearr an síneadh seo le do chruinneachán Passman.",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "Cealaigh",
@@ -295,9 +375,41 @@
         "message": "Réimsí an Chustaim",
         "description": "Custom fields"
     },
+    "custom_fields_types_text": {
+        "message": "Téacs",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Pasfhocal",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "Comhad",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "Cuir réimse leis",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "Lipéad réimse",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "Luach réimse",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "Cineál réimse",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "Níl aon chomhad roghnaithe",
+        "description": "Custom field no file selected"
+    },
     "general": {
         "message": "Ginearálta",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
         "message": "Luach",
@@ -419,6 +531,42 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "Cumraíocht OTP neamhbhailí",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "Rún OTP",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "Glan cumraíocht OTP",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "Eisitheoir",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Cineál",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "Digití",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "Tréimhse",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "Algartam",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "Comhaid",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "Socruithe",
         "description": "Settings"
@@ -443,9 +591,17 @@
         "message": "Cuardach",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "Clóscríobh le cuardach",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
         "message": "Scriosadh an dintiúir",
         "description": "Credential deleted"
+    },
+    "mark_credential_deleted": {
+        "message": "Marcáil dintiúir mar scriosta",
+        "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
         "message": "Nuair nach bhfuil an roghnóir Pasfhocal in ann aon dintiúir a aimsiú, rachaidh sé chuig:",
@@ -466,6 +622,10 @@
     "reset_extension": {
         "message": "Athshocraigh síneadh",
         "description": "Search"
+    },
+    "reset_settings": {
+        "message": "Athshocraigh socruithe",
+        "description": "Reset settings button label"
     },
     "iam_sure": {
         "message": "Sea, tá mé cinnte!",
@@ -501,7 +661,11 @@
     },
     "unlock": {
         "message": "Díghlasáil",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "Díghlasáil gan athnuachan",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
         "message": "Tá dintiúir $AMOUNT$ aimsithe againn don suíomh seo",
@@ -534,6 +698,702 @@
     "text": {
         "message": "téacs",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "Cóipeáil $FIELDNAME$ chuig an ghearrthaisce",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START_HTML_TAG$Cliceáil chun uaslódáil$END_HTML_TAG$ nó tarraing agus scaoil",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "Aon chineál comhaid",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "D’éirigh le huaslódáil comhaid",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "Theip ar uaslódáil comhaid",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "D’éirigh le scriosadh comhaid",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "Theip ar scriosadh comhaid",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "Ainm comhaid",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "Cruthaithe ag",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Méid",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "Ar an drochuair, ní thacaítear le huaslódáil comhad sa bhfuinneog aníos.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "Bain úsáid as leathanach roghanna an síneadh gréasáin nó cliant eile chun comhaid a chur leis.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "Glan scagaire url cluaisín",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "Gan aon dintiúir chomhoiriúnacha",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "Nuashonraigh socruithe réamhshocraithe",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "Sábháil socruithe",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "Socruithe leathnaithe",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "Socraigh socruithe leathnaithe domhanda",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Socrú freastalaí Nextcloud",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "Socraigh do dhintiúir freastalaí agus cruinneacháin Nextcloud",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "Ceangail do fhreastalaí",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "Sínigh isteach chuig Nextcloud, ansin roghnaigh cruinneachán Passman ba chóir don bhrabhsálaí seo a choinneáil sioncrónaithe.",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "Rialacha leathanaigh",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "Socraigh rialacha leathanaigh shonracha chun iompar an síneadh dhomhanda a shaincheapadh. Tá sé seo tógtha faoi láthair do fhearainn amháin, ní do chosáin shonracha. (d’fhéadfadh sé teacht amach anseo)",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "Rialacha leathanaigh shábháilte",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "Níl aon rialacha leathanaigh sainmhínithe fós",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "URL an leathanaigh",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "Riail nua",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "Sábháil riail",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "Nuashonraigh an riail",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "Scrios riail",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "Rial leathanaigh sábháilte",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "Riail leathanaigh scriosta",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "Sáraigh socruithe domhanda",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "Suíomh reatha",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "Coigeartaigh an chaoi a n-iompraíonn Passman ar an leathanach seo.",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "Athshocraigh athruithe",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "Ag lódáil socruithe leathanaigh...",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "Bain triail eile as",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "Ní féidir rialacha leathanaigh a luchtú don suíomh seo",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "Theip ar rialacha leathanaigh a shábháil",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "Rialacha cuardaigh",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "Scag de réir URL...",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "Níl aon rialacha leathanaigh a oireann do do chuardach",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "Toirmisc",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "Úsáid socruithe domhanda",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "Cumasaigh le fórsa",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "Díchumasaigh le fórsa",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "Ag eagarthóireacht faoi láthair: $PAGE_URL$",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "Tá URL leathanaigh ag teastáil",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "Theip ar rialacha an leathanaigh a lódáil",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "Theip ar riail an leathanaigh a shábháil",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "Theip ar riail an leathanaigh a scriosadh",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "Sáruithe: $COUNT$",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "Sábháil socruithe réamhshocraithe an tseomra cruinneacháin",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "Nuashonraíodh na socruithe go rathúil",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "Leagan síneadh",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "Cumasaigh ríomhphost mar ainm úsáideora breise (agus a mhalairt)",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "Socruithe braite foirmeacha",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "Cumasaigh braiteadh foirme bunaithe ar imeachtaí úsáideora",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "Éist le roinnt imeachtaí úsáideora speisialta le loighic díphreabála agus laghdaithe",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "Cumasaigh braiteadh foirmeacha ar imeachtaí popstate URL",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "Úsáideach go bunúsach do SPAanna (ach ní gá)",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "Cumasaigh braiteadh foirme ar athruithe URL, seiceáilte de réir eatramh (de 1s)",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "Cumasaigh MutationObserver chun foirmeacha agus réimsí ionchuir a cuireadh leis go dinimiciúil a bhrath ar athruithe DOM",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "An bealach is éifeachtaí, ach is déine ar acmhainní freisin, chun foirmeacha agus réimsí ionchuir a cuireadh leis go dinimiciúil ar athruithe DOM a bhrath.",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "cumasaithe",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "faoi ​​mhíchumas",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "Taisce as líne",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "Sonraí criptithe cruinneacháin atá coimeádta go háitiúil le húsáid as líne. Athlíontar an taisce glanta go huathoibríoch an chéad uair eile a lódálann tú cruinneacháin ón bhfreastalaí.",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "Méid measta: $1 ($2 dintiúir i $3 cruinneacháin)",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "Taisce as líne á thomhas…",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "Níorbh fhéidir méid an taisce as líne a thomhas",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "Glan an taisce as líne",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "Scrios an taisce cruinneacháin áitiúil as líne? Beidh nasc líonra ag teastáil uait chun cruinneacháin a athlódáil.",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "Glanadh an taisce as líne",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "Theip ar an taisce as líne a ghlanadh",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "server_connections": {
+        "message": "Freastalaithe sábháilte",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "Úsáideann an síneadh freastalaí gníomhach Nextcloud amháin ag an am. Cuir cúltaca leis anseo ionas gur féidir leat aistriú go tapa mura bhfuil an príomhfhreastalaí ar fáil.",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "gníomhach",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "Athraigh",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "Bain",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "Cuir freastalaí leis",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "Dintiúir freastalaí gníomhacha",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "An bhfuil tú ag iarraidh an freastalaí sábháilte seo a bhaint den síneadh? D’fhéadfadh sé go bhfanfadh an taisce as líne ann go dtí go nglanfar é.",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "Athraigh freastalaí gníomhach",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "Níorbh fhéidir an freastalaí a athrú",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "Baineadh an freastalaí",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "Níorbh fhéidir an freastalaí a bhaint",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "Tá an t-athscríobh seo fós faoi fhorbairt ghníomhach. Bí ag súil le himill gharbha. $BR$An bhfuair tú fabht? Oscail saincheist ar $LINK_START$GitHub$LINK_END$ le do thoil.",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "Roghnaigh pasfhocal díghlasála",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "Glasálann an focal faire seo an síneadh ar an ngléas seo agus úsáidtear é le haghaidh criptithe na socruithe áitiúla. Ní hé do phasfhocal cruinneacháin é.",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "Sábháil & lean ar aghaidh",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "passman_app_required": {
+        "message": "Éilíonn an síneadh seo go mbeidh an Aip $LINK_START$Passman$LINK_END$ suiteáilte ar do fhreastalaí Nextcloud.",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "Ní aistrítear aon sonraí chuig foinsí seachas an freastalaí Nextcloud sonraithe.",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "Níor aimsíodh aon fhaisnéis faoi chruinneachán roghnaithe",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "Níorbh fhéidir an cruinneachán a dhíchriptiú",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "Níor aimsíodh aon fhaisnéis réamhshocraithe faoin chruinneachán",
+        "description": "Error when default vault metadata is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "Níorbh fhéidir an cruinneachán a fháil ná a dhíchriptiú",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "Earráid anaithnid i refreshCredentialList",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "Níor aimsíodh an leathanach síneadh a raibh súil leis",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "Tuairiscigh fadhb",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "Saincheisteanna",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "Cliceáil chun líonadh go huathoibríoch",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "Cuir clib leis",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "Bain an clib $TAG$",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "-- Cliceáil chun cur leis --",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "Níl aon $FIELDNAME$ le cóipeáil",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "Níorbh fhéidir an dintiúir roghnaithe a aimsiú",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "Tharla earráid anaithnid agus dintiúir á scriosadh",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "Tharla earráid agus dintiúir á scriosadh",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "bocht",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "lag",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "maith",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "láidir",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "Foláireamh a dhíbhe",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "Deilbhín dintiúir",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "Cód QR OTP",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "Líonadh uathoibríoch",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "Cóipeáil ainm úsáideora",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "Cóipeáil ríomhphoist",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "Cóipeáil an focal faire",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "Cóipeáil URL",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "Cóipeáil OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "Athlódáil an roghnóir pasfhocal",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "Agus cóipeáil chuig an ghearrthaisce",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "Agus líon na réimsí",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "Cóipeáladh $FIELDNAME$ chuig an ghearrthaisce",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "Theip ar chóipeáil $FIELDNAME$",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "Earráid anaithnid agus staid ghlasála an tsínidh á seiceáil!",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "D’éirigh leis an logáil isteach",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "Theip ar logáil isteach",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "Níor soláthraíodh aon fhaisnéis freastalaí",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "Earráid anaithnid",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "Níor soláthraíodh aon sonraí dintiúir",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "Níor aimsíodh aon chluaisín foinse",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "Theip ar an dintiúir a shábháil",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "Níorbh fhéidir cliant passman cúil a fháil",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "Iarratas neamhbhailí (seiceáil corp an iarratais)",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "Níorbh fhéidir faisnéis réamhshocraithe faoin chruinneachán a fháil",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "Níor soláthraíodh aon aitheantas ceangail",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "Níorbh fhéidir cliant passman a fháil",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "Gan aon nasc bainistithe leis an id $CONNECTION_ID$",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "Níorbh fhéidir an cruinneachán roghnaithe a dhíchriptiú leis an bhfocal faire tugtha",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "Níorbh fhéidir an cruinneachán roghnaithe a fháil leis an treoir",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "Níl aon fhaisnéis cruinneacháin curtha ar fáil ag socruithe síneadh",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "Níorbh fhéidir cumraíocht gineadóra pasfhocal saincheaptha a fháil",
+        "description": "Error when loading password generator settings fails"
+    },
+    "doorhanger_save_title": {
+        "message": "Logáil isteach a shábháil chuig Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Nuashonraigh an logáil isteach i Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Ní anois",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Dintiúr le nuashonrú",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Dintiúr gan Teideal",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Crochadán dorais",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Roghnaigh conas a thaispeántar an leid sábhála/nuashonraithe iar-logála isteach ar shuíomhanna gréasáin.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Leagan Amach",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Snámhann an cárta i gcúinne. Is meirge lánleithid feadh bharr an leathanaigh an tsraith uachtarach.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Cárta",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Barrshraith",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Seasamh",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Cúinne don leagan amach cárta, nó ailíniú ábhair don leagan amach sa tsraith uachtarach.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Barr ar dheis",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Barr ar chlé",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Bun ar dheis",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Bun ar chlé",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Logging",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Log level",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Debug",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Log",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Info",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Warning",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Error",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Paisinéir",
