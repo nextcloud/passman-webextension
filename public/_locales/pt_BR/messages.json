@@ -324,7 +324,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Bem-vindo à extensão da web Passman",
+        "message": "Bem-vindo à extensão web Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -748,7 +748,7 @@
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
-        "message": "Clear tab url filter",
+        "message": "Limpar filtro de URL da aba",
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
@@ -756,7 +756,7 @@
         "description": "No matching credentials"
     },
     "update_default_settings": {
-        "message": "Update default settings",
+        "message": "Atualizar as configurações padrão",
         "description": "Update default settings button label"
     },
     "save_settings": {
@@ -768,7 +768,7 @@
         "description": "Extended settings"
     },
     "extended_settings_description": {
-        "message": "Setup global extended settings",
+        "message": "Configurar as configurações globais avançadas",
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
@@ -784,7 +784,7 @@
         "description": "Hero title on the initial Nextcloud server setup step"
     },
     "setup_server_step_intro": {
-        "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+        "message": "Logue no Nextcloud e, em seguida, escolha o cofre do Passman que este navegador deve manter sincronizado.",
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
@@ -792,7 +792,7 @@
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
+        "message": "Defina regras específicas para cada página a fim de personalizar o comportamento global da extensão. Atualmente, essa funcionalidade está disponível apenas para domínios, e não para caminhos específicos. (pode ser implementada no futuro)",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
@@ -916,7 +916,7 @@
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Overrides: $COUNT$",
+        "message": "Sobreposições: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
@@ -940,31 +940,31 @@
         "description": "Form detection settings"
     },
     "enable_user_event_based_form_detection": {
-        "message": "Enable user event based form detection",
+        "message": "Ativar a detecção de formulários com base em eventos do usuário",
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Listen to some special user events with debouncing and throttling logic",
+        "message": "Ouvir alguns eventos especiais do usuário com lógica de supressão de rebote e limitação de frequência",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
-        "message": "Enable form detection on URL popstate events",
+        "message": "Ativar a detecção de formulários em eventos popstate de URL",
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Basically useful for SPAs (but not necessarily)",
+        "message": "Basicamente útil para SPAs (mas não necessariamente)",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
-        "message": "Enable form detection on URL changes, checked by interval (of 1s)",
+        "message": "Ativar a detecção de formulários em alterações de URL, verificada a cada intervalo (de 1 s)",
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
-        "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+        "message": "Ativar o MutationObserver (observador de mutações) para detectar formulários e campos de entrada adicionados dinamicamente ao ocorrerem alterações no DOM",
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
-        "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+        "message": "A maneira mais eficaz, mas também a que mais consome recursos, de detectar formulários e campos de entrada adicionados dinamicamente ao DOM",
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
@@ -980,11 +980,11 @@
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
-        "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+        "message": "Dados criptografados do cofre são mantidos localmente para uso off-line. O cache limpo é repovoado automaticamente na próxima vez que você carregar os cofres do servidor.",
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "message": "Tamanho estimado: $1 ($2 credenciais em $3 cofres)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
@@ -1000,7 +1000,7 @@
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
-        "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+        "message": "Excluir o cache local do cofre off-line? Você precisará de uma conexão de rede para recarregar os cofres.",
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
@@ -1016,11 +1016,11 @@
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "message": "A extensão utiliza um servidor Nextcloud ativo por vez. Adicione aqui uma instância de backup para que você possa alternar rapidamente caso o servidor principal fique indisponível.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "active",
+        "message": "ativa",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
@@ -1036,19 +1036,19 @@
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
-        "message": "Active server credentials",
+        "message": "Credenciais do servidor ativo",
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "message": "Deseja remover este servidor salvo da extensão? O cache off-line dele pode permanecer até ser limpo.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Switched active server",
+        "message": "Servido ativo alterado",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Could not switch server",
+        "message": "Não foi possível alterar o servidor ativo",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
@@ -1060,15 +1060,15 @@
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "message": "Esta reescrita ainda está em desenvolvimento ativo. É provável que haja algumas imperfeições.$BR$Encontrou um bug? Por favor, abra um problema no $LINK_START$GitHub$LINK_END$.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Choose an unlock password",
+        "message": "Escolha uma senha de destrancamento",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "message": "Essa senha tranca a extensão neste dispositivo e é usada para criptografar as configurações locais. Não se trata da senha do seu cofre.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
@@ -1076,15 +1076,15 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "passman_app_required": {
-        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "message": "Esta extensão requer que o $LINK_START$aplicativo Passman$LINK_END$ esteja instalado no seu servidor Nextcloud.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "message": "Nenhum dado é transferido para outras fontes além do servidor Nextcloud especificado.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
-        "message": "No selected vault info found",
+        "message": "Não foram encontradas informações sobre o cofre selecionado",
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
@@ -1092,19 +1092,19 @@
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
-        "message": "No default vault info found",
+        "message": "Não foram encontradas informações sobre o cofre padrão",
         "description": "Error when default vault metadata is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Could not get or decrypt vault",
+        "message": "Não foi possível obter ou descriptografar o cofre",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
-        "message": "Unknown error in refreshCredentialList",
+        "message": "Erro desconhecido em refreshCredentialList",
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
-        "message": "Expected extension page not found",
+        "message": "Página esperada da extensão não encontrada",
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
@@ -1120,7 +1120,7 @@
         "description": "GitHub product / platform name"
     },
     "click_to_auto_fill": {
-        "message": "Click to auto fill",
+        "message": "Clique para preenchimento automático",
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
@@ -1140,15 +1140,15 @@
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Could not find selected credential",
+        "message": "Não foi possível encontrar a credencial selecionada",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Unknown error occurred while deleting a credential",
+        "message": "Ocorreu um erro desconhecido ao excluir a credencial",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "An error occurred while deleting a credential",
+        "message": "Ocorreu um erro ao excluir uma credencial",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
@@ -1168,7 +1168,7 @@
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Dismiss alert",
+        "message": "Descartar aviso",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
@@ -1204,31 +1204,31 @@
         "description": "Browser context menu item to copy one-time password"
     },
     "context_menu_reload_password_picker": {
-        "message": "Reload password picker",
+        "message": "Recarregar seletor de senhas",
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
-        "message": "And copy to clipboard",
+        "message": "E copiar para a área de transferência",
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
-        "message": "And fill fields",
+        "message": "E preencher campos",
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME$ copied to clipboard",
+        "message": "$FIELDNAME$ copiado para a área de transferência",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
-        "message": "Failed to copy $FIELDNAME$",
+        "message": "Falha ao copiar $FIELDNAME$",
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
-        "message": "Unknown error while checking extension lock state!",
+        "message": "Erro desconhecido ao verificar o estado de trancamento da extensão!",
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
-        "message": "Login succeeded",
+        "message": "Login bem-sucedido",
         "description": "Success message after Nextcloud login"
     },
     "login_failed": {
@@ -1236,7 +1236,7 @@
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
-        "message": "No server info provided",
+        "message": "Nenhuma informação de servidor fornecida",
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {
@@ -1244,75 +1244,75 @@
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "No credential data provided",
+        "message": "Nenhuns dados de credencial fornecidos",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "No source tab found",
+        "message": "Nenhuma aba de origem encontrada",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
-        "message": "Failed to save credential",
+        "message": "Falha ao salvar a credencial",
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Could not get backend passman client",
+        "message": "Não foi possível obter o cliente Passman de back-end",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
-        "message": "Invalid request (check request body)",
+        "message": "Solicitação inválida (verifique o corpo da solicitação)",
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
-        "message": "Could not get default vault info",
+        "message": "Não foi possível obter as informações do cofre padrão",
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "No connectionId provided",
+        "message": "Não foi fornecido um connectionId",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
-        "message": "Could not get passman client",
+        "message": "Não foi possível obter o cliente Passman",
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "No managed connection with id $CONNECTION_ID$",
+        "message": "Não há nenhuma conexão gerenciada com o ID $CONNECTION_ID$",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
-        "message": "Selected vault could not be decrypted with the given password",
+        "message": "Não foi possível descriptografar o cofre com a senha fornecida",
         "description": "Error when the provided vault password is wrong"
     },
     "could_not_get_selected_vault_by_guid": {
-        "message": "Could not get selected vault by guid",
+        "message": "Não foi possível obter o cofre selecionado pelo GUID",
         "description": "Error when the selected vault cannot be resolved by GUID"
     },
     "no_vault_info_in_extension_settings": {
-        "message": "No vault info provided by extension settings",
+        "message": "Nenhuma informação sobre o cofre foi fornecida pelas configurações da extensão",
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {
-        "message": "Could not get custom password generator configuration",
+        "message": "Não foi possível obter a configuração personalizada do gerador de senhas",
         "description": "Error when loading password generator settings fails"
     },
     "doorhanger_save_title": {
-        "message": "Save login to Passman?",
+        "message": "Salvar login no Passman?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Update login in Passman?",
+        "message": "Atualizar login no Passman?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
-        "message": "Not now",
+        "message": "Agora não",
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Credential to update",
+        "message": "Credencial a ser atualizada",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Untitled credential",
+        "message": "Credencial sem título",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
@@ -1320,79 +1320,79 @@
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
-        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "message": "Escolha como o aviso para salvar/atualizar após o login será exibido nos sites.",
         "description": "Description under the doorhanger settings section"
     },
     "doorhanger_layout": {
-        "message": "Layout",
+        "message": "Leiaute",
         "description": "Label for doorhanger layout dropdown"
     },
     "doorhanger_layout_description": {
-        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "message": "O cartão fica posicionado em um canto. A linha superior é um aviso que ocupa toda a largura na parte superior da página.",
         "description": "Help text for doorhanger layout setting"
     },
     "doorhanger_layout_card": {
-        "message": "Card",
+        "message": "Cartão",
         "description": "Doorhanger layout option: floating card"
     },
     "doorhanger_layout_top_row": {
-        "message": "Top row",
+        "message": "Linha superior",
         "description": "Doorhanger layout option: full-width top banner"
     },
     "doorhanger_gravity": {
-        "message": "Position",
+        "message": "Posição",
         "description": "Label for doorhanger gravity/position dropdown"
     },
     "doorhanger_gravity_description": {
-        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "message": "Canto para o leiaute do cartão ou alinhamento do conteúdo para o leiaute da linha superior.",
         "description": "Help text for doorhanger gravity setting"
     },
     "doorhanger_gravity_top_right": {
-        "message": "Top right",
+        "message": "Canto superior direito",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_top_left": {
-        "message": "Top left",
+        "message": "Canto superior esquerdo",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_right": {
-        "message": "Bottom right",
+        "message": "Canto inferior direito",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_left": {
-        "message": "Bottom left",
+        "message": "Canto inferior esquerdo",
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
-        "message": "Logging",
+        "message": "Registro",
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "message": "Nível mínimo de registro no console para esta extensão. Níveis mais baixos incluem mais detalhes. O padrão para o ambiente de produção é “erro”.",
         "description": "Description under the logging settings section"
     },
     "log_level": {
-        "message": "Log level",
+        "message": "Nível de registro",
         "description": "Label for extension console log level dropdown"
     },
     "log_level_debug": {
-        "message": "Debug",
+        "message": "Depuração",
         "description": "Log level option: debug"
     },
     "log_level_log": {
-        "message": "Log",
+        "message": "Registro",
         "description": "Log level option: log"
     },
     "log_level_info": {
-        "message": "Info",
+        "message": "Informação",
         "description": "Log level option: info"
     },
     "log_level_warn": {
-        "message": "Warning",
+        "message": "Aviso",
         "description": "Log level option: warn"
     },
     "log_level_error": {
-        "message": "Error",
+        "message": "Erro",
         "description": "Log level option: error"
     },
     "extName": {

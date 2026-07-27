@@ -1364,35 +1364,35 @@
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
-        "message": "Logging",
+        "message": "Registravimas",
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "message": "Minimalus šio plėtinio konsolės žurnalo (angl. *console log*) lygis. Žemesni lygiai apima daugiau informacijos. Numatytasis lygis naudojimui gamybinėje aplinkoje – „error“ (klaida).",
         "description": "Description under the logging settings section"
     },
     "log_level": {
-        "message": "Log level",
+        "message": "Žurnalo įrašų lygis",
         "description": "Label for extension console log level dropdown"
     },
     "log_level_debug": {
-        "message": "Debug",
+        "message": "Derinimas",
         "description": "Log level option: debug"
     },
     "log_level_log": {
-        "message": "Log",
+        "message": "Žurnalas",
         "description": "Log level option: log"
     },
     "log_level_info": {
-        "message": "Info",
+        "message": "Informacija",
         "description": "Log level option: info"
     },
     "log_level_warn": {
-        "message": "Warning",
+        "message": "Įspėjimas",
         "description": "Log level option: warn"
     },
     "log_level_error": {
-        "message": "Error",
+        "message": "Klaida",
         "description": "Log level option: error"
     },
     "extName": {

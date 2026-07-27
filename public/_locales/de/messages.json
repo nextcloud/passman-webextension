@@ -744,7 +744,7 @@
         "description": "Error message when trying to upload a file in the popup"
     },
     "error_file_upload_popup_2": {
-        "message": "Bitte nutze die Einstellungsseite der Browser-Erweiterung oder einen anderen Client, um Dateien hinzuzufügen.",
+        "message": "Bitte die Einstellungsseite der Browser-Erweiterung oder einen anderen Client benutzen, um Dateien hinzuzufügen.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
@@ -752,7 +752,7 @@
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "Keine passenden Anmeldeinformationen",
+        "message": "Keine passenden Zugangsdaten",
         "description": "No matching credentials"
     },
     "update_default_settings": {
@@ -776,7 +776,7 @@
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
-        "message": "Nextcloud-Server und Anmeldedaten für den Tresor konfigurieren",
+        "message": "Nextcloud-Server und Zugangsdaten für den Tresor konfigurieren",
         "description": "Nextcloud server setup card description"
     },
     "setup_server_step_title": {
@@ -792,7 +792,7 @@
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Lege seitenspezifische Regeln fest, um das globale Verhalten der Erweiterung anzupassen. Diese Funktion ist derzeit nur für Domains vorgesehen, nicht für spezifische Pfade. (möglicherweise in Zukunft verfügbar)",
+        "message": "Seitenspezifische Regeln festlegen, um das globale Verhalten der Erweiterung anzupassen. Diese Funktion ist derzeit nur für Domains vorgesehen, nicht für spezifische Pfade. (möglicherweise in Zukunft verfügbar)",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
@@ -1064,7 +1064,7 @@
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Wählen Sie ein Entsperrpasswort",
+        "message": "Ein Entsperrpasswort auswählen",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
@@ -1144,7 +1144,7 @@
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Beim Löschen einer Anmeldeinformation ist ein unbekannter Fehler aufgetreten",
+        "message": "Beim Löschen einer Zugangsdaten ist ein unbekannter Fehler aufgetreten",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
@@ -1248,7 +1248,7 @@
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "Kein Quell-Tab gefunden",
+        "message": "Kein Quelltab gefunden",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
@@ -1296,11 +1296,11 @@
         "description": "Error when loading password generator settings fails"
     },
     "doorhanger_save_title": {
-        "message": "Anmeldedaten in Passman speichern?",
+        "message": "Zugangsdaten in Passman speichern?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Anmeldedaten in Passman aktualisieren?",
+        "message": "Zugangsdaten in Passman aktualisieren?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
@@ -1308,7 +1308,7 @@
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Zu aktualisierende Anmeldeinformationen",
+        "message": "Zu aktualisierende Zugangsdaten",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
@@ -1364,35 +1364,35 @@
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
-        "message": "Logging",
+        "message": "Protokollierung",
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "message": "Minimale Protokollierungsstufe für diese Erweiterung. Niedrigere Stufen enthalten mehr Details. Standardmäßig ist für den Produktivbetrieb die Stufe „Fehler“ eingestellt.",
         "description": "Description under the logging settings section"
     },
     "log_level": {
-        "message": "Log level",
+        "message": "Protokollierungsstufe",
         "description": "Label for extension console log level dropdown"
     },
     "log_level_debug": {
-        "message": "Debug",
+        "message": "Debuggern",
         "description": "Log level option: debug"
     },
     "log_level_log": {
-        "message": "Log",
+        "message": "Protokoll",
         "description": "Log level option: log"
     },
     "log_level_info": {
-        "message": "Info",
+        "message": "Information",
         "description": "Log level option: info"
     },
     "log_level_warn": {
-        "message": "Warning",
+        "message": "Warnung",
         "description": "Log level option: warn"
     },
     "log_level_error": {
-        "message": "Error",
+        "message": "Fehler",
         "description": "Log level option: error"
     },
     "extName": {
