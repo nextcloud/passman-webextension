@@ -67,7 +67,8 @@
     "wxt": "^0.20.27"
   },
   "overrides": {
-    "@wxt-dev/storage": "1.2.0"
+    "@wxt-dev/storage": "1.2.0",
+    "publish-browser-extension": "4.0.5"
   },
   "trustedDependencies": [
     "@parcel/watcher",
