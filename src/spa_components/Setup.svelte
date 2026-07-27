@@ -1,8 +1,10 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
+    import LegacySettingsMigrationService from "~/services/LegacySettingsMigrationService";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import { i18n } from "~/lib/i18n";
@@ -15,6 +17,17 @@
     let newExtensionUnlockPassword = '';
     let isExtensionUnlocked = false;
     let processNewUnlockPassword = false;
+    let showLegacyImport = false;
+
+    onMount(() => {
+        // Popup only offers "open options"; migrate UI lives on the options setup screen.
+        if (params && params.isInPopup === '1') {
+            return;
+        }
+        LegacySettingsMigrationService.hasLegacyData().then((hasLegacy) => {
+            showLegacyImport = hasLegacy;
+        });
+    });
 
     async function setUnlockPassword() {
         processNewUnlockPassword = true;
@@ -83,6 +96,26 @@
                         </OnClickButton>
                     </div>
                 </form>
+
+                {#if showLegacyImport}
+                    <div class="mt-4 w-full space-y-3 rounded-xl border border-primary/25 bg-sky-50/60 p-4 text-left shadow-sm">
+                        <h3 class="text-sm font-semibold text-gray-800">
+                            {i18n.getMessage('migrate_legacy_title')}
+                        </h3>
+                        <p class="text-xs leading-snug text-gray-600">
+                            {i18n.getMessage('migrate_legacy_setup_teaser')}
+                        </p>
+                        <p class="text-xs leading-snug text-red-600">
+                            <span class="font-medium">{i18n.getMessage('experimental')}</span>
+                        </p>
+                        <InternalHrefLinkButton
+                            href="/setup/migrate"
+                            additionalClasses="inline-flex w-full justify-center border-primary text-primary hover:bg-primary hover:text-white"
+                        >
+                            {i18n.getMessage('migrate_legacy_button')}
+                        </InternalHrefLinkButton>
+                    </div>
+                {/if}
             {/if}
         </div>
 
