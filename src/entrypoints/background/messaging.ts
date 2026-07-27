@@ -69,6 +69,10 @@ import {
 import {
     GetDoorhangerSettingsResponse
 } from "@/entrypoints/background/messages/getDoorhangerSettings";
+import {
+    ProbeServerConnectionRequest,
+    ProbeServerConnectionResponse
+} from "@/entrypoints/background/messages/probeServerConnection";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -118,6 +122,8 @@ interface ProtocolMap {
     updateCredentialForDoorhanger(data: UpdateCredentialForDoorhangerMessagingRequest): UpdateCredentialForDoorhangerMessagingResponse;
 
     getDoorhangerSettings(): GetDoorhangerSettingsResponse;
+
+    probeServerConnection(data: ProbeServerConnectionRequest): ProbeServerConnectionResponse;
 
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;

@@ -16,6 +16,7 @@
     "zip:firefox": "wxt zip -b firefox --mv3",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check-errors": "svelte-check --tsconfig ./tsconfig.json --threshold error",
+    "fixture:legacy-settings": "bun scripts/build-legacy-settings-fixture.ts",
     "postinstall": "wxt prepare"
   },
   "dependencies": {
