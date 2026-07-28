@@ -944,7 +944,7 @@
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Höre auf einige spezielle Benutzerereignisse, mit Aufschaukel- und Drosselungslogik",
+        "message": "Auf einige spezielle Benutzerereignisse mit Entprell- und Drosselungslogik reagieren",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
@@ -952,15 +952,15 @@
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Grundsätzlich nützlich für SPAs (aber nicht notwendigerweise)",
+        "message": "Grundsätzlich nützlich für SPAs (aber nicht unbedingt)",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
-        "message": "Formularerkennung bei URL-Änderungen aktivieren, Überprüfung in Intervallen (von 1 s)",
+        "message": "Formularerkennung bei URL-Änderungen aktivieren, Überprüfung in Intervallen (von 1 Sek.)",
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
-        "message": "Aktiviere einen MutationObserver, um dynamisch hinzugefügte Formulare und Eingabefelder bei DOM-Änderungen zu erkennen",
+        "message": "Einen MutationObserver aktivieren, um dynamisch hinzugefügte Formulare und Eingabefelder bei DOM-Änderungen zu erkennen",
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
@@ -1000,7 +1000,7 @@
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
-        "message": "Den lokalen Offline-Tresor-Cache löschen? Zum erneuten Laden der Tresore benötigst du eine Netzwerkverbindung.",
+        "message": "Den lokalen Offline-Tresor-Cache löschen? Zum erneuten Laden der Tresore wird eine Netzwerkverbindung benötigt.",
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
@@ -1016,7 +1016,7 @@
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "Die Erweiterung verwendet jeweils nur einen aktiven Nextcloud-Server. Füge hier eine Backup-Instanz hinzu, damit du schnell wechseln kannst, wenn der primäre Server nicht verfügbar ist.",
+        "message": "Die Erweiterung verwendet jeweils nur einen aktiven Nextcloud-Server. Hier eine Backup-Instanz hinzufügen, damit ein schneller Wechsel möglich ist, wenn der primäre Server nicht verfügbar ist.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
@@ -1040,7 +1040,7 @@
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Diesen gespeicherten Server aus der Erweiterung entfernen? Der Offline-Cache dafür kann so lange bestehen bleiben, bis er gelöscht wird.",
+        "message": "Diesen gespeicherten Server aus der Erweiterung entfernen? Der Offline-Cache dafür kann u.U. weiter bestehen, bis er gelöscht wird.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
@@ -1060,7 +1060,7 @@
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "Diese überarbeitete Version befindet sich noch in der aktiven Entwicklung. Es kann daher zu Anfangsschwierigkeiten kommen.$BR$Hast du einen Fehler gefunden? Bitte erstelle ein Issue auf $LINK_START$GitHub$LINK_END$.",
+        "message": "Diese überarbeitete Version befindet sich noch in der aktiven Entwicklung. Es kann daher zu Anfangsschwierigkeiten kommen.$BR$Fehler gefunden? Bitte ein Issue auf $LINK_START$GitHub$LINK_END$ erstellen.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
@@ -1068,19 +1068,111 @@
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "Dieses Passwort sperrt die Erweiterung auf diesem Gerät und wird für die Verschlüsselung der lokalen Einstellungen verwendet. Es ist nicht Ihr Tresorpasswort.",
+        "message": "Dieses Passwort sperrt die Erweiterung auf diesem Gerät und wird für die Verschlüsselung der lokalen Einstellungen verwendet. Es ist nicht dein Tresorpasswort.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
         "message": "Speichern & fortfahren",
         "description": "Button to save the extension unlock password and continue setup"
     },
+    "migrate_legacy_title": {
+        "message": "Import previous settings",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Previous master password",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Import previous settings",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Import previous installation",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Continue to review",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Import and finish setup",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Test connection",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Recheck all",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Use as active connection",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Matching & autofill preferences",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "not checked",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "checking…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimental",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "The previous settings do not contain any server accounts to import.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Could not import previous settings.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "description": "Success toast after importing legacy settings"
+    },
     "passman_app_required": {
         "message": "Für diese Erweiterung muss die $LINK_START$Passman App$LINK_END$ auf deinem Nextcloud-Server installiert sein.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "Es werden keine Daten an andere Quellen als den angegebenen Nextcloud-Server übertragen.",
+        "message": "Es werden keine Daten an andere Quellen, als den angegebenen Nextcloud-Server übertragen.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
@@ -1368,7 +1460,7 @@
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimale Protokollierungsstufe für diese Erweiterung. Niedrigere Stufen enthalten mehr Details. Standardmäßig ist für den Produktivbetrieb die Stufe „Fehler“ eingestellt.",
+        "message": "Minimale Protokollierungsstufe für diese Erweiterung. Niedrigere Stufen enthalten mehr Details. Standardmäßig ist für den Produktivbetrieb die Stufe \"Fehler\" eingestellt.",
         "description": "Description under the logging settings section"
     },
     "log_level": {

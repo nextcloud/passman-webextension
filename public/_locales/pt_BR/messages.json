@@ -756,7 +756,7 @@
         "description": "No matching credentials"
     },
     "update_default_settings": {
-        "message": "Atualizar as configurações padrão",
+        "message": "Atualizar configurações padrão",
         "description": "Update default settings button label"
     },
     "save_settings": {
@@ -916,11 +916,11 @@
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Sobreposições: $COUNT$",
+        "message": "Sobrescritas: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
-        "message": "Salvar as configurações padrão de cofre",
+        "message": "Salvar configurações padrão de cofre",
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
@@ -952,7 +952,7 @@
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Basicamente útil para SPAs (mas não necessariamente)",
+        "message": "Basicamente útil para SPAs (aplicativos de página única); mas não necessariamente",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
@@ -1016,7 +1016,7 @@
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "A extensão utiliza um servidor Nextcloud ativo por vez. Adicione aqui uma instância de backup para que você possa alternar rapidamente caso o servidor principal fique indisponível.",
+        "message": "A extensão utiliza um servidor Nextcloud ativo por vez. Adicione aqui uma instância alternativa para que você possa alternar rapidamente caso o servidor principal fique indisponível.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
@@ -1044,7 +1044,7 @@
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Servido ativo alterado",
+        "message": "Servidor ativo alterado",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
@@ -1074,6 +1074,98 @@
     "save_password_and_unlock": {
         "message": "Salvar e continuar",
         "description": "Button to save the extension unlock password and continue setup"
+    },
+    "migrate_legacy_title": {
+        "message": "Import previous settings",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Previous master password",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Import previous settings",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Import previous installation",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Continue to review",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Import and finish setup",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Test connection",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Recheck all",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Use as active connection",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Matching & autofill preferences",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "not checked",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "checking…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimental",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "The previous settings do not contain any server accounts to import.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Could not import previous settings.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
         "message": "Esta extensão requer que o $LINK_START$aplicativo Passman$LINK_END$ esteja instalado no seu servidor Nextcloud.",
@@ -1144,7 +1236,7 @@
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Ocorreu um erro desconhecido ao excluir a credencial",
+        "message": "Ocorreu um erro desconhecido ao excluir uma credencial",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
@@ -1152,11 +1244,11 @@
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "muito baixa",
+        "message": "muito fraca",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
-        "message": "baixa",
+        "message": "fraca",
         "description": "Password strength meter label"
     },
     "password_strength_good": {
@@ -1164,7 +1256,7 @@
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
-        "message": "muito boa",
+        "message": "forte",
         "description": "Password strength meter label"
     },
     "dismiss_alert": {

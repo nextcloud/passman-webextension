@@ -84,19 +84,19 @@
         "description": "Require every character type"
     },
     "use_uppercase": {
-        "message": "Use uppercase letters",
+        "message": "Kasuta suurtähti",
         "description": "Use uppercase letters"
     },
     "use_lowercase": {
-        "message": "Use lowercase letters",
+        "message": "Kasuta väiketähti",
         "description": "Use lowercase letters"
     },
     "use_digits": {
-        "message": "Use digits",
+        "message": "Kasuta numbreid",
         "description": "Use digits"
     },
     "use_special_chars": {
-        "message": "Use special characters",
+        "message": "Kasuta erimärke",
         "description": "Use special characters"
     },
     "add_account": {
@@ -124,7 +124,7 @@
         "description": "Add"
     },
     "credential_changed": {
-        "message": "Credential changed",
+        "message": "Salasõnakirje on muudetud",
         "description": "Credential changed"
     },
     "credential_created": {
@@ -132,15 +132,15 @@
         "description": "Credential created"
     },
     "credentials_expires": {
-        "message": "Credential expires",
+        "message": "Salasõnakirje aegumine",
         "description": "Credential expires"
     },
     "expire_date": {
-        "message": "Expiration date",
+        "message": "Aegumise kuupäev",
         "description": "Credential password expiration date"
     },
     "no_expire_date": {
-        "message": "No expiration date set",
+        "message": "Aegumise kuupäeva pole määratud",
         "description": "No expiration date set for the credential password"
     },
     "url": {
@@ -180,15 +180,15 @@
         "description": "Detected changed URL for"
     },
     "edit_credential": {
-        "message": "Edit credential",
+        "message": "Muuda salasõnakirjet",
         "description": "Edit credential button label for the edit credential page"
     },
     "create_new_credential": {
-        "message": "Create new credential",
+        "message": "Lisa uus salasõnakirje",
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Credential",
+        "message": "Autentimisteave",
         "description": "Credential singular form"
     },
     "credentials": {
@@ -200,7 +200,7 @@
         "description": "Credential compromised notice"
     },
     "mark_compromised": {
-        "message": "Mark as compromised",
+        "message": "Märgi rääderdatuks",
         "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
@@ -228,7 +228,7 @@
         "description": "Ignore path for site matching"
     },
     "ignore_page": {
-        "message": "Ignore this page when suggesting credentials",
+        "message": "Salasõnakirjete soovitamisel eira seda lehte",
         "description": "Checkbox label for ignoring a specific page"
     },
     "enable_autofill": {
@@ -288,15 +288,15 @@
         "description": "updated, lowercase"
     },
     "credential_update_error": {
-        "message": "An error occurred while updating the credential",
+        "message": "Salasõnakirje uuendamisel tekkis viga",
         "description": "An error occurred while updating the credential"
     },
     "credential_create_error": {
-        "message": "An error occurred while creating the credential",
+        "message": "Salasõnakirje lisamisel tekkis viga",
         "description": "An error occurred while creating the credential"
     },
     "open_options_page": {
-        "message": "Open options page",
+        "message": "Ava valikute leht",
         "description": "Open options page button label for the browser extension options page"
     },
     "site_ignored": {
@@ -324,7 +324,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman Webextension",
+        "message": "Tere tulemast kasutama Passmani brauserilaiendust",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -336,7 +336,7 @@
         "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Your Nextcloud passwords, ready in the browser. A short setup connects this extension to your Passman vault.",
+        "message": "Sinu Nextcloudi salasõnad, saadaval mugavasti veebibrauserist. Lühikese algseadistuse kestel ühendad selle brauserilaienduse sinu salasõnahoidlaga Passmanis.",
         "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
@@ -344,7 +344,7 @@
         "description": "Cancel"
     },
     "default_vault": {
-        "message": "Vaikimisi andmehoidla",
+        "message": "Vaikimisi salasõnahoidla",
         "description": "Default vault"
     },
     "default_vault_desc": {
@@ -428,7 +428,7 @@
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Andmehoidla seadistused",
+        "message": "Salasõnahoidla seadistused",
         "description": "Vault settings"
     },
     "master_password": {
@@ -476,7 +476,7 @@
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Vali vaikimisi andmehoidla",
+        "message": "Vali vaikimisi salasõnahoidla",
         "description": "Select default vault"
     },
     "ignored_sites": {
@@ -520,7 +520,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Vigane andmehoidla võti!",
+        "message": "Vigane salasõnahoidla võti!",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -580,7 +580,7 @@
         "description": "Search"
     },
     "select_vault": {
-        "message": "Vali andmehoidla",
+        "message": "Vali salasõnahoidla",
         "description": "Search"
     },
     "delete": {
@@ -600,7 +600,7 @@
         "description": "Credential deleted"
     },
     "mark_credential_deleted": {
-        "message": "Mark credential as deleted",
+        "message": "Märgi salasõnakirje kustutatuks",
         "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
@@ -608,7 +608,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Vabandust, aga andmehoidlaid ei leidu. Palun loo mõni oma Nextcloudi või ownCloudi rakendusest ja proovi uuesti.",
+        "message": "Vabandust, aga salasõnahoidlaid ei leidu. Palun loo mõni oma Nextcloudi või ownCloudi rakendusest ja proovi uuesti.",
         "description": "Search"
     },
     "msg_reset_extension": {
@@ -624,7 +624,7 @@
         "description": "Search"
     },
     "reset_settings": {
-        "message": "Reset settings",
+        "message": "Lähtesta seadistused",
         "description": "Reset settings button label"
     },
     "iam_sure": {
@@ -664,7 +664,7 @@
         "description": "Unlock button label"
     },
     "unlock_without_refresh": {
-        "message": "Unlock without refresh",
+        "message": "Ava lukustus ilma andmete uuednuseta",
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
@@ -672,11 +672,11 @@
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Salvesta andmehoidlasse $VAULT_NAME$",
+        "message": "Salvesta salasõnahoidlasse $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Salvestan andmehoidlasse $VAULT_NAME$",
+        "message": "Salvestan salasõnahoidlasse $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
@@ -688,7 +688,7 @@
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Andmehoidla",
+        "message": "Salasõnahoidla",
         "description": "Vault"
     },
     "add_custom_field": {
@@ -700,7 +700,7 @@
         "description": "To describe a textual input field"
     },
     "copy_to_clipboard": {
-        "message": "Copy $FIELDNAME$ to clipboard",
+        "message": "Kopeeri „$FIELDNAME$“ välja andmed lõikelauale",
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
@@ -708,7 +708,7 @@
         "description": "Text shown in the drag and drop upload box"
     },
     "files_any_type_info": {
-        "message": "Any file type",
+        "message": "Ükspuha, mis failitüüp",
         "description": "File type info shown in the drag and drop upload box"
     },
     "files_upload_succeeded": {
@@ -776,7 +776,7 @@
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
-        "message": "Setup your Nextcloud server and vault credentials",
+        "message": "Seadista oma Nextcloudi serveri ja salasõnahoidla kasutajanimi ja salasõna",
         "description": "Nextcloud server setup card description"
     },
     "setup_server_step_title": {
@@ -784,7 +784,7 @@
         "description": "Hero title on the initial Nextcloud server setup step"
     },
     "setup_server_step_intro": {
-        "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+        "message": "Logi sisse Nextcloudi ja vali Passmani salasõnahoidla, mida see veebibrauser peaks sünkroonis hoidma.",
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
@@ -920,7 +920,7 @@
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
-        "message": "Save default vault settings",
+        "message": "Salvesta salasõnahoidla vaikimisi seadistused",
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
@@ -980,11 +980,11 @@
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
-        "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+        "message": "Salasõnahoidla andmeid hoitakse kohalikus seadmes krüptituna kasutamiseks vallasrežiimis. Kui kustutad puhverdatud andmed, siis järgmisel serverist andmete laadimisel andmed uuendatakse.",
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "message": "Hinnanguline andmemaht: $1 ($2 salasõnakirjet $3-s salasõnahoidlas)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
@@ -1000,7 +1000,7 @@
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
-        "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+        "message": "Kas kustutad kohalikku seadmesse puhverdatud salasõnahoidla andmed? Andmete uuesti laadimiseks vajad hiljem toimivat internetiühendust.",
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
@@ -1068,12 +1068,104 @@
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "message": "See salasõna lukustab selle laienduse andmed antud seadmes ja seda kasutatakse kohalike seadistuste krüptimiseks. See ei ole sinu salasõnahoidla salasõna.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
         "message": "Save & continue",
         "description": "Button to save the extension unlock password and continue setup"
+    },
+    "migrate_legacy_title": {
+        "message": "Import previous settings",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Previous master password",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Import previous settings",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Import previous installation",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Continue to review",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Import and finish setup",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Test connection",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Recheck all",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Use as active connection",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Matching & autofill preferences",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "not checked",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "checking…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimental",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "The previous settings do not contain any server accounts to import.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Could not import previous settings.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
         "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
@@ -1084,19 +1176,19 @@
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
-        "message": "No selected vault info found",
+        "message": "Valitud salasõnahoidla teavet ei leidu",
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
-        "message": "Could not decrypt vault",
+        "message": "Salasõnahoidla dekrüptimine ei õnnestu",
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
-        "message": "No default vault info found",
+        "message": "Vaikimisi salasõnahoidla teavet ei leidu",
         "description": "Error when default vault metadata is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Could not get or decrypt vault",
+        "message": "Salasõnahoidla laadimine või dekrüptimine ei õnnestunud",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
@@ -1264,7 +1356,7 @@
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
-        "message": "Could not get default vault info",
+        "message": "Vaikimisi salasõnahoidla teabe laadimine ei õnnestu",
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
@@ -1296,103 +1388,103 @@
         "description": "Error when loading password generator settings fails"
     },
     "doorhanger_save_title": {
-        "message": "Save login to Passman?",
+        "message": "Kas salvestad andmed Passmanis?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Update login in Passman?",
+        "message": "Kas uuendad andmeid Passmanis?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
-        "message": "Not now",
+        "message": "Mitte praegu",
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Credential to update",
+        "message": "Uuendatav salasõnakirje",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Untitled credential",
+        "message": "Ilma nimeta salasõnakirje",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
-        "message": "Doorhanger",
+        "message": "Rippmenüü",
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
-        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "message": "Vali, kuidas kuvatakse veebisaitidesse sisselogimise järel nähtav salvestamis- või uuendamisteade.",
         "description": "Description under the doorhanger settings section"
     },
     "doorhanger_layout": {
-        "message": "Layout",
+        "message": "Paigutus",
         "description": "Label for doorhanger layout dropdown"
     },
     "doorhanger_layout_description": {
-        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "message": "Kaart hõljub nurgas. Ülarida on lehe ülaosas asuv täislaiuses bänner.",
         "description": "Help text for doorhanger layout setting"
     },
     "doorhanger_layout_card": {
-        "message": "Card",
+        "message": "Kaart",
         "description": "Doorhanger layout option: floating card"
     },
     "doorhanger_layout_top_row": {
-        "message": "Top row",
+        "message": "Ülarida",
         "description": "Doorhanger layout option: full-width top banner"
     },
     "doorhanger_gravity": {
-        "message": "Position",
+        "message": "Asukoht",
         "description": "Label for doorhanger gravity/position dropdown"
     },
     "doorhanger_gravity_description": {
-        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "message": "Kaardipaigutuse puhul nurk või ülarea paigutuse puhul sisu joondamine.",
         "description": "Help text for doorhanger gravity setting"
     },
     "doorhanger_gravity_top_right": {
-        "message": "Top right",
+        "message": "Ülal paremal",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_top_left": {
-        "message": "Top left",
+        "message": "Ülal vasakul",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_right": {
-        "message": "Bottom right",
+        "message": "All paremal",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_left": {
-        "message": "Bottom left",
+        "message": "All vasakul",
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
-        "message": "Logging",
+        "message": "Logimine",
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "message": "Minimaalne logimistase selle lisamooduli jaoks. Mida madalam tase, seda üksikasjalikumad on andmed. Tarbekasutuses on vaikimisi väärtus vigade logimine.",
         "description": "Description under the logging settings section"
     },
     "log_level": {
-        "message": "Log level",
+        "message": "Logimise tase",
         "description": "Label for extension console log level dropdown"
     },
     "log_level_debug": {
-        "message": "Debug",
+        "message": "Veaotsing (debug)",
         "description": "Log level option: debug"
     },
     "log_level_log": {
-        "message": "Log",
+        "message": "Logi",
         "description": "Log level option: log"
     },
     "log_level_info": {
-        "message": "Info",
+        "message": "Teave",
         "description": "Log level option: info"
     },
     "log_level_warn": {
-        "message": "Warning",
+        "message": "Hoiatus (warning)",
         "description": "Log level option: warn"
     },
     "log_level_error": {
-        "message": "Error",
+        "message": "Viga (error)",
         "description": "Log level option: error"
     },
     "extName": {
