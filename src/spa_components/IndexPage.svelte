@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    import { onMount, untrack } from "svelte";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import { externalLink, lock, plus, close } from "svelte-awesome/icons";
@@ -24,14 +24,14 @@
     import Utils from "~/lib/Utils";
     import { logger } from "~/services/ConsoleLoggingService";
 
-    let searchInput: string | null = null;
-    let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
-    let errorMessage: string | null = null;
-    let vault: Vault | null = null;
-    let credentials: Credential[] | null = null;
-    let filteredCredentials: Credential[] = [];
-    let pageIsLoading = true;
-    let initialLoadIsDone = false;
+    let searchInput = $state<string | null>(null);
+    let overwriteInputFilterByTabUrlPromise = $state<Promise<string | null | undefined>>(Promise.resolve(undefined));
+    let errorMessage = $state<string | null>(null);
+    let vault = $state<Vault | null>(null);
+    let credentials = $state<Credential[] | null>(null);
+    let filteredCredentials = $state<Credential[]>([]);
+    let pageIsLoading = $state(true);
+    let initialLoadIsDone = $state(false);
     const isInPopup = Utils.isInPopup();
 
     const lockExtension = () => {
@@ -93,7 +93,7 @@
                     });
             } else {
                 // reset tab url search filter when entering a custom search value the first time
-                // to prevent it from being reset during the inital request by the reactive statement block below, we need to wait until the initial request is done
+                // to prevent it from being reset during the initial request by the $effect below, we need to wait until the initial request is done
                 if (initialLoadIsDone || !overwriteInputFilterByTabUrl) {
                     overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
                     filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL, searchInput ?? '');
@@ -102,7 +102,16 @@
         }
     };
 
-    $: vault && credentials && applyCredentialFilter(searchInput ?? '');
+    // Re-filter when vault/credentials become available or the search input changes.
+    // untrack keeps applyCredentialFilter's internal reads (URL-filter promise, flags) from re-running this effect.
+    $effect(() => {
+        if (vault && credentials) {
+            const input = searchInput ?? '';
+            untrack(() => {
+                void applyCredentialFilter(input);
+            });
+        }
+    });
 
     onMount(() => {
         PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
@@ -201,7 +210,7 @@
                 {#await overwriteInputFilterByTabUrlPromise then resolvedOverwriteInputFilterByTabUrl}
                     {#if resolvedOverwriteInputFilterByTabUrl}
                         <div class="text-gray-400 mb-1">
-                            <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" on:click={() => {
+                            <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" onclick={() => {
                                 overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
                                 applyCredentialFilter(searchInput ?? '');
                             }}>
@@ -217,8 +226,8 @@
                     </div>
                 {/if}
 
-                {#each filteredCredentials as credential}
-                    <CredentialListElement bind:credential onCredChangedCallback={() => refreshCredentialList(true)}/>
+                {#each filteredCredentials as credential, i (credential.guid)}
+                    <CredentialListElement bind:credential={filteredCredentials[i]} onCredChangedCallback={() => refreshCredentialList(true)}/>
                 {/each}
                 {#if !errorMessage && filteredCredentials.length === 0}
                     <span class="text-gray-400 mt-4">
