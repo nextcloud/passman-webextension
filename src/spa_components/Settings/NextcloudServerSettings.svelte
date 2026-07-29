@@ -24,8 +24,8 @@
     import type { ServerConnectionListItem } from "@/entrypoints/background/messages/listServerConnections";
     import { logger } from "~/services/ConsoleLoggingService";
 
-    const server = field('server', '', [required(), min(8)], { checkOnInit: true });
-    const user = field('user', '', [required(), min(3)], { checkOnInit: true });
+    const server = field('server', '', [required()], { checkOnInit: true });
+    const user = field('user', '', [required()], { checkOnInit: true });
     const token = field('token', '', [required()], { checkOnInit: true });
     const myForm = form(server, user, token);
 
