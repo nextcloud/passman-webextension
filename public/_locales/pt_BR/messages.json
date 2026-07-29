@@ -1076,75 +1076,75 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Importar configurações anteriores",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Digite a senha principal da sua extensão Passman anterior. Ela também se tornará sua nova senha de destrancamento após você confirmar a importação.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Foram encontradas configurações de uma extensão anterior do Passman. Verifique-as e edite-as antes de importar.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Senha principal anterior",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Importar configurações anteriores",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Importar instalação anterior",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Destranque as configurações anteriores com sua senha principal antiga para verificar o que será importado.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Edite as conexões e as preferências conforme necessário. O status das conexões e do cofre é verificado em relação aos seus servidores.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Continuar para a revisão",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "Importar e finalizar a configuração",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Verificar a conexão",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Reverificar tudo",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Usar como conexão ativa",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Preferências de correspondência e preenchimento automático",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Um site por linha. Essas configurações se tornam regras de página com a opção “ignorar página” ativada.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "não verificada",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
-        "message": "checking…",
+        "message": "verificando…",
         "description": "Probe status: in progress"
     },
     "server": {
-        "message": "Server",
+        "message": "Servidor",
         "description": "Label for a server connection"
     },
     "experimental": {
@@ -1152,19 +1152,19 @@
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Não foi possível descriptografar as configurações anteriores. Verifique a senha principal e tente novamente.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "As configurações anteriores não contêm nenhuma conta de servidor para importar.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
-        "message": "Could not import previous settings.",
+        "message": "Não foi possível importar as configurações anteriores.",
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "Foi(ram) importada(s) $COUNT$ conexão(ões) de servidor da instalação anterior.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
@@ -1408,7 +1408,7 @@
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
-        "message": "Doorhanger",
+        "message": "Menu suspenso",
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {

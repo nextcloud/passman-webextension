@@ -1076,95 +1076,95 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Importuoti ankstesnius nustatymus",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Įveskite pagrindinį slaptažodį iš ankstesnio „Passman“ plėtinio. Patvirtinus importavimą, jis taip pat taps jūsų naujuoju atrakinimo slaptažodžiu.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Rasti ankstesnio „Passman“ plėtinio nustatymai. Prieš importuodami juos peržiūrėkite ir pakoreguokite.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Ankstesnis pagrindinis slaptažodis",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Importuoti ankstesnius nustatymus",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Importuoti ankstesnį diegimą",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Atrakinkite ankstesnius nustatymus naudodami senąjį pagrindinį slaptažodį, kad peržiūrėtumėte, kas bus importuota.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Prireikus redaguokite ryšius ir nuostatas. Ryšio ir saugyklos būsena tikrinama pagal jūsų serverius.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Tęsti peržiūrą",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "Importuoti ir užbaigti sąranką",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Tikrinti ryšį",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Dar kartą viską patikrinti",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Naudoti kaip aktyvųjį ryšį",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Atitikimo ir automatinio užpildymo nuostatos",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Viena svetainė vienoje eilutėje. Jos tampa puslapio taisyklėmis su įjungta „ignoruoti puslapį“ (angl. „ignore page“) parinktimi.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "nepažymėta",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
-        "message": "checking…",
+        "message": "tikrinama...",
         "description": "Probe status: in progress"
     },
     "server": {
-        "message": "Server",
+        "message": "Serveris",
         "description": "Label for a server connection"
     },
     "experimental": {
-        "message": "Experimental",
+        "message": "Eksperimentinė",
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Nepavyko iššifruoti ankstesnių nustatymų. Patikrinkite pagrindinį slaptažodį ir bandykite dar kartą.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "Ankstesniuose nustatymuose nėra serverio paskyrų, kurias būtų galima importuoti.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
-        "message": "Could not import previous settings.",
+        "message": "Nepavyko importuoti ankstesnių nustatymų.",
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "Importuotos $COUNT$ serverio jungtys iš ankstesnio įdiegimo.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {

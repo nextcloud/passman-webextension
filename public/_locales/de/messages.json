@@ -1076,71 +1076,71 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Vorherige Einstellungen importieren",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Das Master-Passwort aus deiner vorherigen Passman-Erweiterung eingeben. Es wird dein neues Entsperrpasswort, nachdem du den Import bestätigt hast.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Es wurden Einstellungen aus einer früheren Passman-Erweiterung gefunden. Überprüfe und bearbeite sie vor dem Importieren.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Vorheriges Masterpasswort",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Vorherige Einstellungen importieren",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Vorherige Installation importieren",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Die vorherigen Einstellungen mit deinem alten Master-Passwort entsperren, um zu überprüfen, was importiert wird.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Verbindungen und Einstellungen nach Bedarf bearbeiten. Verbindung und Tresorstatus werden mit deinen Servern abgeglichen.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Weiter zur Überprüfung",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "Importieren und Einrichtung abschließen",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Verbindung prüfen",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Alles erneut überprüfen",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Als aktive Verbindung verwenden",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Einstellungen zu Übereinstimmungen & Autoausfüllen",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Eine Seite pro Zeile. Diese werden zu Seitenregeln mit aktivierter Funktion \"Seite ignorieren\".",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "Nicht überprüft",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
-        "message": "checking…",
+        "message": "Überprüfe …",
         "description": "Probe status: in progress"
     },
     "server": {
@@ -1148,23 +1148,23 @@
         "description": "Label for a server connection"
     },
     "experimental": {
-        "message": "Experimental",
+        "message": "Experimentell",
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Die vorherigen Einstellungen konnten nicht entschlüsselt werden. Das Masterpasswort überprüfen und erneut versuchen.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "Die vorherigen Einstellungen enthalten keine Serverkonten zum Importieren.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
-        "message": "Could not import previous settings.",
+        "message": "Vorherige Einstellungen konnten nicht importiert werden.",
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "$COUNT$ Serververbindung(en) aus der vorherigen Installation importiert.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {

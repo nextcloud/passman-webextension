@@ -32,7 +32,7 @@
         "description": "Save site"
     },
     "generator": {
-        "message": "Generator",
+        "message": "Salasõnalooja",
         "description": "Password generator menu entry"
     },
     "password_generator": {
@@ -168,7 +168,7 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - selle lehe jaos leidub $CREDENTIAL_AMOUNT$ $PLURAL$ ",
+        "message": "Passman - selle lehe jaoks leidub $CREDENTIAL_AMOUNT$ $PLURAL$ ",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
@@ -188,11 +188,11 @@
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Autentimisteave",
+        "message": "Salasõnakirje",
         "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Kasutajatunnus/salasõna",
+        "message": "Salasõnakirjed",
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
@@ -220,7 +220,7 @@
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Sa kasutad ühenduse jaoks HTTP-protokolli! See tähendab, et kasutajanimi ja salasõna edastatakse krüptimata kujul interneti kaudu. Passmani kasutajanimi ja salasõna on siiski krüptitud.",
+        "message": "Sa kasutad ühenduse jaoks HTTP-protokolli! See tähendab, et kasutajanimi ja salasõna edastatakse krüptimata kujul interneti kaudu. Sinu Passmani kasutajanimi ja salasõna on siiski krüptitud.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -232,7 +232,7 @@
         "description": "Checkbox label for ignoring a specific page"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill (for a single matching credential)",
+        "message": "Luba kasutada automaattäidet (ühe sobiva salasõnakirjega)",
         "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
@@ -420,7 +420,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Redigeeri",
+        "message": "Muuda",
         "description": "Edit"
     },
     "server_settings": {
@@ -468,7 +468,7 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Anneta",
+        "message": "Toeta rahaliselt",
         "description": "Donate"
     },
     "nextcloud_settings": {
@@ -508,7 +508,7 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Vigane serveri URL",
+        "message": "Vigane serveri võrguaadress",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -532,15 +532,15 @@
         "description": "One time password"
     },
     "otp_configuration_invalid": {
-        "message": "Invalid OTP configuration",
+        "message": "Vigane ühekordse salasõna seadistus",
         "description": "Invalid one time password configuration"
     },
     "otp_secret": {
-        "message": "OTP secret",
+        "message": "Ühekordse salasõna saladus",
         "description": "OTP secret"
     },
     "otp_clear_all": {
-        "message": "Clear OTP configuration",
+        "message": "Eemalda ühekordse salasõna seadistus",
         "description": "Clear OTP configuration"
     },
     "issuer": {
@@ -552,11 +552,11 @@
         "description": "OTP type"
     },
     "digits": {
-        "message": "Digits",
+        "message": "Numbreid",
         "description": "OTP digits"
     },
     "period": {
-        "message": "Period",
+        "message": "Ajavahemik",
         "description": "OTP period"
     },
     "algorithm": {
@@ -704,7 +704,7 @@
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
-        "message": "$START_HTML_TAG$Click to upload$END_HTML_TAG$ or drag and drop",
+        "message": "$START_HTML_TAG$Üleslaadimiseks klõpsa$END_HTML_TAG$ või lohista",
         "description": "Text shown in the drag and drop upload box"
     },
     "files_any_type_info": {
@@ -740,39 +740,39 @@
         "description": "Column header for file size in files table"
     },
     "error_file_upload_popup": {
-        "message": "Unfortunately, file upload is not supported in the popup.",
+        "message": "Kahjuks pole faili üleslaadimine selles hüpikaknas toetatud.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "error_file_upload_popup_2": {
-        "message": "Please use the webextension options page or another client to add files.",
+        "message": "Palun kasuta failide lisamiseks selle veebilaiendusmooduli eelistuste lehte või mõnda muud klienti.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
-        "message": "Clear tab url filter",
+        "message": "Tühjenda vahekaardi võrguaadresside filter",
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "No matching credentials",
+        "message": "Sobivaid salasõnakirjeid ei leidu",
         "description": "No matching credentials"
     },
     "update_default_settings": {
-        "message": "Update default settings",
+        "message": "Uuenda vaikimisi seadistusi",
         "description": "Update default settings button label"
     },
     "save_settings": {
-        "message": "Save settings",
+        "message": "Salvesta seadistused",
         "description": "Save settings button label"
     },
     "extended_settings": {
-        "message": "Extended settings",
+        "message": "Täiendavad seadistused",
         "description": "Extended settings"
     },
     "extended_settings_description": {
-        "message": "Setup global extended settings",
+        "message": "Seadista üldisi täiendavaid seadistusi",
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
-        "message": "Nextcloud server setup",
+        "message": "Nextcloudi serveri seadistus",
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
@@ -780,7 +780,7 @@
         "description": "Nextcloud server setup card description"
     },
     "setup_server_step_title": {
-        "message": "Connect your server",
+        "message": "Ühenda oma serveriga",
         "description": "Hero title on the initial Nextcloud server setup step"
     },
     "setup_server_step_intro": {
@@ -788,11 +788,11 @@
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
-        "message": "Page rules",
+        "message": "Lehtede reeglid",
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
+        "message": "Seadista lehekülgipõhised reeglid, et kohandada laiendusmooduli üldist toimimist. Praegu on see funktsionaalsus loodud ainult domeenide jaoks, mitte konkreetsete võrguaadresside jaoks. (võib lisanduda tulevikus)",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
@@ -836,23 +836,23 @@
         "description": "Success notification when deleting a page rule"
     },
     "page_rules_override_section": {
-        "message": "Override global settings",
+        "message": "Sürjuta üldised seadistused",
         "description": "Heading for page rule override settings"
     },
     "page_rules_picker_current_site": {
-        "message": "Current site",
+        "message": "Praegune veebisait",
         "description": "Label that shows current origin in picker tab"
     },
     "page_rules_picker_intro": {
-        "message": "Adjust how Passman behaves on this page.",
+        "message": "Kohenda, kuidas Passman sellel lehel toimib",
         "description": "Intro text for picker page rules tab"
     },
     "page_rules_picker_reset": {
-        "message": "Reset changes",
+        "message": "Lähtesta muudatused",
         "description": "Reset button label in picker page rules tab"
     },
     "page_rules_picker_loading": {
-        "message": "Loading page settings...",
+        "message": "Laadin lehe seadistusi…",
         "description": "Loading label for picker page rules tab"
     },
     "page_rules_picker_retry": {
@@ -860,11 +860,11 @@
         "description": "Retry button label for picker page rules tab"
     },
     "page_rules_picker_load_error": {
-        "message": "Unable to load page rules for this site",
+        "message": "Selle saidi lehereeglite laadimine ei õnnestu",
         "description": "Error shown when picker tab cannot fetch page rules"
     },
     "page_rules_picker_save_error": {
-        "message": "Saving page rules failed",
+        "message": "Lehereeglite salvestamine ei õnnestunud",
         "description": "Error shown when picker tab cannot save page rules"
     },
     "page_rules_search_label": {
@@ -876,27 +876,27 @@
         "description": "Placeholder for the page rules search input"
     },
     "page_rules_no_results": {
-        "message": "No page rules match your search",
+        "message": "Ükski lehereegel ei vasta sinu otsingule",
         "description": "Shown when no rules match the applied filter"
     },
     "page_rules_cancel_edit": {
-        "message": "Abort",
+        "message": "Katkesta",
         "description": "Button label to go back to the page rules list"
     },
     "page_rules_use_global": {
-        "message": "Use global setting",
+        "message": "Kasuta üldisi seadistusi",
         "description": "Select option label for inheriting from global settings"
     },
     "page_rules_force_enable": {
-        "message": "Force enable",
+        "message": "Võta sundkorras kasutusele",
         "description": "Select option label for forcing setting to enabled"
     },
     "page_rules_force_disable": {
-        "message": "Force disable",
+        "message": "Eemalda sundkorras kasutuselt",
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
-        "message": "Currently editing: $PAGE_URL$",
+        "message": "Hetkel oled muutmas: $PAGE_URL$",
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
@@ -1012,7 +1012,7 @@
         "description": "Error toast after failing to clear offline cache"
     },
     "server_connections": {
-        "message": "Saved servers",
+        "message": "Salvestatud serverid",
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
@@ -1020,11 +1020,11 @@
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "active",
+        "message": "aktiivne",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
-        "message": "Switch",
+        "message": "Vaheta",
         "description": "Button to make another saved server the active connection"
     },
     "server_connection_remove": {
@@ -1036,7 +1036,7 @@
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
-        "message": "Active server credentials",
+        "message": "Hetkel aktiivse serveri salasõnakirjed",
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
@@ -1044,27 +1044,27 @@
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Switched active server",
+        "message": "Aktiivne server on vahetatud",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Could not switch server",
+        "message": "Serveri vahetamine laadimine ei õnnestunud",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
-        "message": "Server removed",
+        "message": "Server on eemaldatud",
         "description": "Success toast after removing a server connection"
     },
     "server_connection_remove_failed": {
-        "message": "Could not remove server",
+        "message": "Serveri eemaldamine ei õnnestu",
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "message": "See rakenduse uusarendus on hetkel aktiivses arendusjärgus. Arvesta, et kõik konarused pole veel silutud. $BR$Kas leidsid vea? Palun  koosta meie $LINK_START$GitHubi$LINK_END$ veahalduses asjakohane veateade.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Choose an unlock password",
+        "message": "Sisesta lukustuse salasõna",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
@@ -1072,11 +1072,11 @@
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
-        "message": "Save & continue",
+        "message": "Salvesta ja jätka",
         "description": "Button to save the extension unlock password and continue setup"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Impordi eelmised seadistused",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
@@ -1088,15 +1088,15 @@
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Eelmine üldsalasõna",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Impordi eelmised seadistused",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Impordi eelmine paigaldus",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
@@ -1108,39 +1108,39 @@
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Jätka ülevaatamisega",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "Impordi ja lõpeta seadistus",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Testi ühendust",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Kontrolli ueusti kõiki",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Kasuta aktiivse ühendusena",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Vastenduse ja automaattäite eelistused",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Sisesta üks sait ühele reale. Nendest luuakse eiramisreeglid, kui „eira lehte“ on kasutusel.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "pole kontrollitud",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
-        "message": "checking…",
+        "message": "kontrollin…",
         "description": "Probe status: in progress"
     },
     "server": {
@@ -1148,11 +1148,11 @@
         "description": "Label for a server connection"
     },
     "experimental": {
-        "message": "Experimental",
+        "message": "Katsetusjärgus",
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Eelmiste seadistuste dekrüptimine ei õnnestu. Kontrolli üldsalasõna õigsust ja proovi uuesti.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
@@ -1160,7 +1160,7 @@
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
-        "message": "Could not import previous settings.",
+        "message": "Eelmiste seadistuste importimine ei õnnestunud.",
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
@@ -1192,11 +1192,11 @@
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
-        "message": "Unknown error in refreshCredentialList",
+        "message": "Tundmatu viga salasõnakirjete loendi uuesti laadimisel",
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
-        "message": "Expected extension page not found",
+        "message": "Eeldatud laiendusmooduli lehte ei leidu",
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
@@ -1220,27 +1220,27 @@
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Remove $TAG$ tag",
+        "message": "Eemalda „$TAG$“ silt",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
-        "message": "-- Click to add --",
+        "message": "-- Lisamiseks klõpsa --",
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "No $FIELDNAME$ to copy",
+        "message": "„$FIELDNAME$“ väljal pole midagi kopeeritavat",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Could not find selected credential",
+        "message": "Valitud salasõnakirje leidmine ei õnnestunud",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Unknown error occurred while deleting a credential",
+        "message": "Salasõnakirje kustutamisel tekkis tundmatu viga",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "An error occurred while deleting a credential",
+        "message": "Salasõnakirje kustutamisel tekkis viga",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
@@ -1260,19 +1260,19 @@
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Dismiss alert",
+        "message": "Sulge hoiatus",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Credential icon",
+        "message": "Salasõnakirje ikoon",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
-        "message": "OTP QR code",
+        "message": "Ühekordse salasõna QR-kood",
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
-        "message": "Auto fill",
+        "message": "Automaattäide",
         "description": "Browser context menu item to auto-fill credentials"
     },
     "context_menu_copy_username": {
@@ -1316,19 +1316,19 @@
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
-        "message": "Unknown error while checking extension lock state!",
+        "message": "Laiendusmooduli lukustuse oleku kontrollimisel tekkis tundmatu viga!",
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
-        "message": "Login succeeded",
+        "message": "Sisselogimine õnnestus",
         "description": "Success message after Nextcloud login"
     },
     "login_failed": {
-        "message": "Login failed",
+        "message": "Sisselogimine ei õnnestunud",
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
-        "message": "No server info provided",
+        "message": "Serveriteave on puudu",
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {
@@ -1336,23 +1336,23 @@
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "No credential data provided",
+        "message": "Salasõnakirje jaoks vajalikke andmeid pole",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "No source tab found",
+        "message": "Lähte-vahekaarti ei leidunud",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
-        "message": "Failed to save credential",
+        "message": "Salasõnakirje salvestamine ei õnnestu",
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Could not get backend passman client",
+        "message": "Taustateenuse Passmani kliendi laadimine ei õnnestu",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
-        "message": "Invalid request (check request body)",
+        "message": "Vigane päring (kontrolli päringu sisuosa)",
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
@@ -1360,31 +1360,31 @@
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "No connectionId provided",
+        "message": "Ühenduse tunnus on puudu",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
-        "message": "Could not get passman client",
+        "message": "Passmani kliendi laadimine ei õnnestu",
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "No managed connection with id $CONNECTION_ID$",
+        "message": "Ei leidu halatud ühendust tunnusega $CONNECTION_ID$",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
-        "message": "Selected vault could not be decrypted with the given password",
+        "message": "Valitud salasõnahoidla dekrüptimine antud salasõnaga ei õnnestu",
         "description": "Error when the provided vault password is wrong"
     },
     "could_not_get_selected_vault_by_guid": {
-        "message": "Could not get selected vault by guid",
+        "message": "Valitud salasõnahoidla teabe laadimine ei õnnestu GUID alusel",
         "description": "Error when the selected vault cannot be resolved by GUID"
     },
     "no_vault_info_in_extension_settings": {
-        "message": "No vault info provided by extension settings",
+        "message": "Laiendusmooduli seadistustes polnud määratletud salasõnahoidla teavet",
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {
-        "message": "Could not get custom password generator configuration",
+        "message": "Sinu kohandatud salasõnalooja seadistuste laadimine ei õnnestunud",
         "description": "Error when loading password generator settings fails"
     },
     "doorhanger_save_title": {

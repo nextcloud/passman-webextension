@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Lösenordshanteraren för Nextcloud/ownCloud",
+        "message": "Passman – lösenordshanteraren för Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -8,51 +8,63 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Inga uppgifter hittade för denna webbplats!",
+        "message": "Inga inloggningsuppgifter hittades för den här webbplatsen.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Inga uppgifter funna",
+        "message": "Inga inloggningsuppgifter hittades",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "Anteckningar",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "Beskrivning",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
-        "message": "Ogiltigt svar från server: [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Ogiltigt svar från servern: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Vänligen ange dina Nextcloud/ownCloud-uppgifter",
+        "message": "Ange dina inloggningsuppgifter för Nextcloud/ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
         "message": "Spara webbplats",
         "description": "Save site"
     },
+    "generator": {
+        "message": "Generator",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
         "message": "Lösenordsgenerator",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "Inställningar för lösenordsgenerering",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "Visa eller dölj utökade lösenordsinställningar",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "Generera lösenord",
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Växla synlighet",
+        "message": "Visa eller dölj",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Växla avancerade inställningar",
+        "message": "Visa eller dölj avancerade inställningar",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Använd lösenord",
+        "message": "Använd det genererade lösenordet",
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Efter du skapat det kan du ändra dina uppgifter i Passman",
+        "message": "När du har skapat inloggningsuppgiften kan du redigera den i Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -60,7 +72,7 @@
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minsta antalet siffror",
+        "message": "Minsta antal siffror",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
@@ -70,6 +82,22 @@
     "require_every_character_type": {
         "message": "Kräv alla teckentyper",
         "description": "Require every character type"
+    },
+    "use_uppercase": {
+        "message": "Använd versaler",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "Använd gemener",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "Använd siffror",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "Använd specialtecken",
+        "description": "Use special characters"
     },
     "add_account": {
         "message": "Lägg till konto",
@@ -95,104 +123,144 @@
         "message": "Lägg till",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "Inloggningsuppgiften ändrades",
+        "description": "Credential changed"
+    },
     "credential_created": {
-        "message": "Uppgifter skapade",
+        "message": "Inloggningsuppgiften skapades",
         "description": "Credential created"
+    },
+    "credentials_expires": {
+        "message": "Inloggningsuppgiften upphör att gälla",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "Utgångsdatum",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "Inget utgångsdatum har angetts",
+        "description": "No expiration date set for the credential password"
     },
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "tags": {
+        "message": "Taggar",
+        "description": "Tags"
     },
     "password": {
         "message": "Lösenord",
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Lösenord (upprepa)",
+        "message": "Upprepa lösenordet",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Upptäckte ny inloggning",
+        "message": "Ny inloggning identifierades",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Upptäckte ändrat lösenord för användare",
+        "message": "Ändrat lösenord upptäcktes för användaren",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ hittades för denna sida",
+        "message": "Passman – $CREDENTIAL_AMOUNT$ $PLURAL$ hittades för den här sidan",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Låst",
+        "message": "Passman – låst",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Upptäckte ändrad webbadress för",
+        "message": "Ändrad URL upptäcktes för",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "Redigera inloggningsuppgift",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "Skapa ny inloggningsuppgift",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "uppgifter",
-        "description": "credential"
+        "message": "Inloggningsuppgift",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "uppgifter",
-        "description": "credentials"
+        "message": "Inloggningsuppgifter",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "Det här lösenordet är komprometterat. Varningen kan endast tas bort genom att lösenordet ändras.",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "Markera som komprometterat",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
-        "message": "Uppdatera timer [s]",
+        "message": "Uppdateringsintervall [s]",
         "description": "Password"
     },
     "ignore_protocol": {
-        "message": "Ignorera protokoll för webbplatsmatchning",
+        "message": "Ignorera protokollet vid webbplatsmatchning",
         "description": "Ignore protocol for site matching"
     },
     "ignore_subdomain": {
-        "message": "Ignorera subdomän för webbplatsmatchning",
+        "message": "Ignorera underdomänen vid webbplatsmatchning",
         "description": "Password"
     },
     "ignore_port": {
-        "message": "Ignorera port för webbplatsmatchning",
+        "message": "Ignorera porten vid webbplatsmatchning",
         "description": "Ignore port for site matching"
     },
     "http_warning": {
-        "message": "Du använder HTTP! Inloggningsuppgifter skickas i vanlig text. Dina Passman-uppgifter är fortfarande krypterade.",
+        "message": "Du använder HTTP. Inloggningsuppgifterna skickas i klartext. Dina Passman-data är fortfarande krypterade.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignorera sökväg för webbplatsmatchning",
+        "message": "Ignorera sökvägen vid webbplatsmatchning",
         "description": "Ignore path for site matching"
     },
+    "ignore_page": {
+        "message": "Ignorera den här sidan när inloggningsuppgifter föreslås",
+        "description": "Checkbox label for ignoring a specific page"
+    },
     "enable_autofill": {
-        "message": "Aktivera automatisk formulärifyllning",
-        "description": "Disable auto fill of forms"
+        "message": "Aktivera automatisk ifyllning av formulär (vid en enda tydlig matchning)",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
-        "message": "Aktivera automatisk formulärskickning efter konto är valt",
+        "message": "Skicka formuläret automatiskt när ett konto har valts",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Be om att uppdatera autentiseringsadress om den inte matchar den aktuella webbadressen",
+        "message": "Fråga om inloggningsuppgiftens URL ska uppdateras när den inte stämmer med den aktuella URL:en",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Avaktivera automatisk ifyllning i webbläsare",
+        "message": "Inaktivera webbläsarens automatiska ifyllning",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Ange en domän eller TLD att ignorera och tryck enter",
+        "message": "Ange en domän eller toppdomän som ska ignoreras och tryck på Retur",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Aktivera lösenordsväljare",
+        "message": "Aktivera lösenordsväljaren",
         "description": "Disable password picker"
     },
     "password_picker_gotolist": {
-        "message": "När ett lösenord hittas, gå hellre till listan än sist aktiva flik",
+        "message": "Visa listan i stället för den senast aktiva fliken när en inloggningsuppgift hittas",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Göm avancerade alternativ",
+        "message": "Dölj avancerade alternativ",
         "description": "Disable password picker"
     },
     "show_adv": {
@@ -200,7 +268,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Aktivera debugläge",
+        "message": "Aktivera felsökningsläge",
         "description": "Enable debug mode"
     },
     "save": {
@@ -212,19 +280,31 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Uppgifter sparade",
+        "message": "Inloggningsuppgiften sparades",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Uppgifter uppdaterade",
+        "message": "Inloggningsuppgiften uppdaterades",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "Ett fel inträffade när inloggningsuppgiften uppdaterades",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "Ett fel inträffade när inloggningsuppgiften skapades",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "Öppna inställningssidan",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
-        "message": "Webbplats ignorerad",
+        "message": "Webbplatsen ignoreras",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "Webbadress ignorerad",
+        "message": "URL:en ignoreras",
         "description": "URL ignored"
     },
     "update": {
@@ -232,32 +312,32 @@
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignorera webbplats",
+        "message": "Ignorera webbplatsen",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Spara uppgifter för denna webbplats",
+        "message": "Spara inloggningsuppgifter för den här webbplatsen",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Sök uppgifter",
+        "message": "Sök efter inloggningsuppgifter",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Välkommen till Passman",
+        "message": "Välkommen till Passmans webbläsartillägg",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "Serverwebbadress",
+        "message": "Server-URL",
         "description": "Server URL"
     },
     "begin": {
         "message": "Låt oss sätta igång!",
-        "description": "Let's begin!"
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Guiden kommer visa dig igenom steget för att sätta upp ditt tillägg och behålla alla dina lösenord synkroniserade!",
-        "description": "Cancel"
+        "message": "Dina Nextcloud-lösenord, direkt i webbläsaren. En kort konfiguration ansluter tillägget till ditt Passman-valv.",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "Avbryt",
@@ -268,7 +348,7 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Välj valv som du vill synkronisera med webbläsaren.",
+        "message": "Välj det valv som ska hållas synkroniserat med webbläsaren.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
@@ -276,7 +356,7 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Detta lösenord kommer användas för att kryptera alla dina inställningar i tillägget. Du kan välja att spara lösenordet lokalt men det kommer sparas i OFORMATERAD TEXT.",
+        "message": "Det här lösenordet används för att kryptera alla inställningar i tillägget. Du kan välja att spara lösenordet lokalt, men då lagras det i klartext.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -284,20 +364,52 @@
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Varning! Ditt Huvudlösenord kommer att sparas i ren text",
+        "message": "Varning! Huvudlösenordet kommer att sparas i klartext",
         "description": "Remember master password"
     },
     "done": {
-        "message": "Färdig",
+        "message": "Klar",
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Anpassade Fält",
+        "message": "Anpassade fält",
         "description": "Custom fields"
+    },
+    "custom_fields_types_text": {
+        "message": "Text",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Lösenord",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "Fil",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "Lägg till fält",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "Fältetikett",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "Fältvärde",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "Fälttyp",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "Ingen fil har valts",
+        "description": "Custom field no file selected"
     },
     "general": {
         "message": "Allmänt",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
         "message": "Värde",
@@ -308,7 +420,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Ändra",
+        "message": "Redigera",
         "description": "Edit"
     },
     "server_settings": {
@@ -320,7 +432,7 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Sätt Huvudlösenord",
+        "message": "Ange ett huvudlösenord",
         "description": "Set a master password"
     },
     "finish": {
@@ -328,7 +440,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Om du vill glöm inte att donera",
+        "message": "Donera gärna om du uppskattar Passman",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -360,7 +472,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud/ownCloud serverinställningar",
+        "message": "Serverinställningar för Nextcloud/ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -368,23 +480,23 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignorera webbplatser / webbadresser",
+        "message": "Ignorerade webbplatser och URL:er",
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Inaktivera sida",
+        "message": "Inaktivera på sidan",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Inaktivera webbplats",
+        "message": "Inaktivera på webbplatsen",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Vill du inaktivera Passman för denna sida eller för hela webbplatsen?",
+        "message": "Vill du inaktivera Passman på den här sidan eller på hela webbplatsen?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Inga webbplatser ignorerade",
+        "message": "Inga webbplatser ignoreras",
         "description": "No sites ignored"
     },
     "vault_password": {
@@ -392,23 +504,23 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Vänligen fyll i en etikett",
+        "message": "Ange en etikett",
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Ogiltig serverwebbadress",
+        "message": "Ogiltig server-URL",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignorera webbplats / sida",
+        "message": "Ignorera webbplats eller sida",
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Lösenord matchar inte",
+        "message": "Lösenorden stämmer inte överens",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Ogiltig valvnyckel!",
+        "message": "Ogiltigt valvlösenord!",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -419,16 +531,52 @@
         "message": "Engångslösenord",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "Ogiltig OTP-konfiguration",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "OTP-hemlighet",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "Rensa OTP-konfigurationen",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "Utfärdare",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Typ",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "Siffror",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "Period",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "Algoritm",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "Filer",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "Inställningar",
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Efter installationsprocessen är färdig kan du lägga till fler konton.",
+        "message": "När installationen är klar kan du lägga till fler konton.",
         "description": "Search"
     },
     "account_added": {
-        "message": "Konto tillagt.",
+        "message": "Kontot lades till.",
         "description": "Search"
     },
     "select_vault": {
@@ -443,36 +591,48 @@
         "message": "Sök",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "Skriv för att söka",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
-        "message": "Uppgift borttagen",
+        "message": "Inloggningsuppgiften togs bort",
         "description": "Credential deleted"
     },
+    "mark_credential_deleted": {
+        "message": "Markera inloggningsuppgiften som borttagen",
+        "description": "Mark credential as deleted button label"
+    },
     "select_password_picker_default_tab": {
-        "message": "När lösenordsväljaren inte hittar några uppgifter kommer den gå till:",
+        "message": "När lösenordsväljaren inte hittar några inloggningsuppgifter ska den visa:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Tyvärr, inga valv funna. Vänligen skapa ett valv via Nextcloud/ownCloud-appen och försök igen.",
+        "message": "Inga valv hittades. Skapa ett valv i Nextcloud/ownCloud-appen och försök igen.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Du kan återställa ditt lösenord. Detta kommer återställa tillägget till dess standardläge.",
+        "message": "Du kan återställa lösenordet genom att återställa tillägget till standardläget.",
         "description": "Search"
     },
     "forgot_password": {
-        "message": "Glömt lösenordet?",
+        "message": "Har du glömt lösenordet?",
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Återställ tillägg",
+        "message": "Återställ tillägget",
         "description": "Search"
+    },
+    "reset_settings": {
+        "message": "Återställ inställningarna",
+        "description": "Reset settings button label"
     },
     "iam_sure": {
         "message": "Ja, jag är säker!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Du har inte tillstånd att ändra denna uppgift",
+        "message": "Du har inte behörighet att redigera den här inloggningsuppgiften",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -480,19 +640,19 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Uppdatera uppgiftslista",
+        "message": "Uppdatera listan över inloggningsuppgifter",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Utveckling är beroende av donationer, vänligen stöd oss",
+        "message": "Utvecklingen är beroende av donationer – stöd oss gärna",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Lås tillägg",
+        "message": "Lås tillägget",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Passman är låst, lås upp för att använda det",
+        "message": "Passman är låst. Lås upp tillägget för att använda det.",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
@@ -501,10 +661,14 @@
     },
     "unlock": {
         "message": "Lås upp",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "Lås upp utan att uppdatera",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
-        "message": "Vi hittade $AMOUNT$ uppgifter för denna plats",
+        "message": "$AMOUNT$ inloggningsuppgifter hittades för den här webbplatsen",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -516,7 +680,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ uppgifter i databasen",
+        "message": "$AMOUNT$ inloggningsuppgifter i databasen",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
@@ -532,8 +696,796 @@
         "description": "Add a custom field"
     },
     "text": {
-        "message": "text",
+        "message": "Text",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "Kopiera $FIELDNAME$ till urklipp",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START_HTML_TAG$Klicka för att ladda upp$END_HTML_TAG$ eller dra och släpp",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "Alla filtyper",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "Filen laddades upp",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "Filuppladdningen misslyckades",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "Filen togs bort",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "Det gick inte att ta bort filen",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "Filnamn",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "Skapad",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Storlek",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "Filuppladdning stöds tyvärr inte i popupfönstret.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "Använd webbläsartilläggets inställningssida eller en annan klient för att lägga till filer.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "Rensa flikens URL-filter",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "Inga matchande inloggningsuppgifter",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "Uppdatera standardinställningarna",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "Spara inställningarna",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "Utökade inställningar",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "Konfigurera globala utökade inställningar",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Konfiguration av Nextcloud-server",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "Konfigurera Nextcloud-servern och inloggningsuppgifterna för valvet",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "Anslut till servern",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "Logga in på Nextcloud och välj sedan det Passman-valv som webbläsaren ska hålla synkroniserat.",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "Sidregler",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "Skapa sidspecifika regler som anpassar tilläggets globala beteende. Reglerna gäller för närvarande endast domäner, inte enskilda sökvägar.",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "Sparade sidregler",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "Inga sidregler har definierats än",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "Sidans URL",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "Ny regel",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "Spara regel",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "Uppdatera regel",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "Ta bort regel",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "Sidregeln sparades",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "Sidregeln togs bort",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "Åsidosätt globala inställningar",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "Aktuell webbplats",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "Anpassa hur Passman fungerar på den här sidan.",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "Återställ ändringarna",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "Läser in sidinställningar …",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "Försök igen",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "Det gick inte att läsa in sidreglerna för den här webbplatsen",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "Det gick inte att spara sidreglerna",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "Sök bland regler",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "Filtrera efter URL …",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "Inga sidregler matchar sökningen",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "Avbryt",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "Använd global inställning",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "Tvinga aktivering",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "Tvinga inaktivering",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "Redigerar: $PAGE_URL$",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "Sidans URL måste anges",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "Det gick inte att läsa in sidreglerna",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "Det gick inte att spara sidregeln",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "Det gick inte att ta bort sidregeln",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "Åsidosättningar: $COUNT$",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "Spara inställningarna för standardvalvet",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "Inställningarna uppdaterades",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "Tilläggsversion",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "Använd e-postadress som reserv för användarnamn och tvärtom",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "Inställningar för formuläridentifiering",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "Aktivera händelsebaserad formuläridentifiering",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "Lyssna efter särskilda användarhändelser med fördröjning och frekvensbegränsning",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "Identifiera formulär vid popstate-händelser för URL:en",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "Främst användbart för ensidesappar (SPA), men inte enbart",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "Identifiera formulär när URL:en ändras genom kontroll varje sekund",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "Använd MutationObserver för att identifiera dynamiskt tillagda formulär och inmatningsfält vid DOM-ändringar",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "Den effektivaste men också mest resurskrävande metoden för att identifiera dynamiskt tillagda formulär och inmatningsfält vid DOM-ändringar",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "aktiverad",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "inaktiverad",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "Offlinecache",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "Krypterade valvdata lagras lokalt för användning offline. En rensad cache fylls automatiskt på igen nästa gång valv läses in från servern.",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "Beräknad storlek: $1 ($2 inloggningsuppgifter i $3 valv)",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "Beräknar offlinecachens storlek …",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "Det gick inte att beräkna offlinecachens storlek",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "Rensa offlinecache",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "Vill du ta bort den lokala offlinecachen för valv? Du behöver en nätverksanslutning för att läsa in valven igen.",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "Offlinecachen rensades",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "Det gick inte att rensa offlinecachen",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "server_connections": {
+        "message": "Sparade servrar",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "Tillägget använder en aktiv Nextcloud-server åt gången. Lägg till en reservserver här så att du snabbt kan växla om den primära servern inte är tillgänglig.",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "aktiv",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "Växla",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "Ta bort",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "Lägg till server",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "Inloggningsuppgifter för aktiv server",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "Vill du ta bort den sparade servern från tillägget? Offlinecachen för servern kan finnas kvar tills den rensas.",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "Aktiv server växlades",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "Det gick inte att växla server",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "Servern togs bort",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "Det gick inte att ta bort servern",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "Den här omarbetade versionen utvecklas fortfarande aktivt och kan innehålla brister.$BR$Hittat ett fel? Öppna gärna ett ärende på $LINK_START$GitHub$LINK_END$.",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "Välj ett upplåsningslösenord",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "Det här lösenordet låser tillägget på enheten och används för lokal kryptering av inställningarna. Det är inte valvlösenordet.",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "Spara och fortsätt",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "migrate_legacy_title": {
+        "message": "Importera tidigare inställningar",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Ange huvudlösenordet från ditt tidigare Passman-tillägg. Det blir också ditt nya upplåsningslösenord när du bekräftar importen.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Inställningar från ett tidigare Passman-tillägg hittades. Granska och redigera dem innan de importeras.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Tidigare huvudlösenord",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Importera tidigare inställningar",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Importera tidigare installation",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Lås upp de tidigare inställningarna med ditt gamla huvudlösenord för att granska vad som kommer att importeras.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Redigera anslutningar och inställningar efter behov. Anslutningarnas och valvens status kontrolleras mot dina servrar.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Fortsätt till granskning",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Importera och slutför konfigurationen",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Testa anslutningen",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Kontrollera alla igen",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Använd som aktiv anslutning",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Inställningar för matchning och automatisk ifyllning",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "En webbplats per rad. Dessa omvandlas till sidregler där ”Ignorera sida” är aktiverat.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "inte kontrollerad",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "kontrollerar …",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimentell",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Det gick inte att dekryptera de tidigare inställningarna. Kontrollera huvudlösenordet och försök igen.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "De tidigare inställningarna innehåller inga serverkonton att importera.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Det gick inte att importera de tidigare inställningarna.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Importerade serveranslutningar från den tidigare installationen: $COUNT$",
+        "description": "Success toast after importing legacy settings"
+    },
+    "passman_app_required": {
+        "message": "Det här tillägget kräver att $LINK_START$Passman-appen$LINK_END$ är installerad på Nextcloud-servern.",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "Inga data överförs någon annanstans än till den angivna Nextcloud-servern.",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "Ingen information om det valda valvet hittades",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "Det gick inte att dekryptera valvet",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "Ingen information om standardvalvet hittades",
+        "description": "Error when default vault metadata is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "Det gick inte att hämta eller dekryptera valvet",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "Okänt fel i refreshCredentialList",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "Den förväntade tilläggssidan hittades inte",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "Rapportera ett problem",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "Ärenden",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "Klicka för automatisk ifyllning",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "Lägg till en tagg",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "Ta bort taggen $TAG$",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "– Klicka för att lägga till –",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "Det finns inget $FIELDNAME$ att kopiera",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "Den valda inloggningsuppgiften hittades inte",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "Ett okänt fel inträffade när inloggningsuppgiften skulle tas bort",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "Ett fel inträffade när inloggningsuppgiften skulle tas bort",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "mycket svagt",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "svagt",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "bra",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "starkt",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "Stäng aviseringen",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "Ikon för inloggningsuppgift",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "QR-kod för OTP",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "Fyll i automatiskt",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "Kopiera användarnamn",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "Kopiera e-postadress",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "Kopiera lösenord",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "Kopiera URL",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "Kopiera OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "Läs in lösenordsväljaren igen",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "Och kopiera till urklipp",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "Och fyll i fälten",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "$FIELDNAME$ kopierades till urklipp",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "Det gick inte att kopiera $FIELDNAME$",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "Ett okänt fel inträffade när tilläggets låsstatus kontrollerades!",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "Inloggningen lyckades",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "Inloggningen misslyckades",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "Ingen serverinformation angavs",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "Okänt fel",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "Inga data för inloggningsuppgiften angavs",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "Ingen källflik hittades",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "Det gick inte att spara inloggningsuppgiften",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "Det gick inte att hämta Passman-klienten i bakänden",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "Ogiltig begäran (kontrollera begärans innehåll)",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "Det gick inte att hämta information om standardvalvet",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "Inget connectionId angavs",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "Det gick inte att hämta Passman-klienten",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "Ingen hanterad anslutning med id $CONNECTION_ID$ hittades",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "Det valda valvet kunde inte dekrypteras med det angivna lösenordet",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "Det gick inte att hämta det valda valvet med dess GUID",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "Ingen valvinformation angavs i tilläggsinställningarna",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "Det gick inte att hämta den anpassade konfigurationen för lösenordsgeneratorn",
+        "description": "Error when loading password generator settings fails"
+    },
+    "doorhanger_save_title": {
+        "message": "Spara inloggningen i Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Uppdatera inloggningen i Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Inte nu",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Inloggningsuppgift att uppdatera",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Namnlös inloggningsuppgift",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Inloggningsruta",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Välj hur frågan om att spara eller uppdatera en inloggning ska visas på webbplatser.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Layout",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Kortet svävar i ett hörn. Toppfältet är en banderoll över hela sidans bredd.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Kort",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Toppfält",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Placering",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Välj kortets hörn eller innehållets justering i toppfältet.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Uppe till höger",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Uppe till vänster",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Nere till höger",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Nere till vänster",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Loggning",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Lägsta loggnivå i konsolen för tillägget. Lägre nivåer innehåller fler detaljer. Standardvärdet i produktionsmiljö är fel.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Loggnivå",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Felsökning",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Logg",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Information",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Varning",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Fel",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",

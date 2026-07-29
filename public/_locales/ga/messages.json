@@ -1144,11 +1144,11 @@
         "description": "Probe status: in progress"
     },
     "server": {
-        "message": "Server",
+        "message": "Freastalaí",
         "description": "Label for a server connection"
     },
     "experimental": {
-        "message": "Experimental",
+        "message": "Turgnamhach",
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
