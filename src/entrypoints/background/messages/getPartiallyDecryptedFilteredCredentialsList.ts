@@ -66,15 +66,12 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                                 await myVault.refresh();
                             }
 
-                            let customFilteredCredentials = [];
                             if (body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
-                                customFilteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials) ?? [];
+                                filteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials) ?? [];
                             } else {
-                                customFilteredCredentials = CustomCredentialFilterService.getCredentialsByLabel(body.filterText, myVault.credentials);
+                                filteredCredentials = CredentialFilterService.getFilteredCredentials(myVault.credentials, FILTERS.SHOW_ALL, body.filterText);
                             }
 
-                            // apply the default filters after our custom filters
-                            filteredCredentials = CredentialFilterService.getFilteredCredentials(customFilteredCredentials ?? [], FILTERS.SHOW_ALL);
                             status = true;
                         } else {
                             errorMessage = i18n.getMessage('could_not_decrypt_vault');
