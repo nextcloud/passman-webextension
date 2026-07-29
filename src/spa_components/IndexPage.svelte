@@ -145,8 +145,10 @@
                                 credentials = vault.credentials;
                                 filteredCredentials = [];
                                 await applyCredentialFilter(null);
-                            } else {
+                            } else if (myVault) {
                                 errorMessage = i18n.getMessage('could_not_decrypt_vault');
+                            } else {
+                                errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                             }
                         } else {
                             errorMessage = i18n.getMessage('no_default_vault_info_found');

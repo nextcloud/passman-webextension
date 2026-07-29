@@ -121,6 +121,10 @@
 
         sendMessage('addNewServerConnection', loginData).then(async (value) => {
             if (value.status) {
+                // Reflect http to https upgrades in the form before vault selection / directory reload
+                if (value.baseUrl && value.baseUrl !== $server.value) {
+                    server.set(value.baseUrl);
+                }
                 // Mutate this realm's client; background already updated the SW client.
                 const authInfo = await ExtensionSettingsService.getPartialExtensionSettings(
                     ExtensionSettingsOptions.nextcloudServerAuthInfo
@@ -138,11 +142,11 @@
                 }
                 await scrollToVaultSelection();
             } else {
-                errorMessage = value.message;
+                errorMessage = value.message || i18n.getMessage('login_failed');
             }
         }).catch((error) => {
             logger.error(error);
-            errorMessage = error.message ?? i18n.getMessage('server_connection_add_failed');
+            errorMessage = error.message || i18n.getMessage('server_connection_add_failed');
         }).finally(() => {
             lockLoginButton = false;
         });

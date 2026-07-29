@@ -99,15 +99,33 @@ export default class ServerConnectionDirectoryService {
      * Upsert a connection into the directory and optionally make it active (syncing mirrors).
      * @param serverData The server data to upsert. Will always be the active one if there is no active connection yet.
      * @param makeActive Whether to make the connection active.
+     * @param replaceConnectionId When set (e.g. after http to https baseUrl upgrade), remove that old roster
+     *   entry and migrate its default-vault mapping to the new connectionId before upserting.
      * @returns The id of the upserted connection.
      */
     public static upsertServerConnection = async (
         serverData: NextcloudServerInfoInterface,
-        makeActive: boolean
+        makeActive: boolean,
+        replaceConnectionId?: string
     ): Promise<string> => {
         const connectionId = PassmanServerConnection.buildConnectionId(serverData);
         const settings = await ServerConnectionDirectoryService.ensureMigrated();
-        const connections = [...(settings[ExtensionSettingsOptions.nextcloudServerConnections] ?? [])];
+        let connections = [...(settings[ExtensionSettingsOptions.nextcloudServerConnections] ?? [])];
+        const vaultInfoByConnection = { ...(settings[ExtensionSettingsOptions.defaultVaultInfoByConnection] ?? {}) };
+
+        if (replaceConnectionId && replaceConnectionId !== connectionId) {
+            connections = connections.filter(
+                (c) => PassmanServerConnection.buildConnectionId(c) !== replaceConnectionId
+            );
+            if (vaultInfoByConnection[replaceConnectionId]) {
+                vaultInfoByConnection[connectionId] = vaultInfoByConnection[replaceConnectionId];
+                delete vaultInfoByConnection[replaceConnectionId];
+            }
+            if (settings[ExtensionSettingsOptions.activeConnectionId] === replaceConnectionId) {
+                settings[ExtensionSettingsOptions.activeConnectionId] = connectionId;
+            }
+        }
+
         const existingIndex = connections.findIndex(
             (c) => PassmanServerConnection.buildConnectionId(c) === connectionId
         );
@@ -117,11 +135,11 @@ export default class ServerConnectionDirectoryService {
             connections.push(serverData);
         }
         settings[ExtensionSettingsOptions.nextcloudServerConnections] = connections;
+        settings[ExtensionSettingsOptions.defaultVaultInfoByConnection] = vaultInfoByConnection;
 
         if (makeActive || !settings[ExtensionSettingsOptions.activeConnectionId]) {
             settings[ExtensionSettingsOptions.activeConnectionId] = connectionId;
             settings[ExtensionSettingsOptions.nextcloudServerAuthInfo] = serverData;
-            const vaultInfoByConnection = settings[ExtensionSettingsOptions.defaultVaultInfoByConnection] ?? {};
             const vaultInfo = vaultInfoByConnection[connectionId];
             if (vaultInfo) {
                 settings[ExtensionSettingsOptions.defaultVaultInfo] = vaultInfo;

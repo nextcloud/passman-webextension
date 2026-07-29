@@ -19,6 +19,8 @@ export interface ProbeServerConnectionResponse {
     /** Present when vaultGuid/vaultPassword were provided. */
     vaultUnlockOk?: boolean;
     backendAppId?: NextcloudServerInfoInterface["backendAppId"];
+    /** Final baseUrl after a successful same-host http to https redirect upgrade */
+    baseUrl?: string;
 }
 
 /**
@@ -46,14 +48,18 @@ onMessage('probeServerConnection', async (message) => {
         };
 
         const client = await BackendPassmanClient.createInstance(serverData);
+        const previousConnectionId = client.activeConnection.connectionId;
         const loginOk = await client.preloadVaults(true);
         if (!loginOk) {
             return {
                 status: false,
                 message: i18n.getMessage('login_failed'),
                 vaultSelectionList,
+                baseUrl: serverData.baseUrl,
             };
         }
+
+        client.syncConnectionIdentity(previousConnectionId);
 
         for (const preloadedVault of client.preloadedVaults) {
             vaultSelectionList.push({
@@ -76,12 +82,15 @@ onMessage('probeServerConnection', async (message) => {
             vaultSelectionList,
             vaultUnlockOk,
             backendAppId: serverData.backendAppId,
+            baseUrl: serverData.baseUrl,
         };
     } catch (e) {
         logger.error(e);
         return {
             status: false,
-            message: e instanceof Error ? e.message : i18n.getMessage('unknown_error'),
+            message: e instanceof Error
+                ? (e.message || i18n.getMessage('login_failed'))
+                : i18n.getMessage('unknown_error'),
             vaultSelectionList,
         };
     }

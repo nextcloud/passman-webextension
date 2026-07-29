@@ -47,8 +47,10 @@ onMessage('getCredentialsForVault', async (message) => {
                                 serializedCredentials.push(credential.getAsSerializable());
                             }
                             status = true;
-                        } else {
+                        } else if (myVault) {
                             errorMessage = i18n.getMessage('could_not_decrypt_vault');
+                        } else {
+                            errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                         }
                     } else {
                         errorMessage = i18n.getMessage('no_vault_info_in_extension_settings');
