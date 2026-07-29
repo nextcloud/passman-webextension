@@ -140,7 +140,10 @@
             } else {
                 errorMessage = value.message;
             }
-
+        }).catch((error) => {
+            logger.error(error);
+            errorMessage = error.message ?? i18n.getMessage('server_connection_add_failed');
+        }).finally(() => {
             lockLoginButton = false;
         });
     };
@@ -350,13 +353,26 @@
             </h3>
         {/if}
         <form on:submit|preventDefault={login}>
-            <CustomInputField label="{i18n.getMessage('server_url')}" bind:value={$server.value}/>
+            <CustomInputField
+                label="{i18n.getMessage('server_url')}"
+                bind:value={$server.value}
+                bind:disabled={lockLoginButton}
+                placeholder="https://..."
+            />
             <div class="mt-2">
-                <CustomInputField label="{i18n.getMessage('username')}" bind:value={$user.value}/>
+                <CustomInputField
+                    label="{i18n.getMessage('username')}"
+                    bind:value={$user.value}
+                    disabled={lockLoginButton}
+                />
             </div>
             <div class="mt-2">
-                <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
-                                    type="password"/>
+                <CustomInputField
+                    label="{i18n.getMessage('password')}"
+                    bind:value={$token.value}
+                    disabled={lockLoginButton}
+                    type="password"
+                />
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
                 <OnClickButton disabled={!$myForm.valid || lockLoginButton} callback="{login}">
