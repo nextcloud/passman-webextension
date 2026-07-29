@@ -25,6 +25,7 @@
     import { logger } from "~/services/ConsoleLoggingService";
 
     let searchInput = $state<string | null>(null);
+    let searchInputRef = $state<HTMLInputElement | undefined>(undefined);
     let overwriteInputFilterByTabUrlPromise = $state<Promise<string | null | undefined>>(Promise.resolve(undefined));
     let errorMessage = $state<string | null>(null);
     let vault = $state<Vault | null>(null);
@@ -114,6 +115,8 @@
     });
 
     onMount(() => {
+        searchInputRef?.focus();
+
         PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
                 // Only filter by the active tab URL in the popup; options page should show all credentials
@@ -189,7 +192,7 @@
             <Icon data={plus} scale={1.3}/>
         </InternalHrefLinkButton>
         <div class="">
-            <input bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
+            <input bind:this={searchInputRef} bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
                    class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-b-primary-focus
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
