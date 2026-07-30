@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "„Passman“ – slaptažodžių tvarkyklė, skirta „NextCloud“",
+        "message": "„Passman“ – slaptažodžių tvarkyklė, skirta „Nextcloud“",
         "description": "Extension description"
     },
     "search_for": {
@@ -336,7 +336,7 @@
         "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Jūsų „Nextcloud“ slaptažodžiai – pasiekiami naršyklėje. Atlikus trumpą sąranką, šis plėtinys susiejamas su jūsų „Passman“ saugykla.",
+        "message": "Jūsų „Nextcloud“ slaptažodžiai – pasiekiami naršyklėje. Atlikus trumpą sąranką, šis plėtinys susiejamas su jūsų „Passman“ slėptuvė.",
         "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
@@ -472,7 +472,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud / ownCloud serverio nustatymai",
+        "message": "„Nextcloud“ / „ownCloud“ serverio nustatymai",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -608,7 +608,7 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Atleiskite, nerasta jokių slėptuvių. Susikurkite slėptuvę per Nextcloud / ownCloud programėlę ir bandykite dar kartą.",
+        "message": "Atleiskite, nerasta jokių slėptuvių. Susikurkite slėptuvę per „Nextcloud“ / „ownCloud“ programėlę ir bandykite dar kartą.",
         "description": "Search"
     },
     "msg_reset_extension": {
