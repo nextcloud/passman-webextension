@@ -12,6 +12,7 @@
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import CredentialListElement from "~/spa_partials/InteractionElements/CredentialListElement.svelte";
     import Loading from "~/spa_components/Loading.svelte";
+    import LineLoading from "~/spa_components/LineLoading.svelte";
     import {
         GetCredentialsListMessagingFilterType,
         type DecryptedPartialCredentialData,
@@ -34,6 +35,8 @@
     let listItems = $state<DecryptedPartialCredentialData[]>([]);
     let pageIsLoading = $state(true);
     let manualRefreshInProgress = $state(false);
+    /** True from search keystroke through debounce + latest search response. */
+    let searchBusy = $state(false);
     let initialLoadIsDone = $state(false);
     let listFetchGeneration = 0;
     const isInPopup = Utils.isInPopup();
@@ -104,11 +107,14 @@
             if (generation === listFetchGeneration) {
                 pageIsLoading = false;
                 manualRefreshInProgress = false;
+                searchBusy = false;
             }
         }
     };
 
     const debouncedFetchFromSearch = Utils.debounce(() => {
+        // Re-assert in case a concurrent refresh cleared searchBusy while debounce was pending
+        searchBusy = true;
         void fetchCredentialList(true);
     }, 200);
 
@@ -118,6 +124,7 @@
             vault = null;
             listItems = [];
             urlFilter = null;
+            searchBusy = false;
             push('/unlock');
         });
     };
@@ -144,6 +151,7 @@
 
         untrack(() => {
             urlFilter = null;
+            searchBusy = true;
         });
         debouncedFetchFromSearch();
     });
@@ -229,11 +237,16 @@
                         disabled={!vault}>
             <Icon data={plus} scale={1.3}/>
         </InternalHrefLinkButton>
-        <div class="">
+        <div class="relative">
             <input bind:this={searchInputRef} bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
                    class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-b-primary-focus
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
+            {#if searchBusy}
+                <div class="absolute left-0 right-0 bottom-0 pointer-events-none">
+                    <LineLoading additionalStyle="border-radius: 0; background-color: transparent;"/>
+                </div>
+            {/if}
         </div>
         <OnClickButton callback={lockExtension} title={i18n.getMessage('lock_extension')} additionalClasses="w-12">
             <Icon data={lock} scale={1.3}/>
