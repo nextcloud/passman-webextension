@@ -34,7 +34,6 @@ export default defineConfig({
             "contextMenus",
             "storage",
             "tabs",
-            "scripting"
         ],
         web_accessible_resources: [
             {
