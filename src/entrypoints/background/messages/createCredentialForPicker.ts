@@ -4,7 +4,10 @@ import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import type {
     DecryptedCredentialInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/Credential/DecryptedCredentialInterface";
-import type { DecryptedPartialCredentialData } from "./getPartiallyDecryptedFilteredCredentialsList";
+import {
+    type DecryptedPartialCredentialData,
+    toDecryptedPartialCredentialData
+} from "./getPartiallyDecryptedFilteredCredentialsList";
 import { ExtensionBadgeService } from "~/services/backend/ExtensionBadgeService";
 import browser from "webextension-polyfill";
 import { onMessage } from "@/entrypoints/background/messaging";
@@ -81,14 +84,7 @@ onMessage('createCredentialForPicker', async (message) => {
                             if (await credential.save()) {
                                 myVault.credentials.push(credential);
                                 status = true;
-                                decryptedPartialCredentialData = {
-                                    guid: credential.guid,
-                                    label: credential.label,
-                                    username: credential.username,
-                                    email: credential.email,
-                                    password: credential.password,
-                                    icon: credential.icon,
-                                };
+                                decryptedPartialCredentialData = toDecryptedPartialCredentialData(credential, true);
 
                                 // Refresh all tab badges to show updated credential counts
                                 ExtensionBadgeService.createIconForTab(senderTab, false, myVault);

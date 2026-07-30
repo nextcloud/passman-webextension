@@ -1,6 +1,9 @@
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
 import PassmanClientService from "~/services/PassmanClientService";
-import type { DecryptedPartialCredentialData } from "./getPartiallyDecryptedFilteredCredentialsList";
+import {
+    type DecryptedPartialCredentialData,
+    toDecryptedPartialCredentialData
+} from "./getPartiallyDecryptedFilteredCredentialsList";
 import { ExtensionBadgeService } from "~/services/backend/ExtensionBadgeService";
 import browser from "webextension-polyfill";
 import { onMessage } from "@/entrypoints/background/messaging";
@@ -69,17 +72,7 @@ onMessage('updateCredentialForDoorhanger', async (message) => {
 
                             if (await credential.update()) {
                                 status = true;
-                                decryptedPartialCredentialData = {
-                                    guid: credential.guid,
-                                    label: credential.label,
-                                    username: credential.username,
-                                    email: credential.email,
-                                    password: credential.password,
-                                    otp: undefined,
-                                    icon: credential.icon,
-                                    is_shared_with_me: null,
-                                    is_shared_with_others: null
-                                };
+                                decryptedPartialCredentialData = toDecryptedPartialCredentialData(credential, true);
 
                                 ExtensionBadgeService.createIconForTab(senderTab, false, myVault);
                             } else {

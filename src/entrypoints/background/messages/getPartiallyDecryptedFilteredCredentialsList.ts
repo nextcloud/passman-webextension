@@ -6,6 +6,7 @@ import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import type { IconInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/IconInterface";
 import { onMessage } from "@/entrypoints/background/messaging";
 import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
+import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
 import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
 
@@ -30,6 +31,7 @@ export type DecryptedPartialCredentialData = {
     icon: IconInterface | null,
     is_shared_with_me: boolean | null,
     is_shared_with_others: boolean | null,
+    can_write: boolean | null,
 }
 
 export type GetCredentialsListMessagingResponse = {
@@ -38,16 +40,53 @@ export type GetCredentialsListMessagingResponse = {
     decryptedPartialCredentialData: DecryptedPartialCredentialData[]
 }
 
+export function toDecryptedPartialCredentialData(credential: Credential, forPicker: boolean = false): DecryptedPartialCredentialData {
+    if (forPicker) {
+        return {
+            guid: credential.guid,
+            label: credential.label,
+            username: credential.username,
+            email: credential.email,
+            password: credential.password,
+            otp: null,
+            icon: credential.icon,
+            is_shared_with_me: null,
+            is_shared_with_others: null,
+            can_write: null,
+        };
+    }
+    return {
+        guid: credential.guid,
+        label: credential.label,
+        username: credential.username,
+        email: credential.email,
+        password: credential.password,
+        otp: OTPService.updateOTP(credential.otp),
+        icon: credential.icon,
+        is_shared_with_me: credential.hasValidSharedKey() ? true : null,
+        is_shared_with_others: credential.acl ? true : null,
+        can_write: credential.acl === undefined
+            ? true
+            : credential.acl.permissions.hasPermission(SharingACL.permissions.WRITE),
+    };
+}
+
 onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     let status = false;
     let errorMessage = null;
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
 
-    if (message.data === undefined || !message.data.filterText || message.data.filterType === undefined || message.data.getCachedIfPossible === undefined) {
+    const body = message.data;
+    const filterTextIsString = typeof body?.filterText === 'string';
+    const invalidBody = body === undefined
+        || !filterTextIsString
+        || body.filterType === undefined
+        || body.getCachedIfPossible === undefined;
+
+    if (invalidBody) {
         errorMessage = i18n.getMessage('invalid_request_check_body');
     } else {
-        const body = message.data;
         await PassmanClientService.getBackendPassmanClient().then(async (backendPassmanClient) => {
             if (backendPassmanClient) {
                 return await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
@@ -84,17 +123,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         });
 
         for (const filteredCredential of filteredCredentials) {
-            decryptedPartialCredentialData.push({
-                guid: filteredCredential.guid,
-                label: filteredCredential.label,
-                username: filteredCredential.username,
-                email: filteredCredential.email,
-                password: filteredCredential.password,
-                otp: OTPService.updateOTP(filteredCredential.otp),
-                icon: filteredCredential.icon,
-                is_shared_with_me: filteredCredential.shared_key ? true : null,
-                is_shared_with_others: filteredCredential.acl ? true : null
-            });
+            decryptedPartialCredentialData.push(toDecryptedPartialCredentialData(filteredCredential));
         }
     }
 
