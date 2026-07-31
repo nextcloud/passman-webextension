@@ -65,11 +65,15 @@
     /** Keep count/estimates in sync with listItems before paint; $effect alone is one tick late after search. */
     const applyVirtualizerOptions = (
         items: DecryptedPartialCredentialData[],
-        scrollEl: HTMLDivElement | undefined = listScrollEl
+        scrollEl: HTMLDivElement | undefined = listScrollEl,
+        applyResizeToKnownExpandedRows: boolean = false
     ) => {
-        get(virtualizer).setOptions({
+        const v = get(virtualizer);
+        v.setOptions({
             count: items.length,
             getScrollElement: () => scrollEl ?? null,
+            // Key size cache by guid so filter/reorder does not reuse another credential's measured height at the same index.
+            getItemKey: (index) => items[index]?.guid ?? index,
             estimateSize: (index) => {
                 const guid = items[index]?.guid;
                 if (guid && sizeByGuid.has(guid)) {
@@ -79,10 +83,21 @@
             },
             overscan: 8,
         });
+
+        // Re-apply known expanded sizes at their new indexes after the list identity changes.
+        // Run only on effect to avoid running twice on the same list items with our "previous-tick-manual-call".
+        if (applyResizeToKnownExpandedRows) {
+            for (let index = 0; index < items.length; index++) {
+                const size = sizeByGuid.get(items[index].guid);
+                if (size != null) {
+                    v.resizeItem(index, size);
+                }
+            }
+        }
     };
 
     $effect(() => {
-        applyVirtualizerOptions(listItems, listScrollEl);
+        applyVirtualizerOptions(listItems, listScrollEl, true);
     });
 
     $effect(() => {
