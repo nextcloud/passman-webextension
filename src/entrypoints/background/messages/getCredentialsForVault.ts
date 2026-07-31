@@ -13,6 +13,8 @@ export type GetCredentialsForVaultMessagingConfiguration = {
 
 export type GetCredentialsForVaultMessagingRequest = {
     getCachedIfPossible?: boolean
+    /** Returns a single credential by guid in the serializedCredentials array, if provided. */
+    guid?: string
 }
 
 export type GetCredentialsForVaultMessagingResponse = {
@@ -43,12 +45,25 @@ onMessage('getCredentialsForVault', async (message) => {
                                 await myVault.refresh();
                             }
 
-                            for (const credential of myVault.credentials) {
-                                serializedCredentials.push(credential.getAsSerializable());
+                            const guid = message.data?.guid;
+                            if (guid) {
+                                const credential = myVault.getCredentialByGuid(guid);
+                                if (credential) {
+                                    serializedCredentials = [credential.getAsSerializable()];
+                                    status = true;
+                                } else {
+                                    errorMessage = i18n.getMessage('could_not_find_selected_credential');
+                                }
+                            } else {
+                                for (const credential of myVault.credentials) {
+                                    serializedCredentials.push(credential.getAsSerializable());
+                                }
+                                status = true;
                             }
-                            status = true;
-                        } else {
+                        } else if (myVault) {
                             errorMessage = i18n.getMessage('could_not_decrypt_vault');
+                        } else {
+                            errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                         }
                     } else {
                         errorMessage = i18n.getMessage('no_vault_info_in_extension_settings');

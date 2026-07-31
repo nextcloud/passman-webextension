@@ -24,8 +24,8 @@
     import type { ServerConnectionListItem } from "@/entrypoints/background/messages/listServerConnections";
     import { logger } from "~/services/ConsoleLoggingService";
 
-    const server = field('server', '', [required(), min(8)], { checkOnInit: true });
-    const user = field('user', '', [required(), min(3)], { checkOnInit: true });
+    const server = field('server', '', [required()], { checkOnInit: true });
+    const user = field('user', '', [required()], { checkOnInit: true });
     const token = field('token', '', [required()], { checkOnInit: true });
     const myForm = form(server, user, token);
 
@@ -121,6 +121,10 @@
 
         sendMessage('addNewServerConnection', loginData).then(async (value) => {
             if (value.status) {
+                // Reflect http to https upgrades in the form before vault selection / directory reload
+                if (value.baseUrl && value.baseUrl !== $server.value) {
+                    server.set(value.baseUrl);
+                }
                 // Mutate this realm's client; background already updated the SW client.
                 const authInfo = await ExtensionSettingsService.getPartialExtensionSettings(
                     ExtensionSettingsOptions.nextcloudServerAuthInfo
@@ -138,9 +142,12 @@
                 }
                 await scrollToVaultSelection();
             } else {
-                errorMessage = value.message;
+                errorMessage = value.message || i18n.getMessage('login_failed');
             }
-
+        }).catch((error) => {
+            logger.error(error);
+            errorMessage = error.message || i18n.getMessage('server_connection_add_failed');
+        }).finally(() => {
             lockLoginButton = false;
         });
     };
@@ -350,13 +357,26 @@
             </h3>
         {/if}
         <form on:submit|preventDefault={login}>
-            <CustomInputField label="{i18n.getMessage('server_url')}" bind:value={$server.value}/>
+            <CustomInputField
+                label="{i18n.getMessage('server_url')}"
+                bind:value={$server.value}
+                bind:disabled={lockLoginButton}
+                placeholder="https://..."
+            />
             <div class="mt-2">
-                <CustomInputField label="{i18n.getMessage('username')}" bind:value={$user.value}/>
+                <CustomInputField
+                    label="{i18n.getMessage('username')}"
+                    bind:value={$user.value}
+                    disabled={lockLoginButton}
+                />
             </div>
             <div class="mt-2">
-                <CustomInputField label="{i18n.getMessage('password')}" bind:value={$token.value}
-                                    type="password"/>
+                <CustomInputField
+                    label="{i18n.getMessage('password')}"
+                    bind:value={$token.value}
+                    disabled={lockLoginButton}
+                    type="password"
+                />
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
                 <OnClickButton disabled={!$myForm.valid || lockLoginButton} callback="{login}">

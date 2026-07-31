@@ -9,6 +9,7 @@ import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/Pas
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
+import { NextcloudServerError } from "@binsky/passman-client-ts/lib/Model/NextcloudServer";
 
 export interface AddNewServerConnectionRequest extends NextcloudServerInfoInterface {
     /** When true (default), the new/updated connection becomes the active one. */
@@ -20,6 +21,8 @@ export interface AddNewServerConnectionResponse {
     message: string;
     vaultSelectionList: { guid: string, name: string }[];
     connectionId?: string;
+    /** Final baseUrl after a successful same-host http to https redirect upgrade */
+    baseUrl?: string;
 }
 
 onMessage('addNewServerConnection', async (message) => {
@@ -27,6 +30,7 @@ onMessage('addNewServerConnection', async (message) => {
     let responseMessage = '';
     let vaultSelectionList: { guid: string, name: string }[] = [];
     let connectionId: string | undefined;
+    let baseUrl: string | undefined;
 
     try {
         if (!message.data) {
@@ -39,13 +43,14 @@ onMessage('addNewServerConnection', async (message) => {
 
         const { makeActive: makeActiveFlag, ...rawServerData } = message.data;
         const makeActive = makeActiveFlag !== false;
-        // Mutable copy — createInstance/addConnection may set backendAppId via probing
+        // Mutable copy — createInstance/addConnection may set backendAppId via probing;
+        // NextcloudServer may upgrade http to https baseUrl during fetch redirects.
         const serverData: NextcloudServerInfoInterface = {
             baseUrl: rawServerData.baseUrl,
             user: rawServerData.user,
             token: rawServerData.token,
             persistence: rawServerData.persistence ?? '',
-            backendAppId: rawServerData.backendAppId,
+            backendAppId: rawServerData.backendAppId ?? 'passman', // default to passman if not provided (to prevent 99% useless attempts to probe other apps for now)
         };
 
         const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
@@ -54,13 +59,21 @@ onMessage('addNewServerConnection', async (message) => {
         if (backendPassmanClient) {
             const directoryBefore = await ServerConnectionDirectoryService.getDirectory();
             const connection = await backendPassmanClient.addConnection(serverData, undefined, undefined, persistence);
-            connectionId = connection.connectionId;
+            const previousConnectionId = connection.connectionId;
             const wasAlreadyInDirectory = directoryBefore.connections.some(
-                (c) => PassmanServerConnection.buildConnectionId(c) === connectionId
+                (c) => PassmanServerConnection.buildConnectionId(c) === previousConnectionId
             );
 
             if (await connection.preloadVaults(true)) {
-                await ServerConnectionDirectoryService.upsertServerConnection(serverData, makeActive);
+                connectionId = backendPassmanClient.syncConnectionIdentity(previousConnectionId);
+                const replaceConnectionId = connectionId !== previousConnectionId
+                    ? previousConnectionId
+                    : undefined;
+                await ServerConnectionDirectoryService.upsertServerConnection(
+                    serverData,
+                    makeActive,
+                    replaceConnectionId
+                );
                 if (makeActive) {
                     backendPassmanClient.setActiveConnection(connectionId);
                     await ServerConnectionDirectoryService.syncActiveConnectionMirrors(connectionId);
@@ -74,12 +87,13 @@ onMessage('addNewServerConnection', async (message) => {
                 }
                 status = true;
                 responseMessage = i18n.getMessage('login_succeeded');
+                baseUrl = serverData.baseUrl;
             } else {
                 if (wasAlreadyInDirectory) {
                     // addConnection overwrote the in-memory entry; rebuild from persisted directory
                     PassmanClientService.invalidatePassmanClients();
                 } else {
-                    backendPassmanClient.removeConnection(connectionId);
+                    backendPassmanClient.removeConnection(previousConnectionId);
                 }
                 responseMessage = i18n.getMessage('login_failed');
             }
@@ -91,10 +105,18 @@ onMessage('addNewServerConnection', async (message) => {
                 persistence
             );
 
+            const previousConnectionId = backendPassmanClient.activeConnection.connectionId;
             if (await backendPassmanClient.preloadVaults(true)) {
-                connectionId = backendPassmanClient.activeConnection.connectionId;
+                connectionId = backendPassmanClient.syncConnectionIdentity(previousConnectionId);
+                const replaceConnectionId = connectionId !== previousConnectionId
+                    ? previousConnectionId
+                    : undefined;
                 PassmanClientService.updateBackendPassmanClient(backendPassmanClient);
-                await ServerConnectionDirectoryService.upsertServerConnection(serverData, true);
+                await ServerConnectionDirectoryService.upsertServerConnection(
+                    serverData,
+                    true,
+                    replaceConnectionId
+                );
                 await ServerConnectionDirectoryService.syncActiveConnectionMirrors(connectionId);
 
                 for (const preloadedVault of backendPassmanClient.preloadedVaults) {
@@ -105,14 +127,24 @@ onMessage('addNewServerConnection', async (message) => {
                 }
                 status = true;
                 responseMessage = i18n.getMessage('login_succeeded');
+                baseUrl = serverData.baseUrl;
             } else {
                 responseMessage = i18n.getMessage('login_failed');
             }
         }
     } catch (e) {
         logger.error(e);
-        if (e instanceof Error) {
-            responseMessage = e.message;
+        if (e instanceof NextcloudServerError) {
+            if (e.statusCode === 401) {
+                responseMessage = `${i18n.getMessage('login_failed')} (401)`;
+            } else {
+                responseMessage = i18n.getMessage('invalid_response_from_server', [
+                    e.statusCode ? e.statusCode.toString() : "",
+                    e.message?.trim() ?? i18n.getMessage('unknown_error')
+                ]);
+            }
+        } else if (e instanceof Error) {
+            responseMessage = e.message || i18n.getMessage('unknown_error');
         } else {
             responseMessage = i18n.getMessage('unknown_error');
         }
@@ -122,6 +154,7 @@ onMessage('addNewServerConnection', async (message) => {
         status,
         message: responseMessage,
         vaultSelectionList,
-        connectionId
+        connectionId,
+        baseUrl
     };
 });

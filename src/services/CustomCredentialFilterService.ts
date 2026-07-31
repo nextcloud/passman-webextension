@@ -3,21 +3,42 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionS
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import PageRulesService, { CombinedSettingsResponse } from "./PageRulesService";
 import { logger } from "~/services/ConsoleLoggingService";
+import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 
 export class CustomCredentialFilterService {
     /**
      * Creates and returns a new array of credentials that can be associated with the given tab url.
-     * Does not apply any other filters, like hidden credentials, deleted credentials, etc.
+     *
+     * Makes use of CredentialFilterService.getFilteredCredentials with the FILTERS.SHOW_ALL base filter and the urlFilterCallback as additional filter.
+     *
      * Returns an empty array, if the tab url is missing or an empty string.
+     *
      * @param userTabUrl
      * @param credentials All credentials, to filter for. (Usually all credentials of the vault.)
      * @returns An array of credentials that can be associated with the given tab url, or null if an error occurred.
      */
     public static getCredentialsByUrl = async (userTabUrl: string, credentials: Credential[]) => {
-        let found_list: Credential[] = [];
+        try {
+            const urlFilterCallback = await this.getCredentialsByUrlFilterCallback(userTabUrl, false);
+            return CredentialFilterService.getFilteredCredentials(
+                credentials, 
+                FILTERS.SHOW_ALL,
+                undefined,
+                undefined,
+                [urlFilterCallback]
+            );
+        } catch (e) {
+            // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
+            // instead of panicking, just return null to indicate an error
+            return null;
+        }
+    }
 
+    public static getCredentialsByUrlFilterCallback = async (userTabUrl: string, ignoreParseExceptionEntry = true): Promise<((credential: Credential) => boolean)> => {
+        const negativeIdentityFilter = (credential: Credential): boolean => false;
         if (!userTabUrl || userTabUrl === '') {
-            return found_list;
+            // identity filter, will not filter any credentials (filter logic won't return anything)
+            return negativeIdentityFilter;
         }
 
         let combinedSettings: CombinedSettingsResponse;
@@ -26,7 +47,7 @@ export class CustomCredentialFilterService {
             combinedSettings = await PageRulesService.getCombinedSettingsResponse(userTabUrl);
         } catch (e) {
             // early return, since the tab url is not a valid, parseable URL
-            return null;
+            return negativeIdentityFilter;
         }
 
         const ignoreProtocol = combinedSettings.mergedPageRules.ignoreProtocol ?? false;
@@ -34,10 +55,21 @@ export class CustomCredentialFilterService {
         const ignorePath = combinedSettings.mergedPageRules.ignorePath ?? true;
         const ignorePort = combinedSettings.mergedPageRules.ignorePort ?? false;
 
+        let url;
         try {
-            const url = ParserService.processURL(userTabUrl, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
+            url = ParserService.processURL(userTabUrl, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
+        } catch (e) {
+            if (ignoreParseExceptionEntry) {
+                return negativeIdentityFilter;
+            } else {
+                // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
+                logger.error("Error processing URL", e);
+                throw e;
+            }
+        }
 
-            for (const credential of credentials) {
+        return (credential: Credential): boolean => {
+            try {    
                 let credential_url = credential.url;
                 if (credential_url && credential_url !== '' && userTabUrl && !/^(ht)tps?:\/\//i.test(credential_url)) {
                     try {
@@ -50,21 +82,21 @@ export class CustomCredentialFilterService {
                 credential_url = ParserService.processURL(credential_url, ignoreProtocol, ignoreSubdomain, ignorePath, ignorePort);
                 if (credential_url) {
                     if (credential_url.split("\n").indexOf(url) !== -1) {
-                        found_list.push(credential);
+                        return true;
                     }
                 }
+            } catch (e) {
+                if (!ignoreParseExceptionEntry) {
+                    // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
+                    logger.error("Error processing URL", e);
+                    throw e;
+                }
             }
-        } catch (e) {
-            // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
-            logger.debug("Error processing URL", e);
-            // instead of panicking, just return null to indicate an error
-            return null;
+            return false;
         }
-
-        return found_list;
     }
 
-    public static getCredentialsByLabel = (searchInput: string, credentials: Credential[]) => {
+    public static getCredentialsByLabelOnly = (searchInput: string, credentials: Credential[]) => {
         let filtered: Credential[] = [];
         searchInput = searchInput.toLowerCase();
         if (searchInput && searchInput.trim() !== '') {

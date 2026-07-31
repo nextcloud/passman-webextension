@@ -186,6 +186,9 @@
         if (result.backendAppId) {
             conn.backendAppId = result.backendAppId;
         }
+        if (result.baseUrl && result.baseUrl !== conn.baseUrl) {
+            conn.baseUrl = result.baseUrl;
+        }
 
         if (result.status) {
             conn.connectionStatus = "ok";

@@ -60,11 +60,10 @@ export class ExtensionBadgeService {
         }
 
         const credentialsForUrl = await CustomCredentialFilterService.getCredentialsByUrl(url, vault.credentials);
-        const credentialsForTab = CredentialFilterService.getFilteredCredentials(credentialsForUrl ?? [], FILTERS.SHOW_ALL);
-        const credentialAmount = credentialsForTab?.length ?? 0;
+        const credentialAmount = credentialsForUrl?.length ?? 0;
 
         if (tab.active) {
-            ContextMenuService.updateActiveTabSpecificContextMenuItems(credentialsForTab ?? []);
+            ContextMenuService.updateActiveTabSpecificContextMenuItems(credentialsForUrl ?? []);
         }
 
         await browserAction.setBadgeText({

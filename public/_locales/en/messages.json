@@ -1311,7 +1311,7 @@
   },
   "no_default_vault_info_found": {
     "message": "No default vault info found",
-    "description": "Error when default vault metadata is missing"
+    "description": "Error when metadata about the default vault is missing"
   },
   "could_not_get_or_decrypt_vault": {
     "message": "Could not get or decrypt vault",

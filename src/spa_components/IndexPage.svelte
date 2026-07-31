@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    import { onMount, untrack } from "svelte";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import { externalLink, lock, plus, close } from "svelte-awesome/icons";
@@ -10,12 +10,14 @@
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import PassmanClientService from "~/services/PassmanClientService";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
-    import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import CredentialListElement from "~/spa_partials/InteractionElements/CredentialListElement.svelte";
     import Loading from "~/spa_components/Loading.svelte";
-    import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
-    import { CustomCredentialFilterService } from "~/services/CustomCredentialFilterService";
-    import type { GetCredentialsForVaultMessagingResponse } from "~/entrypoints/background/messages/getCredentialsForVault";
+    import LineLoading from "~/spa_components/LineLoading.svelte";
+    import {
+        GetCredentialsListMessagingFilterType,
+        type DecryptedPartialCredentialData,
+        type GetCredentialsListMessagingResponse
+    } from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import NotyService from "~/services/frontend/NotyService";
     import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import { i18n } from "~/lib/i18n";
@@ -24,108 +26,163 @@
     import Utils from "~/lib/Utils";
     import { logger } from "~/services/ConsoleLoggingService";
 
-    let searchInput: string | null = null;
-    let overwriteInputFilterByTabUrlPromise: Promise<string | null | undefined>;
-    let errorMessage: string | null = null;
-    let vault: Vault | null = null;
-    let credentials: Credential[] | null = null;
-    let filteredCredentials: Credential[] = [];
-    let pageIsLoading = true;
-    let initialLoadIsDone = false;
+    let searchInput = $state<string | null>(null);
+    let searchInputRef = $state<HTMLInputElement | undefined>(undefined);
+    /** Active tab-URL filter; null when inactive / cleared. */
+    let urlFilter = $state<string | null>(null);
+    let errorMessage = $state<string | null>(null);
+    let vault = $state<Vault | null>(null);
+    let listItems = $state<DecryptedPartialCredentialData[]>([]);
+    let pageIsLoading = $state(true);
+    let manualRefreshInProgress = $state(false);
+    /** True from search keystroke through debounce + latest search response. */
+    let searchBusy = $state(false);
+    let initialLoadIsDone = $state(false);
+    let listFetchGeneration = 0;
     const isInPopup = Utils.isInPopup();
 
-    const lockExtension = () => {
-        sendMessage('lockExtension').then(() => {
-            extensionUnlockStateStore.set(ExtensionUnlockState.LOCKED);
-            if (credentials) {
-                vault = null;
-                credentials = null;
-                filteredCredentials = [];
-            }
-            push('/unlock');
-        });
-    }
+    const resolveListFilter = (): {
+        filterType: GetCredentialsListMessagingFilterType,
+        filterText: string
+    } => {
+        // URL mode only while the tab URL filter is active and the user has not typed in search yet
+        if (urlFilter && searchInput === null) {
+            return {
+                filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
+                filterText: urlFilter
+            };
+        }
+        return {
+            filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
+            filterText: searchInput ?? ''
+        };
+    };
 
-    const refreshCredentialList = (getCachedIfPossible: boolean = false) => {
-        pageIsLoading = true;
-        sendMessage('getCredentialsForVault', {
-            getCachedIfPossible: getCachedIfPossible
-        }).then((response: GetCredentialsForVaultMessagingResponse) => {
-            if (response.status && vault) {
-                credentials = [];
-                for (const serializedCredential of response.serializedCredentials) {
-                    const credential = Credential.fromSerializable(serializedCredential, vault, vault.getServer());
-                    credentials.push(credential);
+    const fetchCredentialList = async (
+        getCachedIfPossible: boolean,
+        options: { showLoading?: boolean, manualRefresh?: boolean } = {}
+    ) => {
+        const showLoading = options.showLoading ?? false;
+        if (showLoading) {
+            pageIsLoading = true;
+        }
+        if (options.manualRefresh) {
+            manualRefreshInProgress = true;
+        }
+
+        const generation = ++listFetchGeneration;
+        const { filterType, filterText } = resolveListFilter();
+
+        try {
+            const response: GetCredentialsListMessagingResponse = await sendMessage(
+                'getPartiallyDecryptedFilteredCredentialsList',
+                {
+                    filterText,
+                    filterType,
+                    getCachedIfPossible
                 }
-                filteredCredentials = [];
-            } else {
-                NotyService.notyError(response.errorMessage ?? i18n.getMessage('unknown_error_refresh_credential_list'));
+            );
+
+            // if the generation has changed, the list has been refreshed since the request was made, so we can ignore the response
+            if (generation !== listFetchGeneration) {
+                return;
             }
-            pageIsLoading = false;
-        });
-    }
 
-    const openOptionsPage = () => {
-        browser.runtime.openOptionsPage();
-    }
-
-    const applyCredentialFilter = async (searchInput: string | null, isRecursiveCall = false) => {
-        filteredCredentials = [];
-
-        if (vault && credentials && credentials.length > 0) {
-            const overwriteInputFilterByTabUrl = await overwriteInputFilterByTabUrlPromise;
-            if (overwriteInputFilterByTabUrl && searchInput === null) {
-                await CustomCredentialFilterService.getCredentialsByUrl(overwriteInputFilterByTabUrl, credentials)
-                    .then(async (credentials) => {
-                        if (credentials) {
-                            filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL);
-                        } else {
-                            // error processing the tab url, just remove the url filter flag and continue with the regular search filter
-                            overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
-                            logger.debug("Error processing tab URL, removing url filter flag and continuing with regular search filter");
-                            if (!isRecursiveCall) {
-                                // only apply the filter recursively if it's not a recursive call
-                                // otherwise we would end up in an infinite loop
-                                // should never happen since we also set overwriteInputFilterByTabUrlPromise, but just to be sure
-                                await applyCredentialFilter(searchInput, true);
-                            }
-                        }
-                    });
+            if (response.status) {
+                listItems = response.decryptedPartialCredentialData;
+                errorMessage = null;
             } else {
-                // reset tab url search filter when entering a custom search value the first time
-                // to prevent it from being reset during the inital request by the reactive statement block below, we need to wait until the initial request is done
-                if (initialLoadIsDone || !overwriteInputFilterByTabUrl) {
-                    overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
-                    filteredCredentials = CredentialFilterService.getFilteredCredentials(credentials, FILTERS.SHOW_ALL, searchInput ?? '');
-                }
+                NotyService.notyError(
+                    response.errorMessage ?? i18n.getMessage('unknown_error_refresh_credential_list')
+                );
+            }
+        } catch (exception) {
+            if (generation !== listFetchGeneration) {
+                return;
+            }
+            logger.error(exception);
+            NotyService.notyError(i18n.getMessage('unknown_error_refresh_credential_list'));
+        } finally {
+            // only the latest request may clear loading status
+            if (generation === listFetchGeneration) {
+                pageIsLoading = false;
+                manualRefreshInProgress = false;
+                searchBusy = false;
             }
         }
     };
 
-    $: vault && credentials && applyCredentialFilter(searchInput ?? '');
+    const debouncedFetchFromSearch = Utils.debounce(() => {
+        // Re-assert in case a concurrent refresh cleared searchBusy while debounce was pending
+        searchBusy = true;
+        void fetchCredentialList(true);
+    }, 200);
+
+    const lockExtension = () => {
+        sendMessage('lockExtension').then(() => {
+            extensionUnlockStateStore.set(ExtensionUnlockState.LOCKED);
+            vault = null;
+            listItems = [];
+            urlFilter = null;
+            searchBusy = false;
+            push('/unlock');
+        });
+    };
+
+    const refreshCredentialList = (getCachedIfPossible: boolean = false) => {
+        void fetchCredentialList(getCachedIfPossible, { showLoading: true, manualRefresh: true });
+    };
+
+    const clearUrlFilter = () => {
+        urlFilter = null;
+        void fetchCredentialList(true);
+    };
+
+    const openOptionsPage = () => {
+        browser.runtime.openOptionsPage();
+    };
+
+    // After initial load, typing in search clears the URL filter and re-fetches (debounced)
+    $effect(() => {
+        const input = searchInput;
+        if (!vault || !initialLoadIsDone || input === null) {
+            return;
+        }
+
+        untrack(() => {
+            urlFilter = null;
+            searchBusy = true;
+        });
+        debouncedFetchFromSearch();
+    });
 
     onMount(() => {
+        searchInputRef?.focus();
+
         PassmanClientService.getPopupPassmanClient().then(async (popupPassmanClient) => {
             if (popupPassmanClient) {
                 // Only filter by the active tab URL in the popup; options page should show all credentials
                 if (isInPopup) {
-                    overwriteInputFilterByTabUrlPromise = browser.tabs.query({
-                        currentWindow: true,
-                        active: true
-                    }).then(function (activeTabs: browser.Tabs.Tab[]) {
+                    try {
+                        const activeTabs = await browser.tabs.query({
+                            currentWindow: true,
+                            active: true
+                        });
                         if (Array.isArray(activeTabs) && activeTabs.length !== 0 && activeTabs[0].url) {
-                            // check for a parseable URL as early as possible to avoid handling in multiple follow-up code paths
                             try {
                                 new URL(activeTabs[0].url);
-                                return activeTabs[0].url;
+                                urlFilter = activeTabs[0].url;
                             } catch (e) {
-                                // ignore, just return null to indicate an error
+                                urlFilter = null;
                             }
+                        } else {
+                            urlFilter = null;
                         }
-                        return null;
-                    });
+                    } catch (e) {
+                        urlFilter = null;
+                    }
                 } else {
-                    overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
+                    urlFilter = null;
                 }
 
                 ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.defaultVaultInfo).then(async (defaultVaultInfo) => {
@@ -142,20 +199,23 @@
                                 }
 
                                 vault = myVault;
-                                credentials = vault.credentials;
-                                filteredCredentials = [];
-                                await applyCredentialFilter(null);
-                            } else {
+                                await fetchCredentialList(true, { showLoading: true, manualRefresh: false });
+                            } else if (myVault) {
                                 errorMessage = i18n.getMessage('could_not_decrypt_vault');
+                                pageIsLoading = false;
+                            } else {
+                                errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
+                                pageIsLoading = false;
                             }
                         } else {
                             errorMessage = i18n.getMessage('no_default_vault_info_found');
+                            pageIsLoading = false;
                         }
                     } catch (exception) {
                         logger.error(exception);
                         errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
+                        pageIsLoading = false;
                     }
-                    pageIsLoading = false;
                     initialLoadIsDone = true;
                 });
             } else {
@@ -164,24 +224,29 @@
                 initialLoadIsDone = true;
             }
         });
-    })
+    });
 </script>
 
 <div class="h-full overflow-y-hidden flex flex-col">
     <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b border-gray-200 dark:border-gray-500 p-2 bg-white">
         <OnClickButton callback={refreshCredentialList} title={i18n.getMessage('refresh_credential_list')} additionalClasses="w-12"
-                       disabled={!vault}>
-            <Icon data={refresh} scale={1.3}/>
+                       disabled={!vault || manualRefreshInProgress}>
+            <Icon data={refresh} scale={1.3} spin={manualRefreshInProgress}/>
         </OnClickButton>
         <InternalHrefLinkButton href="/credential/add" title={i18n.getMessage('create_new_credential')} additionalClasses="w12"
                         disabled={!vault}>
             <Icon data={plus} scale={1.3}/>
         </InternalHrefLinkButton>
-        <div class="">
-            <input bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
+        <div class="relative">
+            <input bind:this={searchInputRef} bind:value={searchInput} placeholder={i18n.getMessage('type_to_search')}
                    class="block border-1 border-b-2 border-gray-200 p-2 focus:outline-none focus:border-b-primary-focus
         bg-blue-50 shadow-sm w-full dark:bg-neutral"
             />
+            {#if searchBusy}
+                <div class="absolute left-0 right-0 bottom-0 pointer-events-none">
+                    <LineLoading additionalStyle="border-radius: 0; background-color: transparent;"/>
+                </div>
+            {/if}
         </div>
         <OnClickButton callback={lockExtension} title={i18n.getMessage('lock_extension')} additionalClasses="w-12">
             <Icon data={lock} scale={1.3}/>
@@ -196,29 +261,30 @@
             <Loading/>
         {:else}
             <div class="flex flex-col items-center justify-center">
-                {#await overwriteInputFilterByTabUrlPromise then resolvedOverwriteInputFilterByTabUrl}
-                    {#if resolvedOverwriteInputFilterByTabUrl}
-                        <div class="text-gray-400 mb-1">
-                            <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" on:click={() => {
-                                overwriteInputFilterByTabUrlPromise = Promise.resolve(null);
-                                applyCredentialFilter(searchInput ?? '');
-                            }}>
-                                {i18n.getMessage('clear_tab_url_filter')}
-                                <Icon data={close} scale={0.8}/>
-                            </button>
-                        </div>
-                    {/if}
-                {/await}
+                {#if urlFilter}
+                    <div class="text-gray-400 mb-1">
+                        <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" onclick={clearUrlFilter}>
+                            {i18n.getMessage('clear_tab_url_filter')}
+                            <Icon data={close} scale={0.8}/>
+                        </button>
+                    </div>
+                {/if}
                 {#if errorMessage}
                     <div class="mt-2 text-red-600">
                         {errorMessage}
                     </div>
                 {/if}
 
-                {#each filteredCredentials as credential}
-                    <CredentialListElement bind:credential onCredChangedCallback={() => refreshCredentialList(true)}/>
-                {/each}
-                {#if !errorMessage && filteredCredentials.length === 0}
+                {#if vault}
+                    {#each listItems as item (item.guid)}
+                        <CredentialListElement
+                            decryptedPartialCredentialData={item}
+                            vault={vault}
+                            onCredChangedCallback={() => refreshCredentialList(true)}
+                        />
+                    {/each}
+                {/if}
+                {#if !errorMessage && listItems.length === 0}
                     <span class="text-gray-400 mt-4">
                         {i18n.getMessage('no_matching_credentials')}
                     </span>
