@@ -55,6 +55,19 @@
     const sizeByGuid = new Map<string, number>();
     const hydratePromisesByGuid = new Map<string, Promise<Credential | null>>();
 
+    /** Some known browser built-in URLs that should not be filtered by the URL filter. */
+    const noFilterUrls = new Set<string>([
+        'about:debugging',
+        'about:blank',
+        'about:newtab',
+        'about:home',
+        'about:addons',
+        'about:config',
+        'about:preferences',
+        'chrome://newtab/',
+        'chrome://extensions',
+    ]);
+
     const virtualizer = createVirtualizer<HTMLDivElement, HTMLDivElement>({
         count: 0,
         getScrollElement: () => null,
@@ -266,10 +279,15 @@
     } => {
         // URL mode only while the tab URL filter is active and the user has not typed in search yet
         if (urlFilter && searchInput === null) {
-            return {
-                filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
-                filterText: urlFilter
-            };
+            if (noFilterUrls.has(urlFilter)) {
+                // reset urlFilter and proceed like without a URL filter
+                urlFilter = null;
+            } else {
+                return {
+                    filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
+                    filterText: urlFilter
+                };
+            }
         }
         return {
             filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -308,11 +326,16 @@
             }
 
             if (response.status) {
-                listItems = response.decryptedPartialCredentialData;
-                errorMessage = null;
-                // Sync before the next render so getVirtualItems() cannot keep stale out-of-range indexes.
-                applyVirtualizerOptions(listItems);
-                get(virtualizer).scrollToOffset(0);
+                if (response.invalidUrlProvided) {
+                    // Opening the popup on an invalid URL to be filtered is not an error, but we handle it by clearing the URL filter.
+                    clearUrlFilter();
+                } else {
+                    listItems = response.decryptedPartialCredentialData;
+                    errorMessage = null;
+                    // Sync before the next render so getVirtualItems() cannot keep stale out-of-range indexes.
+                    applyVirtualizerOptions(listItems);
+                    get(virtualizer).scrollToOffset(0);
+                }
             } else {
                 NotyService.notyError(
                     response.errorMessage ?? i18n.getMessage('unknown_error_refresh_credential_list')
