@@ -15,6 +15,7 @@ import {
     DEFAULT_EXTENSION_LOG_LEVEL,
     type ExtensionLogLevel,
 } from "~/lib/extensionLogLevel";
+import type { OfflineCacheStorageBackend } from "~/services/OfflineCacheStorageService";
 import { logger } from "~/services/ConsoleLoggingService";
 
 export type DefaultVaultInfo = {
@@ -65,6 +66,12 @@ export enum ExtensionSettingsOptions {
 
     /** Minimum console log level for {@link ConsoleLoggingService}. */
     logLevel,
+
+    /**
+     * Offline model-store backend: native IndexedDB (persistent) or in-memory fake-indexeddb
+     * (lost on service-worker restart; used when native IDB is blocked).
+     */
+    offlineCacheStorageBackend,
 }
 
 export interface ExtensionSettings {
@@ -89,6 +96,7 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.doorhangerLayout]: DoorhangerLayout,
     [ExtensionSettingsOptions.doorhangerGravity]: DoorhangerGravity,
     [ExtensionSettingsOptions.logLevel]: ExtensionLogLevel,
+    [ExtensionSettingsOptions.offlineCacheStorageBackend]: OfflineCacheStorageBackend,
 }
 
 /**
@@ -187,6 +195,9 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.logLevel:
                 returnValue = DEFAULT_EXTENSION_LOG_LEVEL as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.offlineCacheStorageBackend:
+                returnValue = "indexeddb" as ExtensionSettings[K];
                 break;
             default:
                 returnValue = null;

@@ -53,7 +53,7 @@ onMessage('addNewServerConnection', async (message) => {
             backendAppId: rawServerData.backendAppId ?? 'passman', // default to passman if not provided (to prevent 99% useless attempts to probe other apps for now)
         };
 
-        const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+        const persistence = await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
         let backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
 
         if (backendPassmanClient) {

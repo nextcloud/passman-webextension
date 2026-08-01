@@ -5,12 +5,17 @@
     import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     import LegacySettingsMigrationService from "~/services/LegacySettingsMigrationService";
+    import CustomStorageService from "~/services/CustomStorageService";
+    import OfflineCacheStorageService from "~/services/OfflineCacheStorageService";
+    import { sendMessage } from "@/entrypoints/background/messaging";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import { i18n } from "~/lib/i18n";
     import browser from "webextension-polyfill";
     import passmanBlueWhiteImage from "~/assets/images/passman-blue-white.svg";
     import passmanImage from "~/assets/images/passman.svg";
+    import Icon from "svelte-awesome/components/Icon.svelte";
+    import { warning } from "svelte-awesome/icons";
 
     export let params: { isInPopup: string };
 
@@ -18,6 +23,17 @@
     let isExtensionUnlocked = false;
     let processNewUnlockPassword = false;
     let showLegacyImport = false;
+
+    const ensurePersistenceService = async (syncBackground = false) => {
+        try {
+            await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
+            if (syncBackground) {
+                // probe/init background persistence after unlock password exists
+                await sendMessage("recreateOfflineCachePersistence", {});
+            }
+        } catch {
+        }
+    };
 
     onMount(() => {
         // Popup only offers "open options"; migrate UI lives on the options setup screen.
@@ -27,12 +43,20 @@
         LegacySettingsMigrationService.hasLegacyData().then((hasLegacy) => {
             showLegacyImport = hasLegacy;
         });
+        void ExtensionUnlockService.isUnlocked().then(async (unlocked) => {
+            if (unlocked) {
+                // do not ask to setup a new unlock password if the extension is already unlocked
+                isExtensionUnlocked = true;
+                await ensurePersistenceService(false);
+            }
+        });
     });
 
     async function setUnlockPassword() {
         processNewUnlockPassword = true;
         await ExtensionUnlockService.setUpExtensionPassword(newExtensionUnlockPassword);
         isExtensionUnlocked = true;
+        await ensurePersistenceService(true);
         processNewUnlockPassword = false;
         push('/setup/server');
     }
@@ -121,9 +145,7 @@
 
         <div class="mt-5 w-full rounded-lg border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-left">
             <div class="flex gap-2.5">
-                <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                </svg>
+                <Icon data={warning} scale={1.0} class="mt-0.5 h-4 w-4 shrink-0 text-amber-500"/>
                 <p class="text-xs leading-relaxed text-amber-800">
                     {@html i18n.getMessage('setup_dev_warning', [
                         '<br>',

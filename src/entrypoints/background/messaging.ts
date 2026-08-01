@@ -73,6 +73,10 @@ import {
     ProbeServerConnectionRequest,
     ProbeServerConnectionResponse
 } from "@/entrypoints/background/messages/probeServerConnection";
+import {
+    RecreateOfflineCachePersistenceRequest,
+    RecreateOfflineCachePersistenceResponse
+} from "@/entrypoints/background/messages/recreateOfflineCachePersistence";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -124,6 +128,8 @@ interface ProtocolMap {
     getDoorhangerSettings(): GetDoorhangerSettingsResponse;
 
     probeServerConnection(data: ProbeServerConnectionRequest): ProbeServerConnectionResponse;
+
+    recreateOfflineCachePersistence(data?: RecreateOfflineCachePersistenceRequest): RecreateOfflineCachePersistenceResponse;
 
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;

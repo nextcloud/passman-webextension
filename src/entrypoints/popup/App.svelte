@@ -11,9 +11,11 @@
   import { sendMessage } from "@/entrypoints/background/messaging";
   import { i18n } from "~/lib/i18n";
   import ConsoleLoggingService, { logger } from "~/services/ConsoleLoggingService";
+  import { flushOfflineCacheNotices } from "~/services/frontend/flushOfflineCacheNotices";
 
   onMount(async () => {
     void ConsoleLoggingService.refreshLogLevel();
+    void flushOfflineCacheNotices();
 
     sendMessage('getExtensionUnlockState').then((value) => {
       // use locked as initial state; will be overridden by the actual state right after the switch

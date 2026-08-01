@@ -28,7 +28,7 @@ export default class PassmanClientService {
             return null;
         }
 
-        const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+        const persistence = await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
         const [first, ...rest] = connections;
         const client = await BackendPassmanClient.createInstance(first, undefined, undefined, persistence);
 
@@ -53,7 +53,7 @@ export default class PassmanClientService {
         }
 
         const logger = new CustomPopupPassmanClientLoggingService();
-        const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+        const persistence = await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
         const [first, ...rest] = connections;
         // Shared IndexedDB model store with the background client; restore fills preloaded/full vaults offline
         const client = await PassmanClient.createInstance(
@@ -100,7 +100,7 @@ export default class PassmanClientService {
             }
         }
 
-        const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+        const persistence = await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
         for (const [connectionId, serverData] of directoryById) {
             if (client.getConnection(connectionId)) {
                 continue;
@@ -148,7 +148,7 @@ export default class PassmanClientService {
         serverData: NextcloudServerInfoInterface,
         makeActive: boolean
     ): Promise<void> => {
-        const persistence = CustomStorageService.getExtensionPassmanClientPersistenceService();
+        const persistence = await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
 
         if (PassmanClientService.backendPassmanClient) {
             const connection = await PassmanClientService.backendPassmanClient.addConnection(
@@ -196,6 +196,7 @@ export default class PassmanClientService {
     };
 
     public static getBackendPassmanClient = async () => {
+        await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
         const { connections, activeConnectionId } = await ServerConnectionDirectoryService.getDirectory();
 
         if (PassmanClientService.backendPassmanClient) {
@@ -222,6 +223,7 @@ export default class PassmanClientService {
     };
 
     public static getPopupPassmanClient = async () => {
+        await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
         const { connections, activeConnectionId } = await ServerConnectionDirectoryService.getDirectory();
 
         if (PassmanClientService.popupPassmanClient) {
