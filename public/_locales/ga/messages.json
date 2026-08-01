@@ -1185,7 +1185,7 @@
     },
     "no_default_vault_info_found": {
         "message": "Níor aimsíodh aon fhaisnéis réamhshocraithe faoin chruinneachán",
-        "description": "Error when default vault metadata is missing"
+        "description": "Error when metadata about the default vault is missing"
     },
     "could_not_get_or_decrypt_vault": {
         "message": "Níorbh fhéidir an cruinneachán a fháil ná a dhíchriptiú",
