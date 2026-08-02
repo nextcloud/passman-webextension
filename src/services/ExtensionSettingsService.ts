@@ -65,6 +65,11 @@ export enum ExtensionSettingsOptions {
 
     /** Minimum console log level for {@link ConsoleLoggingService}. */
     logLevel,
+
+    /** Whether to enable the doorhanger overlay for collecting passwords. */
+    enableDoorhanger,
+    /** Whether to enable the password picker overlay for selecting passwords / filling forms. */
+    enablePasswordPicker,
 }
 
 export interface ExtensionSettings {
@@ -89,6 +94,8 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.doorhangerLayout]: DoorhangerLayout,
     [ExtensionSettingsOptions.doorhangerGravity]: DoorhangerGravity,
     [ExtensionSettingsOptions.logLevel]: ExtensionLogLevel,
+    [ExtensionSettingsOptions.enableDoorhanger]: boolean,
+    [ExtensionSettingsOptions.enablePasswordPicker]: boolean,
 }
 
 /**
@@ -187,6 +194,12 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.logLevel:
                 returnValue = DEFAULT_EXTENSION_LOG_LEVEL as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enableDoorhanger:
+                returnValue = true as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enablePasswordPicker:
+                returnValue = true as ExtensionSettings[K];
                 break;
             default:
                 returnValue = null;

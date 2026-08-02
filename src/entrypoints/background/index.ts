@@ -10,6 +10,7 @@ import './messages/ping';
 import './messages/nextcloudServerMessagingConnectorApi';
 import './messages/unlockExtension';
 import './messages/lockExtension';
+import './messages/changeExtensionPassword';
 import './messages/setDefaultVault';
 import './messages/getPossibleVaultsInfo';
 import './messages/getPasswordGeneratorConfiguration';

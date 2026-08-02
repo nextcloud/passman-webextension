@@ -276,8 +276,8 @@
     "description": "Disable auto fill of forms"
   },
   "enable_password_picker": {
-    "message": "Enable password picker",
-    "description": "Disable password picker"
+    "message": "Enable password picker overlay for selecting passwords / filling forms",
+    "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
   },
   "password_picker_gotolist": {
     "message": "When a password is found, go to list rather than last active tab",
@@ -1185,6 +1185,30 @@
     "message": "Save & continue",
     "description": "Button to save the extension unlock password and continue setup"
   },
+  "change_unlock_password": {
+    "message": "Change unlock password",
+    "description": "Section title for changing the extension unlock password in extended settings"
+  },
+  "current_unlock_password": {
+    "message": "Current unlock password",
+    "description": "Label for the current extension unlock password field"
+  },
+  "new_unlock_password": {
+    "message": "New unlock password",
+    "description": "Label for the new extension unlock password field"
+  },
+  "change_unlock_password_button": {
+    "message": "Change password",
+    "description": "Button to submit a change of the extension unlock password"
+  },
+  "unlock_password_changed_successfully": {
+    "message": "Unlock password changed successfully",
+    "description": "Success toast after changing the extension unlock password"
+  },
+  "unlock_password_change_failed": {
+    "message": "Could not change the unlock password. Check the current password and try again.",
+    "description": "Error when changing the extension unlock password fails"
+  },
   "migrate_legacy_title": {
     "message": "Import previous settings",
     "description": "Title for the legacy MV2 settings import block on the setup screen"
@@ -1542,6 +1566,10 @@
   "could_not_get_password_generator_configuration": {
     "message": "Could not get custom password generator configuration",
     "description": "Error when loading password generator settings fails"
+  },
+  "enable_doorhanger": {
+    "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+    "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
   },
   "doorhanger_save_title": {
     "message": "Save login to Passman?",

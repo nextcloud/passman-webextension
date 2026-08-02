@@ -252,8 +252,8 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Passwortsammler einschalten",
-        "description": "Disable password picker"
+        "message": "Passwortauswahl aktivieren",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
         "message": "Bei gefundenen Passwörtern zur Liste gehen anstatt zum zuletzt aktiven Tab",

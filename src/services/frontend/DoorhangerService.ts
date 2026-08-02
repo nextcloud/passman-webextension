@@ -33,6 +33,7 @@ export type DoorhangerShowPayload = {
  * offer resolution, and add/update actions.
  */
 export class DoorhangerService {
+    private static enabled = true;
     private static successHandledForCaptureAt: number | null = null;
     private static delayedEvaluateTimeouts: number[] = [];
     private static onOfferCallback: ((payload: DoorhangerShowPayload) => void) | null = null;
@@ -41,6 +42,10 @@ export class DoorhangerService {
 
     /** Delays (ms) after submit to re-check form-gone success without a URL change */
     private static readonly POST_SUBMIT_EVALUATE_DELAYS_MS = [400, 1200, 3000];
+
+    public static setEnabled = (enabled: boolean): void => {
+        DoorhangerService.enabled = enabled;
+    }
 
     public static setOnOfferCallback = (
         callback: ((payload: DoorhangerShowPayload) => void) | null
@@ -60,6 +65,10 @@ export class DoorhangerService {
      * Call once when the password picker initializes for the page (covers full reloads)
      */
     public static init = (): void => {
+        if (!DoorhangerService.enabled) {
+            void DoorhangerService.clearPending();
+            return;
+        }
         void DoorhangerService.evaluateAfterPossibleLogin();
     }
 
@@ -67,6 +76,9 @@ export class DoorhangerService {
      * Call on SPA URL changes
      */
     public static onUrlChanged = (_newUrl: string, _oldUrl: string): void => {
+        if (!DoorhangerService.enabled) {
+            return;
+        }
         void DoorhangerService.evaluateAfterPossibleLogin();
     }
 
@@ -74,6 +86,10 @@ export class DoorhangerService {
      * Capture submitted login fields into the tab-scoped SW pending store
      */
     public static cacheFromFormSubmit = async (loginFields: FillableLoginFormFields): Promise<boolean> => {
+        if (!DoorhangerService.enabled) {
+            return false;
+        }
+
         const pageUrl = window.location.href;
         const username = loginFields.usernameField?.value?.trim() || undefined;
         const email = loginFields.emailField?.value?.trim() || undefined;
@@ -124,6 +140,10 @@ export class DoorhangerService {
      * Does not clear pending on show (kept until dismiss/save or TTL).
      */
     public static evaluateAfterPossibleLogin = async (): Promise<DoorhangerSuccessDetectionResult | null> => {
+        if (!DoorhangerService.enabled) {
+            return null;
+        }
+
         let pending: PendingDoorhangerCredential | null | undefined;
 
         try {
@@ -274,9 +294,15 @@ export class DoorhangerService {
         DoorhangerService.onOfferCallback = null;
         DoorhangerService.onUrlMatchedCredentialsCallback = null;
         DoorhangerService.onCredentialUpsertCallback = null;
+        DoorhangerService.enabled = true;
     }
 
     private static handleSuccess = async (pending: PendingDoorhangerCredential): Promise<void> => {
+        if (!DoorhangerService.enabled) {
+            await DoorhangerService.clearPending();
+            return;
+        }
+
         // avoid repeating success side-effects for the same capture
         if (DoorhangerService.successHandledForCaptureAt === pending.capturedAt) {
             return;
