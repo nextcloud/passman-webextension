@@ -276,8 +276,8 @@
     "description": "Disable auto fill of forms"
   },
   "enable_password_picker": {
-    "message": "Enable password picker",
-    "description": "Disable password picker"
+    "message": "Enable password picker overlay for selecting passwords / filling forms",
+    "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
   },
   "password_picker_gotolist": {
     "message": "When a password is found, go to list rather than last active tab",
@@ -1566,6 +1566,10 @@
   "could_not_get_password_generator_configuration": {
     "message": "Could not get custom password generator configuration",
     "description": "Error when loading password generator settings fails"
+  },
+  "enable_doorhanger": {
+    "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+    "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
   },
   "doorhanger_save_title": {
     "message": "Save login to Passman?",

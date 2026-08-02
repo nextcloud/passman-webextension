@@ -45,6 +45,8 @@
         | ExtensionSettingsOptions.doorhangerLayout
         | ExtensionSettingsOptions.doorhangerGravity
         | ExtensionSettingsOptions.logLevel
+        | ExtensionSettingsOptions.enableDoorhanger
+        | ExtensionSettingsOptions.enablePasswordPicker
     >;
 
     const extensionVersion = packageJson.version;
@@ -62,6 +64,8 @@
         [ExtensionSettingsOptions.doorhangerLayout]: DEFAULT_DOORHANGER_LAYOUT,
         [ExtensionSettingsOptions.doorhangerGravity]: DEFAULT_DOORHANGER_GRAVITY,
         [ExtensionSettingsOptions.logLevel]: DEFAULT_EXTENSION_LOG_LEVEL,
+        [ExtensionSettingsOptions.enableDoorhanger]: true,
+        [ExtensionSettingsOptions.enablePasswordPicker]: true,
     });
 
     const doorhangerLayoutOptions: { [key: string]: string } = {
@@ -198,6 +202,10 @@
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval];
                     extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionByMutationObserver)
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver];
+                    extendedSettings[ExtensionSettingsOptions.enableDoorhanger] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableDoorhanger)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableDoorhanger];
+                    extendedSettings[ExtensionSettingsOptions.enablePasswordPicker] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enablePasswordPicker)
+                        ?? extendedSettings[ExtensionSettingsOptions.enablePasswordPicker];
 
                     const layoutValue = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.doorhangerLayout)
                         ?? doorhangerLayoutSelectValue.value;
@@ -257,6 +265,12 @@
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
                                 id="enableEmailAsUsernameFallbackFilling"
                                 label={i18n.getMessage('enable_email_as_username_fallback_filling')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableDoorhanger]}
+                                id="enableDoorhanger"
+                                label={i18n.getMessage('enable_doorhanger')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enablePasswordPicker]}
+                                id="enablePasswordPicker"
+                                label={i18n.getMessage('enable_password_picker')}/>
         
         <hr class="my-4 border-gray-200"/>
 
