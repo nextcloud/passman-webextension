@@ -150,7 +150,6 @@ export default class CustomStorageService {
 
     /**
      * Probe/resolve offline-cache backend and create the PassmanClient persistence singleton.
-     * Must be awaited before {@link getExtensionPassmanClientPersistenceService}.
      */
     public static async ensureExtensionPassmanClientPersistenceService(
         preferred?: OfflineCacheStorageBackend
@@ -187,19 +186,6 @@ export default class CustomStorageService {
 
         const resolvedPreferred = preferred ?? await this.readPreferredOfflineCacheBackend();
         return this.ensureExtensionPassmanClientPersistenceService(resolvedPreferred);
-    }
-
-    /**
-     * Persistence for PassmanClient: model store (+ optional decrypted-field cache).
-     * Call {@link ensureExtensionPassmanClientPersistenceService} first.
-     */
-    public static getExtensionPassmanClientPersistenceService() {
-        if (!this.extensionPersistenceService) {
-            throw new Error(
-                "CustomStorageService.ensureExtensionPassmanClientPersistenceService() must be awaited before getExtensionPassmanClientPersistenceService()"
-            );
-        }
-        return this.extensionPersistenceService;
     }
 
     private static async getOfflineModelStore(): Promise<OfflineModelStore> {

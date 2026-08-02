@@ -58,7 +58,7 @@ export default class PassmanClientService {
         // Shared IndexedDB model store with the background client; restore fills preloaded/full vaults offline
         const client = await PassmanClient.createInstance(
             first,
-            new NextcloudServerMessagingConnector(first, logger),
+            new NextcloudServerMessagingConnector(first, logger, persistence),
             logger,
             persistence
         );
@@ -66,7 +66,7 @@ export default class PassmanClientService {
         for (const serverData of rest) {
             await client.addConnection(
                 serverData,
-                new NextcloudServerMessagingConnector(serverData, logger),
+                new NextcloudServerMessagingConnector(serverData, logger, persistence),
                 logger,
                 persistence
             );
@@ -109,7 +109,7 @@ export default class PassmanClientService {
                 const logger = new CustomPopupPassmanClientLoggingService();
                 await client.addConnection(
                     serverData,
-                    new NextcloudServerMessagingConnector(serverData, logger),
+                    new NextcloudServerMessagingConnector(serverData, logger, persistence),
                     logger,
                     persistence
                 );
@@ -167,7 +167,7 @@ export default class PassmanClientService {
             const popupServerData: NextcloudServerInfoInterface = { ...serverData };
             const connection = await PassmanClientService.popupPassmanClient.addConnection(
                 popupServerData,
-                new NextcloudServerMessagingConnector(popupServerData, logger),
+                new NextcloudServerMessagingConnector(popupServerData, logger, persistence),
                 logger,
                 persistence
             );
