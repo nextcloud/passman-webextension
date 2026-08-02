@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import NextcloudServerSettings from "~/spa_components/Settings/NextcloudServerSettings.svelte";
-    import CustomStorageService from "~/services/CustomStorageService";
+    import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
     import OfflineCacheStorageService from "~/services/OfflineCacheStorageService";
     import { i18n } from "~/lib/i18n";
     import passmanBlueWhiteImage from "~/assets/images/passman-blue-white.svg";
@@ -12,7 +12,7 @@
     let showOfflineCacheFallbackNotice = $state(false);
 
     onMount(() => {
-        void CustomStorageService.ensureExtensionPassmanClientPersistenceService()
+        void OfflineCachePersistenceService.get()
             .then(() => {
                 showOfflineCacheFallbackNotice = !OfflineCacheStorageService.isNativeAvailable();
             })

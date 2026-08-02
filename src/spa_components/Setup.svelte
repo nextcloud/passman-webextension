@@ -5,7 +5,7 @@
     import CustomInputField from "~/spa_partials/FormElements/CustomInputField.svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     import LegacySettingsMigrationService from "~/services/LegacySettingsMigrationService";
-    import CustomStorageService from "~/services/CustomStorageService";
+    import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
     import OfflineCacheStorageService from "~/services/OfflineCacheStorageService";
     import { sendMessage } from "@/entrypoints/background/messaging";
     // @ts-expect-error
@@ -26,7 +26,7 @@
 
     const ensurePersistenceService = async (syncBackground = false) => {
         try {
-            await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
+            await OfflineCachePersistenceService.get();
             if (syncBackground) {
                 // probe/init background persistence after unlock password exists
                 await sendMessage("recreateOfflineCachePersistence", {});

@@ -18,7 +18,8 @@
     import NotyService from "~/services/frontend/NotyService";
     import packageJson from "../../../package.json";
     import { i18n } from "~/lib/i18n";
-    import CustomStorageService from "~/services/CustomStorageService";
+    import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
+    import PassmanClientService from "~/services/PassmanClientService";
     import OfflineCacheStorageService, {
         type OfflineCacheStorageBackend,
     } from "~/services/OfflineCacheStorageService";
@@ -166,7 +167,7 @@
         offlineCacheSizeLoading = true;
         offlineCacheSizeError = false;
         try {
-            offlineCacheSize = await CustomStorageService.estimateOfflineModelStoreSize();
+            offlineCacheSize = await OfflineCachePersistenceService.estimateSize();
         } catch (e) {
             logger.error(e);
             offlineCacheSize = null;
@@ -182,7 +183,7 @@
         }
         clearingOfflineCache = true;
         try {
-            await CustomStorageService.clearOfflineModelStore();
+            await OfflineCachePersistenceService.clear();
             NotyService.notySuccess(i18n.getMessage('offline_cache_cleared_successfully'));
             await refreshOfflineCacheSize();
         } catch (e) {
@@ -200,7 +201,8 @@
     const applyOfflineCacheStorageBackend = async (
         selectedBackend: OfflineCacheStorageBackend
     ): Promise<boolean> => {
-        await CustomStorageService.recreateExtensionPassmanClientPersistenceService(selectedBackend);
+        PassmanClientService.invalidatePassmanClients();
+        await OfflineCachePersistenceService.recreate(selectedBackend);
         const bg = await sendMessage("recreateOfflineCachePersistence", { preferred: selectedBackend });
         syncOfflineCacheStatus();
 
@@ -297,7 +299,7 @@
                     ) ?? OfflineCacheStorageService.DEFAULT_BACKEND;
                     setOfflineCacheBackendSelect(offlineCacheBackendValue);
 
-                    await CustomStorageService.ensureExtensionPassmanClientPersistenceService(offlineCacheBackendValue);
+                    await OfflineCachePersistenceService.get(offlineCacheBackendValue);
                     syncOfflineCacheStatus();
                     // Reflect forced fallback in the select if settings were auto-updated
                     setOfflineCacheBackendSelect(OfflineCacheStorageService.getPreferred());

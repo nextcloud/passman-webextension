@@ -4,7 +4,7 @@ import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
 import { BackendPassmanClient } from "~/lib/BackendPassmanClient";
-import CustomStorageService from "~/services/CustomStorageService";
+import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
 import { PassmanServerConnection } from "@binsky/passman-client-ts/lib/Model/PassmanServerConnection";
 import { onMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
@@ -53,7 +53,7 @@ onMessage('addNewServerConnection', async (message) => {
             backendAppId: rawServerData.backendAppId ?? 'passman', // default to passman if not provided (to prevent 99% useless attempts to probe other apps for now)
         };
 
-        const persistence = await CustomStorageService.ensureExtensionPassmanClientPersistenceService();
+        const persistence = await OfflineCachePersistenceService.get();
         let backendPassmanClient = await PassmanClientService.getBackendPassmanClient();
 
         if (backendPassmanClient) {

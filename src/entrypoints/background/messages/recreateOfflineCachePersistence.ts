@@ -1,7 +1,8 @@
 import { onMessage } from "../messaging";
-import CustomStorageService from "~/services/CustomStorageService";
+import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
 import type { OfflineCacheStorageBackend } from "~/services/OfflineCacheStorageService";
 import OfflineCacheStorageService from "~/services/OfflineCacheStorageService";
+import PassmanClientService from "~/services/PassmanClientService";
 import { logger } from "~/services/ConsoleLoggingService";
 
 export interface RecreateOfflineCachePersistenceRequest {
@@ -16,7 +17,7 @@ export interface RecreateOfflineCachePersistenceResponse {
 
 /**
  * Recreate the offline cache persistence service of the background SW script.
- * Required since each, frontend (options/popup) and background SW, have their own CustomStorageService singleton.
+ * Required since each, frontend (options/popup) and background SW, have their own OfflineCachePersistenceService singleton.
  * While this architecture is basically fine and avoids lots of synchronisation work through the message api when using IndexedDB cache backend,
  * it does not work well with the in-memory cache backend (which exists duplicated in both realms).
  * So we need this little overhead to definitively keep backend and frontend storage instance configurations perfectly in sync.
@@ -24,7 +25,8 @@ export interface RecreateOfflineCachePersistenceResponse {
 onMessage("recreateOfflineCachePersistence", async (message) => {
     try {
         const preferred = message.data?.preferred;
-        await CustomStorageService.recreateExtensionPassmanClientPersistenceService(preferred);
+        PassmanClientService.invalidatePassmanClients();
+        await OfflineCachePersistenceService.recreate(preferred);
         return {
             status: true,
             effective: OfflineCacheStorageService.getEffective(),
