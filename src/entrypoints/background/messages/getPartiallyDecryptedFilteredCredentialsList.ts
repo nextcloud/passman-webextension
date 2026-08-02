@@ -37,7 +37,8 @@ export type DecryptedPartialCredentialData = {
 export type GetCredentialsListMessagingResponse = {
     status: boolean,
     errorMessage: string | null,
-    decryptedPartialCredentialData: DecryptedPartialCredentialData[]
+    decryptedPartialCredentialData: DecryptedPartialCredentialData[],
+    invalidUrlProvided: boolean | null
 }
 
 export function toDecryptedPartialCredentialData(credential: Credential, forPicker: boolean = false): DecryptedPartialCredentialData {
@@ -76,6 +77,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     let errorMessage = null;
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
+    let invalidUrlProvided: boolean | null = null;
 
     const body = message.data;
     const filterTextIsString = typeof body?.filterText === 'string';
@@ -106,7 +108,13 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                             }
 
                             if (body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
-                                filteredCredentials = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials) ?? [];
+                                const filterResult = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials);
+                                if (filterResult === null) {
+                                    // an empty result for an invalid URL is not an error, but we need to know about it, like in the IndexPage UI
+                                    invalidUrlProvided = true;
+                                } else {
+                                    filteredCredentials = filterResult;
+                                }
                             } else {
                                 filteredCredentials = CredentialFilterService.getFilteredCredentials(myVault.credentials, FILTERS.SHOW_ALL, body.filterText);
                             }
@@ -130,6 +138,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     return {
         status,
         errorMessage,
-        decryptedPartialCredentialData
+        decryptedPartialCredentialData,
+        invalidUrlProvided
     };
 });

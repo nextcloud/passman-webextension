@@ -47,7 +47,11 @@ export class CustomCredentialFilterService {
             combinedSettings = await PageRulesService.getCombinedSettingsResponse(userTabUrl);
         } catch (e) {
             // early return, since the tab url is not a valid, parseable URL
-            return negativeIdentityFilter;
+            if (ignoreParseExceptionEntry) {
+                return negativeIdentityFilter;
+            }
+            // re-throw the exception, since we want to know about it (and handle it in the caller most likely with a null return)
+            throw e;
         }
 
         const ignoreProtocol = combinedSettings.mergedPageRules.ignoreProtocol ?? false;

@@ -20,6 +20,7 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
+    "@tanstack/svelte-virtual": "^3.13.35",
     "js-sha512": "^0.9.0",
     "regexparam": "^3.0.0",
     "svelte": "^5.56.8",
