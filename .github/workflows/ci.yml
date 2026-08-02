@@ -45,6 +45,9 @@ jobs:
       - name: Type check
         run: bun run check-errors
 
+      - name: Test
+        run: bun run test
+
       - name: Build Chrome extension
         if: github.event_name == 'pull_request'
         run: bun run build

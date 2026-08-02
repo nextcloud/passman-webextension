@@ -1,8 +1,25 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import NextcloudServerSettings from "~/spa_components/Settings/NextcloudServerSettings.svelte";
+    import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
+    import OfflineCacheStorageService from "~/services/OfflineCacheStorageService";
     import { i18n } from "~/lib/i18n";
     import passmanBlueWhiteImage from "~/assets/images/passman-blue-white.svg";
     import passmanImage from "~/assets/images/passman.svg";
+    import Icon from "svelte-awesome/components/Icon.svelte";
+    import { warning } from "svelte-awesome/icons";
+
+    let showOfflineCacheFallbackNotice = $state(false);
+
+    onMount(() => {
+        void OfflineCachePersistenceService.get()
+            .then(() => {
+                showOfflineCacheFallbackNotice = !OfflineCacheStorageService.isNativeAvailable();
+            })
+            .catch(() => {
+                showOfflineCacheFallbackNotice = false;
+            });
+    });
 </script>
 
 <div class="flex h-full flex-col items-center px-6 py-8">
@@ -20,6 +37,22 @@
                 {i18n.getMessage('setup_server_step_intro')}
             </p>
         </div>
+
+        {#if showOfflineCacheFallbackNotice}
+            <div class="mb-4 w-full rounded-lg border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-left">
+                <div class="flex gap-2.5">
+                    <Icon data={warning} scale={1.0} class="mt-0.5 h-4 w-4 shrink-0 text-amber-500"/>
+                    <div class="text-xs leading-relaxed text-amber-800">
+                        <p>
+                            {i18n.getMessage('setup_offline_cache_fallback_notice')}
+                        </p>
+                        <p class="mt-1">
+                            * {i18n.getMessage('experimental')}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {/if}
 
         <div class="w-full">
             <NextcloudServerSettings/>

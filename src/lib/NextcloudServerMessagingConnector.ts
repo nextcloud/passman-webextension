@@ -5,8 +5,8 @@ import type { LoggingHandlerInterface } from "@binsky/passman-client-ts/lib/Inte
 import type {
     NextcloudServerInfoInterface
 } from "@binsky/passman-client-ts/lib/Interfaces/NextcloudServer/NextcloudServerInfoInterface";
+import type { PersistenceInterface } from "@binsky/passman-client-ts/lib/Interfaces/PersistenceInterface";
 import { NextcloudServer } from "@binsky/passman-client-ts/lib/Model/NextcloudServer";
-import CustomStorageService from "@/services/CustomStorageService";
 import { NextcloudServerMessagingConnectorService } from "@/services/NextcloudServerMessagingConnectorService";
 import PassmanClientService from "@/services/PassmanClientService";
 import { sendMessage } from "@/entrypoints/background/messaging";
@@ -19,10 +19,11 @@ export class NextcloudServerMessagingConnector extends NextcloudServer implement
      * Instead of directly executing fetch requests, request / response data will be transferred to the background service worker through the messaging api.
      * @param serverData
      * @param logger
+     * @param persistence
      * @throws ConfigurationError
      */
-    constructor(serverData: NextcloudServerInfoInterface, logger: LoggingHandlerInterface) {
-        super(serverData, logger, CustomStorageService.getExtensionPassmanClientPersistenceService());
+    constructor(serverData: NextcloudServerInfoInterface, logger: LoggingHandlerInterface, persistence: PersistenceInterface) {
+        super(serverData, logger, persistence);
     }
 
     private readonly handleConnectorJsonResponse = <T>(response: any, errorCallback: (response: Error) => void): T | void => {

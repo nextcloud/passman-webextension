@@ -23,6 +23,22 @@ export default class NotyService {
         type: "error"
     });
 
+    /** Sticky warning until the user dismisses it */
+    public static readonly notyPinnedWarning = (message: string, title?: string) => addToast({
+        message,
+        title,
+        type: "warning",
+        duration: 0,
+    });
+
+    /** Sticky error until the user dismisses it */
+    public static readonly notyPinnedError = (message: string, title?: string) => addToast({
+        message,
+        title,
+        type: "error",
+        duration: 0,
+    });
+
     public static readonly notyFormFieldErrors = (errors: IFormFieldError[]) => {
         errors.forEach((error: IFormFieldError) => NotyService.notyError(error.error));
     };

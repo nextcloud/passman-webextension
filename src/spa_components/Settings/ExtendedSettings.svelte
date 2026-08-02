@@ -18,6 +18,12 @@
     import NotyService from "~/services/frontend/NotyService";
     import packageJson from "../../../package.json";
     import { i18n } from "~/lib/i18n";
+    import OfflineCachePersistenceService from "~/services/OfflineCachePersistenceService";
+    import PassmanClientService from "~/services/PassmanClientService";
+    import OfflineCacheStorageService, {
+        type OfflineCacheStorageBackend,
+    } from "~/services/OfflineCacheStorageService";
+    import { sendMessage } from "@/entrypoints/background/messaging";
     import CustomStorageService from "~/services/CustomStorageService";
     import ChangeUnlockPassword from "~/spa_components/Settings/ChangeUnlockPassword.svelte";
     import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
@@ -45,6 +51,7 @@
         | ExtensionSettingsOptions.doorhangerLayout
         | ExtensionSettingsOptions.doorhangerGravity
         | ExtensionSettingsOptions.logLevel
+        | ExtensionSettingsOptions.offlineCacheStorageBackend
         | ExtensionSettingsOptions.enableDoorhanger
         | ExtensionSettingsOptions.enablePasswordPicker
     >;
@@ -64,6 +71,7 @@
         [ExtensionSettingsOptions.doorhangerLayout]: DEFAULT_DOORHANGER_LAYOUT,
         [ExtensionSettingsOptions.doorhangerGravity]: DEFAULT_DOORHANGER_GRAVITY,
         [ExtensionSettingsOptions.logLevel]: DEFAULT_EXTENSION_LOG_LEVEL,
+        [ExtensionSettingsOptions.offlineCacheStorageBackend]: OfflineCacheStorageService.DEFAULT_BACKEND,
         [ExtensionSettingsOptions.enableDoorhanger]: true,
         [ExtensionSettingsOptions.enablePasswordPicker]: true,
     });
@@ -97,6 +105,14 @@
         label: logLevelOptions[level],
         value: level,
     }));
+    const offlineCacheBackendOptions: Record<OfflineCacheStorageBackend, string> = {
+        indexeddb: i18n.getMessage('offline_cache_storage_backend_indexeddb'),
+        memory: i18n.getMessage('offline_cache_storage_backend_memory'),
+    };
+    const offlineCacheBackendItems = (Object.keys(offlineCacheBackendOptions) as OfflineCacheStorageBackend[]).map((key) => ({
+        label: offlineCacheBackendOptions[key],
+        value: key,
+    }));
     let doorhangerLayoutSelectValue = $state({
         label: doorhangerLayoutOptions[DEFAULT_DOORHANGER_LAYOUT],
         value: DEFAULT_DOORHANGER_LAYOUT,
@@ -109,11 +125,16 @@
         label: logLevelOptions[DEFAULT_EXTENSION_LOG_LEVEL],
         value: DEFAULT_EXTENSION_LOG_LEVEL,
     });
+    let offlineCacheBackendSelectValue = $state({
+        label: offlineCacheBackendOptions[OfflineCacheStorageService.DEFAULT_BACKEND],
+        value: OfflineCacheStorageService.DEFAULT_BACKEND as OfflineCacheStorageBackend,
+    });
 
     $effect(() => {
         extendedSettings[ExtensionSettingsOptions.doorhangerLayout] = doorhangerLayoutSelectValue.value;
         extendedSettings[ExtensionSettingsOptions.doorhangerGravity] = doorhangerGravitySelectValue.value;
         extendedSettings[ExtensionSettingsOptions.logLevel] = logLevelSelectValue.value;
+        extendedSettings[ExtensionSettingsOptions.offlineCacheStorageBackend] = offlineCacheBackendSelectValue.value;
     });
 
     let lockSaveButton = $state(false);
@@ -122,6 +143,21 @@
     let offlineCacheSizeError = $state(false);
     let offlineCacheSizeLoading = $state(false);
     let clearingOfflineCache = $state(false);
+    let offlineCacheEffective = $state<OfflineCacheStorageBackend>(OfflineCacheStorageService.DEFAULT_BACKEND);
+    let offlineCacheForcedFallback = $state(false);
+
+    const syncOfflineCacheStatus = () => {
+        offlineCacheEffective = OfflineCacheStorageService.getEffective();
+        offlineCacheForcedFallback = OfflineCacheStorageService.isForcedFallback();
+    };
+
+    const setOfflineCacheBackendSelect = (backend: OfflineCacheStorageBackend) => {
+        offlineCacheBackendSelectValue = {
+            value: backend,
+            label: offlineCacheBackendOptions[backend],
+        };
+        extendedSettings[ExtensionSettingsOptions.offlineCacheStorageBackend] = backend;
+    };
 
     const formatBytes = (bytes: number): string => {
         if (bytes < 1024) {
@@ -137,7 +173,7 @@
         offlineCacheSizeLoading = true;
         offlineCacheSizeError = false;
         try {
-            offlineCacheSize = await CustomStorageService.estimateOfflineModelStoreSize();
+            offlineCacheSize = await OfflineCachePersistenceService.estimateSize();
         } catch (e) {
             logger.error(e);
             offlineCacheSize = null;
@@ -153,7 +189,7 @@
         }
         clearingOfflineCache = true;
         try {
-            await CustomStorageService.clearOfflineModelStore();
+            await OfflineCachePersistenceService.clear();
             NotyService.notySuccess(i18n.getMessage('offline_cache_cleared_successfully'));
             await refreshOfflineCacheSize();
         } catch (e) {
@@ -164,18 +200,56 @@
         }
     };
 
+    /**
+     * Recreate offline model-store backends (frontend + background) and refresh size/status UI.
+     * @returns false when IndexedDB was requested but unavailable (forced memory); true otherwise
+     */
+    const applyOfflineCacheStorageBackend = async (
+        selectedBackend: OfflineCacheStorageBackend
+    ): Promise<boolean> => {
+        PassmanClientService.invalidatePassmanClients();
+        await OfflineCachePersistenceService.recreate(selectedBackend);
+        const bg = await sendMessage("recreateOfflineCachePersistence", { preferred: selectedBackend });
+        syncOfflineCacheStatus();
+
+        const effectiveMemory =
+            OfflineCacheStorageService.getEffective() === "memory" || bg.effective === "memory";
+        offlineCacheEffective = effectiveMemory ? "memory" : "indexeddb";
+        offlineCacheForcedFallback =
+            OfflineCacheStorageService.isForcedFallback() || bg.forcedFallback;
+        await refreshOfflineCacheSize();
+
+        if (selectedBackend === "indexeddb" && effectiveMemory) {
+            setOfflineCacheBackendSelect("memory");
+            NotyService.notyWarning(i18n.getMessage("offline_cache_indexeddb_unavailable_warning"));
+            return false;
+        }
+        return true;
+    };
+
     const save = async () => {
         lockSaveButton = true;
         logger.log("extendedSettings", extendedSettings);
-        for (const key of Object.keys(extendedSettings)) {
-            const settingId = Number(key) as keyof ExtendedSettingsForm;
-            await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);
-        }
-        await ConsoleLoggingService.setLogLevel(extendedSettings[ExtensionSettingsOptions.logLevel]);
+        try {
+            for (const key of Object.keys(extendedSettings)) {
+                const settingId = Number(key) as keyof ExtendedSettingsForm;
+                await ExtensionSettingsService.updatePartialExtensionSettings(settingId, extendedSettings[settingId]);
+            }
+            await ConsoleLoggingService.setLogLevel(extendedSettings[ExtensionSettingsOptions.logLevel]);
 
-        NotyService.notySuccess(i18n.getMessage('settings_updated_successfully'));
-        lockSaveButton = false;
-    }
+            const offlineCacheApplied = await applyOfflineCacheStorageBackend(
+                offlineCacheBackendSelectValue.value as OfflineCacheStorageBackend
+            );
+            if (offlineCacheApplied) {
+                NotyService.notySuccess(i18n.getMessage("settings_updated_successfully"));
+            }
+        } catch (e) {
+            logger.error(e);
+            NotyService.notyError(i18n.getMessage("unknown_error"));
+        } finally {
+            lockSaveButton = false;
+        }
+    };
 
     onMount(() => {
         ExtensionUnlockService.isSetupDone().then(async (isSetupDone) => {
@@ -227,6 +301,18 @@
                         label: logLevelOptions[logLevelValue],
                     };
 
+                    const offlineCacheBackendValue = (
+                        await ExtensionSettingsService.getPartialExtensionSettings(
+                            ExtensionSettingsOptions.offlineCacheStorageBackend,
+                            true
+                        )
+                    ) ?? OfflineCacheStorageService.DEFAULT_BACKEND;
+                    setOfflineCacheBackendSelect(offlineCacheBackendValue);
+
+                    await OfflineCachePersistenceService.get(offlineCacheBackendValue);
+                    syncOfflineCacheStatus();
+                    // Reflect forced fallback in the select if settings were auto-updated
+                    setOfflineCacheBackendSelect(OfflineCacheStorageService.getPreferred());
                     await refreshOfflineCacheSize();
                 } else {
                     push('/unlock');
@@ -373,6 +459,44 @@
 
         <h3 class="text-lg font-semibold">{i18n.getMessage('offline_cache')}</h3>
         <p class="text-xs text-gray-500">{i18n.getMessage('offline_cache_description')}</p>
+
+        <div class="mt-2">
+            <label for="offlineCacheStorageBackend"
+                   class="text-sm font-medium text-primary-light-text dark:text-primary-dark-text block mb-2">
+                {i18n.getMessage('offline_cache_storage_backend')}
+            </label>
+            <div class="my-2">
+                <Select
+                    multiple={false}
+                    clearable={false}
+                    searchable={false}
+                    showChevron={true}
+                    label="label"
+                    itemId="value"
+                    items={offlineCacheBackendItems}
+                    bind:value={offlineCacheBackendSelectValue}
+                    id="offlineCacheStorageBackend"
+                    --height="35px"
+                    --font-size="14px"
+                    containerStyles="height: 35px;"
+                />
+            </div>
+            <p class="description-text pl-0!">{i18n.getMessage('offline_cache_storage_backend_description')}</p>
+        </div>
+
+        {#if offlineCacheEffective === 'memory'}
+            <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
+                {#if offlineCacheForcedFallback}
+                    <p>{i18n.getMessage('offline_cache_forced_fallback_notice')}</p>
+                {:else}
+                    <p>{i18n.getMessage('offline_cache_memory_mode_notice')}</p>
+                {/if}
+                <p class="text-xs leading-relaxed text-amber-800 mt-1">
+                    * {i18n.getMessage('experimental')}
+                </p>
+            </div>
+        {/if}
+
         {#if offlineCacheSizeLoading}
             <p class="text-sm text-gray-500">{i18n.getMessage('offline_cache_size_loading')}</p>
         {:else if offlineCacheSizeError}
@@ -385,6 +509,9 @@
                     String(offlineCacheSize.vaultCount),
                 ])}
             </p>
+            {#if offlineCacheEffective === 'memory'}
+                <p class="text-xs text-gray-500">{i18n.getMessage('offline_cache_size_memory_note')}</p>
+            {/if}
         {/if}
         <OnClickButton
             callback={clearOfflineCache}

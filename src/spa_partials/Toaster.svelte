@@ -14,7 +14,7 @@
         message: string;
         title?: string;
         type?: ToastType;
-        duration?: number;  // milliseconds, default 5000
+        duration?: number;  // milliseconds, default 5000; use `0` for a pinned (sticky) toast
         showIcon?: boolean; // defaults to true
     };
 
@@ -31,7 +31,8 @@
 
         return toaster.addToast({
             data: toastData,
-            closeDelay: data.duration || defaultCloseDelay,
+            // nullish: duration 0 (pinned) must stay sticky (|| would fall back to default)
+            closeDelay: data.duration ?? defaultCloseDelay,
         });
     };
 </script>
