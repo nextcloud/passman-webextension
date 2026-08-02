@@ -1076,71 +1076,71 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Iompórtáil socruithe roimhe seo",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Cuir isteach an príomhfhocal faire ó do shíneadh Passman roimhe seo. Beidh sé mar do phasfhocal díghlasála nua freisin tar éis duit an t-allmhairiú a dheimhniú.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Fuarthas socruithe ó shíneadh Passman roimhe seo. Athbhreithnigh agus cuir in eagar iad sula n-allmhairítear iad.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Pasfhocal máistir roimhe seo",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Iompórtáil socruithe roimhe seo",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Iompórtáil suiteáil roimhe seo",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Díghlasáil na socruithe roimhe seo le do sheanphasfhocal máistir chun athbhreithniú a dhéanamh ar a n-allmhaireofar.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Cuir naisc agus roghanna in eagar de réir mar is gá. Déantar stádas an naisc agus an tseomra cruinneacháin a sheiceáil i gcoinne do fhreastalaithe.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Lean ar aghaidh ag athbhreithniú",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "Iompórtáil agus críochnaigh an socrú",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Tástáil nasc",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Athsheiceáil gach rud",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Úsáid mar nasc gníomhach",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Roghanna meaitseála & uathlíonta",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Suíomh amháin in aghaidh na líne. Is rialacha leathanaigh iad seo agus “neamhaird a dhéanamh den leathanach” cumasaithe.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "gan seiceáil",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
-        "message": "checking…",
+        "message": "ag seiceáil…",
         "description": "Probe status: in progress"
     },
     "server": {
@@ -1152,19 +1152,19 @@
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Níorbh fhéidir na socruithe roimhe seo a dhíchriptiú. Seiceáil an príomhfhocal faire agus déan iarracht arís.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "Níl aon chuntais freastalaí le hallmhairiú sna socruithe roimhe seo.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
-        "message": "Could not import previous settings.",
+        "message": "Níorbh fhéidir socruithe roimhe seo a iompórtáil.",
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "Iompórtáladh $COUNT$ nasc(anna) freastalaí ón suiteáil roimhe seo.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
@@ -1456,35 +1456,35 @@
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
-        "message": "Logging",
+        "message": "Logáil",
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "message": "Leibhéal loga consól íosta don síneadh seo. Tá níos mó sonraí i leibhéil níos ísle. Is é earráid an réamhshocrú le haghaidh táirgthe.",
         "description": "Description under the logging settings section"
     },
     "log_level": {
-        "message": "Log level",
+        "message": "Leibhéal loga",
         "description": "Label for extension console log level dropdown"
     },
     "log_level_debug": {
-        "message": "Debug",
+        "message": "Dífhabhtú",
         "description": "Log level option: debug"
     },
     "log_level_log": {
-        "message": "Log",
+        "message": "Logáil",
         "description": "Log level option: log"
     },
     "log_level_info": {
-        "message": "Info",
+        "message": "Eolas",
         "description": "Log level option: info"
     },
     "log_level_warn": {
-        "message": "Warning",
+        "message": "Rabhadh",
         "description": "Log level option: warn"
     },
     "log_level_error": {
-        "message": "Error",
+        "message": "Earráid",
         "description": "Log level option: error"
     },
     "extName": {
