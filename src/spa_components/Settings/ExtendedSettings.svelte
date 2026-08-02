@@ -472,6 +472,9 @@
                 {:else}
                     <p>{i18n.getMessage('offline_cache_memory_mode_notice')}</p>
                 {/if}
+                <p class="text-xs leading-relaxed text-amber-800 mt-1">
+                    * {i18n.getMessage('experimental')}
+                </p>
             </div>
         {/if}
 

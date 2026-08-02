@@ -42,9 +42,14 @@
             <div class="mb-4 w-full rounded-lg border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-left">
                 <div class="flex gap-2.5">
                     <Icon data={warning} scale={1.0} class="mt-0.5 h-4 w-4 shrink-0 text-amber-500"/>
-                    <p class="text-xs leading-relaxed text-amber-800">
-                        {i18n.getMessage('setup_offline_cache_fallback_notice')}
-                    </p>
+                    <div class="text-xs leading-relaxed text-amber-800">
+                        <p>
+                            {i18n.getMessage('setup_offline_cache_fallback_notice')}
+                        </p>
+                        <p class="mt-1">
+                            * {i18n.getMessage('experimental')}
+                        </p>
+                    </div>
                 </div>
             </div>
         {/if}
