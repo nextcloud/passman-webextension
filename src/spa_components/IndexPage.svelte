@@ -1,5 +1,7 @@
 <script lang="ts">
     import { onMount, untrack } from "svelte";
+    import { get } from "svelte/store";
+    import { createVirtualizer } from "@tanstack/svelte-virtual";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
     import { externalLink, lock, plus, close } from "svelte-awesome/icons";
@@ -9,6 +11,7 @@
     import extensionUnlockStateStore, { ExtensionUnlockState } from "~/stores/extensionUnlockStateStore";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import PassmanClientService from "~/services/PassmanClientService";
+    import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
     import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
     import CredentialListElement from "~/spa_partials/InteractionElements/CredentialListElement.svelte";
     import Loading from "~/spa_components/Loading.svelte";
@@ -18,6 +21,7 @@
         type DecryptedPartialCredentialData,
         type GetCredentialsListMessagingResponse
     } from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import type { GetCredentialsForVaultMessagingResponse } from "~/entrypoints/background/messages/getCredentialsForVault";
     import NotyService from "~/services/frontend/NotyService";
     import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
     import { i18n } from "~/lib/i18n";
@@ -25,6 +29,9 @@
     import { sendMessage } from "@/entrypoints/background/messaging";
     import Utils from "~/lib/Utils";
     import { logger } from "~/services/ConsoleLoggingService";
+
+    /** Collapsed row height including py-1 wrapper padding + card chrome (border/padding + two truncated text lines). */
+    const COLLAPSED_ROW_PX = 60;
 
     let searchInput = $state<string | null>(null);
     let searchInputRef = $state<HTMLInputElement | undefined>(undefined);
@@ -41,16 +48,246 @@
     let listFetchGeneration = 0;
     const isInPopup = Utils.isInPopup();
 
+    let listScrollEl = $state<HTMLDivElement | undefined>(undefined);
+    let expandedGuids = $state<Set<string>>(new Set());
+    let hydratedByGuid = $state<Map<string, Credential>>(new Map());
+    /** Measured expanded heights by guid; plain Map so scroll remasures do not invalidate Svelte. */
+    const sizeByGuid = new Map<string, number>();
+    const hydratePromisesByGuid = new Map<string, Promise<Credential | null>>();
+
+    /** Some known browser built-in URLs that should not be filtered by the URL filter. */
+    const noFilterUrls = new Set<string>([
+        'about:debugging',
+        'about:blank',
+        'about:newtab',
+        'about:home',
+        'about:addons',
+        'about:config',
+        'about:preferences',
+        'chrome://newtab/',
+        'chrome://extensions',
+    ]);
+
+    const virtualizer = createVirtualizer<HTMLDivElement, HTMLDivElement>({
+        count: 0,
+        getScrollElement: () => null,
+        estimateSize: () => COLLAPSED_ROW_PX,
+        overscan: 8,
+    });
+
+    /** Keep count/estimates in sync with listItems before paint; $effect alone is one tick late after search. */
+    const applyVirtualizerOptions = (
+        items: DecryptedPartialCredentialData[],
+        scrollEl: HTMLDivElement | undefined = listScrollEl,
+        applyResizeToKnownExpandedRows: boolean = false
+    ) => {
+        const v = get(virtualizer);
+        v.setOptions({
+            count: items.length,
+            getScrollElement: () => scrollEl ?? null,
+            // Key size cache by guid so filter/reorder does not reuse another credential's measured height at the same index.
+            getItemKey: (index) => items[index]?.guid ?? index,
+            estimateSize: (index) => {
+                const guid = items[index]?.guid;
+                if (guid && sizeByGuid.has(guid)) {
+                    return sizeByGuid.get(guid)!;
+                }
+                return COLLAPSED_ROW_PX;
+            },
+            overscan: 8,
+        });
+
+        // Re-apply known expanded sizes at their new indexes after the list identity changes.
+        // Run only on effect to avoid running twice on the same list items with our "previous-tick-manual-call".
+        if (applyResizeToKnownExpandedRows) {
+            for (let index = 0; index < items.length; index++) {
+                const size = sizeByGuid.get(items[index].guid);
+                if (size != null) {
+                    v.resizeItem(index, size);
+                }
+            }
+        }
+    };
+
+    $effect(() => {
+        applyVirtualizerOptions(listItems, listScrollEl, true);
+    });
+
+    $effect(() => {
+        const present = new Set(listItems.map((item) => item.guid));
+        let removed = false;
+        const next = new Set<string>();
+        for (const guid of expandedGuids) {
+            if (present.has(guid)) {
+                next.add(guid);
+            } else {
+                removed = true;
+                sizeByGuid.delete(guid);
+            }
+        }
+        if (removed) {
+            expandedGuids = next;
+        }
+    });
+
+    /**
+     * Measure only expanded rows. Collapsed rows stay on the fixed estimate so ResizeObserver
+     * does not thrash scroll while recycling. Ignore no-op height updates to avoid subpixel loops.
+     */
+    const measureExpandedRow = (node: HTMLDivElement, active: boolean) => {
+        let raf = 0;
+        const ro = new ResizeObserver(() => {
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                if (!node.isConnected) {
+                    return;
+                }
+                const index = Number(node.dataset.index);
+                if (Number.isNaN(index)) {
+                    return;
+                }
+                const guid = listItems[index]?.guid;
+                if (!guid || !expandedGuids.has(guid)) {
+                    return;
+                }
+                const height = Math.round(node.offsetHeight);
+                if (sizeByGuid.get(guid) === height) {
+                    return;
+                }
+                sizeByGuid.set(guid, height);
+                get(virtualizer).resizeItem(index, height);
+            });
+        });
+
+        const sync = (shouldMeasure: boolean) => {
+            if (shouldMeasure) {
+                ro.observe(node);
+                return;
+            }
+            ro.unobserve(node);
+            const index = Number(node.dataset.index);
+            const guid = listItems[index]?.guid;
+            if (guid) {
+                sizeByGuid.delete(guid);
+            }
+            if (!Number.isNaN(index)) {
+                get(virtualizer).resizeItem(index, COLLAPSED_ROW_PX);
+            }
+        };
+
+        sync(active);
+        return {
+            update: sync,
+            destroy() {
+                cancelAnimationFrame(raf);
+                ro.disconnect();
+            }
+        };
+    };
+
+    const setHydratedCredential = (guid: string, credential: Credential | null) => {
+        const next = new Map(hydratedByGuid);
+        if (credential) {
+            next.set(guid, credential);
+        } else {
+            next.delete(guid);
+        }
+        hydratedByGuid = next;
+    };
+
+    const collapseGuid = (guid: string) => {
+        if (!expandedGuids.has(guid)) {
+            return;
+        }
+        const next = new Set(expandedGuids);
+        next.delete(guid);
+        expandedGuids = next;
+        sizeByGuid.delete(guid);
+        const index = listItems.findIndex((item) => item.guid === guid);
+        if (index >= 0) {
+            get(virtualizer).resizeItem(index, COLLAPSED_ROW_PX);
+        }
+    };
+
+    const ensureHydrated = (guid: string): Promise<Credential | null> => {
+        const cached = hydratedByGuid.get(guid);
+        if (cached) {
+            return Promise.resolve(cached);
+        }
+
+        const inFlight = hydratePromisesByGuid.get(guid);
+        if (inFlight) {
+            return inFlight;
+        }
+
+        const currentVault = vault;
+        if (!currentVault) {
+            return Promise.resolve(null);
+        }
+
+        const promise = (async () => {
+            try {
+                const response: GetCredentialsForVaultMessagingResponse = await sendMessage(
+                    'getCredentialsForVault',
+                    {
+                        getCachedIfPossible: true,
+                        guid
+                    }
+                );
+                if (response.status && response.serializedCredentials.length > 0) {
+                    const credential = Credential.fromSerializable(
+                        response.serializedCredentials[0],
+                        currentVault,
+                        currentVault.getServer()
+                    );
+                    setHydratedCredential(guid, credential);
+                    return credential;
+                }
+
+                NotyService.notyError(
+                    response.errorMessage ?? i18n.getMessage('could_not_find_selected_credential')
+                );
+                collapseGuid(guid);
+                return null;
+            } catch (e) {
+                NotyService.notyError(i18n.getMessage('could_not_find_selected_credential'));
+                collapseGuid(guid);
+                return null;
+            } finally {
+                hydratePromisesByGuid.delete(guid);
+            }
+        })();
+
+        hydratePromisesByGuid.set(guid, promise);
+        return promise;
+    };
+
+    const toggleExpand = (guid: string) => {
+        if (expandedGuids.has(guid)) {
+            collapseGuid(guid);
+            return;
+        }
+        const next = new Set(expandedGuids);
+        next.add(guid);
+        expandedGuids = next;
+        void ensureHydrated(guid);
+    };
+
     const resolveListFilter = (): {
         filterType: GetCredentialsListMessagingFilterType,
         filterText: string
     } => {
         // URL mode only while the tab URL filter is active and the user has not typed in search yet
         if (urlFilter && searchInput === null) {
-            return {
-                filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
-                filterText: urlFilter
-            };
+            if (noFilterUrls.has(urlFilter)) {
+                // reset urlFilter and proceed like without a URL filter
+                urlFilter = null;
+            } else {
+                return {
+                    filterType: GetCredentialsListMessagingFilterType.SEARCH_BY_URL,
+                    filterText: urlFilter
+                };
+            }
         }
         return {
             filterType: GetCredentialsListMessagingFilterType.DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -89,8 +326,16 @@
             }
 
             if (response.status) {
-                listItems = response.decryptedPartialCredentialData;
-                errorMessage = null;
+                if (response.invalidUrlProvided) {
+                    // Opening the popup on an invalid URL to be filtered is not an error, but we handle it by clearing the URL filter.
+                    clearUrlFilter();
+                } else {
+                    listItems = response.decryptedPartialCredentialData;
+                    errorMessage = null;
+                    // Sync before the next render so getVirtualItems() cannot keep stale out-of-range indexes.
+                    applyVirtualizerOptions(listItems);
+                    get(virtualizer).scrollToOffset(0);
+                }
             } else {
                 NotyService.notyError(
                     response.errorMessage ?? i18n.getMessage('unknown_error_refresh_credential_list')
@@ -125,12 +370,21 @@
             listItems = [];
             urlFilter = null;
             searchBusy = false;
+            expandedGuids = new Set();
+            hydratedByGuid = new Map();
+            sizeByGuid.clear();
+            hydratePromisesByGuid.clear();
             push('/unlock');
         });
     };
 
     const refreshCredentialList = (getCachedIfPossible: boolean = false) => {
         void fetchCredentialList(getCachedIfPossible, { showLoading: true, manualRefresh: true });
+    };
+
+    /** Stable callback so expanded rows are not invalidated on every virtualizer scroll tick. */
+    const onCredChanged = () => {
+        refreshCredentialList(true);
     };
 
     const clearUrlFilter = () => {
@@ -227,8 +481,8 @@
     });
 </script>
 
-<div class="h-full overflow-y-hidden flex flex-col">
-    <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b border-gray-200 dark:border-gray-500 p-2 bg-white">
+<div class="h-full overflow-hidden flex flex-col">
+    <div class="shrink-0 w-full flex flex-nowrap items-center justify-center space-x-4 border-b border-gray-200 dark:border-gray-500 p-2 bg-white">
         <OnClickButton callback={refreshCredentialList} title={i18n.getMessage('refresh_credential_list')} additionalClasses="w-12"
                        disabled={!vault || manualRefreshInProgress}>
             <Icon data={refresh} scale={1.3} spin={manualRefreshInProgress}/>
@@ -256,40 +510,63 @@
         </OnClickButton>
     </div>
 
-    <div class="overflow-y-auto pt-2">
-        {#if pageIsLoading}
+    {#if pageIsLoading}
+        <div class="flex-1 min-h-0">
             <Loading/>
-        {:else}
-            <div class="flex flex-col items-center justify-center">
-                {#if urlFilter}
-                    <div class="text-gray-400 mb-1">
-                        <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" onclick={clearUrlFilter}>
-                            {i18n.getMessage('clear_tab_url_filter')}
-                            <Icon data={close} scale={0.8}/>
-                        </button>
-                    </div>
-                {/if}
-                {#if errorMessage}
-                    <div class="mt-2 text-red-600">
-                        {errorMessage}
-                    </div>
-                {/if}
+        </div>
+    {:else}
+        <div class="shrink-0 flex flex-col items-center pt-2">
+            {#if urlFilter}
+                <div class="text-gray-400 mb-1">
+                    <button class="text-gray-400 hover:text-gray-600 border border-gray-200 rounded-full px-2 cursor-pointer" onclick={clearUrlFilter}>
+                        {i18n.getMessage('clear_tab_url_filter')}
+                        <Icon data={close} scale={0.8}/>
+                    </button>
+                </div>
+            {/if}
+            {#if errorMessage}
+                <div class="mt-2 text-red-600">
+                    {errorMessage}
+                </div>
+            {/if}
+            {#if !errorMessage && listItems.length === 0}
+                <span class="text-gray-400 mt-4">
+                    {i18n.getMessage('no_matching_credentials')}
+                </span>
+            {/if}
+        </div>
 
-                {#if vault}
-                    {#each listItems as item (item.guid)}
-                        <CredentialListElement
-                            decryptedPartialCredentialData={item}
-                            vault={vault}
-                            onCredChangedCallback={() => refreshCredentialList(true)}
-                        />
+        {#if vault && listItems.length > 0}
+            <div bind:this={listScrollEl} class="flex-1 min-h-0 overflow-y-auto">
+                <div
+                    class="relative w-full"
+                    style="height: {$virtualizer.getTotalSize()}px;"
+                >
+                    {#each $virtualizer.getVirtualItems() as virtualItem (virtualItem.key)}
+                        {@const item = listItems[virtualItem.index]}
+                        {#if item}
+                            {@const isExpanded = expandedGuids.has(item.guid)}
+                            <div
+                                data-index={virtualItem.index}
+                                use:measureExpandedRow={isExpanded}
+                                class="absolute top-0 left-0 w-full py-1 [contain:layout_style]"
+                                style="transform: translateY({virtualItem.start}px);"
+                            >
+                                <div class="flex justify-center">
+                                    <CredentialListElement
+                                        decryptedPartialCredentialData={item}
+                                        onCredChangedCallback={onCredChanged}
+                                        expanded={isExpanded}
+                                        hydratedCredential={hydratedByGuid.get(item.guid) ?? null}
+                                        onToggleExpand={toggleExpand}
+                                        ensureHydrated={ensureHydrated}
+                                    />
+                                </div>
+                            </div>
+                        {/if}
                     {/each}
-                {/if}
-                {#if !errorMessage && listItems.length === 0}
-                    <span class="text-gray-400 mt-4">
-                        {i18n.getMessage('no_matching_credentials')}
-                    </span>
-                {/if}
+                </div>
             </div>
         {/if}
-    </div>
+    {/if}
 </div>

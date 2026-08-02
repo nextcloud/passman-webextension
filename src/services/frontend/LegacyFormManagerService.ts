@@ -101,8 +101,30 @@ export class LegacyFormManagerService {
     }
 
     public static couldBeUsernameField = (field: HTMLInputElement) => {
+        if (field.type.toLowerCase() !== "text") {
+            return false;
+        }
+
         const usernameFieldNames = ["username", "user", "login", "nickname", "nick"];
-        return field.type.toLowerCase() === "text" && usernameFieldNames.some(name => field.name.toLowerCase().includes(name));
+
+        const name = (field.name ?? "").toLowerCase();
+        const id = (field.id ?? "").toLowerCase();
+        if (usernameFieldNames.some(
+            (candidate) => name.includes(candidate) || id.includes(candidate)
+        )) {
+            return true;
+        }
+
+        const autocomplete = field.getAttribute("autocomplete")?.toLowerCase();
+        if (autocomplete) {
+            // HTML allows space-separated tokens, e.g. "username" or "section-login username"; https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete
+            const tokens = autocomplete.split(/\s+/).filter(Boolean);
+            if (usernameFieldNames.some(name => tokens.includes(name))) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static couldBeOtpField = (field: HTMLInputElement) => {

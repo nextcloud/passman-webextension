@@ -109,6 +109,10 @@ export default class ExtensionUnlockService {
      * @returns true if successful, false if old password is incorrect
      */
     public static async changeExtensionPassword(oldPassword: string, newPassword: string): Promise<boolean> {
+        if (!newPassword) {
+            return false;
+        }
+
         // Verify old password
         const oldPasswordHash = await CustomStorageService.getUnsafeLocalStorage()
             .get<string>(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY);

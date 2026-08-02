@@ -24,6 +24,8 @@
         type OfflineCacheStorageBackend,
     } from "~/services/OfflineCacheStorageService";
     import { sendMessage } from "@/entrypoints/background/messaging";
+    import CustomStorageService from "~/services/CustomStorageService";
+    import ChangeUnlockPassword from "~/spa_components/Settings/ChangeUnlockPassword.svelte";
     import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
     import {
         DEFAULT_DOORHANGER_GRAVITY,
@@ -50,6 +52,8 @@
         | ExtensionSettingsOptions.doorhangerGravity
         | ExtensionSettingsOptions.logLevel
         | ExtensionSettingsOptions.offlineCacheStorageBackend
+        | ExtensionSettingsOptions.enableDoorhanger
+        | ExtensionSettingsOptions.enablePasswordPicker
     >;
 
     const extensionVersion = packageJson.version;
@@ -68,6 +72,8 @@
         [ExtensionSettingsOptions.doorhangerGravity]: DEFAULT_DOORHANGER_GRAVITY,
         [ExtensionSettingsOptions.logLevel]: DEFAULT_EXTENSION_LOG_LEVEL,
         [ExtensionSettingsOptions.offlineCacheStorageBackend]: OfflineCacheStorageService.DEFAULT_BACKEND,
+        [ExtensionSettingsOptions.enableDoorhanger]: true,
+        [ExtensionSettingsOptions.enablePasswordPicker]: true,
     });
 
     const doorhangerLayoutOptions: { [key: string]: string } = {
@@ -270,6 +276,10 @@
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionOnUrlChangesByInterval];
                     extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableFormDetectionByMutationObserver)
                         ?? extendedSettings[ExtensionSettingsOptions.enableFormDetectionByMutationObserver];
+                    extendedSettings[ExtensionSettingsOptions.enableDoorhanger] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enableDoorhanger)
+                        ?? extendedSettings[ExtensionSettingsOptions.enableDoorhanger];
+                    extendedSettings[ExtensionSettingsOptions.enablePasswordPicker] = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.enablePasswordPicker)
+                        ?? extendedSettings[ExtensionSettingsOptions.enablePasswordPicker];
 
                     const layoutValue = await ExtensionSettingsService.getPartialExtensionSettings(ExtensionSettingsOptions.doorhangerLayout)
                         ?? doorhangerLayoutSelectValue.value;
@@ -320,6 +330,9 @@
 {:else}
     <Card additionalClasses="text-left mb-6 space-y-3 w-full">
         <h2 class="text-xl font-semibold">{i18n.getMessage('extended_settings')}</h2>
+
+        <ChangeUnlockPassword/>
+
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                 id="ignoreProtocol"
                                 label={i18n.getMessage('ignore_protocol')}/>
@@ -338,6 +351,12 @@
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
                                 id="enableEmailAsUsernameFallbackFilling"
                                 label={i18n.getMessage('enable_email_as_username_fallback_filling')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableDoorhanger]}
+                                id="enableDoorhanger"
+                                label={i18n.getMessage('enable_doorhanger')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enablePasswordPicker]}
+                                id="enablePasswordPicker"
+                                label={i18n.getMessage('enable_password_picker')}/>
         
         <hr class="my-4 border-gray-200"/>
 

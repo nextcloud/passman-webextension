@@ -74,6 +74,7 @@ export class PasswordPickerService {
         PasswordPickerService.setupFormObserver(pickerPageSettings);
 
         // Evaluate pending doorhanger after reload / content-script reinjection
+        DoorhangerService.setEnabled(pickerPageSettings.enableDoorhanger);
         DoorhangerService.init();
     }
 
@@ -84,9 +85,6 @@ export class PasswordPickerService {
         const pageUrl = window.location.href;
         const loginFieldsPerForm = LegacyFormManagerService.getLoginFieldsPerForm();
         logger.debug("Processing login forms", pageUrl, loginFieldsPerForm);
-
-        // todo: fetch enablePasswordPicker from settings
-        const enablePasswordPicker = true;
 
         // If the page is ignored, we don't need to process any forms
         if (pickerPageSettings.mergedPageRules.ignorePage) {
@@ -109,16 +107,18 @@ export class PasswordPickerService {
                 // Mark form as processed
                 DynamicFormDetectionService.markFormAsProcessed(form);
 
-                if (enablePasswordPicker && form) {
+                if (pickerPageSettings.enablePasswordPicker && form) {
                     PasswordPickerService.createPasswordPicker(form, loginFields);
                 }
 
-                //Password miner
-                loginFields._form.addEventListener("submit", () => {
-                    PasswordPickerService.onFormSubmittedCallback(loginFields)
-                }, {
-                    capture: true
-                });
+                if (pickerPageSettings.enableDoorhanger) {
+                    // Password miner / doorhanger capture
+                    loginFields._form.addEventListener("submit", () => {
+                        PasswordPickerService.onFormSubmittedCallback(loginFields)
+                    }, {
+                        capture: true
+                    });
+                }
             }
 
             // Only fetch credentials if we haven't already (to avoid duplicate requests)

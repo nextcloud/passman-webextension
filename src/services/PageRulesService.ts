@@ -44,6 +44,12 @@ export interface CombinedSettingsResponse {
      * Ready to be just applied within the content script.
      */
     mergedPageRules: PageRulesInterface;
+
+    /** Global-only: whether the doorhanger overlay is enabled. */
+    enableDoorhanger: boolean;
+
+    /** Global-only: whether the password picker overlay / field icons are enabled. */
+    enablePasswordPicker: boolean;
 }
 
 /**
@@ -137,6 +143,10 @@ export default class PageRulesService {
                 ...originalOverwritableExtensionSettings,
                 ...pageRulesWithoutUndefinedKeys,
             },
+
+            /** Non-overwritable global settings (at least not yet): */
+            enableDoorhanger: extensionSettings[ExtensionSettingsOptions.enableDoorhanger] ?? true,
+            enablePasswordPicker: extensionSettings[ExtensionSettingsOptions.enablePasswordPicker] ?? true,
         };
     }
 }

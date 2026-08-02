@@ -51,6 +51,9 @@ export default defineConfig({
             "gecko": {
                 "id": "{ed412846-94d6-4a82-88bd-58b83e43f06d}"
             }
+        },
+        content_security_policy: {
+            extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
         }
     },
     vite: () => ({

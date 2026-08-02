@@ -72,6 +72,11 @@ export enum ExtensionSettingsOptions {
      * (lost on service-worker restart; used when native IDB is blocked).
      */
     offlineCacheStorageBackend,
+
+    /** Whether to enable the doorhanger overlay for collecting passwords. */
+    enableDoorhanger,
+    /** Whether to enable the password picker overlay for selecting passwords / filling forms. */
+    enablePasswordPicker,
 }
 
 export interface ExtensionSettings {
@@ -97,6 +102,8 @@ export interface ExtensionSettings {
     [ExtensionSettingsOptions.doorhangerGravity]: DoorhangerGravity,
     [ExtensionSettingsOptions.logLevel]: ExtensionLogLevel,
     [ExtensionSettingsOptions.offlineCacheStorageBackend]: OfflineCacheStorageBackend,
+    [ExtensionSettingsOptions.enableDoorhanger]: boolean,
+    [ExtensionSettingsOptions.enablePasswordPicker]: boolean,
 }
 
 /**
@@ -198,6 +205,11 @@ export default class ExtensionSettingsService {
                 break;
             case ExtensionSettingsOptions.offlineCacheStorageBackend:
                 returnValue = "indexeddb" as ExtensionSettings[K];
+            case ExtensionSettingsOptions.enableDoorhanger:
+                returnValue = true as ExtensionSettings[K];
+                break;
+            case ExtensionSettingsOptions.enablePasswordPicker:
+                returnValue = true as ExtensionSettings[K];
                 break;
             default:
                 returnValue = null;

@@ -6,6 +6,10 @@ import {
 import { PingResponse } from "@/entrypoints/background/messages/ping";
 import { UnlockExtensionRequest, UnlockExtensionResponse } from "@/entrypoints/background/messages/unlockExtension";
 import { LockExtensionResponse } from "@/entrypoints/background/messages/lockExtension";
+import {
+    ChangeExtensionPasswordRequest,
+    ChangeExtensionPasswordResponse
+} from "@/entrypoints/background/messages/changeExtensionPassword";
 import { SetDefaultVaultRequest, SetDefaultVaultResponse } from "@/entrypoints/background/messages/setDefaultVault";
 import {
     GetPossibleVaultsInfoRequest,
@@ -86,6 +90,8 @@ interface ProtocolMap {
     unlockExtension(data: UnlockExtensionRequest): UnlockExtensionResponse;
 
     lockExtension(): LockExtensionResponse;
+
+    changeExtensionPassword(data: ChangeExtensionPasswordRequest): ChangeExtensionPasswordResponse;
 
     setDefaultVault(data: SetDefaultVaultRequest): SetDefaultVaultResponse;
 
