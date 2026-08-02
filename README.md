@@ -42,11 +42,16 @@ Try a Passman demo [here](https://demo.passman.cc) to test the browser extension
     - Ability to overwrite global settings and extension behavior for a specific website
 - Doorhanger
     - After a successful login, prompts you to save or update the submitted credentials in your default vault
+- Optional in-memory offline cache
+  - Required to support Firefox "Never remember history" profiles
+  - Not recommended for casual daily usage due to performance issues
 - Passkey support (coming soon)
 
 ## Impressions
-<img width="380" height="498" alt="image" src="https://raw.githubusercontent.com/nextcloud/passman-webextension/refs/heads/master/impressions/welcome.png" />
-<img width="380" height="439" alt="image" src="https://raw.githubusercontent.com/nextcloud/passman-webextension/refs/heads/master/impressions/settings.png" />
+<p align="center">
+  <img width="380" height="498" alt="Welcome screen" src="https://raw.githubusercontent.com/nextcloud/passman-webextension/refs/heads/master/impressions/welcome.png" />
+  <img width="380" height="439" alt="Settings screen" src="https://raw.githubusercontent.com/nextcloud/passman-webextension/refs/heads/master/impressions/settings.png" />
+</p>
 
 ## Support Passman
 Passman is open source and lives from contributions like [pull request](https://github.com/nextcloud/passman-webextension/pulls),
