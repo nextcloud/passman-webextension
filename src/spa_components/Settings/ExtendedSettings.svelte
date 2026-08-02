@@ -19,6 +19,7 @@
     import packageJson from "../../../package.json";
     import { i18n } from "~/lib/i18n";
     import CustomStorageService from "~/services/CustomStorageService";
+    import ChangeUnlockPassword from "~/spa_components/Settings/ChangeUnlockPassword.svelte";
     import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
     import {
         DEFAULT_DOORHANGER_GRAVITY,
@@ -235,6 +236,9 @@
 {:else}
     <Card additionalClasses="text-left mb-6 space-y-3 w-full">
         <h2 class="text-xl font-semibold">{i18n.getMessage('extended_settings')}</h2>
+
+        <ChangeUnlockPassword/>
+
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                 id="ignoreProtocol"
                                 label={i18n.getMessage('ignore_protocol')}/>

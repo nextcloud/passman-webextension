@@ -1185,6 +1185,30 @@
     "message": "Save & continue",
     "description": "Button to save the extension unlock password and continue setup"
   },
+  "change_unlock_password": {
+    "message": "Change unlock password",
+    "description": "Section title for changing the extension unlock password in extended settings"
+  },
+  "current_unlock_password": {
+    "message": "Current unlock password",
+    "description": "Label for the current extension unlock password field"
+  },
+  "new_unlock_password": {
+    "message": "New unlock password",
+    "description": "Label for the new extension unlock password field"
+  },
+  "change_unlock_password_button": {
+    "message": "Change password",
+    "description": "Button to submit a change of the extension unlock password"
+  },
+  "unlock_password_changed_successfully": {
+    "message": "Unlock password changed successfully",
+    "description": "Success toast after changing the extension unlock password"
+  },
+  "unlock_password_change_failed": {
+    "message": "Could not change the unlock password. Check the current password and try again.",
+    "description": "Error when changing the extension unlock password fails"
+  },
   "migrate_legacy_title": {
     "message": "Import previous settings",
     "description": "Title for the legacy MV2 settings import block on the setup screen"
