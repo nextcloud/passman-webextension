@@ -252,8 +252,8 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Võta salasõnavalija kasutusele",
-        "description": "Disable password picker"
+        "message": "Enable password picker overlay for selecting passwords / filling forms",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
         "message": "Salasõna leidmisel ava pigem loend, mitte viimane aktiivne vahekaart",
@@ -1011,6 +1011,46 @@
         "message": "Failed to clear offline cache",
         "description": "Error toast after failing to clear offline cache"
     },
+    "offline_cache_storage_backend": {
+        "message": "Cache storage",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "Where encrypted vault cache is kept. IndexedDB persists across restarts; in-memory is cleared when the extension background script restarts.",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB (persistent)",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "In-memory (session / time limited)",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "Using in-memory cache. Cached vaults are lost when the extension background script restarts; they reload from the server when needed.",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "Native IndexedDB is not available in this browser profile (for example Firefox with “Never remember history”). In-memory cache is used instead.",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "Size reflects the current session only.",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "Offline cache storage is full (quota exceeded). Free space or clear the offline cache in Extended settings.",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "This browser profile cannot use IndexedDB (for example Firefox with “Never remember history”). Passman will use an in-memory cache that is cleared when the extension background script restarts.",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
     "server_connections": {
         "message": "Salvestatud serverid",
         "description": "Heading for the Nextcloud connection directory list"
@@ -1074,6 +1114,30 @@
     "save_password_and_unlock": {
         "message": "Salvesta ja jätka",
         "description": "Button to save the extension unlock password and continue setup"
+    },
+    "change_unlock_password": {
+        "message": "Change unlock password",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "Current unlock password",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "New unlock password",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "Change password",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "Unlock password changed successfully",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "Could not change the unlock password. Check the current password and try again.",
+        "description": "Error when changing the extension unlock password fails"
     },
     "migrate_legacy_title": {
         "message": "Impordi eelmised seadistused",
@@ -1386,6 +1450,10 @@
     "could_not_get_password_generator_configuration": {
         "message": "Sinu kohandatud salasõnalooja seadistuste laadimine ei õnnestunud",
         "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {
         "message": "Kas salvestad andmed Passmanis?",
