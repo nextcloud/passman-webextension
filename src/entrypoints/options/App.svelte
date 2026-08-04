@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import { routes } from "@/popupRoutes";
   // @ts-expect-error
-  import Router, { push } from "@/Router.svelte";
+  import Router, { push, location as locationStore } from "@/Router.svelte";
   import extensionUnlockStateStore, { ExtensionUnlockState } from "@/stores/extensionUnlockStateStore";
   import BottomNavBar from "@/spa_partials/BottomNavBar.svelte";
   import Toaster from "@/spa_partials/Toaster.svelte";
@@ -28,7 +28,11 @@
           break;
         case ExtensionUnlockState.UNLOCKED:
           // correct unlock password already in session
-          push('/home');
+
+          if ($locationStore === null || $locationStore === '' || $locationStore === '/') {
+            push('/home');
+          }
+          
           break;
         default:
           logger.error(i18n.getMessage('unknown_error_checking_lock_state'));
@@ -43,7 +47,7 @@
 </script>
 
 <div class="twp-passman-webextension w-full h-screen flex flex-col justify-between">
-  <div class="flex-1 overflow-y-auto m-auto w-[28rem] text-sm">
+  <div class="flex-1 overflow-y-auto m-auto { $locationStore === '/vaultRecovery' ? 'w-full' : 'w-[28rem]' } text-sm">
     <Router {routes}/>
   </div>
   {#if $extensionUnlockStateStore === ExtensionUnlockState.UNLOCKED}

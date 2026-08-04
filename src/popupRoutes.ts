@@ -10,6 +10,7 @@ import CredentialEdit from "./spa_components/CredentialEdit.svelte";
 import Settings from "./spa_components/Settings/Settings.svelte";
 import PasswordGenerator from "./spa_components/PasswordGenerator.svelte";
 import CredentialAdd from "./spa_components/CredentialAdd.svelte";
+import VaultRecovery from "./spa_components/VaultRecovery.svelte";
 
 const routes = {
     '/': Loading,
@@ -26,6 +27,8 @@ const routes = {
 
     '/generator': PasswordGenerator,
     '/settings': Settings,
+
+    '/vaultRecovery': VaultRecovery,
 
     // Catch-all
     // This is optional, but if present it must be the last

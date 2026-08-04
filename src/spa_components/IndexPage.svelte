@@ -4,7 +4,7 @@
     import { createVirtualizer } from "@tanstack/svelte-virtual";
     // @ts-expect-error
     import { push } from "~/Router.svelte";
-    import { externalLink, lock, plus, close } from "svelte-awesome/icons";
+    import { externalLink, lock, plus, close, superpowers } from "svelte-awesome/icons";
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import refresh from "svelte-awesome/icons/refresh";
@@ -48,6 +48,7 @@
     let listFetchGeneration = 0;
     /** Avoid re-pinning the same corrupt-credential warning on every search/refresh. */
     let lastCorruptCredentialsNoticeKey = '';
+    let skippedCorruptCount = $state(0);
     const isInPopup = Utils.isInPopup();
 
     let listScrollEl = $state<HTMLDivElement | undefined>(undefined);
@@ -339,13 +340,14 @@
                     get(virtualizer).scrollToOffset(0);
 
                     const skipped = response.skippedCorruptCredentials ?? [];
-                    if (skipped.length > 0) {
+                    skippedCorruptCount = skipped.length;
+                    if (skippedCorruptCount > 0) {
                         const noticeKey = skipped.map((c) => c.guid).sort().join('|');
                         if (noticeKey !== lastCorruptCredentialsNoticeKey) {
                             lastCorruptCredentialsNoticeKey = noticeKey;
                             NotyService.notyPinnedWarning(
                                 i18n.getMessage('corrupt_credentials_skipped', [
-                                    String(skipped.length),
+                                    String(skippedCorruptCount),
                                     truncate(skipped.map((c) => c.label).join(', '), 100),
                                 ]),
                                 i18n.getMessage('corrupt_credentials_skipped_title')
@@ -415,6 +417,10 @@
 
     const openOptionsPage = () => {
         browser.runtime.openOptionsPage();
+    };
+
+    const openVaultRecoveryPage = () => {
+        browser.tabs.create({ url: browser.runtime.getURL('options.html') + '#/vaultRecovery' });
     };
 
     // After initial load, typing in search clears the URL filter and re-fetches (debounced)
@@ -535,6 +541,11 @@
                 </div>
             {/if}
         </div>
+        {#if skippedCorruptCount > 0}
+            <OnClickButton callback={openVaultRecoveryPage} title={i18n.getMessage('corrupt_credentials_skipped_title')} additionalClasses="w-12 red-blinking">
+                <Icon data={superpowers} scale={1.2}/>
+            </OnClickButton>
+        {/if}
         <OnClickButton callback={lockExtension} title={i18n.getMessage('lock_extension')} additionalClasses="w-12">
             <Icon data={lock} scale={1.3}/>
         </OnClickButton>
