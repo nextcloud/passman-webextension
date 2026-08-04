@@ -5,7 +5,7 @@ import { CustomCredentialFilterService } from "~/services/CustomCredentialFilter
 import { OTPService } from "@binsky/passman-client-ts/lib/Service/OTPService";
 import type { IconInterface } from "@binsky/passman-client-ts/lib/Interfaces/Credential/IconInterface";
 import { onMessage } from "@/entrypoints/background/messaging";
-import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
+import { CredentialFilterService, FILTERS, type OnEncryptionErrorSkippedCredentialCallback } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
 import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
@@ -38,7 +38,9 @@ export type GetCredentialsListMessagingResponse = {
     status: boolean,
     errorMessage: string | null,
     decryptedPartialCredentialData: DecryptedPartialCredentialData[],
-    invalidUrlProvided: boolean | null
+    invalidUrlProvided: boolean | null,
+    /** Labels (or guids) of credentials skipped because encrypted fields could not be decrypted */
+    skippedCorruptCredentials: { label: string, guid: string }[],
 }
 
 export function toDecryptedPartialCredentialData(credential: Credential, forPicker: boolean = false): DecryptedPartialCredentialData {
@@ -77,6 +79,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     let errorMessage = null;
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
+    let skippedCorruptCredentials: { label: string, guid: string }[] = [];
     let invalidUrlProvided: boolean | null = null;
 
     const body = message.data;
@@ -85,6 +88,11 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         || !filterTextIsString
         || body.filterType === undefined
         || body.getCachedIfPossible === undefined;
+
+    const reportSkippedCorruptCredential: OnEncryptionErrorSkippedCredentialCallback = (credential: Credential, error?: Error): void => {
+        skippedCorruptCredentials.push({ label: credential.label ?? credential.guid, guid: credential.guid });
+        logger.error('Skipping corrupted credential:', credential.label, credential.guid, error?.message ?? undefined);
+    }
 
     if (invalidBody) {
         errorMessage = i18n.getMessage('invalid_request_check_body');
@@ -108,7 +116,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                             }
 
                             if (body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
-                                const filterResult = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials);
+                                const filterResult = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials, reportSkippedCorruptCredential);
                                 if (filterResult === null) {
                                     // an empty result for an invalid URL is not an error, but we need to know about it, like in the IndexPage UI
                                     invalidUrlProvided = true;
@@ -116,7 +124,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                                     filteredCredentials = filterResult;
                                 }
                             } else {
-                                filteredCredentials = CredentialFilterService.getFilteredCredentials(myVault.credentials, FILTERS.SHOW_ALL, body.filterText);
+                                filteredCredentials = CredentialFilterService.getFilteredCredentials(myVault.credentials, FILTERS.SHOW_ALL, body.filterText, undefined, undefined, reportSkippedCorruptCredential);
                             }
 
                             status = true;
@@ -131,7 +139,21 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         });
 
         for (const filteredCredential of filteredCredentials) {
-            decryptedPartialCredentialData.push(toDecryptedPartialCredentialData(filteredCredential));
+            // decryptedPartialCredentialData.push(toDecryptedPartialCredentialData(filteredCredential));
+
+            // list decrypt should not keep retrying remaining fields after the first failure
+            filteredCredential.lockDownAfterDecryptionError = true;
+
+            try {
+                const partialDecrypted = toDecryptedPartialCredentialData(filteredCredential);
+                if (filteredCredential.hasUnspecifiedEncryptionError()) {
+                    reportSkippedCorruptCredential(filteredCredential);
+                    continue;
+                }
+                decryptedPartialCredentialData.push(partialDecrypted);
+            } catch (e) {
+                reportSkippedCorruptCredential(filteredCredential, e as Error);
+            }
         }
     }
 
@@ -139,6 +161,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         status,
         errorMessage,
         decryptedPartialCredentialData,
-        invalidUrlProvided
+        invalidUrlProvided,
+        skippedCorruptCredentials,
     };
 });

@@ -3,7 +3,7 @@ import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionS
 import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
 import PageRulesService, { CombinedSettingsResponse } from "./PageRulesService";
 import { logger } from "~/services/ConsoleLoggingService";
-import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
+import { CredentialFilterService, FILTERS, type OnEncryptionErrorSkippedCredentialCallback } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
 
 export class CustomCredentialFilterService {
     /**
@@ -17,7 +17,7 @@ export class CustomCredentialFilterService {
      * @param credentials All credentials, to filter for. (Usually all credentials of the vault.)
      * @returns An array of credentials that can be associated with the given tab url, or null if an error occurred.
      */
-    public static getCredentialsByUrl = async (userTabUrl: string, credentials: Credential[]) => {
+    public static getCredentialsByUrl = async (userTabUrl: string, credentials: Credential[], onEncryptionErrorSkippedCredential?: OnEncryptionErrorSkippedCredentialCallback) => {
         try {
             const urlFilterCallback = await this.getCredentialsByUrlFilterCallback(userTabUrl, false);
             return CredentialFilterService.getFilteredCredentials(
@@ -25,7 +25,8 @@ export class CustomCredentialFilterService {
                 FILTERS.SHOW_ALL,
                 undefined,
                 undefined,
-                [urlFilterCallback]
+                [urlFilterCallback],
+                onEncryptionErrorSkippedCredential
             );
         } catch (e) {
             // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
