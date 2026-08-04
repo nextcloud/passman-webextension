@@ -464,6 +464,15 @@
                     try {
                         if (defaultVaultInfo) {
                             // Always prefer memory / shared IndexedDB model store with the option to recreate the vault from cached DTOs, when opening the popup
+                            // Use lightweight preloadedVaults instead of popupPassmanClient.getFullVaultByGuid since the frontend no longer needs the full vault object for the list
+                            let preloadedVault = popupPassmanClient.preloadedVaults.find((v) => v.guid === defaultVaultInfo.guid);
+                            if (preloadedVault === undefined || true) {
+                                console.error('force preloading vaults');
+                                await popupPassmanClient.preloadVaults(false, false);
+                                preloadedVault = popupPassmanClient.preloadedVaults.find((v) => v.guid === defaultVaultInfo.guid);
+                            }
+
+                            /*
                             let myVault = await popupPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, true);
                             if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                                 myVault.vaultKey = defaultVaultInfo.password;
@@ -474,8 +483,11 @@
                                 }
 
                                 vault = myVault;
+                                await fetchCredentialList(true, { showLoading: true, manualRefresh: false });*/
+                            
+                            if (preloadedVault && preloadedVault.testVaultKey(defaultVaultInfo.password)) {
                                 await fetchCredentialList(true, { showLoading: true, manualRefresh: false });
-                            } else if (myVault) {
+                            } else if (preloadedVault) {
                                 errorMessage = i18n.getMessage('could_not_decrypt_vault');
                                 pageIsLoading = false;
                             } else {
