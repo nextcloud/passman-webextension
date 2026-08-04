@@ -46,6 +46,8 @@
     let searchBusy = $state(false);
     let initialLoadIsDone = $state(false);
     let listFetchGeneration = 0;
+    /** Avoid re-pinning the same corrupt-credential warning on every search/refresh. */
+    let lastCorruptCredentialsNoticeKey = '';
     const isInPopup = Utils.isInPopup();
 
     let listScrollEl = $state<HTMLDivElement | undefined>(undefined);
@@ -335,6 +337,21 @@
                     // Sync before the next render so getVirtualItems() cannot keep stale out-of-range indexes.
                     applyVirtualizerOptions(listItems);
                     get(virtualizer).scrollToOffset(0);
+
+                    const skipped = response.skippedCorruptCredentials ?? [];
+                    if (skipped.length > 0) {
+                        const noticeKey = skipped.map((c) => c.guid).sort().join('|');
+                        if (noticeKey !== lastCorruptCredentialsNoticeKey) {
+                            lastCorruptCredentialsNoticeKey = noticeKey;
+                            NotyService.notyPinnedWarning(
+                                i18n.getMessage('corrupt_credentials_skipped', [
+                                    String(skipped.length),
+                                    truncate(skipped.map((c) => c.label).join(', '), 100),
+                                ]),
+                                i18n.getMessage('corrupt_credentials_skipped_title')
+                            );
+                        }
+                    }
                 }
             } else {
                 NotyService.notyError(
@@ -355,6 +372,10 @@
                 searchBusy = false;
             }
         }
+    };
+
+    const truncate = (str: string, n: number) => {
+        return (str.length > n) ? str.slice(0, n-1) + '...' : str;
     };
 
     const debouncedFetchFromSearch = Utils.debounce(() => {

@@ -1385,6 +1385,24 @@
     "message": "Unknown error in refreshCredentialList",
     "description": "Fallback error when refreshing the credential list fails without a message"
   },
+  "corrupt_credentials_skipped": {
+    "message": "Skipped $COUNT$ credential(s) with undecryptable fields: $LABELS$",
+    "description": "Pinned warning when corrupted credentials are excluded from the credential list",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      },
+      "labels": {
+        "content": "$2",
+        "example": "Another App, Broken Login"
+      }
+    }
+  },
+  "corrupt_credentials_skipped_title": {
+    "message": "Corrupted credentials",
+    "description": "Title for the pinned warning about skipped corrupted credentials"
+  },
   "expected_extension_page_not_found": {
     "message": "Expected extension page not found",
     "description": "Shown when a routed extension page does not exist"
