@@ -1128,7 +1128,7 @@
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
-        "message": "Change password",
+        "message": "Muuda salasõna",
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
