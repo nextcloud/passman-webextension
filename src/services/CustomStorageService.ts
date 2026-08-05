@@ -30,18 +30,19 @@ export default class CustomStorageService {
 
     /**
      * Returns an unlocked secure storage instance, if the extension is successfully unlocked.
-     * If it is not successfully unlocked, it returns a secure storage without password.
+     * If it is not successfully unlocked, it returns a secure storage without storage key.
      */
     public static async getSecureStorage() {
         if (!this.secureStorage) {
             this.secureStorage = new SecureStorage();
             this.secureStorage.setNamespace(DEFAULT_STORAGE_NAMESPACE);
         }
-        if (!this.secureStorage.isPasswordSet) {
-            const extensionUnlockPassword = await this.getSessionStorage().get(ExtensionUnlockService.EXTENSION_UNLOCK_PASSWORD_SESSION_ACCESS_KEY);
-            if (extensionUnlockPassword) {
-                this.secureStorage.setPassword(
-                    extensionUnlockPassword
+        if (!this.secureStorage.isStorageKeySet) {
+            const rawStorageKey = await this.getSessionStorage()
+                .get<string>(ExtensionUnlockService.EXTENSION_STORAGE_KEY_SESSION_ACCESS_KEY);
+            if (rawStorageKey) {
+                this.secureStorage.setStorageKey(
+                    await SecureStorage.importStorageKeyBase64(rawStorageKey)
                 );
             }
         }

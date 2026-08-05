@@ -9,21 +9,19 @@ export class SecureStorage extends Storage {
     private static readonly SALT_LENGTH = 16; // 128 bits = 16 bytes
     private static readonly ENCRYPTED_STORAGE_KEY_KEY = 'encryptedStorageKey';
 
-    constructor(area: "local" | "sync" | "session" = "local", private secret?: string, namespace?: string) {
+    constructor(area: "local" | "sync" | "session" = "local", namespace?: string) {
         super(area, namespace);
     }
 
     /**
-     * Set password / secret.
-     * Reset internal cached key.
+     * Set the storage key used for all data operations of this instance.
      */
-    public setPassword(secret?: string) {
-        this.secret = secret;
-        this.cryptoKey = null;
+    public setStorageKey(storageKey?: CryptoKey) {
+        this.cryptoKey = storageKey ?? null;
     }
 
-    get isPasswordSet(): boolean {
-        return this.secret !== undefined;
+    get isStorageKeySet(): boolean {
+        return this.cryptoKey !== null;
     }
 
     /**
@@ -48,7 +46,7 @@ export class SecureStorage extends Storage {
      * @param salt The salt to use for key derivation
      * @returns A CryptoKey derived from the password
      */
-    private async deriveKeyFromPassword(password: string, salt: Uint8Array): Promise<CryptoKey> {
+    private static async deriveKeyFromPassword(password: string, salt: Uint8Array): Promise<CryptoKey> {
         const passwordKey = await crypto.subtle.importKey(
             "raw",
             new TextEncoder().encode(password),
@@ -80,11 +78,11 @@ export class SecureStorage extends Storage {
      * @param password The password to encrypt with
      * @returns An object containing the encrypted key, IV, and salt
      */
-    public async encryptStorageKey(storageKey: CryptoKey, password: string): Promise<{ encryptedKey: string; iv: number[]; salt: number[] }> {
+    public static async encryptStorageKey(storageKey: CryptoKey, password: string): Promise<{ encryptedKey: string; iv: number[]; salt: number[] }> {
         const salt = crypto.getRandomValues(new Uint8Array(SecureStorage.SALT_LENGTH));
         const iv = crypto.getRandomValues(new Uint8Array(12)); // 96 bits for AES-GCM
 
-        const derivedKey = await this.deriveKeyFromPassword(password, salt);
+        const derivedKey = await SecureStorage.deriveKeyFromPassword(password, salt);
         const exportedKey = await crypto.subtle.exportKey("raw", storageKey);
         const encrypted = await crypto.subtle.encrypt(
             { name: "AES-GCM", iv },
@@ -104,7 +102,7 @@ export class SecureStorage extends Storage {
      * @param password The password to decrypt with
      * @returns The decrypted storage key as CryptoKey, or null if decryption fails
      */
-    public async decryptStorageKey(password: string): Promise<CryptoKey | null> {
+    public static async decryptStorageKey(password: string): Promise<CryptoKey | null> {
         try {
             const unsafeStorage = new Storage("local");
             const encryptedData = await unsafeStorage.get<{ encryptedKey: string; iv: number[]; salt: number[] }>(
@@ -119,7 +117,7 @@ export class SecureStorage extends Storage {
             const iv = new Uint8Array(encryptedData.iv);
             const encryptedBytes = Uint8Array.from(atob(encryptedData.encryptedKey), c => c.charCodeAt(0));
 
-            const derivedKey = await this.deriveKeyFromPassword(password, salt);
+            const derivedKey = await SecureStorage.deriveKeyFromPassword(password, salt);
             const decrypted = await crypto.subtle.decrypt(
                 { name: "AES-GCM", iv },
                 derivedKey,
@@ -159,30 +157,44 @@ export class SecureStorage extends Storage {
     }
 
     /**
-     * Get the encryption key for data operations.
-     * If no key is cached, decrypts the stored storage key using the password.
+     * Export a storage key so it can be handed around without exposing the unlock password.
+     * @param storageKey An extractable storage key
      */
-    private async getEncryptionKey(): Promise<CryptoKey> {
-        if (this.cryptoKey) return this.cryptoKey;
+    public static async exportStorageKeyBase64(storageKey: CryptoKey): Promise<string> {
+        const exported = await crypto.subtle.exportKey("raw", storageKey);
+        return btoa(String.fromCharCode(...new Uint8Array(exported)));
+    }
 
-        if (!this.secret) {
-            throw new Error("Password must be set before getting encryption key");
+    /**
+     * Import a storage key previously exported by {@link exportStorageKeyBase64}.
+     * Imported as extractable so it can be re-encrypted when changing passwords.
+     */
+    public static async importStorageKeyBase64(rawStorageKey: string): Promise<CryptoKey> {
+        const keyMaterial = Uint8Array.from(atob(rawStorageKey), c => c.charCodeAt(0));
+        return await crypto.subtle.importKey(
+            "raw",
+            keyMaterial,
+            { name: "AES-GCM" },
+            true,
+            ["encrypt", "decrypt"]
+        );
+    }
+
+    /**
+     * Get the encryption key for data operations.
+     */
+    private getEncryptionKey(): CryptoKey {
+        if (!this.cryptoKey) {
+            throw new Error("Storage key must be set before getting encryption key");
         }
 
-        // Try to decrypt the stored storage key
-        const storageKey = await this.decryptStorageKey(this.secret);
-        if (!storageKey) {
-            throw new Error("Failed to decrypt storage key. The password may be incorrect or no storage key exists.");
-        }
-
-        this.cryptoKey = storageKey;
         return this.cryptoKey;
     }
 
     async set(key: string, value: any) {
         const iv = crypto.getRandomValues(new Uint8Array(12));
         const encoded = new TextEncoder().encode(JSON.stringify(value));
-        const cryptoKey = await this.getEncryptionKey();
+        const cryptoKey = this.getEncryptionKey();
         const cipher = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, cryptoKey, encoded);
         const data = { iv: Array.from(iv), value: btoa(String.fromCharCode(...new Uint8Array(cipher))) };
         await super.set(key, data);
@@ -197,7 +209,7 @@ export class SecureStorage extends Storage {
         if (!data) return undefined;
         const iv = new Uint8Array(data.iv);
         const bytes = Uint8Array.from(atob(data.value), c => c.charCodeAt(0));
-        const cryptoKey = await this.getEncryptionKey();
+        const cryptoKey = this.getEncryptionKey();
         const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, cryptoKey, bytes);
         return JSON.parse(new TextDecoder().decode(decrypted));
     }
