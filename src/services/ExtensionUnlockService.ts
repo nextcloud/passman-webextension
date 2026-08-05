@@ -1,4 +1,3 @@
-import { sha512 } from "js-sha512";
 import CustomStorageService from "./CustomStorageService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import PassmanClientService from "./PassmanClientService";
@@ -15,61 +14,51 @@ import ConsoleLoggingService, { logger } from "./ConsoleLoggingService";
 
 export default class ExtensionUnlockService {
     public static readonly EXTENSION_STORAGE_KEY_SESSION_ACCESS_KEY = 'extensionStorageKey';
-    public static readonly EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY = 'extensionUnlockPasswordHash';
-    public static readonly EXTENSION_AUTO_UNLOCK_PASSWORD_ACCESS_KEY = 'extensionAutoUnlockPassword';
     public static readonly EXTENSION_SETUP_DONE_ACCESS_KEY = 'extensionSetupDone';
 
-    public static async unlock(password: string, isFrontendCall = false) {
-        return await this.isSetupDone() && await (CustomStorageService.getUnsafeLocalStorage()
-            .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY))
-            .then(async (extensionUnlockPasswordHash: string | undefined) => {
-                if (extensionUnlockPasswordHash === sha512(password)) {
-                    // Verify that we can decrypt the storage key with this password
-                    const storageKey = await SecureStorage.decryptStorageKey(password);
+    /**
+     * Unlock the extension with the extension unlock password.
+     * The password is only used to unwrap the storage key and is never persisted anywhere.
+     */
+    public static async unlock(password: string, isFrontendCall = false): Promise<boolean> {
+        if (!await this.isSetupDone()) {
+            return false;
+        }
 
-                    if (!storageKey) {
-                        logger.error("Failed to decrypt storage key during unlock");
-                        return false;
-                    }
+        // The AES-GCM authentication tag of the wrapped storage key verifies the password
+        const storageKey = await SecureStorage.decryptStorageKey(password);
 
-                    await CustomStorageService.getSessionStorage().set(
-                        this.EXTENSION_STORAGE_KEY_SESSION_ACCESS_KEY,
-                        await SecureStorage.exportStorageKeyBase64(storageKey)
-                    );
-                    ExtensionBadgeService.updateAllTabsIcon(isFrontendCall);
-                    this.notifyReloadContentScriptPicker();
-                    await ConsoleLoggingService.refreshLogLevel().catch(() => {
-                        // logging should not block unlock
-                    });
-                    return true;
-                }
-                return false;
-            });
+        if (!storageKey) {
+            logger.error("Failed to decrypt storage key during unlock");
+            return false;
+        }
+
+        await this.applyUnlockedStorageKey(storageKey, isFrontendCall);
+        return true;
     }
 
-    public static async setAutoUnlockExtensionPassword(password: string) {
-        await CustomStorageService.getUnsafeLocalStorage()
-            .set(this.EXTENSION_AUTO_UNLOCK_PASSWORD_ACCESS_KEY, password);
-    }
-
-    public static async getAutoUnlockExtensionPassword(): Promise<string | undefined> {
-        return await CustomStorageService.getUnsafeLocalStorage()
-            .get<string>(this.EXTENSION_AUTO_UNLOCK_PASSWORD_ACCESS_KEY);
-    }
-
-    public static async clearAutoUnlockExtensionPassword() {
-        await CustomStorageService.getUnsafeLocalStorage()
-            .remove(this.EXTENSION_AUTO_UNLOCK_PASSWORD_ACCESS_KEY);
+    /**
+     * Hand the decrypted storage key over to the running extension and reflect the unlocked state in the UI.
+     * Shared by the password based unlock, the initial setup and the auto-unlock.
+     */
+    public static async applyUnlockedStorageKey(storageKey: CryptoKey, isFrontendCall = false): Promise<void> {
+        await CustomStorageService.getSessionStorage().set(
+            this.EXTENSION_STORAGE_KEY_SESSION_ACCESS_KEY,
+            await SecureStorage.exportStorageKeyBase64(storageKey)
+        );
+        ExtensionBadgeService.updateAllTabsIcon(isFrontendCall);
+        this.notifyReloadContentScriptPicker();
+        await ConsoleLoggingService.refreshLogLevel().catch(() => {
+            // logging should not block unlock
+        });
     }
 
     /**
      * Locks the extension, as well as taking care about clearing decrypted cache within the background service worker.
-     * Once locked, a potential stored vault key for the auto-unlock feature is invalidated.
      * Should be called from the LockExtension MessageHandler.
      */
     public static async lock() {
         await CustomStorageService.clearSessionStorage();
-        await ExtensionUnlockService.clearAutoUnlockExtensionPassword();
         CustomStorageService.closeSecureStorage();
         PassmanClientService.invalidatePassmanClients();
         ExtensionBadgeService.displayLockIcons();
@@ -98,12 +87,13 @@ export default class ExtensionUnlockService {
     }
 
     /**
-     * Set or overwrite the hash to validate the extension unlock password against.
+     * Set the extension unlock password.
      * This also unlocks the extension already.
      * Generates a new storage key if one doesn't exist.
      * @param password
+     * @throws Error when a storage key exists that cannot be unwrapped with the given password
      */
-    public static async setUpExtensionPassword(password: string, setAsAutoUnlockPassword = false): Promise<void> {
+    public static async setUpExtensionPassword(password: string): Promise<void> {
         // Generate and store encryption key if it doesn't exist
         let storageKey: CryptoKey | null;
         if (await SecureStorage.hasEncryptedStorageKey()) {
@@ -117,16 +107,7 @@ export default class ExtensionUnlockService {
             await SecureStorage.storeEncryptedStorageKey(encryptedKeyData);
         }
 
-        await CustomStorageService.getUnsafeLocalStorage()
-            .set(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY, sha512(password));
-
-        await CustomStorageService.getSessionStorage().set(
-            this.EXTENSION_STORAGE_KEY_SESSION_ACCESS_KEY,
-            await SecureStorage.exportStorageKeyBase64(storageKey)
-        );
-        if (setAsAutoUnlockPassword) {
-            await ExtensionUnlockService.setAutoUnlockExtensionPassword(password);
-        }
+        await this.applyUnlockedStorageKey(storageKey);
     }
 
     /**
@@ -141,15 +122,7 @@ export default class ExtensionUnlockService {
             return false;
         }
 
-        // Verify old password
-        const oldPasswordHash = await CustomStorageService.getUnsafeLocalStorage()
-            .get<string>(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY);
-
-        if (!oldPasswordHash || oldPasswordHash !== sha512(oldPassword)) {
-            return false;
-        }
-
-        // Decrypt the storage key with old password
+        // Decrypt the storage key with old password, which verifies it at the same time
         const storageKey = await SecureStorage.decryptStorageKey(oldPassword);
 
         if (!storageKey) {
@@ -161,18 +134,11 @@ export default class ExtensionUnlockService {
         const encryptedKeyData = await SecureStorage.encryptStorageKey(storageKey, newPassword);
         await SecureStorage.storeEncryptedStorageKey(encryptedKeyData);
 
-        // Update password hash and session storage. The storage key itself is unchanged.
-        await CustomStorageService.getUnsafeLocalStorage()
-            .set(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY, sha512(newPassword));
+        // The storage key itself is unchanged, so nothing but the session state has to be refreshed
         await CustomStorageService.getSessionStorage().set(
             this.EXTENSION_STORAGE_KEY_SESSION_ACCESS_KEY,
             await SecureStorage.exportStorageKeyBase64(storageKey)
         );
-
-        // Update auto-unlock password if it was set
-        if (await ExtensionUnlockService.getAutoUnlockExtensionPassword()) {
-            await ExtensionUnlockService.setAutoUnlockExtensionPassword(newPassword);
-        }
 
         // Clear cached key in secure storage
         CustomStorageService.closeSecureStorage();
@@ -186,11 +152,7 @@ export default class ExtensionUnlockService {
     }
 
     public static isExtensionPasswordSetUp() {
-        return CustomStorageService.getUnsafeLocalStorage()
-            .get(this.EXTENSION_UNLOCK_PASSWORD_HASH_ACCESS_KEY)
-            .then(async (extensionUnlockPasswordHash: string | undefined) => {
-                return extensionUnlockPasswordHash !== undefined && extensionUnlockPasswordHash !== null;
-            });
+        return SecureStorage.hasEncryptedStorageKey();
     }
 
     public static isSetupDone() {
