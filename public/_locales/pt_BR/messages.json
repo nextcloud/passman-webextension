@@ -1412,7 +1412,7 @@
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Não foi possível obter o cliente Passman de back-end",
+        "message": "Não foi possível obter o cliente de back-end do Passman",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
