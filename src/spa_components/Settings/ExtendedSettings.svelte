@@ -24,8 +24,9 @@
         type OfflineCacheStorageBackend,
     } from "~/services/OfflineCacheStorageService";
     import { sendMessage } from "@/entrypoints/background/messaging";
-    import CustomStorageService from "~/services/CustomStorageService";
     import ChangeUnlockPassword from "~/spa_components/Settings/ChangeUnlockPassword.svelte";
+    import ExtensionAutoUnlockService from "~/services/ExtensionAutoUnlockService";
+    import type { AutoUnlockKeyStorageBackend } from "@/lib/auto-unlock-key-store";
     import type { IndexedDbModelStoreSizeEstimate } from "@binsky/passman-client-ts/lib/Service/IndexedDbModelStore";
     import {
         DEFAULT_DOORHANGER_GRAVITY,
@@ -145,6 +146,9 @@
     let clearingOfflineCache = $state(false);
     let offlineCacheEffective = $state<OfflineCacheStorageBackend>(OfflineCacheStorageService.DEFAULT_BACKEND);
     let offlineCacheForcedFallback = $state(false);
+    let autoUnlockEnabled = $state(false);
+    let autoUnlockUserWantsEnabled = $state(false);
+    let autoUnlockBackend = $state<AutoUnlockKeyStorageBackend>("indexeddb");
 
     const syncOfflineCacheStatus = () => {
         offlineCacheEffective = OfflineCacheStorageService.getEffective();
@@ -227,6 +231,35 @@
         return true;
     };
 
+    const applyAutoUnlockChange = async () => {
+        if (autoUnlockUserWantsEnabled === autoUnlockEnabled) {
+            return true;
+        }
+
+        const wantEnabled = autoUnlockUserWantsEnabled;
+        try {
+            if (wantEnabled) {
+                const enabled = await ExtensionAutoUnlockService.enable();
+                if (!enabled) {
+                    autoUnlockEnabled = false;
+                    NotyService.notyError(i18n.getMessage("auto_unlock_enable_failed"));
+                    return false;
+                }
+                autoUnlockBackend = await ExtensionAutoUnlockService.getStorageBackend();
+            } else {
+                await ExtensionAutoUnlockService.disable();
+            }
+            return true;
+        } catch (e) {
+            logger.error(e);
+            autoUnlockEnabled = !wantEnabled;
+            NotyService.notyError(
+                i18n.getMessage(wantEnabled ? "auto_unlock_enable_failed" : "auto_unlock_disable_failed")
+            );
+        }
+        return false;
+    };
+
     const save = async () => {
         lockSaveButton = true;
         logger.log("extendedSettings", extendedSettings);
@@ -240,7 +273,8 @@
             const offlineCacheApplied = await applyOfflineCacheStorageBackend(
                 offlineCacheBackendSelectValue.value as OfflineCacheStorageBackend
             );
-            if (offlineCacheApplied) {
+            const autoUnlockApplied = await applyAutoUnlockChange();
+            if (offlineCacheApplied && autoUnlockApplied) {
                 NotyService.notySuccess(i18n.getMessage("settings_updated_successfully"));
             }
         } catch (e) {
@@ -314,6 +348,10 @@
                     // Reflect forced fallback in the select if settings were auto-updated
                     setOfflineCacheBackendSelect(OfflineCacheStorageService.getPreferred());
                     await refreshOfflineCacheSize();
+
+                    autoUnlockEnabled = await ExtensionAutoUnlockService.isEnabled();
+                    autoUnlockUserWantsEnabled = autoUnlockEnabled;
+                    autoUnlockBackend = await ExtensionAutoUnlockService.getStorageBackend();
                 } else {
                     push('/unlock');
                 }
@@ -332,6 +370,23 @@
         <h2 class="text-xl font-semibold">{i18n.getMessage('extended_settings')}</h2>
 
         <ChangeUnlockPassword/>
+
+        <CustomCheckboxField
+            bind:value={autoUnlockUserWantsEnabled}
+            id="enableAutoUnlock"
+            label={i18n.getMessage('enable_auto_unlock')}
+        />
+        {#if autoUnlockUserWantsEnabled }
+            <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100 ms-4">
+                <p>{i18n.getMessage('enable_auto_unlock_description')}</p>
+            </div>
+        {/if}
+        <p class="description-text">{i18n.getMessage('enable_auto_unlock_lock_note')}</p>
+        {#if autoUnlockBackend === 'local'}
+            <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
+                <p>{i18n.getMessage('enable_auto_unlock_local_fallback_notice')}</p>
+            </div>
+        {/if}
 
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                 id="ignoreProtocol"

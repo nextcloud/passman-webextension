@@ -103,7 +103,9 @@ export default class ExtensionMigrationService {
         const LEGACY_UNLOCK_PASSWORD_SESSION_KEY = "extensionUnlockPassword";
 
         try {
-            await storage.remove(LEGACY_UNLOCK_PASSWORD_HASH_KEY);
+            if (await storage.get<string>(LEGACY_UNLOCK_PASSWORD_HASH_KEY)) {
+                await storage.remove(LEGACY_UNLOCK_PASSWORD_HASH_KEY);
+            }
             await CustomStorageService.getSessionStorage().remove(LEGACY_UNLOCK_PASSWORD_SESSION_KEY);
             logger.info("[migration] Removed the unlock password hash and the session unlock password");
         } catch (e) {
