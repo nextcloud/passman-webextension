@@ -1,7 +1,7 @@
 <script lang="ts">
     import Card from "~/spa_partials/Card.svelte";
     import OnClickButton from "~/spa_partials/InteractionElements/OnClickButton.svelte";
-    import refresh from "svelte-awesome/icons/refresh";
+    import { refresh, save as saveIcon } from "svelte-awesome/icons";
     import Icon from "svelte-awesome/components/Icon.svelte";
     import { onMount } from "svelte";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
@@ -37,6 +37,7 @@
         EXTENSION_LOG_LEVELS,
         type ExtensionLogLevel,
     } from "~/lib/extensionLogLevel";
+    import FloatingActionButton from "@/spa_partials/InteractionElements/FloatingActionButton.svelte";
 
     type ExtendedSettingsForm = Pick<ExtensionSettings,
         | ExtensionSettingsOptions.ignoreProtocol
@@ -150,6 +151,30 @@
     let autoUnlockUserWantsEnabled = $state(false);
     let autoUnlockBackend = $state<AutoUnlockKeyStorageBackend>("indexeddb");
 
+    type SavedFormState = {
+        settings: ExtendedSettingsForm;
+        autoUnlockEnabled: boolean;
+    };
+    let savedFormState = $state<SavedFormState | null>(null);
+
+    const settingsAreEqual = (a: ExtendedSettingsForm, b: ExtendedSettingsForm) => {
+        return JSON.stringify(a) === JSON.stringify(b);
+    };
+
+    const captureSavedFormState = () => {
+        savedFormState = {
+            settings: { ...extendedSettings },
+            autoUnlockEnabled,
+        };
+    };
+
+    const hasPendingChanges = $derived(
+        savedFormState !== null && (
+            !settingsAreEqual(extendedSettings, savedFormState.settings) ||
+            autoUnlockUserWantsEnabled !== savedFormState.autoUnlockEnabled
+        )
+    );
+
     const syncOfflineCacheStatus = () => {
         offlineCacheEffective = OfflineCacheStorageService.getEffective();
         offlineCacheForcedFallback = OfflineCacheStorageService.isForcedFallback();
@@ -245,9 +270,11 @@
                     NotyService.notyError(i18n.getMessage("auto_unlock_enable_failed"));
                     return false;
                 }
+                autoUnlockEnabled = true;
                 autoUnlockBackend = await ExtensionAutoUnlockService.getStorageBackend();
             } else {
                 await ExtensionAutoUnlockService.disable();
+                autoUnlockEnabled = false;
             }
             return true;
         } catch (e) {
@@ -261,6 +288,9 @@
     };
 
     const save = async () => {
+        if (!hasPendingChanges || lockSaveButton) {
+            return;
+        }
         lockSaveButton = true;
         logger.log("extendedSettings", extendedSettings);
         try {
@@ -276,6 +306,7 @@
             const autoUnlockApplied = await applyAutoUnlockChange();
             if (offlineCacheApplied && autoUnlockApplied) {
                 NotyService.notySuccess(i18n.getMessage("settings_updated_successfully"));
+                captureSavedFormState();
             }
         } catch (e) {
             logger.error(e);
@@ -352,6 +383,9 @@
                     autoUnlockEnabled = await ExtensionAutoUnlockService.isEnabled();
                     autoUnlockUserWantsEnabled = autoUnlockEnabled;
                     autoUnlockBackend = await ExtensionAutoUnlockService.getStorageBackend();
+
+                    // capture the initial settings state to detect changes afterwards
+                    captureSavedFormState();
                 } else {
                     push('/unlock');
                 }
@@ -585,13 +619,14 @@
         </OnClickButton>
     </Card>
 
-    <OnClickButton callback={save}>
-        {#if lockSaveButton}
-            <Icon data={refresh} scale={1.3} spin={true}/>
-        {:else}
-            {i18n.getMessage('save_settings')}
-        {/if}
-    </OnClickButton>
+    <FloatingActionButton
+        icon={saveIcon}
+        label={i18n.getMessage('save_settings')}
+        title={i18n.getMessage('save_settings')}
+        ariaLabel={i18n.getMessage('save_settings')}
+        onSave={save}
+        disabled={!hasPendingChanges || lockSaveButton}
+    />
 {/if}
 
 <div class="mt-4">
