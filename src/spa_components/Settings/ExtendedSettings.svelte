@@ -388,6 +388,22 @@
             </div>
         {/if}
 
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
+                id="enable_autofill"
+                label={i18n.getMessage('enable_autofill')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
+                id="enableEmailAsUsernameFallbackFilling"
+                label={i18n.getMessage('enable_email_as_username_fallback_filling')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableDoorhanger]}
+                id="enableDoorhanger"
+                label={i18n.getMessage('enable_doorhanger')}/>
+        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enablePasswordPicker]}
+                id="enablePasswordPicker"
+                label={i18n.getMessage('enable_password_picker')}/>
+
+        <hr class="my-4 border-gray-200"/>
+
+        <h3 class="text-lg font-semibold">{i18n.getMessage('website_credential_filter_options')}</h3>
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignoreProtocol]}
                                 id="ignoreProtocol"
                                 label={i18n.getMessage('ignore_protocol')}/>
@@ -400,18 +416,6 @@
         <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.ignorePort]}
                                 id="ignorePort"
                                 label={i18n.getMessage('ignore_port')}/>
-        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.autofillEnabled]}
-                                id="enable_autofill"
-                                label={i18n.getMessage('enable_autofill')}/>
-        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableEmailAsUsernameFallbackFilling]}
-                                id="enableEmailAsUsernameFallbackFilling"
-                                label={i18n.getMessage('enable_email_as_username_fallback_filling')}/>
-        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enableDoorhanger]}
-                                id="enableDoorhanger"
-                                label={i18n.getMessage('enable_doorhanger')}/>
-        <CustomCheckboxField bind:value={extendedSettings[ExtensionSettingsOptions.enablePasswordPicker]}
-                                id="enablePasswordPicker"
-                                label={i18n.getMessage('enable_password_picker')}/>
         
         <hr class="my-4 border-gray-200"/>
 
