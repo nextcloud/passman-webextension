@@ -28,7 +28,7 @@ export default class ExtensionMigrationService {
      * Safety net for very important upgrades that happened before this migration existed, or if onInstalled did not run for some reason.
      * Idempotent via {@link REMOVED_KEYVAL_STORE_FLAG}.
      */
-    public static async runOnStartup(): Promise<void> {
+    public static async runOnBackgroundScriptStart(): Promise<void> {
         // just a placeholder for now, no use-case for this yet
     }
 

@@ -1,4 +1,5 @@
 import ExtensionUnlockService from "@/services/ExtensionUnlockService";
+import ExtensionAutoUnlockService from "@/services/ExtensionAutoUnlockService";
 import { ExtensionBadgeService } from "@/services/backend/ExtensionBadgeService";
 import ContextMenuService from "@/services/backend/ContextMenuService";
 import ExtensionMigrationService from "@/services/ExtensionMigrationService";
@@ -54,11 +55,6 @@ export default defineBackground(() => {
         });
     });
 
-    // Catch upgrades that missed onInstalled
-    ExtensionMigrationService.runOnStartup().catch((e) => {
-        logger.warn('[migration] runOnStartup failed', e);
-    });
-
     browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         ExtensionUnlockService.isUnlocked().then(async (isUnlocked) => {
             if (isUnlocked) {
@@ -88,5 +84,15 @@ export default defineBackground(() => {
 
     executeOnMessageListenerRegistration();
 
-    ContextMenuService.reInit();
+    // Ordered execution to run on each background script start
+    ExtensionMigrationService.runOnBackgroundScriptStart().catch((e) => {
+        logger.warn('[migration] runOnBackgroundScriptStart failed', e);
+    }).finally(async () => {
+        // the immediate call covers extension reloads and updates, where the session storage is cleared
+        await ExtensionAutoUnlockService.tryAutoUnlock().catch((e) => {
+            logger.warn('tryAutoUnlock failed', e);
+        });
+
+        ContextMenuService.reInit();
+    });
 });

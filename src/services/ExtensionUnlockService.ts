@@ -1,4 +1,5 @@
 import CustomStorageService from "./CustomStorageService";
+import ExtensionAutoUnlockService from "./ExtensionAutoUnlockService";
 import ExtensionSettingsService, { ExtensionSettingsOptions } from "./ExtensionSettingsService";
 import PassmanClientService from "./PassmanClientService";
 import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
@@ -55,10 +56,12 @@ export default class ExtensionUnlockService {
 
     /**
      * Locks the extension, as well as taking care about clearing decrypted cache within the background service worker.
+     * An explicit lock also disarms auto-unlock, so it has to be re-enabled in the settings afterwards.
      * Should be called from the LockExtension MessageHandler.
      */
     public static async lock() {
         await CustomStorageService.clearSessionStorage();
+        await ExtensionAutoUnlockService.disable();
         CustomStorageService.closeSecureStorage();
         PassmanClientService.invalidatePassmanClients();
         ExtensionBadgeService.displayLockIcons();
