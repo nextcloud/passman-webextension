@@ -192,7 +192,7 @@
         "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Credentials",
+        "message": "Prisijungimo duomenys ",
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
@@ -252,7 +252,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker overlay for selecting passwords / filling forms",
+        "message": "Įjunkite slaptažodžių pasirinkimo langą, skirtą slaptažodžiams pasirinkti / anketoms užpildyti",
         "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
@@ -548,7 +548,7 @@
         "description": "OTP issuer"
     },
     "type": {
-        "message": "Type",
+        "message": "Tipas",
         "description": "OTP type"
     },
     "digits": {
@@ -760,7 +760,7 @@
         "description": "Update default settings button label"
     },
     "save_settings": {
-        "message": "Įrašyti nustatymus",
+        "message": "Išsaugoti nustatymus",
         "description": "Save settings button label"
     },
     "extended_settings": {
@@ -1012,43 +1012,43 @@
         "description": "Error toast after failing to clear offline cache"
     },
     "offline_cache_storage_backend": {
-        "message": "Cache storage",
+        "message": "Tarpinės atminties saugykla",
         "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
     },
     "offline_cache_storage_backend_description": {
-        "message": "Where encrypted vault cache is kept. IndexedDB persists across restarts; in-memory is cleared when the extension background script restarts.",
+        "message": "Kur saugoma užšifruota saugyklos talpykla. „IndexedDB“ duomenys išlieka po perkrovimo; atmintyje esantys duomenys ištrinami, kai iš naujo paleidžiamas plėtinio foninis scenarijus.",
         "description": "Explains the two offline cache storage backends"
     },
     "offline_cache_storage_backend_indexeddb": {
-        "message": "IndexedDB (persistent)",
+        "message": "„IndexedDB“ (nuolatinis)",
         "description": "Offline cache backend option: native IndexedDB"
     },
     "offline_cache_storage_backend_memory": {
-        "message": "In-memory (session / time limited)",
+        "message": "Atmintyje (sesijos / ribotos trukmės)",
         "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
     },
     "offline_cache_memory_mode_notice": {
-        "message": "Using in-memory cache. Cached vaults are lost when the extension background script restarts; they reload from the server when needed.",
+        "message": "Naudojama tarpinė atmintis. Tarpinėje atmintyje saugomos slėptuvės prarandamos, kai iš naujo paleidžiamas plėtinio foninis scenarijus; prireikus jos iš naujo įkeliamos iš serverio.",
         "description": "Amber notice when effective offline cache backend is memory"
     },
     "offline_cache_forced_fallback_notice": {
-        "message": "Native IndexedDB is not available in this browser profile (for example Firefox with “Never remember history”). In-memory cache is used instead.",
+        "message": "Šiame naršyklės profilyje nėra prieinama įprasta „IndexedDB“ funkcija (pavyzdžiui, „Firefox“ su nustatymu „Niekada neįsiminti istorijos“). Vietoj to naudojama tarpinės atminties talpykla.",
         "description": "Amber notice when IndexedDB was requested but blocked"
     },
     "offline_cache_size_memory_note": {
-        "message": "Size reflects the current session only.",
+        "message": "Dydis atspindi tik dabartinę sesiją.",
         "description": "Footnote under cache size when using in-memory backend"
     },
     "offline_cache_indexeddb_unavailable_warning": {
-        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "message": "Čia „IndexedDB“ nėra prieinama, todėl tarpinės atminties talpykla lieka aktyvi.",
         "description": "Warning toast when user chose IndexedDB but probe forced memory"
     },
     "offline_cache_quota_notice": {
-        "message": "Offline cache storage is full (quota exceeded). Free space or clear the offline cache in Extended settings.",
+        "message": "Neprisijungusios tarpinės atminties talpykla yra užpildyta (viršyta kvota). Atlaisvinkite vietą arba išvalykite neprisijungusią talpyklą išplėstiniuose nustatymuose.",
         "description": "Pinned toast when IndexedDB quota is exceeded"
     },
     "setup_offline_cache_fallback_notice": {
-        "message": "This browser profile cannot use IndexedDB (for example Firefox with “Never remember history”). Passman will use an in-memory cache that is cleared when the extension background script restarts.",
+        "message": "Šis naršyklės profilis negali naudoti „IndexedDB“ (pavyzdžiui, „Firefox“ su nustatymu „Niekada neįsiminti istorijos“). „Passman“ naudos tarpinės atminties talpyklą, kuri išvaloma, kai iš naujo paleidžiamas plėtinio foninis scenarijus.",
         "description": "Amber banner during setup when native IndexedDB is unavailable"
     },
     "server_connections": {
@@ -1116,15 +1116,15 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "change_unlock_password": {
-        "message": "Change unlock password",
+        "message": "Pakeisti atrakinimo slaptažodį",
         "description": "Section title for changing the extension unlock password in extended settings"
     },
     "current_unlock_password": {
-        "message": "Current unlock password",
+        "message": "Dabartinis atrakinimo slaptažodis",
         "description": "Label for the current extension unlock password field"
     },
     "new_unlock_password": {
-        "message": "New unlock password",
+        "message": "Naujas atrakinimo slaptažodis",
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
@@ -1132,11 +1132,11 @@
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
-        "message": "Unlock password changed successfully",
+        "message": "Atrakinimo slaptažodis sėkmingai pakeistas",
         "description": "Success toast after changing the extension unlock password"
     },
     "unlock_password_change_failed": {
-        "message": "Could not change the unlock password. Check the current password and try again.",
+        "message": "Nepavyko pakeisti atrakinimo slaptažodžio. Patikrinkite dabartinį slaptažodį ir pabandykite dar kartą.",
         "description": "Error when changing the extension unlock password fails"
     },
     "migrate_legacy_title": {
@@ -1452,7 +1452,7 @@
         "description": "Error when loading password generator settings fails"
     },
     "enable_doorhanger": {
-        "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+        "message": "Įgalinti naujų ir atnaujintų slaptažodžių rinkimą naudojant viršutinį išskleidžiamąjį langelį",
         "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {
