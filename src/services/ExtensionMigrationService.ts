@@ -13,20 +13,26 @@ export default class ExtensionMigrationService {
     private static readonly REMOVED_KEYVAL_STORE_FLAG = "migration.removedLegacyKeyvalStore";
 
     /**
+     * Flag to mark the "maybeRemoveUnlockPasswordArtifacts" migration as done.
+     */
+    private static readonly REMOVED_UNLOCK_PASSWORD_ARTIFACTS_FLAG = "migration.removedUnlockPasswordArtifacts";
+
+    /**
      * Run migrations triggered by browser.runtime.onInstalled.
      */
     public static async runOnInstalled(details: browser.Runtime.OnInstalledDetailsType): Promise<void> {
         if (details.reason === "install") {
             // Fresh install never had the legacy store; mark done so startup skips the delete.
             await this.markLegacyKeyvalStoreMigrationDone();
+            await this.markUnlockPasswordArtifactsMigrationDone();
         } else if (details.reason === "update") {
             await this.maybeRemoveLegacyKeyvalStore(details.previousVersion);
+            await this.maybeRemoveUnlockPasswordArtifacts();
         }
     }
 
     /**
      * Safety net for very important upgrades that happened before this migration existed, or if onInstalled did not run for some reason.
-     * Idempotent via {@link REMOVED_KEYVAL_STORE_FLAG}.
      */
     public static async runOnBackgroundScriptStart(): Promise<void> {
         // just a placeholder for now, no use-case for this yet
@@ -76,6 +82,41 @@ export default class ExtensionMigrationService {
 
     private static async markLegacyKeyvalStoreMigrationDone(): Promise<void> {
         await CustomStorageService.getUnsafeLocalStorage().set(this.REMOVED_KEYVAL_STORE_FLAG, true);
+    }
+
+    /**
+     * Drop the leftovers of the former password based unlock once.
+     * Since the storage key is the only secret the extension keeps after unlocking, the unsalted sha512
+     * verifier of the unlock password and the unlock password within the session storage are both obsolete.
+     * The hash especially is worth removing, as it allows cracking the unlock password offline.
+     */
+    private static async maybeRemoveUnlockPasswordArtifacts(): Promise<void> {
+        const storage = CustomStorageService.getUnsafeLocalStorage();
+        if (await storage.get<boolean>(this.REMOVED_UNLOCK_PASSWORD_ARTIFACTS_FLAG)) {
+            return;
+        }
+
+        /**
+         * Storage keys used by the password based unlock up to version 3.1.0.
+         */
+        const LEGACY_UNLOCK_PASSWORD_HASH_KEY = "extensionUnlockPasswordHash";
+        const LEGACY_UNLOCK_PASSWORD_SESSION_KEY = "extensionUnlockPassword";
+
+        try {
+            await storage.remove(LEGACY_UNLOCK_PASSWORD_HASH_KEY);
+            await CustomStorageService.getSessionStorage().remove(LEGACY_UNLOCK_PASSWORD_SESSION_KEY);
+            logger.info("[migration] Removed the unlock password hash and the session unlock password");
+        } catch (e) {
+            logger.warn("[migration] Failed to remove the former unlock password artifacts", e);
+            // Do not set the flag on failure so a later SW start can retry
+            return;
+        }
+
+        await this.markUnlockPasswordArtifactsMigrationDone();
+    }
+
+    private static async markUnlockPasswordArtifactsMigrationDone(): Promise<void> {
+        await CustomStorageService.getUnsafeLocalStorage().set(this.REMOVED_UNLOCK_PASSWORD_ARTIFACTS_FLAG, true);
     }
 
     /**
