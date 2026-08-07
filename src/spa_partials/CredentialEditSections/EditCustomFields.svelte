@@ -4,11 +4,8 @@
         CustomFieldInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/Credential/CustomFieldInterface";
     import Credential from "@binsky/passman-client-ts/lib/Model/Credential";
-    import trashO from "svelte-awesome/icons/trashO";
     import InPlaceEdit from "../FormElements/InPlaceEdit.svelte";
     import Icon from "svelte-awesome/components/Icon.svelte";
-    import refresh from "svelte-awesome/icons/refresh";
-    import plus from "svelte-awesome/icons/plus";
     import CustomInputField from "../FormElements/CustomInputField.svelte";
     import OnClickButton from "../InteractionElements/OnClickButton.svelte";
     import type { FileInterface } from "@binsky/passman-client-ts/lib/Interfaces/File/FileInterface";
@@ -17,6 +14,7 @@
     import Utils from "~/lib/Utils";
     import { i18n } from "~/lib/i18n";
     import { logger } from "~/services/ConsoleLoggingService";
+    import { externalLink, plus, refresh, trashO } from "svelte-awesome/icons";
 
     export let credentialData: DecryptedCredentialInterface;
     export let credential: Credential | null;  // only used for file encryption and upload
@@ -132,6 +130,12 @@
         credentialData.custom_fields.splice(pos, 1);
         customFieldReactivityCounter++;
     }
+
+    const openSameOptionsPage = () => {
+        const url = '/options.html' + window.location.hash;
+        // @ts-ignore
+        window.open(browser.runtime.getURL(url), '_blank');
+    }
 </script>
 
 {#if credentialData && credential}
@@ -192,6 +196,11 @@
                 <p class="text-sm text-gray-500">
                     {i18n.getMessage('error_file_upload_popup_2')}
                 </p>
+                <OnClickButton callback={openSameOptionsPage} title="{i18n.getMessage('open_options_page')}" small={true}
+                        additionalClasses="shrink-0"
+                        disabled={!credential}>
+                    <Icon data={externalLink} scale={1.3}/>
+                </OnClickButton>
             </div>
         {:else}
             <div class="pr-2">

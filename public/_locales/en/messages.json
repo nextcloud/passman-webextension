@@ -231,17 +231,21 @@
     "message": "Refresh timer [s]",
     "description": "Password"
   },
+  "website_credential_filter_options": {
+    "message": "Website credential filter options",
+    "description": "Label for the settings section about modifying default credential matching behavior for all websites"
+  },
   "ignore_protocol": {
     "message": "Ignore protocol for site matching",
-    "description": "Ignore protocol for site matching"
+    "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
   },
   "ignore_subdomain": {
     "message": "Ignore subdomain for site matching",
-    "description": "Password"
+    "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
   },
   "ignore_port": {
     "message": "Ignore port for site matching",
-    "description": "Ignore port for site matching"
+    "description": "Checkbox label for ignoring the url port when matching credentials to websites"
   },
   "http_warning": {
     "message": "You are using HTTP! Login credentials will be send in plain text. Your Passman credentials are still encrypted.",
@@ -249,11 +253,11 @@
   },
   "ignore_path": {
     "message": "Ignore path for site matching",
-    "description": "Ignore path for site matching"
+    "description": "Checkbox label for ignoring the url path when matching credentials to websites"
   },
   "ignore_page": {
     "message": "Ignore this page when suggesting credentials",
-    "description": "Checkbox label for ignoring a specific page"
+    "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
   },
   "enable_autofill": {
     "message": "Enable form auto fill (for a single matching credential)",

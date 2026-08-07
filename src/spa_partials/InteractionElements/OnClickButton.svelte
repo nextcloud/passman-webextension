@@ -1,13 +1,25 @@
 <script lang="ts">
-    export let callback = () => {
-        undefined;
-    };
-    export let additionalClasses = '';
-    export let tabindex: number | undefined = undefined;
-    export let title = '';
-    export let disabled = false;
 
-    export let small = false;
+    let {
+        callback = () => {},
+        additionalClasses = '',
+        tabindex = undefined,
+        title = '',
+        disabled = false,
+        small = false,
+        noPadding = false,
+    }: {
+        callback: () => void,
+        additionalClasses?: string,
+        tabindex?: number,
+        title?: string,
+        disabled?: boolean,
+        small?: boolean,
+        noPadding?: boolean
+    } = $props();
+    
+
+    let padding = $derived(noPadding ? '' : small ? 'px-2 py-1' : 'px-3 py-2');
 
     // Create a wrapper function that doesn't pass the callback into the button event
     const handleClick = (event: Event) => {
@@ -18,13 +30,11 @@
 
 <button
         {title}
-        on:click={handleClick}
+        onclick={handleClick}
         {disabled}
         {tabindex}
         class="text-primary-light-button-text border border-gray-300 hover:bg-base-200 hover:shadow-sm font-medium rounded-lg
-	text-sm dark:hover:bg-neutral cursor-pointer {small
-		? 'px-2 py-1'
-		: 'px-3 py-2'} text-center w-auto disabled:opacity-70 disabled:pointer-events-none {additionalClasses}"
+	        text-sm dark:hover:bg-neutral cursor-pointer {padding} text-center w-auto disabled:opacity-70 disabled:pointer-events-none {additionalClasses}"
 >
     <slot/>
 </button>
