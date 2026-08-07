@@ -19,6 +19,7 @@
     import EditFiles from "~/spa_partials/CredentialEditSections/EditFiles.svelte";
     import { i18n } from "~/lib/i18n";
     import { logger } from "~/services/ConsoleLoggingService";
+    import FlexibleSectionsButtonLayout from "@/spa_partials/CredentialEditSections/FlexibleSectionsButtonLayout.svelte";
 
     let pageIsLoading = true;
     let lockSaveButton = false;
@@ -107,35 +108,17 @@
         {#if pageIsLoading}
             <Loading/>
         {:else}
-            <div class="w-full flex flex-nowrap items-center justify-center space-x-4 border-b p-2 bg-white">
+            <div class="w-full flex items-center gap-2 border-b p-2 bg-white">
                 <OnClickButton callback={saveCredential} title="{i18n.getMessage('save')}"
-                               bind:disabled="{lockSaveButton}">
+                               additionalClasses="shrink-0"
+                               disabled={lockSaveButton}>
                     {#if lockSaveButton}
                         <Icon data={refresh} scale={1.3} spin="{true}"/>
                     {:else}
                         <Icon data={save} scale={1.3}/>
                     {/if}
                 </OnClickButton>
-                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.GENERAL)} title="{i18n.getMessage('general')}"
-                               additionalClasses=""
-                               disabled={!credential}>
-                    <span>{i18n.getMessage('general')}</span>
-                </OnClickButton>
-                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.FILES)}
-                                title="{i18n.getMessage('files')}" additionalClasses=""
-                                disabled={!credential}>
-                    <span>{i18n.getMessage('files')}</span>
-                </OnClickButton>
-                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.CUSTOM_FIELDS)}
-                               title="{i18n.getMessage('custom_fields')}" additionalClasses=""
-                               disabled={!credential}>
-                    <span>{i18n.getMessage('custom_fields')}</span>
-                </OnClickButton>
-                <OnClickButton callback={() => openSection(CREDENTIAL_EDIT_SECTIONS.OTP)}
-                                title="{i18n.getMessage('one_time_password')}" additionalClasses=""
-                                disabled={!credential}>
-                    <span>{i18n.getMessage('one_time_password')}</span>
-                </OnClickButton>
+                <FlexibleSectionsButtonLayout openSection={openSection} credential={credential} />
             </div>
             <div class="flex flex-col p-5">
                 {#if credentialData}
