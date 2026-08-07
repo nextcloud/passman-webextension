@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - NextCloud/ownCloud 的密碼管理器",
+        "message": "Passman — Nextcloud 密碼管理器",
         "description": "Extension description"
     },
     "search_for": {
@@ -15,9 +15,9 @@
         "message": "查無身分驗證",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "筆記",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "描述",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
         "message": "來自伺服器的無效回覆： [$STATUS_CODE$] $STATUS_TEXT$",
@@ -31,9 +31,21 @@
         "message": "儲存站點",
         "description": "Save site"
     },
+    "generator": {
+        "message": "產生器",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
         "message": "密碼生成器",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "密碼產生設定",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "切換進階密碼設定",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "生成密碼",
@@ -71,6 +83,22 @@
         "message": "需要全部字符類型",
         "description": "Require every character type"
     },
+    "use_uppercase": {
+        "message": "使用大寫字母",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "使用小寫字母",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "使用數字",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "使用特殊字元",
+        "description": "Use special characters"
+    },
     "add_account": {
         "message": "添加帳戶",
         "description": "Add account"
@@ -95,13 +123,33 @@
         "message": "新增",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "憑證已變更",
+        "description": "Credential changed"
+    },
     "credential_created": {
         "message": "身分驗證已建立",
         "description": "Credential created"
     },
+    "credentials_expires": {
+        "message": "憑證即將到期",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "到期日",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "未設定到期日",
+        "description": "No expiration date set for the credential password"
+    },
     "url": {
         "message": "網址URL",
         "description": "URL"
+    },
+    "tags": {
+        "message": "標籤",
+        "description": "Tags"
     },
     "password": {
         "message": "密碼",
@@ -131,13 +179,29 @@
         "message": "檢測到 URL 變更：",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "編輯憑證",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "建立新憑證",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "身分驗證",
-        "description": "credential"
+        "message": "憑證",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "身分驗證",
-        "description": "credentials"
+        "message": "憑證",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "此密碼已外洩。你只能透過更改密碼來移除此警告。",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "標記為已外洩",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
         "message": "刷新計時器",
@@ -163,9 +227,13 @@
         "message": "略過用於網站匹配的路徑 ",
         "description": "Ignore path for site matching"
     },
+    "ignore_page": {
+        "message": "建議憑證時忽略此頁面",
+        "description": "Checkbox label for ignoring a specific page"
+    },
     "enable_autofill": {
-        "message": "啟用瀏覽器自動填充",
-        "description": "Disable auto fill of forms"
+        "message": "啟用表單自動填寫（適用於單一相符憑證）",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
         "message": "選擇帳戶後啟用表格自動提交功能",
@@ -184,8 +252,8 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "啟用密碼選擇器",
-        "description": "Disable password picker"
+        "message": "啟用密碼選擇器浮層，以選取密碼／填寫表單",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
         "message": "找到密碼後，轉到清單而不是上一個 tab",
@@ -219,6 +287,18 @@
         "message": "身分驗證已更新",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "更新憑證時發生錯誤",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "建立憑證時發生錯誤",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "開啟選項頁面",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
         "message": "網站已略過",
         "description": "Site ignored"
@@ -244,7 +324,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "歡迎使用 Passman 網絡擴展",
+        "message": "歡迎使用 Passman 瀏覽器擴充功能",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -253,11 +333,11 @@
     },
     "begin": {
         "message": "讓我們開始吧！",
-        "description": "Let's begin!"
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "此嚮導將指導您完成設置擴展程序的步驟，並使所有密碼保持同步。",
-        "description": "Cancel"
+        "message": "你的 Nextcloud 密碼可直接在瀏覽器中使用。只需簡單設定，即可將此擴充功能連接至你的 Passman 保險庫。",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "取消",
@@ -295,9 +375,41 @@
         "message": "自訂欄位",
         "description": "Custom fields"
     },
+    "custom_fields_types_text": {
+        "message": "文字",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Password",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "檔案",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "新增欄位",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "欄位標籤",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "欄位值",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "欄位類型",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "未選取檔案",
+        "description": "Custom field no file selected"
+    },
     "general": {
         "message": "一般",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
         "message": "值",
@@ -419,6 +531,42 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "無效的 OTP 設定",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "OTP 密鑰",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "清除 OTP 設定",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "發行者",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Type",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "位數",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "週期",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "演算法",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "文件",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "設定",
         "description": "Settings"
@@ -443,9 +591,17 @@
         "message": "搜尋",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "輸入以搜尋",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
         "message": "身分驗證已刪除",
         "description": "Credential deleted"
+    },
+    "mark_credential_deleted": {
+        "message": "將憑證標記為已刪除",
+        "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
         "message": "當密碼選擇器找不到任何身分驗證時，它將轉到：",
@@ -466,6 +622,10 @@
     "reset_extension": {
         "message": "重設擴充元件",
         "description": "Search"
+    },
+    "reset_settings": {
+        "message": "重設設定",
+        "description": "Reset settings button label"
     },
     "iam_sure": {
         "message": "是的，我確定！",
@@ -501,7 +661,11 @@
     },
     "unlock": {
         "message": "解鎖",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "無需重新整理即可解鎖",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
         "message": "我們在此站點找到了 $AMOUNT$ 個身分驗證",
@@ -534,6 +698,862 @@
     "text": {
         "message": "文字",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "將 $FIELDNAME$ 複製到剪貼簿",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START_HTML_TAG$按一下以上傳$END_HTML_TAG$，或拖放檔案",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "任何檔案類型",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "檔案上傳成功",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "檔案上傳失敗",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "檔案刪除成功",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "檔案刪除失敗",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "檔案名稱",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "建立時間",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Size",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "很抱歉，彈出式視窗不支援檔案上傳。",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "請使用擴充功能的選項頁面或其他用戶端新增檔案。",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "清除分頁網址篩選器",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "沒有相符的憑證",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "更新預設設定",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "儲存設定",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "進階設定",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "設定全域進階設定",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Nextcloud 伺服器設定",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "設定你的 Nextcloud 伺服器及保險庫憑證",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "連接你的伺服器",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "登入 Nextcloud，然後選擇此瀏覽器應保持同步的 Passman 保險庫。",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "頁面規則",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "設定頁面專屬規則，以自訂擴充功能的全域行為。目前只支援網域，不支援特定路徑。（日後可能會加入）",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "已儲存的頁面規則",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "尚未定義任何頁面規則",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "頁面網址",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "新增規則",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "儲存規則",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "更新規則",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "刪除規則",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "頁面規則已儲存",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "頁面規則已刪除",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "覆寫全域設定",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "目前網站",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "調整 Passman 在此頁面的運作方式。",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "重設變更",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "正在載入頁面設定…",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "重试",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "無法載入此網站的頁面規則",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "儲存頁面規則失敗",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "搜尋規則",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "按網址篩選…",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "沒有符合搜尋條件的頁面規則",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "中止",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "使用全域設定",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "強制啟用",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "強制停用",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "目前正在編輯：$PAGE_URL$",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "必須提供頁面網址",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "載入頁面規則失敗",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "儲存頁面規則失敗",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "刪除頁面規則失敗",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "覆寫項目：$COUNT$",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "儲存預設保險庫設定",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "設定已成功更新",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "擴充功能版本",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "啟用以電郵地址作為用戶名稱的後備填寫方式（反之亦然）",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "表單偵測設定",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "啟用基於使用者事件的表單偵測",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "監聽部分特殊使用者事件，並套用防抖動及節流邏輯",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "在網址 popstate 事件發生時啟用表單偵測",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "主要適用於單頁應用程式（但不只限於此）",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "啟用透過每 1 秒檢查網址變更來偵測表單",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "啟用 MutationObserver，在 DOM 變更時偵測動態新增的表單及輸入欄位",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "這是偵測 DOM 變更時動態新增表單及輸入欄位最有效的方法，但亦最耗用資源",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "已啟用",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "已停用",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "離線快取",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "加密的保險庫資料會儲存在本機，以供離線使用。清除快取後，下次從伺服器載入保險庫時會自動重新填入。",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "估計大小：$1（$3 個保險庫中的 $2 項憑證）",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "正在量度離線快取…",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "無法量度離線快取大小",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "清除離線快取",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "要刪除本機離線保險庫快取嗎？你將需要網絡連線才能重新載入保險庫。",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "離線快取已清除",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "清除離線快取失敗",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "offline_cache_storage_backend": {
+        "message": "快取儲存空間",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "加密保險庫快取的儲存位置。IndexedDB 可在重新啟動後保留；記憶體內快取會在擴充功能背景指令碼重新啟動時清除。",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB（永久）",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "記憶體內（工作階段／限時）",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "目前使用記憶體內快取。擴充功能背景指令碼重新啟動時，已快取的保險庫將會遺失；需要時會從伺服器重新載入。",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "此瀏覽器設定檔無法使用原生 IndexedDB（例如 Firefox 啟用「永不記住歷史」時）。將改用記憶體內快取。",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "大小只反映目前工作階段。",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "此處無法使用 IndexedDB，因此會繼續使用記憶體內快取。",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "離線快取儲存空間已滿（超出配額）。請釋放空間，或在「進階設定」中清除離線快取。",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "此瀏覽器設定檔無法使用 IndexedDB（例如 Firefox 啟用「永不記住歷史」時）。Passman 將使用記憶體內快取，並在擴充功能背景指令碼重新啟動時清除。",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
+    "server_connections": {
+        "message": "已儲存的伺服器",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "此擴充功能每次只使用一個作用中的 Nextcloud 伺服器。你可在此新增備用執行個體，以便主要伺服器無法使用時快速切換。",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "作用中",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "切換",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "刪除",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "新增伺服器",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "作用中伺服器憑證",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "要從擴充功能移除此已儲存的伺服器嗎？其離線快取可能會保留，直至被清除。",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "已切換作用中伺服器",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "無法切換伺服器",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "伺服器已移除",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "無法移除伺服器",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "此重寫版本仍在積極開發中，可能會有尚未完善之處。$BR$發現錯誤？請在 $LINK_START$GitHub$LINK_END$ 提交問題。",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "選擇解鎖密碼",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "此密碼會鎖定此裝置上的擴充功能，並用於加密本機設定。它並非你的保險庫密碼。",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "儲存並繼續",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "change_unlock_password": {
+        "message": "更改解鎖密碼",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "目前解鎖密碼",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "新解鎖密碼",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "修改密碼",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "解鎖密碼已成功更改",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "無法更改解鎖密碼。請檢查目前密碼後再試。",
+        "description": "Error when changing the extension unlock password fails"
+    },
+    "migrate_legacy_title": {
+        "message": "匯入先前的設定",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "輸入你先前 Passman 擴充功能的主密碼。確認匯入後，此密碼亦會成為新的解鎖密碼。",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "已找到先前 Passman 擴充功能的設定。請先檢視及編輯，再進行匯入。",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "先前的主密碼",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "匯入先前的設定",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "匯入先前的安裝",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "使用舊主密碼解鎖先前的設定，以檢視將匯入的內容。",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "按需要編輯連線及偏好設定。系統會向你的伺服器檢查連線及保險庫狀態。",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "繼續檢視",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "匯入並完成設定",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "測試連線",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "重新檢查全部",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "設為作用中連線",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "配對及自動填寫偏好設定",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "每行輸入一個網站。這些網站會建立為已啟用「忽略頁面」的頁面規則。",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "未檢查",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "正在檢查…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "伺服器",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "實驗用的",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "無法解密先前的設定。請檢查主密碼後再試。",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "先前的設定不包含任何可匯入的伺服器帳戶。",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "無法匯入先前的設定。",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "已從先前的安裝匯入 $COUNT$ 個伺服器連線。",
+        "description": "Success toast after importing legacy settings"
+    },
+    "passman_app_required": {
+        "message": "此擴充功能要求你的 Nextcloud 伺服器已安裝 $LINK_START$Passman 應用程式$LINK_END$。",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "不會將任何資料傳送至指定 Nextcloud 伺服器以外的來源。",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "找不到已選取的保險庫資料",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "無法解密保險庫",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "找不到預設保險庫資料",
+        "description": "Error when metadata about the default vault is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "無法取得或解密保險庫",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "refreshCredentialList 發生不明錯誤",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "找不到預期的擴充功能頁面",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "回報問題",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "問題",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "按一下以自動填寫",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "新增標籤",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "移除 $TAG$ 標籤",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "-- 按一下以新增 --",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "沒有可複製的 $FIELDNAME$",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "找不到已選取的憑證",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "刪除憑證時發生不明錯誤",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "刪除憑證時發生錯誤",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "很差",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "較弱",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "良好",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "強",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "關閉警示",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "憑證圖示",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "OTP QR 碼",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "自動填寫",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "複製用戶名稱",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "複製電郵地址",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "複製密碼",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "複製網址",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "複製 OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "重新載入密碼選擇器",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "並複製到剪貼簿",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "並填寫欄位",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "$FIELDNAME$ 已複製到剪貼簿",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "無法複製 $FIELDNAME$",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "檢查擴充功能鎖定狀態時發生不明錯誤！",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "登入成功",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "登入失敗",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "未提供伺服器資料",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "不明錯誤",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "未提供憑證資料",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "找不到來源分頁",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "儲存憑證失敗",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "無法取得後端 Passman 用戶端",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "無效的請求（請檢查請求內容）",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "無法取得預設保險庫資料",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "未提供 connectionId",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "無法取得 Passman 用戶端",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "沒有 ID 為 $CONNECTION_ID$ 的受管理連線",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "無法使用所提供的密碼解密已選取的保險庫",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "無法透過 GUID 取得已選取的保險庫",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "擴充功能設定未提供保險庫資料",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "無法取得自訂密碼產生器設定",
+        "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "啟用透過門掛式提示收集新增及更新的密碼",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
+    },
+    "doorhanger_save_title": {
+        "message": "將登入資料儲存至 Passman？",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "更新 Passman 中的登入資料？",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "暫時不要",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "要更新的憑證",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "未命名憑證",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "門掛式提示",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "選擇在網站登入後如何顯示儲存／更新提示。",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "版面配置",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "卡片會浮動顯示於角落；頂端列則是沿頁面頂部顯示的全寬橫額。",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "卡片",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "頂端列",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "位置",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "卡片版面的角落位置，或頂端列版面的內容對齊方式。",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "右上",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "左上",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "右下",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "左下",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "記錄",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "此擴充功能的最低主控台記錄層級。較低層級會包含更多詳細資料。正式環境的預設值為「錯誤」。",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "記錄層級",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "除錯",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "記錄",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "資訊",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "警告",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "錯誤",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",

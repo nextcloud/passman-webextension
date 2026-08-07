@@ -664,7 +664,7 @@
         "description": "Unlock button label"
     },
     "unlock_without_refresh": {
-        "message": "Ava lukustus ilma andmete uuednuseta",
+        "message": "Ava lukustus ilma andmete uuenduseta",
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
@@ -900,23 +900,23 @@
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
-        "message": "Page URL is required",
+        "message": "Lehe võrguaadress on nõutav",
         "description": "Error message when the page rule URL is missing"
     },
     "page_rules_load_failed": {
-        "message": "Failed to load page rules",
+        "message": "Lehereeglite laadimine ei õnnestunud",
         "description": "Error message when page rules fail to load"
     },
     "page_rules_save_failed": {
-        "message": "Failed to save page rule",
+        "message": "Lehereegli salvestamine ei õnnestunud",
         "description": "Error message when page rule save fails"
     },
     "page_rules_delete_failed": {
-        "message": "Failed to delete page rule",
+        "message": "Lehereegli kustutamine ei õnnestunud",
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Overrides: $COUNT$",
+        "message": "See reegel sürjutab: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
@@ -924,19 +924,19 @@
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
-        "message": "Settings updated successfully",
+        "message": "Seadistuste uuendamine õnnestus",
         "description": "Settings updated successfully"
     },
     "extension_version": {
-        "message": "Extension version",
+        "message": "Laiendusmooduli versioon",
         "description": "Extension version"
     },
     "enable_email_as_username_fallback_filling": {
-        "message": "Enable email as username fallback filling (and vice versa)",
+        "message": "Luba kasutada e-postiaadressi tagavaravariandina kasutajanime asemel (ja vastupidi)",
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
-        "message": "Form detection settings",
+        "message": "Vormituvastuse seadistused",
         "description": "Form detection settings"
     },
     "enable_user_event_based_form_detection": {
@@ -976,7 +976,7 @@
         "description": "Shown when global setting is disabled"
     },
     "offline_cache": {
-        "message": "Offline cache",
+        "message": "Puhverdatud andmed",
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
@@ -988,15 +988,15 @@
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
-        "message": "Measuring offline cache…",
+        "message": "Tuvastan puhverdatud andmete mahtu…",
         "description": "Shown while estimating IndexedDB size"
     },
     "offline_cache_size_unavailable": {
-        "message": "Could not measure offline cache size",
+        "message": "Puhverdatud andmete mahu tuvastamine ei õnnestunuid",
         "description": "Error measuring IndexedDB size"
     },
     "clear_offline_cache": {
-        "message": "Clear offline cache",
+        "message": "Kustuta vallasrežiimiks puhverdatud andmed",
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
@@ -1004,11 +1004,11 @@
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
-        "message": "Offline cache cleared",
+        "message": "Vallasrežiimiks puhverdatud andmed on kustutatud",
         "description": "Success toast after clearing offline cache"
     },
     "offline_cache_clear_failed": {
-        "message": "Failed to clear offline cache",
+        "message": "Vallasrežiimiks puhverdatud andmete kustutamine ei õnnestunud",
         "description": "Error toast after failing to clear offline cache"
     },
     "offline_cache_storage_backend": {
@@ -1056,7 +1056,7 @@
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "message": "See laiendusmoodul kasutab korraga ühte Nextcloudi serverit. Võid siia lisada tagavaraservei, mida saad mugavalt kasutada olukorras, kus põhiserver pole saadaval.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
@@ -1080,7 +1080,7 @@
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "message": "Kas eemaldad selle salvestatud serveri laiendusmoodulist? Puhverdatud andmed jäävad alles seniks kuni sa nad eemaldad.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
@@ -1088,7 +1088,7 @@
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Serveri vahetamine laadimine ei õnnestunud",
+        "message": "Serveri vahetamine ei õnnestunud",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
@@ -1116,15 +1116,15 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "change_unlock_password": {
-        "message": "Change unlock password",
+        "message": "Muuda lukustuse salasõna",
         "description": "Section title for changing the extension unlock password in extended settings"
     },
     "current_unlock_password": {
-        "message": "Current unlock password",
+        "message": "Praegune lukustuse salasõna",
         "description": "Label for the current extension unlock password field"
     },
     "new_unlock_password": {
-        "message": "New unlock password",
+        "message": "Uus lukustuse salasõna",
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
@@ -1132,11 +1132,11 @@
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
-        "message": "Unlock password changed successfully",
+        "message": "Lukustuse salasõna muutmine õnnestus",
         "description": "Success toast after changing the extension unlock password"
     },
     "unlock_password_change_failed": {
-        "message": "Could not change the unlock password. Check the current password and try again.",
+        "message": "Lukustuse salasõna muutmine ei õnnestunud. Kontrolli, kas senine salasõna oli õige ja proovi uuesti.",
         "description": "Error when changing the extension unlock password fails"
     },
     "migrate_legacy_title": {
@@ -1228,15 +1228,15 @@
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "Importisin eelmisest paigaldusest $COUNT$ serveriühendust.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
-        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "message": "See laiendusmoodul eeldab, et $LINK_START$Passmani rakendus$LINK_END$ on sinu Nextcloudi serverisse paigaldatud.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "message": "Andmeid edastatakse vaid sinu Nextcloudi serverisse ja ei kusagile mujale.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {

@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for NextCloud / ownCloud",
+        "message": "Passman - The password manager for Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -15,9 +15,9 @@
         "message": "No credentials found",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "Notes",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "Description",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
         "message": "Invalid response from server: [$STATUS_CODE$] $STATUS_TEXT$",
@@ -31,9 +31,21 @@
         "message": "Save site",
         "description": "Save site"
     },
+    "generator": {
+        "message": "Generator",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
         "message": "Password generator",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "Password generation settings",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "Toggle extended password settings",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "Generate password",
@@ -71,6 +83,22 @@
         "message": "Require every character type",
         "description": "Require every character type"
     },
+    "use_uppercase": {
+        "message": "Use uppercase letters",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "Use lowercase letters",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "Use digits",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "Use special characters",
+        "description": "Use special characters"
+    },
     "add_account": {
         "message": "Add account",
         "description": "Add account"
@@ -95,13 +123,33 @@
         "message": "Add",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "Credential changed",
+        "description": "Credential changed"
+    },
     "credential_created": {
         "message": "Credential created",
         "description": "Credential created"
     },
+    "credentials_expires": {
+        "message": "Credential expires",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "Expiration date",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "No expiration date set",
+        "description": "No expiration date set for the credential password"
+    },
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "tags": {
+        "message": "Tags",
+        "description": "Tags"
     },
     "password": {
         "message": "Password",
@@ -131,13 +179,29 @@
         "message": "Detected changed URL for",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "Edit credential",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "Create new credential",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "credential",
-        "description": "credential"
+        "message": "Credential",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "credentials",
-        "description": "credentials"
+        "message": "Credentials",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "This password is compromised. You can only remove this warning by changing the password.",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "Mark as compromised",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
         "message": "Refresh timer [s]",
@@ -163,9 +227,13 @@
         "message": "Ignore path for site matching",
         "description": "Ignore path for site matching"
     },
+    "ignore_page": {
+        "message": "Ignore this page when suggesting credentials",
+        "description": "Checkbox label for ignoring a specific page"
+    },
     "enable_autofill": {
-        "message": "Enable form auto fill",
-        "description": "Disable auto fill of forms"
+        "message": "Enable form auto fill (for a single matching credential)",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
         "message": "Enable form auto submit after picking account",
@@ -184,8 +252,8 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
-        "description": "Disable password picker"
+        "message": "Enable password picker overlay for selecting passwords / filling forms",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
         "message": "When a password is found, go to list rather than last active tab",
@@ -219,6 +287,18 @@
         "message": "Credential updated",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "An error occurred while updating the credential",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "An error occurred while creating the credential",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "Open options page",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
         "message": "Site ignored",
         "description": "Site ignored"
@@ -244,7 +324,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman webextension",
+        "message": "Welcome to the Passman Webextension",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -253,11 +333,11 @@
     },
     "begin": {
         "message": "Let's begin!",
-        "description": "Let's begin!"
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "This wizard will guide you trough the steps to set up the extension and keep all your passwords synchronised.",
-        "description": "Cancel"
+        "message": "Your Nextcloud passwords, ready in the browser. A short setup connects this extension to your Passman vault.",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "Cancel",
@@ -295,9 +375,41 @@
         "message": "Custom Fields",
         "description": "Custom fields"
     },
+    "custom_fields_types_text": {
+        "message": "Text",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Password",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "File",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "Add field",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "Field label",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "Field value",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "Field type",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "No file selected",
+        "description": "Custom field no file selected"
+    },
     "general": {
         "message": "General",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
         "message": "Value",
@@ -419,6 +531,42 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "Invalid OTP configuration",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "OTP secret",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "Clear OTP configuration",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "Issuer",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Type",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "Digits",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "Period",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "Algorithm",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "Files",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "Settings",
         "description": "Settings"
@@ -443,9 +591,17 @@
         "message": "Search",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "Type to search",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
         "message": "Credential deleted",
         "description": "Credential deleted"
+    },
+    "mark_credential_deleted": {
+        "message": "Mark credential as deleted",
+        "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
         "message": "When the Password picker is unable to find any credentials, it will go to:",
@@ -466,6 +622,10 @@
     "reset_extension": {
         "message": "Reset extension",
         "description": "Search"
+    },
+    "reset_settings": {
+        "message": "Reset settings",
+        "description": "Reset settings button label"
     },
     "iam_sure": {
         "message": "Yes, I'm sure!",
@@ -501,7 +661,11 @@
     },
     "unlock": {
         "message": "Unlock",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "Unlock without refresh",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
         "message": "We've found $AMOUNT$ credentials for this site",
@@ -534,6 +698,862 @@
     "text": {
         "message": "text",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "Copy $FIELDNAME$ to clipboard",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START_HTML_TAG$Click to upload$END_HTML_TAG$ or drag and drop",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "Any file type",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "File upload succeeded",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "File upload failed",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "File deletion succeeded",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "File deletion failed",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "File name",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "Created at",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Size",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "Unfortunately, file upload is not supported in the popup.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "Please use the webextension options page or another client to add files.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "Clear tab url filter",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "No matching credentials",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "Update default settings",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "Save settings",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "Extended settings",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "Setup global extended settings",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Nextcloud server setup",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "Setup your Nextcloud server and vault credentials",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "Connect your server",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "Page rules",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "Saved page rules",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "No page rules defined yet",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "Page URL",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "New rule",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "Save rule",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "Update rule",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "Delete rule",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "Page rule saved",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "Page rule deleted",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "Override global settings",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "Current site",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "Adjust how Passman behaves on this page.",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "Reset changes",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "Loading page settings...",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "Retry",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "Unable to load page rules for this site",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "Saving page rules failed",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "Search rules",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "Filter by URL...",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "No page rules match your search",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "Abort",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "Use global setting",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "Force enable",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "Force disable",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "Currently editing: $PAGE_URL$",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "Page URL is required",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "Failed to load page rules",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "Failed to save page rule",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "Failed to delete page rule",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "Overrides: $COUNT$",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "Save default vault settings",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "Settings updated successfully",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "Extension version",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "Enable email as username fallback filling (and vice versa)",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "Form detection settings",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "Enable user event based form detection",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "Listen to some special user events with debouncing and throttling logic",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "Enable form detection on URL popstate events",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "Basically useful for SPAs (but not necessarily)",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "Enable form detection on URL changes, checked by interval (of 1s)",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "enabled",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "disabled",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "Offline cache",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "Measuring offline cache…",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "Could not measure offline cache size",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "Clear offline cache",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "Offline cache cleared",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "Failed to clear offline cache",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "offline_cache_storage_backend": {
+        "message": "Cache storage",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "Where encrypted vault cache is kept. IndexedDB persists across restarts; in-memory is cleared when the extension background script restarts.",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB (persistent)",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "In-memory (session / time limited)",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "Using in-memory cache. Cached vaults are lost when the extension background script restarts; they reload from the server when needed.",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "Native IndexedDB is not available in this browser profile (for example Firefox with “Never remember history”). In-memory cache is used instead.",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "Size reflects the current session only.",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "Offline cache storage is full (quota exceeded). Free space or clear the offline cache in Extended settings.",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "This browser profile cannot use IndexedDB (for example Firefox with “Never remember history”). Passman will use an in-memory cache that is cleared when the extension background script restarts.",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
+    "server_connections": {
+        "message": "Saved servers",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "active",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "Switch",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "Remove",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "Add server",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "Active server credentials",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "Switched active server",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "Could not switch server",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "Server removed",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "Could not remove server",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "Choose an unlock password",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "Save & continue",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "change_unlock_password": {
+        "message": "Change unlock password",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "Current unlock password",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "New unlock password",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "Change password",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "Unlock password changed successfully",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "Could not change the unlock password. Check the current password and try again.",
+        "description": "Error when changing the extension unlock password fails"
+    },
+    "migrate_legacy_title": {
+        "message": "Import previous settings",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Previous master password",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Import previous settings",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Import previous installation",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Continue to review",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Import and finish setup",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Test connection",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Recheck all",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Use as active connection",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Matching & autofill preferences",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "not checked",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "checking…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimental",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "The previous settings do not contain any server accounts to import.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Could not import previous settings.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "description": "Success toast after importing legacy settings"
+    },
+    "passman_app_required": {
+        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "No selected vault info found",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "Could not decrypt vault",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "No default vault info found",
+        "description": "Error when metadata about the default vault is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "Could not get or decrypt vault",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "Unknown error in refreshCredentialList",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "Expected extension page not found",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "Report an issue",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "Issues",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "Click to auto fill",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "Add a tag",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "Remove $TAG$ tag",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "-- Click to add --",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "No $FIELDNAME$ to copy",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "Could not find selected credential",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "Unknown error occurred while deleting a credential",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "An error occurred while deleting a credential",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "poor",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "weak",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "good",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "strong",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "Dismiss alert",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "Credential icon",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "OTP QR code",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "Auto fill",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "Copy username",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "Copy email",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "Copy password",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "Copy URL",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "Copy OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "Reload password picker",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "And copy to clipboard",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "And fill fields",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "$FIELDNAME$ copied to clipboard",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "Failed to copy $FIELDNAME$",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "Unknown error while checking extension lock state!",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "Login succeeded",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "Login failed",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "No server info provided",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "Unknown error",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "No credential data provided",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "No source tab found",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "Failed to save credential",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "Could not get backend passman client",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "Invalid request (check request body)",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "Could not get default vault info",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "No connectionId provided",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "Could not get passman client",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "No managed connection with id $CONNECTION_ID$",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "Selected vault could not be decrypted with the given password",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "Could not get selected vault by guid",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "No vault info provided by extension settings",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "Could not get custom password generator configuration",
+        "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
+    },
+    "doorhanger_save_title": {
+        "message": "Save login to Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Update login in Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Not now",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Credential to update",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Untitled credential",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Doorhanger",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Layout",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Card",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Top row",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Position",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Top right",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Top left",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Bottom right",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Bottom left",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Logging",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Log level",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Debug",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Log",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Info",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Warning",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Error",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",
