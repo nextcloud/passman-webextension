@@ -139,19 +139,19 @@
         {:else}
             <div class="flex flex-col items-center justify-center w-full">
                 <label for="file-upload"
-                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-neutral dark:hover:border-gray-500 dark:hover:bg-neutral/80"
+                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
                     on:dragenter={handleDragEnter}
                     on:dragover={handleDragOver}
                     on:dragleave={handleDragLeave}
                     on:drop={handleDrop}>
                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
                         </svg>
-                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <p class="mb-2 text-sm text-gray-500">
                             {@html i18n.getMessage('files_upload_box_text', ['<span class="font-semibold">', '</span>'])}
                         </p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">
+                        <p class="text-xs text-gray-500">
                             {i18n.getMessage('files_any_type_info')}
                         </p>
                     </div>
@@ -161,7 +161,7 @@
                 {#if isUploading}
                     <div class="w-full mt-4 space-y-2">
                         <div class="flex justify-center">
-                            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 dark:border-blue-400"></div>
+                            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
                         </div>
                     </div>
                 {/if}
@@ -169,8 +169,8 @@
         {/if}
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-neutral dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3 w-5/12">{i18n.getMessage("files_header_name")}</th>
                         <th scope="col" class="px-6 py-3 w-3/12 whitespace-nowrap">{i18n.getMessage("files_header_created")}</th>
@@ -181,8 +181,8 @@
                 <tbody>
                     {#key isUploading}
                         {#each credentialData.files as file (file.file_id)}
-                            <tr class="bg-white border-b dark:bg-neutral dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-neutral/80">
-                                <td class="px-3 py-2 font-medium text-gray-900 dark:text-white">
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-3 py-2 font-medium text-gray-900">
                                     <InPlaceEdit bind:value={file.filename}/>
                                 </td>
                                 <td class="px-3 py-2">
@@ -194,7 +194,7 @@
                                 <td class="px-3 py-2 text-right">
                                     <button on:click={() => deleteFile(file)}
                                             title="{i18n.getMessage('delete')}"
-                                            class="font-medium text-red-600 dark:text-red-500 hover:underline">
+                                            class="font-medium text-red-600 hover:underline cursor-pointer">
                                         <Icon data={trashO} scale={1.0}/>
                                     </button>
                                 </td>
