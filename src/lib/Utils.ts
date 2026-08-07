@@ -11,8 +11,19 @@ export default class Utils {
         };
     };
     public static isInPopup = () => {
-        return (typeof browser != undefined && browser.extension) ?
-            browser.extension.getViews({ type: "popup" }).length > 0 : null;
+        // Must test "this" window, not "is any popup open".
+        // Options + open popup would otherwise both report true.
+        try {
+            const popupViews = browser?.extension?.getViews?.({ type: "popup" }) ?? [];
+            if (popupViews.includes(window)) {
+                return true;
+            }
+        } catch {
+            // ignore
+        }
+
+        // Vivaldi: getViews({ type: "popup" }) is often empty even inside the popup
+        return location.pathname.includes('/popup.html');
     };
     public static titleCase = (s: string) => {
         return s.split(' ')
