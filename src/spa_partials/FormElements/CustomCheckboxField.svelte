@@ -21,7 +21,7 @@
 			{name}
 			{id}
 			bind:checked={value}
-			class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block size-[3.5]
+			class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block size-3.5
        focus:ring-cyan-600 focus:border-cyan-600 read-only:cursor-default disabled:bg-gray-200"
 			{placeholder}
 			{required}
