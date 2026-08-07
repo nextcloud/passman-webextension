@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import { routes } from "@/popupRoutes";
   // @ts-expect-error
-  import Router, { push } from "@/Router.svelte";
+  import Router, { push, location } from "@/Router.svelte";
   import extensionUnlockStateStore, { ExtensionUnlockState } from "@/stores/extensionUnlockStateStore";
   import BottomNavBar from "@/spa_partials/BottomNavBar.svelte";
   import Toaster from "@/spa_partials/Toaster.svelte";
@@ -28,7 +28,9 @@
           break;
         case ExtensionUnlockState.UNLOCKED:
           // correct unlock password already in session
-          push('/home');
+          if ($location === null || $location === '' || $location === '/') {
+            push('/home');
+          }
           break;
         default:
           logger.error(i18n.getMessage('unknown_error_checking_lock_state'));
