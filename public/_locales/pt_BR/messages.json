@@ -207,17 +207,21 @@
         "message": "Horário de atualização [s]",
         "description": "Password"
     },
+    "website_credential_filter_options": {
+        "message": "Website credential filter options",
+        "description": "Label for the settings section about modifying default credential matching behavior for all websites"
+    },
     "ignore_protocol": {
         "message": "Ignorar protocolo para sites coincidentes",
-        "description": "Ignore protocol for site matching"
+        "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
         "message": "Ignorar subdomínios para sites coincidentes",
-        "description": "Password"
+        "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
         "message": "Ignorar porta para sites coincidentes",
-        "description": "Ignore port for site matching"
+        "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
         "message": "Você está usando HTTP! Os dados de login serão enviados sem criptografia. Seus dados no Passman estão ainda criptografados.",
@@ -225,11 +229,11 @@
     },
     "ignore_path": {
         "message": "Ignore o caminho para site coincidente",
-        "description": "Ignore path for site matching"
+        "description": "Checkbox label for ignoring the url path when matching credentials to websites"
     },
     "ignore_page": {
         "message": "Ignorar esta página ao sugerir credenciais",
-        "description": "Checkbox label for ignoring a specific page"
+        "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
         "message": "Ativar o preenchimento automático de formulários (para uma única credencial correspondente)",
@@ -1138,6 +1142,30 @@
     "unlock_password_change_failed": {
         "message": "Não foi possível alterar a senha de destrancamento. Verifique a senha atual e tente novamente.",
         "description": "Error when changing the extension unlock password fails"
+    },
+    "enable_auto_unlock": {
+        "message": "Auto-unlock on browser start",
+        "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
+    },
+    "enable_auto_unlock_description": {
+        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "description": "Trade-off hint under the auto-unlock checkbox"
+    },
+    "enable_auto_unlock_lock_note": {
+        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
+    },
+    "enable_auto_unlock_local_fallback_notice": {
+        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
+    },
+    "auto_unlock_enable_failed": {
+        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "description": "Error toast when enabling auto-unlock fails"
+    },
+    "auto_unlock_disable_failed": {
+        "message": "Could not disable auto-unlock.",
+        "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
         "message": "Importar configurações anteriores",

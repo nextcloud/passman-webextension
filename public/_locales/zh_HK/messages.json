@@ -207,17 +207,21 @@
         "message": "刷新計時器",
         "description": "Password"
     },
+    "website_credential_filter_options": {
+        "message": "Website credential filter options",
+        "description": "Label for the settings section about modifying default credential matching behavior for all websites"
+    },
     "ignore_protocol": {
         "message": "略過用於網站匹配的協定",
-        "description": "Ignore protocol for site matching"
+        "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
         "message": "略過用於網站匹配的子域",
-        "description": "Password"
+        "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
         "message": "略過用於網站匹配的連接埠",
-        "description": "Ignore port for site matching"
+        "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
         "message": "您正在使用HTTP！登入身分驗證將以純文字形式發送。您的Passman身分驗證仍被加密。",
@@ -225,11 +229,11 @@
     },
     "ignore_path": {
         "message": "略過用於網站匹配的路徑 ",
-        "description": "Ignore path for site matching"
+        "description": "Checkbox label for ignoring the url path when matching credentials to websites"
     },
     "ignore_page": {
         "message": "建議憑證時忽略此頁面",
-        "description": "Checkbox label for ignoring a specific page"
+        "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
         "message": "啟用表單自動填寫（適用於單一相符憑證）",
@@ -1138,6 +1142,30 @@
     "unlock_password_change_failed": {
         "message": "無法更改解鎖密碼。請檢查目前密碼後再試。",
         "description": "Error when changing the extension unlock password fails"
+    },
+    "enable_auto_unlock": {
+        "message": "Auto-unlock on browser start",
+        "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
+    },
+    "enable_auto_unlock_description": {
+        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "description": "Trade-off hint under the auto-unlock checkbox"
+    },
+    "enable_auto_unlock_lock_note": {
+        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
+    },
+    "enable_auto_unlock_local_fallback_notice": {
+        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
+    },
+    "auto_unlock_enable_failed": {
+        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "description": "Error toast when enabling auto-unlock fails"
+    },
+    "auto_unlock_disable_failed": {
+        "message": "Could not disable auto-unlock.",
+        "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
         "message": "匯入先前的設定",
