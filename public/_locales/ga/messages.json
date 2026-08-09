@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Website credential filter options",
+        "message": "Roghanna scagaire dintiúir láithreáin ghréasáin",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
@@ -256,7 +256,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker overlay for selecting passwords / filling forms",
+        "message": "Cumasaigh forleagan roghnóra pasfhocal chun pasfhocail a roghnú / foirmeacha a líonadh",
         "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
@@ -1016,43 +1016,43 @@
         "description": "Error toast after failing to clear offline cache"
     },
     "offline_cache_storage_backend": {
-        "message": "Cache storage",
+        "message": "Stóráil taisce",
         "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
     },
     "offline_cache_storage_backend_description": {
-        "message": "Where encrypted vault cache is kept. IndexedDB persists across restarts; in-memory is cleared when the extension background script restarts.",
+        "message": "An áit a gcoimeádtar taisce cruinneacháin criptithe. Leanann IndexedDB ar aghaidh tar éis atosaithe; glantar an chuimhne nuair a atosaítear script chúlra an shíneadh.",
         "description": "Explains the two offline cache storage backends"
     },
     "offline_cache_storage_backend_indexeddb": {
-        "message": "IndexedDB (persistent)",
+        "message": "DB Innéacsaithe (buan)",
         "description": "Offline cache backend option: native IndexedDB"
     },
     "offline_cache_storage_backend_memory": {
-        "message": "In-memory (session / time limited)",
+        "message": "In-chuimhne (seisiún / teorainn ama)",
         "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
     },
     "offline_cache_memory_mode_notice": {
-        "message": "Using in-memory cache. Cached vaults are lost when the extension background script restarts; they reload from the server when needed.",
+        "message": "Ag baint úsáide as taisce in-chuimhne. Cailltear cruinneacháin taisceáilte nuair a atosófar script chúlra an shíneadh; athlódálann siad ón bhfreastalaí nuair is gá.",
         "description": "Amber notice when effective offline cache backend is memory"
     },
     "offline_cache_forced_fallback_notice": {
-        "message": "Native IndexedDB is not available in this browser profile (for example Firefox with “Never remember history”). In-memory cache is used instead.",
+        "message": "Níl IndexedDB dúchasach ar fáil sa phróifíl brabhsálaí seo (mar shampla Firefox le “Ná cuimhnigh ar stair choíche”). Úsáidtear taisce in-chuimhne ina ionad.",
         "description": "Amber notice when IndexedDB was requested but blocked"
     },
     "offline_cache_size_memory_note": {
-        "message": "Size reflects the current session only.",
+        "message": "Léiríonn an méid an seisiún reatha amháin.",
         "description": "Footnote under cache size when using in-memory backend"
     },
     "offline_cache_indexeddb_unavailable_warning": {
-        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "message": "Níl IndexedDB ar fáil anseo, mar sin fanann taisce sa chuimhne gníomhach.",
         "description": "Warning toast when user chose IndexedDB but probe forced memory"
     },
     "offline_cache_quota_notice": {
-        "message": "Offline cache storage is full (quota exceeded). Free space or clear the offline cache in Extended settings.",
+        "message": "Tá an stóras taisce as líne lán (cuóta sáraithe). Saor spás nó glan an taisce as líne sna socruithe Leathnaithe.",
         "description": "Pinned toast when IndexedDB quota is exceeded"
     },
     "setup_offline_cache_fallback_notice": {
-        "message": "This browser profile cannot use IndexedDB (for example Firefox with “Never remember history”). Passman will use an in-memory cache that is cleared when the extension background script restarts.",
+        "message": "Ní féidir leis an bpróifíl brabhsálaí seo IndexedDB a úsáid (mar shampla Firefox le “Ná cuimhnigh ar stair choíche”). Úsáidfidh Passman taisce sa chuimhne a ghlanfar nuair a atosófar script chúlra an síneadh.",
         "description": "Amber banner during setup when native IndexedDB is unavailable"
     },
     "server_connections": {
@@ -1120,15 +1120,15 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "change_unlock_password": {
-        "message": "Change unlock password",
+        "message": "Athraigh an focal faire díghlasála",
         "description": "Section title for changing the extension unlock password in extended settings"
     },
     "current_unlock_password": {
-        "message": "Current unlock password",
+        "message": "Pasfhocal díghlasála reatha",
         "description": "Label for the current extension unlock password field"
     },
     "new_unlock_password": {
-        "message": "New unlock password",
+        "message": "Pasfhocal díghlasála nua",
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
@@ -1136,35 +1136,35 @@
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
-        "message": "Unlock password changed successfully",
+        "message": "Athraíodh an pasfhocal díghlasála go rathúil",
         "description": "Success toast after changing the extension unlock password"
     },
     "unlock_password_change_failed": {
-        "message": "Could not change the unlock password. Check the current password and try again.",
+        "message": "Níorbh fhéidir an focal faire díghlasála a athrú. Seiceáil an focal faire reatha agus déan iarracht eile.",
         "description": "Error when changing the extension unlock password fails"
     },
     "enable_auto_unlock": {
-        "message": "Auto-unlock on browser start",
+        "message": "Díghlasáil uathoibríoch ar thosú an bhrabhsálaí",
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
-        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "message": "Coinníonn sé seo an síneadh díghlasáilte tar éis atosaithe an bhrabhsálaí gan do phasfhocal díghlasála a stóráil. Is féidir le duine ar bith ar féidir leis cód a rith sa síneadh seo, nó an phróifíl bhrabhsálaí seo a léamh ón diosca, rochtain a fháil ar shonraí do chruinneacháin gan an pasfhocal. Tá sé cosúil le rogha \"fanacht sínithe isteach\" OS.",
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "message": "Má ghlasálann tú an síneadh, múchtar an díghlasáil uathoibríoch. Athchumasaigh anseo é ina dhiaidh sin.",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
-        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "message": "Ní féidir IndexedDB a úsáid sa phróifíl brabhsálaí seo, mar sin stóráiltear an eochair uath-dhíghlasála i stóras áitiúil an shíneadh. Is laige é sin: is féidir le duine ar bith ar féidir leis an stóras síneadh a léamh díghlasáil gan do phasfhocal.",
         "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
     },
     "auto_unlock_enable_failed": {
-        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "message": "Níorbh fhéidir díghlasáil uathoibríoch a chumasú. Díghlasáil nó atosú an síneadh agus déan iarracht arís.",
         "description": "Error toast when enabling auto-unlock fails"
     },
     "auto_unlock_disable_failed": {
-        "message": "Could not disable auto-unlock.",
+        "message": "Níorbh fhéidir an díghlasáil uathoibríoch a dhíchumasú.",
         "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
@@ -1480,7 +1480,7 @@
         "description": "Error when loading password generator settings fails"
     },
     "enable_doorhanger": {
-        "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+        "message": "Cumasaigh bailiú pasfhocal nua agus nuashonraithe leis an bhforleagan dorais",
         "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {

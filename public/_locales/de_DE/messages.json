@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Website credential filter options",
+        "message": "Optionen für den Webseiten-Anmeldeinformationsfilter",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
@@ -1144,27 +1144,27 @@
         "description": "Error when changing the extension unlock password fails"
     },
     "enable_auto_unlock": {
-        "message": "Auto-unlock on browser start",
+        "message": "Automatisches Entsperren beim Browserstart",
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
-        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "message": "Die Erweiterung bleibt auch nach einem Browserneustart entsperrt, ohne Ihr Entsperrpasswort zu speichern. Jeder, der Code in dieser Erweiterung ausführen oder dieses Browserprofil von der Festplatte lesen kann, hat dann ohne Passwort Zugriff auf Ihre Tresordaten. Es ist vergleichbar mit der Option „Angemeldet bleiben“ des Betriebssystems.",
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "message": "Durch das Sperren der Nebenstelle wird die automatische Entsperrung deaktiviert. Sie können sie anschließend hier wieder aktivieren.",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
-        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "message": "IndexedDB ist in diesem Browserprofil nicht nutzbar, daher wird der Schlüssel für die automatische Entsperrung im lokalen Speicher der Erweiterung gespeichert. Das ist unsicherer: Jeder, der auf den Speicher der Erweiterung zugreifen kann, kann die Erweiterung ohne Ihr Passwort entsperren.",
         "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
     },
     "auto_unlock_enable_failed": {
-        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "message": "Die automatische Entsperrung konnte nicht aktiviert werden. Entsperren Sie die Erweiterung oder starten Sie sie neu und versuchen Sie es erneut.",
         "description": "Error toast when enabling auto-unlock fails"
     },
     "auto_unlock_disable_failed": {
-        "message": "Could not disable auto-unlock.",
+        "message": "Automatische Entsperrung konnte nicht deaktiviert werden.",
         "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
