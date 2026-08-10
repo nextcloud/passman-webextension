@@ -200,7 +200,7 @@
         "description": "Credential compromised notice"
     },
     "mark_compromised": {
-        "message": "Mark as compromised",
+        "message": "Marquer comme compromis",
         "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
@@ -328,7 +328,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman Webextension",
+        "message": "Bienvenue sur l'extension Web Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -596,7 +596,7 @@
         "description": "Search"
     },
     "type_to_search": {
-        "message": "Type to search",
+        "message": "Tapez pour rechercher",
         "description": "Type to search placeholder for the search input"
     },
     "credential_deleted": {
@@ -704,7 +704,7 @@
         "description": "To describe a textual input field"
     },
     "copy_to_clipboard": {
-        "message": "Copy $FIELDNAME$ to clipboard",
+        "message": "Copier $FIELDNAME$ dans le presse-papiers",
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
@@ -732,7 +732,7 @@
         "description": "Shown when a file deletion has failed"
     },
     "files_header_name": {
-        "message": "File name",
+        "message": "Nom du fichier",
         "description": "Column header for file name in files table"
     },
     "files_header_created": {
@@ -748,7 +748,7 @@
         "description": "Error message when trying to upload a file in the popup"
     },
     "error_file_upload_popup_2": {
-        "message": "Please use the webextension options page or another client to add files.",
+        "message": "Veuillez utiliser la page des options de l'extension Web ou un autre client pour ajouter des fichiers.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
@@ -764,7 +764,7 @@
         "description": "Update default settings button label"
     },
     "save_settings": {
-        "message": "Save settings",
+        "message": "Enregistrer les paramètres",
         "description": "Save settings button label"
     },
     "extended_settings": {
@@ -792,23 +792,23 @@
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
-        "message": "Page rules",
+        "message": "Règles de page",
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
+        "message": "Configurez des règles spécifiques à des pages pour personnaliser le comportement global de l'extension. Cela n'est valable que pour des domaines, pas pour des chemins spécifiques (mais le sera peut-être à l'avenir).",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
-        "message": "Saved page rules",
+        "message": "Règles de page enregistrées",
         "description": "Heading for the list of saved page rules"
     },
     "page_rules_no_rules": {
-        "message": "No page rules defined yet",
+        "message": "Aucune règle de page définie pour le moment",
         "description": "Shown when there are no page rules"
     },
     "page_rules_url_label": {
-        "message": "Page URL",
+        "message": "URL de la page",
         "description": "Label for page rule URL input"
     },
     "page_rules_url_placeholder": {
@@ -820,23 +820,23 @@
         "description": "Label for creating a new page rule"
     },
     "page_rules_save_rule": {
-        "message": "Save rule",
+        "message": "Enregistrer la règle",
         "description": "Label for saving a new page rule"
     },
     "page_rules_update_rule": {
-        "message": "Update rule",
+        "message": "Mettre à jour la règle",
         "description": "Label for updating an existing page rule"
     },
     "page_rules_delete_rule": {
-        "message": "Delete rule",
+        "message": "Supprimer la règle",
         "description": "Label for deleting a page rule"
     },
     "page_rules_rule_saved": {
-        "message": "Page rule saved",
+        "message": "Règle de page enregistrée",
         "description": "Success notification when saving a page rule"
     },
     "page_rules_rule_deleted": {
-        "message": "Page rule deleted",
+        "message": "Règle de page supprimée",
         "description": "Success notification when deleting a page rule"
     },
     "page_rules_override_section": {
@@ -844,11 +844,11 @@
         "description": "Heading for page rule override settings"
     },
     "page_rules_picker_current_site": {
-        "message": "Current site",
+        "message": "Site actuel",
         "description": "Label that shows current origin in picker tab"
     },
     "page_rules_picker_intro": {
-        "message": "Adjust how Passman behaves on this page.",
+        "message": "Ajustez la façon dont Passman se comporte sur cette page.",
         "description": "Intro text for picker page rules tab"
     },
     "page_rules_picker_reset": {
@@ -884,7 +884,7 @@
         "description": "Shown when no rules match the applied filter"
     },
     "page_rules_cancel_edit": {
-        "message": "Abort",
+        "message": "Abandonner",
         "description": "Button label to go back to the page rules list"
     },
     "page_rules_use_global": {
@@ -908,15 +908,15 @@
         "description": "Error message when the page rule URL is missing"
     },
     "page_rules_load_failed": {
-        "message": "Failed to load page rules",
+        "message": "Échec du chargement des règles de page",
         "description": "Error message when page rules fail to load"
     },
     "page_rules_save_failed": {
-        "message": "Failed to save page rule",
+        "message": "Échec de l'enregistrement de la règle de page",
         "description": "Error message when page rule save fails"
     },
     "page_rules_delete_failed": {
-        "message": "Failed to delete page rule",
+        "message": "Échec de la suppression de la règle de page",
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
@@ -1044,7 +1044,7 @@
         "description": "Footnote under cache size when using in-memory backend"
     },
     "offline_cache_indexeddb_unavailable_warning": {
-        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "message": "IndexedDB n'est pas disponible ici, le cache en mémoire restera donc actif.",
         "description": "Warning toast when user chose IndexedDB but probe forced memory"
     },
     "offline_cache_quota_notice": {
@@ -1056,7 +1056,7 @@
         "description": "Amber banner during setup when native IndexedDB is unavailable"
     },
     "server_connections": {
-        "message": "Saved servers",
+        "message": "Serveurs enregistrés",
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
@@ -1256,7 +1256,7 @@
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "$COUNT$ connexion(s) serveur ont été importées de l'installation précédente.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
@@ -1272,7 +1272,7 @@
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
-        "message": "Could not decrypt vault",
+        "message": "Impossible de déchiffrer le coffre-fort",
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
@@ -1280,7 +1280,7 @@
         "description": "Error when metadata about the default vault is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Could not get or decrypt vault",
+        "message": "Impossible de récupérer ou déchiffrer le coffre-fort",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
@@ -1412,11 +1412,11 @@
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
-        "message": "Login succeeded",
+        "message": "Connexion réussie",
         "description": "Success message after Nextcloud login"
     },
     "login_failed": {
-        "message": "Login failed",
+        "message": "La connexion a échoué",
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
@@ -1456,7 +1456,7 @@
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
-        "message": "Could not get passman client",
+        "message": "Impossible de récupérer le client passman",
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {

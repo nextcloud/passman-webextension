@@ -1152,7 +1152,7 @@
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Durch das Sperren der Nebenstelle wird die automatische Entsperrung deaktiviert. Sie können sie anschließend hier wieder aktivieren.",
+        "message": "Durch das Sperren der Erweiterung wird die automatische Entsperrung deaktiviert. Sie kann danach hier wieder aktiviert werden.",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {

@@ -1148,11 +1148,11 @@
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
-        "message": "Die Erweiterung bleibt auch nach einem Browserneustart entsperrt, ohne Ihr Entsperrpasswort zu speichern. Jeder, der Code in dieser Erweiterung ausführen oder dieses Browserprofil von der Festplatte lesen kann, hat dann ohne Passwort Zugriff auf deine Tresordaten. Es ist vergleichbar mit der Option “Angemeldet bleiben“ des Betriebssystems.",
+        "message": "Die Erweiterung bleibt auch nach einem Browserneustart entsperrt, ohne dein Entsperrpasswort zu speichern. Jeder, der Code in dieser Erweiterung ausführen oder dieses Browserprofil von der Festplatte lesen kann, hat dann ohne Passwort Zugriff auf deine Tresordaten. Es ist vergleichbar mit der Option “Angemeldet bleiben“ des Betriebssystems.",
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Durch das Sperren der Nebenstelle wird die automatische Entsperrung deaktiviert. Du kannst sie anschließend hier wieder aktivieren.",
+        "message": "Durch das Sperren der Erweiterung wird die automatische Entsperrung deaktiviert. Du kannst sie anschließend hier wieder aktivieren.",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
