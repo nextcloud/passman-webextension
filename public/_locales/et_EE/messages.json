@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Website credential filter options",
+        "message": "Veebisaidi autentimisandmete filtrivalikud",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
@@ -1144,7 +1144,7 @@
         "description": "Error when changing the extension unlock password fails"
     },
     "enable_auto_unlock": {
-        "message": "Auto-unlock on browser start",
+        "message": "Veebibrauseri käivitamisel ava lukustus automaatselt",
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
@@ -1172,11 +1172,11 @@
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Sisesta eelmise Passmani laiendusmooduli andmete üldsalasõna. Kui oled importimise kinnitanud, siis saab sellest ka praeguse paigalduse üldsalasõna.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Leidusid eelmise Passmani laiendusmooduli seadistused. Enne importimist palun vaata nad üle ja vajadusel muuda.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
@@ -1212,7 +1212,7 @@
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Kontrolli ueusti kõiki",
+        "message": "Kontrolli uuesti kõike",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
