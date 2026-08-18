@@ -124,7 +124,7 @@
         "description": "Add"
     },
     "credential_changed": {
-        "message": "Credential changed",
+        "message": "Information d'identification changée",
         "description": "Credential changed"
     },
     "credential_created": {
@@ -232,7 +232,7 @@
         "description": "Checkbox label for ignoring the url path when matching credentials to websites"
     },
     "ignore_page": {
-        "message": "Ignore this page when suggesting credentials",
+        "message": "Ignorer cette page lors des suggestions d'informations d'identification",
         "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
@@ -340,7 +340,7 @@
         "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Your Nextcloud passwords, ready in the browser. A short setup connects this extension to your Passman vault.",
+        "message": "Vos mots de passe Nextcloud, directement dans le navigateur. Une configuration rapide connecte cette extension à votre coffre-fort Passman.",
         "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
@@ -756,7 +756,7 @@
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "No matching credentials",
+        "message": "Aucune information d'identification correspondante",
         "description": "No matching credentials"
     },
     "update_default_settings": {
@@ -988,7 +988,7 @@
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "message": "Taille estimée : $1 ($2 informations d'identification dans $3 coffres-forts)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
@@ -1032,15 +1032,15 @@
         "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
     },
     "offline_cache_memory_mode_notice": {
-        "message": "Using in-memory cache. Cached vaults are lost when the extension background script restarts; they reload from the server when needed.",
+        "message": "Utilisation du cache en mémoire. Les coffres-forts mis en cache sont perdus quand le script d'arrière-plan de l'extension redémarre ; ils sont rechargés depuis le serveur quand cela est nécessaire.",
         "description": "Amber notice when effective offline cache backend is memory"
     },
     "offline_cache_forced_fallback_notice": {
-        "message": "Native IndexedDB is not available in this browser profile (for example Firefox with “Never remember history”). In-memory cache is used instead.",
+        "message": "Il n'y a pas de version native d'IndexedDB dans ce profil de navigateur (par exemple Firefox avec « Ne jamais conserver l'historique »). Le cache en mémoire sera utilisé à la place.",
         "description": "Amber notice when IndexedDB was requested but blocked"
     },
     "offline_cache_size_memory_note": {
-        "message": "Size reflects the current session only.",
+        "message": "La taille reflète la session actuelle uniquement.",
         "description": "Footnote under cache size when using in-memory backend"
     },
     "offline_cache_indexeddb_unavailable_warning": {
@@ -1052,7 +1052,7 @@
         "description": "Pinned toast when IndexedDB quota is exceeded"
     },
     "setup_offline_cache_fallback_notice": {
-        "message": "This browser profile cannot use IndexedDB (for example Firefox with “Never remember history”). Passman will use an in-memory cache that is cleared when the extension background script restarts.",
+        "message": "Ce profil de navigateur ne peut pas utiliser IndexedDB (par exemple Firefox avec « Ne jamais conserver l'historique »). Passman utilisera un cache en mémoire qui est vidé quand le script d'arrière-plan de l'extension redémarre.",
         "description": "Amber banner during setup when native IndexedDB is unavailable"
     },
     "server_connections": {
@@ -1108,11 +1108,11 @@
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Choose an unlock password",
+        "message": "Choisissez un mot de passe de déverrouillage",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "message": "Ce mot de passe verrouille l'extension sur cet appareil et est utilisé pour le chiffrement des paramètres locaux. Ce n'est pas votre mot de passe de coffre-fort.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
@@ -1180,7 +1180,7 @@
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Mot de passe maître précédent",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
@@ -1244,7 +1244,7 @@
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Impossible de déchiffrer les paramètres précédents. Vérifiez le mot de passe maître et réessayez.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
@@ -1264,7 +1264,7 @@
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "message": "Aucune donnée n'est transférée vers des sources autres que le serveur Nextcloud spécifié.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
@@ -1408,7 +1408,7 @@
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
-        "message": "Unknown error while checking extension lock state!",
+        "message": "Erreur inconnue lors de la vérification de l'état de verrouillage de l'extension !",
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
@@ -1420,7 +1420,7 @@
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
-        "message": "No server info provided",
+        "message": "Aucune information de serveur fournie",
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {

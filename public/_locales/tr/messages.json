@@ -892,75 +892,75 @@
         "description": "Select option label for inheriting from global settings"
     },
     "page_rules_force_enable": {
-        "message": "Force enable",
+        "message": "Zorla etkinleştir",
         "description": "Select option label for forcing setting to enabled"
     },
     "page_rules_force_disable": {
-        "message": "Force disable",
+        "message": "Zorla etkisizleştir",
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
-        "message": "Currently editing: $PAGE_URL$",
+        "message": "Şu anda düzenleniyor: $PAGE_URL$",
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
-        "message": "Page URL is required",
+        "message": "Sayfa adresinin yazılması zorunludur",
         "description": "Error message when the page rule URL is missing"
     },
     "page_rules_load_failed": {
-        "message": "Failed to load page rules",
+        "message": "Sayfa kuralları yüklenemedi",
         "description": "Error message when page rules fail to load"
     },
     "page_rules_save_failed": {
-        "message": "Failed to save page rule",
+        "message": "Sayfa kuralı kaydedilemedi",
         "description": "Error message when page rule save fails"
     },
     "page_rules_delete_failed": {
-        "message": "Failed to delete page rule",
+        "message": "Sayfa kuralı silinemedi",
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Overrides: $COUNT$",
+        "message": "Değişiklikler: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
-        "message": "Save default vault settings",
+        "message": "Varsayılan kasa ayarlarını kaydet",
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
-        "message": "Settings updated successfully",
+        "message": "Ayarlar güncellendi",
         "description": "Settings updated successfully"
     },
     "extension_version": {
-        "message": "Extension version",
+        "message": "Eklenti sürümü",
         "description": "Extension version"
     },
     "enable_email_as_username_fallback_filling": {
-        "message": "Enable email as username fallback filling (and vice versa)",
+        "message": "E-posta adresi varsayılan kullanıcı adı olarak kullanılsın (ve tam tersi)",
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
-        "message": "Form detection settings",
+        "message": "Form algılama ayarları",
         "description": "Form detection settings"
     },
     "enable_user_event_based_form_detection": {
-        "message": "Enable user event based form detection",
+        "message": "Kullanıcı etkinliği temelli form algılama kullanılsın",
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Listen to some special user events with debouncing and throttling logic",
+        "message": "Geri dönüş ve sınırlama mantığıyla bazı özel kullanıcı etkinlikleri dinlensin",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
-        "message": "Enable form detection on URL popstate events",
+        "message": "URL popstate etkinliklerinde form algılama kullanılsın",
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Basically useful for SPAs (but not necessarily)",
+        "message": "Temelde SPA için yararlıdır (ancak zorunlu değil)",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
-        "message": "Enable form detection on URL changes, checked by interval (of 1s)",
+        "message": "Adres değişikliklerinde form algılama kullanılsın, aralıkla denetlenir (1s)",
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
@@ -972,15 +972,15 @@
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
-        "message": "enabled",
+        "message": "açık",
         "description": "Shown when global setting is enabled"
     },
     "page_rules_global_value_disabled": {
-        "message": "disabled",
+        "message": "kapalı",
         "description": "Shown when global setting is disabled"
     },
     "offline_cache": {
-        "message": "Offline cache",
+        "message": "Çevrim dışı ön bellek",
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
