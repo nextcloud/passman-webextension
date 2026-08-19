@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Website credential filter options",
+        "message": "網站身份驗證過濾器選項",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
@@ -1144,27 +1144,27 @@
         "description": "Error when changing the extension unlock password fails"
     },
     "enable_auto_unlock": {
-        "message": "Auto-unlock on browser start",
+        "message": "瀏覽器啟動時自動解鎖\n",
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
-        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "message": "即使重新啟動瀏覽器，擴充功能仍會保持解鎖，而毋須儲存你的解鎖密碼。任何能在此擴充功能中執行程式碼，或從磁碟讀取此瀏覽器設定檔的人，都可在毋須密碼的情況下存取你的密碼庫資料。這類似作業系統的「保持登入」選項。",
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "message": "鎖定擴充功能會關閉自動解鎖。之後請在此重新啟用。",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
-        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "message": "此瀏覽器設定檔無法使用 IndexedDB，因此自動解鎖金鑰會儲存在擴充功能的本機儲存空間。這種方式的安全性較低：任何能讀取擴充功能儲存空間的人，都可在毋須輸入密碼的情況下解鎖。",
         "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
     },
     "auto_unlock_enable_failed": {
-        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "message": "無法啟用自動解鎖。請先解鎖或重新啟動擴充功能，然後再試一次。",
         "description": "Error toast when enabling auto-unlock fails"
     },
     "auto_unlock_disable_failed": {
-        "message": "Could not disable auto-unlock.",
+        "message": "無法停用自動解鎖。",
         "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {

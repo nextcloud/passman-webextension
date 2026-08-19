@@ -108,7 +108,7 @@
         "description": "Accounts"
     },
     "label": {
-        "message": "Étiquette",
+        "message": "Libellé",
         "description": "Label"
     },
     "username": {
@@ -180,19 +180,19 @@
         "description": "Detected changed URL for"
     },
     "edit_credential": {
-        "message": "Edit credential",
+        "message": "Modifier l'information d'identification",
         "description": "Edit credential button label for the edit credential page"
     },
     "create_new_credential": {
-        "message": "Create new credential",
+        "message": "Créer une nouvelle information d'identification",
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Credential",
+        "message": "Information d'identification",
         "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Credentials",
+        "message": "Informations d’identification",
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
@@ -292,11 +292,11 @@
         "description": "updated, lowercase"
     },
     "credential_update_error": {
-        "message": "An error occurred while updating the credential",
+        "message": "Une erreur s'est produite lors de la mise à jour de l'information d'identification",
         "description": "An error occurred while updating the credential"
     },
     "credential_create_error": {
-        "message": "An error occurred while creating the credential",
+        "message": "Une erreur s'est produite lors de la création de l'information d'identification",
         "description": "An error occurred while creating the credential"
     },
     "open_options_page": {
@@ -392,15 +392,15 @@
         "description": "Custom field type file"
     },
     "custom_fields_header_add": {
-        "message": "Add field",
+        "message": "Ajouter le champ",
         "description": "Custom field add"
     },
     "custom_fields_header_label": {
-        "message": "Field label",
+        "message": "Libellé du champ",
         "description": "Custom field label"
     },
     "custom_fields_header_value": {
-        "message": "Field value",
+        "message": "Valeur du champ",
         "description": "Custom field value"
     },
     "custom_fields_header_type": {
@@ -508,7 +508,7 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Veuillez remplir l'étiquette",
+        "message": "Veuillez remplir le libellé",
         "description": "When comparing passwords"
     },
     "invalid_host": {
@@ -536,7 +536,7 @@
         "description": "One time password"
     },
     "otp_configuration_invalid": {
-        "message": "Invalid OTP configuration",
+        "message": "Configuration OTP non valide",
         "description": "Invalid one time password configuration"
     },
     "otp_secret": {
@@ -544,11 +544,11 @@
         "description": "OTP secret"
     },
     "otp_clear_all": {
-        "message": "Clear OTP configuration",
+        "message": "Effacer la configuration OTP",
         "description": "Clear OTP configuration"
     },
     "issuer": {
-        "message": "Issuer",
+        "message": "Émetteur",
         "description": "OTP issuer"
     },
     "type": {
@@ -560,7 +560,7 @@
         "description": "OTP digits"
     },
     "period": {
-        "message": "Period",
+        "message": "Durée",
         "description": "OTP period"
     },
     "algorithm": {
@@ -628,7 +628,7 @@
         "description": "Search"
     },
     "reset_settings": {
-        "message": "Reset settings",
+        "message": "Réinitialiser les paramètres",
         "description": "Reset settings button label"
     },
     "iam_sure": {
@@ -668,7 +668,7 @@
         "description": "Unlock button label"
     },
     "unlock_without_refresh": {
-        "message": "Unlock without refresh",
+        "message": "Déverrouiller sans rafraîchir",
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
@@ -708,7 +708,7 @@
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
-        "message": "$START_HTML_TAG$Click to upload$END_HTML_TAG$ or drag and drop",
+        "message": "$START_HTML_TAG$Cliquez pour téléverser$END_HTML_TAG$ ou glissez et déposez",
         "description": "Text shown in the drag and drop upload box"
     },
     "files_any_type_info": {
@@ -736,7 +736,7 @@
         "description": "Column header for file name in files table"
     },
     "files_header_created": {
-        "message": "Created at",
+        "message": "Créé le",
         "description": "Column header for creation date in files table"
     },
     "files_header_size": {
@@ -760,7 +760,7 @@
         "description": "No matching credentials"
     },
     "update_default_settings": {
-        "message": "Update default settings",
+        "message": "Mettre à jour les paramètres par défaut",
         "description": "Update default settings button label"
     },
     "save_settings": {
@@ -776,7 +776,7 @@
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
-        "message": "Nextcloud server setup",
+        "message": "Configuration du serveur Nextcloud",
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
@@ -788,7 +788,7 @@
         "description": "Hero title on the initial Nextcloud server setup step"
     },
     "setup_server_step_intro": {
-        "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+        "message": "Connectez-vous à Nextcloud, puis choisissez le coffre-fort Passman avec lequel ce navigateur doit resté synchronisé.",
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
@@ -864,15 +864,15 @@
         "description": "Retry button label for picker page rules tab"
     },
     "page_rules_picker_load_error": {
-        "message": "Unable to load page rules for this site",
+        "message": "Impossible de charger les règles de page pour ce site",
         "description": "Error shown when picker tab cannot fetch page rules"
     },
     "page_rules_picker_save_error": {
-        "message": "Saving page rules failed",
+        "message": "L'enregistrement des règles de page a échoué",
         "description": "Error shown when picker tab cannot save page rules"
     },
     "page_rules_search_label": {
-        "message": "Search rules",
+        "message": "Rechercher des règles",
         "description": "Label for the page rules search input"
     },
     "page_rules_search_placeholder": {
@@ -880,7 +880,7 @@
         "description": "Placeholder for the page rules search input"
     },
     "page_rules_no_results": {
-        "message": "No page rules match your search",
+        "message": "Aucune règle de page ne correspond à votre recherche",
         "description": "Shown when no rules match the applied filter"
     },
     "page_rules_cancel_edit": {
@@ -900,11 +900,11 @@
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
-        "message": "Currently editing: $PAGE_URL$",
+        "message": "En cours d'édition : $PAGE_URL$",
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
-        "message": "Page URL is required",
+        "message": "L'URL de la page est requise",
         "description": "Error message when the page rule URL is missing"
     },
     "page_rules_load_failed": {
@@ -924,7 +924,7 @@
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
-        "message": "Save default vault settings",
+        "message": "Enregistrer les paramètres du coffre-fort par défaut",
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
@@ -940,11 +940,11 @@
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
-        "message": "Form detection settings",
+        "message": "Paramètres de détection de formulaires",
         "description": "Form detection settings"
     },
     "enable_user_event_based_form_detection": {
-        "message": "Enable user event based form detection",
+        "message": "Activer la détection de formulaires basée sur les événements utilisateur",
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
@@ -1060,11 +1060,11 @@
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "message": "L'extension utilise un seul serveur Nextcloud actif à un moment donné. Ajoutez une instance de secours ici afin de pouvoir basculer dessus rapidement en cas d'indisponibilité du serveur principal.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "active",
+        "message": "actif",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
@@ -1076,7 +1076,7 @@
         "description": "Button to remove a saved server connection"
     },
     "server_connection_add": {
-        "message": "Add server",
+        "message": "Ajouter un serveur",
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
@@ -1084,7 +1084,7 @@
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "message": "Retirer ce serveur enregistré de l'extension ? Le cache hors connexion sera conservé jusqu'à ce qu'il soit vidé.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
@@ -1092,7 +1092,7 @@
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Could not switch server",
+        "message": "Impossible de changer de serveur",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
@@ -1120,15 +1120,15 @@
         "description": "Button to save the extension unlock password and continue setup"
     },
     "change_unlock_password": {
-        "message": "Change unlock password",
+        "message": "Changer le mot de passe de déverrouillage",
         "description": "Section title for changing the extension unlock password in extended settings"
     },
     "current_unlock_password": {
-        "message": "Current unlock password",
+        "message": "Mot de passe de déverrouillage actuel",
         "description": "Label for the current extension unlock password field"
     },
     "new_unlock_password": {
-        "message": "New unlock password",
+        "message": "Nouveau mot de passe de déverrouillage",
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
@@ -1136,15 +1136,15 @@
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
-        "message": "Unlock password changed successfully",
+        "message": "Mot de passe de déverrouillage changé avec succès",
         "description": "Success toast after changing the extension unlock password"
     },
     "unlock_password_change_failed": {
-        "message": "Could not change the unlock password. Check the current password and try again.",
+        "message": "Impossible de changer le mot de passe de déverrouillage. Vérifiez le mot de passe actuel et réessayez.",
         "description": "Error when changing the extension unlock password fails"
     },
     "enable_auto_unlock": {
-        "message": "Auto-unlock on browser start",
+        "message": "Déverrouiller automatiquement au démarrage du navigateur",
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
@@ -1152,7 +1152,7 @@
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "message": "Verrouiller l'extension désactive le déverrouillage automatique. Réactivez-le ici ensuite.",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
@@ -1160,11 +1160,11 @@
         "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
     },
     "auto_unlock_enable_failed": {
-        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "message": "Impossible d'activer le déverrouillage automatique. Déverrouillez ou redémarrez l'extension et réessayez.",
         "description": "Error toast when enabling auto-unlock fails"
     },
     "auto_unlock_disable_failed": {
-        "message": "Could not disable auto-unlock.",
+        "message": "Impossible de désactiver le déverrouillage automatique.",
         "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
@@ -1220,7 +1220,7 @@
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Préférences de correspondance et remplissage automatique",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
@@ -1248,7 +1248,7 @@
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "Les paramètres précédents ne contiennent aucun compte de serveur à importer.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
@@ -1292,11 +1292,11 @@
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
-        "message": "Report an issue",
+        "message": "Signaler un problème",
         "description": "Title / tooltip for the issues button in the bottom navigation"
     },
     "issues": {
-        "message": "Issues",
+        "message": "Tickets",
         "description": "Short label for the issues button in the bottom navigation"
     },
     "github": {
@@ -1308,11 +1308,11 @@
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
-        "message": "Add a tag",
+        "message": "Ajoutez une étiquette",
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Remove $TAG$ tag",
+        "message": "Supprimer l'étiquette $TAG$",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
@@ -1320,11 +1320,11 @@
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "No $FIELDNAME$ to copy",
+        "message": "Aucun $FIELDNAME$ à copier",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Could not find selected credential",
+        "message": "Impossible de trouver l'information d'identification sélectionnée",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
@@ -1336,19 +1336,19 @@
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "poor",
+        "message": "très faible",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
-        "message": "weak",
+        "message": "faible",
         "description": "Password strength meter label"
     },
     "password_strength_good": {
-        "message": "good",
+        "message": "bon",
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
-        "message": "strong",
+        "message": "fort",
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
