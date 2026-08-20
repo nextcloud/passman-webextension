@@ -964,11 +964,11 @@
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
-        "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+        "message": "MutationObserver, DOM değişikliklerinde dinamik olarak eklenen formları ve giriş alanlarını algılasın",
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
-        "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+        "message": "DOM değişikliklerinde dinamik olarak eklenen formları ve giriş alanlarını algılamanın en etkili, ama aynı zamanda en yoğun kaynak kullanan yolu",
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
@@ -984,151 +984,151 @@
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
-        "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+        "message": "Çevrim dışı kullanım için yerel olarak tutulan şifrelenmiş kasa verileri. Temizlenen ön bellek, sunucudan kasaların sonraki yüklenmesinde otomatik olarak yeniden doldurulur.",
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "message": "Öngörülen boyut: $1 ($2 kimlik doğrulama bilgisi $3 kasa içinde)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
-        "message": "Measuring offline cache…",
+        "message": "Çevrim dışı önbellek ölçülüyor…",
         "description": "Shown while estimating IndexedDB size"
     },
     "offline_cache_size_unavailable": {
-        "message": "Could not measure offline cache size",
+        "message": "Çevrim dışı ön bellek boyutu ölçülemedi",
         "description": "Error measuring IndexedDB size"
     },
     "clear_offline_cache": {
-        "message": "Clear offline cache",
+        "message": "Çevrim dışı ön belleği temizle",
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
-        "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+        "message": "Yerel çevrim dışı kasa ön belleği silinsin mi? Kasaları yeniden yüklemek için ağ bağlantınız olması gerekir.",
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
-        "message": "Offline cache cleared",
+        "message": "Çevrim dışı ön bellek temizlendi",
         "description": "Success toast after clearing offline cache"
     },
     "offline_cache_clear_failed": {
-        "message": "Failed to clear offline cache",
+        "message": "Çevrim dışı ön bellek temizlenemedi",
         "description": "Error toast after failing to clear offline cache"
     },
     "offline_cache_storage_backend": {
-        "message": "Cache storage",
+        "message": "Ön bellek depolama alanı",
         "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
     },
     "offline_cache_storage_backend_description": {
-        "message": "Where encrypted vault cache is kept. IndexedDB persists across restarts; in-memory is cleared when the extension background script restarts.",
+        "message": "Şifrelenmiş kasa ön belleğinin tutulduğu yer. IndexedDB yeniden başlatmalarda kalır. Eklenti arka plan betiği yeniden başlatıldığında bellek içi temizlenir.",
         "description": "Explains the two offline cache storage backends"
     },
     "offline_cache_storage_backend_indexeddb": {
-        "message": "IndexedDB (persistent)",
+        "message": "IndexedDB (kalıcı)",
         "description": "Offline cache backend option: native IndexedDB"
     },
     "offline_cache_storage_backend_memory": {
-        "message": "In-memory (session / time limited)",
+        "message": "Bellek içi (oturum / sınırlı süre)",
         "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
     },
     "offline_cache_memory_mode_notice": {
-        "message": "Using in-memory cache. Cached vaults are lost when the extension background script restarts; they reload from the server when needed.",
+        "message": "Bellek içi ön bellek kullanılıyor. Ön belleğe alınmış kasalar, eklenti arka plan betiği yeniden başlatıldığında silinir. Gerektiğinde sunucudan yeniden yüklenirler.",
         "description": "Amber notice when effective offline cache backend is memory"
     },
     "offline_cache_forced_fallback_notice": {
-        "message": "Native IndexedDB is not available in this browser profile (for example Firefox with “Never remember history”). In-memory cache is used instead.",
+        "message": "Doğal IndexedDB bu tarayıcı profilinde yok (örneğin Firefox üzerinde \"Geçmiş asla hatırlanmasın\" seçeneği). Bunun yerine bellek içi ön bellek kullanılıyor.",
         "description": "Amber notice when IndexedDB was requested but blocked"
     },
     "offline_cache_size_memory_note": {
-        "message": "Size reflects the current session only.",
+        "message": "Boyut yalnızca geçerli oturumu yansıtır.",
         "description": "Footnote under cache size when using in-memory backend"
     },
     "offline_cache_indexeddb_unavailable_warning": {
-        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "message": "Burada IndexedDB yok. Bu nedenle bellek içi ön bellek etkin kalır.",
         "description": "Warning toast when user chose IndexedDB but probe forced memory"
     },
     "offline_cache_quota_notice": {
-        "message": "Offline cache storage is full (quota exceeded). Free space or clear the offline cache in Extended settings.",
+        "message": "Çevrim dışı ön bellek depolama alanı dolu (kota aşıldı). Genişletilmiş ayarlardan alan boşaltın veya çevrim dışı ön belleği temizleyin.",
         "description": "Pinned toast when IndexedDB quota is exceeded"
     },
     "setup_offline_cache_fallback_notice": {
-        "message": "This browser profile cannot use IndexedDB (for example Firefox with “Never remember history”). Passman will use an in-memory cache that is cleared when the extension background script restarts.",
+        "message": "Bu tarayıcı profili IndexedDB kullanamaz (örneğin Firefox üzerinde \"Geçmiş asla hatırlanmasın\" seçeneği). Passman, eklenti arka plan betiği yeniden başlatıldığında temizlenen bir bellek içi ön bellek kullanacak.",
         "description": "Amber banner during setup when native IndexedDB is unavailable"
     },
     "server_connections": {
-        "message": "Saved servers",
+        "message": "Kaydedilmiş sunucular",
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "message": "Eklenti aynı anda bir etkin Nextcloud sunucusu kullanır. Birincil sunucu kullanılamıyorsa hızlı bir şekilde geçiş yapabilmeniz için buraya bir yedek kopya ekleyin.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "active",
+        "message": "etkin",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
-        "message": "Switch",
+        "message": "Değiştir",
         "description": "Button to make another saved server the active connection"
     },
     "server_connection_remove": {
-        "message": "Remove",
+        "message": "Kaldır",
         "description": "Button to remove a saved server connection"
     },
     "server_connection_add": {
-        "message": "Add server",
+        "message": "Sunucu ekle",
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
-        "message": "Active server credentials",
+        "message": "Etkin sunucu kimlik doğrulama bilgileri",
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "message": "Kaydedilmiş bu sunucu eklentiden kaldırılsın mı? Bunun çevrim dışı ön belleği, temizleme işlemi yapılana kadar kalabilir.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Switched active server",
+        "message": "Değiştirilen etkin sunucu",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Could not switch server",
+        "message": "Sunucu değiştirilemedi",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
-        "message": "Server removed",
+        "message": "Sunucu kaldırıldı",
         "description": "Success toast after removing a server connection"
     },
     "server_connection_remove_failed": {
-        "message": "Could not remove server",
+        "message": "Sunucu kaldırılamadı",
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "message": "Bu yeniden yazma henüz geliştirme aşamasında. Sorun çıkabilir.$BR$Bir hata mı buldunuz? Lütfen $LINK_START$GitHub$LINK_END$ üzerinden bildirin.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Choose an unlock password",
+        "message": "Kilidi açacak bir parola belirtin",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "message": "Bu parola bu aygıtta eklentiyi kilitler ve yerel ayarların şifrelenmesi için kullanılır. Kasanızın parolası değildir.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
-        "message": "Save & continue",
+        "message": "Kaydet ve ilerle",
         "description": "Button to save the extension unlock password and continue setup"
     },
     "change_unlock_password": {
-        "message": "Change unlock password",
+        "message": "Kilit açma parolasını değiştir",
         "description": "Section title for changing the extension unlock password in extended settings"
     },
     "current_unlock_password": {
-        "message": "Current unlock password",
+        "message": "Geçerli kilit açma parolası",
         "description": "Label for the current extension unlock password field"
     },
     "new_unlock_password": {
-        "message": "New unlock password",
+        "message": "Yeni kilit açma parolası",
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
@@ -1136,103 +1136,103 @@
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
-        "message": "Unlock password changed successfully",
+        "message": "Kilit açma parolası değiştirildi",
         "description": "Success toast after changing the extension unlock password"
     },
     "unlock_password_change_failed": {
-        "message": "Could not change the unlock password. Check the current password and try again.",
+        "message": "Kilit açma parolası değiştirilemedi. Geçerli şifreyi denetleyip yeniden deneyin.",
         "description": "Error when changing the extension unlock password fails"
     },
     "enable_auto_unlock": {
-        "message": "Auto-unlock on browser start",
+        "message": "Kilit tarayıcı başlangıcında otomatik olarak açılsın",
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
-        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "message": "Kilit açma parolanızı kaydetmeden tarayıcı yeniden başlatmaları sırasında eklentinin kilidini açar. Bu eklentide kod çalıştırabilen veya bu tarayıcı profilini diskten okuyabilen herkes, kasa verilerinize parola olmadan erişebilir. Bu bir işletim sisteminin \"oturum aç\" seçeneği gibidir.",
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
-        "message": "Locking the extension turns auto-unlock off. Re-enable it here afterwards.",
+        "message": "Eklentiyi kilitlemek otomatik kilit açma özelliğini kapatır. Daha sonra buradan yeniden açın.",
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
-        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "message": "IndexedDB bu tarayıcı profilinde kullanılamaz. Bu nedenle otomatik kilit açma anahtarı eklentinin yerel depolama alanına kaydedilir. Bu daha zayıftır: Eklentinin depolama alanını okuyabilen herkes parolanız olmadan kilidi açabilir.",
         "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
     },
     "auto_unlock_enable_failed": {
-        "message": "Could not enable auto-unlock. Unlock or restart the extension and try again.",
+        "message": "Otomatik kilit açma özelliği açılamadı. Eklentinin kilidini açın veya yeniden başlattıktan sonra yeniden deneyin.",
         "description": "Error toast when enabling auto-unlock fails"
     },
     "auto_unlock_disable_failed": {
-        "message": "Could not disable auto-unlock.",
+        "message": "Otomatik kilit açma özelliği kapatılamadı.",
         "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Önceki ayarları içe aktar",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Önceki Passman eklentinizin ana parolasını yazın. Bu parola, içe aktarmayı onayladıktan sonra yeni kilit açma parolanız olacak.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Önceki bir Passman eklentisinin ayarları bulundu. İçe aktarmadan önce bunları gözden geçirin ve düzenleyin.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Previous master password",
+        "message": "Önceki ana parola",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Önceki ayarları içe aktar",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Önceki kurulumu içe aktar",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Neyin içe aktarılacağını gözden geçirmek için eski ana parolanız ile önceki ayarların kilidini açın.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Bağlantıları ve tercihleri gerektiği gibi düzenleyin. Bağlantı ve kasa durumu sunucularınıza göre denetlenir.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Gözden geçirmeye ilerleyin",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "İçe aktarın ve kurulumu tamamlayın",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Bağlantıyı sına",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Tümünü yeniden denetle",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Etkin bağlantı olarak kullan",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
-        "message": "Matching & autofill preferences",
+        "message": "Eşleştirme ve otomatik doldurma ayarları",
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Her satıra bir site yazın. Bunlar, \"sayfayı yok say\" seçeneği açıkken sayfa kuralları haline gelir.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "denetlenmemiş",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
-        "message": "checking…",
+        "message": "denetleniyor…",
         "description": "Probe status: in progress"
     },
     "server": {
@@ -1240,63 +1240,63 @@
         "description": "Label for a server connection"
     },
     "experimental": {
-        "message": "Experimental",
+        "message": "Deneysel",
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "Could not decrypt the previous settings. Check the master password and try again.",
+        "message": "Önceki ayarların şifresi çözülemedi. Ana parolayı denetleyip yeniden deneyin.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "Önceki ayarlarda içe aktarılacak herhangi bir sunucu hesabı yok.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
-        "message": "Could not import previous settings.",
+        "message": "Önceki ayarlar içe aktarılamadı.",
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Imported $COUNT$ server connection(s) from the previous installation.",
+        "message": "Önceki kurulumdan $COUNT$ sunucu bağlantısı içe aktarıldı.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
-        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "message": "Bu eklenti için $LINK_START$Passman uygulamasının$LINK_END$ Nextcloud sunucunuza kurulmuş olması gereklidir.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "message": "Belirtilen Nextcloud sunucusu dışındaki kaynaklara herhangi bir veri aktarılmaz.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
-        "message": "No selected vault info found",
+        "message": "Seçilmiş bir kasa bilgisi bulunamadı",
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
-        "message": "Could not decrypt vault",
+        "message": "Kasanın şifresi çözülemedi",
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
-        "message": "No default vault info found",
+        "message": "Varsayılan bir kasa bilgisi bulunamadı",
         "description": "Error when metadata about the default vault is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Could not get or decrypt vault",
+        "message": "Kasa alınamadı veya şifresi çözülemedi",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
-        "message": "Unknown error in refreshCredentialList",
+        "message": "RefreshCredentialList içinde bilinmeyen bir sorun çıktı",
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
-        "message": "Expected extension page not found",
+        "message": "Beklenen eklenti sayfası bulunamadı",
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
-        "message": "Report an issue",
+        "message": "Sorun bildirin",
         "description": "Title / tooltip for the issues button in the bottom navigation"
     },
     "issues": {
-        "message": "Issues",
+        "message": "Sorunlar",
         "description": "Short label for the issues button in the bottom navigation"
     },
     "github": {
@@ -1304,79 +1304,79 @@
         "description": "GitHub product / platform name"
     },
     "click_to_auto_fill": {
-        "message": "Click to auto fill",
+        "message": "Otomatik doldur üzerine tıklayın",
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
-        "message": "Add a tag",
+        "message": "Etiker ekle",
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Remove $TAG$ tag",
+        "message": "$TAG$ etiketini kaldır",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
-        "message": "-- Click to add --",
+        "message": "-- Eklemek için tıklayın --",
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "No $FIELDNAME$ to copy",
+        "message": "Kopyalancak bir $FIELDNAME$ yok",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Could not find selected credential",
+        "message": "Seçilmiş kimlik doğrulama bilgileri bulunamadı",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Unknown error occurred while deleting a credential",
+        "message": "Bir kimlik doğrulama bilgisi silinirken bilinmeyen bir sorun çıktı",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "An error occurred while deleting a credential",
+        "message": "Bir kimlik doğrulama bilgisi silinirken bir sorun çıktı",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "poor",
+        "message": "çok zayıf",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
-        "message": "weak",
+        "message": "zayıf",
         "description": "Password strength meter label"
     },
     "password_strength_good": {
-        "message": "good",
+        "message": "iyi",
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
-        "message": "strong",
+        "message": "güçlü",
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Dismiss alert",
+        "message": "Uyarıyı yok say",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Credential icon",
+        "message": "Kimlik doğrulama bilgisi simgesi",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
-        "message": "OTP QR code",
+        "message": "Tek kullanımlık parola kare kodu",
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
-        "message": "Auto fill",
+        "message": "Otomatik doldur",
         "description": "Browser context menu item to auto-fill credentials"
     },
     "context_menu_copy_username": {
-        "message": "Copy username",
+        "message": "Kullanıcı adını kopyala",
         "description": "Browser context menu item to copy username"
     },
     "context_menu_copy_email": {
-        "message": "Copy email",
+        "message": "E-posta adresini kopyala",
         "description": "Browser context menu item to copy email"
     },
     "context_menu_copy_password": {
-        "message": "Copy password",
+        "message": "Parolayı kopyala",
         "description": "Browser context menu item to copy password"
     },
     "context_menu_copy_url": {
@@ -1384,203 +1384,203 @@
         "description": "Browser context menu item to copy URL"
     },
     "context_menu_copy_otp": {
-        "message": "Copy OTP",
+        "message": "Tek kullanımlık parolayı kopyala",
         "description": "Browser context menu item to copy one-time password"
     },
     "context_menu_reload_password_picker": {
-        "message": "Reload password picker",
+        "message": "Parola seçiciyi yeniden yükle",
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
-        "message": "And copy to clipboard",
+        "message": "Ve panoya kopyala",
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
-        "message": "And fill fields",
+        "message": "Ve alanları doldur",
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME$ copied to clipboard",
+        "message": "$FIELDNAME$ panoya kopyalandı",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
-        "message": "Failed to copy $FIELDNAME$",
+        "message": "$FIELDNAME$ kopyalanamadı",
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
-        "message": "Unknown error while checking extension lock state!",
+        "message": "Eklenti kilidinin durumu denetlenirken bilinmeyen bir sorun çıktı!",
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
-        "message": "Login succeeded",
+        "message": "Oturum açıldı",
         "description": "Success message after Nextcloud login"
     },
     "login_failed": {
-        "message": "Login failed",
+        "message": "Oturum açılamadı",
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
-        "message": "No server info provided",
+        "message": "Herhangi bir sunucu bilgisi belirtilmemiş",
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {
-        "message": "Unknown error",
+        "message": "Sorun bilinmiyor",
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "No credential data provided",
+        "message": "Herhangi bir kimlik doğrulama verisi belirtilmemiş",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "No source tab found",
+        "message": "Herhangi bir kaynak sekme bulunamadı",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
-        "message": "Failed to save credential",
+        "message": "Kimlik doğrulama bilgisi kaydedilemedi",
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Could not get backend passman client",
+        "message": "Passman arka uç istemcisi alınamadı",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
-        "message": "Invalid request (check request body)",
+        "message": "İstek geçersiz (istek gövdesini denetleyin)",
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
-        "message": "Could not get default vault info",
+        "message": "Varsayılan kasa bilgisi alınamadı",
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "No connectionId provided",
+        "message": "Bir connectionId belirtilmemiş",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
-        "message": "Could not get passman client",
+        "message": "Passman istemcisi alınamadı",
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "No managed connection with id $CONNECTION_ID$",
+        "message": "$CONNECTION_ID$ kimlikli bir yönetilen bağlantı bulunamadı",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
-        "message": "Selected vault could not be decrypted with the given password",
+        "message": "Seçilmiş kasanın şifresi belirtilen parola ile çözülemedi",
         "description": "Error when the provided vault password is wrong"
     },
     "could_not_get_selected_vault_by_guid": {
-        "message": "Could not get selected vault by guid",
+        "message": "Seçilmiş kasa guid tarafından alınamadı",
         "description": "Error when the selected vault cannot be resolved by GUID"
     },
     "no_vault_info_in_extension_settings": {
-        "message": "No vault info provided by extension settings",
+        "message": "Eklenti ayarları tarafından kasa bilgisi belirtilmedi",
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {
-        "message": "Could not get custom password generator configuration",
+        "message": "Özel parola oluşturucu yapılandırması alınamadı",
         "description": "Error when loading password generator settings fails"
     },
     "enable_doorhanger": {
-        "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+        "message": "Yeni ve güncellenmiş parolalar kapı askısı kaplamasıyla  toplansın",
         "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {
-        "message": "Save login to Passman?",
+        "message": "Oturum açma bilgileri Passman üzerine kaydedilsin mi?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Update login in Passman?",
+        "message": "Passman üzerindeki oturum açma bilgileri güncellensin mi?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
-        "message": "Not now",
+        "message": "Şimdi değil",
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Credential to update",
+        "message": "Güncellenecek kimlik doğrulama bilgisi",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Untitled credential",
+        "message": "Başlıksız kimlik doğrulama bilgisi",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
-        "message": "Doorhanger",
+        "message": "Kapı askısı",
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
-        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "message": "Sitelerde oturum açma sonrası kaydetme/güncelleme isteminin nasıl görüntüleneceğini seçin.",
         "description": "Description under the doorhanger settings section"
     },
     "doorhanger_layout": {
-        "message": "Layout",
+        "message": "Yerleşim",
         "description": "Label for doorhanger layout dropdown"
     },
     "doorhanger_layout_description": {
-        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "message": "Bir köşede yüzer bir kart ya da üst satırda, sayfanın üst bölümünde tam genişlikte bir bant.",
         "description": "Help text for doorhanger layout setting"
     },
     "doorhanger_layout_card": {
-        "message": "Card",
+        "message": "Kart",
         "description": "Doorhanger layout option: floating card"
     },
     "doorhanger_layout_top_row": {
-        "message": "Top row",
+        "message": "Üst satır",
         "description": "Doorhanger layout option: full-width top banner"
     },
     "doorhanger_gravity": {
-        "message": "Position",
+        "message": "Konum",
         "description": "Label for doorhanger gravity/position dropdown"
     },
     "doorhanger_gravity_description": {
-        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "message": "Kart yerleşiminde köşe ya da üst satır düzeninde içerik hizalaması.",
         "description": "Help text for doorhanger gravity setting"
     },
     "doorhanger_gravity_top_right": {
-        "message": "Top right",
+        "message": "Sağ üstte",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_top_left": {
-        "message": "Top left",
+        "message": "Sol üstte",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_right": {
-        "message": "Bottom right",
+        "message": "Sağ altta",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_left": {
-        "message": "Bottom left",
+        "message": "Sol altta",
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
-        "message": "Logging",
+        "message": "Günlük kaydı",
         "description": "Extended settings section title for console log level"
     },
     "logging_settings_description": {
-        "message": "Minimum console log level for this extension. Lower levels include more detail. The default for production is error.",
+        "message": "Bu eklenti için en düşük konsol günlük kaydı düzeyi. Alt düzeylerde daha fazla ayrıntı bulunur. Üretim için varsayılan düzey: Hatalar.",
         "description": "Description under the logging settings section"
     },
     "log_level": {
-        "message": "Log level",
+        "message": "Günlük düzeyi",
         "description": "Label for extension console log level dropdown"
     },
     "log_level_debug": {
-        "message": "Debug",
+        "message": "Hata ayıklama",
         "description": "Log level option: debug"
     },
     "log_level_log": {
-        "message": "Log",
+        "message": "Günlük",
         "description": "Log level option: log"
     },
     "log_level_info": {
-        "message": "Info",
+        "message": "Bilgiler",
         "description": "Log level option: info"
     },
     "log_level_warn": {
-        "message": "Warning",
+        "message": "Uyarılar",
         "description": "Log level option: warn"
     },
     "log_level_error": {
-        "message": "Error",
+        "message": "Hatalar",
         "description": "Log level option: error"
     },
     "extName": {
