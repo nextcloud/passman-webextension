@@ -236,7 +236,7 @@
         "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill (for a single matching credential)",
+        "message": "Activer le remplissage automatique de formulaire (pour une correspondance unique d'information d'identification)",
         "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
@@ -404,7 +404,7 @@
         "description": "Custom field value"
     },
     "custom_fields_header_type": {
-        "message": "Field type",
+        "message": "Type du champ",
         "description": "Custom field type"
     },
     "custom_fields_error_no_file_selected": {
@@ -920,7 +920,7 @@
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Overrides: $COUNT$",
+        "message": "Remplace : $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
@@ -964,7 +964,7 @@
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
-        "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+        "message": "Activer MutationObserver pour détecter dynamiquement l'ajout de formulaires et de champs de saisie lors des modifications du DOM",
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
@@ -1104,7 +1104,7 @@
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "message": "Cette réécriture est toujours activement en cours de développement. Attendez-vous à des imperfections.$BR$Vous avez trouvé un bogue ? Merci d'ouvrir un ticket sur $LINK_START$GitHub$LINK_END$.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
@@ -1260,7 +1260,7 @@
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
-        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "message": "Cette extension nécessite l'installation de l'$LINK_START$Application Passman$LINK_END$ sur votre serveur Nextcloud.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
@@ -1268,7 +1268,7 @@
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
-        "message": "No selected vault info found",
+        "message": "Aucune information trouvée pour le coffre-fort sélectionné",
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
@@ -1276,7 +1276,7 @@
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
-        "message": "No default vault info found",
+        "message": "Aucune information trouvée pour le coffre-fort par défaut",
         "description": "Error when metadata about the default vault is missing"
     },
     "could_not_get_or_decrypt_vault": {
@@ -1284,7 +1284,7 @@
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
-        "message": "Unknown error in refreshCredentialList",
+        "message": "Erreur inconnue dans refreshCredentialList",
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
@@ -1328,7 +1328,7 @@
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Unknown error occurred while deleting a credential",
+        "message": "Une erreur inconnue s'est produite lors de la suppression d'une information d'identification",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
@@ -1444,7 +1444,7 @@
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
-        "message": "Invalid request (check request body)",
+        "message": "Requête non valide (vérifiez le corps de la requête)",
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
@@ -1476,7 +1476,7 @@
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {
-        "message": "Could not get custom password generator configuration",
+        "message": "Impossible de récupérer la configuration personnalisée du générateur de mots de passe",
         "description": "Error when loading password generator settings fails"
     },
     "enable_doorhanger": {
@@ -1508,23 +1508,23 @@
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
-        "message": "Choose how the post-login save/update prompt is shown on websites.",
+        "message": "Choisissez la façon dont la demande de mise à jour/enregistrement est affichée après connexion sur les sites web.",
         "description": "Description under the doorhanger settings section"
     },
     "doorhanger_layout": {
-        "message": "Layout",
+        "message": "Affichage",
         "description": "Label for doorhanger layout dropdown"
     },
     "doorhanger_layout_description": {
-        "message": "Card floats in a corner. Top row is a full-width banner along the top of the page.",
+        "message": "Les cartes sont situées dans un angle. La ligne supérieure est une bannière qui fait toute la largeur en haut de la page.",
         "description": "Help text for doorhanger layout setting"
     },
     "doorhanger_layout_card": {
-        "message": "Card",
+        "message": "Carte",
         "description": "Doorhanger layout option: floating card"
     },
     "doorhanger_layout_top_row": {
-        "message": "Top row",
+        "message": "Ligne supérieure",
         "description": "Doorhanger layout option: full-width top banner"
     },
     "doorhanger_gravity": {
@@ -1532,23 +1532,23 @@
         "description": "Label for doorhanger gravity/position dropdown"
     },
     "doorhanger_gravity_description": {
-        "message": "Corner for the card layout, or content alignment for the top row layout.",
+        "message": "Angle pour l'affichage de la carte, ou alignement du contenu pour l'affichage de la ligne supérieure.",
         "description": "Help text for doorhanger gravity setting"
     },
     "doorhanger_gravity_top_right": {
-        "message": "Top right",
+        "message": "En haut à droite",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_top_left": {
-        "message": "Top left",
+        "message": "En haut à gauche",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_right": {
-        "message": "Bottom right",
+        "message": "En bas à droite",
         "description": "Doorhanger gravity option"
     },
     "doorhanger_gravity_bottom_left": {
-        "message": "Bottom left",
+        "message": "En bas à gauche",
         "description": "Doorhanger gravity option"
     },
     "logging_settings": {
