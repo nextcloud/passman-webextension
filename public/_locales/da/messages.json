@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Adgangskodemanageren til NextCloud / ownCloud",
+        "message": "Passman - Adgangskodehåndteringen for Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -15,9 +15,9 @@
         "message": "Ingen legitimationsoplysninger fundet",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "Noter",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "Beskrivelse",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
         "message": "Ugyldigt svar fra server: [$STATUS_CODE$] $STATUS_TEXT$",
@@ -31,9 +31,21 @@
         "message": "Gem side",
         "description": "Save site"
     },
+    "generator": {
+        "message": "Generator",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
         "message": "Adgangskode generator",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "Opsætning af kodeordsgenerering",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "Slå udvidede kodeordsindstillinger til og fra",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "Generer adgangskode",
@@ -71,6 +83,22 @@
         "message": "Forlang alle tegn typer",
         "description": "Require every character type"
     },
+    "use_uppercase": {
+        "message": "Brug store bogstaver",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "Brug små bogstaver",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "Brug cifre",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "Brug særlige tegn",
+        "description": "Use special characters"
+    },
     "add_account": {
         "message": "Tilføj konto",
         "description": "Add account"
@@ -95,13 +123,33 @@
         "message": "Tilføj",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "Kredit ændret",
+        "description": "Credential changed"
+    },
     "credential_created": {
         "message": "Legitimationsoplysninger oprettet",
         "description": "Credential created"
     },
+    "credentials_expires": {
+        "message": "Kreditrisiko udløber",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "Udløbsdato",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "Ingen udløbsdato angivet",
+        "description": "No expiration date set for the credential password"
+    },
     "url": {
         "message": "Url",
         "description": "URL"
+    },
+    "tags": {
+        "message": "Mærker",
+        "description": "Tags"
     },
     "password": {
         "message": "Adgangskode",
@@ -131,29 +179,49 @@
         "message": "Fundet ændret URL for",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "Redigér kreditværdi",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "Opret ny kreditværdi",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "Legitimationsoplysninger ",
-        "description": "credential"
+        "message": "Kredit",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "legitimationsoplysninger",
-        "description": "credentials"
+        "message": "Legitimationsoplysninger",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "Dette kodeord er kompromitteret. Du kan kun fjerne denne advarsel ved at ændre adgangskoden.",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "Markér som kompromitteret",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
         "message": "Genopfrisk timer [s]",
         "description": "Password"
     },
+    "website_credential_filter_options": {
+        "message": "Tilvalg for hjemmeside- kreditfilter",
+        "description": "Label for the settings section about modifying default credential matching behavior for all websites"
+    },
     "ignore_protocol": {
         "message": "Ignorer protokol for matchning af websted",
-        "description": "Ignore protocol for site matching"
+        "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
         "message": "Ignorer underdomæne for matchning af websted",
-        "description": "Password"
+        "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
         "message": "Ignorer port for matchning af websted",
-        "description": "Ignore port for site matching"
+        "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
         "message": "Du anvender HTTP! Log på legitimationsoplysninger som vil blive sendt i klartekst. Dine Passman legitimationsoplysninger  er stadig krypteret.",
@@ -161,11 +229,15 @@
     },
     "ignore_path": {
         "message": "Ignorer sti for matchning af websted",
-        "description": "Ignore path for site matching"
+        "description": "Checkbox label for ignoring the url path when matching credentials to websites"
+    },
+    "ignore_page": {
+        "message": "Ignorér denne side når du foreslår legitimationsoplysninger",
+        "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Aktivér automatisk udfyldning",
-        "description": "Disable auto fill of forms"
+        "message": "Aktivér automatisk udfyldning af formularen (for en enkelt matchende kreditværdi)",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
         "message": "Aktivér automatisk indsendelse af formular efter valg af konto",
@@ -184,8 +256,8 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Aktivér adgangskodevælger",
-        "description": "Disable password picker"
+        "message": "Aktivér overlejring af adgangskoder til valg af adgangskoder / udfyldningsformularer",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
         "message": "Når en adgangskode er fundet, skal du gå til listen i stedet for den sidste aktive fane",
@@ -219,6 +291,18 @@
         "message": "Legitimationsoplysninger opdateret",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "En fejl opstod, mens opdatering af kreditværdighed",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "En fejl opstod under oprettelse af kreditværdighed",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "Åbn tilvalg side",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
         "message": "Websted ignoreret",
         "description": "Site ignored"
@@ -244,7 +328,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Velkommen til Passman webextension",
+        "message": "Velkommen til Passman Webextension",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -253,11 +337,11 @@
     },
     "begin": {
         "message": "Lad os begynde!",
-        "description": "Let's begin!"
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Denne guide vil guide dig gennem trinene for at konfigurere udvidelsen og holde alle dine adgangskoder synkroniseret.",
-        "description": "Cancel"
+        "message": "Dine Nextcloud adgangskoder, klar i browseren. En kort opsætning forbinder denne udvidelse til din Passman boks.",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "Annuller",
@@ -295,9 +379,41 @@
         "message": "Brugerdefinerede felter",
         "description": "Custom fields"
     },
+    "custom_fields_types_text": {
+        "message": "Tekst",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Adgangskode",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "File",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "Tilføj felt",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "Feltmærke",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "Feltværdi",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "Felttype",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "Ingen fil valgt",
+        "description": "Custom field no file selected"
+    },
     "general": {
         "message": "Generelt",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
         "message": "Værdi",
@@ -419,6 +535,42 @@
         "message": "OTP",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "Ugyldig OTP- konfiguration",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "OTP- hemmelighed",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "Ryd OTP- indstilling",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "Udsteder",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Type",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "Digits",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "Periode",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "Alginisme",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "Filer",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "Indstillinger",
         "description": "Settings"
@@ -443,9 +595,17 @@
         "message": "Søg",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "Type der skal søges",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
         "message": "Legitimationsoplysninger slettet",
         "description": "Credential deleted"
+    },
+    "mark_credential_deleted": {
+        "message": "Markér kreditværdi som slettet",
+        "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
         "message": "Når adgangskodevælgeren ikke kan finde nogen legitimationsoplysninger, så vil den gå til:",
@@ -466,6 +626,10 @@
     "reset_extension": {
         "message": "Nulstil udvidelse",
         "description": "Search"
+    },
+    "reset_settings": {
+        "message": "Nulstil indstillinger",
+        "description": "Reset settings button label"
     },
     "iam_sure": {
         "message": "Ja, jeg er sikker!",
@@ -501,7 +665,11 @@
     },
     "unlock": {
         "message": "Lås op",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "Lås op uden opdatering",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
         "message": "Vi har fundet $AMOUNT$ legitimationsoplysninger  for dette websted",
@@ -534,6 +702,886 @@
     "text": {
         "message": "tekst",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "Kopiér $FIELDNAME $til udklipsholderen",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START _ HTML _ TAG $Klik for at uploade $END _ HTML _ TAG $eller træk og slip",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "Enhver filtype",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "Filupload lykkedes",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "Filupload mislykkedes",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "Filsletning lykkedes",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "Sletning af fil mislykkedes",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "Filnavn",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "Oprettet ved",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Størelse",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "Desværre er fil upload ikke understøttet i popup.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "Brug webextension muligheder side eller en anden klient til at tilføje filer.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "Ryd faneblad url filter",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "Ingen matchning legitimationsoplysninger",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "Opdatér standardindstillinger",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "Gem indstillinger",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "Udvidede indstillinger",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "Indstil globale udvidede indstillinger",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Opsætning af Nextcloud-server",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "Indstil din Nextcloud-server og -boks legitimationsoplysninger",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "Tilslut din server",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "Log ind på Nextcloud, derefter vælge Passman hvælving denne browser skal holde i synkronisering.",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "Sideregler",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "Opsætning side specifikke regler for at tilpasse den globale udvidelse adfærd. Dette er i øjeblikket kun bygget for domæner, ikke for specifikke stier. (kan komme i fremtiden)",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "Gemte sideregler",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "Ingen sideregler defineret endnu",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "SideURL",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "Ny regel",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "Gem regel",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "Opdateringsregel",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "Slet regel",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "Sideregel gemt",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "Side regel slettet",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "Tilsidesæt globale indstillinger",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "Nuværende sted",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "Juster hvordan Passman opfører sig på denne side.",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "Nulstil ændringer",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "Indlæser sideindstillinger...",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "Prøv igen",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "Kan ikke indlæse sideregler for dette websted",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "Gemmer sideregler mislykkedes",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "Søgeregler",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "Filtrér efter URL...",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "Ingen sideregler matcher din søgning",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "Abort",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "Brug global indstilling",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "Aktivér kraft",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "Kraftdeaktivér",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "I øjeblikket redigering: $PAGE _ URL $",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "SideURL er påkrævet",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "Kunne ikke indlæse sideregler",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "Kunne ikke gemme sideregel",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "Failed to delete page rule",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "Override: $COUNT $",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "Gem standardindstillinger for boksen",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "Indstillinger opdateret med succes",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "Forlængelsesversion",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "Aktivér e- mail som brugernavn fallback påfyldning (og omvendt)",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "Formulardetektionsindstillinger",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "Aktivér brugerbegivenhedsbaseret formdetektion",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "Lyt til nogle særlige brugerbegivenheder med nedslag og kvælende logik",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "Aktivér formdetektion på popstate-begivenheder på URL",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "Dybest set nyttigt for SBO 'er (men ikke nødvendigvis)",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "Aktivér formdetektion på URL-ændringer, kontrolleret med interval (af 1 'ere)",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "Aktivér MutationObserver til at detektere dynamisk tilføjede formularer og inputfelter på DOM ændringer",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "Den mest effektive, men også mest ressourceintensive måde at opdage dynamisk tilføjede formularer og input felter på DOM ændringer",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "aktiveret",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "deaktiveret",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "Offline cache",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "Krypterede bankdata opbevares lokalt til offline brug. Cleared cache genfyldes automatisk, når du næste indlæse hvælvinger fra serveren.",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "Anslået størrelse: $1 ($2 legitimationsoplysninger i $3 bokse)",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "Måling af offline cache...",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "Kunne ikke måle offline cache størrelse",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "Ryd offline cache",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "Slet den lokale offline boks? Du skal bruge en netværksforbindelse til at genindlæse bokse.",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "Offline cache ryddet",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "Kunne ikke rydde offline cache",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "offline_cache_storage_backend": {
+        "message": "Cache- lagring",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "Hvor krypteret boks er gemt. IndexedDB fortsætter på tværs af genstarter; in- hukommelse er ryddet, når forlængelsen baggrundsscript genstarter.",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB (persistent)",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "In- hukommelse (session / tidsbegrænsning)",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "Brug in-memory cache. Cached hvælvinger går tabt, når forlængelse baggrund script genstarter; de genindlæser fra serveren, når det er nødvendigt.",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "Indfødt IndexedDB er ikke tilgængelig i denne browserprofil (for eksempel Firefox med \"Aldrig huske historie\"). In- memory cache bruges i stedet.",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "Størrelse afspejler kun den aktuelle session.",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "IndexedDB er ikke tilgængelig her, så in-memory cache forbliver aktiv.",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "Offline cache opbevaring er fuld (kvote overskredet). Gratis plads eller rydde offline cache i udvidede indstillinger.",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "Denne browserprofil kan ikke bruge IndexedDB (for eksempel Firefox med \"Aldrig huske historie\"). Passman vil bruge en in-memory cache, der er ryddet, når udvidelsen baggrundsscript genstarter.",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
+    "server_connections": {
+        "message": "Reddede servere",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "Udvidelsen bruger en aktiv Nextcloud server ad gangen. Tilføj en sikkerhedskopi her, så du kan skifte hurtigt, hvis den primære server ikke er tilgængelig.",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "aktiv",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "Skift",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "Fjern",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "Tilføj server",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "Aktiv server legitimationsoplysninger",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "Fjern denne gemte server fra udvidelsen? Offline cache for det kan forblive indtil ryddet.",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "Skiftet aktiv server",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "Kunne ikke skifte server",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "Server fjernet",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "Kunne ikke fjerne server",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "Denne omskrivning er stadig under aktiv udvikling. Forvent hårde kanter. Har du fundet et insekt? Åbn et problem på $LINK _ START $GitHub $LINK _ END $.",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "Vælg en låseadgangskode",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "Denne adgangskode låser udvidelsen på denne enhed og bruges til kryptering af lokale indstillinger. Det er ikke dit kodeord.",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "Gem og fortsæt",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "change_unlock_password": {
+        "message": "Ændr låsekodeord",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "Nuværende oplåsnings adgangskode",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "Ny lås adgangskode",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "Skift kodeord",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "Lås adgangskode ændret med succes",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "Kunne ikke ændre adgangskoden til låse op. Tjek den nuværende adgangskode og prøv igen.",
+        "description": "Error when changing the extension unlock password fails"
+    },
+    "enable_auto_unlock": {
+        "message": "Auto- loop ved browserstart",
+        "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
+    },
+    "enable_auto_unlock_description": {
+        "message": "Holder udvidelsen ulåst på tværs af browser genstarter uden at gemme din låse adgangskode. Enhver, der kan køre kode i denne udvidelse, eller læse denne browserprofil fra disk, kan derefter få adgang til dine bankdata uden kodeordet. Det er som en OS \"ophold signeret i\" valgmulighed.",
+        "description": "Trade-off hint under the auto-unlock checkbox"
+    },
+    "enable_auto_unlock_lock_note": {
+        "message": "Låsning af forlængelsen slukker automatisk. Gør det muligt her bagefter.",
+        "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
+    },
+    "enable_auto_unlock_local_fallback_notice": {
+        "message": "IndexedDB kan ikke bruges i denne browserprofil, så tasten automatisk låses op gemmes i lokal lagerplads. Det er svagere: Enhver, der kan læse udvidelse opbevaring kan låse uden din adgangskode.",
+        "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
+    },
+    "auto_unlock_enable_failed": {
+        "message": "Kunne ikke aktivere automatisk låsning. Lås op eller genstart udvidelsen og prøv igen.",
+        "description": "Error toast when enabling auto-unlock fails"
+    },
+    "auto_unlock_disable_failed": {
+        "message": "Kunne ikke deaktivere automatisk låsning.",
+        "description": "Error toast when disabling auto-unlock fails"
+    },
+    "migrate_legacy_title": {
+        "message": "Importér tidligere indstillinger",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Indtast hovedkodeordet fra din tidligere Passman-udvidelse. Det vil også blive din nye låse adgangskode, når du bekræfter import.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Indstillinger fra en tidligere Passman udvidelse blev fundet. Gennemgå og redigere dem før import.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Tidligere master- adgangskode",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Importér tidligere indstillinger",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Importér tidligere installation",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Lås de tidligere indstillinger op med din gamle masteradgangskode for at gennemgå, hvad der vil blive importeret.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Redigér forbindelser og præferencer efter behov. Forbindelses- og boksstatus kontrolleres mod dine servere.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Fortsætte revisionen",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Importér og afslut opsætning",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Prøvningsforbindelse",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Recheck all",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Brug som aktiv forbindelse",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Matchende & autofill indstillinger",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "Et sted pr. linje. Disse bliver sideregler med \"ignorer side\" aktiveret.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "ikke markeret",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "Jeg tjekker...",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Eksperimental",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Kunne ikke dekryptere de tidligere indstillinger. Tjek hovedkodeordet og prøv igen.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "De tidligere indstillinger indeholder ingen serverkonti at importere.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Kunne ikke importere tidligere indstillinger.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Importeret $COUNT $server forbindelse (r) fra den tidligere installation.",
+        "description": "Success toast after importing legacy settings"
+    },
+    "passman_app_required": {
+        "message": "Denne udvidelse kræver $LINK _ START $Passman App $LINK _ END $skal installeres på din Nextcloud server.",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "Ingen data overføres til andre kilder end den angivne Nextcloud server.",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "Ingen markeret boksinformation fundet",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "Kunne ikke dekryptere boksen",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "Ingen standard hvælving info fundet",
+        "description": "Error when metadata about the default vault is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "Kunne ikke få eller dekryptere boksen",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "Ukendt fejl i genopfriskningskreditial Liste",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "Forventet forlængelsesside ikke fundet",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "Rapportér et nummer",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "Spørgsmål",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "Klik for automatisk udfyldning",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "Tilføj et mærke",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "Fjern $TAG $tag",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "-- Klik for at tilføje --",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "Ingen $FIELDNAME $at kopiere",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "Kunne ikke finde valgt kreditværdi",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "Ukendt fejl opstod under sletning af en kreditværdighed",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "En fejl opstod, mens du sletter en kreditværdi",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "fattige",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "svag",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "godt",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "stærk",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "Undlad alarm",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "Creditial ikon",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "OTP QR-kode",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "Automatisk udfyldning",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "Kopiér brugernavn",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "Kopiér e- mail",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "Kopiér adgangskode",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "Kopiér URL",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "Kopiér OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "Genindlæs adgangskodevælger",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "Og kopiér til udklipsholderen",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "Og fyld felter",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "$FIELDNAME $kopieret til udklipsholderen",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "Kunne ikke kopiere $FIELDNAME $",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "Ukendt fejl under kontrol af udvidelse lås tilstand!",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "Login lykkedes",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "Login mislykkedes",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "Ingen serverinfo angivet",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "Ukendt fejl",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "Ingen kreditoplysninger",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "Ingen kilde- faneblad fundet",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "Kunne ikke gemme kreditværdighed",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "Kunne ikke få passman- klient",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "Ugyldig anmodning (organ til kontrol af forespørgsel)",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "Kunne ikke få standardinformation om boksen",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "Ingen forbindelse",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "Kunne ikke få passman klient",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "Ingen styret forbindelse med id $CONNECTION _ ID $",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "Valgte hvælving kunne ikke dekrypteres med den givne adgangskode",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "Kunne ikke få valgt boks ved guid",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "Ingen boks info leveret af udvidelse indstillinger",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "Kunne ikke få brugerdefineret kodeordsgeneratorkonfiguration",
+        "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "Aktivér indsamling af nye og opdaterede adgangskoder med dørHanger overlay",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
+    },
+    "doorhanger_save_title": {
+        "message": "Gem login til Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Opdatering login i Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Ikke nu",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Creditial to update",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Unavngivet kreditværdi",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Doorhanger Formand",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Vælg hvordan post- login gemme / opdateringsprompt vises på hjemmesider.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Layout",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Kort flyder i et hjørne. Øverste række er et banner i fuld bredde langs toppen af siden.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Kort",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Øverste række",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Stilling",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Hjørner til kort layout, eller indhold justering for øverste række layout.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Øverst til højre",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Øverst til venstre",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Nederst til højre",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Nederst til venstre",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Logning",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimum konsollog niveau for denne udvidelse. Lavere niveauer omfatter flere detaljer. Standard for produktion er fejl.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Logniveau",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Fejl",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Log",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Info",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Advarsel",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Fejl",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",
