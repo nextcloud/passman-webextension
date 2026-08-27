@@ -1448,7 +1448,7 @@
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
-        "message": "Could not get default vault info",
+        "message": "Impossible de récupérer les informations du coffre-fort par défaut",
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
@@ -1468,11 +1468,11 @@
         "description": "Error when the provided vault password is wrong"
     },
     "could_not_get_selected_vault_by_guid": {
-        "message": "Could not get selected vault by guid",
+        "message": "Impossible de récupérer le coffre-fort sélectionné via le guid",
         "description": "Error when the selected vault cannot be resolved by GUID"
     },
     "no_vault_info_in_extension_settings": {
-        "message": "No vault info provided by extension settings",
+        "message": "Aucune information de coffre-fort fournie par les paramètres de l'extension",
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {

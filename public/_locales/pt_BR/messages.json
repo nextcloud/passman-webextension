@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Opções de filtro de credenciais do site",
+        "message": "Opções de filtro de credenciais nos sites",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
