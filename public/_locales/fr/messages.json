@@ -1176,7 +1176,7 @@
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
-        "message": "Settings from a previous Passman extension were found. Review and edit them before importing.",
+        "message": "Les paramètres d'une précédente extension Passman ont été trouvés. Examinez-les et éditez-les avant de les importer.",
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
