@@ -1172,7 +1172,7 @@
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Enter the master password from your previous Passman extension. It will also become your new unlock password after you confirm the import.",
+        "message": "Entrez le mot de passe maître de votre précédente extension Passman. Cela deviendra également votre nouveau mot de passe de déverrouillage après avoir confirmé l'importation.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
@@ -1192,7 +1192,7 @@
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Déverrouillez les paramètres précédents avec votre ancien mot de passe maître pour examiner ce qui sera importé.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
@@ -1392,7 +1392,7 @@
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
-        "message": "And copy to clipboard",
+        "message": "Et copier dans le presse-papiers",
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
