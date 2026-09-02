@@ -540,7 +540,7 @@
         "description": "Invalid one time password configuration"
     },
     "otp_secret": {
-        "message": "OTP secret",
+        "message": "Secret OTP",
         "description": "OTP secret"
     },
     "otp_clear_all": {
@@ -852,7 +852,7 @@
         "description": "Intro text for picker page rules tab"
     },
     "page_rules_picker_reset": {
-        "message": "Reset changes",
+        "message": "Réinitialiser les modifications",
         "description": "Reset button label in picker page rules tab"
     },
     "page_rules_picker_loading": {
@@ -1148,7 +1148,7 @@
         "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
     },
     "enable_auto_unlock_description": {
-        "message": "Keeps the extension unlocked across browser restarts without storing your unlock password. Anyone who can run code in this extension, or read this browser profile from disk, can then access your vault data without the password. It is like an OS “stay signed in” option.",
+        "message": "Garde l'extension déverrouillée même après les redémarrages du navigateur, sans stocker votre mot de passe de déverrouillage. Quiconque peut exécuter du code dans cette extension, ou lire ce profil du navigateur depuis le disque, peut alors accéder aux données de votre coffre-fort sans mot de passe. C'est comme une option du système d'exploitation « rester connecté ».",
         "description": "Trade-off hint under the auto-unlock checkbox"
     },
     "enable_auto_unlock_lock_note": {
@@ -1156,7 +1156,7 @@
         "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
     },
     "enable_auto_unlock_local_fallback_notice": {
-        "message": "IndexedDB is not usable in this browser profile, so the auto-unlock key is stored in extension local storage. That is weaker: anyone who can read the extension storage can unlock without your password.",
+        "message": "IndexedDB n'est pas utilisable dans ce profil du navigateur, la clé de déverrouillage est donc enregistrée dans le stockage local de l'extension. La sécurité est plus faible : quiconque peut lire le stockage de l'extension peut procéder au déverrouillage sans votre mot de passe.",
         "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
     },
     "auto_unlock_enable_failed": {
@@ -1360,7 +1360,7 @@
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
-        "message": "OTP QR code",
+        "message": "QR code OTP",
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
