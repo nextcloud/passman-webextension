@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Website credential filter options",
+        "message": "Options de filtrage des informations d'identification sur les sites web",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
@@ -780,7 +780,7 @@
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
-        "message": "Setup your Nextcloud server and vault credentials",
+        "message": "Configurez votre serveur Nextcloud et les informations d'identification du coffre-fort",
         "description": "Nextcloud server setup card description"
     },
     "setup_server_step_title": {
@@ -936,7 +936,7 @@
         "description": "Extension version"
     },
     "enable_email_as_username_fallback_filling": {
-        "message": "Enable email as username fallback filling (and vice versa)",
+        "message": "Remplir avec l'adresse e-mail en cas d'absence du nom d'utilisateur (et vice versa)",
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
@@ -952,11 +952,11 @@
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
-        "message": "Enable form detection on URL popstate events",
+        "message": "Activer la détection de formulaires lors des événements popstate d'URL",
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Basically useful for SPAs (but not necessarily)",
+        "message": "Principalement utile pour les SPA (mais pas nécessairement)",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
@@ -968,7 +968,7 @@
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
-        "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+        "message": "La méthode la plus efficace, mais aussi la plus consommatrice en ressources, pour détecter les formulaires et champs de saisie ajoutés dynamiquement lors des modifications du DOM",
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
@@ -1384,11 +1384,11 @@
         "description": "Browser context menu item to copy URL"
     },
     "context_menu_copy_otp": {
-        "message": "Copy OTP",
+        "message": "Copier l'OTP",
         "description": "Browser context menu item to copy one-time password"
     },
     "context_menu_reload_password_picker": {
-        "message": "Reload password picker",
+        "message": "Recharger le sélecteur de mots de passe",
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
@@ -1396,7 +1396,7 @@
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
-        "message": "And fill fields",
+        "message": "Et remplir les champs",
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
@@ -1428,7 +1428,7 @@
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "No credential data provided",
+        "message": "Aucune donnée d'information d'identification fournie",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
@@ -1484,11 +1484,11 @@
         "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {
-        "message": "Save login to Passman?",
+        "message": "Enregistrer l'identifiant dans Passman ?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Update login in Passman?",
+        "message": "Mettre à jour l'identifiant dans Passman ?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
