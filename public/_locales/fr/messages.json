@@ -1068,7 +1068,7 @@
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
-        "message": "Switch",
+        "message": "Changer",
         "description": "Button to make another saved server the active connection"
     },
     "server_connection_remove": {
@@ -1088,7 +1088,7 @@
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Switched active server",
+        "message": "Serveur actif changé",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
@@ -1212,11 +1212,11 @@
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
-        "message": "Recheck all",
+        "message": "Tout revérifier",
         "description": "Button to probe every connection on the migrate review page"
     },
     "migrate_legacy_set_active": {
-        "message": "Use as active connection",
+        "message": "Utiliser comme connexion active",
         "description": "Radio label to mark which imported connection becomes active"
     },
     "migrate_legacy_prefs_title": {
