@@ -856,7 +856,7 @@
         "description": "Reset button label in picker page rules tab"
     },
     "page_rules_picker_loading": {
-        "message": "Loading page settings...",
+        "message": "Chargement des paramètres des pages...",
         "description": "Loading label for picker page rules tab"
     },
     "page_rules_picker_retry": {
@@ -1224,7 +1224,7 @@
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "One site per line. These become page rules with “ignore page” enabled.",
+        "message": "Un site par ligne. Cela devient des règles de pages avec l'option « Ignorer page » activée.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
