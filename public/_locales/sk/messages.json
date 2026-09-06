@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - The password manager for Nextcloud",
+        "message": "Passman – správca hesiel pre Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -16,7 +16,7 @@
         "description": "No credentials found for the current site"
     },
     "description": {
-        "message": "Description",
+        "message": "Popis",
         "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
@@ -32,7 +32,7 @@
         "description": "Save site"
     },
     "generator": {
-        "message": "Generator",
+        "message": "Generátor",
         "description": "Password generator menu entry"
     },
     "password_generator": {
@@ -40,11 +40,11 @@
         "description": "Password generator"
     },
     "password_generation_settings": {
-        "message": "Password generation settings",
+        "message": "Nastavenia generovania hesiel",
         "description": "Settings for the password generator"
     },
     "toggle_extended_password_settings": {
-        "message": "Toggle extended password settings",
+        "message": "Prepínať rozšírené nastavenia hesla",
         "description": "Toggle extended password settings"
     },
     "generate_password": {
@@ -84,19 +84,19 @@
         "description": "Require every character type"
     },
     "use_uppercase": {
-        "message": "Use uppercase letters",
+        "message": "Používať veľké písmená",
         "description": "Use uppercase letters"
     },
     "use_lowercase": {
-        "message": "Use lowercase letters",
+        "message": "Používať malé písmená",
         "description": "Use lowercase letters"
     },
     "use_digits": {
-        "message": "Use digits",
+        "message": "Používať číslice",
         "description": "Use digits"
     },
     "use_special_chars": {
-        "message": "Use special characters",
+        "message": "Používať špeciálne znaky",
         "description": "Use special characters"
     },
     "add_account": {
@@ -124,7 +124,7 @@
         "description": "Add"
     },
     "credential_changed": {
-        "message": "Credential changed",
+        "message": "Poverenie zmenené",
         "description": "Credential changed"
     },
     "credential_created": {
@@ -132,15 +132,15 @@
         "description": "Credential created"
     },
     "credentials_expires": {
-        "message": "Credential expires",
+        "message": "Poverenie vyprší",
         "description": "Credential expires"
     },
     "expire_date": {
-        "message": "Expiration date",
+        "message": "Dátum uplynutia platnosti",
         "description": "Credential password expiration date"
     },
     "no_expire_date": {
-        "message": "No expiration date set",
+        "message": "Nie je nastavený dátum uplynutia platnosti",
         "description": "No expiration date set for the credential password"
     },
     "url": {
@@ -180,44 +180,48 @@
         "description": "Detected changed URL for"
     },
     "edit_credential": {
-        "message": "Edit credential",
+        "message": "Upraviť poverenie",
         "description": "Edit credential button label for the edit credential page"
     },
     "create_new_credential": {
-        "message": "Create new credential",
+        "message": "Vytvoriť nové poverenie",
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Credential",
+        "message": "Poverenie",
         "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Credentials",
+        "message": "Prihlasovacie údaje",
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
-        "message": "This password is compromised. You can only remove this warning by changing the password.",
+        "message": "Toto heslo bolo kompromitované. Toto upozornenie môžete odstrániť iba zmenou hesla.",
         "description": "Credential compromised notice"
     },
     "mark_compromised": {
-        "message": "Mark as compromised",
+        "message": "Označiť ako kompromitované",
         "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
         "message": "Časovač obnovovania [s]",
         "description": "Password"
     },
+    "website_credential_filter_options": {
+        "message": "Možnosti filtrovania poverení pre webové stránky",
+        "description": "Label for the settings section about modifying default credential matching behavior for all websites"
+    },
     "ignore_protocol": {
         "message": "Pri hľadaní zhodnej stránky ignoruj protokol",
-        "description": "Ignore protocol for site matching"
+        "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
         "message": "Pri hľadaní zhodnej stránky ignoruj subdoménu",
-        "description": "Password"
+        "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
         "message": "Pri hľadaní zhodnej stránky ignoruj port",
-        "description": "Ignore port for site matching"
+        "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
         "message": "Používate protokol HTTP!  Prihlasovacie údaje budú odoslané nezašifrované.  Prihlasovacie údaje v Passman ale zostávajú šifrované.",
@@ -225,14 +229,14 @@
     },
     "ignore_path": {
         "message": "Pri hľadaní zhodnej stránky ignoruj cestu",
-        "description": "Ignore path for site matching"
+        "description": "Checkbox label for ignoring the url path when matching credentials to websites"
     },
     "ignore_page": {
-        "message": "Ignore this page when suggesting credentials",
-        "description": "Checkbox label for ignoring a specific page"
+        "message": "Ignorovať túto stránku pri navrhovaní poverení",
+        "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill (for a single matching credential)",
+        "message": "Povoliť automatické vyplnenie formulára (pre jedno zodpovedajúce poverenie)",
         "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
@@ -252,8 +256,8 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Povoliť výber hesla",
-        "description": "Disable password picker"
+        "message": "Povoliť prekryvnú vrstvu výberu hesla na výber hesiel a vypĺňanie formulárov",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
         "message": "Keď sa nájde heslo, prejdi na zoznam radšej než na posledný aktívny tab",
@@ -288,15 +292,15 @@
         "description": "updated, lowercase"
     },
     "credential_update_error": {
-        "message": "An error occurred while updating the credential",
+        "message": "Pri aktualizácii poverenia sa vyskytla chyba",
         "description": "An error occurred while updating the credential"
     },
     "credential_create_error": {
-        "message": "An error occurred while creating the credential",
+        "message": "Pri vytváraní poverenia sa vyskytla chyba",
         "description": "An error occurred while creating the credential"
     },
     "open_options_page": {
-        "message": "Open options page",
+        "message": "Otvoriť stránku s možnosťami",
         "description": "Open options page button label for the browser extension options page"
     },
     "site_ignored": {
@@ -324,7 +328,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Welcome to the Passman Webextension",
+        "message": "Vitajte v rozšírení Passman pre webový prehliadač",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -336,7 +340,7 @@
         "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Your Nextcloud passwords, ready in the browser. A short setup connects this extension to your Passman vault.",
+        "message": "Vaše heslá Nextcloud sú pripravené v prehliadači. Krátke nastavenie pripojí toto rozšírenie k vášmu trezoru Passman.",
         "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
@@ -388,23 +392,23 @@
         "description": "Custom field type file"
     },
     "custom_fields_header_add": {
-        "message": "Add field",
+        "message": "Pridať pole",
         "description": "Custom field add"
     },
     "custom_fields_header_label": {
-        "message": "Field label",
+        "message": "Označenie poľa",
         "description": "Custom field label"
     },
     "custom_fields_header_value": {
-        "message": "Field value",
+        "message": "Hodnota poľa",
         "description": "Custom field value"
     },
     "custom_fields_header_type": {
-        "message": "Field type",
+        "message": "Typ poľa",
         "description": "Custom field type"
     },
     "custom_fields_error_no_file_selected": {
-        "message": "No file selected",
+        "message": "Nie je vybraný žiadny súbor",
         "description": "Custom field no file selected"
     },
     "general": {
@@ -532,19 +536,19 @@
         "description": "One time password"
     },
     "otp_configuration_invalid": {
-        "message": "Invalid OTP configuration",
+        "message": "Neplatná konfigurácia OTP",
         "description": "Invalid one time password configuration"
     },
     "otp_secret": {
-        "message": "OTP secret",
+        "message": "Tajný kľúč OTP",
         "description": "OTP secret"
     },
     "otp_clear_all": {
-        "message": "Clear OTP configuration",
+        "message": "Vymazať konfiguráciu OTP",
         "description": "Clear OTP configuration"
     },
     "issuer": {
-        "message": "Issuer",
+        "message": "Vydavateľ",
         "description": "OTP issuer"
     },
     "type": {
@@ -552,15 +556,15 @@
         "description": "OTP type"
     },
     "digits": {
-        "message": "Digits",
+        "message": "Číslice",
         "description": "OTP digits"
     },
     "period": {
-        "message": "Period",
+        "message": "Perióda",
         "description": "OTP period"
     },
     "algorithm": {
-        "message": "Algorithm",
+        "message": "Algoritmus",
         "description": "OTP algorithm"
     },
     "files": {
@@ -592,7 +596,7 @@
         "description": "Search"
     },
     "type_to_search": {
-        "message": "Type to search",
+        "message": "Začnite písať",
         "description": "Type to search placeholder for the search input"
     },
     "credential_deleted": {
@@ -600,7 +604,7 @@
         "description": "Credential deleted"
     },
     "mark_credential_deleted": {
-        "message": "Mark credential as deleted",
+        "message": "Označiť poverenie ako odstránené",
         "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
@@ -624,7 +628,7 @@
         "description": "Search"
     },
     "reset_settings": {
-        "message": "Reset settings",
+        "message": "Obnoviť nastavenia",
         "description": "Reset settings button label"
     },
     "iam_sure": {
@@ -664,7 +668,7 @@
         "description": "Unlock button label"
     },
     "unlock_without_refresh": {
-        "message": "Unlock without refresh",
+        "message": "Odomknúť bez obnovenia",
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
@@ -700,111 +704,111 @@
         "description": "To describe a textual input field"
     },
     "copy_to_clipboard": {
-        "message": "Copy $FIELDNAME$ to clipboard",
+        "message": "Skopírovať $FIELDNAME$ do schránky",
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
-        "message": "$START_HTML_TAG$Click to upload$END_HTML_TAG$ or drag and drop",
+        "message": "$START_HTML_TAG$Kliknutím nahrajte$END_HTML_TAG$ alebo súbor presuňte sem",
         "description": "Text shown in the drag and drop upload box"
     },
     "files_any_type_info": {
-        "message": "Any file type",
+        "message": "Ľubovoľný typ súboru",
         "description": "File type info shown in the drag and drop upload box"
     },
     "files_upload_succeeded": {
-        "message": "File upload succeeded",
+        "message": "Nahranie súboru bolo úspešné",
         "description": "Shown when a file has been successfully uploaded"
     },
     "files_upload_failed": {
-        "message": "File upload failed",
+        "message": "Nahranie súboru zlyhalo",
         "description": "Shown when a file upload has failed"
     },
     "files_deletion_succeeded": {
-        "message": "File deletion succeeded",
+        "message": "Odstránenie súboru bolo úspešné",
         "description": "Shown when a file has been successfully deleted"
     },
     "files_deletion_failed": {
-        "message": "File deletion failed",
+        "message": "Odstránenie súboru zlyhalo",
         "description": "Shown when a file deletion has failed"
     },
     "files_header_name": {
-        "message": "File name",
+        "message": "Názov súboru",
         "description": "Column header for file name in files table"
     },
     "files_header_created": {
-        "message": "Created at",
+        "message": "Vytvorené",
         "description": "Column header for creation date in files table"
     },
     "files_header_size": {
-        "message": "Size",
+        "message": "Veľkosť",
         "description": "Column header for file size in files table"
     },
     "error_file_upload_popup": {
-        "message": "Unfortunately, file upload is not supported in the popup.",
+        "message": "Nahrávanie súborov, žiaľ, nie je vo vyskakovacom okne podporované.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "error_file_upload_popup_2": {
-        "message": "Please use the webextension options page or another client to add files.",
+        "message": "Na pridanie súborov použite stránku s možnosťami webového rozšírenia alebo iného klienta.",
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
-        "message": "Clear tab url filter",
+        "message": "Vymazať filter URL karty",
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "No matching credentials",
+        "message": "Žiadne zodpovedajúce poverenia",
         "description": "No matching credentials"
     },
     "update_default_settings": {
-        "message": "Update default settings",
+        "message": "Aktualizovať predvolené nastavenia",
         "description": "Update default settings button label"
     },
     "save_settings": {
-        "message": "Save settings",
+        "message": "Uložiť nastavenia",
         "description": "Save settings button label"
     },
     "extended_settings": {
-        "message": "Extended settings",
+        "message": "Rozšírené nastavenia",
         "description": "Extended settings"
     },
     "extended_settings_description": {
-        "message": "Setup global extended settings",
+        "message": "Nastaviť globálne rozšírené nastavenia",
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
-        "message": "Nextcloud server setup",
+        "message": "Nastavenie servera Nextcloud",
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
-        "message": "Setup your Nextcloud server and vault credentials",
+        "message": "Nastavte server Nextcloud a poverenia trezoru",
         "description": "Nextcloud server setup card description"
     },
     "setup_server_step_title": {
-        "message": "Connect your server",
+        "message": "Pripojiť server",
         "description": "Hero title on the initial Nextcloud server setup step"
     },
     "setup_server_step_intro": {
-        "message": "Sign in to Nextcloud, then choose the Passman vault this browser should keep in sync.",
+        "message": "Prihláste sa do Nextcloudu a potom vyberte trezor Passman, ktorý má tento prehliadač synchronizovať.",
         "description": "Supporting sentence on the initial Nextcloud server setup step"
     },
     "page_rules": {
-        "message": "Page rules",
+        "message": "Pravidlá stránok",
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Setup page specific rules to customize the global extension behavior. This is currently build only for domains, not for specific paths. (may coming in future)",
+        "message": "Nastavte pravidlá pre konkrétne stránky a prispôsobte globálne správanie rozšírenia. V súčasnosti sú určené iba pre domény, nie pre konkrétne cesty. (V budúcnosti sa to môže zmeniť.)",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
-        "message": "Saved page rules",
+        "message": "Uložené pravidlá stránok",
         "description": "Heading for the list of saved page rules"
     },
     "page_rules_no_rules": {
-        "message": "No page rules defined yet",
+        "message": "Zatiaľ nie sú definované žiadne pravidlá stránok",
         "description": "Shown when there are no page rules"
     },
     "page_rules_url_label": {
-        "message": "Page URL",
+        "message": "URL stránky",
         "description": "Label for page rule URL input"
     },
     "page_rules_url_placeholder": {
@@ -812,219 +816,259 @@
         "description": "Placeholder for page rule URL input"
     },
     "page_rules_new_rule": {
-        "message": "New rule",
+        "message": "Nové pravidlo",
         "description": "Label for creating a new page rule"
     },
     "page_rules_save_rule": {
-        "message": "Save rule",
+        "message": "Uložiť pravidlo",
         "description": "Label for saving a new page rule"
     },
     "page_rules_update_rule": {
-        "message": "Update rule",
+        "message": "Aktualizovať pravidlo",
         "description": "Label for updating an existing page rule"
     },
     "page_rules_delete_rule": {
-        "message": "Delete rule",
+        "message": "Odstrániť pravidlo",
         "description": "Label for deleting a page rule"
     },
     "page_rules_rule_saved": {
-        "message": "Page rule saved",
+        "message": "Pravidlo stránky bolo uložené",
         "description": "Success notification when saving a page rule"
     },
     "page_rules_rule_deleted": {
-        "message": "Page rule deleted",
+        "message": "Pravidlo stránky bolo odstránené",
         "description": "Success notification when deleting a page rule"
     },
     "page_rules_override_section": {
-        "message": "Override global settings",
+        "message": "Prepísať globálne nastavenia",
         "description": "Heading for page rule override settings"
     },
     "page_rules_picker_current_site": {
-        "message": "Current site",
+        "message": "Aktuálna stránka",
         "description": "Label that shows current origin in picker tab"
     },
     "page_rules_picker_intro": {
-        "message": "Adjust how Passman behaves on this page.",
+        "message": "Upravte, ako sa Passman správa na tejto stránke.",
         "description": "Intro text for picker page rules tab"
     },
     "page_rules_picker_reset": {
-        "message": "Reset changes",
+        "message": "Obnoviť zmeny",
         "description": "Reset button label in picker page rules tab"
     },
     "page_rules_picker_loading": {
-        "message": "Loading page settings...",
+        "message": "Načítavajú sa nastavenia stránky…",
         "description": "Loading label for picker page rules tab"
     },
     "page_rules_picker_retry": {
-        "message": "Retry",
+        "message": "Opakovať",
         "description": "Retry button label for picker page rules tab"
     },
     "page_rules_picker_load_error": {
-        "message": "Unable to load page rules for this site",
+        "message": "Pravidlá stránok tejto lokality sa nepodarilo načítať",
         "description": "Error shown when picker tab cannot fetch page rules"
     },
     "page_rules_picker_save_error": {
-        "message": "Saving page rules failed",
+        "message": "Ukladanie pravidiel stránok zlyhalo",
         "description": "Error shown when picker tab cannot save page rules"
     },
     "page_rules_search_label": {
-        "message": "Search rules",
+        "message": "Pravidlá vyhľadávania",
         "description": "Label for the page rules search input"
     },
     "page_rules_search_placeholder": {
-        "message": "Filter by URL...",
+        "message": "Filtrovať podľa URL…",
         "description": "Placeholder for the page rules search input"
     },
     "page_rules_no_results": {
-        "message": "No page rules match your search",
+        "message": "Vyhľadávaniu nezodpovedajú žiadne pravidlá stránok",
         "description": "Shown when no rules match the applied filter"
     },
     "page_rules_cancel_edit": {
-        "message": "Abort",
+        "message": "Zrušiť",
         "description": "Button label to go back to the page rules list"
     },
     "page_rules_use_global": {
-        "message": "Use global setting",
+        "message": "Použiť globálne nastavenie",
         "description": "Select option label for inheriting from global settings"
     },
     "page_rules_force_enable": {
-        "message": "Force enable",
+        "message": "Vynútiť zapnutie",
         "description": "Select option label for forcing setting to enabled"
     },
     "page_rules_force_disable": {
-        "message": "Force disable",
+        "message": "Vynútiť vypnutie",
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
-        "message": "Currently editing: $PAGE_URL$",
+        "message": "Momentálne sa upravuje: $PAGE_URL$",
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
-        "message": "Page URL is required",
+        "message": "URL stránky je povinná",
         "description": "Error message when the page rule URL is missing"
     },
     "page_rules_load_failed": {
-        "message": "Failed to load page rules",
+        "message": "Načítanie pravidiel stránok zlyhalo",
         "description": "Error message when page rules fail to load"
     },
     "page_rules_save_failed": {
-        "message": "Failed to save page rule",
+        "message": "Uloženie pravidla stránky zlyhalo",
         "description": "Error message when page rule save fails"
     },
     "page_rules_delete_failed": {
-        "message": "Failed to delete page rule",
+        "message": "Odstránenie pravidla stránky zlyhalo",
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Overrides: $COUNT$",
+        "message": "Prepísania: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
-        "message": "Save default vault settings",
+        "message": "Uložiť predvolené nastavenia trezoru",
         "description": "Save default vault settings button label"
     },
     "settings_updated_successfully": {
-        "message": "Settings updated successfully",
+        "message": "Nastavenia boli úspešne aktualizované",
         "description": "Settings updated successfully"
     },
     "extension_version": {
-        "message": "Extension version",
+        "message": "Verzia rozšírenia",
         "description": "Extension version"
     },
     "enable_email_as_username_fallback_filling": {
-        "message": "Enable email as username fallback filling (and vice versa)",
+        "message": "Povoliť automatické dopĺňanie používateľského mena e-mailom (a naopak)",
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
-        "message": "Form detection settings",
+        "message": "Nastavenia rozpoznávania formulárov",
         "description": "Form detection settings"
     },
     "enable_user_event_based_form_detection": {
-        "message": "Enable user event based form detection",
+        "message": "Povoliť rozpoznávanie formulárov na základe udalostí používateľa",
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Listen to some special user events with debouncing and throttling logic",
+        "message": "Počúvať niektoré špeciálne udalosti používateľa s logikou debouncingu a obmedzovania frekvencie",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
-        "message": "Enable form detection on URL popstate events",
+        "message": "Povoliť rozpoznávanie formulárov pri udalostiach popstate URL",
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Basically useful for SPAs (but not necessarily)",
+        "message": "Užitočné najmä pre SPA (ale nie nevyhnutne)",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
-        "message": "Enable form detection on URL changes, checked by interval (of 1s)",
+        "message": "Povoliť rozpoznávanie formulárov pri zmenách URL kontrolovaných v intervale (1 s)",
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
-        "message": "Enable MutationObserver to detect dynamically added forms and input fields on DOM changes",
+        "message": "Povoliť MutationObserver na rozpoznávanie dynamicky pridaných formulárov a vstupných polí pri zmenách DOM",
         "description": "Enable form detection by mutation observer"
     },
     "enable_form_detection_by_mutation_observer_description": {
-        "message": "The most effective, but also most resource intensive way to detect dynamically added forms and input fields on DOM changes",
+        "message": "Najefektívnejší, ale aj na zdroje najnáročnejší spôsob rozpoznávania dynamicky pridaných formulárov a vstupných polí pri zmenách DOM",
         "description": "Description for detection by mutation observer"
     },
     "page_rules_global_value_enabled": {
-        "message": "enabled",
+        "message": "povolené",
         "description": "Shown when global setting is enabled"
     },
     "page_rules_global_value_disabled": {
-        "message": "disabled",
+        "message": "zakázané",
         "description": "Shown when global setting is disabled"
     },
     "offline_cache": {
-        "message": "Offline cache",
+        "message": "Offline vyrovnávacia pamäť",
         "description": "Offline cache section heading in extended settings"
     },
     "offline_cache_description": {
-        "message": "Encrypted vault data kept locally for offline use. Cleared cache is refilled automatically when you next load vaults from the server.",
+        "message": "Zašifrované údaje trezoru uložené lokálne na použitie bez pripojenia. Vymazaná vyrovnávacia pamäť sa automaticky naplní pri ďalšom načítaní trezorov zo servera.",
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Estimated size: $1 ($2 credentials in $3 vaults)",
+        "message": "Odhadovaná veľkosť: $1 ($2 poverení v $3 trezoroch)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
-        "message": "Measuring offline cache…",
+        "message": "Meria sa offline vyrovnávacia pamäť…",
         "description": "Shown while estimating IndexedDB size"
     },
     "offline_cache_size_unavailable": {
-        "message": "Could not measure offline cache size",
+        "message": "Veľkosť offline vyrovnávacej pamäte sa nepodarilo zmerať",
         "description": "Error measuring IndexedDB size"
     },
     "clear_offline_cache": {
-        "message": "Clear offline cache",
+        "message": "Vymazať offline vyrovnávaciu pamäť",
         "description": "Button to delete the passman-model-store IndexedDB"
     },
     "clear_offline_cache_confirm": {
-        "message": "Delete the local offline vault cache? You will need a network connection to reload vaults.",
+        "message": "Odstrániť lokálnu offline vyrovnávaciu pamäť trezoru? Na opätovné načítanie trezorov budete potrebovať sieťové pripojenie.",
         "description": "Confirm dialog before clearing offline IndexedDB cache"
     },
     "offline_cache_cleared_successfully": {
-        "message": "Offline cache cleared",
+        "message": "Offline vyrovnávacia pamäť bola vymazaná",
         "description": "Success toast after clearing offline cache"
     },
     "offline_cache_clear_failed": {
-        "message": "Failed to clear offline cache",
+        "message": "Vymazanie offline vyrovnávacej pamäte zlyhalo",
         "description": "Error toast after failing to clear offline cache"
     },
+    "offline_cache_storage_backend": {
+        "message": "Úložisko vyrovnávacej pamäte",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "Miesto, kde sa uchováva zašifrovaná vyrovnávacia pamäť trezoru. IndexedDB pretrváva po reštartoch; pamäťová vyrovnávacia pamäť sa vymaže pri reštarte skriptu rozšírenia na pozadí.",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB (trvalé)",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "V pamäti (relácia / časovo obmedzené)",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "Používa sa pamäťová vyrovnávacia pamäť. Trezory vo vyrovnávacej pamäti sa stratia pri reštarte skriptu rozšírenia na pozadí; v prípade potreby sa znova načítajú zo servera.",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "Natívne IndexedDB nie je v tomto profile prehliadača k dispozícii (napríklad vo Firefoxe s nastavením „Nikdy si nepamätať históriu“). Namiesto neho sa používa pamäťová vyrovnávacia pamäť.",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "Veľkosť odráža iba aktuálnu reláciu.",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "IndexedDB tu nie je k dispozícii, preto zostáva aktívna pamäťová vyrovnávacia pamäť.",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "Úložisko offline vyrovnávacej pamäte je plné (prekročená kvóta). Uvoľnite miesto alebo vymažte offline vyrovnávaciu pamäť v rozšírených nastaveniach.",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "Tento profil prehliadača nemôže používať IndexedDB (napríklad Firefox s nastavením „Nikdy si nepamätať históriu“). Passman použije pamäťovú vyrovnávaciu pamäť, ktorá sa vymaže pri reštarte skriptu rozšírenia na pozadí.",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
     "server_connections": {
-        "message": "Saved servers",
+        "message": "Uložené servery",
         "description": "Heading for the Nextcloud connection directory list"
     },
     "server_connections_desc": {
-        "message": "The extension uses one active Nextcloud server at a time. Add a backup instance here so you can switch quickly if the primary server is unavailable.",
+        "message": "Rozšírenie používa naraz jeden aktívny server Nextcloud. Sem pridajte záložnú inštanciu, aby ste mohli rýchlo prepnúť, ak primárny server nie je dostupný.",
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "active",
+        "message": "aktívny",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
-        "message": "Switch",
+        "message": "Prepnúť",
         "description": "Button to make another saved server the active connection"
     },
     "server_connection_remove": {
@@ -1032,87 +1076,227 @@
         "description": "Button to remove a saved server connection"
     },
     "server_connection_add": {
-        "message": "Add server",
+        "message": "Pridať server",
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
-        "message": "Active server credentials",
+        "message": "Poverenia aktívneho servera",
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
-        "message": "Remove this saved server from the extension? Offline cache for it may remain until cleared.",
+        "message": "Odstrániť tento uložený server z rozšírenia? Offline vyrovnávacia pamäť preň môže zostať, kým ju nevymažete.",
         "description": "Confirm dialog before removing a server connection"
     },
     "server_connection_switched": {
-        "message": "Switched active server",
+        "message": "Aktívny server bol prepnutý",
         "description": "Success toast after switching the active Nextcloud connection"
     },
     "server_connection_switch_failed": {
-        "message": "Could not switch server",
+        "message": "Server sa nepodarilo prepnúť",
         "description": "Error toast when switching the active connection fails"
     },
     "server_connection_removed": {
-        "message": "Server removed",
+        "message": "Server bol odstránený",
         "description": "Success toast after removing a server connection"
     },
     "server_connection_remove_failed": {
-        "message": "Could not remove server",
+        "message": "Server sa nepodarilo odstrániť",
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "This rewrite is still under active development. Expect rough edges.$BR$Found a bug? Please open an issue on $LINK_START$GitHub$LINK_END$.",
+        "message": "Toto prepísanie sa stále aktívne vyvíja. Očakávajte nedostatky.$BR$Našli ste chybu? Otvorte problém na $LINK_START$GitHube$LINK_END$.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
-        "message": "Choose an unlock password",
+        "message": "Vyberte heslo na odomknutie",
         "description": "Label for the extension unlock password field during setup"
     },
     "setup_unlock_password_hint": {
-        "message": "This password locks the extension on this device and is used for the local settings encryption. It is not your vault password.",
+        "message": "Toto heslo uzamkne rozšírenie na tomto zariadení a používa sa na šifrovanie miestnych nastavení. Nie je to heslo vášho trezoru.",
         "description": "Helper text under the unlock password field on the setup welcome screen"
     },
     "save_password_and_unlock": {
-        "message": "Save & continue",
+        "message": "Uložiť a pokračovať",
         "description": "Button to save the extension unlock password and continue setup"
     },
+    "change_unlock_password": {
+        "message": "Zmeniť heslo na odomknutie",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "Aktuálne heslo na odomknutie",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "Nové heslo na odomknutie",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "Zmena hesla",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "Heslo na odomknutie bolo úspešne zmenené",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "Heslo na odomknutie sa nepodarilo zmeniť. Skontrolujte aktuálne heslo a skúste to znova.",
+        "description": "Error when changing the extension unlock password fails"
+    },
+    "enable_auto_unlock": {
+        "message": "Automatické odomknutie pri spustení prehliadača",
+        "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
+    },
+    "enable_auto_unlock_description": {
+        "message": "Udržiava rozšírenie odomknuté aj po reštartovaní prehliadača bez uloženia hesla na odomknutie. Ktokoľvek, kto môže spúšťať kód v tomto rozšírení alebo čítať tento profil prehliadača z disku, môže potom pristupovať k údajom vášho trezoru bez hesla. Je to podobné možnosti operačného systému „zostať prihlásený“.",
+        "description": "Trade-off hint under the auto-unlock checkbox"
+    },
+    "enable_auto_unlock_lock_note": {
+        "message": "Uzamknutím rozšírenia sa automatické odomknutie vypne. Potom ho tu znova povoľte.",
+        "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
+    },
+    "enable_auto_unlock_local_fallback_notice": {
+        "message": "IndexedDB sa v tomto profile prehliadača nedá používať, preto sa kľúč automatického odomknutia ukladá do lokálneho úložiska rozšírenia. Je to menej bezpečné: ktokoľvek, kto môže čítať úložisko rozšírenia, môže odomknúť rozšírenie bez vášho hesla.",
+        "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
+    },
+    "auto_unlock_enable_failed": {
+        "message": "Automatické odomknutie sa nepodarilo povoliť. Odomknite rozšírenie alebo ho reštartujte a skúste to znova.",
+        "description": "Error toast when enabling auto-unlock fails"
+    },
+    "auto_unlock_disable_failed": {
+        "message": "Automatické odomknutie sa nepodarilo zakázať.",
+        "description": "Error toast when disabling auto-unlock fails"
+    },
+    "migrate_legacy_title": {
+        "message": "Importovať predchádzajúce nastavenia",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Zadajte hlavné heslo z predchádzajúceho rozšírenia Passman. Po potvrdení importu sa zároveň stane vaším novým heslom na odomknutie.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Našli sa nastavenia z predchádzajúceho rozšírenia Passman. Pred importom ich skontrolujte a upravte.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Predchádzajúce hlavné heslo",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Importovať predchádzajúce nastavenia",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Importovať predchádzajúcu inštaláciu",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Odomknite predchádzajúce nastavenia starým hlavným heslom a skontrolujte, čo sa importuje.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Podľa potreby upravte pripojenia a predvoľby. Stav pripojenia a trezoru sa kontroluje na vašich serveroch.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Pokračovať v kontrole",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Importovať a dokončiť nastavenie",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Otestovať pripojenie",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Znova skontrolovať všetko",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Použiť ako aktívne pripojenie",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Predvoľby párovania a automatického dopĺňania",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "Jedna lokalita na riadok. Z nich sa vytvoria pravidlá stránok s povolenou možnosťou „ignorovať stránku“.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "neoverené",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "kontroluje sa…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimentálne",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Predchádzajúce nastavenia sa nepodarilo dešifrovať. Skontrolujte hlavné heslo a skúste to znova.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "Predchádzajúce nastavenia neobsahujú žiadne účty serverov na import.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Predchádzajúce nastavenia sa nepodarilo importovať.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Z predchádzajúcej inštalácie bolo importovaných $COUNT$ pripojení k serveru.",
+        "description": "Success toast after importing legacy settings"
+    },
     "passman_app_required": {
-        "message": "This extension requires the $LINK_START$Passman App$LINK_END$ to be installed on your Nextcloud server.",
+        "message": "Toto rozšírenie vyžaduje, aby bola na serveri Nextcloud nainštalovaná aplikácia $LINK_START$Passman$LINK_END$.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "No data is transferred to sources other than the specified Nextcloud server.",
+        "message": "Žiadne údaje sa neprenášajú na iné zdroje než na zadaný server Nextcloud.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
-        "message": "No selected vault info found",
+        "message": "Nenašli sa informácie o vybranom trezore",
         "description": "Error when selected vault metadata is missing"
     },
     "could_not_decrypt_vault": {
-        "message": "Could not decrypt vault",
+        "message": "Trezor sa nepodarilo dešifrovať",
         "description": "Error when vault decryption fails"
     },
     "no_default_vault_info_found": {
-        "message": "No default vault info found",
-        "description": "Error when default vault metadata is missing"
+        "message": "Nenašli sa informácie o predvolenom trezore",
+        "description": "Error when metadata about the default vault is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Could not get or decrypt vault",
+        "message": "Trezor sa nepodarilo získať ani dešifrovať",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
-        "message": "Unknown error in refreshCredentialList",
+        "message": "Neznáma chyba vo funkcii refreshCredentialList",
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
-        "message": "Expected extension page not found",
+        "message": "Požadovaná stránka rozšírenia sa nenašla",
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
-        "message": "Report an issue",
+        "message": "Nahlásiť problém",
         "description": "Title / tooltip for the issues button in the bottom navigation"
     },
     "issues": {
-        "message": "Issues",
+        "message": "Problémy",
         "description": "Short label for the issues button in the bottom navigation"
     },
     "github": {
@@ -1120,79 +1304,79 @@
         "description": "GitHub product / platform name"
     },
     "click_to_auto_fill": {
-        "message": "Click to auto fill",
+        "message": "Kliknutím automaticky vyplniť",
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
-        "message": "Add a tag",
+        "message": "Pridať značku",
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Remove $TAG$ tag",
+        "message": "Odstrániť značku $TAG$",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
-        "message": "-- Click to add --",
+        "message": "-- Kliknutím pridajte --",
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "No $FIELDNAME$ to copy",
+        "message": "Žiadne pole $FIELDNAME$ na skopírovanie",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Could not find selected credential",
+        "message": "Vybrané poverenie sa nenašlo",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Unknown error occurred while deleting a credential",
+        "message": "Pri odstraňovaní poverenia sa vyskytla neznáma chyba",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "An error occurred while deleting a credential",
+        "message": "Pri odstraňovaní poverenia sa vyskytla chyba",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "poor",
+        "message": "veľmi slabé",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
-        "message": "weak",
+        "message": "slabé",
         "description": "Password strength meter label"
     },
     "password_strength_good": {
-        "message": "good",
+        "message": "dobré",
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
-        "message": "strong",
+        "message": "silné",
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Dismiss alert",
+        "message": "Odmietnuť upozornenie",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Credential icon",
+        "message": "Ikona poverenia",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
-        "message": "OTP QR code",
+        "message": "QR kód OTP",
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
-        "message": "Auto fill",
+        "message": "Automaticky vyplniť",
         "description": "Browser context menu item to auto-fill credentials"
     },
     "context_menu_copy_username": {
-        "message": "Copy username",
+        "message": "Kopírovať používateľské meno",
         "description": "Browser context menu item to copy username"
     },
     "context_menu_copy_email": {
-        "message": "Copy email",
+        "message": "Kopírovať e-mail",
         "description": "Browser context menu item to copy email"
     },
     "context_menu_copy_password": {
-        "message": "Copy password",
+        "message": "Kopírovať heslo",
         "description": "Browser context menu item to copy password"
     },
     "context_menu_copy_url": {
@@ -1200,100 +1384,204 @@
         "description": "Browser context menu item to copy URL"
     },
     "context_menu_copy_otp": {
-        "message": "Copy OTP",
+        "message": "Kopírovať OTP",
         "description": "Browser context menu item to copy one-time password"
     },
     "context_menu_reload_password_picker": {
-        "message": "Reload password picker",
+        "message": "Znova načítať výber hesla",
         "description": "Browser context menu item to reload the password picker"
     },
     "context_menu_and_copy_to_clipboard": {
-        "message": "And copy to clipboard",
+        "message": "A skopírovať do schránky",
         "description": "Browser context menu submenu item under Generate password"
     },
     "context_menu_and_fill_fields": {
-        "message": "And fill fields",
+        "message": "A vyplniť polia",
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME$ copied to clipboard",
+        "message": "$FIELDNAME$ bolo skopírované do schránky",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
-        "message": "Failed to copy $FIELDNAME$",
+        "message": "Kopírovanie $FIELDNAME$ zlyhalo",
         "description": "Error toast when copying a field to the clipboard fails"
     },
     "unknown_error_checking_lock_state": {
-        "message": "Unknown error while checking extension lock state!",
+        "message": "Neznáma chyba pri kontrole stavu zámku rozšírenia!",
         "description": "Alert when extension lock-state check fails unexpectedly"
     },
     "login_succeeded": {
-        "message": "Login succeeded",
+        "message": "Prihlásenie bolo úspešné",
         "description": "Success message after Nextcloud login"
     },
     "login_failed": {
-        "message": "Login failed",
+        "message": "Prihlásenie zlyhalo",
         "description": "Error message after Nextcloud login failure"
     },
     "no_server_info_provided": {
-        "message": "No server info provided",
+        "message": "Neboli poskytnuté informácie o serveri",
         "description": "Error when server connection details are missing"
     },
     "unknown_error": {
-        "message": "Unknown error",
+        "message": "Neznáma chyba",
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "No credential data provided",
+        "message": "Neboli poskytnuté údaje poverenia",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "No source tab found",
+        "message": "Nenašla sa karta zdroja",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
-        "message": "Failed to save credential",
+        "message": "Uloženie poverenia zlyhalo",
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Could not get backend passman client",
+        "message": "Klienta Passman na backende sa nepodarilo získať",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
-        "message": "Invalid request (check request body)",
+        "message": "Neplatná požiadavka (skontrolujte telo požiadavky)",
         "description": "Error for an invalid extension message request body"
     },
     "could_not_get_default_vault_info": {
-        "message": "Could not get default vault info",
+        "message": "Informácie o predvolenom trezore sa nepodarilo získať",
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "No connectionId provided",
+        "message": "Nebolo poskytnuté connectionId",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
-        "message": "Could not get passman client",
+        "message": "Klienta Passman sa nepodarilo získať",
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "No managed connection with id $CONNECTION_ID$",
+        "message": "Nebolo nájdené spravované pripojenie s ID $CONNECTION_ID$",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
-        "message": "Selected vault could not be decrypted with the given password",
+        "message": "Vybraný trezor sa pomocou zadaného hesla nepodarilo dešifrovať",
         "description": "Error when the provided vault password is wrong"
     },
     "could_not_get_selected_vault_by_guid": {
-        "message": "Could not get selected vault by guid",
+        "message": "Vybraný trezor sa podľa identifikátora GUID nepodarilo získať",
         "description": "Error when the selected vault cannot be resolved by GUID"
     },
     "no_vault_info_in_extension_settings": {
-        "message": "No vault info provided by extension settings",
+        "message": "Nastavenia rozšírenia neposkytli žiadne informácie o trezore",
         "description": "Error when vault info is missing from extension settings"
     },
     "could_not_get_password_generator_configuration": {
-        "message": "Could not get custom password generator configuration",
+        "message": "Konfiguráciu vlastného generátora hesiel sa nepodarilo získať",
         "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "Povoliť zhromažďovanie nových a aktualizovaných hesiel pomocou prekryvnej vrstvy doorhanger",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
+    },
+    "doorhanger_save_title": {
+        "message": "Uložiť prihlásenie do Passmanu?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Aktualizovať prihlásenie v Passmane?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Teraz nie",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Poverenie na aktualizáciu",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Poverenie bez názvu",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Doorhanger",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Vyberte, ako sa má po prihlásení na webových stránkach zobrazovať výzva na uloženie alebo aktualizáciu.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Rozloženie",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Karta pláva v rohu. Horný riadok je banner po celej šírke v hornej časti stránky.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Karta",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Horný riadok",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Poloha",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Roh pre rozloženie karty alebo zarovnanie obsahu pre rozloženie horného riadka.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Vpravo hore",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Vľavo hore",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Vpravo dole",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Vľavo dole",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Protokolovanie",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Minimálna úroveň záznamov v konzole pre toto rozšírenie. Nižšie úrovne obsahujú viac podrobností. Predvolená úroveň pre produkciu je Chyba.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Úroveň protokolovania",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Ladenie",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Protokol",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Informácie",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Upozornenie",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Chyba",
+        "description": "Log level option: error"
     },
     "extName": {
         "message": "Passman",
