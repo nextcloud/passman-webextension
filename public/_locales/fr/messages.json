@@ -132,7 +132,7 @@
         "description": "Credential created"
     },
     "credentials_expires": {
-        "message": "Credential expires",
+        "message": "L'information d'identification expire",
         "description": "Credential expires"
     },
     "expire_date": {
@@ -256,7 +256,7 @@
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker overlay for selecting passwords / filling forms",
+        "message": "Activer l'incrustation du sélecteur de mots de passe pour choisir les mots de passe / remplir les formulaires",
         "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
@@ -604,7 +604,7 @@
         "description": "Credential deleted"
     },
     "mark_credential_deleted": {
-        "message": "Mark credential as deleted",
+        "message": "Marquer l'information d'identification comme supprimée",
         "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
@@ -752,7 +752,7 @@
         "description": "Error message when trying to upload a file in the popup"
     },
     "clear_tab_url_filter": {
-        "message": "Clear tab url filter",
+        "message": "Effacer le filtre d'URL de l'onglet",
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
@@ -892,11 +892,11 @@
         "description": "Select option label for inheriting from global settings"
     },
     "page_rules_force_enable": {
-        "message": "Force enable",
+        "message": "Forcer l'activation",
         "description": "Select option label for forcing setting to enabled"
     },
     "page_rules_force_disable": {
-        "message": "Force disable",
+        "message": "Forcer la désactivation",
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
@@ -948,7 +948,7 @@
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Listen to some special user events with debouncing and throttling logic",
+        "message": "Écoute certains événements utilisateurs spéciaux avec une logique d'anti-rebond et de limitation de débit",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
@@ -1168,7 +1168,7 @@
         "description": "Error toast when disabling auto-unlock fails"
     },
     "migrate_legacy_title": {
-        "message": "Import previous settings",
+        "message": "Importer les paramètres précédents",
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
@@ -1184,11 +1184,11 @@
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
-        "message": "Import previous settings",
+        "message": "Importer les paramètres précédents",
         "description": "Button/link from setup welcome to the legacy migrate review page"
     },
     "migrate_legacy_page_title": {
-        "message": "Import previous installation",
+        "message": "Importer l'installation précédente",
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
@@ -1196,19 +1196,19 @@
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Modifiez les connexions et les préférences selon les besoins. Le statut de connexion et l'état du coffre-fort sont vérifiés par rapport à vos serveurs.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Continue to review",
+        "message": "Continuer pour examiner",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
-        "message": "Import and finish setup",
+        "message": "Importer et finir la configuration",
         "description": "Confirm button on the migrate review page"
     },
     "migrate_legacy_test_connection": {
-        "message": "Test connection",
+        "message": "Tester la connexion",
         "description": "Button to probe one legacy connection during migrate review"
     },
     "migrate_legacy_recheck_all": {
@@ -1228,7 +1228,7 @@
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
-        "message": "not checked",
+        "message": "non vérifié",
         "description": "Probe status: idle"
     },
     "migrate_legacy_status_checking": {
@@ -1288,7 +1288,7 @@
         "description": "Fallback error when refreshing the credential list fails without a message"
     },
     "expected_extension_page_not_found": {
-        "message": "Expected extension page not found",
+        "message": "La page d'extension attendue est introuvable",
         "description": "Shown when a routed extension page does not exist"
     },
     "report_an_issue": {
@@ -1304,7 +1304,7 @@
         "description": "GitHub product / platform name"
     },
     "click_to_auto_fill": {
-        "message": "Click to auto fill",
+        "message": "Cliquer pour remplir automatiquement",
         "description": "Tooltip on a password picker credential to auto-fill the form"
     },
     "add_a_tag": {
@@ -1352,11 +1352,11 @@
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Dismiss alert",
+        "message": "Fermer l'alerte",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Credential icon",
+        "message": "Icône d'information d'identification",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
@@ -1364,7 +1364,7 @@
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
-        "message": "Auto fill",
+        "message": "Remplir automatiquement",
         "description": "Browser context menu item to auto-fill credentials"
     },
     "context_menu_copy_username": {
@@ -1432,7 +1432,7 @@
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "No source tab found",
+        "message": "Aucun onglet source trouvé",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
@@ -1440,7 +1440,7 @@
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Could not get backend passman client",
+        "message": "Impossible de récupérer l'infrastructure du client passman",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
@@ -1496,11 +1496,11 @@
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Credential to update",
+        "message": "Information d'identification à mettre à jour",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Untitled credential",
+        "message": "Information d'identification sans titre",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
