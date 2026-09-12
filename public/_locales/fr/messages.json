@@ -1480,7 +1480,7 @@
         "description": "Error when loading password generator settings fails"
     },
     "enable_doorhanger": {
-        "message": "Enable collecting new and updated passwords with the doorhanger overlay",
+        "message": "Activer la collecte et la mise à jour des mots de passe avec une fenêtre contextuelle en incrustation",
         "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {
@@ -1504,7 +1504,7 @@
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
-        "message": "Doorhanger",
+        "message": "Fenêtre contextuelle",
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
