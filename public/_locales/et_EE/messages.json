@@ -1040,11 +1040,11 @@
         "description": "Amber notice when IndexedDB was requested but blocked"
     },
     "offline_cache_size_memory_note": {
-        "message": "Size reflects the current session only.",
+        "message": "Suurus märgib vaid praeguse sessiooni teavet.",
         "description": "Footnote under cache size when using in-memory backend"
     },
     "offline_cache_indexeddb_unavailable_warning": {
-        "message": "IndexedDB is not available here, so in-memory cache stays active.",
+        "message": "IndexedDB pole siinkohal saadaval, seega mälupõhine puhverdus jääb kasutusele.",
         "description": "Warning toast when user chose IndexedDB but probe forced memory"
     },
     "offline_cache_quota_notice": {
@@ -1192,11 +1192,11 @@
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Unlock the previous settings with your old master password to review what will be imported.",
+        "message": "Ava eelmised seadistused oma vana üldsalasõnaga ja saad vaadata üle, mis kuulub importimisele.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
-        "message": "Edit connections and preferences as needed. Connection and vault status are checked against your servers.",
+        "message": "Muuda ühendusi ja eelistusi vastavalt vajadusele. Ühenduse ja hoidla olekuid kontrollitakse sinu serverist.",
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
@@ -1248,7 +1248,7 @@
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
-        "message": "The previous settings do not contain any server accounts to import.",
+        "message": "Eelmistes seadistustes ei leidu ühtegi serveri kasutajakontot, mida saaks importida.",
         "description": "Error when decrypted legacy settings have an empty accounts list"
     },
     "migrate_legacy_error_generic": {
