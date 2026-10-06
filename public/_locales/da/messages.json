@@ -704,11 +704,11 @@
         "description": "To describe a textual input field"
     },
     "copy_to_clipboard": {
-        "message": "Kopiér $FIELDNAME $til udklipsholderen",
+        "message": "Kopiér $FIELDNAME$ til udklipsholderen",
         "description": "Copy to clipboard"
     },
     "files_upload_box_text": {
-        "message": "$START _ HTML _ TAG $Klik for at uploade $END _ HTML _ TAG $eller træk og slip",
+        "message": "$START_HTML_TAG$Klik for at overføre$END_HTML_TAG$ eller træk og slip",
         "description": "Text shown in the drag and drop upload box"
     },
     "files_any_type_info": {
@@ -900,7 +900,7 @@
         "description": "Select option label for forcing setting to disabled"
     },
     "page_rules_selected_rule": {
-        "message": "I øjeblikket redigering: $PAGE _ URL $",
+        "message": "Redigerer nu: $PAGE_URL$",
         "description": "Indicator for the page rule that is being edited"
     },
     "page_rules_url_required": {
@@ -1104,7 +1104,7 @@
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "Denne omskrivning er stadig under aktiv udvikling. Forvent hårde kanter. Har du fundet et insekt? Åbn et problem på $LINK _ START $GitHub $LINK _ END $.",
+        "message": "Denne omskrivning er stadig under aktiv udvikling. Der kan være skavanker.$BR$Har du fundet en fejl? Opret et issue på $LINK_START$GitHub$LINK_END$.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
@@ -1256,11 +1256,11 @@
         "description": "Fallback error when legacy settings import fails for another reason"
     },
     "migrate_legacy_success": {
-        "message": "Importeret $COUNT $server forbindelse (r) fra den tidligere installation.",
+        "message": "Der er importeret $COUNT$ serverforbindelse(r) fra den tidligere installation.",
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
-        "message": "Denne udvidelse kræver $LINK _ START $Passman App $LINK _ END $skal installeres på din Nextcloud server.",
+        "message": "Denne udvidelse kræver, at $LINK_START$Passman-appen$LINK_END$ er installeret på din Nextcloud-server.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
@@ -1312,7 +1312,7 @@
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Fjern $TAG $tag",
+        "message": "Fjern mærket $TAG$",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
@@ -1320,7 +1320,7 @@
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "Ingen $FIELDNAME $at kopiere",
+        "message": "Ingen $FIELDNAME$ at kopiere",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
@@ -1400,7 +1400,7 @@
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME $kopieret til udklipsholderen",
+        "message": "$FIELDNAME$ er kopieret til udklipsholderen",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
@@ -1460,7 +1460,7 @@
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "Ingen styret forbindelse med id $CONNECTION _ ID $",
+        "message": "Ingen administreret forbindelse med id'et $CONNECTION_ID$",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
