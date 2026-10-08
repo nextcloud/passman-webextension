@@ -224,7 +224,7 @@
         "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
-        "message": "Du anvender HTTP! Log på legitimationsoplysninger som vil blive sendt i klartekst. Dine Passman legitimationsoplysninger  er stadig krypteret.",
+        "message": "Du bruger HTTP! Loginoplysninger sendes i klartekst. Dine legitimationsoplysninger i Passman er stadig krypteret.",
         "description": "Warning for http connections"
     },
     "ignore_path": {

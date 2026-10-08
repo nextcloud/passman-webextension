@@ -388,7 +388,7 @@
         "description": "Custom field type password"
     },
     "custom_fields_types_file": {
-        "message": "File",
+        "message": "Súbor",
         "description": "Custom field type file"
     },
     "custom_fields_header_add": {
