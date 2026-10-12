@@ -89,6 +89,9 @@ import {
     RepairVaultRecoveryRequest,
     RepairVaultRecoveryResponse
 } from "@/entrypoints/background/messages/repairVaultRecovery";
+import {
+    VaultRecoveryProgressMessage
+} from "@/entrypoints/background/messages/vaultRecoveryProgress";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -149,6 +152,9 @@ interface ProtocolMap {
 
     repairVaultRecovery(data: RepairVaultRecoveryRequest): RepairVaultRecoveryResponse;
 
+    // background -> page push, see vaultRecoveryProgress.ts; no response expected
+    vaultRecoveryProgress(data: VaultRecoveryProgressMessage): void;
+
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;
 }
@@ -188,4 +194,16 @@ export const executeOnMessageListenerRegistration = () => {
 
 const { sendMessage, onMessage } = defineExtensionMessaging<ProtocolMap>();
 
-export { sendMessage, onMessageRegisterer as onMessage };
+export {
+    sendMessage,
+    onMessageRegisterer as onMessage,
+    /**
+     * Raw, un-delayed `onMessage` registration
+     * Registers against the runtime immediately, unlike the background-only `onMessage` export above
+     * (which only collects listeners for `executeOnMessageListenerRegistration` to apply later, inside `defineBackground`).
+     * 
+     * Use this from non-background contexts (extension pages like `VaultRecovery.svelte`) that need to receive a background -> page push message (e.g. `vaultRecoveryProgress`)
+     * and are never going to call `executeOnMessageListenerRegistration` themselves.
+     */
+    onMessage as onMessageDirect
+};

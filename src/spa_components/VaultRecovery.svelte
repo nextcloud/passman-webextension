@@ -18,8 +18,9 @@
     import checkCircle from "svelte-awesome/icons/checkCircle";
     import cloud from "svelte-awesome/icons/cloud";
     import download from "svelte-awesome/icons/download";
+    import database from "svelte-awesome/icons/database";
     import { i18n } from "~/lib/i18n";
-    import { sendMessage } from "@/entrypoints/background/messaging";
+    import { sendMessage, onMessageDirect } from "@/entrypoints/background/messaging";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     import NotyService from "~/services/frontend/NotyService";
@@ -47,6 +48,10 @@
     } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryDestination";
     import type { FileRecoveryHitInterface } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/FileRecoveryHitInterface";
     import { DownloadService } from "@binsky/passman-client-ts/lib/Service/DownloadService";
+    import type {
+        VaultRecoveryProgressMessage,
+        WebextVaultRecoveryProgressStage
+    } from "@/entrypoints/background/messages/vaultRecoveryProgress";
 
     /** Fixed id of the migration target candidate; matches the candidate list built by {@link buildCandidates}. */
     const PREFERRED_ID = 'preferred';
@@ -57,6 +62,7 @@
 
     let pageIsLoading = $state(true);
     let guardErrorMessage = $state<string | null>(null);
+    let vaultName = $state<string | null>(null);
 
     let preferredPassword = $state('');
     let alternateCandidates = $state<AlternateCandidate[]>([{ id: 'old-1', password: '' }]);
@@ -76,12 +82,17 @@
     let lastDryRunFingerprint = $state<string | null>(null);
     /** Collapses the scan results card after a repair/copy to save space; re-expanded by the next scan or manually. */
     let scanResultsCollapsed = $state(false);
+    /** Pushed from the background while a scan/repair runs (see vaultRecoveryProgress.ts); `null` once finished. */
+    let progress = $state<VaultRecoveryProgressMessage | null>(null);
 
     let destination = $state<VaultRecoveryDestination>('new_vault');
     let newVaultName = $state('');
     let includeHealthy = $state(true);
 
     const busy = $derived(scanning || repairing);
+    const progressPercent = $derived(
+        progress && progress.totalSteps > 0 ? Math.round((progress.doneSteps / progress.totalSteps) * 100) : null
+    );
     /** Changes whenever anything that would change a dry run's outcome changes. */
     const configFingerprint = $derived(JSON.stringify({
         preferred: preferredPassword,
@@ -191,6 +202,7 @@
         dryRunRepairByGuid = {};
         lastDryRunFingerprint = null;
         scanResultsCollapsed = false;
+        progress = null;
 
         const fingerprint = configFingerprint;
         try {
@@ -223,6 +235,7 @@
             NotyService.notyError(i18n.getMessage('vault_recovery_scan_failed'));
         } finally {
             scanning = false;
+            progress = null;
         }
     };
 
@@ -272,6 +285,7 @@
 
         repairing = true;
         repairResult = null;
+        progress = null;
         try {
             const response: RepairVaultRecoveryResponse = await sendMessage('repairVaultRecovery', {
                 preferredKeyId: PREFERRED_ID,
@@ -312,6 +326,7 @@
             NotyService.notyError(i18n.getMessage('vault_recovery_repair_failed'));
         } finally {
             repairing = false;
+            progress = null;
         }
     };
 
@@ -358,6 +373,25 @@
         }
     };
 
+    const progressStageLabel = (stage: WebextVaultRecoveryProgressStage | undefined): string | null => {
+        switch (stage) {
+            case 'loading':
+                return i18n.getMessage('vault_recovery_stage_loading');
+            case 'credentials':
+                return i18n.getMessage('vault_recovery_stage_credentials');
+            case 'files':
+                return i18n.getMessage('vault_recovery_stage_files');
+            case 'repair':
+                return i18n.getMessage('vault_recovery_stage_repair');
+            case 'materialize':
+                return i18n.getMessage('vault_recovery_stage_materialize');
+            case 'write':
+                return i18n.getMessage('vault_recovery_stage_write');
+            default:
+                return null;
+        }
+    };
+
     const fileHitStatusLabel = (status: FileRecoveryHitInterface['status']): string => {
         switch (status) {
             case 'ok':
@@ -399,6 +433,11 @@
     const repairItemForGuid = (guid: string) => repairResult?.items.find((item) => item.guid === guid) ?? null;
 
     onMount(() => {
+        // Push channel from the background for the running scan/repair's progress; see vaultRecoveryProgress.ts.
+        const removeProgressListener = onMessageDirect('vaultRecoveryProgress', (message) => {
+            progress = message.data;
+        });
+
         ExtensionUnlockService.isSetupDone().then(async (isSetupDone) => {
             if (!isSetupDone) {
                 push('/setup/server');
@@ -415,9 +454,12 @@
             } else {
                 preferredPassword = defaultVaultInfo.password;
                 newVaultName = `${defaultVaultInfo.name} (recovered)`;
+                vaultName = defaultVaultInfo.name;
             }
             pageIsLoading = false;
         });
+
+        return removeProgressListener;
     });
 </script>
 
@@ -430,8 +472,31 @@
 {:else}
     <div class="w-full space-y-4 text-left">
         <div>
-            <h2 class="text-xl font-semibold">{i18n.getMessage('vault_recovery')}</h2>
+            <h2 class="text-xl font-semibold my-2">{i18n.getMessage('vault_recovery')}</h2>
             <p class="text-sm text-gray-500 mt-1">{i18n.getMessage('vault_recovery_description')}</p>
+            {#if vaultName}
+                <p class="text-xs text-gray-500 mt-3 flex items-center gap-1">
+                    <Icon data={database} width={14} height={14}/>
+                    {i18n.getMessage('vault_recovery_working_on_vault', [vaultName])}
+                </p>
+            {/if}
+
+            {#if busy}
+                <div class="mt-2">
+                    <div class="flex items-center justify-between gap-2 text-xs text-gray-500">
+                        <span class="flex items-center gap-1">
+                            <Icon data={refresh} scale={0.8} spin={true}/>
+                            {progressStageLabel(progress?.stage) ?? i18n.getMessage('vault_recovery_progress_working')}
+                        </span>
+                        {#if progressPercent !== null}
+                            <span>{progressPercent}%</span>
+                        {/if}
+                    </div>
+                    <div class="h-1.5 w-full bg-gray-200 dark:bg-gray-700 rounded mt-1 overflow-hidden">
+                        <div class="h-full bg-primary transition-all" style="width: {progressPercent ?? 0}%"></div>
+                    </div>
+                </div>
+            {/if}
         </div>
 
         <Card additionalClasses="w-full space-y-3">
@@ -463,7 +528,7 @@
                         </div>
                         <button
                             type="button"
-                            class="text-red-500 hover:text-red-700 px-2 py-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                            class="text-red-500 hover:text-red-700 px-1 py-[0.1em] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                             title={i18n.getMessage('vault_recovery_remove_alternate_password')}
                             onclick={() => removeAlternateCandidate(candidate.id)}
                             disabled={alternateCandidates.length <= 1}
@@ -724,8 +789,10 @@
             </Card>
         {/if}
 
-        <InternalHrefLinkButton href="/home" title={i18n.getMessage('vault_recovery_back_home')}>
-            {i18n.getMessage('vault_recovery_back_home')}
-        </InternalHrefLinkButton>
+        <div class="my-6">
+            <InternalHrefLinkButton href="/home" title={i18n.getMessage('vault_recovery_back_home')}>
+                {i18n.getMessage('vault_recovery_back_home')}
+            </InternalHrefLinkButton>
+        </div>
     </div>
 {/if}

@@ -11,9 +11,10 @@ import type {
 import type {
     VaultRecoveryDestination
 } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryDestination";
-import { onMessage } from '../messaging';
+import { onMessage, sendMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
+import type { VaultRecoveryProgressInterface } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryProgressInterface";
 
 export interface RepairVaultRecoveryRequest {
     preferredKeyId: string;
@@ -59,6 +60,12 @@ onMessage('repairVaultRecovery', async (message) => {
             return { status: false, errorMessage: i18n.getMessage('no_vault_info_in_extension_settings'), result, defaultVaultPasswordUpdated };
         }
 
+        // Uncached fetch of the full vault may take a while for a large vault and happens before
+        // VaultRecoveryService ever gets to report its own 'credentials' stage.
+        // Without this, the page would show nothing / a generic fallback for however long this fetch takes.
+        sendMessage('vaultRecoveryProgress', { stage: 'loading', doneSteps: 0, totalSteps: 0 }).catch(() => {
+        });
+
         const vault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, false);
         if (!vault) {
             return { status: false, errorMessage: i18n.getMessage('could_not_get_selected_vault_by_guid'), result, defaultVaultPasswordUpdated };
@@ -75,6 +82,16 @@ onMessage('repairVaultRecovery', async (message) => {
             newVaultName,
             includeHealthy,
             skipDeleted,
+            onProgress: (state: VaultRecoveryProgressInterface) => {
+                // Fire-and-forget push to whatever vault recovery page is open;
+                // a closed/absent page (no receiving end) must never fail or slow down the scan / repair itself.
+                sendMessage('vaultRecoveryProgress', {
+                    stage: state.stage,
+                    doneSteps: state.doneSteps,
+                    totalSteps: state.totalSteps
+                }).catch(() => {
+                });
+            },
             onError: (errorMessage) => logger.error('[repairVaultRecovery]', errorMessage),
         });
 
