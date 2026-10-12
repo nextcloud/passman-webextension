@@ -2062,5 +2062,27 @@
   "vault_recovery_file_status_broken": {
     "message": "Broken",
     "description": "Vault recovery file blob status: no candidate key decrypts this file"
+  },
+  "vault_recovery_skip_deleted": {
+    "message": "Skip deleted credentials",
+    "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
+  },
+  "vault_recovery_config_changed_hint": {
+    "message": "The vault passwords or options changed since this scan. Press 'Scan vault' again before repairing or copying anything.",
+    "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
+  },
+  "vault_recovery_apply_disabled_hint": {
+    "message": "Scan the vault with the current passwords before repairing or copying anything.",
+    "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
+  },
+  "vault_recovery_dry_run_item_failed": {
+    "message": "Dry-run check failed: $ERROR$",
+    "description": "Per-credential error note from the dry-run preview in the vault recovery tool",
+    "placeholders": {
+      "error": {
+        "content": "$1",
+        "example": "No candidate key decrypts this credential."
+      }
+    }
   }
 }

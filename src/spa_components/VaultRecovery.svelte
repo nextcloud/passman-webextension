@@ -24,7 +24,6 @@
     import ExtensionUnlockService from "~/services/ExtensionUnlockService";
     import NotyService from "~/services/frontend/NotyService";
     import { logger } from "~/services/ConsoleLoggingService";
-    import type { ScanVaultRecoveryResponse } from "@/entrypoints/background/messages/scanVaultRecovery";
     import type { RepairVaultRecoveryResponse } from "@/entrypoints/background/messages/repairVaultRecovery";
     import type {
         CredentialRecoveryStatus
@@ -37,6 +36,9 @@
     import type {
         VaultRecoveryRepairResultInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryRepairResultInterface";
+    import type {
+        VaultRecoveryRepairItemResultInterface
+    } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryRepairItemResultInterface";
     import type {
         VaultKeyCandidateInterface
     } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultKeyCandidateInterface";
@@ -59,20 +61,32 @@
     let preferredPassword = $state('');
     let alternateCandidates = $state<AlternateCandidate[]>([{ id: 'old-1', password: '' }]);
     let nextAlternateIndex = 2;
+    let skipDeleted = $state(true);
 
     let formErrors = $state<string[]>([]);
     let scanning = $state(false);
+    let repairing = $state(false);
     let report = $state<ScanReportInterface | null>(null);
     let selectedGuids = $state<Set<string>>(new Set());
-
-    let dryRun = $state(false);
-    let repairing = $state(false);
+    /** Per-guid preview of what the (destination-agnostic) in-place strategy would do; from the last dry run. */
+    let dryRunRepairByGuid = $state<Record<string, VaultRecoveryRepairItemResultInterface>>({});
     let repairResult = $state<VaultRecoveryRepairResultInterface | null>(null);
     let defaultVaultPasswordUpdated = $state(false);
+    /** Fingerprint of the config a dry run last validated; `null` whenever Apply must not be trusted yet. */
+    let lastDryRunFingerprint = $state<string | null>(null);
 
     let destination = $state<VaultRecoveryDestination>('new_vault');
     let newVaultName = $state('');
     let includeHealthy = $state(true);
+
+    const busy = $derived(scanning || repairing);
+    /** Changes whenever anything that would change a dry run's outcome changes. */
+    const configFingerprint = $derived(JSON.stringify({
+        preferred: preferredPassword,
+        alts: alternateCandidates.map((candidate) => candidate.password),
+        skipDeleted
+    }));
+    const dryRunIsCurrent = $derived(lastDryRunFingerprint !== null && lastDryRunFingerprint === configFingerprint);
 
     const actionableHits = $derived((report?.hits ?? []).filter((hit) => ACTIONABLE_STATUSES.has(hit.status)));
     const visibleHits = $derived((report?.hits ?? []).filter((hit) => hit.status !== 'skipped'));
@@ -86,7 +100,8 @@
             .map((hit) => hit.guid)
     );
     const copyHasContent = $derived(selectedGuids.size > 0 || (includeHealthy && healthyGuids.length > 0));
-    const repairEnabled = $derived(!repairing && (
+    /** Mirrors passman-svelte's `applyEnabled`: Apply is never reachable without a dry run matching the current config. */
+    const repairEnabled = $derived(!busy && dryRunIsCurrent && (
         destination === 'in_place'
             ? selectedGuids.size > 0
             : destination === 'new_vault'
@@ -126,7 +141,8 @@
     ];
 
     const initializeSelection = (nextReport: ScanReportInterface) => {
-        // shared_with_us defaults to unselected: including it means copying it as a new owned credential into the destination, which is an opt-in action, not a default one.
+        // shared_with_us defaults to unselected: including it means copying it as a new owned credential into
+        // the destination, which is an opt-in action, not a default one.
         const next = new Set<string>();
         for (const hit of nextReport.hits) {
             if (ACTIONABLE_STATUSES.has(hit.status) && hit.kind !== 'shared_with_us') {
@@ -150,40 +166,61 @@
         selectedGuids = next;
     };
 
-    /** Read-only scan against the background, without touching repair result state. */
-    const performScan = async (): Promise<void> => {
-        scanning = true;
-        try {
-            const response: ScanVaultRecoveryResponse = await sendMessage('scanVaultRecovery', {
-                candidates: buildCandidates(),
-            });
-            if (response.status && response.report) {
-                report = response.report;
-                initializeSelection(response.report);
-            } else {
-                report = null;
-                NotyService.notyError(response.errorMessage ?? i18n.getMessage('vault_recovery_scan_failed'));
-            }
-        } catch (exception) {
-            logger.error('[VaultRecovery] scan', exception);
-            NotyService.notyError(i18n.getMessage('vault_recovery_scan_failed'));
-        } finally {
-            scanning = false;
-        }
-    };
-
+    /**
+     * Dry run: validates decrypt feasibility and previews the in-place repair outcome via
+     * {@link VaultRecoveryService.repair}'s `dryRun: true` path, exactly like passman-svelte's "Dry run" button.
+     * No `destination` is sent. It always defaults to `in_place` server-side, since every destination relies
+     * on the same underlying scan + decrypt step, and this is cheaper than calling `scan()` separately.
+     * (that would re-run the file-blob HTTP probes a second time for nothing)
+     */
     const scan = async () => {
         formErrors = [];
         if (preferredPassword === '') {
             formErrors = [i18n.getMessage('vault_recovery_preferred_password_required')];
             return;
         }
-        if (scanning) {
+        if (busy) {
             return;
         }
+
+        scanning = true;
         repairResult = null;
         defaultVaultPasswordUpdated = false;
-        await performScan();
+        dryRunRepairByGuid = {};
+        lastDryRunFingerprint = null;
+
+        const fingerprint = configFingerprint;
+        try {
+            const response: RepairVaultRecoveryResponse = await sendMessage('repairVaultRecovery', {
+                preferredKeyId: PREFERRED_ID,
+                candidates: buildCandidates(),
+                dryRun: true,
+                skipDeleted,
+            });
+
+            if (response.status && response.result?.report) {
+                report = response.result.report;
+                initializeSelection(response.result.report);
+
+                const byGuid: Record<string, VaultRecoveryRepairItemResultInterface> = {};
+                for (const item of response.result.items) {
+                    byGuid[item.guid] = item;
+                }
+                dryRunRepairByGuid = byGuid;
+                lastDryRunFingerprint = fingerprint;
+            } else {
+                report = null;
+                selectedGuids = new Set();
+                NotyService.notyError(response.errorMessage ?? i18n.getMessage('vault_recovery_scan_failed'));
+            }
+        } catch (exception) {
+            logger.error('[VaultRecovery] scan', exception);
+            report = null;
+            selectedGuids = new Set();
+            NotyService.notyError(i18n.getMessage('vault_recovery_scan_failed'));
+        } finally {
+            scanning = false;
+        }
     };
 
     // For 'in_place', repair only ever touches the user's selection.
@@ -217,21 +254,28 @@
         }
     };
 
+    /**
+     * Apply: the real action, always `dryRun: false`. Only reachable via {@link repairEnabled}, which
+     * requires {@link dryRunIsCurrent}. A stale report (from before a password/skipDeleted edit) can
+     * never be applied without pressing "Scan vault" again first, mirroring passman-svelte's `applyEnabled`.
+     */
     const repair = async () => {
         if (!repairEnabled) {
             return;
         }
-        if (!dryRun && !confirmForDestination()) {
+        if (!confirmForDestination()) {
             return;
         }
 
         repairing = true;
+        repairResult = null;
         try {
             const response: RepairVaultRecoveryResponse = await sendMessage('repairVaultRecovery', {
                 preferredKeyId: PREFERRED_ID,
                 candidates: buildCandidates(),
                 credentialGuids: credentialGuidsForDestination(),
-                dryRun,
+                dryRun: false,
+                skipDeleted,
                 destination,
                 newVaultName: destination === 'new_vault' ? newVaultName.trim() : undefined,
                 includeHealthy: destination === 'in_place' ? undefined : includeHealthy,
@@ -240,20 +284,19 @@
             if (response.status && response.result) {
                 repairResult = response.result;
                 defaultVaultPasswordUpdated = response.defaultVaultPasswordUpdated;
+                // Force a fresh dry run before anything can be applied again:
+                // the original vault (in_place) or the selection's relevance (new_vault/passman_json) may
+                // no longer match what was just scanned.
+                lastDryRunFingerprint = null;
 
-                if (!dryRun) {
-                    if (response.result.failed === 0) {
-                        NotyService.notySuccess(i18n.getMessage('vault_recovery_repair_succeeded'));
-                    } else {
-                        NotyService.notyWarning(i18n.getMessage('vault_recovery_repair_partial'));
-                    }
-                    if (destination === 'passman_json') {
-                        downloadPassmanJsonResult(response.result);
-                    }
-                    if (destination === 'in_place') {
-                        // Re-scan so already-repaired hits move to 'ok' and drop out of the selectable list.
-                        await performScan();
-                    }
+                if (response.result.failed === 0) {
+                    NotyService.notySuccess(i18n.getMessage('vault_recovery_repair_succeeded'));
+                } else {
+                    NotyService.notyWarning(i18n.getMessage('vault_recovery_repair_partial'));
+                }
+
+                if (destination === 'passman_json') {
+                    downloadPassmanJsonResult(response.result);
                 }
             } else {
                 NotyService.notyError(response.errorMessage ?? i18n.getMessage('vault_recovery_repair_failed'));
@@ -429,9 +472,16 @@
                 </OnClickButton>
             </div>
 
+            <div class="space-y-2">
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
+                    <input type="checkbox" checked={skipDeleted} onchange={() => skipDeleted = !skipDeleted}/>
+                    {i18n.getMessage('vault_recovery_skip_deleted')}
+                </label>
+            </div>
+
             <ShowGenericErrors bind:errors={formErrors}/>
 
-            <OnClickButton callback={scan} disabled={scanning}>
+            <OnClickButton callback={scan} disabled={busy}>
                 {#if scanning}
                     <Icon data={refresh} scale={1.2} spin={true}/>
                 {:else}
@@ -441,7 +491,7 @@
         </Card>
 
         {#if report}
-            <Card additionalClasses="w-full space-y-3">
+            <Card additionalClasses="w-full space-y-3 {!dryRunIsCurrent ? 'opacity-60' : ''}">
                 <h3 class="text-md font-semibold">{i18n.getMessage('vault_recovery_scan_results_section')}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     {i18n.getMessage('vault_recovery_scan_summary', [
@@ -451,6 +501,10 @@
                         String(report.skippedCount ?? 0),
                     ])}
                 </p>
+
+                {#if !dryRunIsCurrent}
+                    <p class="text-sm text-amber-700 dark:text-amber-300">{i18n.getMessage('vault_recovery_config_changed_hint')}</p>
+                {/if}
 
                 {#if report.brokenCount > 0}
                     <div class="rounded-md border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-800 dark:border-red-700 dark:bg-red-950/40 dark:text-red-100 flex gap-2 items-start">
@@ -465,7 +519,7 @@
                     {#if actionableHits.length > 0}
                         <div class="flex items-center justify-between gap-2">
                             <label class="flex items-center gap-2 text-sm cursor-pointer">
-                                <input type="checkbox" checked={allSelected} onchange={toggleSelectAll}/>
+                                <input type="checkbox" checked={allSelected} onchange={toggleSelectAll} disabled={!dryRunIsCurrent}/>
                                 {i18n.getMessage('vault_recovery_select_all')}
                             </label>
                             <span class="text-xs text-gray-500 shrink-0">
@@ -479,6 +533,7 @@
 
                     <div class="space-y-2 max-h-96 overflow-y-auto pr-1">
                         {#each visibleHits as hit (hit.guid)}
+                            {@const dryRunItem = dryRunRepairByGuid[hit.guid]}
                             {@const repairItem = repairItemForGuid(hit.guid)}
                             <div class="border border-gray-200 dark:border-gray-600 rounded-md p-2">
                                 <div class="flex items-start justify-between gap-2">
@@ -489,6 +544,7 @@
                                                 class="mt-1 shrink-0"
                                                 checked={selectedGuids.has(hit.guid)}
                                                 onchange={() => toggleHitSelection(hit.guid)}
+                                                disabled={!dryRunIsCurrent}
                                             />
                                         {/if}
                                         <div class="min-w-0">
@@ -520,6 +576,12 @@
                                             </div>
                                         {/each}
                                     </div>
+                                {/if}
+                                {#if dryRunItem && !dryRunItem.success}
+                                    <p class="text-xs mt-1 text-red-600 flex items-center gap-1">
+                                        <Icon data={exclamationTriangle} scale={0.9}/>
+                                        {i18n.getMessage('vault_recovery_dry_run_item_failed', [dryRunItem.error ?? ''])}
+                                    </p>
                                 {/if}
                                 {#if repairItem}
                                     <p class="text-xs mt-1 flex items-center gap-1 {repairItem.success ? 'text-green-600' : 'text-red-600'}">
@@ -592,12 +654,9 @@
                             {writeWarningText}
                         </div>
 
-                        <CustomCheckboxField
-                            id="vaultRecoveryDryRun"
-                            bind:value={dryRun}
-                            label={i18n.getMessage('vault_recovery_dry_run_label')}
-                        />
-                        <p class="text-xs text-gray-500">{i18n.getMessage('vault_recovery_dry_run_hint')}</p>
+                        {#if !dryRunIsCurrent}
+                            <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_apply_disabled_hint')}</p>
+                        {/if}
 
                         <OnClickButton callback={repair} disabled={!repairEnabled}>
                             {#if repairing}
@@ -612,7 +671,7 @@
             </Card>
         {/if}
 
-        {#if repairResult && !dryRun}
+        {#if repairResult}
             <Card additionalClasses="w-full space-y-2">
                 <h3 class="text-md font-semibold">{i18n.getMessage('vault_recovery_done_section')}</h3>
                 <p class="text-sm">
@@ -635,6 +694,9 @@
                         <Icon data={download} scale={1.0}/>
                         {i18n.getMessage('vault_recovery_download_json_button')}
                     </OnClickButton>
+                {/if}
+                {#if repairResult.destination === 'in_place'}
+                    <p class="text-xs text-gray-500">{i18n.getMessage('vault_recovery_config_changed_hint')}</p>
                 {/if}
                 {#if report && report.brokenCount > 0}
                     <p class="text-xs text-gray-500">{i18n.getMessage('vault_recovery_broken_hint')}</p>
