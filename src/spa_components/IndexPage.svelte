@@ -21,6 +21,7 @@
         type DecryptedPartialCredentialData,
         type GetCredentialsListMessagingResponse
     } from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
+    import type { SkippedEncryptionErrorCredential } from "~/services/EncryptionErrorSkippedCredentialStore";
     import type { GetCredentialsForVaultMessagingResponse } from "~/entrypoints/background/messages/getCredentialsForVault";
     import NotyService from "~/services/frontend/NotyService";
     import InternalHrefLinkButton from "~/spa_partials/InteractionElements/InternalHrefLinkButton.svelte";
@@ -38,6 +39,7 @@
     /** Active tab-URL filter; null when inactive / cleared. */
     let urlFilter = $state<string | null>(null);
     let errorMessage = $state<string | null>(null);
+    let encryptionErrorSkippedCredentials = $state<SkippedEncryptionErrorCredential[]>([]);
     let vault = $state<Vault | null>(null);
     let listItems = $state<DecryptedPartialCredentialData[]>([]);
     let pageIsLoading = $state(true);
@@ -326,6 +328,7 @@
             }
 
             if (response.status) {
+                encryptionErrorSkippedCredentials = response.encryptionErrorSkippedCredentials ?? [];
                 if (response.invalidUrlProvided) {
                     // Opening the popup on an invalid URL to be filtered is not an error, but we handle it by clearing the URL filter.
                     clearUrlFilter();
@@ -541,6 +544,21 @@
                         </OnClickButton>
                     </div>
                 {/if}
+            {/if}
+            {#if encryptionErrorSkippedCredentials.length > 0}
+                <div class="my-2 max-w-[24rem] text-center space-y-2 px-2">
+                    <p class="text-xs text-orange-500">
+                        {i18n.getMessage('vault_recovery_skipped_encryption_hint', [String(encryptionErrorSkippedCredentials.length)])}
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-0.5">
+                        {#each encryptionErrorSkippedCredentials.slice(0, 5) as item (item.guid)}
+                            <li class="truncate">{item.label.trim() !== '' ? item.label : item.guid}</li>
+                        {/each}
+                    </ul>
+                    <OnClickButton callback={openVaultRecoveryToolPage} title={i18n.getMessage('vault_recovery_open_tool')}>
+                        {i18n.getMessage('vault_recovery_open_tool')}
+                    </OnClickButton>
+                </div>
             {/if}
             {#if !errorMessage && listItems.length === 0}
                 <span class="text-gray-400 mt-4">

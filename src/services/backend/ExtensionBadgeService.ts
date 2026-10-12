@@ -4,7 +4,9 @@ import type Vault from "@binsky/passman-client-ts/lib/Model/Vault";
 import ContextMenuService from "@/services/backend/ContextMenuService";
 import { i18n } from "@/lib/i18n";
 import browser from "webextension-polyfill";
-import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/Service/CredentialFilterService";
+import type Credential from "@binsky/passman-client-ts/lib/Model/Credential";
+import EncryptionErrorSkippedCredentialStore from "@/services/EncryptionErrorSkippedCredentialStore";
+import { logger } from "~/services/ConsoleLoggingService";
 
 /**
  * Required manifest-specific browser action assignment, since webextension-polyfill does not yet have a solution for it.
@@ -59,7 +61,21 @@ export class ExtensionBadgeService {
             return;
         }
 
-        const credentialsForUrl = await CustomCredentialFilterService.getCredentialsByUrl(url, vault.credentials);
+        const skippedEncryptionErrors: Credential[] = [];
+        const credentialsForUrl = await CustomCredentialFilterService.getCredentialsByUrl(
+            url,
+            vault.credentials,
+            (credential) => {
+                skippedEncryptionErrors.push(credential);
+            }
+        );
+        if (skippedEncryptionErrors.length > 0) {
+            try {
+                await EncryptionErrorSkippedCredentialStore.merge(vault.guid, skippedEncryptionErrors);
+            } catch (exception) {
+                logger.error('[ExtensionBadgeService] failed to store skipped encryption errors', exception);
+            }
+        }
         const credentialAmount = credentialsForUrl?.length ?? 0;
 
         if (tab.active) {

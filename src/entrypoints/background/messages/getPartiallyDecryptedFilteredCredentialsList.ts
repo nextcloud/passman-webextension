@@ -9,6 +9,9 @@ import { CredentialFilterService, FILTERS } from "@binsky/passman-client-ts/lib/
 import { SharingACL } from "@binsky/passman-client-ts/lib/Model/SharingACL";
 import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
+import EncryptionErrorSkippedCredentialStore, {
+    type SkippedEncryptionErrorCredential
+} from "~/services/EncryptionErrorSkippedCredentialStore";
 
 export enum GetCredentialsListMessagingFilterType {
     DEFAULT_SEARCH_FULL_TEXT_LABEL,
@@ -38,7 +41,9 @@ export type GetCredentialsListMessagingResponse = {
     status: boolean,
     errorMessage: string | null,
     decryptedPartialCredentialData: DecryptedPartialCredentialData[],
-    invalidUrlProvided: boolean | null
+    invalidUrlProvided: boolean | null,
+    /** Credentials remembered because a filter skipped them after an encryption error. Empty when this request did not read the store. */
+    encryptionErrorSkippedCredentials: SkippedEncryptionErrorCredential[]
 }
 
 export function toDecryptedPartialCredentialData(credential: Credential, forPicker: boolean = false): DecryptedPartialCredentialData {
@@ -78,6 +83,8 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     let filteredCredentials: Credential[] = [];
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     let invalidUrlProvided: boolean | null = null;
+    let encryptionErrorSkippedCredentials: SkippedEncryptionErrorCredential[] = [];
+    const skippedEncryptionErrors: Credential[] = [];
 
     const body = message.data;
     const filterTextIsString = typeof body?.filterText === 'string';
@@ -98,7 +105,18 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                     }
 
                     try {
-                        let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, body.getCachedIfPossible ?? true);
+                        const getCachedIfPossible = body.getCachedIfPossible ?? true;
+
+                        if (getCachedIfPossible === false && defaultVaultInfo.guid) {
+                            try {
+                                // clear all stored encryption errors since we'll do a full refresh now
+                                await EncryptionErrorSkippedCredentialStore.clear(defaultVaultInfo.guid);
+                            } catch (exception) {
+                                logger.error('[getPartiallyDecryptedFilteredCredentialsList] failed to clear skipped encryption errors', exception);
+                            }
+                        }
+
+                        let myVault = await backendPassmanClient.getFullVaultByGuid(defaultVaultInfo.guid, getCachedIfPossible);
                         if (myVault && myVault.testVaultKey(defaultVaultInfo.password)) {
                             myVault.vaultKey = defaultVaultInfo.password;
                             if (myVault.credentials.length <= 1) {
@@ -107,8 +125,16 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                                 await myVault.refresh();
                             }
 
+                            const onEncryptionErrorSkippedCredential = (credential: Credential) => {
+                                skippedEncryptionErrors.push(credential);
+                            };
+
                             if (body.filterType === GetCredentialsListMessagingFilterType.SEARCH_BY_URL) {
-                                const filterResult = await CustomCredentialFilterService.getCredentialsByUrl(body.filterText, myVault.credentials);
+                                const filterResult = await CustomCredentialFilterService.getCredentialsByUrl(
+                                    body.filterText,
+                                    myVault.credentials,
+                                    onEncryptionErrorSkippedCredential
+                                );
                                 if (filterResult === null) {
                                     // an empty result for an invalid URL is not an error, but we need to know about it, like in the IndexPage UI
                                     invalidUrlProvided = true;
@@ -116,7 +142,14 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                                     filteredCredentials = filterResult;
                                 }
                             } else {
-                                filteredCredentials = CredentialFilterService.getFilteredCredentials(myVault.credentials, FILTERS.SHOW_ALL, body.filterText);
+                                filteredCredentials = CredentialFilterService.getFilteredCredentials(
+                                    myVault.credentials,
+                                    FILTERS.SHOW_ALL,
+                                    body.filterText,
+                                    undefined,
+                                    undefined,
+                                    onEncryptionErrorSkippedCredential
+                                );
                             }
 
                             status = true;
@@ -125,11 +158,18 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                         }
                     } catch (exception) {
                         errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
+                    } finally {
+                        if (defaultVaultInfo.guid) {
+                            try {
+                                encryptionErrorSkippedCredentials = await EncryptionErrorSkippedCredentialStore.merge(defaultVaultInfo.guid, skippedEncryptionErrors);
+                            } catch (exception) {
+                                logger.error('[getPartiallyDecryptedFilteredCredentialsList] failed to store skipped encryption errors', exception);
+                            }
+                        }
                     }
                 });
             }
         });
-
         for (const filteredCredential of filteredCredentials) {
             decryptedPartialCredentialData.push(toDecryptedPartialCredentialData(filteredCredential));
         }
@@ -139,6 +179,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         status,
         errorMessage,
         decryptedPartialCredentialData,
-        invalidUrlProvided
+        invalidUrlProvided,
+        encryptionErrorSkippedCredentials
     };
 });

@@ -1963,6 +1963,16 @@
     "message": "If a vault password change was interrupted, or some shared credentials use the wrong key, the vault recovery tool can diagnose and repair affected credentials.",
     "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
   },
+  "vault_recovery_skipped_encryption_hint": {
+    "message": "$COUNT$ credentials with decryption errors have been detected and were left out of this list. Vault recovery can diagnose the vault.",
+    "description": "Notice on the credential list when some credentials were skipped after an encryption error",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "vault_recovery_destination_section": {
     "message": "Destination",
     "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"

@@ -15,6 +15,7 @@ import { onMessage, sendMessage } from '../messaging';
 import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
 import type { VaultRecoveryProgressInterface } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryProgressInterface";
+import EncryptionErrorSkippedCredentialStore from "~/services/EncryptionErrorSkippedCredentialStore";
 
 export interface RepairVaultRecoveryRequest {
     preferredKeyId: string;
@@ -73,6 +74,13 @@ onMessage('repairVaultRecovery', async (message) => {
         await vault.refresh(false);
 
         const { preferredKeyId, candidates, credentialGuids, dryRun, destination, newVaultName, includeHealthy, skipDeleted } = message.data;
+        if (!dryRun) {
+            try {
+                await EncryptionErrorSkippedCredentialStore.clear(defaultVaultInfo.guid);
+            } catch (exception) {
+                logger.error('[repairVaultRecovery] failed to clear skipped encryption errors', exception);
+            }
+        }
         result = await VaultRecoveryService.repair(vault, {
             preferredKeyId,
             candidates,
