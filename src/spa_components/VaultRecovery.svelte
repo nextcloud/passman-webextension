@@ -74,6 +74,8 @@
     let defaultVaultPasswordUpdated = $state(false);
     /** Fingerprint of the config a dry run last validated; `null` whenever Apply must not be trusted yet. */
     let lastDryRunFingerprint = $state<string | null>(null);
+    /** Collapses the scan results card after a repair/copy to save space; re-expanded by the next scan or manually. */
+    let scanResultsCollapsed = $state(false);
 
     let destination = $state<VaultRecoveryDestination>('new_vault');
     let newVaultName = $state('');
@@ -188,6 +190,7 @@
         defaultVaultPasswordUpdated = false;
         dryRunRepairByGuid = {};
         lastDryRunFingerprint = null;
+        scanResultsCollapsed = false;
 
         const fingerprint = configFingerprint;
         try {
@@ -288,6 +291,9 @@
                 // the original vault (in_place) or the selection's relevance (new_vault/passman_json) may
                 // no longer match what was just scanned.
                 lastDryRunFingerprint = null;
+                // Collapse the scan results to save space in the popup; a fresh scan or the manual
+                // "show scan results" toggle both re-expand it.
+                scanResultsCollapsed = true;
 
                 if (response.result.failed === 0) {
                     NotyService.notySuccess(i18n.getMessage('vault_recovery_repair_succeeded'));
@@ -490,9 +496,23 @@
             </OnClickButton>
         </Card>
 
-        {#if report}
+        {#if report && scanResultsCollapsed}
+            <Card additionalClasses="w-full">
+                <div class="flex items-center justify-between gap-2">
+                    <p class="text-sm text-gray-600 dark:text-gray-300">{i18n.getMessage('vault_recovery_scan_results_collapsed_hint')}</p>
+                    <OnClickButton callback={() => scanResultsCollapsed = false} small={true}>
+                        {i18n.getMessage('vault_recovery_show_scan_results')}
+                    </OnClickButton>
+                </div>
+            </Card>
+        {:else if report}
             <Card additionalClasses="w-full space-y-3 {!dryRunIsCurrent ? 'opacity-60' : ''}">
-                <h3 class="text-md font-semibold">{i18n.getMessage('vault_recovery_scan_results_section')}</h3>
+                <div class="flex items-center justify-between gap-2">
+                    <h3 class="text-md font-semibold">{i18n.getMessage('vault_recovery_scan_results_section')}</h3>
+                    <OnClickButton callback={() => scanResultsCollapsed = true} small={true}>
+                        {i18n.getMessage('vault_recovery_hide_scan_results')}
+                    </OnClickButton>
+                </div>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
                     {i18n.getMessage('vault_recovery_scan_summary', [
                         String(report.okCount ?? 0),

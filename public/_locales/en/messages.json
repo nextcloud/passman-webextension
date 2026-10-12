@@ -2084,5 +2084,17 @@
         "example": "No candidate key decrypts this credential."
       }
     }
+  },
+  "vault_recovery_scan_results_collapsed_hint": {
+    "message": "Scan results are hidden to save space. Scan the vault again to see them, or show them manually.",
+    "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
+  },
+  "vault_recovery_show_scan_results": {
+    "message": "Show scan results",
+    "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
+  },
+  "vault_recovery_hide_scan_results": {
+    "message": "Hide",
+    "description": "Button to manually collapse the scan results card in the vault recovery tool"
   }
 }
