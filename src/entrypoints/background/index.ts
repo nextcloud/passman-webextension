@@ -34,6 +34,8 @@ import './messages/updateCredentialForDoorhanger';
 import './messages/getDoorhangerSettings';
 import './messages/probeServerConnection';
 import './messages/recreateOfflineCachePersistence';
+import './messages/scanVaultRecovery';
+import './messages/repairVaultRecovery';
 import { executeOnMessageListenerRegistration } from "@/entrypoints/background/messaging";
 import { DoorhangerPendingCredentialService } from "@/services/backend/DoorhangerPendingCredentialService";
 

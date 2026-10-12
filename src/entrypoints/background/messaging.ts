@@ -81,6 +81,14 @@ import {
     RecreateOfflineCachePersistenceRequest,
     RecreateOfflineCachePersistenceResponse
 } from "@/entrypoints/background/messages/recreateOfflineCachePersistence";
+import {
+    ScanVaultRecoveryRequest,
+    ScanVaultRecoveryResponse
+} from "@/entrypoints/background/messages/scanVaultRecovery";
+import {
+    RepairVaultRecoveryRequest,
+    RepairVaultRecoveryResponse
+} from "@/entrypoints/background/messages/repairVaultRecovery";
 
 interface ProtocolMap {
     ping(): PingResponse;
@@ -136,6 +144,10 @@ interface ProtocolMap {
     probeServerConnection(data: ProbeServerConnectionRequest): ProbeServerConnectionResponse;
 
     recreateOfflineCachePersistence(data?: RecreateOfflineCachePersistenceRequest): RecreateOfflineCachePersistenceResponse;
+
+    scanVaultRecovery(data: ScanVaultRecoveryRequest): ScanVaultRecoveryResponse;
+
+    repairVaultRecovery(data: RepairVaultRecoveryRequest): RepairVaultRecoveryResponse;
 
     // content script
     [RemoteCallableFunctions.remoteFunctionCallMessageName](data: RemoteCallableFunctionMessagingRequest): boolean | null | void;

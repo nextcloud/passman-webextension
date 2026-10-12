@@ -396,6 +396,11 @@
         browser.runtime.openOptionsPage();
     };
 
+    const openVaultRecoveryToolPage = () => {
+        // @ts-ignore
+        window.open(browser.runtime.getURL('/options.html#/vaultRecovery'), '_blank');
+    };
+
     // After initial load, typing in search clears the URL filter and re-fetches (debounced)
     $effect(() => {
         const input = searchInput;
@@ -528,6 +533,14 @@
                 <div class="mt-2 text-red-600">
                     {errorMessage}
                 </div>
+                {#if errorMessage === i18n.getMessage('could_not_decrypt_vault')}
+                    <div class="mt-2 max-w-[24rem] text-center space-y-2">
+                        <p class="text-xs text-gray-500">{i18n.getMessage('vault_recovery_entry_hint')}</p>
+                        <OnClickButton callback={openVaultRecoveryToolPage} title={i18n.getMessage('vault_recovery_open_tool')}>
+                            {i18n.getMessage('vault_recovery_open_tool')}
+                        </OnClickButton>
+                    </div>
+                {/if}
             {/if}
             {#if !errorMessage && listItems.length === 0}
                 <span class="text-gray-400 mt-4">
