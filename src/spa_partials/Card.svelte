@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="bg-primary-light dark:bg-primary-dark-card dark:text-primary-dark-text shadow rounded-lg {paddingClasses} {additionalClasses}"
+	class="bg-primary-light dark:bg-primary-dark-card dark:text-primary-dark-text border border-gray-100 dark:border-gray-800 shadow rounded-lg {paddingClasses} {additionalClasses}"
 >
 	<slot />
 </div>

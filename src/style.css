@@ -3,6 +3,10 @@
 @theme {
     --color-primary: #2563eb;
     --color-primary-focus: #2563eb;
+
+    --color-primary-light: #ffffff;
+    --color-primary-light-text: #111827;
+    --color-primary-light-button-text: #374151;
 }
 
 body {
