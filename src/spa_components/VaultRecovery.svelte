@@ -19,6 +19,9 @@
     import cloud from "svelte-awesome/icons/cloud";
     import download from "svelte-awesome/icons/download";
     import database from "svelte-awesome/icons/database";
+    import chevronRight from "svelte-awesome/icons/chevronRight";
+    import RecoveredCredentialPreview from "~/spa_partials/VaultRecovery/RecoveredCredentialPreview.svelte";
+    import OriginalCredentialJson from "~/spa_partials/VaultRecovery/OriginalCredentialJson.svelte";
     import { i18n } from "~/lib/i18n";
     import { sendMessage, onMessageDirect } from "@/entrypoints/background/messaging";
     import ExtensionSettingsService, { ExtensionSettingsOptions } from "~/services/ExtensionSettingsService";
@@ -76,6 +79,8 @@
     let selectedGuids = $state<Set<string>>(new Set());
     /** Per-guid preview of what the (destination-agnostic) in-place strategy would do; from the last dry run. */
     let dryRunRepairByGuid = $state<Record<string, VaultRecoveryRepairItemResultInterface>>({});
+    /** Original ciphertext snapshots for expanded scan rows; from the last dry run. */
+    let originalCredentialJsonByGuid = $state<Record<string, string>>({});
     let repairResult = $state<VaultRecoveryRepairResultInterface | null>(null);
     let defaultVaultPasswordUpdated = $state(false);
     /** Fingerprint of the config a dry run last validated; `null` whenever Apply must not be trusted yet. */
@@ -205,6 +210,7 @@
         repairResult = null;
         defaultVaultPasswordUpdated = false;
         dryRunRepairByGuid = {};
+        originalCredentialJsonByGuid = {};
         lastDryRunFingerprint = null;
         scanResultsCollapsed = false;
         progress = null;
@@ -227,16 +233,19 @@
                     byGuid[item.guid] = item;
                 }
                 dryRunRepairByGuid = byGuid;
+                originalCredentialJsonByGuid = response.originalCredentialJsonByGuid ?? {};
                 lastDryRunFingerprint = fingerprint;
             } else {
                 report = null;
                 selectedGuids = new Set();
+                originalCredentialJsonByGuid = {};
                 NotyService.notyError(response.errorMessage ?? i18n.getMessage('vault_recovery_scan_failed'));
             }
         } catch (exception) {
             logger.error('[VaultRecovery] scan', exception);
             report = null;
             selectedGuids = new Set();
+            originalCredentialJsonByGuid = {};
             NotyService.notyError(i18n.getMessage('vault_recovery_scan_failed'));
         } finally {
             scanning = false;
@@ -625,66 +634,104 @@
                         {#each visibleHits as hit (hit.guid)}
                             {@const dryRunItem = dryRunRepairByGuid[hit.guid]}
                             {@const repairItem = repairItemForGuid(hit.guid)}
-                            <div class="border border-gray-200 dark:border-gray-600 rounded-md p-2">
-                                <div class="flex items-start justify-between gap-2">
-                                    <div class="flex items-start gap-2 min-w-0">
-                                        {#if ACTIONABLE_STATUSES.has(hit.status)}
-                                            <input
-                                                type="checkbox"
-                                                class="mt-1 shrink-0"
-                                                checked={selectedGuids.has(hit.guid)}
-                                                onchange={() => toggleHitSelection(hit.guid)}
-                                                disabled={!dryRunIsCurrent}
-                                            />
-                                        {/if}
-                                        <div class="min-w-0">
-                                            <p class="truncate font-medium">{hit.label}</p>
-                                            <p class="text-xs text-gray-500">{kindLabel(hit.kind)}</p>
-                                        </div>
-                                    </div>
-                                    <span class="shrink-0 text-xs px-2 py-1 rounded-full {statusBadgeClasses(hit.status)}">
-                                        {statusLabel(hit.status)}
-                                    </span>
-                                </div>
-                                {#if strategyLabel(hit.suggestedStrategy)}
-                                    <p class="text-xs text-gray-500 mt-1">{strategyLabel(hit.suggestedStrategy)}</p>
-                                {/if}
-                                {#if hit.kind === 'shared_with_us' && destination !== 'in_place'}
-                                    <p class="text-xs text-blue-700 dark:text-blue-300 mt-1">{i18n.getMessage('vault_recovery_shared_with_us_hint')}</p>
-                                {/if}
-                                {#if hit.status === 'broken' && (hit.brokenFields?.length ?? 0) > 0}
-                                    <p class="text-xs text-red-500 mt-1">{hit.brokenFields.join(', ')}</p>
-                                {/if}
-                                {#if (hit.fileHits?.length ?? 0) > 0}
-                                    <div class="mt-2 space-y-1">
-                                        {#each hit.fileHits ?? [] as fileHit}
-                                            <div class="flex items-center justify-between gap-2 text-xs">
-                                                <span class="truncate text-gray-500">{fileHit.filename}</span>
-                                                <span class="shrink-0 px-2 py-0.5 rounded-full {fileHitBadgeClasses(fileHit.status)}">
-                                                    {fileHitStatusLabel(fileHit.status)}
-                                                </span>
+                            {@const originalJson = originalCredentialJsonByGuid[hit.guid]}
+                            <details class="border border-gray-200 dark:border-gray-600 rounded-md p-2 open:bg-gray-50 dark:open:bg-gray-800/40">
+                                <summary class="hit-summary cursor-pointer list-none">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <div class="flex items-start gap-2 min-w-0">
+                                            <span class="hit-chevron mt-1 shrink-0 text-gray-400">
+                                                <Icon data={chevronRight} scale={0.7}/>
+                                            </span>
+                                            {#if ACTIONABLE_STATUSES.has(hit.status)}
+                                                <input
+                                                    type="checkbox"
+                                                    class="mt-1 shrink-0"
+                                                    checked={selectedGuids.has(hit.guid)}
+                                                    onclick={(event) => event.stopPropagation()}
+                                                    onmousedown={(event) => event.stopPropagation()}
+                                                    onchange={() => toggleHitSelection(hit.guid)}
+                                                    disabled={!dryRunIsCurrent}
+                                                />
+                                            {/if}
+                                            <div class="min-w-0">
+                                                <p class="truncate font-medium">{hit.label}</p>
+                                                <p class="text-xs text-gray-500">{kindLabel(hit.kind)}</p>
+                                                {#if strategyLabel(hit.suggestedStrategy)}
+                                                    <p class="text-xs text-gray-500">{strategyLabel(hit.suggestedStrategy)}</p>
+                                                {/if}
+                                                {#if hit.kind === 'shared_with_us' && destination !== 'in_place'}
+                                                    <p class="text-xs text-blue-700 dark:text-blue-300 mt-1">{i18n.getMessage('vault_recovery_shared_with_us_hint')}</p>
+                                                {/if}
+                                                {#if hit.status === 'partially_broken' && (hit.brokenFields?.length ?? 0) > 0}
+                                                    <p class="text-xs text-orange-600 mt-1">
+                                                        {i18n.getMessage('vault_recovery_broken_fields', [hit.brokenFields.join(', ')])}
+                                                    </p>
+                                                {/if}
+                                                {#if hit.status === 'broken' && (hit.brokenFields?.length ?? 0) > 0}
+                                                    <p class="text-xs text-red-500 mt-1">
+                                                        {i18n.getMessage('vault_recovery_broken_fields', [hit.brokenFields.join(', ')])}
+                                                    </p>
+                                                {/if}
                                             </div>
-                                        {/each}
+                                        </div>
+                                        <span class="shrink-0 text-xs px-2 py-1 rounded-full {statusBadgeClasses(hit.status)}">
+                                            {statusLabel(hit.status)}
+                                        </span>
                                     </div>
-                                {/if}
-                                {#if dryRunItem && !dryRunItem.success}
-                                    <p class="text-xs mt-1 text-red-600 flex items-center gap-1">
-                                        <Icon data={exclamationTriangle} scale={0.9}/>
-                                        {i18n.getMessage('vault_recovery_dry_run_item_failed', [dryRunItem.error ?? ''])}
-                                    </p>
-                                {/if}
-                                {#if repairItem}
-                                    <p class="text-xs mt-1 flex items-center gap-1 {repairItem.success ? 'text-green-600' : 'text-red-600'}">
-                                        {#if repairItem.success}
-                                            <Icon data={checkCircle} scale={0.9}/>
-                                            {i18n.getMessage('vault_recovery_repair_item_success')}
+                                </summary>
+                                <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
+                                    {#if hit.recoveredPreview}
+                                        <p class="text-xs font-medium mb-2">{i18n.getMessage('vault_recovery_preview_title')}</p>
+                                        <RecoveredCredentialPreview
+                                            preview={hit.recoveredPreview}
+                                            brokenFields={hit.brokenFields ?? []}
+                                            originalJson={originalJson}
+                                        />
+                                    {:else if hit.status === 'broken'}
+                                        {#if originalJson}
+                                            <OriginalCredentialJson originalJson={originalJson} divided={false}/>
                                         {:else}
-                                            <Icon data={exclamationTriangle} scale={0.9}/>
-                                            {i18n.getMessage('vault_recovery_repair_item_failed', [repairItem.error ?? ''])}
+                                            <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_preview_empty')}</p>
                                         {/if}
-                                    </p>
-                                {/if}
-                            </div>
+                                    {:else if hit.status === 'ok'}
+                                        <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_ok_detail')}</p>
+                                    {:else}
+                                        <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_preview_empty')}</p>
+                                    {/if}
+                                    {#if (hit.fileHits?.length ?? 0) > 0}
+                                        <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
+                                            <p class="text-xs font-medium mb-2">{i18n.getMessage('vault_recovery_file_hits_title')}</p>
+                                            <ul class="space-y-1">
+                                                {#each hit.fileHits ?? [] as fileHit}
+                                                    <li class="flex items-center justify-between gap-2 text-xs">
+                                                        <span class="truncate">{fileHit.filename}</span>
+                                                        <span class="shrink-0 px-2 py-0.5 rounded-full {fileHitBadgeClasses(fileHit.status)}">
+                                                            {fileHitStatusLabel(fileHit.status)}
+                                                        </span>
+                                                    </li>
+                                                {/each}
+                                            </ul>
+                                        </div>
+                                    {/if}
+                                    {#if dryRunItem && !dryRunItem.success}
+                                        <p class="text-xs mt-2 text-red-600 flex items-center gap-1">
+                                            <Icon data={exclamationTriangle} scale={0.9}/>
+                                            {i18n.getMessage('vault_recovery_dry_run_item_failed', [dryRunItem.error ?? ''])}
+                                        </p>
+                                    {/if}
+                                    {#if repairItem}
+                                        <p class="text-xs mt-2 flex items-center gap-1 {repairItem.success ? 'text-green-600' : 'text-red-600'}">
+                                            {#if repairItem.success}
+                                                <Icon data={checkCircle} scale={0.9}/>
+                                                {i18n.getMessage('vault_recovery_repair_item_success')}
+                                            {:else}
+                                                <Icon data={exclamationTriangle} scale={0.9}/>
+                                                {i18n.getMessage('vault_recovery_repair_item_failed', [repairItem.error ?? ''])}
+                                            {/if}
+                                        </p>
+                                    {/if}
+                                </div>
+                            </details>
                         {/each}
                     </div>
                 {/if}
@@ -805,3 +852,22 @@
         </div>
     </div>
 {/if}
+
+<style>
+    .hit-summary {
+        list-style: none;
+    }
+
+    .hit-summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .hit-chevron {
+        display: inline-flex;
+        transition: transform 150ms ease;
+    }
+
+    details[open] .hit-chevron {
+        transform: rotate(90deg);
+    }
+</style>

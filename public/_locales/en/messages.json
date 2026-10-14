@@ -1813,6 +1813,48 @@
     "message": "Broken credentials could not be decrypted with any provided password and are not repaired by this tool. They may need manual recovery from a revision, or help from the Passman server administrator.",
     "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
   },
+  "vault_recovery_broken_fields": {
+    "message": "Undecryptable fields: $FIELDS$",
+    "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details",
+    "placeholders": {
+      "fields": {
+        "content": "$1",
+        "example": "password, url"
+      }
+    }
+  },
+  "vault_recovery_preview_title": {
+    "message": "Recovered details",
+    "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
+  },
+  "vault_recovery_preview_empty": {
+    "message": "No decrypted fields available for preview.",
+    "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
+  },
+  "vault_recovery_readonly_notice": {
+    "message": "Read-only preview. File contents are not downloaded.",
+    "description": "Notice above the recovered credential field preview in the vault recovery tool"
+  },
+  "vault_recovery_ok_detail": {
+    "message": "This credential already decrypts with the preferred password, so there is no recovery preview.",
+    "description": "Shown when expanding a healthy credential in the vault recovery scan results"
+  },
+  "vault_recovery_file_hits_title": {
+    "message": "Attachments",
+    "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
+  },
+  "vault_recovery_original_json_title": {
+    "message": "Original credential JSON",
+    "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
+  },
+  "vault_recovery_show_original_json": {
+    "message": "Show original JSON",
+    "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
+  },
+  "vault_recovery_copy_json": {
+    "message": "Copy JSON",
+    "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
+  },
   "vault_recovery_select_all": {
     "message": "Select all repairable credentials",
     "description": "Checkbox label to select all actionable hits in the vault recovery tool"

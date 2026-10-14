@@ -16,6 +16,7 @@ import { i18n } from "~/lib/i18n";
 import { logger } from "~/services/ConsoleLoggingService";
 import type { VaultRecoveryProgressInterface } from "@binsky/passman-client-ts/lib/Interfaces/VaultRecoveryService/VaultRecoveryProgressInterface";
 import EncryptionErrorSkippedCredentialStore from "~/services/EncryptionErrorSkippedCredentialStore";
+import { buildOriginalCredentialJsonByGuid } from "~/services/VaultRecoveryOriginalCredentialJson";
 
 export interface RepairVaultRecoveryRequest {
     preferredKeyId: string;
@@ -39,6 +40,11 @@ export interface RepairVaultRecoveryResponse {
     result: VaultRecoveryRepairResultInterface | null;
     /** True if the stored default vault password was migrated to the preferred candidate's password after a successful repair. */
     defaultVaultPasswordUpdated: boolean;
+    /**
+     * Pretty-printed original ciphertext per guid, for the scan-result detail panel.
+     * Set on dry runs, for broken hits and hits that carry a recovered preview.
+     */
+    originalCredentialJsonByGuid?: Record<string, string>;
 }
 
 /**
@@ -121,7 +127,11 @@ onMessage('repairVaultRecovery', async (message) => {
             }
         }
 
-        return { status: true, errorMessage: null, result, defaultVaultPasswordUpdated };
+        const originalCredentialJsonByGuid = dryRun && result?.report
+            ? buildOriginalCredentialJsonByGuid(result.report.hits, (guid) => vault.getCredentialByGuid(guid))
+            : undefined;
+
+        return { status: true, errorMessage: null, result, defaultVaultPasswordUpdated, originalCredentialJsonByGuid };
     } catch (exception) {
         logger.error('[repairVaultRecovery]', exception);
         return { status: false, errorMessage: i18n.getMessage('vault_recovery_repair_failed'), result, defaultVaultPasswordUpdated };
