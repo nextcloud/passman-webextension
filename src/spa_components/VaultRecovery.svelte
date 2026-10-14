@@ -135,8 +135,13 @@
                 ? i18n.getMessage('vault_recovery_write_warning_json')
                 : i18n.getMessage('vault_recovery_write_warning')
     );
-    /** 'in_place' has nothing to apply without an actionable hit; the copy destinations can still export/copy an all-healthy vault. */
-    const showApplySection = $derived(destination === 'in_place' ? actionableHits.length > 0 : visibleHits.length > 0);
+    /**
+     * Keep the destination radios up for any non-empty scan result.
+     * Hiding them when in-place repair has no actionable hit removes the only control that can leave that destination.
+     */
+    const showDestinationSection = $derived(visibleHits.length > 0);
+    /** In-place repair only rewrites actionable hits. Copy destinations can still export or copy an all-healthy vault. */
+    const inPlaceHasNothingToRepair = $derived(destination === 'in_place' && actionableHits.length === 0);
 
     const addAlternateCandidate = () => {
         alternateCandidates = [...alternateCandidates, { id: `old-${nextAlternateIndex++}`, password: '' }];
@@ -684,7 +689,7 @@
                     </div>
                 {/if}
 
-                {#if showApplySection}
+                {#if showDestinationSection}
                     <div class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-600">
                         <div class="flex items-center gap-2">
                             <Icon data={cloud} scale={1.0}/>
@@ -715,42 +720,46 @@
                             </label>
                         </div>
 
-                        {#if destination === 'new_vault'}
-                            <CustomInputField
-                                id="vaultRecoveryNewVaultName"
-                                label={i18n.getMessage('vault_recovery_new_vault_name_label')}
-                                bind:value={newVaultName}
-                            />
-                            {#if newVaultName.trim() === ''}
-                                <p class="text-xs text-red-600">{i18n.getMessage('vault_recovery_new_vault_name_required')}</p>
+                        {#if inPlaceHasNothingToRepair}
+                            <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_in_place_nothing_to_repair')}</p>
+                        {:else}
+                            {#if destination === 'new_vault'}
+                                <CustomInputField
+                                    id="vaultRecoveryNewVaultName"
+                                    label={i18n.getMessage('vault_recovery_new_vault_name_label')}
+                                    bind:value={newVaultName}
+                                />
+                                {#if newVaultName.trim() === ''}
+                                    <p class="text-xs text-red-600">{i18n.getMessage('vault_recovery_new_vault_name_required')}</p>
+                                {/if}
                             {/if}
-                        {/if}
 
-                        {#if destination !== 'in_place'}
-                            <CustomCheckboxField
-                                id="vaultRecoveryIncludeHealthy"
-                                bind:value={includeHealthy}
-                                label={i18n.getMessage('vault_recovery_include_healthy_label')}
-                            />
-                            <p class="text-xs text-gray-500">{i18n.getMessage('vault_recovery_include_healthy_hint')}</p>
-                        {/if}
-
-                        <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
-                            {writeWarningText}
-                        </div>
-
-                        {#if !dryRunIsCurrent}
-                            <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_apply_disabled_hint')}</p>
-                        {/if}
-
-                        <OnClickButton callback={repair} disabled={!repairEnabled}>
-                            {#if repairing}
-                                <Icon data={refresh} scale={1.2} spin={true}/>
-                            {:else if destination === 'passman_json'}
-                                <Icon data={download} scale={1.0}/>
+                            {#if destination !== 'in_place'}
+                                <CustomCheckboxField
+                                    id="vaultRecoveryIncludeHealthy"
+                                    bind:value={includeHealthy}
+                                    label={i18n.getMessage('vault_recovery_include_healthy_label')}
+                                />
+                                <p class="text-xs text-gray-500">{i18n.getMessage('vault_recovery_include_healthy_hint')}</p>
                             {/if}
-                            {repairButtonLabel}
-                        </OnClickButton>
+
+                            <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
+                                {writeWarningText}
+                            </div>
+
+                            {#if !dryRunIsCurrent}
+                                <p class="text-sm text-gray-500">{i18n.getMessage('vault_recovery_apply_disabled_hint')}</p>
+                            {/if}
+
+                            <OnClickButton callback={repair} disabled={!repairEnabled}>
+                                {#if repairing}
+                                    <Icon data={refresh} scale={1.2} spin={true}/>
+                                {:else if destination === 'passman_json'}
+                                    <Icon data={download} scale={1.0}/>
+                                {/if}
+                                {repairButtonLabel}
+                            </OnClickButton>
+                        {/if}
                     </div>
                 {/if}
             </Card>

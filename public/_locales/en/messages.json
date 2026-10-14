@@ -2001,6 +2001,10 @@
     "message": "Re-encrypts and overwrites the selected credentials directly on the original vault. This mutates your existing data and cannot be undone.",
     "description": "Radio option hint: rewrite the selected credentials on the original vault"
   },
+  "vault_recovery_in_place_nothing_to_repair": {
+    "message": "None of the scanned credentials can be repaired in place. Choose another destination to copy or export them, or scan again with different passwords.",
+    "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
+  },
   "vault_recovery_new_vault_name_label": {
     "message": "New vault name",
     "description": "Label for the name field of the vault created by the new-vault recovery destination"
