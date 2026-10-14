@@ -34,6 +34,10 @@ Try a Passman demo [here](https://demo.passman.cc) to test the browser extension
   - Search / select a credential to fill the input field
   - Add new credentials from the password picker
   - Password generator
+- Vault recovery
+  - Diagnoses the active vault for credentials still encrypted with an old vault password (for example after an interrupted password change) and for shared credentials whose data does not match the shared key
+  - Copies recoverable credentials into a new vault, downloads a Passman JSON export, or repairs them in place. A dry run previews the result; nothing is uploaded until you start a repair
+  - Open it from the credential list when decryption fails, or with the Vault recovery button on the active saved server in settings
 - Support for all Chromium-based browsers (Chrome, Vivaldi, Brave, etc.), the Firefox browser and its derivatives (like Waterfox, Floorp, etc.) supporting manifest v3
 
 ### Experimental Features
