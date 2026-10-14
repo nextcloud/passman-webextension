@@ -23,6 +23,8 @@
     import { sendMessage } from "@/entrypoints/background/messaging";
     import type { ServerConnectionListItem } from "@/entrypoints/background/messages/listServerConnections";
     import { logger } from "~/services/ConsoleLoggingService";
+    import browser from "webextension-polyfill";
+    import Utils from "~/lib/Utils";
 
     const server = field('server', '', [required()], { checkOnInit: true });
     const user = field('user', '', [required()], { checkOnInit: true });
@@ -237,6 +239,15 @@
         lockDirectoryAction = false;
     };
 
+    const openVaultRecovery = () => {
+        // The recovery page is a full tool. From the popup, open it in the options tab; the options page can navigate in place.
+        if (Utils.isInPopup()) {
+            window.open(browser.runtime.getURL('/options.html#/vaultRecovery'), '_blank');
+            return;
+        }
+        push('/vaultRecovery');
+    };
+
     const startAddConnection = () => {
         showAddConnectionForm = true;
         clearFormFields();
@@ -298,7 +309,7 @@
             </p>
             <ul class="divide-y divide-gray-200 dark:divide-gray-600">
                 {#each connections as connection (connection.connectionId)}
-                    <li class="py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <li class="py-3 flex flex-col gap-2" class:active-connection={connection.isActive}>
                         <div class="min-w-0">
                             <div class="font-medium break-all mb-1">
                                 {connection.baseUrl}
@@ -317,7 +328,16 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-2 shrink-0">
-                            {#if !connection.isActive}
+                            {#if connection.isActive}
+                                <OnClickButton
+                                    small={true}
+                                    disabled={lockDirectoryAction}
+                                    title={i18n.getMessage('vault_recovery_open_tool')}
+                                    callback={openVaultRecovery}
+                                >
+                                    {i18n.getMessage('vault_recovery')}
+                                </OnClickButton>
+                            {:else}
                                 <OnClickButton
                                     small={true}
                                     disabled={lockDirectoryAction}
@@ -449,3 +469,9 @@
         </Card>
     </div>
 {/if}
+<style>
+    @reference "tailwindcss";
+    .active-connection {
+        @apply bg-green-50;
+    }
+</style>
