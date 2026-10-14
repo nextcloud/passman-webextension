@@ -55,6 +55,7 @@
     "prettier": "^3.9.10",
     "prettier-plugin-svelte": "^3.5.2",
     "prettier-plugin-tailwindcss": "^0.5.14",
+    "sass": "^1.105.1",
     "svelte-awesome": "3.3.4",
     "svelte-check": "^4.7.6",
     "svelte-forms": "^2.3.1",
