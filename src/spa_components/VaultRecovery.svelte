@@ -380,6 +380,8 @@
                 return i18n.getMessage('vault_recovery_strategy_rewrap_shared_by_us_wrapper');
             case 'fix_shared_key_mismatch':
                 return i18n.getMessage('vault_recovery_strategy_fix_shared_key_mismatch');
+            case 'clear_undecryptable_shared_key':
+                return i18n.getMessage('vault_recovery_strategy_clear_undecryptable_shared_key');
             case 'rewrap_acl_shared_with_us':
                 return i18n.getMessage('vault_recovery_strategy_rewrap_acl_shared_with_us');
             default:

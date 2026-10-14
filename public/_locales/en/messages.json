@@ -1921,6 +1921,10 @@
     "message": "Restore the shared-key encryption model",
     "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
   },
+  "vault_recovery_strategy_clear_undecryptable_shared_key": {
+    "message": "Remove the unreadable shared key and re-encrypt with the preferred password",
+    "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
+  },
   "vault_recovery_strategy_rewrap_acl_shared_with_us": {
     "message": "Re-encrypt your access key with the preferred password",
     "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
