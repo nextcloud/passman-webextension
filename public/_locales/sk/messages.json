@@ -1584,103 +1584,103 @@
         "description": "Log level option: error"
     },
     "vault_recovery": {
-        "message": "Vault recovery",
+        "message": "Obnova trezoru",
         "description": "Title of the vault recovery tool"
     },
     "vault_recovery_description": {
-        "message": "Diagnose and repair credentials left on the wrong vault key after an interrupted vault password change, or with a shared-credential key mismatch. This tool never uploads anything until you explicitly start a repair.",
+        "message": "Diagnostikujte a opravte prihlasovacie údaje ponechané na nesprávnom kľúči trezoru po prerušenej zmene hesla trezoru alebo s nesúladom kľúča zdieľaných prihlasovacích údajov. Tento nástroj nikdy nič nenahrá, kým explicitne nespustíte opravu.",
         "description": "Explanation shown at the top of the vault recovery tool"
     },
     "vault_recovery_keys_section": {
-        "message": "Vault keys",
+        "message": "Kľúče trezoru",
         "description": "Section title for entering candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_preferred_password_label": {
-        "message": "Preferred (current) vault password",
+        "message": "Preferované (aktuálne) heslo trezoru",
         "description": "Label for the preferred/target vault password field in the vault recovery tool"
     },
     "vault_recovery_preferred_password_hint": {
-        "message": "All repaired credentials will be re-encrypted with this password. Prefilled with your current default vault password.",
+        "message": "Všetky opravené prihlasovacie údaje budú prešifrované týmto heslom. Vopred vyplnené vaším aktuálnym predvoleným heslom trezoru.",
         "description": "Hint below the preferred vault password field in the vault recovery tool"
     },
     "vault_recovery_alternate_passwords_label": {
-        "message": "Alternate / old vault passwords",
+        "message": "Alternatívne / staré heslá trezoru",
         "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_add_alternate_password": {
-        "message": "Add password",
+        "message": "Pridať heslo",
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
-        "message": "Remove",
+        "message": "Odstrániť",
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
-        "message": "Scan vault",
+        "message": "Skenovať trezor",
         "description": "Button to start a read-only vault recovery scan"
     },
     "vault_recovery_preferred_password_required": {
-        "message": "Enter the preferred vault password before scanning.",
+        "message": "Pred skenovaním zadajte preferované heslo trezoru.",
         "description": "Validation error when scanning without a preferred vault password"
     },
     "vault_recovery_scan_failed": {
-        "message": "Scanning the vault failed. Please try again.",
+        "message": "Skenovanie trezoru zlyhalo. Skúste to znova.",
         "description": "Error toast when the vault recovery scan fails"
     },
     "vault_recovery_scan_results_section": {
-        "message": "Scan results",
+        "message": "Výsledky skenovania",
         "description": "Section title for the vault recovery scan results"
     },
     "vault_recovery_scan_summary": {
-        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ can be repaired, $BROKEN_COUNT$ broken, $SKIPPED_COUNT$ skipped.",
+        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ je možné opraviť, $BROKEN_COUNT$ poškodených, $SKIPPED_COUNT$ preskočených.",
         "description": "Summary counts of a vault recovery scan report"
     },
     "vault_recovery_broken_hint": {
-        "message": "Broken credentials could not be decrypted with any provided password and are not repaired by this tool. They may need manual recovery from a revision, or help from the Passman server administrator.",
+        "message": "Poškodené prihlasovacie údaje sa nepodarilo dešifrovať so žiadnym poskytnutým heslom a tento nástroj ich neopravuje. Môžu vyžadovať manuálne obnovenie z revízie alebo pomoc od správcu Passman servera.",
         "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
     },
     "vault_recovery_broken_fields": {
-        "message": "Undecryptable fields: $FIELDS$",
+        "message": "Nedešifrovateľné polia: $FIELDS$",
         "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
     },
     "vault_recovery_preview_title": {
-        "message": "Recovered details",
+        "message": "Obnovené detaily",
         "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
     },
     "vault_recovery_preview_empty": {
-        "message": "No decrypted fields available for preview.",
+        "message": "Žiadne dešifrované polia nie sú k dispozícii na náhľad.",
         "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
     },
     "vault_recovery_readonly_notice": {
-        "message": "Read-only preview. File contents are not downloaded.",
+        "message": "Náhľad iba na čítanie. Obsah súboru sa nesťahuje.",
         "description": "Notice above the recovered credential field preview in the vault recovery tool"
     },
     "vault_recovery_ok_detail": {
-        "message": "This credential already decrypts with the preferred password, so there is no recovery preview.",
+        "message": "Tieto prihlasovacie údaje sa už dešifrujú s preferovaným heslom, takže neexistuje žiadny náhľad obnovy.",
         "description": "Shown when expanding a healthy credential in the vault recovery scan results"
     },
     "vault_recovery_file_hits_title": {
-        "message": "Attachments",
+        "message": "Prílohy",
         "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
     },
     "vault_recovery_original_json_title": {
-        "message": "Original credential JSON",
+        "message": "Pôvodný JSON prihlasovacích údajov",
         "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
     },
     "vault_recovery_show_original_json": {
-        "message": "Show original JSON",
+        "message": "Zobraziť originálny JSON",
         "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
     },
     "vault_recovery_copy_json": {
-        "message": "Copy JSON",
+        "message": "Kopírovať JSON",
         "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
     },
     "vault_recovery_select_all": {
-        "message": "Select all repairable credentials",
+        "message": "Vybrať všetky opraviteľné prihlasovacie údaje",
         "description": "Checkbox label to select all actionable hits in the vault recovery tool"
     },
     "vault_recovery_selected_count": {
-        "message": "$SELECTED$ of $TOTAL$ selected",
+        "message": "$SELECTED$ z $TOTAL$ vybraných",
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
@@ -1688,31 +1688,31 @@
         "description": "Vault recovery credential status: already encrypted with the preferred key"
     },
     "vault_recovery_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Vyžaduje opätovné šifrovanie",
         "description": "Vault recovery credential status: decrypts with a non-preferred candidate key"
     },
     "vault_recovery_status_shared_key_mismatch": {
-        "message": "Shared-key mismatch",
+        "message": "Nesúlad zdieľaného kľúča",
         "description": "Vault recovery credential status: shared_key is set but the payload decrypts with a vault key instead"
     },
     "vault_recovery_status_partially_broken": {
-        "message": "Partially broken",
+        "message": "Čiastočne poškodené",
         "description": "Vault recovery credential status: some fields decrypt with a candidate, others decrypt with none"
     },
     "vault_recovery_status_broken": {
-        "message": "Broken",
+        "message": "Poškodené",
         "description": "Vault recovery credential status: no candidate key decrypts the credential"
     },
     "vault_recovery_status_skipped": {
-        "message": "Skipped",
+        "message": "Preskočené",
         "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
     },
     "vault_recovery_kind_owned": {
-        "message": "Owned",
+        "message": "Vlastnené",
         "description": "Vault recovery credential kind: owned by the current user"
     },
     "vault_recovery_kind_shared_by_us": {
-        "message": "Shared by you",
+        "message": "Vami zdieľané",
         "description": "Vault recovery credential kind: shared by the current user with others"
     },
     "vault_recovery_kind_shared_with_us": {
@@ -1720,91 +1720,91 @@
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
-        "message": "Re-encrypt with the preferred password",
+        "message": "Prešifrovať preferovaným heslom",
         "description": "Vault recovery repair strategy: rewrap_owned"
     },
     "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
-        "message": "Re-encrypt the shared key with the preferred password",
+        "message": "Prešifrovať zdieľaný kľúč preferovaným heslom",
         "description": "Vault recovery repair strategy: rewrap_shared_by_us_wrapper"
     },
     "vault_recovery_strategy_fix_shared_key_mismatch": {
-        "message": "Restore the shared-key encryption model",
+        "message": "Obnoviť model šifrovania zdieľaného kľúča",
         "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
     },
     "vault_recovery_strategy_clear_undecryptable_shared_key": {
-        "message": "Remove the unreadable shared key and re-encrypt with the preferred password",
+        "message": "Odstrániť nečitateľný zdieľaný kľúč a prešifrovať preferovaným heslom",
         "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
     },
     "vault_recovery_strategy_rewrap_acl_shared_with_us": {
-        "message": "Re-encrypt your access key with the preferred password",
+        "message": "Prešifrovať váš prístupový kľúč preferovaným heslom",
         "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
     },
     "vault_recovery_write_warning": {
-        "message": "Repairing writes the re-encrypted credentials to your Passman server. This cannot be undone.",
+        "message": "Oprava zapíše prešifrované prihlasovacie údaje na váš Passman server. Toto nie je možné vrátiť späť.",
         "description": "Pinned safety warning shown before repairing in the vault recovery tool"
     },
     "vault_recovery_dry_run_label": {
-        "message": "Dry run (preview only, nothing is uploaded)",
+        "message": "Skúšobné spustenie (iba náhľad, nič sa nenahráva)",
         "description": "Checkbox label to run the vault recovery repair without uploading changes"
     },
     "vault_recovery_dry_run_hint": {
-        "message": "Use this to check that all selected passwords decrypt correctly before writing any changes to the server.",
+        "message": "Použite toto na kontrolu, či sa všetky vybrané heslá dešifrujú správne pred zápisom akýchkoľvek zmien na server.",
         "description": "Hint below the vault recovery dry run checkbox"
     },
     "vault_recovery_repair_button": {
-        "message": "Repair selected",
+        "message": "Opraviť vybrané",
         "description": "Button to start repairing the selected credentials in the vault recovery tool"
     },
     "vault_recovery_repair_confirm": {
-        "message": "This will re-encrypt and upload the selected credentials to your Passman server. Continue?",
+        "message": "Týmto sa vybrané prihlasovacie údaje znovu zašifrujú a odošlú na váš Passman server. Pokračovať?",
         "description": "Confirmation dialog before a non-dry-run vault recovery repair"
     },
     "vault_recovery_repair_failed": {
-        "message": "Repairing the vault failed. Please try again.",
+        "message": "Oprava trezoru zlyhala. Skúste to znova.",
         "description": "Error toast when the vault recovery repair request fails"
     },
     "vault_recovery_repair_succeeded": {
-        "message": "All selected credentials were repaired successfully.",
+        "message": "Všetky vybrané prihlasovacie údaje boli úspešne opravené.",
         "description": "Success toast after a vault recovery repair with no failures"
     },
     "vault_recovery_repair_partial": {
-        "message": "Some credentials could not be repaired. See the details below.",
+        "message": "Niektoré prihlasovacie údaje sa nepodarilo opraviť. Pozrite si podrobnosti nižšie.",
         "description": "Warning toast after a vault recovery repair with partial success"
     },
     "vault_recovery_repair_item_success": {
-        "message": "Repaired successfully",
+        "message": "Úspešne opravené",
         "description": "Per-credential success note in the vault recovery repair results"
     },
     "vault_recovery_repair_item_failed": {
-        "message": "Repair failed: $ERROR$",
+        "message": "Oprava zlyhala: $ERROR$",
         "description": "Per-credential error note in the vault recovery repair results"
     },
     "vault_recovery_done_section": {
-        "message": "Repair summary",
+        "message": "Súhrn opráv",
         "description": "Section title for the vault recovery repair summary"
     },
     "vault_recovery_repair_summary": {
-        "message": "$SUCCEEDED$ repaired, $FAILED$ failed.",
+        "message": "$SUCCEEDED$ opravených, $FAILED$ neúspešných.",
         "description": "Summary counts after a vault recovery repair"
     },
     "vault_recovery_preferred_password_updated": {
-        "message": "Your default vault password was updated to the preferred password.",
+        "message": "Vaše predvolené heslo trezoru bolo aktualizované na preferované heslo.",
         "description": "Shown after the stored default vault password was migrated to the preferred candidate"
     },
     "vault_recovery_back_home": {
-        "message": "Back to overview",
+        "message": "Späť na prehľad",
         "description": "Link back to the credential list from the vault recovery tool"
     },
     "vault_recovery_open_tool": {
-        "message": "Open vault recovery",
+        "message": "Otvoriť obnovu trezoru",
         "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
     },
     "vault_recovery_entry_hint": {
-        "message": "If a vault password change was interrupted, or some shared credentials use the wrong key, the vault recovery tool can diagnose and repair affected credentials.",
+        "message": "Ak bola zmena hesla trezoru prerušená alebo niektoré zdieľané prihlasovacie údaje používajú nesprávny kľúč, nástroj na obnovu trezoru dokáže diagnostikovať a opraviť postihnuté prihlasovacie údaje.",
         "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
     },
     "vault_recovery_skipped_encryption_hint": {
-        "message": "$COUNT$ credentials with decryption errors have been detected and were left out of this list. Vault recovery can diagnose the vault.",
+        "message": "Bolo zistených $COUNT$ prihlasovacích údajov s chybami dešifrovania, ktoré boli vynechané z tohto zoznamu. Obnova trezoru dokáže diagnostikovať trezor.",
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
@@ -1812,79 +1812,79 @@
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
-        "message": "Create a new vault (recommended)",
+        "message": "Vytvoriť nový trezor (odporúčané)",
         "description": "Radio option label: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_new_vault_hint": {
-        "message": "Copies the recoverable and healthy credentials as new, owned credentials into a brand new vault. The original vault is left untouched.",
+        "message": "Skopíruje opraviteľné a zdravé prihlasovacie údaje ako nové, vlastnené prihlasovacie údaje do úplne nového trezoru. Pôvodný trezor zostáva nezmenený.",
         "description": "Radio option hint: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_json_label": {
-        "message": "Download Passman JSON export",
+        "message": "Stiahnuť Passman JSON export",
         "description": "Radio option label: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_json_hint": {
-        "message": "Builds a classic Passman JSON export of the recoverable and healthy credentials for download. Nothing is uploaded and the original vault is left untouched.",
+        "message": "Vytvorí klasický Passman JSON export opraviteľných a zdravých prihlasovacích údajov na stiahnutie. Nič sa nenahráva a pôvodný trezor zostáva nezmenený.",
         "description": "Radio option hint: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_in_place_label": {
-        "message": "Repair in-place",
+        "message": "Opraviť na mieste",
         "description": "Radio option label: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_destination_in_place_hint": {
-        "message": "Re-encrypts and overwrites the selected credentials directly on the original vault. This mutates your existing data and cannot be undone.",
+        "message": "Prešifruje a prepíše vybrané prihlasovacie údaje priamo v pôvodnom trezore. Toto mení vaše existujúce dáta a nie je to možné vrátiť späť.",
         "description": "Radio option hint: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_in_place_nothing_to_repair": {
-        "message": "None of the scanned credentials can be repaired in place. Choose another destination to copy or export them, or scan again with different passwords.",
+        "message": "Žiadne zo skenovaných prihlasovacích údajov nie je možné opraviť na mieste. Vyberte iný cieľ na ich skopírovanie alebo export, alebo skenujte znova s inými heslami.",
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
-        "message": "New vault name",
+        "message": "Názov nového trezoru",
         "description": "Label for the name field of the vault created by the new-vault recovery destination"
     },
     "vault_recovery_new_vault_name_required": {
-        "message": "Enter a name for the new vault.",
+        "message": "Zadajte názov nového trezoru.",
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
-        "message": "Also include already-healthy credentials",
+        "message": "Zahrnúť aj už zdravé prihlasovacie údaje",
         "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
     },
     "vault_recovery_include_healthy_hint": {
-        "message": "When enabled, credentials that already decrypt correctly are copied too, so the result is a complete, usable replacement rather than only the broken subset.",
+        "message": "Keď je táto možnosť povolená, skopírujú sa aj prihlasovacie údaje, ktoré sa už dešifrujú správne, takže výsledkom je kompletná, použiteľná náhrada, nielen poškodená podmnožina.",
         "description": "Hint below the include-healthy-credentials checkbox"
     },
     "vault_recovery_write_warning_new_vault": {
-        "message": "This creates a new vault on your Passman server and uploads the copied credentials to it. This cannot be undone.",
+        "message": "Týmto sa vytvorí nový trezor na vašom Passman serveri a skopírované prihlasovacie údaje sa naň odošlú. Toto nie je možné vrátiť späť.",
         "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
     },
     "vault_recovery_write_warning_json": {
-        "message": "This only builds a file for download in your browser. Nothing is uploaded and the original vault is not changed.",
+        "message": "Toto iba vytvorí súbor na stiahnutie vo vašom prehliadači. Nič sa nenahráva a pôvodný trezor sa nezmení.",
         "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
     },
     "vault_recovery_create_vault_button": {
-        "message": "Create new vault",
+        "message": "Vytvoriť nový trezor",
         "description": "Button to create a new vault and copy the selected credentials into it"
     },
     "vault_recovery_download_json_button": {
-        "message": "Download JSON export",
+        "message": "Stiahnuť JSON export",
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
-        "message": "This will create a new vault named \"$NAME$\" on your Passman server and upload the copied credentials to it. Continue?",
+        "message": "Týmto sa vytvorí nový trezor s názvom „$NAME$“ na vašom Passman serveri a skopírované prihlasovacie údaje sa naň odošlú. Pokračovať?",
         "description": "Confirmation dialog before a non-dry-run new-vault copy"
     },
     "vault_recovery_created_vault_success": {
-        "message": "Created new vault \"$NAME$\". You can select it as your default vault from the extension settings.",
+        "message": "Vytvorený nový trezor „$NAME$“. Môžete si ho vybrať ako predvolený trezor v nastaveniach rozšírenia.",
         "description": "Shown after a successful new-vault copy in the vault recovery tool"
     },
     "vault_recovery_json_downloaded_hint": {
-        "message": "The Passman JSON export was downloaded.",
+        "message": "Passman JSON export bol stiahnutý.",
         "description": "Shown after a successful Passman JSON export download in the vault recovery tool"
     },
     "vault_recovery_shared_with_us_hint": {
-        "message": "Selecting this copies it as a new, owned credential into the destination. The original share is left untouched.",
+        "message": "Výberom sa tieto prihlasovacie údaje skopírujú ako nové, vlastnené prihlasovacie údaje do cieľa. Pôvodné zdieľanie zostáva nezmenené.",
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
@@ -1892,71 +1892,71 @@
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Vyžaduje opätovné šifrovanie",
         "description": "Vault recovery file blob status: decrypts with a non-preferred key"
     },
     "vault_recovery_file_status_broken": {
-        "message": "Broken",
+        "message": "Poškodené",
         "description": "Vault recovery file blob status: no candidate key decrypts this file"
     },
     "vault_recovery_skip_deleted": {
-        "message": "Skip deleted credentials",
+        "message": "Preskočiť odstránené prihlasovacie údaje",
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "The vault passwords or options changed since this scan. Press 'Scan vault' again before repairing or copying anything.",
+        "message": "Heslá alebo možnosti trezoru sa od tohto skenovania zmenili. Pred opravou alebo kopírovaním čohokoľvek znova stlačte „Skenovať trezor“.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
-        "message": "Scan the vault with the current passwords before repairing or copying anything.",
+        "message": "Naskenujte trezor s aktuálnymi heslami pred opravou alebo kopírovaním čohokoľvek.",
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
-        "message": "Dry-run check failed: $ERROR$",
+        "message": "Skúšobné spustenie zlyhalo: $ERROR$",
         "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
     },
     "vault_recovery_scan_results_collapsed_hint": {
-        "message": "Scan results are hidden to save space. Scan the vault again to see them, or show them manually.",
+        "message": "Výsledky skenovania sú skryté za účelom úspory miesta. Ak ich chcete znova vidieť, znova naskenujte trezor alebo ich zobrazte manuálne.",
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
-        "message": "Show scan results",
+        "message": "Zobraziť výsledky skenovania",
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
-        "message": "Hide",
+        "message": "Skryť",
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {
-        "message": "Working on vault: $NAME$",
+        "message": "Pracuje sa na trezore: $NAME$",
         "description": "Shown at the top of the vault recovery tool to indicate which vault is being scanned/repaired"
     },
     "vault_recovery_progress_working": {
-        "message": "Working…",
+        "message": "Pracuje sa…",
         "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
     },
     "vault_recovery_stage_loading": {
-        "message": "Loading vault from the server",
+        "message": "Načítava sa trezor zo servera",
         "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
     },
     "vault_recovery_stage_credentials": {
-        "message": "Scanning credentials",
+        "message": "Skenujú sa prihlasovacie údaje",
         "description": "Vault recovery progress stage: scanning credential ciphertext"
     },
     "vault_recovery_stage_files": {
-        "message": "Probing files",
+        "message": "Skúmajú sa súbory",
         "description": "Vault recovery progress stage: probing file blobs"
     },
     "vault_recovery_stage_repair": {
-        "message": "Repairing",
+        "message": "Opravuje sa",
         "description": "Vault recovery progress stage: applying in-place repairs"
     },
     "vault_recovery_stage_materialize": {
-        "message": "Preparing credentials",
+        "message": "Pripravujú sa prihlasovacie údaje",
         "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
     },
     "vault_recovery_stage_write": {
-        "message": "Writing",
+        "message": "Zapisuje sa",
         "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {

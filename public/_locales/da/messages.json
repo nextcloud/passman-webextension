@@ -8,11 +8,11 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Ingen legitimationsoplysninger fundet for dette websted.",
+        "message": "Ingen adgangskoder fundet for dette websted.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
-        "message": "Ingen legitimationsoplysninger fundet",
+        "message": "Ingen adgangskoder fundet",
         "description": "No credentials found for the current site"
     },
     "description": {
@@ -24,7 +24,7 @@
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Angiv venligt dine Nextcloud / ownCloud legitimationsoplysninger",
+        "message": "Angiv dine loginoplysninger til Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -64,7 +64,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Efter oprettelse af dem, så kan du redigere legitimationsoplysningerne i Passman",
+        "message": "Når den er oprettet, kan du redigere den i Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -124,15 +124,15 @@
         "description": "Add"
     },
     "credential_changed": {
-        "message": "Legitimationsoplysninger ændret",
+        "message": "Adgangskode ændret",
         "description": "Credential changed"
     },
     "credential_created": {
-        "message": "Legitimationsoplysninger oprettet",
+        "message": "Adgangskode oprettet",
         "description": "Credential created"
     },
     "credentials_expires": {
-        "message": "Legitimationsoplysninger udløber",
+        "message": "Adgangskoden udløber",
         "description": "Credential expires"
     },
     "expire_date": {
@@ -180,19 +180,19 @@
         "description": "Detected changed URL for"
     },
     "edit_credential": {
-        "message": "Rediger legitimationsoplysninger",
+        "message": "Rediger adgangskode",
         "description": "Edit credential button label for the edit credential page"
     },
     "create_new_credential": {
-        "message": "Opret nye legitimationsoplysninger",
+        "message": "Opret ny adgangskode",
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Legitimationsoplysninger",
+        "message": "Adgangskode",
         "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Legitimationsoplysninger",
+        "message": "Adgangskoder",
         "description": "Credentials menu item label"
     },
     "compromised_notice": {
@@ -208,7 +208,7 @@
         "description": "Password"
     },
     "website_credential_filter_options": {
-        "message": "Filterindstillinger for legitimationsoplysninger til websteder",
+        "message": "Filterindstillinger for adgangskoder til websteder",
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
@@ -224,7 +224,7 @@
         "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
-        "message": "Du bruger HTTP! Loginoplysninger sendes i klartekst. Dine legitimationsoplysninger i Passman er stadig krypteret.",
+        "message": "Du bruger HTTP! Loginoplysninger sendes i klartekst. Dine adgangskoder i Passman er stadig krypteret.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
@@ -232,11 +232,11 @@
         "description": "Checkbox label for ignoring the url path when matching credentials to websites"
     },
     "ignore_page": {
-        "message": "Ignorer denne side, når der foreslås legitimationsoplysninger",
+        "message": "Ignorer denne side, når der foreslås adgangskoder",
         "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Udfyld formularer automatisk (når kun ét sæt legitimationsoplysninger passer)",
+        "message": "Udfyld formularer automatisk (når kun én adgangskode passer)",
         "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
@@ -244,7 +244,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Efterspørg opdatering af legitimationsoplysningers URL, hvis den ikke matcher den aktuelle URL",
+        "message": "Spørg, om adgangskodens URL skal opdateres, hvis den ikke passer til den aktuelle URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -284,19 +284,19 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Legitimationsoplysninger gemt",
+        "message": "Adgangskode gemt",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Legitimationsoplysninger opdateret",
+        "message": "Adgangskode opdateret",
         "description": "updated, lowercase"
     },
     "credential_update_error": {
-        "message": "Der opstod en fejl under opdatering af legitimationsoplysningerne",
+        "message": "Der opstod en fejl under opdatering af adgangskoden",
         "description": "An error occurred while updating the credential"
     },
     "credential_create_error": {
-        "message": "Der opstod en fejl under oprettelse af legitimationsoplysningerne",
+        "message": "Der opstod en fejl under oprettelse af adgangskoden",
         "description": "An error occurred while creating the credential"
     },
     "open_options_page": {
@@ -320,11 +320,11 @@
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Gem legitimationsoplysninger for denne side",
+        "message": "Gem adgangskode for denne side",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Søg legitimationsoplysninger",
+        "message": "Søg i adgangskoder",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
@@ -600,15 +600,15 @@
         "description": "Type to search placeholder for the search input"
     },
     "credential_deleted": {
-        "message": "Legitimationsoplysninger slettet",
+        "message": "Adgangskode slettet",
         "description": "Credential deleted"
     },
     "mark_credential_deleted": {
-        "message": "Markér legitimationsoplysninger som slettet",
+        "message": "Markér adgangskoden som slettet",
         "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
-        "message": "Når adgangskodevælgeren ikke kan finde nogen legitimationsoplysninger, så vil den gå til:",
+        "message": "Når adgangskodevælgeren ikke kan finde nogen adgangskoder, går den til:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
@@ -636,7 +636,7 @@
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Du har ikke tilladelse til at redigere disse legitimationsoplysninger ",
+        "message": "Du har ikke tilladelse til at redigere denne adgangskode.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -644,7 +644,7 @@
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Genopfrisk liste medlegitimationsoplysninger",
+        "message": "Opdater listen over adgangskoder",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
@@ -672,7 +672,7 @@
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
-        "message": "Vi har fundet $AMOUNT$ legitimationsoplysninger  for dette websted",
+        "message": "Vi har fundet $AMOUNT$ adgangskoder for dette websted",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -684,7 +684,7 @@
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ legitimationsoplysninger t databasen",
+        "message": "$AMOUNT$ adgangskoder i databasen",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
@@ -756,7 +756,7 @@
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "Ingen matchende legitimationsoplysninger",
+        "message": "Ingen adgangskoder passer",
         "description": "No matching credentials"
     },
     "update_default_settings": {
@@ -988,7 +988,7 @@
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Anslået størrelse: $1 ($2 legitimationsoplysninger i $3 bokse)",
+        "message": "Anslået størrelse: $1 ($2 adgangskoder i $3 bokse)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
@@ -1324,15 +1324,15 @@
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "De valgte legitimationsoplysninger blev ikke fundet",
+        "message": "Den valgte adgangskode blev ikke fundet",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
-        "message": "Der opstod en ukendt fejl under sletning af legitimationsoplysninger",
+        "message": "Der opstod en ukendt fejl under sletning af en adgangskode",
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "Der opstod en fejl under sletning af legitimationsoplysninger",
+        "message": "Der opstod en fejl under sletning af en adgangskode",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
@@ -1356,7 +1356,7 @@
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Ikon for legitimationsoplysninger",
+        "message": "Ikon for adgangskode",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
@@ -1428,7 +1428,7 @@
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "Der er ikke angivet legitimationsoplysninger",
+        "message": "Der er ikke angivet data for adgangskoden",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
@@ -1436,7 +1436,7 @@
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
-        "message": "Legitimationsoplysningerne kunne ikke gemmes",
+        "message": "Adgangskoden kunne ikke gemmes",
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
@@ -1496,11 +1496,11 @@
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Legitimationsoplysninger, der skal opdateres",
+        "message": "Adgangskode, der skal opdateres",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Unavngivne legitimationsoplysninger",
+        "message": "Adgangskode uden navn",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
@@ -1584,103 +1584,103 @@
         "description": "Log level option: error"
     },
     "vault_recovery": {
-        "message": "Vault recovery",
+        "message": "Gendannelse af boks",
         "description": "Title of the vault recovery tool"
     },
     "vault_recovery_description": {
-        "message": "Diagnose and repair credentials left on the wrong vault key after an interrupted vault password change, or with a shared-credential key mismatch. This tool never uploads anything until you explicitly start a repair.",
+        "message": "Find og reparer adgangskoder, der står med den forkerte boksnøgle efter et afbrudt skift af boksadgangskoden, eller hvor nøglen til delte adgangskoder ikke passer. Værktøjet overfører intet, før du selv starter en reparation.",
         "description": "Explanation shown at the top of the vault recovery tool"
     },
     "vault_recovery_keys_section": {
-        "message": "Vault keys",
+        "message": "Boksnøgler",
         "description": "Section title for entering candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_preferred_password_label": {
-        "message": "Preferred (current) vault password",
+        "message": "Foretrukken (nuværende) boksadgangskode",
         "description": "Label for the preferred/target vault password field in the vault recovery tool"
     },
     "vault_recovery_preferred_password_hint": {
-        "message": "All repaired credentials will be re-encrypted with this password. Prefilled with your current default vault password.",
+        "message": "Alle reparerede adgangskoder genkrypteres med denne boksadgangskode. Feltet er udfyldt med adgangskoden til din nuværende standardboks.",
         "description": "Hint below the preferred vault password field in the vault recovery tool"
     },
     "vault_recovery_alternate_passwords_label": {
-        "message": "Alternate / old vault passwords",
+        "message": "Andre / gamle boksadgangskoder",
         "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_add_alternate_password": {
-        "message": "Add password",
+        "message": "Tilføj adgangskode",
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
-        "message": "Remove",
+        "message": "Fjern",
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
-        "message": "Scan vault",
+        "message": "Scan boks",
         "description": "Button to start a read-only vault recovery scan"
     },
     "vault_recovery_preferred_password_required": {
-        "message": "Enter the preferred vault password before scanning.",
+        "message": "Indtast den foretrukne boksadgangskode, før du scanner.",
         "description": "Validation error when scanning without a preferred vault password"
     },
     "vault_recovery_scan_failed": {
-        "message": "Scanning the vault failed. Please try again.",
+        "message": "Boksen kunne ikke scannes. Prøv igen.",
         "description": "Error toast when the vault recovery scan fails"
     },
     "vault_recovery_scan_results_section": {
-        "message": "Scan results",
+        "message": "Scanningsresultater",
         "description": "Section title for the vault recovery scan results"
     },
     "vault_recovery_scan_summary": {
-        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ can be repaired, $BROKEN_COUNT$ broken, $SKIPPED_COUNT$ skipped.",
+        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ kan repareres, $BROKEN_COUNT$ beskadigede, $SKIPPED_COUNT$ sprunget over.",
         "description": "Summary counts of a vault recovery scan report"
     },
     "vault_recovery_broken_hint": {
-        "message": "Broken credentials could not be decrypted with any provided password and are not repaired by this tool. They may need manual recovery from a revision, or help from the Passman server administrator.",
+        "message": "Beskadigede adgangskoder kunne ikke dekrypteres med nogen af de angivne boksadgangskoder, og værktøjet reparerer dem ikke. De skal måske gendannes manuelt fra en revision, ellers kan administratoren af Passman-serveren hjælpe.",
         "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
     },
     "vault_recovery_broken_fields": {
-        "message": "Undecryptable fields: $FIELDS$",
+        "message": "Felter, der ikke kan dekrypteres: $FIELDS$",
         "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
     },
     "vault_recovery_preview_title": {
-        "message": "Recovered details",
+        "message": "Gendannede oplysninger",
         "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
     },
     "vault_recovery_preview_empty": {
-        "message": "No decrypted fields available for preview.",
+        "message": "Ingen dekrypterede felter at vise.",
         "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
     },
     "vault_recovery_readonly_notice": {
-        "message": "Read-only preview. File contents are not downloaded.",
+        "message": "Skrivebeskyttet forhåndsvisning. Filernes indhold hentes ikke.",
         "description": "Notice above the recovered credential field preview in the vault recovery tool"
     },
     "vault_recovery_ok_detail": {
-        "message": "This credential already decrypts with the preferred password, so there is no recovery preview.",
+        "message": "Denne adgangskode kan allerede dekrypteres med den foretrukne boksadgangskode, så der er ingen forhåndsvisning af gendannelsen.",
         "description": "Shown when expanding a healthy credential in the vault recovery scan results"
     },
     "vault_recovery_file_hits_title": {
-        "message": "Attachments",
+        "message": "Vedhæftede filer",
         "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
     },
     "vault_recovery_original_json_title": {
-        "message": "Original credential JSON",
+        "message": "Oprindelig JSON for adgangskoden",
         "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
     },
     "vault_recovery_show_original_json": {
-        "message": "Show original JSON",
+        "message": "Vis oprindelig JSON",
         "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
     },
     "vault_recovery_copy_json": {
-        "message": "Copy JSON",
+        "message": "Kopiér JSON",
         "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
     },
     "vault_recovery_select_all": {
-        "message": "Select all repairable credentials",
+        "message": "Vælg alle adgangskoder, der kan repareres",
         "description": "Checkbox label to select all actionable hits in the vault recovery tool"
     },
     "vault_recovery_selected_count": {
-        "message": "$SELECTED$ of $TOTAL$ selected",
+        "message": "$SELECTED$ af $TOTAL$ valgt",
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
@@ -1688,123 +1688,123 @@
         "description": "Vault recovery credential status: already encrypted with the preferred key"
     },
     "vault_recovery_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Skal genkrypteres",
         "description": "Vault recovery credential status: decrypts with a non-preferred candidate key"
     },
     "vault_recovery_status_shared_key_mismatch": {
-        "message": "Shared-key mismatch",
+        "message": "Delingsnøglen passer ikke",
         "description": "Vault recovery credential status: shared_key is set but the payload decrypts with a vault key instead"
     },
     "vault_recovery_status_partially_broken": {
-        "message": "Partially broken",
+        "message": "Delvist beskadiget",
         "description": "Vault recovery credential status: some fields decrypt with a candidate, others decrypt with none"
     },
     "vault_recovery_status_broken": {
-        "message": "Broken",
+        "message": "Beskadiget",
         "description": "Vault recovery credential status: no candidate key decrypts the credential"
     },
     "vault_recovery_status_skipped": {
-        "message": "Skipped",
+        "message": "Sprunget over",
         "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
     },
     "vault_recovery_kind_owned": {
-        "message": "Owned",
+        "message": "Dine egne",
         "description": "Vault recovery credential kind: owned by the current user"
     },
     "vault_recovery_kind_shared_by_us": {
-        "message": "Shared by you",
+        "message": "Delt af dig",
         "description": "Vault recovery credential kind: shared by the current user with others"
     },
     "vault_recovery_kind_shared_with_us": {
-        "message": "Shared with you",
+        "message": "Delt med dig",
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
-        "message": "Re-encrypt with the preferred password",
+        "message": "Genkrypter med den foretrukne boksadgangskode",
         "description": "Vault recovery repair strategy: rewrap_owned"
     },
     "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
-        "message": "Re-encrypt the shared key with the preferred password",
+        "message": "Genkrypter delingsnøglen med den foretrukne boksadgangskode",
         "description": "Vault recovery repair strategy: rewrap_shared_by_us_wrapper"
     },
     "vault_recovery_strategy_fix_shared_key_mismatch": {
-        "message": "Restore the shared-key encryption model",
+        "message": "Gendan krypteringen med delingsnøgle",
         "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
     },
     "vault_recovery_strategy_clear_undecryptable_shared_key": {
-        "message": "Remove the unreadable shared key and re-encrypt with the preferred password",
+        "message": "Fjern den ulæselige delingsnøgle, og genkrypter med den foretrukne boksadgangskode",
         "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
     },
     "vault_recovery_strategy_rewrap_acl_shared_with_us": {
-        "message": "Re-encrypt your access key with the preferred password",
+        "message": "Genkrypter din adgangsnøgle med den foretrukne boksadgangskode",
         "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
     },
     "vault_recovery_write_warning": {
-        "message": "Repairing writes the re-encrypted credentials to your Passman server. This cannot be undone.",
+        "message": "Reparationen skriver de genkrypterede adgangskoder til din Passman-server. Det kan ikke fortrydes.",
         "description": "Pinned safety warning shown before repairing in the vault recovery tool"
     },
     "vault_recovery_dry_run_label": {
-        "message": "Dry run (preview only, nothing is uploaded)",
+        "message": "Prøvekørsel (kun forhåndsvisning, intet overføres)",
         "description": "Checkbox label to run the vault recovery repair without uploading changes"
     },
     "vault_recovery_dry_run_hint": {
-        "message": "Use this to check that all selected passwords decrypt correctly before writing any changes to the server.",
+        "message": "Brug den til at tjekke, at alle valgte adgangskoder kan dekrypteres korrekt, før der skrives ændringer til serveren.",
         "description": "Hint below the vault recovery dry run checkbox"
     },
     "vault_recovery_repair_button": {
-        "message": "Repair selected",
+        "message": "Reparer valgte",
         "description": "Button to start repairing the selected credentials in the vault recovery tool"
     },
     "vault_recovery_repair_confirm": {
-        "message": "This will re-encrypt and upload the selected credentials to your Passman server. Continue?",
+        "message": "De valgte adgangskoder genkrypteres og overføres til din Passman-server. Vil du fortsætte?",
         "description": "Confirmation dialog before a non-dry-run vault recovery repair"
     },
     "vault_recovery_repair_failed": {
-        "message": "Repairing the vault failed. Please try again.",
+        "message": "Boksen kunne ikke repareres. Prøv igen.",
         "description": "Error toast when the vault recovery repair request fails"
     },
     "vault_recovery_repair_succeeded": {
-        "message": "All selected credentials were repaired successfully.",
+        "message": "Alle de valgte adgangskoder er repareret.",
         "description": "Success toast after a vault recovery repair with no failures"
     },
     "vault_recovery_repair_partial": {
-        "message": "Some credentials could not be repaired. See the details below.",
+        "message": "Nogle adgangskoder kunne ikke repareres. Se detaljerne nedenfor.",
         "description": "Warning toast after a vault recovery repair with partial success"
     },
     "vault_recovery_repair_item_success": {
-        "message": "Repaired successfully",
+        "message": "Repareret",
         "description": "Per-credential success note in the vault recovery repair results"
     },
     "vault_recovery_repair_item_failed": {
-        "message": "Repair failed: $ERROR$",
+        "message": "Reparationen mislykkedes: $ERROR$",
         "description": "Per-credential error note in the vault recovery repair results"
     },
     "vault_recovery_done_section": {
-        "message": "Repair summary",
+        "message": "Oversigt over reparationen",
         "description": "Section title for the vault recovery repair summary"
     },
     "vault_recovery_repair_summary": {
-        "message": "$SUCCEEDED$ repaired, $FAILED$ failed.",
+        "message": "$SUCCEEDED$ repareret, $FAILED$ mislykkedes.",
         "description": "Summary counts after a vault recovery repair"
     },
     "vault_recovery_preferred_password_updated": {
-        "message": "Your default vault password was updated to the preferred password.",
+        "message": "Adgangskoden til din standardboks er ændret til den foretrukne boksadgangskode.",
         "description": "Shown after the stored default vault password was migrated to the preferred candidate"
     },
     "vault_recovery_back_home": {
-        "message": "Back to overview",
+        "message": "Tilbage til oversigten",
         "description": "Link back to the credential list from the vault recovery tool"
     },
     "vault_recovery_open_tool": {
-        "message": "Open vault recovery",
+        "message": "Åbn gendannelse af boks",
         "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
     },
     "vault_recovery_entry_hint": {
-        "message": "If a vault password change was interrupted, or some shared credentials use the wrong key, the vault recovery tool can diagnose and repair affected credentials.",
+        "message": "Hvis et skift af boksadgangskode blev afbrudt, eller nogle delte adgangskoder bruger den forkerte nøgle, så kan værktøjet til gendannelse af boks finde og reparere de berørte adgangskoder.",
         "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
     },
     "vault_recovery_skipped_encryption_hint": {
-        "message": "$COUNT$ credentials with decryption errors have been detected and were left out of this list. Vault recovery can diagnose the vault.",
+        "message": "Der er fundet $COUNT$ adgangskoder med dekrypteringsfejl, og de er udeladt af listen. Gendannelse af boks kan undersøge boksen.",
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
@@ -1812,79 +1812,79 @@
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
-        "message": "Create a new vault (recommended)",
+        "message": "Opret en ny boks (anbefales)",
         "description": "Radio option label: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_new_vault_hint": {
-        "message": "Copies the recoverable and healthy credentials as new, owned credentials into a brand new vault. The original vault is left untouched.",
+        "message": "Kopierer de adgangskoder, der kan gendannes eller er i orden, som nye, egne adgangskoder til en helt ny boks. Den oprindelige boks røres ikke.",
         "description": "Radio option hint: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_json_label": {
-        "message": "Download Passman JSON export",
+        "message": "Hent Passman-eksport som JSON",
         "description": "Radio option label: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_json_hint": {
-        "message": "Builds a classic Passman JSON export of the recoverable and healthy credentials for download. Nothing is uploaded and the original vault is left untouched.",
+        "message": "Laver en klassisk Passman-eksport som JSON med de adgangskoder, der kan gendannes eller er i orden, så du kan hente den. Intet overføres, og den oprindelige boks røres ikke.",
         "description": "Radio option hint: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_in_place_label": {
-        "message": "Repair in-place",
+        "message": "Reparer på stedet",
         "description": "Radio option label: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_destination_in_place_hint": {
-        "message": "Re-encrypts and overwrites the selected credentials directly on the original vault. This mutates your existing data and cannot be undone.",
+        "message": "Genkrypterer og overskriver de valgte adgangskoder direkte i den oprindelige boks. Det ændrer dine eksisterende data og kan ikke fortrydes.",
         "description": "Radio option hint: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_in_place_nothing_to_repair": {
-        "message": "None of the scanned credentials can be repaired in place. Choose another destination to copy or export them, or scan again with different passwords.",
+        "message": "Ingen af de scannede adgangskoder kan repareres på stedet. Vælg en anden destination for at kopiere eller eksportere dem, eller scan igen med andre boksadgangskoder.",
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
-        "message": "New vault name",
+        "message": "Navn på den nye boks",
         "description": "Label for the name field of the vault created by the new-vault recovery destination"
     },
     "vault_recovery_new_vault_name_required": {
-        "message": "Enter a name for the new vault.",
+        "message": "Indtast et navn til den nye boks.",
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
-        "message": "Also include already-healthy credentials",
+        "message": "Medtag også adgangskoder, der er i orden",
         "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
     },
     "vault_recovery_include_healthy_hint": {
-        "message": "When enabled, credentials that already decrypt correctly are copied too, so the result is a complete, usable replacement rather than only the broken subset.",
+        "message": "Når det er slået til, kopieres også de adgangskoder, der allerede kan dekrypteres, så resultatet er en komplet, brugbar erstatning og ikke kun de beskadigede.",
         "description": "Hint below the include-healthy-credentials checkbox"
     },
     "vault_recovery_write_warning_new_vault": {
-        "message": "This creates a new vault on your Passman server and uploads the copied credentials to it. This cannot be undone.",
+        "message": "Der oprettes en ny boks på din Passman-server, og de kopierede adgangskoder overføres til den. Det kan ikke fortrydes.",
         "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
     },
     "vault_recovery_write_warning_json": {
-        "message": "This only builds a file for download in your browser. Nothing is uploaded and the original vault is not changed.",
+        "message": "Der laves kun en fil, som du kan hente i browseren. Intet overføres, og den oprindelige boks ændres ikke.",
         "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
     },
     "vault_recovery_create_vault_button": {
-        "message": "Create new vault",
+        "message": "Opret ny boks",
         "description": "Button to create a new vault and copy the selected credentials into it"
     },
     "vault_recovery_download_json_button": {
-        "message": "Download JSON export",
+        "message": "Hent JSON-eksport",
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
-        "message": "This will create a new vault named \"$NAME$\" on your Passman server and upload the copied credentials to it. Continue?",
+        "message": "Der oprettes en ny boks med navnet \"$NAME$\" på din Passman-server, og de kopierede adgangskoder overføres til den. Vil du fortsætte?",
         "description": "Confirmation dialog before a non-dry-run new-vault copy"
     },
     "vault_recovery_created_vault_success": {
-        "message": "Created new vault \"$NAME$\". You can select it as your default vault from the extension settings.",
+        "message": "Den nye boks \"$NAME$\" er oprettet. Du kan vælge den som standardboks i udvidelsens indstillinger.",
         "description": "Shown after a successful new-vault copy in the vault recovery tool"
     },
     "vault_recovery_json_downloaded_hint": {
-        "message": "The Passman JSON export was downloaded.",
+        "message": "Passman-eksporten som JSON er hentet.",
         "description": "Shown after a successful Passman JSON export download in the vault recovery tool"
     },
     "vault_recovery_shared_with_us_hint": {
-        "message": "Selecting this copies it as a new, owned credential into the destination. The original share is left untouched.",
+        "message": "Hvis du vælger den, så kopieres den som en ny, egen adgangskode til destinationen. Den oprindelige deling røres ikke.",
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
@@ -1892,71 +1892,71 @@
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Skal genkrypteres",
         "description": "Vault recovery file blob status: decrypts with a non-preferred key"
     },
     "vault_recovery_file_status_broken": {
-        "message": "Broken",
+        "message": "Beskadiget",
         "description": "Vault recovery file blob status: no candidate key decrypts this file"
     },
     "vault_recovery_skip_deleted": {
-        "message": "Skip deleted credentials",
+        "message": "Spring slettede adgangskoder over",
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "The vault passwords or options changed since this scan. Press 'Scan vault' again before repairing or copying anything.",
+        "message": "Boksadgangskoderne eller indstillingerne er ændret siden scanningen. Klik på 'Scan boks' igen, før du reparerer eller kopierer noget.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
-        "message": "Scan the vault with the current passwords before repairing or copying anything.",
+        "message": "Scan boksen med de nuværende boksadgangskoder, før du reparerer eller kopierer noget.",
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
-        "message": "Dry-run check failed: $ERROR$",
+        "message": "Prøvekørslen mislykkedes: $ERROR$",
         "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
     },
     "vault_recovery_scan_results_collapsed_hint": {
-        "message": "Scan results are hidden to save space. Scan the vault again to see them, or show them manually.",
+        "message": "Scanningsresultaterne er skjult for at spare plads. Scan boksen igen for at se dem, eller vis dem manuelt.",
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
-        "message": "Show scan results",
+        "message": "Vis scanningsresultater",
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
-        "message": "Hide",
+        "message": "Skjul",
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {
-        "message": "Working on vault: $NAME$",
+        "message": "Arbejder på boksen: $NAME$",
         "description": "Shown at the top of the vault recovery tool to indicate which vault is being scanned/repaired"
     },
     "vault_recovery_progress_working": {
-        "message": "Working…",
+        "message": "Arbejder …",
         "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
     },
     "vault_recovery_stage_loading": {
-        "message": "Loading vault from the server",
+        "message": "Indlæser boksen fra serveren",
         "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
     },
     "vault_recovery_stage_credentials": {
-        "message": "Scanning credentials",
+        "message": "Scanner adgangskoder",
         "description": "Vault recovery progress stage: scanning credential ciphertext"
     },
     "vault_recovery_stage_files": {
-        "message": "Probing files",
+        "message": "Undersøger filer",
         "description": "Vault recovery progress stage: probing file blobs"
     },
     "vault_recovery_stage_repair": {
-        "message": "Repairing",
+        "message": "Reparerer",
         "description": "Vault recovery progress stage: applying in-place repairs"
     },
     "vault_recovery_stage_materialize": {
-        "message": "Preparing credentials",
+        "message": "Forbereder adgangskoder",
         "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
     },
     "vault_recovery_stage_write": {
-        "message": "Writing",
+        "message": "Skriver",
         "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {

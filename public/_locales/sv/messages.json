@@ -1612,7 +1612,7 @@
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
-        "message": "Remove",
+        "message": "Ta bort",
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
@@ -1924,7 +1924,7 @@
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
-        "message": "Hide",
+        "message": "Dölj",
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {

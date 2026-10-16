@@ -1584,71 +1584,71 @@
         "description": "Log level option: error"
     },
     "vault_recovery": {
-        "message": "Vault recovery",
+        "message": "Tresorwiederherstellung",
         "description": "Title of the vault recovery tool"
     },
     "vault_recovery_description": {
-        "message": "Diagnose and repair credentials left on the wrong vault key after an interrupted vault password change, or with a shared-credential key mismatch. This tool never uploads anything until you explicitly start a repair.",
+        "message": "Anmeldeinformationen diagnostizieren und reparieren, die nach einer unterbrochenen Änderung des Tresorkennworts oder bei einer Nichtübereinstimmung des Schlüssels für gemeinsam genutzte Anmeldeinformationen auf dem falschen Tresorschlüssel verbleiben. Dieses Tool lädt nie etwas hoch, bis explizit eine Reparatur gestartet wurde.",
         "description": "Explanation shown at the top of the vault recovery tool"
     },
     "vault_recovery_keys_section": {
-        "message": "Vault keys",
+        "message": "Tresorschlüssel",
         "description": "Section title for entering candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_preferred_password_label": {
-        "message": "Preferred (current) vault password",
+        "message": "Bevorzugtes (aktuelles) Tresorkennwort",
         "description": "Label for the preferred/target vault password field in the vault recovery tool"
     },
     "vault_recovery_preferred_password_hint": {
-        "message": "All repaired credentials will be re-encrypted with this password. Prefilled with your current default vault password.",
+        "message": "Alle reparierten Anmeldeinformationen werden mit diesem Passwort erneut verschlüsselt. Vorausgefüllt mit dem aktuellen Standard-Tresorkennwort.",
         "description": "Hint below the preferred vault password field in the vault recovery tool"
     },
     "vault_recovery_alternate_passwords_label": {
-        "message": "Alternate / old vault passwords",
+        "message": "Alternative / Alte Tresorkennwörter",
         "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_add_alternate_password": {
-        "message": "Add password",
+        "message": "Passwort hinzufügen",
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
-        "message": "Remove",
+        "message": "Entfernen",
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
-        "message": "Scan vault",
+        "message": "Tresor scannen",
         "description": "Button to start a read-only vault recovery scan"
     },
     "vault_recovery_preferred_password_required": {
-        "message": "Enter the preferred vault password before scanning.",
+        "message": "Vor dem Scannen das bevorzugte Tresorkennwort eingeben.",
         "description": "Validation error when scanning without a preferred vault password"
     },
     "vault_recovery_scan_failed": {
-        "message": "Scanning the vault failed. Please try again.",
+        "message": "Das Scannen des Tresors ist fehlgeschlagen. Bitte erneut versuchen.",
         "description": "Error toast when the vault recovery scan fails"
     },
     "vault_recovery_scan_results_section": {
-        "message": "Scan results",
+        "message": "Scanergebnisse",
         "description": "Section title for the vault recovery scan results"
     },
     "vault_recovery_scan_summary": {
-        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ can be repaired, $BROKEN_COUNT$ broken, $SKIPPED_COUNT$ skipped.",
+        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ können repariert werden, $BROKEN_COUNT$ defekt, $SKIPPED_COUNT$ übersprungen.",
         "description": "Summary counts of a vault recovery scan report"
     },
     "vault_recovery_broken_hint": {
-        "message": "Broken credentials could not be decrypted with any provided password and are not repaired by this tool. They may need manual recovery from a revision, or help from the Passman server administrator.",
+        "message": "Defekte Anmeldeinformationen konnten mit keinem der angegebenen Passwörter entschlüsselt werden und werden von diesem Tool nicht repariert. Möglicherweise wird  eine manuelle Wiederherstellung nach einer Überarbeitung oder Hilfe von der Passman-Serveradministration benötigt.",
         "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
     },
     "vault_recovery_broken_fields": {
-        "message": "Undecryptable fields: $FIELDS$",
+        "message": "Unverschlüsselbare Felder: $FIELDS$",
         "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
     },
     "vault_recovery_preview_title": {
-        "message": "Recovered details",
+        "message": "Wiederhergestellte Details",
         "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
     },
     "vault_recovery_preview_empty": {
-        "message": "No decrypted fields available for preview.",
+        "message": "Für die Vorschau sind keine entschlüsselten Felder verfügbar.",
         "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
     },
     "vault_recovery_readonly_notice": {
@@ -1684,7 +1684,7 @@
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
-        "message": "OK",
+        "message": "Ok",
         "description": "Vault recovery credential status: already encrypted with the preferred key"
     },
     "vault_recovery_status_needs_rewrap": {
@@ -1716,7 +1716,7 @@
         "description": "Vault recovery credential kind: shared by the current user with others"
     },
     "vault_recovery_kind_shared_with_us": {
-        "message": "Shared with you",
+        "message": "Freigegeben für dich",
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
@@ -1888,7 +1888,7 @@
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
-        "message": "OK",
+        "message": "Ok",
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
@@ -1924,7 +1924,7 @@
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
-        "message": "Hide",
+        "message": "Ausblenden",
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {

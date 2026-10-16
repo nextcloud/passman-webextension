@@ -1584,39 +1584,39 @@
         "description": "Log level option: error"
     },
     "vault_recovery": {
-        "message": "Vault recovery",
+        "message": "Tresorwiederherstellung",
         "description": "Title of the vault recovery tool"
     },
     "vault_recovery_description": {
-        "message": "Diagnose and repair credentials left on the wrong vault key after an interrupted vault password change, or with a shared-credential key mismatch. This tool never uploads anything until you explicitly start a repair.",
+        "message": "Anmeldeinformationen diagnostizieren und reparieren, die nach einer unterbrochenen Änderung des Tresorkennworts oder bei einer Nichtübereinstimmung des Schlüssels für gemeinsam genutzte Anmeldeinformationen auf dem falschen Tresorschlüssel verbleiben. Dieses Tool lädt nie etwas hoch, bis explizit eine Reparatur gestartet wurde.",
         "description": "Explanation shown at the top of the vault recovery tool"
     },
     "vault_recovery_keys_section": {
-        "message": "Vault keys",
+        "message": "Tresorschlüssel",
         "description": "Section title for entering candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_preferred_password_label": {
-        "message": "Preferred (current) vault password",
+        "message": "Bevorzugtes (aktuelles) Tresorkennwort",
         "description": "Label for the preferred/target vault password field in the vault recovery tool"
     },
     "vault_recovery_preferred_password_hint": {
-        "message": "All repaired credentials will be re-encrypted with this password. Prefilled with your current default vault password.",
+        "message": "Alle reparierten Anmeldeinformationen werden mit diesem Passwort erneut verschlüsselt. Vorausgefüllt mit dem aktuellen Standard-Tresorkennwort.",
         "description": "Hint below the preferred vault password field in the vault recovery tool"
     },
     "vault_recovery_alternate_passwords_label": {
-        "message": "Alternate / old vault passwords",
+        "message": "Alternative / Alte Tresorkennwörter",
         "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_add_alternate_password": {
-        "message": "Add password",
+        "message": "Passwort hinzufügen",
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
-        "message": "Remove",
+        "message": "Entfernen",
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
-        "message": "Scan vault",
+        "message": "Tresor scannen",
         "description": "Button to start a read-only vault recovery scan"
     },
     "vault_recovery_preferred_password_required": {
@@ -1660,7 +1660,7 @@
         "description": "Shown when expanding a healthy credential in the vault recovery scan results"
     },
     "vault_recovery_file_hits_title": {
-        "message": "Attachments",
+        "message": "Anhänge",
         "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
     },
     "vault_recovery_original_json_title": {
@@ -1684,7 +1684,7 @@
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
-        "message": "OK",
+        "message": "Ok",
         "description": "Vault recovery credential status: already encrypted with the preferred key"
     },
     "vault_recovery_status_needs_rewrap": {
@@ -1808,7 +1808,7 @@
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
-        "message": "Destination",
+        "message": "Ziel",
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
@@ -1840,11 +1840,11 @@
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
-        "message": "New vault name",
+        "message": "Neuer Tresorname",
         "description": "Label for the name field of the vault created by the new-vault recovery destination"
     },
     "vault_recovery_new_vault_name_required": {
-        "message": "Enter a name for the new vault.",
+        "message": "Einen Namen für den neuen Tresor eingeben.",
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
@@ -1888,7 +1888,7 @@
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
-        "message": "OK",
+        "message": "Ok",
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
@@ -1924,7 +1924,7 @@
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
-        "message": "Hide",
+        "message": "Ausblenden",
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {

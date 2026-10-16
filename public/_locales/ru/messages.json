@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman — Управление паролями для NextCloud и ownCloud",
+        "message": "Passman — менеджер паролей для Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -15,12 +15,12 @@
         "message": "Записей не найдено",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "Заметки",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "Описание",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
-        "message": "Неверный ответ сервера:  [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Неверный ответ сервера: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
@@ -31,9 +31,21 @@
         "message": "Сохранить сайт",
         "description": "Save site"
     },
+    "generator": {
+        "message": "Генератор",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
-        "message": "Создание пароля",
+        "message": "Генератор паролей",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "Параметры генерации паролей",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "Показать дополнительные параметры пароля",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "Создать пароль",
@@ -44,7 +56,7 @@
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Переключить дополнительные настройки",
+        "message": "Показать или скрыть дополнительные параметры",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
@@ -52,7 +64,7 @@
         "description": "Use password"
     },
     "add_hint": {
-        "message": "После создания вы сможете редактировать записи  в Passman.",
+        "message": "После создания вы сможете изменить запись в Passman.",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -68,15 +80,31 @@
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Требовать тип каждого символа",
+        "message": "Требовать символы каждого типа",
         "description": "Require every character type"
     },
+    "use_uppercase": {
+        "message": "Использовать прописные буквы",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "Использовать строчные буквы",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "Использовать цифры",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "Использовать специальные символы",
+        "description": "Use special characters"
+    },
     "add_account": {
-        "message": "Добавить аккаунт",
+        "message": "Добавить учётную запись",
         "description": "Add account"
     },
     "accounts": {
-        "message": "Аккаунты",
+        "message": "Учётные записи",
         "description": "Accounts"
     },
     "label": {
@@ -95,13 +123,33 @@
         "message": "Добавить",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "Запись изменена",
+        "description": "Credential changed"
+    },
     "credential_created": {
         "message": "Запись создана",
         "description": "Credential created"
     },
+    "credentials_expires": {
+        "message": "Срок действия записи истекает",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "Дата истечения срока действия",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "Дата истечения срока действия не задана",
+        "description": "No expiration date set for the credential password"
+    },
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "tags": {
+        "message": "Метки",
+        "description": "Tags"
     },
     "password": {
         "message": "Пароль",
@@ -120,40 +168,60 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ найдено для этой страницы",
+        "message": "Passman — для этой страницы найдено: $CREDENTIAL_AMOUNT$ $PLURAL$",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman — Заблокировано",
+        "message": "Passman — заблокировано",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
         "message": "Определено изменение URL для",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "Изменить запись",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "Создать запись",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "запись",
-        "description": "credential"
+        "message": "Запись",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "записи",
-        "description": "credentials"
+        "message": "Записи",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "Этот пароль скомпрометирован. Убрать это предупреждение можно только сменой пароля.",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "Отметить как скомпрометированную",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
-        "message": "Таймер обновления [s]",
+        "message": "Таймер обновления [с]",
         "description": "Password"
+    },
+    "website_credential_filter_options": {
+        "message": "Параметры фильтрации записей для сайтов",
+        "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
         "message": "Игнорировать протокол при поиске соответствий",
-        "description": "Ignore protocol for site matching"
+        "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
         "message": "Игнорировать поддомен при поиске соответствий",
-        "description": "Password"
+        "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
         "message": "Игнорировать номер порта при поиске соответствий",
-        "description": "Ignore port for site matching"
+        "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
         "message": "Вы используете протокол HTTP! Учётные данные будут отправлены простым текстом. Данные для входа, сохранённые в Passman, остаются зашифрованными.",
@@ -161,42 +229,46 @@
     },
     "ignore_path": {
         "message": "Игнорировать путь при поиске соответствий",
-        "description": "Ignore path for site matching"
+        "description": "Checkbox label for ignoring the url path when matching credentials to websites"
+    },
+    "ignore_page": {
+        "message": "Не предлагать записи на этой странице",
+        "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Включить автозаполнение форм",
-        "description": "Disable auto fill of forms"
+        "message": "Включить автозаполнение форм (при единственной подходящей записи)",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
-        "message": "Автоматическая отправка формы после выбора аккаунта",
+        "message": "Включить автоматическую отправку формы после выбора записи",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Запрашивать обновление ссылки в записи, если она отличается от сохранённой",
+        "message": "Предлагать обновить URL записи, если он не совпадает с текущим",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Отключить автоматическое заполненеие форм в браузере",
+        "message": "Отключить автозаполнение форм в браузере",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Введите домен или домен верхнего уровня, который следует игнорировать и нажмите  ",
+        "message": "Введите игнорируемый домен или домен верхнего уровня и нажмите ↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Включить выбор пароля",
-        "description": "Disable password picker"
+        "message": "Включить всплывающую панель выбора пароля для выбора паролей и заполнения форм",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
-        "message": "При нахождении пароля, переключаться в список, а не последнюю открытую вкладку.",
+        "message": "Если пароль найден, переходить к списку, а не к последней открытой вкладке",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Скрыть расширенные настройки",
+        "message": "Скрыть дополнительные параметры",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Показать расширенные настройки",
+        "message": "Показать дополнительные параметры",
         "description": "Disable password picker"
     },
     "enable_debug": {
@@ -219,12 +291,24 @@
         "message": "Запись обновлена",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "При обновлении записи произошла ошибка",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "При создании записи произошла ошибка",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "Открыть страницу параметров",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
         "message": "Сайт игнорируется",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ингорируется",
+        "message": "URL игнорируется",
         "description": "URL ignored"
     },
     "update": {
@@ -244,7 +328,7 @@
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Добро пожаловать в приложение Passman",
+        "message": "Добро пожаловать в веб-расширение Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
@@ -253,11 +337,11 @@
     },
     "begin": {
         "message": "Начнём!",
-        "description": "Let's begin!"
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Мастер поможет настроить дополнение и синхронизацию паролей.",
-        "description": "Cancel"
+        "message": "Пароли Nextcloud — прямо в браузере. Быстрая настройка подключит это расширение к хранилищу Passman.",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "Отмена",
@@ -268,19 +352,19 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Выберите хранилище, которое будет сихнронизироваться с браузером. ",
+        "message": "Выберите хранилище, которое будет синхронизироваться с браузером.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Введите мастер пароль",
+        "message": "Введите мастер-пароль",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Этот пароль используется для шифрования всех ваших настроек в приложении. Вы можете сохранить этот пароль локально, но он будет сохранён ОТКРЫТЫМ ТЕКСТОМ.",
+        "message": "Этот пароль используется для шифрования всех параметров расширения. Вы можете сохранить его локально, но он будет храниться ОТКРЫТЫМ ТЕКСТОМ.",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Запомнить мастер пароль",
+        "message": "Запомнить мастер-пароль",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -295,9 +379,41 @@
         "message": "Пользовательские поля",
         "description": "Custom fields"
     },
+    "custom_fields_types_text": {
+        "message": "Текст",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Пароль",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "Файл",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "Добавить поле",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "Название поля",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "Значение поля",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "Тип поля",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "Файл не выбран",
+        "description": "Custom field no file selected"
+    },
     "general": {
         "message": "Основные",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
         "message": "Значение",
@@ -308,19 +424,19 @@
         "description": "List"
     },
     "edit": {
-        "message": "Править",
+        "message": "Изменить",
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Настройки сервера",
+        "message": "Параметры сервера",
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Настройки хранилища",
+        "message": "Параметры хранилища",
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Установить мастер пароль",
+        "message": "Установить мастер-пароль",
         "description": "Set a master password"
     },
     "finish": {
@@ -328,7 +444,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Если вам нравится это приложение, не забудьте поддержать его разработку",
+        "message": "Если расширение вам нравится, поддержите его разработку",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -360,7 +476,7 @@
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Настройки сервера Nextcloud / ownCloud",
+        "message": "Параметры сервера Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -380,11 +496,11 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Не использовать Passman только на текущей странице или на всех страницах веб-сайта?",
+        "message": "Отключить Passman только на текущей странице или на всём сайте?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Не найдено игнорируемых сайтов.",
+        "message": "Нет ни одного игнорируемого сайта.",
         "description": "No sites ignored"
     },
     "vault_password": {
@@ -392,7 +508,7 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Заполните название!",
+        "message": "Заполните поле «Метка».",
         "description": "When comparing passwords"
     },
     "invalid_host": {
@@ -412,19 +528,55 @@
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Пустой мастер ключ!",
+        "message": "Пустой мастер-ключ!",
         "description": "Empty master key!"
     },
     "one_time_password": {
         "message": "OTP (одноразовый пароль)",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "Неверная конфигурация OTP",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "Секрет OTP",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "Очистить конфигурацию OTP",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "Издатель",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Тип",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "Количество цифр",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "Период",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "Алгоритм",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "Файлы",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "Параметры",
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Дополнительные аккаунты можно будет добавить после завершения настройки.",
+        "message": "Дополнительные учётные записи можно будет добавить после завершения настройки.",
         "description": "Search"
     },
     "account_added": {
@@ -443,20 +595,28 @@
         "message": "Поиск",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "Начните вводить для поиска",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
         "message": "Запись удалена",
         "description": "Credential deleted"
     },
+    "mark_credential_deleted": {
+        "message": "Отметить запись как удалённую",
+        "description": "Mark credential as deleted button label"
+    },
     "select_password_picker_default_tab": {
-        "message": "Подбор паролей: Если не найдено ни одной записи, переходить:",
+        "message": "Если панель выбора пароля не нашла ни одной записи, переходить:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Не удалось найти ни одного хранилища. Создайте новое хранилище, используя приложение для Nextcloud/ownCloud, и попробуйте снова.",
+        "message": "Хранилища не найдены. Создайте хранилище в приложении Nextcloud / ownCloud и повторите попытку.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Вы можете сбросить свой пароль. Это также сбросит расширение на его первоначальное значение.",
+        "message": "Пароль можно сбросить, но расширение при этом вернётся к исходному состоянию.",
         "description": "Search"
     },
     "forgot_password": {
@@ -467,6 +627,10 @@
         "message": "Сбросить расширение",
         "description": "Search"
     },
+    "reset_settings": {
+        "message": "Сбросить параметры",
+        "description": "Reset settings button label"
+    },
     "iam_sure": {
         "message": "Да, я уверен!",
         "description": "Search"
@@ -476,7 +640,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Неверные настройки сервера",
+        "message": "Неверные параметры сервера",
         "description": "Search"
     },
     "refresh_credential_list": {
@@ -484,7 +648,7 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Разработчики зависят от пожертвований, пожалуйста, поддержите нас",
+        "message": "Разработка держится на пожертвованиях — поддержите нас",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
@@ -492,19 +656,23 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Расширение Passman заблокировано, разблокируйте для использования.",
+        "message": "Расширение Passman заблокировано. Разблокируйте его, чтобы пользоваться.",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Неверный мастер пароль!",
+        "message": "Неверный мастер-пароль!",
         "description": "When the master password is invalid"
     },
     "unlock": {
         "message": "Разблокировать",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "Разблокировать без обновления",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
-        "message": "Найдено  $AMOUNT$ записей для этого сайта",
+        "message": "Для этого сайта найдено записей: $AMOUNT$",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -520,11 +688,11 @@
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Менеджер паролей авторизует Вас как $USERNAME$",
+        "message": "Passman выполняет вход как $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Хранилице",
+        "message": "Хранилище",
         "description": "Vault"
     },
     "add_custom_field": {
@@ -534,6 +702,1262 @@
     "text": {
         "message": "текст",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "Копировать $FIELDNAME$ в буфер обмена",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START_HTML_TAG$Нажмите для загрузки$END_HTML_TAG$ или перетащите файл",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "Любой тип файла",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "Файл загружен",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "Не удалось загрузить файл",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "Файл удалён",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "Не удалось удалить файл",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "Имя файла",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "Время создания",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Размер",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "К сожалению, загрузка файлов не поддерживается во всплывающем окне.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "Чтобы добавить файлы, воспользуйтесь страницей параметров веб-расширения или другим клиентом.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "Очистить фильтр по URL вкладки",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "Нет подходящих записей",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "Обновить параметры по умолчанию",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "Сохранить параметры",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "Дополнительные параметры",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "Настройка глобальных дополнительных параметров",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Настройка сервера Nextcloud",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "Настройте сервер Nextcloud и учётные данные хранилища",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "Подключение сервера",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "Войдите в Nextcloud, затем выберите хранилище Passman, которое этот браузер должен синхронизировать.",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "Правила страниц",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "Настройте правила для отдельных страниц, чтобы изменить общее поведение расширения. Сейчас они создаются только для доменов, а не для отдельных путей (возможно, это появится в будущем).",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "Сохранённые правила страниц",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "Правила страниц ещё не заданы",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "URL страницы",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "Создать правило",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "Сохранить правило",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "Обновить правило",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "Удалить правило",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "Правило страницы сохранено",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "Правило страницы удалено",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "Переопределить глобальные параметры",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "Текущий сайт",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "Настройте поведение Passman на этой странице.",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "Сбросить изменения",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "Загрузка параметров страницы…",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "Повторить",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "Не удалось загрузить правила страницы для этого сайта",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "Не удалось сохранить правила страницы",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "Поиск правил",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "Фильтр по URL…",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "Нет правил страницы, соответствующих запросу",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "Отмена",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "Использовать общий параметр",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "Принудительно включить",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "Принудительно отключить",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "Сейчас редактируется: $PAGE_URL$",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "Требуется URL страницы",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "Не удалось загрузить правила страницы",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "Не удалось сохранить правило страницы",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "Не удалось удалить правило страницы",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "Переопределений: $COUNT$",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "Сохранить параметры хранилища по умолчанию",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "Параметры успешно обновлены",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "Версия расширения",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "Включить запасное заполнение имени пользователя адресом электронной почты (и наоборот)",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "Параметры обнаружения форм",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "Включить обнаружение форм по событиям пользователя",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "Отслеживать некоторые особые события пользователя с задержкой и ограничением частоты",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "Включить обнаружение форм по событиям popstate в URL",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "В основном полезно для SPA (одностраничных приложений), но не обязательно",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "Включить обнаружение форм при изменении URL с проверкой по таймеру (раз в 1 с)",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "Включить MutationObserver для обнаружения динамически добавленных форм и полей ввода при изменениях DOM",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "Самый эффективный, но и самый ресурсоёмкий способ обнаружения динамически добавленных форм и полей ввода при изменениях DOM",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "включено",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "выключено",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "Автономный кэш",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "Зашифрованные данные хранилищ сохраняются локально для работы в автономном режиме. Очищенный кэш автоматически заполняется заново при следующей загрузке хранилищ с сервера.",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "Примерный размер: $1 (записей: $2, хранилищ: $3)",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "Определение размера автономного кэша…",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "Не удалось определить размер автономного кэша",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "Очистить автономный кэш",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "Удалить локальный автономный кэш хранилищ? Для повторной загрузки хранилищ потребуется подключение к сети.",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "Автономный кэш очищен",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "Не удалось очистить автономный кэш",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "offline_cache_storage_backend": {
+        "message": "Хранение кэша",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "Где хранится кэш зашифрованного хранилища. IndexedDB сохраняется между перезапусками; кэш в памяти очищается при перезапуске фонового сценария расширения.",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB (постоянный кэш)",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "В памяти (в пределах сеанса / с ограничением по времени)",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "Используется кэш в памяти. Кэшированные хранилища теряются при перезапуске фонового сценария расширения; при необходимости они загружаются с сервера заново.",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "Встроенный IndexedDB недоступен в этом профиле браузера (например, Firefox с параметром «Никогда не запоминать историю»). Вместо него используется кэш в памяти.",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "Размер отражает только текущий сеанс.",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "IndexedDB здесь недоступен, поэтому кэш в памяти остаётся активным.",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "Хранилище автономного кэша заполнено (превышена квота). Освободите место или очистите автономный кэш в дополнительных параметрах.",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "Этот профиль браузера не может использовать IndexedDB (например, Firefox с параметром «Никогда не запоминать историю»). Passman будет использовать кэш в памяти, который очищается при перезапуске фонового сценария расширения.",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
+    "server_connections": {
+        "message": "Сохранённые серверы",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "Расширение использует одновременно только один активный сервер Nextcloud. Добавьте резервный сервер, чтобы быстро переключиться, если основной недоступен.",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "активный",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "Переключить",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "Удалить",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "Добавить сервер",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "Учётные данные активного сервера",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "Удалить этот сохранённый сервер из расширения? Его автономный кэш может остаться до очистки.",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "Активный сервер переключён",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "Не удалось переключить сервер",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "Сервер удалён",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "Не удалось удалить сервер",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "Эта переработка ещё в активной разработке, возможны недоработки.$BR$Нашли ошибку? Сообщите о ней на $LINK_START$GitHub$LINK_END$.",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "Выберите пароль разблокировки",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "Этот пароль блокирует расширение на этом устройстве и используется для шифрования локальных параметров. Это не пароль от хранилища.",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "Сохранить и продолжить",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "change_unlock_password": {
+        "message": "Изменение пароля разблокировки",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "Текущий пароль разблокировки",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "Новый пароль разблокировки",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "Изменить пароль",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "Пароль разблокировки изменён",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "Не удалось изменить пароль разблокировки. Проверьте текущий пароль и повторите попытку.",
+        "description": "Error when changing the extension unlock password fails"
+    },
+    "enable_auto_unlock": {
+        "message": "Автоматическая разблокировка при запуске браузера",
+        "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
+    },
+    "enable_auto_unlock_description": {
+        "message": "Оставляет расширение разблокированным после перезапуска браузера, не сохраняя пароль разблокировки. Тогда любой, кто может выполнить код в этом расширении или прочитать профиль браузера с диска, получит доступ к данным хранилища без пароля. Это аналог параметра «оставаться в системе» в операционной системе.",
+        "description": "Trade-off hint under the auto-unlock checkbox"
+    },
+    "enable_auto_unlock_lock_note": {
+        "message": "Блокировка расширения отключает автоматическую разблокировку. Чтобы включить её снова, вернитесь сюда.",
+        "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
+    },
+    "enable_auto_unlock_local_fallback_notice": {
+        "message": "В этом профиле браузера нельзя использовать IndexedDB, поэтому ключ автоматической разблокировки хранится в локальном хранилище расширения. Это менее надёжно: любой, кто может прочитать хранилище расширения, разблокирует его без пароля.",
+        "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
+    },
+    "auto_unlock_enable_failed": {
+        "message": "Не удалось включить автоматическую разблокировку. Разблокируйте расширение или перезапустите его и повторите попытку.",
+        "description": "Error toast when enabling auto-unlock fails"
+    },
+    "auto_unlock_disable_failed": {
+        "message": "Не удалось отключить автоматическую разблокировку.",
+        "description": "Error toast when disabling auto-unlock fails"
+    },
+    "migrate_legacy_title": {
+        "message": "Импорт предыдущих параметров",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Введите мастер-пароль от предыдущего расширения Passman. После подтверждения импорта он также станет новым паролем разблокировки.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Найдены параметры предыдущего расширения Passman. Проверьте и измените их перед импортом.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Предыдущий мастер-пароль",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Импортировать предыдущие параметры",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Импорт предыдущей установки",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Разблокируйте предыдущие параметры старым мастер-паролем, чтобы просмотреть, что будет импортировано.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Измените подключения и параметры при необходимости. Состояние подключений и хранилища проверяется на ваших серверах.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Перейти к просмотру",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Импортировать и завершить настройку",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Проверить подключение",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Перепроверить все",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Использовать как активное подключение",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Параметры сопоставления и автозаполнения",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "По одному сайту в строке. Из них будут созданы правила страниц с включённым параметром «игнорировать страницу».",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "не проверено",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "проверка…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Сервер",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Экспериментальная функция",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Не удалось расшифровать предыдущие параметры. Проверьте мастер-пароль и повторите попытку.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "В предыдущих параметрах нет учётных записей серверов для импорта.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Не удалось импортировать предыдущие параметры.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Импортировано подключений к серверам из предыдущей установки: $COUNT$.",
+        "description": "Success toast after importing legacy settings"
+    },
+    "passman_app_required": {
+        "message": "Для работы этого расширения на сервере Nextcloud должно быть установлено приложение $LINK_START$Passman App$LINK_END$.",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "Данные не передаются никуда, кроме указанного сервера Nextcloud.",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "Сведения о выбранном хранилище не найдены",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "Не удалось расшифровать хранилище",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "Сведения о хранилище по умолчанию не найдены",
+        "description": "Error when metadata about the default vault is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "Не удалось получить или расшифровать хранилище",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "Неизвестная ошибка в refreshCredentialList",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "Ожидаемая страница расширения не найдена",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "Сообщить об ошибке",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "Проблемы",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "Щёлкните для автозаполнения",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "Добавить метку",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "Удалить метку $TAG$",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "-- Щёлкните, чтобы добавить --",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "Нет $FIELDNAME$ для копирования",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "Не удалось найти выбранную запись",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "При удалении записи произошла неизвестная ошибка",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "При удалении записи произошла ошибка",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "очень слабый",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "слабый",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "хороший",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "сильный",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "Закрыть уведомление",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "Значок записи",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "QR-код OTP",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "Автозаполнение",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "Копировать имя пользователя",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "Копировать адрес электронной почты",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "Копировать пароль",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "Копировать URL",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "Копировать OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "Обновить панель выбора пароля",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "И копировать в буфер обмена",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "И заполнить поля",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "$FIELDNAME$ скопировано в буфер обмена",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "Не удалось скопировать $FIELDNAME$",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "Неизвестная ошибка при проверке состояния блокировки расширения!",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "Вход выполнен",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "Не удалось войти",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "Сведения о сервере не указаны",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "Неизвестная ошибка",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "Данные записи не указаны",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "Исходная вкладка не найдена",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "Не удалось сохранить запись",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "Не удалось получить клиент Passman из внутренней службы",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "Некорректный запрос (проверьте тело запроса)",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "Не удалось получить сведения о хранилище по умолчанию",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "Не указан connectionId",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "Не удалось получить клиент Passman",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "Нет управляемого подключения с идентификатором $CONNECTION_ID$",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "Не удалось расшифровать выбранное хранилище указанным паролем",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "Не удалось получить выбранное хранилище по GUID",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "В параметрах расширения не указаны сведения о хранилище",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "Не удалось получить пользовательские параметры генератора паролей",
+        "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "Включить сбор новых и обновлённых паролей с помощью всплывающей панели",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
+    },
+    "doorhanger_save_title": {
+        "message": "Сохранить данные для входа в Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Обновить данные для входа в Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Не сейчас",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Запись для обновления",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Запись без названия",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Всплывающая панель",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Выберите, как показывать запрос сохранения или обновления после входа на сайтах.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Размещение",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Карточка размещается в углу. Верхняя строка — баннер во всю ширину в верхней части страницы.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Карточка",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Верхняя строка",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Положение",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Угол для карточки или выравнивание содержимого в верхней строке.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Справа вверху",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Слева вверху",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Справа внизу",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Слева внизу",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Журналирование",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Минимальный уровень журнала консоли для этого расширения. Чем ниже уровень, тем больше подробностей. По умолчанию для рабочей среды используется уровень «Ошибка».",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Уровень журнала",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Отладка",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Журнал",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Информация",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Предупреждение",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Ошибка",
+        "description": "Log level option: error"
+    },
+    "vault_recovery": {
+        "message": "Восстановление хранилища",
+        "description": "Title of the vault recovery tool"
+    },
+    "vault_recovery_description": {
+        "message": "Диагностика и исправление записей, оставшихся на неверном ключе хранилища после прерванной смены пароля хранилища, или записей с несовпадающим ключом общего доступа. Инструмент ничего не загружает, пока вы явно не запустите восстановление.",
+        "description": "Explanation shown at the top of the vault recovery tool"
+    },
+    "vault_recovery_keys_section": {
+        "message": "Ключи хранилища",
+        "description": "Section title for entering candidate vault passwords in the vault recovery tool"
+    },
+    "vault_recovery_preferred_password_label": {
+        "message": "Предпочтительный (текущий) пароль хранилища",
+        "description": "Label for the preferred/target vault password field in the vault recovery tool"
+    },
+    "vault_recovery_preferred_password_hint": {
+        "message": "Все восстановленные записи будут заново зашифрованы этим паролем. Поле предварительно заполнено текущим паролем хранилища по умолчанию.",
+        "description": "Hint below the preferred vault password field in the vault recovery tool"
+    },
+    "vault_recovery_alternate_passwords_label": {
+        "message": "Другие / старые пароли хранилища",
+        "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
+    },
+    "vault_recovery_add_alternate_password": {
+        "message": "Добавить пароль",
+        "description": "Button to add another alternate vault password candidate in the vault recovery tool"
+    },
+    "vault_recovery_remove_alternate_password": {
+        "message": "Удалить",
+        "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
+    },
+    "vault_recovery_scan_button": {
+        "message": "Сканировать хранилище",
+        "description": "Button to start a read-only vault recovery scan"
+    },
+    "vault_recovery_preferred_password_required": {
+        "message": "Перед сканированием введите предпочтительный пароль хранилища.",
+        "description": "Validation error when scanning without a preferred vault password"
+    },
+    "vault_recovery_scan_failed": {
+        "message": "Не удалось просканировать хранилище. Повторите попытку.",
+        "description": "Error toast when the vault recovery scan fails"
+    },
+    "vault_recovery_scan_results_section": {
+        "message": "Результаты сканирования",
+        "description": "Section title for the vault recovery scan results"
+    },
+    "vault_recovery_scan_summary": {
+        "message": "$OK_COUNT$ в порядке, $ACTIONABLE_COUNT$ можно восстановить, $BROKEN_COUNT$ повреждено, $SKIPPED_COUNT$ пропущено.",
+        "description": "Summary counts of a vault recovery scan report"
+    },
+    "vault_recovery_broken_hint": {
+        "message": "Повреждённые записи не удалось расшифровать ни одним из указанных паролей, и этот инструмент их не восстанавливает. Возможно, потребуется восстановить их вручную из ревизии или обратиться за помощью к администратору сервера Passman.",
+        "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
+    },
+    "vault_recovery_broken_fields": {
+        "message": "Поля, которые не удалось расшифровать: $FIELDS$",
+        "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
+    },
+    "vault_recovery_preview_title": {
+        "message": "Восстановленные подробности",
+        "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
+    },
+    "vault_recovery_preview_empty": {
+        "message": "Нет расшифрованных полей для предварительного просмотра.",
+        "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
+    },
+    "vault_recovery_readonly_notice": {
+        "message": "Предварительный просмотр только для чтения. Содержимое файлов не скачивается.",
+        "description": "Notice above the recovered credential field preview in the vault recovery tool"
+    },
+    "vault_recovery_ok_detail": {
+        "message": "Эта запись уже расшифровывается предпочтительным паролем, поэтому предварительный просмотр восстановления недоступен.",
+        "description": "Shown when expanding a healthy credential in the vault recovery scan results"
+    },
+    "vault_recovery_file_hits_title": {
+        "message": "Вложения",
+        "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
+    },
+    "vault_recovery_original_json_title": {
+        "message": "Исходный JSON записи",
+        "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
+    },
+    "vault_recovery_show_original_json": {
+        "message": "Показать исходный JSON",
+        "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
+    },
+    "vault_recovery_copy_json": {
+        "message": "Копировать JSON",
+        "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
+    },
+    "vault_recovery_select_all": {
+        "message": "Выбрать все записи, которые можно исправить",
+        "description": "Checkbox label to select all actionable hits in the vault recovery tool"
+    },
+    "vault_recovery_selected_count": {
+        "message": "Выбрано $SELECTED$ из $TOTAL$",
+        "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
+    },
+    "vault_recovery_status_ok": {
+        "message": "ОК",
+        "description": "Vault recovery credential status: already encrypted with the preferred key"
+    },
+    "vault_recovery_status_needs_rewrap": {
+        "message": "Требуется повторное шифрование",
+        "description": "Vault recovery credential status: decrypts with a non-preferred candidate key"
+    },
+    "vault_recovery_status_shared_key_mismatch": {
+        "message": "Несоответствие общего ключа",
+        "description": "Vault recovery credential status: shared_key is set but the payload decrypts with a vault key instead"
+    },
+    "vault_recovery_status_partially_broken": {
+        "message": "Частично повреждено",
+        "description": "Vault recovery credential status: some fields decrypt with a candidate, others decrypt with none"
+    },
+    "vault_recovery_status_broken": {
+        "message": "Повреждено",
+        "description": "Vault recovery credential status: no candidate key decrypts the credential"
+    },
+    "vault_recovery_status_skipped": {
+        "message": "Пропущено",
+        "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
+    },
+    "vault_recovery_kind_owned": {
+        "message": "Собственные",
+        "description": "Vault recovery credential kind: owned by the current user"
+    },
+    "vault_recovery_kind_shared_by_us": {
+        "message": "Вы поделились",
+        "description": "Vault recovery credential kind: shared by the current user with others"
+    },
+    "vault_recovery_kind_shared_with_us": {
+        "message": "Доступные вам",
+        "description": "Vault recovery credential kind: shared with the current user by someone else"
+    },
+    "vault_recovery_strategy_rewrap_owned": {
+        "message": "Повторно зашифровать предпочтительным паролем",
+        "description": "Vault recovery repair strategy: rewrap_owned"
+    },
+    "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
+        "message": "Повторно зашифровать общий ключ предпочтительным паролем",
+        "description": "Vault recovery repair strategy: rewrap_shared_by_us_wrapper"
+    },
+    "vault_recovery_strategy_fix_shared_key_mismatch": {
+        "message": "Восстановить модель шифрования с общим ключом",
+        "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
+    },
+    "vault_recovery_strategy_clear_undecryptable_shared_key": {
+        "message": "Удалить нечитаемый общий ключ и повторно зашифровать предпочтительным паролем",
+        "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
+    },
+    "vault_recovery_strategy_rewrap_acl_shared_with_us": {
+        "message": "Повторно зашифровать ваш ключ доступа предпочтительным паролем",
+        "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
+    },
+    "vault_recovery_write_warning": {
+        "message": "При исправлении повторно зашифрованные записи записываются на ваш сервер Passman. Это действие нельзя отменить.",
+        "description": "Pinned safety warning shown before repairing in the vault recovery tool"
+    },
+    "vault_recovery_dry_run_label": {
+        "message": "Пробный запуск (только предварительный просмотр, ничего не загружается)",
+        "description": "Checkbox label to run the vault recovery repair without uploading changes"
+    },
+    "vault_recovery_dry_run_hint": {
+        "message": "Позволяет проверить, что все выбранные пароли правильно расшифровываются, прежде чем записывать изменения на сервер.",
+        "description": "Hint below the vault recovery dry run checkbox"
+    },
+    "vault_recovery_repair_button": {
+        "message": "Исправить выбранные",
+        "description": "Button to start repairing the selected credentials in the vault recovery tool"
+    },
+    "vault_recovery_repair_confirm": {
+        "message": "Выбранные записи будут повторно зашифрованы и загружены на ваш сервер Passman. Продолжить?",
+        "description": "Confirmation dialog before a non-dry-run vault recovery repair"
+    },
+    "vault_recovery_repair_failed": {
+        "message": "Не удалось восстановить хранилище. Повторите попытку.",
+        "description": "Error toast when the vault recovery repair request fails"
+    },
+    "vault_recovery_repair_succeeded": {
+        "message": "Все выбранные записи успешно восстановлены.",
+        "description": "Success toast after a vault recovery repair with no failures"
+    },
+    "vault_recovery_repair_partial": {
+        "message": "Некоторые записи не удалось восстановить. Подробности ниже.",
+        "description": "Warning toast after a vault recovery repair with partial success"
+    },
+    "vault_recovery_repair_item_success": {
+        "message": "Успешно восстановлено",
+        "description": "Per-credential success note in the vault recovery repair results"
+    },
+    "vault_recovery_repair_item_failed": {
+        "message": "Не удалось восстановить: $ERROR$",
+        "description": "Per-credential error note in the vault recovery repair results"
+    },
+    "vault_recovery_done_section": {
+        "message": "Сводка восстановления",
+        "description": "Section title for the vault recovery repair summary"
+    },
+    "vault_recovery_repair_summary": {
+        "message": "Восстановлено: $SUCCEEDED$, не удалось: $FAILED$.",
+        "description": "Summary counts after a vault recovery repair"
+    },
+    "vault_recovery_preferred_password_updated": {
+        "message": "Пароль хранилища по умолчанию заменён на предпочтительный.",
+        "description": "Shown after the stored default vault password was migrated to the preferred candidate"
+    },
+    "vault_recovery_back_home": {
+        "message": "Назад к обзору",
+        "description": "Link back to the credential list from the vault recovery tool"
+    },
+    "vault_recovery_open_tool": {
+        "message": "Открыть восстановление хранилища",
+        "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
+    },
+    "vault_recovery_entry_hint": {
+        "message": "Если смена пароля хранилища была прервана или часть общих записей использует неверный ключ, восстановление хранилища поможет найти и исправить затронутые записи.",
+        "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
+    },
+    "vault_recovery_skipped_encryption_hint": {
+        "message": "Обнаружено записей с ошибками расшифровки: $COUNT$. Они не включены в этот список. Диагностику можно выполнить в восстановлении хранилища.",
+        "description": "Notice on the credential list when some credentials were skipped after an encryption error"
+    },
+    "vault_recovery_destination_section": {
+        "message": "Назначение",
+        "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
+    },
+    "vault_recovery_destination_new_vault_label": {
+        "message": "Создать новое хранилище (рекомендуется)",
+        "description": "Radio option label: copy recovered credentials into a freshly created vault"
+    },
+    "vault_recovery_destination_new_vault_hint": {
+        "message": "Копирует восстановимые и неповреждённые записи как новые собственные записи в новое хранилище. Исходное хранилище остаётся без изменений.",
+        "description": "Radio option hint: copy recovered credentials into a freshly created vault"
+    },
+    "vault_recovery_destination_json_label": {
+        "message": "Скачать экспорт Passman JSON",
+        "description": "Radio option label: export recovered credentials as a Passman JSON file"
+    },
+    "vault_recovery_destination_json_hint": {
+        "message": "Формирует классический экспорт Passman JSON из восстановимых и неповреждённых записей для скачивания. Ничего не загружается на сервер, исходное хранилище остаётся без изменений.",
+        "description": "Radio option hint: export recovered credentials as a Passman JSON file"
+    },
+    "vault_recovery_destination_in_place_label": {
+        "message": "Восстановить на месте",
+        "description": "Radio option label: rewrite the selected credentials on the original vault"
+    },
+    "vault_recovery_destination_in_place_hint": {
+        "message": "Повторно шифрует и перезаписывает выбранные записи непосредственно в исходном хранилище. Это изменяет существующие данные, и отменить действие нельзя.",
+        "description": "Radio option hint: rewrite the selected credentials on the original vault"
+    },
+    "vault_recovery_in_place_nothing_to_repair": {
+        "message": "Ни одну из просканированных записей нельзя восстановить на месте. Выберите другое назначение для копирования или экспорта либо повторите сканирование с другими паролями.",
+        "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
+    },
+    "vault_recovery_new_vault_name_label": {
+        "message": "Имя нового хранилища",
+        "description": "Label for the name field of the vault created by the new-vault recovery destination"
+    },
+    "vault_recovery_new_vault_name_required": {
+        "message": "Введите имя нового хранилища.",
+        "description": "Validation error when the new vault name is empty"
+    },
+    "vault_recovery_include_healthy_label": {
+        "message": "Также включать уже исправные записи",
+        "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
+    },
+    "vault_recovery_include_healthy_hint": {
+        "message": "Если включено, копируются и записи, которые уже расшифровываются правильно, поэтому результатом станет полная пригодная для использования замена, а не только повреждённая часть.",
+        "description": "Hint below the include-healthy-credentials checkbox"
+    },
+    "vault_recovery_write_warning_new_vault": {
+        "message": "Будет создано новое хранилище на сервере Passman, и в него будут загружены скопированные записи. Это действие нельзя отменить.",
+        "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
+    },
+    "vault_recovery_write_warning_json": {
+        "message": "Будет только создан файл для скачивания в браузере. Ничего не загружается на сервер, а исходное хранилище не изменяется.",
+        "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
+    },
+    "vault_recovery_create_vault_button": {
+        "message": "Создать новое хранилище",
+        "description": "Button to create a new vault and copy the selected credentials into it"
+    },
+    "vault_recovery_download_json_button": {
+        "message": "Скачать экспорт JSON",
+        "description": "Button to build and download a Passman JSON export of the selected credentials"
+    },
+    "vault_recovery_repair_confirm_new_vault": {
+        "message": "На сервере Passman будет создано новое хранилище с именем «$NAME$», и в него будут загружены скопированные записи. Продолжить?",
+        "description": "Confirmation dialog before a non-dry-run new-vault copy"
+    },
+    "vault_recovery_created_vault_success": {
+        "message": "Создано новое хранилище «$NAME$». Его можно выбрать как хранилище по умолчанию в параметрах расширения.",
+        "description": "Shown after a successful new-vault copy in the vault recovery tool"
+    },
+    "vault_recovery_json_downloaded_hint": {
+        "message": "Экспорт Passman в формате JSON скачан.",
+        "description": "Shown after a successful Passman JSON export download in the vault recovery tool"
+    },
+    "vault_recovery_shared_with_us_hint": {
+        "message": "При выборе эта запись копируется в место назначения как новая собственная. Исходный общий доступ не затрагивается.",
+        "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
+    },
+    "vault_recovery_file_status_ok": {
+        "message": "ОК",
+        "description": "Vault recovery file blob status: already on the preferred key"
+    },
+    "vault_recovery_file_status_needs_rewrap": {
+        "message": "Требуется повторное шифрование",
+        "description": "Vault recovery file blob status: decrypts with a non-preferred key"
+    },
+    "vault_recovery_file_status_broken": {
+        "message": "Повреждено",
+        "description": "Vault recovery file blob status: no candidate key decrypts this file"
+    },
+    "vault_recovery_skip_deleted": {
+        "message": "Пропускать удалённые записи",
+        "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
+    },
+    "vault_recovery_config_changed_hint": {
+        "message": "Пароли или параметры хранилища изменились после этого сканирования. Перед восстановлением или копированием нажмите «Сканировать хранилище» ещё раз.",
+        "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
+    },
+    "vault_recovery_apply_disabled_hint": {
+        "message": "Перед восстановлением или копированием просканируйте хранилище с текущими паролями.",
+        "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
+    },
+    "vault_recovery_dry_run_item_failed": {
+        "message": "Не удалось выполнить пробную проверку: $ERROR$",
+        "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
+    },
+    "vault_recovery_scan_results_collapsed_hint": {
+        "message": "Результаты сканирования скрыты для экономии места. Просканируйте хранилище снова, чтобы увидеть их, или покажите их вручную.",
+        "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
+    },
+    "vault_recovery_show_scan_results": {
+        "message": "Показать результаты сканирования",
+        "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
+    },
+    "vault_recovery_hide_scan_results": {
+        "message": "Скрыть",
+        "description": "Button to manually collapse the scan results card in the vault recovery tool"
+    },
+    "vault_recovery_working_on_vault": {
+        "message": "Работа с хранилищем: $NAME$",
+        "description": "Shown at the top of the vault recovery tool to indicate which vault is being scanned/repaired"
+    },
+    "vault_recovery_progress_working": {
+        "message": "Операция выполняется…",
+        "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
+    },
+    "vault_recovery_stage_loading": {
+        "message": "Загрузка хранилища с сервера",
+        "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
+    },
+    "vault_recovery_stage_credentials": {
+        "message": "Сканирование записей",
+        "description": "Vault recovery progress stage: scanning credential ciphertext"
+    },
+    "vault_recovery_stage_files": {
+        "message": "Проверка файлов",
+        "description": "Vault recovery progress stage: probing file blobs"
+    },
+    "vault_recovery_stage_repair": {
+        "message": "Восстановление",
+        "description": "Vault recovery progress stage: applying in-place repairs"
+    },
+    "vault_recovery_stage_materialize": {
+        "message": "Подготовка записей",
+        "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
+    },
+    "vault_recovery_stage_write": {
+        "message": "Запись данных",
+        "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {
         "message": "Passman",
