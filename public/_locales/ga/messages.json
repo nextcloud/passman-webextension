@@ -1584,31 +1584,31 @@
         "description": "Log level option: error"
     },
     "vault_recovery": {
-        "message": "Vault recovery",
+        "message": "Aisghabháil stórtais",
         "description": "Title of the vault recovery tool"
     },
     "vault_recovery_description": {
-        "message": "Diagnose and repair credentials left on the wrong vault key after an interrupted vault password change, or with a shared-credential key mismatch. This tool never uploads anything until you explicitly start a repair.",
+        "message": "Déan dintiúir atá fágtha ar an eochair cruinneacháin mhícheart a dhiagnóisiú agus a dheisiú tar éis athrú pasfhocail cruinneacháin a cuireadh isteach, nó le mí-oiriúnú eochair dintiúir chomhroinnte. Ní uaslódálann an uirlis seo aon rud go dtí go dtosaíonn tú ar dheisiú go sainráite.",
         "description": "Explanation shown at the top of the vault recovery tool"
     },
     "vault_recovery_keys_section": {
-        "message": "Vault keys",
+        "message": "Eochracha stórtha",
         "description": "Section title for entering candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_preferred_password_label": {
-        "message": "Preferred (current) vault password",
+        "message": "Pasfhocal an chisteáin (reatha) is fearr leat",
         "description": "Label for the preferred/target vault password field in the vault recovery tool"
     },
     "vault_recovery_preferred_password_hint": {
-        "message": "All repaired credentials will be re-encrypted with this password. Prefilled with your current default vault password.",
+        "message": "Déanfar gach dintiúr a deisíodh a athchriptiú leis an bhfocal faire seo. Tá sé réamhlíonta le do ghnáthfhocal faire reatha don stór.",
         "description": "Hint below the preferred vault password field in the vault recovery tool"
     },
     "vault_recovery_alternate_passwords_label": {
-        "message": "Alternate / old vault passwords",
+        "message": "Pasfhocail mhalartacha / sheanphasfhocail don chiste",
         "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_add_alternate_password": {
-        "message": "Add password",
+        "message": "Cuir pasfhocal leis",
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
@@ -1616,71 +1616,71 @@
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
-        "message": "Scan vault",
+        "message": "Scanadh an stórais",
         "description": "Button to start a read-only vault recovery scan"
     },
     "vault_recovery_preferred_password_required": {
-        "message": "Enter the preferred vault password before scanning.",
+        "message": "Cuir isteach an focal faire is fearr leat don chisteán sula ndéanann tú scanadh.",
         "description": "Validation error when scanning without a preferred vault password"
     },
     "vault_recovery_scan_failed": {
-        "message": "Scanning the vault failed. Please try again.",
+        "message": "Theip ar scanadh an stórais. Bain triail as arís, le do thoil.",
         "description": "Error toast when the vault recovery scan fails"
     },
     "vault_recovery_scan_results_section": {
-        "message": "Scan results",
+        "message": "Torthaí scanadh",
         "description": "Section title for the vault recovery scan results"
     },
     "vault_recovery_scan_summary": {
-        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ can be repaired, $BROKEN_COUNT$ broken, $SKIPPED_COUNT$ skipped.",
+        "message": "$OK_COUNT$ ceart, $ACTIONABLE_COUNT$ is féidir a dheisiú, $BROKEN_COUNT$ briste, $SKIPPED_COUNT$ fágtha ar lár.",
         "description": "Summary counts of a vault recovery scan report"
     },
     "vault_recovery_broken_hint": {
-        "message": "Broken credentials could not be decrypted with any provided password and are not repaired by this tool. They may need manual recovery from a revision, or help from the Passman server administrator.",
+        "message": "Níorbh fhéidir dintiúir briste a dhíchriptiú le haon phasfhocal a cuireadh ar fáil agus ní dheisíonn an uirlis seo iad. B’fhéidir go mbeidh gá le hathshlánú de láimh ó athbhreithniú, nó cabhair ó riarthóir freastalaí Passman.",
         "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
     },
     "vault_recovery_broken_fields": {
-        "message": "Undecryptable fields: $FIELDS$",
+        "message": "Réimsí nach féidir a dhíchriptiú: $FIELDS$",
         "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
     },
     "vault_recovery_preview_title": {
-        "message": "Recovered details",
+        "message": "Sonraí aisghafa",
         "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
     },
     "vault_recovery_preview_empty": {
-        "message": "No decrypted fields available for preview.",
+        "message": "Níl réimsí díchriptithe ar fáil le haghaidh réamhamhairc.",
         "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
     },
     "vault_recovery_readonly_notice": {
-        "message": "Read-only preview. File contents are not downloaded.",
+        "message": "Réamhamharc léamh-amháin. Ní dhéantar ábhar an chomhaid a íoslódáil.",
         "description": "Notice above the recovered credential field preview in the vault recovery tool"
     },
     "vault_recovery_ok_detail": {
-        "message": "This credential already decrypts with the preferred password, so there is no recovery preview.",
+        "message": "Díghriptítear an dintiúr seo cheana féin leis an bhfocal faire is rogha leat, mar sin níl réamhamharc aisghabhála ann.",
         "description": "Shown when expanding a healthy credential in the vault recovery scan results"
     },
     "vault_recovery_file_hits_title": {
-        "message": "Attachments",
+        "message": "Ceangaltáin",
         "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
     },
     "vault_recovery_original_json_title": {
-        "message": "Original credential JSON",
+        "message": "JSON dintiúir bunaidh",
         "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
     },
     "vault_recovery_show_original_json": {
-        "message": "Show original JSON",
+        "message": "Taispeáin an JSON bunaidh",
         "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
     },
     "vault_recovery_copy_json": {
-        "message": "Copy JSON",
+        "message": "Cóipeáil JSON",
         "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
     },
     "vault_recovery_select_all": {
-        "message": "Select all repairable credentials",
+        "message": "Roghnaigh gach dintiúúr is féidir a dheisiú",
         "description": "Checkbox label to select all actionable hits in the vault recovery tool"
     },
     "vault_recovery_selected_count": {
-        "message": "$SELECTED$ of $TOTAL$ selected",
+        "message": "$SELECTED$ as $TOTAL$ roghnaithe",
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
@@ -1688,123 +1688,123 @@
         "description": "Vault recovery credential status: already encrypted with the preferred key"
     },
     "vault_recovery_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Teastaíonn athchriptiú",
         "description": "Vault recovery credential status: decrypts with a non-preferred candidate key"
     },
     "vault_recovery_status_shared_key_mismatch": {
-        "message": "Shared-key mismatch",
+        "message": "Mí-mheaitseáil eochrach comhroinnte",
         "description": "Vault recovery credential status: shared_key is set but the payload decrypts with a vault key instead"
     },
     "vault_recovery_status_partially_broken": {
-        "message": "Partially broken",
+        "message": "Briste go páirteach",
         "description": "Vault recovery credential status: some fields decrypt with a candidate, others decrypt with none"
     },
     "vault_recovery_status_broken": {
-        "message": "Broken",
+        "message": "Briste",
         "description": "Vault recovery credential status: no candidate key decrypts the credential"
     },
     "vault_recovery_status_skipped": {
-        "message": "Skipped",
+        "message": "Scipeáilte",
         "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
     },
     "vault_recovery_kind_owned": {
-        "message": "Owned",
+        "message": "Faighte",
         "description": "Vault recovery credential kind: owned by the current user"
     },
     "vault_recovery_kind_shared_by_us": {
-        "message": "Shared by you",
+        "message": "Roinnte agat",
         "description": "Vault recovery credential kind: shared by the current user with others"
     },
     "vault_recovery_kind_shared_with_us": {
-        "message": "Shared with you",
+        "message": "Roinnte leat",
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
-        "message": "Re-encrypt with the preferred password",
+        "message": "Ath-chriptigh leis an bhfocal faire is fearr leat",
         "description": "Vault recovery repair strategy: rewrap_owned"
     },
     "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
-        "message": "Re-encrypt the shared key with the preferred password",
+        "message": "Ath-chriptigh an eochair roinnte leis an bhfocal faire is rogha leat",
         "description": "Vault recovery repair strategy: rewrap_shared_by_us_wrapper"
     },
     "vault_recovery_strategy_fix_shared_key_mismatch": {
-        "message": "Restore the shared-key encryption model",
+        "message": "Athchóirigh an tsamhail chriptithe le heochair chomhroinnte",
         "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
     },
     "vault_recovery_strategy_clear_undecryptable_shared_key": {
-        "message": "Remove the unreadable shared key and re-encrypt with the preferred password",
+        "message": "Bain an eochair roinnte atá doléite agus déan í a athchriptiú leis an bhfocal faire is rogha leat",
         "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
     },
     "vault_recovery_strategy_rewrap_acl_shared_with_us": {
-        "message": "Re-encrypt your access key with the preferred password",
+        "message": "Ath-chriptigh d’eochair rochtana leis an bhfocal faire is rogha leat",
         "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
     },
     "vault_recovery_write_warning": {
-        "message": "Repairing writes the re-encrypted credentials to your Passman server. This cannot be undone.",
+        "message": "Scríobhann an deisiú na dintiúirí athchriptithe chuig do fhreastalaí Passman. Ní féidir é seo a chealú.",
         "description": "Pinned safety warning shown before repairing in the vault recovery tool"
     },
     "vault_recovery_dry_run_label": {
-        "message": "Dry run (preview only, nothing is uploaded)",
+        "message": "Triail reatha (réamhamharc amháin, níl aon rud uaslódáilte)",
         "description": "Checkbox label to run the vault recovery repair without uploading changes"
     },
     "vault_recovery_dry_run_hint": {
-        "message": "Use this to check that all selected passwords decrypt correctly before writing any changes to the server.",
+        "message": "Úsáid é seo chun a chinntiú go ndí-chriptítear na pasfhocail roghnaithe go léir i gceart, sula scríobhtar aon athruithe chuig an bhfreastalaí.",
         "description": "Hint below the vault recovery dry run checkbox"
     },
     "vault_recovery_repair_button": {
-        "message": "Repair selected",
+        "message": "Deisigh an rud roghnaithe",
         "description": "Button to start repairing the selected credentials in the vault recovery tool"
     },
     "vault_recovery_repair_confirm": {
-        "message": "This will re-encrypt and upload the selected credentials to your Passman server. Continue?",
+        "message": "Déanfaidh sé seo na dintiúir roghnaithe a ath-chriptiú agus a uaslódáil chuig do fhreastalaí Passman. Ar mhaith leat leanúint ar aghaidh?",
         "description": "Confirmation dialog before a non-dry-run vault recovery repair"
     },
     "vault_recovery_repair_failed": {
-        "message": "Repairing the vault failed. Please try again.",
+        "message": "Theip ar dheisiú an chisteáin. Bain triail as arís, le do thoil.",
         "description": "Error toast when the vault recovery repair request fails"
     },
     "vault_recovery_repair_succeeded": {
-        "message": "All selected credentials were repaired successfully.",
+        "message": "Deisíodh na dintiúir roghnaithe go léir go rathúil.",
         "description": "Success toast after a vault recovery repair with no failures"
     },
     "vault_recovery_repair_partial": {
-        "message": "Some credentials could not be repaired. See the details below.",
+        "message": "Níorbh fhéidir roinnt dintiúirí a dheisiú. Féach na sonraí thíos.",
         "description": "Warning toast after a vault recovery repair with partial success"
     },
     "vault_recovery_repair_item_success": {
-        "message": "Repaired successfully",
+        "message": "Deisithe go rathúil",
         "description": "Per-credential success note in the vault recovery repair results"
     },
     "vault_recovery_repair_item_failed": {
-        "message": "Repair failed: $ERROR$",
+        "message": "Theip ar an deisiú: $ERROR$",
         "description": "Per-credential error note in the vault recovery repair results"
     },
     "vault_recovery_done_section": {
-        "message": "Repair summary",
+        "message": "Achoimre ar dheisiúcháin",
         "description": "Section title for the vault recovery repair summary"
     },
     "vault_recovery_repair_summary": {
-        "message": "$SUCCEEDED$ repaired, $FAILED$ failed.",
+        "message": "$SUCCEEDED$ deisithe, $FAILED$ teiptithe.",
         "description": "Summary counts after a vault recovery repair"
     },
     "vault_recovery_preferred_password_updated": {
-        "message": "Your default vault password was updated to the preferred password.",
+        "message": "Nuashonraíodh pasfhocal réamhshocraithe do stórtais go dtí an pasfhocal is fearr leat.",
         "description": "Shown after the stored default vault password was migrated to the preferred candidate"
     },
     "vault_recovery_back_home": {
-        "message": "Back to overview",
+        "message": "Ar ais chuig an forbhreathnú",
         "description": "Link back to the credential list from the vault recovery tool"
     },
     "vault_recovery_open_tool": {
-        "message": "Open vault recovery",
+        "message": "Athshlánú stórtha oscailte",
         "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
     },
     "vault_recovery_entry_hint": {
-        "message": "If a vault password change was interrupted, or some shared credentials use the wrong key, the vault recovery tool can diagnose and repair affected credentials.",
+        "message": "Má cuireadh isteach ar athrú pasfhocail don stór, nó má úsáideann dintiúir chomhroinnte áirithe eochair mhícheart, is féidir leis an uirlis aisghabhála stóir na dintiúir lena mbaineann a dhiagnóisiú agus a dheisiú.",
         "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
     },
     "vault_recovery_skipped_encryption_hint": {
-        "message": "$COUNT$ credentials with decryption errors have been detected and were left out of this list. Vault recovery can diagnose the vault.",
+        "message": "Aimsíodh $COUNT$ dintiúr a bhfuil earráidí díchriptithe ag baint leo, agus fágadh ar lár ón liosta seo iad. Is féidir leis an ngné aisghabhála stórtha diagnóis a dhéanamh ar an stór.",
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
@@ -1812,79 +1812,79 @@
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
-        "message": "Create a new vault (recommended)",
+        "message": "Cruthaigh stór nua (molta)",
         "description": "Radio option label: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_new_vault_hint": {
-        "message": "Copies the recoverable and healthy credentials as new, owned credentials into a brand new vault. The original vault is left untouched.",
+        "message": "Déanann sé cóipeanna de na dintiúir shláintiúla atá in-aisghabhála, á gcur isteach i stór úrnua mar dhintiúir nua atá faoi úinéireacht. Fágtar an stór bunaidh gan teagmháil.",
         "description": "Radio option hint: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_json_label": {
-        "message": "Download Passman JSON export",
+        "message": "Íoslódáil easpórtáil JSON Passman",
         "description": "Radio option label: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_json_hint": {
-        "message": "Builds a classic Passman JSON export of the recoverable and healthy credentials for download. Nothing is uploaded and the original vault is left untouched.",
+        "message": "Cruthaíonn sé easpórtáil JSON chlasaiceach Passman, ina bhfuil na dintiúir atá slán agus in-aisghafa, chun iad a íoslódáil. Ní uaslódáiltear aon rud, agus fágtar an stór bunaidh gan teagmháil.",
         "description": "Radio option hint: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_in_place_label": {
-        "message": "Repair in-place",
+        "message": "Deisiú i situ",
         "description": "Radio option label: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_destination_in_place_hint": {
-        "message": "Re-encrypts and overwrites the selected credentials directly on the original vault. This mutates your existing data and cannot be undone.",
+        "message": "Ath-chriptíonn sé na dintiúir roghnaithe agus scríobhann sé tharstu go díreach sa stór bunaidh. Athraíonn sé seo do shonraí atá ann cheana, agus ní féidir an gníomh a chealú.",
         "description": "Radio option hint: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_in_place_nothing_to_repair": {
-        "message": "None of the scanned credentials can be repaired in place. Choose another destination to copy or export them, or scan again with different passwords.",
+        "message": "Ní féidir aon cheann de na dintiúir scanta a dheisiú ina n-áit. Roghnaigh ceann scríbe eile chun iad a chóipeáil nó a onnmhairiú, nó déan iad a scanadh arís le pasfhocail éagsúla.",
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
-        "message": "New vault name",
+        "message": "Ainm nua don chiste",
         "description": "Label for the name field of the vault created by the new-vault recovery destination"
     },
     "vault_recovery_new_vault_name_required": {
-        "message": "Enter a name for the new vault.",
+        "message": "Cuir ainm isteach don stór nua.",
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
-        "message": "Also include already-healthy credentials",
+        "message": "Cuir san áireamh freisin cáilíochtaí atá sláintiúil cheana féin",
         "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
     },
     "vault_recovery_include_healthy_hint": {
-        "message": "When enabled, credentials that already decrypt correctly are copied too, so the result is a complete, usable replacement rather than only the broken subset.",
+        "message": "Nuair a bhíonn sé cumasaithe, déantar cóipeáil freisin ar dhintiúir a dhíchriptítear i gceart cheana féin; mar sin, is ionadú iomlán inúsáidte a fhaightear, seachas an fo-shraith lochtach amháin.",
         "description": "Hint below the include-healthy-credentials checkbox"
     },
     "vault_recovery_write_warning_new_vault": {
-        "message": "This creates a new vault on your Passman server and uploads the copied credentials to it. This cannot be undone.",
+        "message": "Cruthaíonn sé seo stór nua ar do fhreastalaí Passman agus uaslódálann sé na dintiúir chóipeáilte chuige. Ní féidir an gníomh seo a chealú.",
         "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
     },
     "vault_recovery_write_warning_json": {
-        "message": "This only builds a file for download in your browser. Nothing is uploaded and the original vault is not changed.",
+        "message": "Ní dhéantar leis seo ach comhad a chruthú le híoslódáil i do bhrabhsálaí. Ní uaslódáiltear aon rud, agus ní dhéantar aon athrú ar an stór bunaidh.",
         "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
     },
     "vault_recovery_create_vault_button": {
-        "message": "Create new vault",
+        "message": "Cruthaigh stór nua",
         "description": "Button to create a new vault and copy the selected credentials into it"
     },
     "vault_recovery_download_json_button": {
-        "message": "Download JSON export",
+        "message": "Íoslódáil an t-easpórtáil JSON",
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
-        "message": "This will create a new vault named \"$NAME$\" on your Passman server and upload the copied credentials to it. Continue?",
+        "message": "Cruthóidh sé seo stór nua dar ainm \"$NAME$\" ar do fhreastalaí Passman agus uaslódálfaidh sé na dintiúir chóipeáilte chuige. Ar mhaith leat leanúint ar aghaidh?",
         "description": "Confirmation dialog before a non-dry-run new-vault copy"
     },
     "vault_recovery_created_vault_success": {
-        "message": "Created new vault \"$NAME$\". You can select it as your default vault from the extension settings.",
+        "message": "Cruthaíodh stór nua \"$NAME$\". Is féidir leat é a roghnú mar do stór réamhshocraithe i socruithe na síneachta.",
         "description": "Shown after a successful new-vault copy in the vault recovery tool"
     },
     "vault_recovery_json_downloaded_hint": {
-        "message": "The Passman JSON export was downloaded.",
+        "message": "Íoslódáladh an t-easpórtáil JSON ó Passman.",
         "description": "Shown after a successful Passman JSON export download in the vault recovery tool"
     },
     "vault_recovery_shared_with_us_hint": {
-        "message": "Selecting this copies it as a new, owned credential into the destination. The original share is left untouched.",
+        "message": "Má roghnaítear é seo, déantar cóip de mar dhintiúir nua, faoi úinéireacht, sa cheann scríbe. Fanann an scair bhunaidh gan athrú.",
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
@@ -1892,35 +1892,35 @@
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Teastaíonn athchriptiú",
         "description": "Vault recovery file blob status: decrypts with a non-preferred key"
     },
     "vault_recovery_file_status_broken": {
-        "message": "Broken",
+        "message": "Briste",
         "description": "Vault recovery file blob status: no candidate key decrypts this file"
     },
     "vault_recovery_skip_deleted": {
-        "message": "Skip deleted credentials",
+        "message": "Scipeáil dintiúir scriosta",
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "The vault passwords or options changed since this scan. Press 'Scan vault' again before repairing or copying anything.",
+        "message": "Tá pasfhocail nó roghanna an stórais athraithe ón scanadh seo. Brúigh 'Scan an stóras' arís sula ndéanann tú aon rud a dheisiú nó a chóipeáil.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
-        "message": "Scan the vault with the current passwords before repairing or copying anything.",
+        "message": "Déan scanadh ar an stór leis na pasfhocail reatha sula ndéanann tú aon rud a dheisiú nó a chóipeáil.",
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
-        "message": "Dry-run check failed: $ERROR$",
+        "message": "Theip ar an seiceáil réamhthástála: $ERROR$",
         "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
     },
     "vault_recovery_scan_results_collapsed_hint": {
-        "message": "Scan results are hidden to save space. Scan the vault again to see them, or show them manually.",
+        "message": "Tá torthaí an scanta i bhfolach chun spás a shábháil. Déan an stór a scanadh arís chun iad a fheiceáil, nó taispeáin iad de láimh.",
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
-        "message": "Show scan results",
+        "message": "Taispeáin torthaí scanadh",
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
@@ -1928,35 +1928,35 @@
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {
-        "message": "Working on vault: $NAME$",
+        "message": "Ag obair ar an gciste: $NAME$",
         "description": "Shown at the top of the vault recovery tool to indicate which vault is being scanned/repaired"
     },
     "vault_recovery_progress_working": {
-        "message": "Working…",
+        "message": "Ag obair…",
         "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
     },
     "vault_recovery_stage_loading": {
-        "message": "Loading vault from the server",
+        "message": "Ag luchtú an stórais ón bhfreastalaí",
         "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
     },
     "vault_recovery_stage_credentials": {
-        "message": "Scanning credentials",
+        "message": "Dintiúir á scanadh",
         "description": "Vault recovery progress stage: scanning credential ciphertext"
     },
     "vault_recovery_stage_files": {
-        "message": "Probing files",
+        "message": "Comhaid á scrúdú",
         "description": "Vault recovery progress stage: probing file blobs"
     },
     "vault_recovery_stage_repair": {
-        "message": "Repairing",
+        "message": "Deisiú",
         "description": "Vault recovery progress stage: applying in-place repairs"
     },
     "vault_recovery_stage_materialize": {
-        "message": "Preparing credentials",
+        "message": "Ag ullmhú dintiúirí",
         "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
     },
     "vault_recovery_stage_write": {
-        "message": "Writing",
+        "message": "Scríobh",
         "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {

@@ -1772,7 +1772,7 @@
         "description": "Warning toast after a vault recovery repair with partial success"
     },
     "vault_recovery_repair_item_success": {
-        "message": "Reparado com sucesso",
+        "message": "Reparada com sucesso",
         "description": "Per-credential success note in the vault recovery repair results"
     },
     "vault_recovery_repair_item_failed": {
@@ -1804,7 +1804,7 @@
         "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
     },
     "vault_recovery_skipped_encryption_hint": {
-        "message": "$COUNT$ credenciais com erros de descriptografia foram detectadas e deixadas de fora desta lista. A recuperação de cofre pode diagnosticar o cofre.",
+        "message": "$COUNT$ credenciais com erros de descriptografia foram detectadas e deixadas de fora desta lista. A recuperação do cofre pode diagnosticar o cofre.",
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
@@ -1832,11 +1832,11 @@
         "description": "Radio option label: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_destination_in_place_hint": {
-        "message": "Criptografa novamente e substitui as credenciais selecionadas diretamente no cofre original. Isso altera os seus dados existentes e não pode ser desfeito.",
+        "message": "Recriptografa e substitui as credenciais selecionadas diretamente no cofre original. Isso altera os seus dados existentes e não pode ser desfeito.",
         "description": "Radio option hint: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_in_place_nothing_to_repair": {
-        "message": "Nenhuma das credenciais escaneadas pode ser reparada no local. Escolha outro destino para copiá-las ou exportá-las, ou escaneie novamente com senhas diferentes.",
+        "message": "Nenhuma das credenciais verificadas pode ser reparada no local. Escolha outro destino para copiá-las ou exportá-las, ou escaneie novamente com senhas diferentes.",
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {

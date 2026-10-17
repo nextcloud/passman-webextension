@@ -1660,27 +1660,27 @@
         "description": "Shown when expanding a healthy credential in the vault recovery scan results"
     },
     "vault_recovery_file_hits_title": {
-        "message": "Attachments",
+        "message": "Anhänge",
         "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
     },
     "vault_recovery_original_json_title": {
-        "message": "Original credential JSON",
+        "message": "Ursprüngliche Anmeldeinformationen JSON",
         "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
     },
     "vault_recovery_show_original_json": {
-        "message": "Show original JSON",
+        "message": "Original-JSON anzeigen",
         "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
     },
     "vault_recovery_copy_json": {
-        "message": "Copy JSON",
+        "message": "JSON kopieren",
         "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
     },
     "vault_recovery_select_all": {
-        "message": "Select all repairable credentials",
+        "message": "Alle reparierbaren Anmeldeinformationen auswählen",
         "description": "Checkbox label to select all actionable hits in the vault recovery tool"
     },
     "vault_recovery_selected_count": {
-        "message": "$SELECTED$ of $TOTAL$ selected",
+        "message": "$SELECTED$ von $TOTAL$ ausgewählt",
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
@@ -1688,23 +1688,23 @@
         "description": "Vault recovery credential status: already encrypted with the preferred key"
     },
     "vault_recovery_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Benötigt eine Neuverschlüsselung",
         "description": "Vault recovery credential status: decrypts with a non-preferred candidate key"
     },
     "vault_recovery_status_shared_key_mismatch": {
-        "message": "Shared-key mismatch",
+        "message": "Nichtübereinstimmung des geteilten Schlüssels",
         "description": "Vault recovery credential status: shared_key is set but the payload decrypts with a vault key instead"
     },
     "vault_recovery_status_partially_broken": {
-        "message": "Partially broken",
+        "message": "Teilweise defekt",
         "description": "Vault recovery credential status: some fields decrypt with a candidate, others decrypt with none"
     },
     "vault_recovery_status_broken": {
-        "message": "Broken",
+        "message": "Defekt",
         "description": "Vault recovery credential status: no candidate key decrypts the credential"
     },
     "vault_recovery_status_skipped": {
-        "message": "Skipped",
+        "message": "Übersprungen",
         "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
     },
     "vault_recovery_kind_owned": {
@@ -1712,7 +1712,7 @@
         "description": "Vault recovery credential kind: owned by the current user"
     },
     "vault_recovery_kind_shared_by_us": {
-        "message": "Shared by you",
+        "message": "Von dir geteilt",
         "description": "Vault recovery credential kind: shared by the current user with others"
     },
     "vault_recovery_kind_shared_with_us": {
@@ -1720,7 +1720,7 @@
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
-        "message": "Re-encrypt with the preferred password",
+        "message": "Bitte mit dem neuen Passwort anmelden",
         "description": "Vault recovery repair strategy: rewrap_owned"
     },
     "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
@@ -1752,7 +1752,7 @@
         "description": "Hint below the vault recovery dry run checkbox"
     },
     "vault_recovery_repair_button": {
-        "message": "Repair selected",
+        "message": "Reparatur ausgewählt",
         "description": "Button to start repairing the selected credentials in the vault recovery tool"
     },
     "vault_recovery_repair_confirm": {
@@ -1772,19 +1772,19 @@
         "description": "Warning toast after a vault recovery repair with partial success"
     },
     "vault_recovery_repair_item_success": {
-        "message": "Repaired successfully",
+        "message": "Erfolgreich repariert",
         "description": "Per-credential success note in the vault recovery repair results"
     },
     "vault_recovery_repair_item_failed": {
-        "message": "Repair failed: $ERROR$",
+        "message": "Reparatur fehlgeschlagen: $ERROR$",
         "description": "Per-credential error note in the vault recovery repair results"
     },
     "vault_recovery_done_section": {
-        "message": "Repair summary",
+        "message": "Reparaturzusammenfassung",
         "description": "Section title for the vault recovery repair summary"
     },
     "vault_recovery_repair_summary": {
-        "message": "$SUCCEEDED$ repaired, $FAILED$ failed.",
+        "message": "$SUCCEEDED$ repariert, $FAILED$ fehlgeschlagen.",
         "description": "Summary counts after a vault recovery repair"
     },
     "vault_recovery_preferred_password_updated": {
@@ -1792,11 +1792,11 @@
         "description": "Shown after the stored default vault password was migrated to the preferred candidate"
     },
     "vault_recovery_back_home": {
-        "message": "Back to overview",
+        "message": "Zurück zur Übersicht",
         "description": "Link back to the credential list from the vault recovery tool"
     },
     "vault_recovery_open_tool": {
-        "message": "Open vault recovery",
+        "message": "Tresorwiederherstellung öffnen",
         "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
     },
     "vault_recovery_entry_hint": {
@@ -1808,7 +1808,7 @@
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
-        "message": "Destination",
+        "message": "Ziel",
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
@@ -1820,7 +1820,7 @@
         "description": "Radio option hint: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_json_label": {
-        "message": "Download Passman JSON export",
+        "message": "Passman JSON-Export herunterladen",
         "description": "Radio option label: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_json_hint": {
@@ -1828,7 +1828,7 @@
         "description": "Radio option hint: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_in_place_label": {
-        "message": "Repair in-place",
+        "message": "Vor Ort reparieren",
         "description": "Radio option label: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_destination_in_place_hint": {
@@ -1840,7 +1840,7 @@
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
-        "message": "New vault name",
+        "message": "Neuer Tresorname",
         "description": "Label for the name field of the vault created by the new-vault recovery destination"
     },
     "vault_recovery_new_vault_name_required": {
@@ -1848,7 +1848,7 @@
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
-        "message": "Also include already-healthy credentials",
+        "message": "Auch bereits gesunde Qualifikationen hinzufügen",
         "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
     },
     "vault_recovery_include_healthy_hint": {
@@ -1864,11 +1864,11 @@
         "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
     },
     "vault_recovery_create_vault_button": {
-        "message": "Create new vault",
+        "message": "Neuen Tresor erstellen",
         "description": "Button to create a new vault and copy the selected credentials into it"
     },
     "vault_recovery_download_json_button": {
-        "message": "Download JSON export",
+        "message": "JSON-Export herunterladen",
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
@@ -1892,15 +1892,15 @@
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
-        "message": "Needs re-encryption",
+        "message": "Benötigt eine Neuverschlüsselung",
         "description": "Vault recovery file blob status: decrypts with a non-preferred key"
     },
     "vault_recovery_file_status_broken": {
-        "message": "Broken",
+        "message": "Defekt",
         "description": "Vault recovery file blob status: no candidate key decrypts this file"
     },
     "vault_recovery_skip_deleted": {
-        "message": "Skip deleted credentials",
+        "message": "Gelöschte Anmeldeinformationen überspringen",
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
@@ -1912,7 +1912,7 @@
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
-        "message": "Dry-run check failed: $ERROR$",
+        "message": "Trockenlaufprüfung ist fehlgeschlagen: $ERROR$",
         "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
     },
     "vault_recovery_scan_results_collapsed_hint": {
@@ -1920,7 +1920,7 @@
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
-        "message": "Show scan results",
+        "message": "Scanergebnisse anzeigen",
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
@@ -1928,35 +1928,35 @@
         "description": "Button to manually collapse the scan results card in the vault recovery tool"
     },
     "vault_recovery_working_on_vault": {
-        "message": "Working on vault: $NAME$",
+        "message": "Arbeiten am Tresor: $NAME$",
         "description": "Shown at the top of the vault recovery tool to indicate which vault is being scanned/repaired"
     },
     "vault_recovery_progress_working": {
-        "message": "Working…",
+        "message": "Arbeiten …",
         "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
     },
     "vault_recovery_stage_loading": {
-        "message": "Loading vault from the server",
+        "message": "Tresor wird vom Server geladen.",
         "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
     },
     "vault_recovery_stage_credentials": {
-        "message": "Scanning credentials",
+        "message": "Scanne Anmeldeinformationen",
         "description": "Vault recovery progress stage: scanning credential ciphertext"
     },
     "vault_recovery_stage_files": {
-        "message": "Probing files",
+        "message": "Überprüfe Dateien",
         "description": "Vault recovery progress stage: probing file blobs"
     },
     "vault_recovery_stage_repair": {
-        "message": "Repairing",
+        "message": "Reparieren",
         "description": "Vault recovery progress stage: applying in-place repairs"
     },
     "vault_recovery_stage_materialize": {
-        "message": "Preparing credentials",
+        "message": "Anmeldeinformationen werden vorbereitet",
         "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
     },
     "vault_recovery_stage_write": {
-        "message": "Writing",
+        "message": "Schreiben",
         "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {
