@@ -1628,15 +1628,15 @@
         "description": "Error toast when the vault recovery scan fails"
     },
     "vault_recovery_scan_results_section": {
-        "message": "Ergebnisse scannen",
+        "message": "Scanergebnisse",
         "description": "Section title for the vault recovery scan results"
     },
     "vault_recovery_scan_summary": {
-        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ can be repaired, $BROKEN_COUNT$ broken, $SKIPPED_COUNT$ skipped.",
+        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ können repariert werden, $BROKEN_COUNT$ defekt, $SKIPPED_COUNT$ übersprungen.",
         "description": "Summary counts of a vault recovery scan report"
     },
     "vault_recovery_broken_hint": {
-        "message": "Broken credentials could not be decrypted with any provided password and are not repaired by this tool. They may need manual recovery from a revision, or help from the Passman server administrator.",
+        "message": "Defekte Anmeldeinformationen konnten mit keinem der angegebenen Passwörter entschlüsselt werden und werden von diesem Tool nicht repariert. Möglicherweise wird  eine manuelle Wiederherstellung nach einer Überarbeitung oder Hilfe von der Passman-Serveradministration benötigt.",
         "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
     },
     "vault_recovery_broken_fields": {
@@ -1656,7 +1656,7 @@
         "description": "Notice above the recovered credential field preview in the vault recovery tool"
     },
     "vault_recovery_ok_detail": {
-        "message": "This credential already decrypts with the preferred password, so there is no recovery preview.",
+        "message": "Diese Anmeldeinformationen werden bereits mit dem bevorzugten Passwort entschlüsselt, daher gibt es keine Wiederherstellungsvorschau.",
         "description": "Shown when expanding a healthy credential in the vault recovery scan results"
     },
     "vault_recovery_file_hits_title": {
@@ -1664,7 +1664,7 @@
         "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
     },
     "vault_recovery_original_json_title": {
-        "message": "Ursprüngliche Anmeldeinformationen JSON",
+        "message": "Original-Anmeldeinformation JSON",
         "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
     },
     "vault_recovery_show_original_json": {
@@ -1708,7 +1708,7 @@
         "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
     },
     "vault_recovery_kind_owned": {
-        "message": "Owned",
+        "message": "Besessen",
         "description": "Vault recovery credential kind: owned by the current user"
     },
     "vault_recovery_kind_shared_by_us": {
@@ -1720,27 +1720,27 @@
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
-        "message": "Re-encrypt with the preferred password",
+        "message": "Mit dem bevorzugten Passwort erneut verschlüsseln",
         "description": "Vault recovery repair strategy: rewrap_owned"
     },
     "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
-        "message": "Re-encrypt the shared key with the preferred password",
+        "message": "Den freigegebenen Schlüssel erneut mit dem bevorzugten Passwort verschlüsseln",
         "description": "Vault recovery repair strategy: rewrap_shared_by_us_wrapper"
     },
     "vault_recovery_strategy_fix_shared_key_mismatch": {
-        "message": "Restore the shared-key encryption model",
+        "message": "Das Shared-Key-Verschlüsselungsmodell wiederherstellen",
         "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
     },
     "vault_recovery_strategy_clear_undecryptable_shared_key": {
-        "message": "Remove the unreadable shared key and re-encrypt with the preferred password",
+        "message": "Den unlesbaren gemeinsamen Schlüssel entfernen und ihn erneut mit dem bevorzugten Passwort verschlüsseln",
         "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
     },
     "vault_recovery_strategy_rewrap_acl_shared_with_us": {
-        "message": "Re-encrypt your access key with the preferred password",
+        "message": "Den Zugangsschlüssel erneut mit dem bevorzugten Passwort verschlüsseln",
         "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
     },
     "vault_recovery_write_warning": {
-        "message": "Repairing writes the re-encrypted credentials to your Passman server. This cannot be undone.",
+        "message": "Die Reparatur schreibt die neu verschlüsselten Anmeldeinformationen auf den Passman-Server. Dies kann nicht rückgängig gemacht werden.",
         "description": "Pinned safety warning shown before repairing in the vault recovery tool"
     },
     "vault_recovery_dry_run_label": {
@@ -1748,7 +1748,7 @@
         "description": "Checkbox label to run the vault recovery repair without uploading changes"
     },
     "vault_recovery_dry_run_hint": {
-        "message": "Use this to check that all selected passwords decrypt correctly before writing any changes to the server.",
+        "message": "Hiermit überprüfen, ob alle ausgewählten Passwörter korrekt entschlüsselt sind, bevor Änderungen auf den Server geschrieben werden.",
         "description": "Hint below the vault recovery dry run checkbox"
     },
     "vault_recovery_repair_button": {
@@ -1756,7 +1756,7 @@
         "description": "Button to start repairing the selected credentials in the vault recovery tool"
     },
     "vault_recovery_repair_confirm": {
-        "message": "This will re-encrypt and upload the selected credentials to your Passman server. Continue?",
+        "message": "Dadurch werden die ausgewählten Anmeldeinformationen erneut verschlüsselt und auf den Passman-Server hochgeladen. Weiter?",
         "description": "Confirmation dialog before a non-dry-run vault recovery repair"
     },
     "vault_recovery_repair_failed": {
@@ -1768,7 +1768,7 @@
         "description": "Success toast after a vault recovery repair with no failures"
     },
     "vault_recovery_repair_partial": {
-        "message": "Some credentials could not be repaired. See the details below.",
+        "message": "Einige Anmeldeinformationen konnten nicht repariert werden. Einzelheiten weiter unten.",
         "description": "Warning toast after a vault recovery repair with partial success"
     },
     "vault_recovery_repair_item_success": {
@@ -1788,7 +1788,7 @@
         "description": "Summary counts after a vault recovery repair"
     },
     "vault_recovery_preferred_password_updated": {
-        "message": "Your default vault password was updated to the preferred password.",
+        "message": "Ihr Standard-Tresor-Passwort wurde auf das bevorzugte Passwort aktualisiert.",
         "description": "Shown after the stored default vault password was migrated to the preferred candidate"
     },
     "vault_recovery_back_home": {
@@ -1800,11 +1800,11 @@
         "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
     },
     "vault_recovery_entry_hint": {
-        "message": "If a vault password change was interrupted, or some shared credentials use the wrong key, the vault recovery tool can diagnose and repair affected credentials.",
+        "message": "Wenn eine Änderung des Tresorkennworts unterbrochen wurde oder einige gemeinsam genutzte Anmeldeinformationen den falschen Schlüssel verwenden, kann das Tresorwiederherstellungstool betroffene Anmeldeinformationen diagnostizieren und reparieren.",
         "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
     },
     "vault_recovery_skipped_encryption_hint": {
-        "message": "$COUNT$ credentials with decryption errors have been detected and were left out of this list. Vault recovery can diagnose the vault.",
+        "message": "$COUNT$ Anmeldeinformationen mit Entschlüsselungsfehlern wurden erkannt und in dieser Liste weggelassen. Mit der Tresorwiederherstellung des kann der Tresor überprüft werden.",
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
@@ -1816,7 +1816,7 @@
         "description": "Radio option label: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_new_vault_hint": {
-        "message": "Copies the recoverable and healthy credentials as new, owned credentials into a brand new vault. The original vault is left untouched.",
+        "message": "Kopiert die wiederherstellbaren und gesunden Anmeldeinformationen als neue, eigene Anmeldeinformationen in einen neuen Tresor. Der ursprüngliche Tresorbleibt unangetastet.",
         "description": "Radio option hint: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_json_label": {
@@ -1824,7 +1824,7 @@
         "description": "Radio option label: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_json_hint": {
-        "message": "Builds a classic Passman JSON export of the recoverable and healthy credentials for download. Nothing is uploaded and the original vault is left untouched.",
+        "message": "Erstellt einen klassischen Passman-JSON-Export der wiederherstellbaren und gesunden Anmeldeinformationen zum Herunterladen. Es wird nichts hochgeladen und der ursprüngliche Tresor bleibt unangetastet.",
         "description": "Radio option hint: export recovered credentials as a Passman JSON file"
     },
     "vault_recovery_destination_in_place_label": {
@@ -1832,11 +1832,11 @@
         "description": "Radio option label: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_destination_in_place_hint": {
-        "message": "Re-encrypts and overwrites the selected credentials directly on the original vault. This mutates your existing data and cannot be undone.",
+        "message": "Verschlüsselt und überschreibt die ausgewählten Anmeldeinformationen direkt im ursprünglichen Tresor. Dadurch werden die vorhandenen Daten verändert und dies kann nicht rückgängig gemacht werden.",
         "description": "Radio option hint: rewrite the selected credentials on the original vault"
     },
     "vault_recovery_in_place_nothing_to_repair": {
-        "message": "None of the scanned credentials can be repaired in place. Choose another destination to copy or export them, or scan again with different passwords.",
+        "message": "Keine der gescannten Anmeldeinformationen kann an Ort und Stelle repariert werden. Ein anderes Ziel auswählen, um sie zu kopieren oder zu exportieren, oder erneut mit anderen Passwörtern scannen.",
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
@@ -1852,15 +1852,15 @@
         "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
     },
     "vault_recovery_include_healthy_hint": {
-        "message": "When enabled, credentials that already decrypt correctly are copied too, so the result is a complete, usable replacement rather than only the broken subset.",
+        "message": "Wenn diese Option aktiviert ist, werden auch Anmeldeinformationen kopiert, die bereits korrekt entschlüsselt wurden. Das Ergebnis ist also ein vollständiger, verwendbarer Ersatz und nicht nur die defekte Teilmenge.",
         "description": "Hint below the include-healthy-credentials checkbox"
     },
     "vault_recovery_write_warning_new_vault": {
-        "message": "This creates a new vault on your Passman server and uploads the copied credentials to it. This cannot be undone.",
+        "message": "Hierdurch wird ein neuer Tresor auf dem Passman-Server erstellt und die kopierten Anmeldeinformationen darauf hochgeladen. Dies kann nicht rückgängig gemacht werden.",
         "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
     },
     "vault_recovery_write_warning_json": {
-        "message": "This only builds a file for download in your browser. Nothing is uploaded and the original vault is not changed.",
+        "message": "Hierdurch wird nur eine Datei zum Download in Ihrem Browser erstellt. Es wird nichts hochgeladen und der ursprüngliche Tresor wird nicht geändert.",
         "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
     },
     "vault_recovery_create_vault_button": {
@@ -1872,11 +1872,11 @@
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
-        "message": "This will create a new vault named \"$NAME$\" on your Passman server and upload the copied credentials to it. Continue?",
+        "message": "Hierdurch wird auf dem Passman-Server ein neuer Tresor mit dem Namen \"$NAME$\" erstellt und die kopierten Anmeldeinformationen darauf hochgeladen. Weiter?",
         "description": "Confirmation dialog before a non-dry-run new-vault copy"
     },
     "vault_recovery_created_vault_success": {
-        "message": "Created new vault \"$NAME$\". You can select it as your default vault from the extension settings.",
+        "message": "Neuer Tresor \"$NAME$\" erstellt. Er kann in den Erweiterungseinstellungen als Standard-Tresor ausgewählt werden.",
         "description": "Shown after a successful new-vault copy in the vault recovery tool"
     },
     "vault_recovery_json_downloaded_hint": {
@@ -1884,7 +1884,7 @@
         "description": "Shown after a successful Passman JSON export download in the vault recovery tool"
     },
     "vault_recovery_shared_with_us_hint": {
-        "message": "Selecting this copies it as a new, owned credential into the destination. The original share is left untouched.",
+        "message": "Durch Auswählen wird dies als neuer, eigener Anmeldenachweis in das Ziel kopiert. Die ursprüngliche Freigabe bleibt dabei unverändert.",
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
@@ -1904,11 +1904,11 @@
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "The vault passwords or options changed since this scan. Press 'Scan vault' again before repairing or copying anything.",
+        "message": "Die Passwörter oder Optionen des Tresors haben sich seit diesem Scan geändert. Erneut einen 'Tresor-Scann' durchführen, bevor Reparaturen vorgenommen werden oder irgendetwas kopiert wird.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
-        "message": "Scan the vault with the current passwords before repairing or copying anything.",
+        "message": "Den Tresor mit den aktuellen Passwörtern scannen, bevor irgendetwas repariert oder kopiert wird.",
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
@@ -1916,7 +1916,7 @@
         "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
     },
     "vault_recovery_scan_results_collapsed_hint": {
-        "message": "Scan results are hidden to save space. Scan the vault again to see them, or show them manually.",
+        "message": "Scan-Ergebnisse sind ausgeblendet, um Platz zu sparen. Den Tresor erneut scannen, um sie anzuzeigen, oder manuell einblenden lassen.",
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
