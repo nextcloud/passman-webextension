@@ -1904,7 +1904,7 @@
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "Die Passwörter oder Optionen des Tresors haben sich seit diesem Scan geändert. Erneut einen 'Tresor-Scann' durchführen, bevor Reparaturen vorgenommen werden oder irgendetwas kopiert wird.",
+        "message": "Die Passwörter oder Optionen des Tresors haben sich seit diesem Scan geändert. Erneut einen 'Tresor-Scan' durchführen, bevor Reparaturen vorgenommen werden oder irgendetwas kopiert wird.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
