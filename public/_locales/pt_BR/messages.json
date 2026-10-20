@@ -1872,11 +1872,11 @@
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
-        "message": "Isso criará um novo cofre chamado \"$NAME$\" no seu servidor Passman e enviará as credenciais copiadas para ele. Deseja continuar?",
+        "message": "Isso criará um novo cofre chamado “$NAME$” no seu servidor Passman e enviará as credenciais copiadas para ele. Deseja continuar?",
         "description": "Confirmation dialog before a non-dry-run new-vault copy"
     },
     "vault_recovery_created_vault_success": {
-        "message": "Novo cofre \"$NAME$\" criado. Você pode selecioná-lo como o seu cofre padrão nas configurações da extensão.",
+        "message": "Novo cofre “$NAME$” criado. Você pode selecioná-lo como o seu cofre padrão nas configurações da extensão.",
         "description": "Shown after a successful new-vault copy in the vault recovery tool"
     },
     "vault_recovery_json_downloaded_hint": {
