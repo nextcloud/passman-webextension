@@ -1640,7 +1640,7 @@
         "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
     },
     "vault_recovery_broken_fields": {
-        "message": "Undecryptable fields: $FIELDS$",
+        "message": "Champs non déchiffrables : $FIELDS$",
         "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
     },
     "vault_recovery_preview_title": {
@@ -1680,7 +1680,7 @@
         "description": "Checkbox label to select all actionable hits in the vault recovery tool"
     },
     "vault_recovery_selected_count": {
-        "message": "$SELECTED$ of $TOTAL$ selected",
+        "message": "$SELECTED$ sélectionnés sur $TOTAL$",
         "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
     },
     "vault_recovery_status_ok": {
@@ -1760,7 +1760,7 @@
         "description": "Confirmation dialog before a non-dry-run vault recovery repair"
     },
     "vault_recovery_repair_failed": {
-        "message": "Repairing the vault failed. Please try again.",
+        "message": "La réparation du coffre-fort a échoué. Veuillez réessayer.",
         "description": "Error toast when the vault recovery repair request fails"
     },
     "vault_recovery_repair_succeeded": {
@@ -1840,11 +1840,11 @@
         "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
     },
     "vault_recovery_new_vault_name_label": {
-        "message": "New vault name",
+        "message": "Nom du nouveau coffre-fort",
         "description": "Label for the name field of the vault created by the new-vault recovery destination"
     },
     "vault_recovery_new_vault_name_required": {
-        "message": "Enter a name for the new vault.",
+        "message": "Saisissez un nom pour le nouveau coffre-fort.",
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
@@ -1864,11 +1864,11 @@
         "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
     },
     "vault_recovery_create_vault_button": {
-        "message": "Create new vault",
+        "message": "Créer un nouveau coffre-fort",
         "description": "Button to create a new vault and copy the selected credentials into it"
     },
     "vault_recovery_download_json_button": {
-        "message": "Download JSON export",
+        "message": "Télécharger l'export JSON",
         "description": "Button to build and download a Passman JSON export of the selected credentials"
     },
     "vault_recovery_repair_confirm_new_vault": {
@@ -1948,7 +1948,7 @@
         "description": "Vault recovery progress stage: probing file blobs"
     },
     "vault_recovery_stage_repair": {
-        "message": "Repairing",
+        "message": "Réparation",
         "description": "Vault recovery progress stage: applying in-place repairs"
     },
     "vault_recovery_stage_materialize": {

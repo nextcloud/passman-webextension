@@ -1904,11 +1904,11 @@
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "As senhas ou opções do cofre mudaram desde este escaneamento. Pressione 'Escanear cofre' novamente antes de reparar ou copiar qualquer coisa.",
+        "message": "As senhas ou opções do cofre mudaram desde esta verificação. Pressione ‘Verificar cofre’ novamente antes de reparar ou copiar qualquer coisa.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
-        "message": "Escaneie o cofre com as senhas atuais antes de reparar ou copiar qualquer coisa.",
+        "message": "Verifique o cofre com as senhas atuais antes de reparar ou copiar qualquer coisa.",
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
@@ -1916,7 +1916,7 @@
         "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
     },
     "vault_recovery_scan_results_collapsed_hint": {
-        "message": "Os resultados do escaneamento estão ocultos para economizar espaço. Escaneie o cofre novamente para vê-los ou mostre-os manualmente.",
+        "message": "Os resultados da verificação estão ocultos para economizar espaço. Verifique o cofre novamente para vê-los ou mostre-os manualmente.",
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
