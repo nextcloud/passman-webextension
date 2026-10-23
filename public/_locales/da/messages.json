@@ -508,7 +508,7 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Udfyld venligst en etiket",
+        "message": "Angiv en etiket",
         "description": "When comparing passwords"
     },
     "invalid_host": {
@@ -1132,7 +1132,7 @@
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
-        "message": "Skift kodeord",
+        "message": "Skift adgangskode",
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {

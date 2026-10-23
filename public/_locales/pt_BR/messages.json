@@ -1920,7 +1920,7 @@
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
-        "message": "Mostrar resultados do escaneamento",
+        "message": "Mostrar resultados da verificação",
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
