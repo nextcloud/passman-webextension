@@ -1584,7 +1584,7 @@
         "description": "Log level option: error"
     },
     "vault_recovery": {
-        "message": "Vault recovery",
+        "message": "Récupération de coffre-fort",
         "description": "Title of the vault recovery tool"
     },
     "vault_recovery_description": {
@@ -1624,11 +1624,11 @@
         "description": "Validation error when scanning without a preferred vault password"
     },
     "vault_recovery_scan_failed": {
-        "message": "Scanning the vault failed. Please try again.",
+        "message": "L'analyse du coffre-fort a échoué. Veuillez réessayer.",
         "description": "Error toast when the vault recovery scan fails"
     },
     "vault_recovery_scan_results_section": {
-        "message": "Scan results",
+        "message": "Résultats de l'analyse",
         "description": "Section title for the vault recovery scan results"
     },
     "vault_recovery_scan_summary": {
@@ -1776,7 +1776,7 @@
         "description": "Per-credential success note in the vault recovery repair results"
     },
     "vault_recovery_repair_item_failed": {
-        "message": "Repair failed: $ERROR$",
+        "message": "Échec de la réparation : $ERROR$",
         "description": "Per-credential error note in the vault recovery repair results"
     },
     "vault_recovery_done_section": {
@@ -1876,7 +1876,7 @@
         "description": "Confirmation dialog before a non-dry-run new-vault copy"
     },
     "vault_recovery_created_vault_success": {
-        "message": "Created new vault \"$NAME$\". You can select it as your default vault from the extension settings.",
+        "message": "Un nouveau coffre-fort « $NAME$ » a été créé. Vous pouvez en faire votre coffre-fort par défaut dans les paramètres de l'application.",
         "description": "Shown after a successful new-vault copy in the vault recovery tool"
     },
     "vault_recovery_json_downloaded_hint": {
