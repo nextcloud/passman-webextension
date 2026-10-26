@@ -28,7 +28,7 @@
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "Gem side",
+        "message": "Gem websted",
         "description": "Save site"
     },
     "generator": {
@@ -36,7 +36,7 @@
         "description": "Password generator menu entry"
     },
     "password_generator": {
-        "message": "Adgangskode generator",
+        "message": "Adgangskodegenerator",
         "description": "Password generator"
     },
     "password_generation_settings": {
@@ -52,11 +52,11 @@
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Toggle synlighed",
+        "message": "Slå synlighed til/fra",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Toggle avancerede indstillinger",
+        "message": "Slå avancerede indstillinger til/fra",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
@@ -68,19 +68,19 @@
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
-        "message": "Adgangskode længde",
+        "message": "Adgangskodens længde",
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minumun antal af tal",
+        "message": "Mindste antal cifre",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Undgå tvetydige karakterer ",
+        "message": "Undgå tvetydige tegn",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Forlang alle tegn typer",
+        "message": "Kræv alle tegntyper",
         "description": "Require every character type"
     },
     "use_uppercase": {
@@ -108,7 +108,7 @@
         "description": "Accounts"
     },
     "label": {
-        "message": "Label",
+        "message": "Etiket",
         "description": "Label"
     },
     "username": {
@@ -144,7 +144,7 @@
         "description": "No expiration date set for the credential password"
     },
     "url": {
-        "message": "Url",
+        "message": "URL",
         "description": "URL"
     },
     "tags": {
@@ -176,7 +176,7 @@
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Fundet ændret URL for",
+        "message": "Ændret URL registreret for",
         "description": "Detected changed URL for"
     },
     "edit_credential": {
@@ -204,7 +204,7 @@
         "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
-        "message": "Genopfrisk timer [s]",
+        "message": "Opdateringsinterval [s]",
         "description": "Password"
     },
     "website_credential_filter_options": {
@@ -248,11 +248,11 @@
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Deaktivér automatisk udfyldning i browser",
+        "message": "Slå browserens automatiske udfyldning fra",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Indtast et domæne eller TLD du vil ignorere, og tryk på  ",
+        "message": "Indtast et domæne eller et TLD, der skal ignoreres, og tryk på ↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
@@ -260,7 +260,7 @@
         "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
-        "message": "Når en adgangskode er fundet, skal du gå til listen i stedet for den sidste aktive fane",
+        "message": "Gå til listen i stedet for den senest aktive fane, når der findes en adgangskode",
         "description": "Disable password picker"
     },
     "hide_adv": {
@@ -272,7 +272,7 @@
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Aktivér fejlretningstilstand",
+        "message": "Aktivér fejlsøgningstilstand",
         "description": "Enable debug mode"
     },
     "save": {
@@ -312,11 +312,11 @@
         "description": "URL ignored"
     },
     "update": {
-        "message": "Opdatér",
+        "message": "Opdater",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignorer side",
+        "message": "Ignorer websted",
         "description": "Update"
     },
     "btn_save_site": {
@@ -332,7 +332,7 @@
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "Server URL",
+        "message": "Server-URL",
         "description": "Server URL"
     },
     "begin": {
@@ -356,19 +356,19 @@
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Indtast master adgangskode",
+        "message": "Indtast master-adgangskode",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Denne adgangskode vil blive brugt til at kryptere alle dine indstillinger i udvidelsen. Du kan vælge at gemme denne adgangskode lokalt, men den vil blive gemt i REN TEKST.",
+        "message": "Denne adgangskode bruges til at kryptere alle dine indstillinger i udvidelsen. Du kan vælge at gemme adgangskoden lokalt, men den bliver gemt i KLARTEKST.",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Husk master adgangskode",
+        "message": "Husk master-adgangskode",
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Advarsel! Din hovedadgangskode vil blive gemt i klartekst.",
+        "message": "Advarsel! Din master-adgangskode vil blive gemt i klartekst.",
         "description": "Remember master password"
     },
     "done": {
@@ -388,7 +388,7 @@
         "description": "Custom field type password"
     },
     "custom_fields_types_file": {
-        "message": "File",
+        "message": "Fil",
         "description": "Custom field type file"
     },
     "custom_fields_header_add": {
@@ -424,7 +424,7 @@
         "description": "List"
     },
     "edit": {
-        "message": "Redigér",
+        "message": "Rediger",
         "description": "Edit"
     },
     "server_settings": {
@@ -436,11 +436,11 @@
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Sæt hovedadgangskode",
+        "message": "Sæt master-adgangskode",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Færdig",
+        "message": "Afslut",
         "description": "Finish"
     },
     "done_donate": {
@@ -472,11 +472,11 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Doner",
+        "message": "Donér",
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Nextcloud / ownCloud server indstillinger",
+        "message": "Indstillinger for Nextcloud-/ownCloud-server",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
@@ -484,7 +484,7 @@
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignorerede steder / URL'er",
+        "message": "Ignorerede websteder/URL'er",
         "description": "Ignored sites"
     },
     "disable_page": {
@@ -492,15 +492,15 @@
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Deaktiver side",
+        "message": "Deaktiver websted",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Ønsker du at deaktivere Passman for den aktuelle side, eller for hele hjemmesiden?",
+        "message": "Vil du deaktivere Passman for den aktuelle side eller for hele webstedet?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Ingen sider ignoreret",
+        "message": "Ingen websteder ignoreret",
         "description": "No sites ignored"
     },
     "vault_password": {
@@ -512,11 +512,11 @@
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Ugyldig server adresse",
+        "message": "Ugyldig server-URL",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignorer side",
+        "message": "Ignorer websted/side",
         "description": "Invalid server URL"
     },
     "no_password_match": {
@@ -524,11 +524,11 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Ugyldig boks nøgle!",
+        "message": "Ugyldig boksnøgle!",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Tom master adgangskode!",
+        "message": "Tom master-adgangskode!",
         "description": "Empty master key!"
     },
     "one_time_password": {
@@ -576,7 +576,7 @@
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "Efter opsætningen er afsluttet, kan du tilføje flere konti.",
+        "message": "Når opsætningen er færdig, kan du tilføje flere konti.",
         "description": "Search"
     },
     "account_added": {
@@ -612,11 +612,11 @@
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Beklager, ingen boks fundet. Opret en boks via Nextcloud / ownCloud-appen og prøv igen.",
+        "message": "Der blev ikke fundet nogen bokse. Opret en boks i Nextcloud-/ownCloud-appen, og prøv igen.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Du kan nulstille din adgangskode. Dette vil nulstille udvidelsen til dens standardtilstand.",
+        "message": "Du kan nulstille din adgangskode. Det nulstiller udvidelsen til standardtilstanden.",
         "description": "Search"
     },
     "forgot_password": {
@@ -640,7 +640,7 @@
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Ugyldige server indstillinger",
+        "message": "Ugyldige serverindstillinger",
         "description": "Search"
     },
     "refresh_credential_list": {
@@ -656,11 +656,11 @@
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Passman udvidelse er låst, lås op for at bruge det",
+        "message": "Passman-udvidelsen er låst. Lås den op for at bruge den",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Ugyldig master adgangskode",
+        "message": "Ugyldig master-adgangskode!",
         "description": "When the master password is invalid"
     },
     "unlock": {
@@ -772,7 +772,7 @@
         "description": "Extended settings"
     },
     "extended_settings_description": {
-        "message": "Indstil globale udvidede indstillinger",
+        "message": "Konfigurer globale udvidede indstillinger",
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
@@ -1172,7 +1172,7 @@
         "description": "Title for the legacy MV2 settings import block on the setup screen"
     },
     "migrate_legacy_hint": {
-        "message": "Indtast hovedadgangskoden fra din tidligere Passman-udvidelse. Den bliver også din nye adgangskode til oplåsning, når du bekræfter importen.",
+        "message": "Indtast master-adgangskoden fra din tidligere Passman-udvidelse. Den bliver også din nye adgangskode til oplåsning, når du bekræfter importen.",
         "description": "Explanation under the legacy master password field on the migrate page"
     },
     "migrate_legacy_setup_teaser": {
@@ -1180,7 +1180,7 @@
         "description": "Teaser on the setup welcome screen linking to /setup/migrate"
     },
     "migrate_legacy_password": {
-        "message": "Tidligere hovedadgangskode",
+        "message": "Tidligere master-adgangskode",
         "description": "Label for the legacy master password field used during import"
     },
     "migrate_legacy_button": {
@@ -1192,7 +1192,7 @@
         "description": "Title on the /setup/migrate review page"
     },
     "migrate_legacy_page_intro_unlock": {
-        "message": "Lås de tidligere indstillinger op med din gamle hovedadgangskode for at se, hvad der bliver importeret.",
+        "message": "Lås de tidligere indstillinger op med din gamle master-adgangskode for at se, hvad der bliver importeret.",
         "description": "Intro on migrate page before decrypt"
     },
     "migrate_legacy_page_intro_review": {
@@ -1240,11 +1240,11 @@
         "description": "Label for a server connection"
     },
     "experimental": {
-        "message": "Eksperimental",
+        "message": "Eksperimentelt",
         "description": "Label for an experimental feature"
     },
     "migrate_legacy_error_password": {
-        "message": "De tidligere indstillinger kunne ikke dekrypteres. Tjek hovedadgangskoden, og prøv igen.",
+        "message": "De tidligere indstillinger kunne ikke dekrypteres. Tjek master-adgangskoden, og prøv igen.",
         "description": "Error when the legacy master password is wrong"
     },
     "migrate_legacy_error_no_accounts": {
@@ -1360,7 +1360,7 @@
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
-        "message": "OTP QR-kode",
+        "message": "QR-kode til OTP",
         "description": "Alt text for the OTP configuration QR code image"
     },
     "context_menu_auto_fill": {
