@@ -1,6 +1,6 @@
 {
     "extDescription": {
-        "message": "Passman - Manager de parole pentru NextCloud / ownCloud",
+        "message": "Passman - Managerul de parole pentru Nextcloud",
         "description": "Extension description"
     },
     "search_for": {
@@ -8,51 +8,63 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Nu sau găsit date de autentificare pentru această pagina.",
+        "message": "Nu au fost găsite date de autentificare pentru acest site.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
         "message": "Nu s-au găsit date de autentificare",
         "description": "No credentials found for the current site"
     },
-    "notes": {
-        "message": "Notițe",
-        "description": "No credentials found for the current site"
+    "description": {
+        "message": "Descriere",
+        "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
-        "message": "Raspuns invalid de la server:[$STATUS_CODE$]$STATUS_TEXT$",
+        "message": "Răspuns nevalid de la server: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Please enter your Nextcloud / ownCloud credentials",
+        "message": "Introdu datele tale de autentificare Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
-        "message": "Salvează pagina.",
+        "message": "Salvează site-ul",
         "description": "Save site"
     },
+    "generator": {
+        "message": "Generator",
+        "description": "Password generator menu entry"
+    },
     "password_generator": {
-        "message": "Generator de parola",
+        "message": "Generator de parole",
         "description": "Password generator"
+    },
+    "password_generation_settings": {
+        "message": "Setări de generare a parolelor",
+        "description": "Settings for the password generator"
+    },
+    "toggle_extended_password_settings": {
+        "message": "Comută setările extinse pentru parole",
+        "description": "Toggle extended password settings"
     },
     "generate_password": {
         "message": "Generează parola",
         "description": "Generate password"
     },
     "toggle_visibility": {
-        "message": "Comuta vizibilitatea",
+        "message": "Comută vizibilitatea",
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Afirare opțiuni avansate",
+        "message": "Comută opțiunile avansate",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Utilizeaza parolă",
+        "message": "Folosește parola",
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Dupa creare poti edita datele de autentificare in Passman",
+        "message": "După creare, poți edita datele de autentificare în Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -60,16 +72,32 @@
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minimum amount of digits",
+        "message": "Număr minim de cifre",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
-        "message": "Evitati caractere ambigue",
+        "message": "Evită caracterele ambigue",
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Necesita toate tipurile de caractere",
+        "message": "Cere fiecare tip de caracter",
         "description": "Require every character type"
+    },
+    "use_uppercase": {
+        "message": "Folosește litere mari",
+        "description": "Use uppercase letters"
+    },
+    "use_lowercase": {
+        "message": "Folosește litere mici",
+        "description": "Use lowercase letters"
+    },
+    "use_digits": {
+        "message": "Folosește cifre",
+        "description": "Use digits"
+    },
+    "use_special_chars": {
+        "message": "Folosește caractere speciale",
+        "description": "Use special characters"
     },
     "add_account": {
         "message": "Adaugă cont",
@@ -84,7 +112,7 @@
         "description": "Label"
     },
     "username": {
-        "message": "Nume utilizator",
+        "message": "Nume de utilizator",
         "description": "Username"
     },
     "email": {
@@ -95,112 +123,156 @@
         "message": "Adaugă",
         "description": "Add"
     },
+    "credential_changed": {
+        "message": "Date de autentificare modificate",
+        "description": "Credential changed"
+    },
     "credential_created": {
-        "message": "Credential created",
+        "message": "Date de autentificare create",
         "description": "Credential created"
+    },
+    "credentials_expires": {
+        "message": "Datele de autentificare expiră",
+        "description": "Credential expires"
+    },
+    "expire_date": {
+        "message": "Data expirării",
+        "description": "Credential password expiration date"
+    },
+    "no_expire_date": {
+        "message": "Data expirării nu este setată",
+        "description": "No expiration date set for the credential password"
     },
     "url": {
         "message": "URL",
         "description": "URL"
+    },
+    "tags": {
+        "message": "Etichete",
+        "description": "Tags"
     },
     "password": {
         "message": "Parolă",
         "description": "Password"
     },
     "password_repeat": {
-        "message": "Password (repeat)",
+        "message": "Parolă (repetare)",
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Autentificare noua detectata",
+        "message": "Autentificare nouă detectată",
         "description": "Detected new login"
     },
     "detected_changed_login": {
-        "message": "Detectare parola schimbata la utilizator",
+        "message": "S-a detectat o parolă modificată pentru utilizatorul",
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ gasit pentru aceasta pagina",
+        "message": "Passman - găsite pentru această pagină: $CREDENTIAL_AMOUNT$ $PLURAL$",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
-        "message": "Passman - Incuiat",
+        "message": "Passman - Blocat",
         "description": "Browser extension title when the extension is locked"
     },
     "detected_changed_url": {
-        "message": "Detected changed URL for",
+        "message": "S-a detectat un URL modificat pentru",
         "description": "Detected changed URL for"
     },
+    "edit_credential": {
+        "message": "Editează datele de autentificare",
+        "description": "Edit credential button label for the edit credential page"
+    },
+    "create_new_credential": {
+        "message": "Creează date de autentificare noi",
+        "description": "Create new credential button label for the new credential page"
+    },
     "credential": {
-        "message": "Detalii de autentificare",
-        "description": "credential"
+        "message": "Date de autentificare",
+        "description": "Credential singular form"
     },
     "credentials": {
-        "message": "Detalii de autentificare",
-        "description": "credentials"
+        "message": "Date de autentificare",
+        "description": "Credentials menu item label"
+    },
+    "compromised_notice": {
+        "message": "Această parolă este compromisă. Poți elimina acest avertisment doar schimbând parola.",
+        "description": "Credential compromised notice"
+    },
+    "mark_compromised": {
+        "message": "Marchează ca fiind compromisă",
+        "description": "Mark credential password as compromised"
     },
     "refresh_timer": {
-        "message": "Reseteaza cronometru [s]",
+        "message": "Interval de reîmprospătare [s]",
         "description": "Password"
+    },
+    "website_credential_filter_options": {
+        "message": "Opțiuni de filtrare a datelor de autentificare pentru site-uri",
+        "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
-        "message": "Ignore protocol for site matching",
-        "description": "Ignore protocol for site matching"
+        "message": "Ignoră protocolul la potrivirea site-urilor",
+        "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
-        "message": "Ignora subdomeniile pentru paginile potrivite",
-        "description": "Password"
+        "message": "Ignoră subdomeniul la potrivirea site-urilor",
+        "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
-        "message": "Ignore port for site matching",
-        "description": "Ignore port for site matching"
+        "message": "Ignoră portul la potrivirea site-urilor",
+        "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
-        "message": "Utilizați HTTP! Credențialele de autentificare se vor transmite în clar. Credențialele Passman sunt în continuare criptate.",
+        "message": "Folosești HTTP! Datele de autentificare pentru conectare vor fi trimise în text simplu. Datele tale de autentificare Passman rămân criptate.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Ignore path for site matching",
-        "description": "Ignore path for site matching"
+        "message": "Ignoră calea la potrivirea site-urilor",
+        "description": "Checkbox label for ignoring the url path when matching credentials to websites"
+    },
+    "ignore_page": {
+        "message": "Ignoră această pagină la sugerarea datelor de autentificare",
+        "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Enable form auto fill",
-        "description": "Disable auto fill of forms"
+        "message": "Activează completarea automată a formularelor (pentru un singur set de date de autentificare potrivit)",
+        "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
-        "message": "Enable form auto submit after picking account",
+        "message": "Activează trimiterea automată a formularului după alegerea contului",
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Ask to update credential URL if it doesn't match the current URL",
+        "message": "Întreabă dacă să se actualizeze URL-ul datelor de autentificare când nu se potrivește cu URL-ul curent",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
-        "message": "Disable browser auto fill",
+        "message": "Dezactivează completarea automată a browserului",
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Enter a domain or TLD to ignore and press ↵",
+        "message": "Introdu un domeniu sau un TLD de ignorat și apasă ↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
-        "message": "Enable password picker",
-        "description": "Disable password picker"
+        "message": "Activează suprapunerea selectorului de parole pentru alegerea parolelor / completarea formularelor",
+        "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
-        "message": "When a password is found, go to list rather than last active tab",
+        "message": "Când se găsește o parolă, deschide lista în loc de ultima filă activă",
         "description": "Disable password picker"
     },
     "hide_adv": {
-        "message": "Hide advanced options",
+        "message": "Ascunde opțiunile avansate",
         "description": "Disable password picker"
     },
     "show_adv": {
-        "message": "Show advanced options",
+        "message": "Afișează opțiunile avansate",
         "description": "Disable password picker"
     },
     "enable_debug": {
-        "message": "Enable debug mode",
+        "message": "Activează modul de depanare",
         "description": "Enable debug mode"
     },
     "save": {
@@ -212,52 +284,64 @@
         "description": "Saving"
     },
     "credential_saved": {
-        "message": "Detalii de autentificare salvate",
+        "message": "Datele de autentificare au fost salvate",
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Detalii de autentificare modificate",
+        "message": "Datele de autentificare au fost actualizate",
         "description": "updated, lowercase"
     },
+    "credential_update_error": {
+        "message": "A apărut o eroare la actualizarea datelor de autentificare",
+        "description": "An error occurred while updating the credential"
+    },
+    "credential_create_error": {
+        "message": "A apărut o eroare la crearea datelor de autentificare",
+        "description": "An error occurred while creating the credential"
+    },
+    "open_options_page": {
+        "message": "Deschide pagina de opțiuni",
+        "description": "Open options page button label for the browser extension options page"
+    },
     "site_ignored": {
-        "message": "Pagina ignorată",
+        "message": "Site ignorat",
         "description": "Site ignored"
     },
     "url_ignored": {
-        "message": "URL ignored",
+        "message": "URL ignorat",
         "description": "URL ignored"
     },
     "update": {
-        "message": "Actualizare",
+        "message": "Actualizează",
         "description": "Update"
     },
     "ignore_site": {
-        "message": "Ignora pagina",
+        "message": "Ignoră site-ul",
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Salvează date de autentificare pentru această pagină",
+        "message": "Salvează datele de autentificare pentru acest site",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Cautare date de autentificare",
+        "message": "Caută date de autentificare",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
-        "message": "Bun venit in extensia Passman",
+        "message": "Bun venit la extensia de browser Passman",
         "description": "Intro at the setup"
     },
     "server_url": {
-        "message": "URL Server",
+        "message": "URL-ul serverului",
         "description": "Server URL"
     },
     "begin": {
-        "message": "Sa incepem!",
-        "description": "Let's begin!"
+        "message": "Să începem!",
+        "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Acest ghid te va indruma prin toti pasii necesari pentru ati pastra parolele sincronizate",
-        "description": "Cancel"
+        "message": "Parolele tale Nextcloud, gata în browser. O configurare scurtă conectează această extensie la seiful tău Passman.",
+        "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
         "message": "Anulează",
@@ -268,15 +352,15 @@
         "description": "Default vault"
     },
     "default_vault_desc": {
-        "message": "Selecteaza seiful pe care doresti sa il pastrezi sincronizat cu borwserul",
+        "message": "Selectează seiful pe care vrei să-l ții sincronizat cu browserul.",
         "description": "Select the vault that you want to keep in sync with the webbrowser."
     },
     "enter_master_password": {
-        "message": "Introduceti parola master",
+        "message": "Introdu parola master",
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Aceasta parola va fi utilizata pentru criptarea tuturor setarilor in aceasta extensie. Poti alege sa salvezi parola local insa aceasta va fi salvata necriptata.",
+        "message": "Această parolă va fi folosită pentru a cripta toate setările din extensie. Poți alege să salvezi această parolă local, dar va fi salvată în TEXT SIMPLU.",
         "description": "Enter master password"
     },
     "remember_master_password": {
@@ -284,23 +368,55 @@
         "description": "Remember master password"
     },
     "master_pw_warning": {
-        "message": "Warning! Your master password will be stored in plaintext.",
+        "message": "Atenție! Parola ta master va fi stocată în text simplu.",
         "description": "Remember master password"
     },
     "done": {
-        "message": "Realizat",
+        "message": "Gata",
         "description": "Done"
     },
     "custom_fields": {
-        "message": "Custom Fields",
+        "message": "Câmpuri personalizate",
         "description": "Custom fields"
+    },
+    "custom_fields_types_text": {
+        "message": "Text",
+        "description": "Custom field type text"
+    },
+    "custom_fields_types_password": {
+        "message": "Parolă",
+        "description": "Custom field type password"
+    },
+    "custom_fields_types_file": {
+        "message": "Fișier",
+        "description": "Custom field type file"
+    },
+    "custom_fields_header_add": {
+        "message": "Adaugă câmp",
+        "description": "Custom field add"
+    },
+    "custom_fields_header_label": {
+        "message": "Eticheta câmpului",
+        "description": "Custom field label"
+    },
+    "custom_fields_header_value": {
+        "message": "Valoarea câmpului",
+        "description": "Custom field value"
+    },
+    "custom_fields_header_type": {
+        "message": "Tipul câmpului",
+        "description": "Custom field type"
+    },
+    "custom_fields_error_no_file_selected": {
+        "message": "Niciun fișier selectat",
+        "description": "Custom field no file selected"
     },
     "general": {
         "message": "General",
-        "description": "Custom fields"
+        "description": "Credential edit general section"
     },
     "value": {
-        "message": "Value",
+        "message": "Valoare",
         "description": "Custom fields"
     },
     "list": {
@@ -312,23 +428,23 @@
         "description": "Edit"
     },
     "server_settings": {
-        "message": "Server settings",
+        "message": "Setările serverului",
         "description": "Server Settings"
     },
     "vault_settings": {
-        "message": "Vault settings",
+        "message": "Setările seifului",
         "description": "Vault settings"
     },
     "master_password": {
-        "message": "Set Master password",
+        "message": "Setează parola master",
         "description": "Set a master password"
     },
     "finish": {
-        "message": "Finalizare",
+        "message": "Finalizează",
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Daca iti place nu uita sa donezi",
+        "message": "Dacă îți place, nu uita să donezi",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -356,35 +472,35 @@
         "description": "Continue"
     },
     "donate": {
-        "message": "Donate",
+        "message": "Donează",
         "description": "Donate"
     },
     "nextcloud_settings": {
-        "message": "Setari  server Nextcloud/ ownCloud",
+        "message": "Setări server Nextcloud / ownCloud",
         "description": "Nextcloud / ownCloud server settings"
     },
     "select_default_vault": {
-        "message": "Selecteaza seiful implicit",
+        "message": "Selectează seiful implicit",
         "description": "Select default vault"
     },
     "ignored_sites": {
-        "message": "Ignored sites / URLs",
+        "message": "Site-uri / URL-uri ignorate",
         "description": "Ignored sites"
     },
     "disable_page": {
-        "message": "Disable page",
+        "message": "Dezactivează pagina",
         "description": "Disable page"
     },
     "disable_site": {
-        "message": "Disable site",
+        "message": "Dezactivează site-ul",
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Would you like to disable Passman for the current page, or for the entire website?",
+        "message": "Vrei să dezactivezi Passman pentru pagina curentă sau pentru întregul site?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
-        "message": "Nu sunt pagini ignorate",
+        "message": "Niciun site ignorat",
         "description": "No sites ignored"
     },
     "vault_password": {
@@ -392,47 +508,83 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Please fill in a label",
+        "message": "Completează o etichetă",
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "URL server invalid",
+        "message": "URL de server nevalid",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
-        "message": "Ignore site / page",
+        "message": "Ignoră site-ul / pagina",
         "description": "Invalid server URL"
     },
     "no_password_match": {
-        "message": "Passwords don't match",
+        "message": "Parolele nu se potrivesc",
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Cheie de seif invalida!",
+        "message": "Cheie de seif nevalidă!",
         "description": "Vault password"
     },
     "empty_master_key": {
-        "message": "Cheie master goala!",
+        "message": "Cheie master goală!",
         "description": "Empty master key!"
     },
     "one_time_password": {
         "message": "OTP",
         "description": "One time password"
     },
+    "otp_configuration_invalid": {
+        "message": "Configurație OTP nevalidă",
+        "description": "Invalid one time password configuration"
+    },
+    "otp_secret": {
+        "message": "Secret OTP",
+        "description": "OTP secret"
+    },
+    "otp_clear_all": {
+        "message": "Șterge configurația OTP",
+        "description": "Clear OTP configuration"
+    },
+    "issuer": {
+        "message": "Emitent",
+        "description": "OTP issuer"
+    },
+    "type": {
+        "message": "Tip",
+        "description": "OTP type"
+    },
+    "digits": {
+        "message": "Cifre",
+        "description": "OTP digits"
+    },
+    "period": {
+        "message": "Perioadă",
+        "description": "OTP period"
+    },
+    "algorithm": {
+        "message": "Algoritm",
+        "description": "OTP algorithm"
+    },
+    "files": {
+        "message": "Fișiere",
+        "description": "Credential files"
+    },
     "settings": {
         "message": "Setări",
         "description": "Settings"
     },
     "extra_accounts": {
-        "message": "After the setup process is complete, you can add more accounts.",
+        "message": "După finalizarea configurării, poți adăuga mai multe conturi.",
         "description": "Search"
     },
     "account_added": {
-        "message": "Account added.",
+        "message": "Contul a fost adăugat.",
         "description": "Search"
     },
     "select_vault": {
-        "message": "Select vault",
+        "message": "Selectează seiful",
         "description": "Search"
     },
     "delete": {
@@ -443,20 +595,28 @@
         "message": "Caută",
         "description": "Search"
     },
+    "type_to_search": {
+        "message": "Tastează pentru a căuta",
+        "description": "Type to search placeholder for the search input"
+    },
     "credential_deleted": {
-        "message": "Credential deleted",
+        "message": "Datele de autentificare au fost șterse",
         "description": "Credential deleted"
     },
+    "mark_credential_deleted": {
+        "message": "Marchează datele de autentificare ca șterse",
+        "description": "Mark credential as deleted button label"
+    },
     "select_password_picker_default_tab": {
-        "message": "When the Password picker is unable to find any credentials, it will go to:",
+        "message": "Când selectorul de parole nu găsește date de autentificare, va deschide:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Sorry,no vaults found. Please create a vault via the Nextcloud / ownCloud app and try again.",
+        "message": "Nu au fost găsite seifuri. Creează un seif din aplicația Nextcloud / ownCloud și încearcă din nou.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "You can reset your password. This will reset the extension to its default state.",
+        "message": "Îți poți reseta parola. Aceasta va readuce extensia la starea implicită.",
         "description": "Search"
     },
     "forgot_password": {
@@ -464,76 +624,1340 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Reset extension",
+        "message": "Resetează extensia",
         "description": "Search"
     },
+    "reset_settings": {
+        "message": "Resetează setările",
+        "description": "Reset settings button label"
+    },
     "iam_sure": {
-        "message": "Yes, I'm sure!",
+        "message": "Da, sunt sigur!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "You don't have the permission to edit this credential.",
+        "message": "Nu ai permisiunea de a edita aceste date de autentificare.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
-        "message": "Invalid server settings",
+        "message": "Setări de server nevalide",
         "description": "Search"
     },
     "refresh_credential_list": {
-        "message": "Refresh credential list",
+        "message": "Reîmprospătează lista de date de autentificare",
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Developent depends on donations, please support us",
+        "message": "Dezvoltarea depinde de donații, te rugăm să ne susții",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Blocare extensie",
+        "message": "Blochează extensia",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Extensia passman este incuiată. Deblochează pentru a utiliza",
+        "message": "Extensia Passman este blocată, deblochează-o pentru a o folosi",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
-        "message": "Parolă master invalidă!",
+        "message": "Parolă master nevalidă!",
         "description": "When the master password is invalid"
     },
     "unlock": {
         "message": "Deblochează",
-        "description": "Unlock"
+        "description": "Unlock button label"
+    },
+    "unlock_without_refresh": {
+        "message": "Deblochează fără reîmprospătare",
+        "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
-        "message": "Am gasit  $AMOUNT$ date de autentifiare pentru aceasta pagina",
+        "message": "Am găsit $AMOUNT$ date de autentificare pentru acest site",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
-        "message": "Save to $VAULT_NAME$",
+        "message": "Salvează în $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "saving_to": {
-        "message": "Saving to $VAULT_NAME$",
+        "message": "Se salvează în $VAULT_NAME$",
         "description": "Amount of the credentials found for the current site"
     },
     "credentials_in_db": {
-        "message": "$AMOUNT$ date de autentificare in baza de date",
+        "message": "$AMOUNT$ date de autentificare în baza de date",
         "description": "Amount of the credentials in the database"
     },
     "auto_login": {
-        "message": "Passman is logging you in as $USERNAME$",
+        "message": "Passman te autentifică ca $USERNAME$",
         "description": "Amount of the credentials in the database"
     },
     "vault": {
-        "message": "Vault",
+        "message": "Seif",
         "description": "Vault"
     },
     "add_custom_field": {
-        "message": "Add a custom field",
+        "message": "Adaugă un câmp personalizat",
         "description": "Add a custom field"
     },
     "text": {
         "message": "text",
         "description": "To describe a textual input field"
+    },
+    "copy_to_clipboard": {
+        "message": "Copiază $FIELDNAME$ în clipboard",
+        "description": "Copy to clipboard"
+    },
+    "files_upload_box_text": {
+        "message": "$START_HTML_TAG$Dă clic pentru a încărca$END_HTML_TAG$ sau trage și plasează",
+        "description": "Text shown in the drag and drop upload box"
+    },
+    "files_any_type_info": {
+        "message": "Orice tip de fișier",
+        "description": "File type info shown in the drag and drop upload box"
+    },
+    "files_upload_succeeded": {
+        "message": "Fișierul a fost încărcat",
+        "description": "Shown when a file has been successfully uploaded"
+    },
+    "files_upload_failed": {
+        "message": "Încărcarea fișierului a eșuat",
+        "description": "Shown when a file upload has failed"
+    },
+    "files_deletion_succeeded": {
+        "message": "Fișierul a fost șters",
+        "description": "Shown when a file has been successfully deleted"
+    },
+    "files_deletion_failed": {
+        "message": "Ștergerea fișierului a eșuat",
+        "description": "Shown when a file deletion has failed"
+    },
+    "files_header_name": {
+        "message": "Nume de fișier",
+        "description": "Column header for file name in files table"
+    },
+    "files_header_created": {
+        "message": "Creat la",
+        "description": "Column header for creation date in files table"
+    },
+    "files_header_size": {
+        "message": "Dimensiune",
+        "description": "Column header for file size in files table"
+    },
+    "error_file_upload_popup": {
+        "message": "Din păcate, încărcarea fișierelor nu este acceptată în fereastra popup.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "error_file_upload_popup_2": {
+        "message": "Folosește pagina de opțiuni a extensiei sau un alt client pentru a adăuga fișiere.",
+        "description": "Error message when trying to upload a file in the popup"
+    },
+    "clear_tab_url_filter": {
+        "message": "Șterge filtrul de URL al filei",
+        "description": "Clear tab url filter button label"
+    },
+    "no_matching_credentials": {
+        "message": "Nu există date de autentificare potrivite",
+        "description": "No matching credentials"
+    },
+    "update_default_settings": {
+        "message": "Actualizează setările implicite",
+        "description": "Update default settings button label"
+    },
+    "save_settings": {
+        "message": "Salvează setările",
+        "description": "Save settings button label"
+    },
+    "extended_settings": {
+        "message": "Setări extinse",
+        "description": "Extended settings"
+    },
+    "extended_settings_description": {
+        "message": "Configurează setările extinse globale",
+        "description": "Extended settings card description"
+    },
+    "nextcloud_server_setup": {
+        "message": "Configurarea serverului Nextcloud",
+        "description": "Nextcloud server setup"
+    },
+    "nextcloud_server_setup_description": {
+        "message": "Configurează serverul Nextcloud și datele de autentificare ale seifului",
+        "description": "Nextcloud server setup card description"
+    },
+    "setup_server_step_title": {
+        "message": "Conectează-ți serverul",
+        "description": "Hero title on the initial Nextcloud server setup step"
+    },
+    "setup_server_step_intro": {
+        "message": "Autentifică-te în Nextcloud, apoi alege seiful Passman pe care acest browser să îl țină sincronizat.",
+        "description": "Supporting sentence on the initial Nextcloud server setup step"
+    },
+    "page_rules": {
+        "message": "Reguli pentru pagini",
+        "description": "Page rules"
+    },
+    "page_rules_description": {
+        "message": "Configurează reguli specifice paginilor pentru a personaliza comportamentul global al extensiei. Momentan funcționează doar pentru domenii, nu și pentru anumite căi. (posibil în viitor)",
+        "description": "Page rules card description"
+    },
+    "page_rules_existing_rules": {
+        "message": "Reguli salvate pentru pagini",
+        "description": "Heading for the list of saved page rules"
+    },
+    "page_rules_no_rules": {
+        "message": "Nu a fost definită încă nicio regulă pentru pagini",
+        "description": "Shown when there are no page rules"
+    },
+    "page_rules_url_label": {
+        "message": "URL pagină",
+        "description": "Label for page rule URL input"
+    },
+    "page_rules_url_placeholder": {
+        "message": "example.com",
+        "description": "Placeholder for page rule URL input"
+    },
+    "page_rules_new_rule": {
+        "message": "Regulă nouă",
+        "description": "Label for creating a new page rule"
+    },
+    "page_rules_save_rule": {
+        "message": "Salvează regula",
+        "description": "Label for saving a new page rule"
+    },
+    "page_rules_update_rule": {
+        "message": "Actualizează regula",
+        "description": "Label for updating an existing page rule"
+    },
+    "page_rules_delete_rule": {
+        "message": "Șterge regula",
+        "description": "Label for deleting a page rule"
+    },
+    "page_rules_rule_saved": {
+        "message": "Regula pentru pagină a fost salvată",
+        "description": "Success notification when saving a page rule"
+    },
+    "page_rules_rule_deleted": {
+        "message": "Regula pentru pagină a fost ștearsă",
+        "description": "Success notification when deleting a page rule"
+    },
+    "page_rules_override_section": {
+        "message": "Suprascrie setările globale",
+        "description": "Heading for page rule override settings"
+    },
+    "page_rules_picker_current_site": {
+        "message": "Site-ul curent",
+        "description": "Label that shows current origin in picker tab"
+    },
+    "page_rules_picker_intro": {
+        "message": "Ajustează comportamentul Passman pe această pagină.",
+        "description": "Intro text for picker page rules tab"
+    },
+    "page_rules_picker_reset": {
+        "message": "Resetează modificările",
+        "description": "Reset button label in picker page rules tab"
+    },
+    "page_rules_picker_loading": {
+        "message": "Se încarcă setările paginii…",
+        "description": "Loading label for picker page rules tab"
+    },
+    "page_rules_picker_retry": {
+        "message": "Reîncearcă",
+        "description": "Retry button label for picker page rules tab"
+    },
+    "page_rules_picker_load_error": {
+        "message": "Regulile pentru pagini nu au putut fi încărcate pentru acest site",
+        "description": "Error shown when picker tab cannot fetch page rules"
+    },
+    "page_rules_picker_save_error": {
+        "message": "Salvarea regulilor pentru pagini a eșuat",
+        "description": "Error shown when picker tab cannot save page rules"
+    },
+    "page_rules_search_label": {
+        "message": "Caută reguli",
+        "description": "Label for the page rules search input"
+    },
+    "page_rules_search_placeholder": {
+        "message": "Filtrează după URL…",
+        "description": "Placeholder for the page rules search input"
+    },
+    "page_rules_no_results": {
+        "message": "Nicio regulă pentru pagini nu se potrivește căutării",
+        "description": "Shown when no rules match the applied filter"
+    },
+    "page_rules_cancel_edit": {
+        "message": "Renunță",
+        "description": "Button label to go back to the page rules list"
+    },
+    "page_rules_use_global": {
+        "message": "Folosește setarea globală",
+        "description": "Select option label for inheriting from global settings"
+    },
+    "page_rules_force_enable": {
+        "message": "Forțează activarea",
+        "description": "Select option label for forcing setting to enabled"
+    },
+    "page_rules_force_disable": {
+        "message": "Forțează dezactivarea",
+        "description": "Select option label for forcing setting to disabled"
+    },
+    "page_rules_selected_rule": {
+        "message": "Se editează acum: $PAGE_URL$",
+        "description": "Indicator for the page rule that is being edited"
+    },
+    "page_rules_url_required": {
+        "message": "URL-ul paginii este obligatoriu",
+        "description": "Error message when the page rule URL is missing"
+    },
+    "page_rules_load_failed": {
+        "message": "Regulile pentru pagini nu au putut fi încărcate",
+        "description": "Error message when page rules fail to load"
+    },
+    "page_rules_save_failed": {
+        "message": "Regula pentru pagină nu a putut fi salvată",
+        "description": "Error message when page rule save fails"
+    },
+    "page_rules_delete_failed": {
+        "message": "Regula pentru pagină nu a putut fi ștearsă",
+        "description": "Error message when page rule delete fails"
+    },
+    "page_rules_overrides_count": {
+        "message": "Suprascrieri: $COUNT$",
+        "description": "Summary text that shows how many overrides a page rule has"
+    },
+    "save_default_vault_settings": {
+        "message": "Salvează setările seifului implicit",
+        "description": "Save default vault settings button label"
+    },
+    "settings_updated_successfully": {
+        "message": "Setările au fost actualizate cu succes",
+        "description": "Settings updated successfully"
+    },
+    "extension_version": {
+        "message": "Versiunea extensiei",
+        "description": "Extension version"
+    },
+    "enable_email_as_username_fallback_filling": {
+        "message": "Activează completarea cu e-mailul în locul numelui de utilizator, dacă acesta lipsește (și invers)",
+        "description": "Enable email as username fallback filling (and vice versa)"
+    },
+    "form_detection_settings": {
+        "message": "Setări de detectare a formularelor",
+        "description": "Form detection settings"
+    },
+    "enable_user_event_based_form_detection": {
+        "message": "Activează detectarea formularelor pe baza evenimentelor utilizatorului",
+        "description": "Enable user event based form detection"
+    },
+    "enable_user_event_based_form_detection_description": {
+        "message": "Ascultă anumite evenimente speciale ale utilizatorului, cu logică de debouncing și throttling",
+        "description": "Description for user event based form detection"
+    },
+    "enable_form_detection_on_url_popstate_events": {
+        "message": "Activează detectarea formularelor la evenimentele popstate ale URL-ului",
+        "description": "Enable form detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_popstate_events_description": {
+        "message": "Util în principal pentru SPA-uri (dar nu neapărat)",
+        "description": "Description for detection on URL popstate events"
+    },
+    "enable_form_detection_on_url_changes_by_interval": {
+        "message": "Activează detectarea formularelor la schimbările de URL, verificate la un interval (de 1 s)",
+        "description": "Enable form detection on URL changes by interval"
+    },
+    "enable_form_detection_by_mutation_observer": {
+        "message": "Activează MutationObserver pentru a detecta formularele și câmpurile de introducere adăugate dinamic la modificările DOM",
+        "description": "Enable form detection by mutation observer"
+    },
+    "enable_form_detection_by_mutation_observer_description": {
+        "message": "Cea mai eficientă, dar și cea mai consumatoare de resurse metodă de a detecta formularele și câmpurile de introducere adăugate dinamic la modificările DOM",
+        "description": "Description for detection by mutation observer"
+    },
+    "page_rules_global_value_enabled": {
+        "message": "activat",
+        "description": "Shown when global setting is enabled"
+    },
+    "page_rules_global_value_disabled": {
+        "message": "dezactivat",
+        "description": "Shown when global setting is disabled"
+    },
+    "offline_cache": {
+        "message": "Cache offline",
+        "description": "Offline cache section heading in extended settings"
+    },
+    "offline_cache_description": {
+        "message": "Date criptate ale seifului, păstrate local pentru utilizare offline. Cache-ul golit este reumplut automat la următoarea încărcare a seifurilor de pe server.",
+        "description": "Explains what the offline model-store cache is"
+    },
+    "offline_cache_size": {
+        "message": "Dimensiune estimată: $1 ($2 date de autentificare în $3 seifuri)",
+        "description": "Shows approximate IndexedDB offline cache size"
+    },
+    "offline_cache_size_loading": {
+        "message": "Se măsoară cache-ul offline…",
+        "description": "Shown while estimating IndexedDB size"
+    },
+    "offline_cache_size_unavailable": {
+        "message": "Dimensiunea cache-ului offline nu a putut fi măsurată",
+        "description": "Error measuring IndexedDB size"
+    },
+    "clear_offline_cache": {
+        "message": "Golește cache-ul offline",
+        "description": "Button to delete the passman-model-store IndexedDB"
+    },
+    "clear_offline_cache_confirm": {
+        "message": "Ștergi cache-ul local offline al seifului? Vei avea nevoie de o conexiune la rețea pentru a reîncărca seifurile.",
+        "description": "Confirm dialog before clearing offline IndexedDB cache"
+    },
+    "offline_cache_cleared_successfully": {
+        "message": "Cache-ul offline a fost golit",
+        "description": "Success toast after clearing offline cache"
+    },
+    "offline_cache_clear_failed": {
+        "message": "Cache-ul offline nu a putut fi golit",
+        "description": "Error toast after failing to clear offline cache"
+    },
+    "offline_cache_storage_backend": {
+        "message": "Stocarea cache-ului",
+        "description": "Label for offline cache backend select (IndexedDB vs in-memory)"
+    },
+    "offline_cache_storage_backend_description": {
+        "message": "Locul unde este păstrat cache-ul criptat al seifului. IndexedDB se păstrează între reporniri; cache-ul din memorie este golit când se repornește scriptul de fundal al extensiei.",
+        "description": "Explains the two offline cache storage backends"
+    },
+    "offline_cache_storage_backend_indexeddb": {
+        "message": "IndexedDB (persistent)",
+        "description": "Offline cache backend option: native IndexedDB"
+    },
+    "offline_cache_storage_backend_memory": {
+        "message": "În memorie (sesiune / limitat în timp)",
+        "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
+    },
+    "offline_cache_memory_mode_notice": {
+        "message": "Se folosește cache-ul din memorie. Seifurile din cache se pierd când se repornește scriptul de fundal al extensiei; se reîncarcă de pe server la nevoie.",
+        "description": "Amber notice when effective offline cache backend is memory"
+    },
+    "offline_cache_forced_fallback_notice": {
+        "message": "IndexedDB nativ nu este disponibil în acest profil de browser (de exemplu, Firefox cu „Nu reține niciodată istoricul”). Se folosește în schimb cache-ul din memorie.",
+        "description": "Amber notice when IndexedDB was requested but blocked"
+    },
+    "offline_cache_size_memory_note": {
+        "message": "Dimensiunea reflectă doar sesiunea curentă.",
+        "description": "Footnote under cache size when using in-memory backend"
+    },
+    "offline_cache_indexeddb_unavailable_warning": {
+        "message": "IndexedDB nu este disponibil aici, deci rămâne activ cache-ul din memorie.",
+        "description": "Warning toast when user chose IndexedDB but probe forced memory"
+    },
+    "offline_cache_quota_notice": {
+        "message": "Stocarea cache-ului offline este plină (cota a fost depășită). Eliberează spațiu sau golește cache-ul offline din Setări extinse.",
+        "description": "Pinned toast when IndexedDB quota is exceeded"
+    },
+    "setup_offline_cache_fallback_notice": {
+        "message": "Acest profil de browser nu poate folosi IndexedDB (de exemplu, Firefox cu „Nu reține niciodată istoricul”). Passman va folosi un cache din memorie, care este golit când se repornește scriptul de fundal al extensiei.",
+        "description": "Amber banner during setup when native IndexedDB is unavailable"
+    },
+    "server_connections": {
+        "message": "Servere salvate",
+        "description": "Heading for the Nextcloud connection directory list"
+    },
+    "server_connections_desc": {
+        "message": "Extensia folosește câte un singur server Nextcloud activ. Adaugă aici o instanță de rezervă pentru a putea comuta rapid dacă serverul principal nu este disponibil.",
+        "description": "Description under the connection directory heading"
+    },
+    "server_connection_active": {
+        "message": "activ",
+        "description": "Label marker for the currently active server connection"
+    },
+    "server_connection_switch": {
+        "message": "Schimbă",
+        "description": "Button to make another saved server the active connection"
+    },
+    "server_connection_remove": {
+        "message": "Elimină",
+        "description": "Button to remove a saved server connection"
+    },
+    "server_connection_add": {
+        "message": "Adaugă server",
+        "description": "Button / heading to add another Nextcloud server connection"
+    },
+    "server_connection_edit_active": {
+        "message": "Datele de autentificare ale serverului activ",
+        "description": "Heading for editing the currently active Nextcloud server login"
+    },
+    "server_connection_remove_confirm": {
+        "message": "Elimini acest server salvat din extensie? Cache-ul offline pentru el poate rămâne până este golit.",
+        "description": "Confirm dialog before removing a server connection"
+    },
+    "server_connection_switched": {
+        "message": "Serverul activ a fost schimbat",
+        "description": "Success toast after switching the active Nextcloud connection"
+    },
+    "server_connection_switch_failed": {
+        "message": "Serverul nu a putut fi schimbat",
+        "description": "Error toast when switching the active connection fails"
+    },
+    "server_connection_removed": {
+        "message": "Serverul a fost eliminat",
+        "description": "Success toast after removing a server connection"
+    },
+    "server_connection_remove_failed": {
+        "message": "Serverul nu a putut fi eliminat",
+        "description": "Error toast when removing a server connection fails"
+    },
+    "setup_dev_warning": {
+        "message": "Această rescriere este încă în dezvoltare activă. Te poți aștepta la imperfecțiuni.$BR$Ai găsit o eroare? Deschide un issue pe $LINK_START$GitHub$LINK_END$.",
+        "description": "Development warning shown on the setup welcome screen"
+    },
+    "set_extension_unlock_password": {
+        "message": "Alege o parolă de deblocare",
+        "description": "Label for the extension unlock password field during setup"
+    },
+    "setup_unlock_password_hint": {
+        "message": "Această parolă blochează extensia pe acest dispozitiv și este folosită pentru criptarea locală a setărilor. Nu este parola seifului tău.",
+        "description": "Helper text under the unlock password field on the setup welcome screen"
+    },
+    "save_password_and_unlock": {
+        "message": "Salvează și continuă",
+        "description": "Button to save the extension unlock password and continue setup"
+    },
+    "change_unlock_password": {
+        "message": "Schimbă parola de deblocare",
+        "description": "Section title for changing the extension unlock password in extended settings"
+    },
+    "current_unlock_password": {
+        "message": "Parola de deblocare curentă",
+        "description": "Label for the current extension unlock password field"
+    },
+    "new_unlock_password": {
+        "message": "Parola de deblocare nouă",
+        "description": "Label for the new extension unlock password field"
+    },
+    "change_unlock_password_button": {
+        "message": "Schimbă parola",
+        "description": "Button to submit a change of the extension unlock password"
+    },
+    "unlock_password_changed_successfully": {
+        "message": "Parola de deblocare a fost schimbată cu succes",
+        "description": "Success toast after changing the extension unlock password"
+    },
+    "unlock_password_change_failed": {
+        "message": "Parola de deblocare nu a putut fi schimbată. Verifică parola curentă și încearcă din nou.",
+        "description": "Error when changing the extension unlock password fails"
+    },
+    "enable_auto_unlock": {
+        "message": "Deblocare automată la pornirea browserului",
+        "description": "Checkbox label to enable unlocking the extension without entering the password automatically when the browser starts"
+    },
+    "enable_auto_unlock_description": {
+        "message": "Păstrează extensia deblocată între repornirile browserului, fără a stoca parola ta de deblocare. Oricine poate rula cod în această extensie sau poate citi de pe disc acest profil de browser poate accesa apoi datele seifului tău fără parolă. Este ca opțiunea „rămâi autentificat” a unui sistem de operare.",
+        "description": "Trade-off hint under the auto-unlock checkbox"
+    },
+    "enable_auto_unlock_lock_note": {
+        "message": "Blocarea extensiei dezactivează deblocarea automată. Reactiveaz-o aici după aceea.",
+        "description": "Note that an explicit lock permanently disables auto-unlock until the user re-enables it"
+    },
+    "enable_auto_unlock_local_fallback_notice": {
+        "message": "IndexedDB nu poate fi folosit în acest profil de browser, așa că cheia de deblocare automată este stocată în stocarea locală a extensiei. Aceasta este mai slabă: oricine poate citi stocarea extensiei poate debloca fără parola ta.",
+        "description": "Amber notice when auto-unlock falls back from IndexedDB to browser.storage.local"
+    },
+    "auto_unlock_enable_failed": {
+        "message": "Deblocarea automată nu a putut fi activată. Deblochează sau repornește extensia și încearcă din nou.",
+        "description": "Error toast when enabling auto-unlock fails"
+    },
+    "auto_unlock_disable_failed": {
+        "message": "Deblocarea automată nu a putut fi dezactivată.",
+        "description": "Error toast when disabling auto-unlock fails"
+    },
+    "migrate_legacy_title": {
+        "message": "Importă setările anterioare",
+        "description": "Title for the legacy MV2 settings import block on the setup screen"
+    },
+    "migrate_legacy_hint": {
+        "message": "Introdu parola master din extensia Passman anterioară. Aceasta va deveni și noua ta parolă de deblocare după ce confirmi importul.",
+        "description": "Explanation under the legacy master password field on the migrate page"
+    },
+    "migrate_legacy_setup_teaser": {
+        "message": "Au fost găsite setări dintr-o extensie Passman anterioară. Verifică-le și editează-le înainte de import.",
+        "description": "Teaser on the setup welcome screen linking to /setup/migrate"
+    },
+    "migrate_legacy_password": {
+        "message": "Parola master anterioară",
+        "description": "Label for the legacy master password field used during import"
+    },
+    "migrate_legacy_button": {
+        "message": "Importă setările anterioare",
+        "description": "Button/link from setup welcome to the legacy migrate review page"
+    },
+    "migrate_legacy_page_title": {
+        "message": "Importă instalarea anterioară",
+        "description": "Title on the /setup/migrate review page"
+    },
+    "migrate_legacy_page_intro_unlock": {
+        "message": "Deblochează setările anterioare cu vechea parolă master pentru a vedea ce va fi importat.",
+        "description": "Intro on migrate page before decrypt"
+    },
+    "migrate_legacy_page_intro_review": {
+        "message": "Editează conexiunile și preferințele după nevoie. Starea conexiunii și a seifului este verificată pe serverele tale.",
+        "description": "Intro on migrate page after decrypt, during review"
+    },
+    "migrate_legacy_continue_review": {
+        "message": "Continuă spre verificare",
+        "description": "Button to decrypt legacy settings and open the editable review"
+    },
+    "migrate_legacy_confirm": {
+        "message": "Importă și finalizează configurarea",
+        "description": "Confirm button on the migrate review page"
+    },
+    "migrate_legacy_test_connection": {
+        "message": "Testează conexiunea",
+        "description": "Button to probe one legacy connection during migrate review"
+    },
+    "migrate_legacy_recheck_all": {
+        "message": "Verifică din nou tot",
+        "description": "Button to probe every connection on the migrate review page"
+    },
+    "migrate_legacy_set_active": {
+        "message": "Folosește ca conexiune activă",
+        "description": "Radio label to mark which imported connection becomes active"
+    },
+    "migrate_legacy_prefs_title": {
+        "message": "Preferințe de potrivire și completare automată",
+        "description": "Section title for global prefs on the migrate review page"
+    },
+    "migrate_legacy_ignored_sites_hint": {
+        "message": "Un site pe linie. Acestea devin reguli pentru pagini cu „ignoră pagina” activat.",
+        "description": "Hint under ignored sites textarea on migrate review"
+    },
+    "migrate_legacy_status_idle": {
+        "message": "neverificat",
+        "description": "Probe status: idle"
+    },
+    "migrate_legacy_status_checking": {
+        "message": "se verifică…",
+        "description": "Probe status: in progress"
+    },
+    "server": {
+        "message": "Server",
+        "description": "Label for a server connection"
+    },
+    "experimental": {
+        "message": "Experimental",
+        "description": "Label for an experimental feature"
+    },
+    "migrate_legacy_error_password": {
+        "message": "Setările anterioare nu au putut fi decriptate. Verifică parola master și încearcă din nou.",
+        "description": "Error when the legacy master password is wrong"
+    },
+    "migrate_legacy_error_no_accounts": {
+        "message": "Setările anterioare nu conțin conturi de server de importat.",
+        "description": "Error when decrypted legacy settings have an empty accounts list"
+    },
+    "migrate_legacy_error_generic": {
+        "message": "Setările anterioare nu au putut fi importate.",
+        "description": "Fallback error when legacy settings import fails for another reason"
+    },
+    "migrate_legacy_success": {
+        "message": "Conexiuni la server importate din instalarea anterioară: $COUNT$.",
+        "description": "Success toast after importing legacy settings"
+    },
+    "passman_app_required": {
+        "message": "Această extensie necesită ca $LINK_START$aplicația Passman$LINK_END$ să fie instalată pe serverul tău Nextcloud.",
+        "description": "Notice that the Passman Nextcloud app must be installed"
+    },
+    "no_data_transferred_elsewhere": {
+        "message": "Nu sunt transferate date către alte surse decât serverul Nextcloud specificat.",
+        "description": "Privacy notice on the server settings card"
+    },
+    "no_selected_vault_info_found": {
+        "message": "Nu au fost găsite informații despre seiful selectat",
+        "description": "Error when selected vault metadata is missing"
+    },
+    "could_not_decrypt_vault": {
+        "message": "Seiful nu a putut fi decriptat",
+        "description": "Error when vault decryption fails"
+    },
+    "no_default_vault_info_found": {
+        "message": "Nu au fost găsite informații despre seiful implicit",
+        "description": "Error when metadata about the default vault is missing"
+    },
+    "could_not_get_or_decrypt_vault": {
+        "message": "Seiful nu a putut fi obținut sau decriptat",
+        "description": "Error when loading or decrypting the vault fails"
+    },
+    "unknown_error_refresh_credential_list": {
+        "message": "Eroare necunoscută în refreshCredentialList",
+        "description": "Fallback error when refreshing the credential list fails without a message"
+    },
+    "expected_extension_page_not_found": {
+        "message": "Pagina de extensie așteptată nu a fost găsită",
+        "description": "Shown when a routed extension page does not exist"
+    },
+    "report_an_issue": {
+        "message": "Raportează o problemă",
+        "description": "Title / tooltip for the issues button in the bottom navigation"
+    },
+    "issues": {
+        "message": "Issues",
+        "description": "Short label for the issues button in the bottom navigation"
+    },
+    "github": {
+        "message": "GitHub",
+        "description": "GitHub product / platform name"
+    },
+    "click_to_auto_fill": {
+        "message": "Dă clic pentru completare automată",
+        "description": "Tooltip on a password picker credential to auto-fill the form"
+    },
+    "add_a_tag": {
+        "message": "Adaugă o etichetă",
+        "description": "Placeholder for the credential tags input"
+    },
+    "remove_tag": {
+        "message": "Elimină eticheta $TAG$",
+        "description": "Accessible label for removing a credential tag"
+    },
+    "click_to_add": {
+        "message": "-- Dă clic pentru a adăuga --",
+        "description": "Placeholder shown for empty in-place editable fields"
+    },
+    "no_field_to_copy": {
+        "message": "Nu există $FIELDNAME$ de copiat",
+        "description": "Tooltip when a credential field has no value to copy"
+    },
+    "could_not_find_selected_credential": {
+        "message": "Datele de autentificare selectate nu au fost găsite",
+        "description": "Error when the selected credential cannot be loaded for editing"
+    },
+    "credential_delete_unknown_error": {
+        "message": "A apărut o eroare necunoscută la ștergerea datelor de autentificare",
+        "description": "Fallback error when credential deletion fails without details"
+    },
+    "credential_delete_error": {
+        "message": "A apărut o eroare la ștergerea datelor de autentificare",
+        "description": "Error when credential deletion fails"
+    },
+    "password_strength_poor": {
+        "message": "foarte slabă",
+        "description": "Password strength meter label"
+    },
+    "password_strength_weak": {
+        "message": "slabă",
+        "description": "Password strength meter label"
+    },
+    "password_strength_good": {
+        "message": "bună",
+        "description": "Password strength meter label"
+    },
+    "password_strength_strong": {
+        "message": "puternică",
+        "description": "Password strength meter label"
+    },
+    "dismiss_alert": {
+        "message": "Închide alerta",
+        "description": "Accessible label for dismissing a toast / alert"
+    },
+    "credential_icon": {
+        "message": "Pictograma datelor de autentificare",
+        "description": "Alt text for a credential favicon / icon"
+    },
+    "otp_qr_code": {
+        "message": "Cod QR OTP",
+        "description": "Alt text for the OTP configuration QR code image"
+    },
+    "context_menu_auto_fill": {
+        "message": "Completare automată",
+        "description": "Browser context menu item to auto-fill credentials"
+    },
+    "context_menu_copy_username": {
+        "message": "Copiază numele de utilizator",
+        "description": "Browser context menu item to copy username"
+    },
+    "context_menu_copy_email": {
+        "message": "Copiază e-mailul",
+        "description": "Browser context menu item to copy email"
+    },
+    "context_menu_copy_password": {
+        "message": "Copiază parola",
+        "description": "Browser context menu item to copy password"
+    },
+    "context_menu_copy_url": {
+        "message": "Copiază URL-ul",
+        "description": "Browser context menu item to copy URL"
+    },
+    "context_menu_copy_otp": {
+        "message": "Copiază OTP",
+        "description": "Browser context menu item to copy one-time password"
+    },
+    "context_menu_reload_password_picker": {
+        "message": "Reîncarcă selectorul de parole",
+        "description": "Browser context menu item to reload the password picker"
+    },
+    "context_menu_and_copy_to_clipboard": {
+        "message": "Și copiază în clipboard",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "context_menu_and_fill_fields": {
+        "message": "Și completează câmpurile",
+        "description": "Browser context menu submenu item under Generate password"
+    },
+    "field_copied_to_clipboard": {
+        "message": "$FIELDNAME$ a fost copiat în clipboard",
+        "description": "Success toast after copying a field to the clipboard"
+    },
+    "failed_to_copy_field": {
+        "message": "Nu s-a putut copia $FIELDNAME$",
+        "description": "Error toast when copying a field to the clipboard fails"
+    },
+    "unknown_error_checking_lock_state": {
+        "message": "Eroare necunoscută la verificarea stării de blocare a extensiei!",
+        "description": "Alert when extension lock-state check fails unexpectedly"
+    },
+    "login_succeeded": {
+        "message": "Autentificare reușită",
+        "description": "Success message after Nextcloud login"
+    },
+    "login_failed": {
+        "message": "Autentificare eșuată",
+        "description": "Error message after Nextcloud login failure"
+    },
+    "no_server_info_provided": {
+        "message": "Nu au fost furnizate informații despre server",
+        "description": "Error when server connection details are missing"
+    },
+    "unknown_error": {
+        "message": "Eroare necunoscută",
+        "description": "Generic unknown error fallback"
+    },
+    "no_credential_data_provided": {
+        "message": "Nu au fost furnizate date de autentificare",
+        "description": "Error when creating a credential without payload data"
+    },
+    "no_source_tab_found": {
+        "message": "Nu a fost găsită nicio filă sursă",
+        "description": "Error when the originating browser tab cannot be resolved"
+    },
+    "failed_to_save_credential": {
+        "message": "Datele de autentificare nu au putut fi salvate",
+        "description": "Error when saving a new credential fails"
+    },
+    "could_not_get_backend_passman_client": {
+        "message": "Clientul Passman de backend nu a putut fi obținut",
+        "description": "Error when the backend Passman client is unavailable"
+    },
+    "invalid_request_check_body": {
+        "message": "Cerere nevalidă (verifică corpul cererii)",
+        "description": "Error for an invalid extension message request body"
+    },
+    "could_not_get_default_vault_info": {
+        "message": "Informațiile despre seiful implicit nu au putut fi obținute",
+        "description": "Error when default vault info cannot be loaded"
+    },
+    "no_connection_id_provided": {
+        "message": "Nu a fost furnizat connectionId",
+        "description": "Error when a server connection id is missing from the request"
+    },
+    "could_not_get_passman_client": {
+        "message": "Clientul Passman nu a putut fi obținut",
+        "description": "Error when the Passman client instance is unavailable"
+    },
+    "no_managed_connection_with_id": {
+        "message": "Nu există nicio conexiune gestionată cu ID-ul $CONNECTION_ID$",
+        "description": "Error when a saved server connection id cannot be found"
+    },
+    "vault_decrypt_failed_with_password": {
+        "message": "Seiful selectat nu a putut fi decriptat cu parola furnizată",
+        "description": "Error when the provided vault password is wrong"
+    },
+    "could_not_get_selected_vault_by_guid": {
+        "message": "Seiful selectat nu a putut fi obținut după GUID",
+        "description": "Error when the selected vault cannot be resolved by GUID"
+    },
+    "no_vault_info_in_extension_settings": {
+        "message": "Setările extensiei nu furnizează informații despre seif",
+        "description": "Error when vault info is missing from extension settings"
+    },
+    "could_not_get_password_generator_configuration": {
+        "message": "Configurația personalizată a generatorului de parole nu a putut fi obținută",
+        "description": "Error when loading password generator settings fails"
+    },
+    "enable_doorhanger": {
+        "message": "Activează colectarea parolelor noi și actualizate prin panoul de notificare",
+        "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
+    },
+    "doorhanger_save_title": {
+        "message": "Salvezi datele de conectare în Passman?",
+        "description": "Doorhanger title when offering to add a new credential"
+    },
+    "doorhanger_update_title": {
+        "message": "Actualizezi datele de conectare în Passman?",
+        "description": "Doorhanger title when offering to update a matched credential"
+    },
+    "doorhanger_dismiss": {
+        "message": "Nu acum",
+        "description": "Doorhanger button to dismiss the prompt for this attempt"
+    },
+    "doorhanger_select_credential": {
+        "message": "Datele de autentificare de actualizat",
+        "description": "Label for selecting which matched credential to update"
+    },
+    "doorhanger_unnamed_credential": {
+        "message": "Date de autentificare fără titlu",
+        "description": "Fallback label when a doorhanger update candidate has no label"
+    },
+    "doorhanger_settings": {
+        "message": "Panou de notificare",
+        "description": "Extended settings section title for doorhanger appearance"
+    },
+    "doorhanger_settings_description": {
+        "message": "Alege cum este afișată pe site-uri solicitarea de salvare/actualizare de după autentificare.",
+        "description": "Description under the doorhanger settings section"
+    },
+    "doorhanger_layout": {
+        "message": "Aspect",
+        "description": "Label for doorhanger layout dropdown"
+    },
+    "doorhanger_layout_description": {
+        "message": "Cardul plutește într-un colț. Rândul de sus este un banner pe toată lățimea, în partea de sus a paginii.",
+        "description": "Help text for doorhanger layout setting"
+    },
+    "doorhanger_layout_card": {
+        "message": "Card",
+        "description": "Doorhanger layout option: floating card"
+    },
+    "doorhanger_layout_top_row": {
+        "message": "Rând sus",
+        "description": "Doorhanger layout option: full-width top banner"
+    },
+    "doorhanger_gravity": {
+        "message": "Poziție",
+        "description": "Label for doorhanger gravity/position dropdown"
+    },
+    "doorhanger_gravity_description": {
+        "message": "Colțul pentru aspectul de tip card sau alinierea conținutului pentru aspectul cu rând sus.",
+        "description": "Help text for doorhanger gravity setting"
+    },
+    "doorhanger_gravity_top_right": {
+        "message": "Sus în dreapta",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_top_left": {
+        "message": "Sus în stânga",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_right": {
+        "message": "Jos în dreapta",
+        "description": "Doorhanger gravity option"
+    },
+    "doorhanger_gravity_bottom_left": {
+        "message": "Jos în stânga",
+        "description": "Doorhanger gravity option"
+    },
+    "logging_settings": {
+        "message": "Jurnalizare",
+        "description": "Extended settings section title for console log level"
+    },
+    "logging_settings_description": {
+        "message": "Nivelul minim de jurnalizare în consolă pentru această extensie. Nivelurile mai joase includ mai multe detalii. Valoarea implicită pentru producție este error.",
+        "description": "Description under the logging settings section"
+    },
+    "log_level": {
+        "message": "Nivel de jurnalizare",
+        "description": "Label for extension console log level dropdown"
+    },
+    "log_level_debug": {
+        "message": "Depanare",
+        "description": "Log level option: debug"
+    },
+    "log_level_log": {
+        "message": "Jurnal",
+        "description": "Log level option: log"
+    },
+    "log_level_info": {
+        "message": "Informații",
+        "description": "Log level option: info"
+    },
+    "log_level_warn": {
+        "message": "Avertisment",
+        "description": "Log level option: warn"
+    },
+    "log_level_error": {
+        "message": "Eroare",
+        "description": "Log level option: error"
+    },
+    "vault_recovery": {
+        "message": "Recuperarea seifului",
+        "description": "Title of the vault recovery tool"
+    },
+    "vault_recovery_description": {
+        "message": "Diagnostichează și repară datele de autentificare rămase pe cheia greșită a seifului după o schimbare întreruptă a parolei seifului sau cu o nepotrivire a cheii datelor de autentificare partajate. Acest instrument nu încarcă nimic până când nu pornești explicit o reparare.",
+        "description": "Explanation shown at the top of the vault recovery tool"
+    },
+    "vault_recovery_keys_section": {
+        "message": "Cheile seifului",
+        "description": "Section title for entering candidate vault passwords in the vault recovery tool"
+    },
+    "vault_recovery_preferred_password_label": {
+        "message": "Parola preferată (curentă) a seifului",
+        "description": "Label for the preferred/target vault password field in the vault recovery tool"
+    },
+    "vault_recovery_preferred_password_hint": {
+        "message": "Toate datele de autentificare reparate vor fi recriptate cu această parolă. Precompletată cu parola curentă a seifului implicit.",
+        "description": "Hint below the preferred vault password field in the vault recovery tool"
+    },
+    "vault_recovery_alternate_passwords_label": {
+        "message": "Parole alternative / vechi ale seifului",
+        "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
+    },
+    "vault_recovery_add_alternate_password": {
+        "message": "Adaugă parolă",
+        "description": "Button to add another alternate vault password candidate in the vault recovery tool"
+    },
+    "vault_recovery_remove_alternate_password": {
+        "message": "Elimină",
+        "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
+    },
+    "vault_recovery_scan_button": {
+        "message": "Scanează seiful",
+        "description": "Button to start a read-only vault recovery scan"
+    },
+    "vault_recovery_preferred_password_required": {
+        "message": "Introdu parola preferată a seifului înainte de scanare.",
+        "description": "Validation error when scanning without a preferred vault password"
+    },
+    "vault_recovery_scan_failed": {
+        "message": "Scanarea seifului a eșuat. Încearcă din nou.",
+        "description": "Error toast when the vault recovery scan fails"
+    },
+    "vault_recovery_scan_results_section": {
+        "message": "Rezultatele scanării",
+        "description": "Section title for the vault recovery scan results"
+    },
+    "vault_recovery_scan_summary": {
+        "message": "$OK_COUNT$ OK, $ACTIONABLE_COUNT$ reparabile, $BROKEN_COUNT$ defecte, $SKIPPED_COUNT$ omise.",
+        "description": "Summary counts of a vault recovery scan report"
+    },
+    "vault_recovery_broken_hint": {
+        "message": "Datele de autentificare defecte nu au putut fi decriptate cu nicio parolă furnizată și nu sunt reparate de acest instrument. Poate fi necesară recuperarea manuală dintr-o revizie sau ajutorul administratorului serverului Passman.",
+        "description": "Explanation shown next to broken/unrecoverable credentials in the vault recovery tool"
+    },
+    "vault_recovery_broken_fields": {
+        "message": "Câmpuri care nu pot fi decriptate: $FIELDS$",
+        "description": "Lists payload field names that no candidate password could decrypt, in the vault recovery scan details"
+    },
+    "vault_recovery_preview_title": {
+        "message": "Detalii recuperate",
+        "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
+    },
+    "vault_recovery_preview_empty": {
+        "message": "Nu există câmpuri decriptate disponibile pentru previzualizare.",
+        "description": "Shown in an expanded vault recovery scan row when no decrypted credential fields are available"
+    },
+    "vault_recovery_readonly_notice": {
+        "message": "Previzualizare doar pentru citire. Conținutul fișierelor nu este descărcat.",
+        "description": "Notice above the recovered credential field preview in the vault recovery tool"
+    },
+    "vault_recovery_ok_detail": {
+        "message": "Aceste date de autentificare se decriptează deja cu parola preferată, deci nu există previzualizare de recuperare.",
+        "description": "Shown when expanding a healthy credential in the vault recovery scan results"
+    },
+    "vault_recovery_file_hits_title": {
+        "message": "Atașamente",
+        "description": "Heading for per-file decrypt status inside an expanded vault recovery scan row"
+    },
+    "vault_recovery_original_json_title": {
+        "message": "JSON-ul original al datelor de autentificare",
+        "description": "Heading for the encrypted credential snapshot shown in an expanded vault recovery scan row"
+    },
+    "vault_recovery_show_original_json": {
+        "message": "Afișează JSON-ul original",
+        "description": "Toggle that reveals the encrypted credential snapshot under a recovered preview"
+    },
+    "vault_recovery_copy_json": {
+        "message": "Copiază JSON",
+        "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
+    },
+    "vault_recovery_select_all": {
+        "message": "Selectează toate datele de autentificare reparabile",
+        "description": "Checkbox label to select all actionable hits in the vault recovery tool"
+    },
+    "vault_recovery_selected_count": {
+        "message": "$SELECTED$ din $TOTAL$ selectate",
+        "description": "Shows how many repairable credentials are currently selected in the vault recovery tool"
+    },
+    "vault_recovery_status_ok": {
+        "message": "OK",
+        "description": "Vault recovery credential status: already encrypted with the preferred key"
+    },
+    "vault_recovery_status_needs_rewrap": {
+        "message": "Necesită recriptare",
+        "description": "Vault recovery credential status: decrypts with a non-preferred candidate key"
+    },
+    "vault_recovery_status_shared_key_mismatch": {
+        "message": "Nepotrivire a cheii partajate",
+        "description": "Vault recovery credential status: shared_key is set but the payload decrypts with a vault key instead"
+    },
+    "vault_recovery_status_partially_broken": {
+        "message": "Parțial defecte",
+        "description": "Vault recovery credential status: some fields decrypt with a candidate, others decrypt with none"
+    },
+    "vault_recovery_status_broken": {
+        "message": "Defecte",
+        "description": "Vault recovery credential status: no candidate key decrypts the credential"
+    },
+    "vault_recovery_status_skipped": {
+        "message": "Omise",
+        "description": "Vault recovery credential status: not evaluated (e.g. deleted or without probeable fields)"
+    },
+    "vault_recovery_kind_owned": {
+        "message": "Proprii",
+        "description": "Vault recovery credential kind: owned by the current user"
+    },
+    "vault_recovery_kind_shared_by_us": {
+        "message": "Partajate de tine",
+        "description": "Vault recovery credential kind: shared by the current user with others"
+    },
+    "vault_recovery_kind_shared_with_us": {
+        "message": "Partajate cu tine",
+        "description": "Vault recovery credential kind: shared with the current user by someone else"
+    },
+    "vault_recovery_strategy_rewrap_owned": {
+        "message": "Recriptează cu parola preferată",
+        "description": "Vault recovery repair strategy: rewrap_owned"
+    },
+    "vault_recovery_strategy_rewrap_shared_by_us_wrapper": {
+        "message": "Recriptează cheia partajată cu parola preferată",
+        "description": "Vault recovery repair strategy: rewrap_shared_by_us_wrapper"
+    },
+    "vault_recovery_strategy_fix_shared_key_mismatch": {
+        "message": "Restaurează modelul de criptare cu cheie partajată",
+        "description": "Vault recovery repair strategy: fix_shared_key_mismatch"
+    },
+    "vault_recovery_strategy_clear_undecryptable_shared_key": {
+        "message": "Elimină cheia partajată ilizibilă și recriptează cu parola preferată",
+        "description": "Vault recovery repair strategy: clear_undecryptable_shared_key"
+    },
+    "vault_recovery_strategy_rewrap_acl_shared_with_us": {
+        "message": "Recriptează cheia ta de acces cu parola preferată",
+        "description": "Vault recovery repair strategy: rewrap_acl_shared_with_us"
+    },
+    "vault_recovery_write_warning": {
+        "message": "Repararea scrie datele de autentificare recriptate pe serverul tău Passman. Aceasta nu poate fi anulată.",
+        "description": "Pinned safety warning shown before repairing in the vault recovery tool"
+    },
+    "vault_recovery_dry_run_label": {
+        "message": "Rulare de probă (doar previzualizare, nu se încarcă nimic)",
+        "description": "Checkbox label to run the vault recovery repair without uploading changes"
+    },
+    "vault_recovery_dry_run_hint": {
+        "message": "Folosește această opțiune pentru a verifica dacă toate parolele selectate se decriptează corect înainte de a scrie modificări pe server.",
+        "description": "Hint below the vault recovery dry run checkbox"
+    },
+    "vault_recovery_repair_button": {
+        "message": "Repară selecția",
+        "description": "Button to start repairing the selected credentials in the vault recovery tool"
+    },
+    "vault_recovery_repair_confirm": {
+        "message": "Aceasta va recripta și va încărca datele de autentificare selectate pe serverul tău Passman. Continui?",
+        "description": "Confirmation dialog before a non-dry-run vault recovery repair"
+    },
+    "vault_recovery_repair_failed": {
+        "message": "Repararea seifului a eșuat. Încearcă din nou.",
+        "description": "Error toast when the vault recovery repair request fails"
+    },
+    "vault_recovery_repair_succeeded": {
+        "message": "Toate datele de autentificare selectate au fost reparate cu succes.",
+        "description": "Success toast after a vault recovery repair with no failures"
+    },
+    "vault_recovery_repair_partial": {
+        "message": "Unele date de autentificare nu au putut fi reparate. Vezi detaliile de mai jos.",
+        "description": "Warning toast after a vault recovery repair with partial success"
+    },
+    "vault_recovery_repair_item_success": {
+        "message": "Reparate cu succes",
+        "description": "Per-credential success note in the vault recovery repair results"
+    },
+    "vault_recovery_repair_item_failed": {
+        "message": "Repararea a eșuat: $ERROR$",
+        "description": "Per-credential error note in the vault recovery repair results"
+    },
+    "vault_recovery_done_section": {
+        "message": "Rezumatul reparării",
+        "description": "Section title for the vault recovery repair summary"
+    },
+    "vault_recovery_repair_summary": {
+        "message": "$SUCCEEDED$ reparate, $FAILED$ eșuate.",
+        "description": "Summary counts after a vault recovery repair"
+    },
+    "vault_recovery_preferred_password_updated": {
+        "message": "Parola seifului tău implicit a fost actualizată la parola preferată.",
+        "description": "Shown after the stored default vault password was migrated to the preferred candidate"
+    },
+    "vault_recovery_back_home": {
+        "message": "Înapoi la prezentare generală",
+        "description": "Link back to the credential list from the vault recovery tool"
+    },
+    "vault_recovery_open_tool": {
+        "message": "Deschide recuperarea seifului",
+        "description": "Button on the credential list to open the vault recovery tool after a decrypt failure"
+    },
+    "vault_recovery_entry_hint": {
+        "message": "Dacă o schimbare a parolei seifului a fost întreruptă sau unele date de autentificare partajate folosesc cheia greșită, instrumentul de recuperare a seifului poate diagnostica și repara datele de autentificare afectate.",
+        "description": "Explanation shown next to the vault recovery entry point on the credential list decrypt-failure error"
+    },
+    "vault_recovery_skipped_encryption_hint": {
+        "message": "Au fost detectate date de autentificare cu erori de decriptare ($COUNT$) și au fost excluse din această listă. Recuperarea seifului poate diagnostica seiful.",
+        "description": "Notice on the credential list when some credentials were skipped after an encryption error"
+    },
+    "vault_recovery_destination_section": {
+        "message": "Destinație",
+        "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
+    },
+    "vault_recovery_destination_new_vault_label": {
+        "message": "Creează un seif nou (recomandat)",
+        "description": "Radio option label: copy recovered credentials into a freshly created vault"
+    },
+    "vault_recovery_destination_new_vault_hint": {
+        "message": "Copiază datele de autentificare recuperabile și sănătoase ca date de autentificare noi, proprii, într-un seif complet nou. Seiful original rămâne neatins.",
+        "description": "Radio option hint: copy recovered credentials into a freshly created vault"
+    },
+    "vault_recovery_destination_json_label": {
+        "message": "Descarcă exportul JSON Passman",
+        "description": "Radio option label: export recovered credentials as a Passman JSON file"
+    },
+    "vault_recovery_destination_json_hint": {
+        "message": "Generează pentru descărcare un export JSON Passman clasic cu datele de autentificare recuperabile și sănătoase. Nu se încarcă nimic, iar seiful original rămâne neatins.",
+        "description": "Radio option hint: export recovered credentials as a Passman JSON file"
+    },
+    "vault_recovery_destination_in_place_label": {
+        "message": "Repară pe loc",
+        "description": "Radio option label: rewrite the selected credentials on the original vault"
+    },
+    "vault_recovery_destination_in_place_hint": {
+        "message": "Recriptează și suprascrie datele de autentificare selectate direct în seiful original. Aceasta modifică datele tale existente și nu poate fi anulată.",
+        "description": "Radio option hint: rewrite the selected credentials on the original vault"
+    },
+    "vault_recovery_in_place_nothing_to_repair": {
+        "message": "Niciuna dintre datele de autentificare scanate nu poate fi reparată pe loc. Alege o altă destinație pentru a le copia sau exporta ori scanează din nou cu alte parole.",
+        "description": "Shown when in-place repair is selected but the scan found no repairable credentials, while the destination radios stay available"
+    },
+    "vault_recovery_new_vault_name_label": {
+        "message": "Numele noului seif",
+        "description": "Label for the name field of the vault created by the new-vault recovery destination"
+    },
+    "vault_recovery_new_vault_name_required": {
+        "message": "Introdu un nume pentru noul seif.",
+        "description": "Validation error when the new vault name is empty"
+    },
+    "vault_recovery_include_healthy_label": {
+        "message": "Include și datele de autentificare deja sănătoase",
+        "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
+    },
+    "vault_recovery_include_healthy_hint": {
+        "message": "Când este activat, sunt copiate și datele de autentificare care se decriptează deja corect, astfel încât rezultatul să fie un înlocuitor complet și utilizabil, nu doar subsetul defect.",
+        "description": "Hint below the include-healthy-credentials checkbox"
+    },
+    "vault_recovery_write_warning_new_vault": {
+        "message": "Aceasta creează un seif nou pe serverul tău Passman și încarcă în el datele de autentificare copiate. Aceasta nu poate fi anulată.",
+        "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
+    },
+    "vault_recovery_write_warning_json": {
+        "message": "Aceasta generează doar un fișier de descărcat în browser. Nu se încarcă nimic, iar seiful original nu este modificat.",
+        "description": "Pinned safety warning shown before downloading a Passman JSON export in the vault recovery tool"
+    },
+    "vault_recovery_create_vault_button": {
+        "message": "Creează un seif nou",
+        "description": "Button to create a new vault and copy the selected credentials into it"
+    },
+    "vault_recovery_download_json_button": {
+        "message": "Descarcă exportul JSON",
+        "description": "Button to build and download a Passman JSON export of the selected credentials"
+    },
+    "vault_recovery_repair_confirm_new_vault": {
+        "message": "Aceasta va crea un seif nou numit „$NAME$” pe serverul tău Passman și va încărca în el datele de autentificare copiate. Continui?",
+        "description": "Confirmation dialog before a non-dry-run new-vault copy"
+    },
+    "vault_recovery_created_vault_success": {
+        "message": "Seiful nou „$NAME$” a fost creat. Îl poți selecta ca seif implicit din setările extensiei.",
+        "description": "Shown after a successful new-vault copy in the vault recovery tool"
+    },
+    "vault_recovery_json_downloaded_hint": {
+        "message": "Exportul JSON Passman a fost descărcat.",
+        "description": "Shown after a successful Passman JSON export download in the vault recovery tool"
+    },
+    "vault_recovery_shared_with_us_hint": {
+        "message": "Selectarea acesteia o copiază ca date de autentificare noi, proprii, în destinație. Partajarea originală rămâne neatinsă.",
+        "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
+    },
+    "vault_recovery_file_status_ok": {
+        "message": "OK",
+        "description": "Vault recovery file blob status: already on the preferred key"
+    },
+    "vault_recovery_file_status_needs_rewrap": {
+        "message": "Necesită recriptare",
+        "description": "Vault recovery file blob status: decrypts with a non-preferred key"
+    },
+    "vault_recovery_file_status_broken": {
+        "message": "Defecte",
+        "description": "Vault recovery file blob status: no candidate key decrypts this file"
+    },
+    "vault_recovery_skip_deleted": {
+        "message": "Omite datele de autentificare șterse",
+        "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
+    },
+    "vault_recovery_config_changed_hint": {
+        "message": "Parolele sau opțiunile seifului s-au schimbat de la această scanare. Apasă din nou „Scanează seiful” înainte de a repara sau copia ceva.",
+        "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
+    },
+    "vault_recovery_apply_disabled_hint": {
+        "message": "Scanează seiful cu parolele curente înainte de a repara sau copia ceva.",
+        "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
+    },
+    "vault_recovery_dry_run_item_failed": {
+        "message": "Verificarea prin rulare de probă a eșuat: $ERROR$",
+        "description": "Per-credential error note from the dry-run preview in the vault recovery tool"
+    },
+    "vault_recovery_scan_results_collapsed_hint": {
+        "message": "Rezultatele scanării sunt ascunse pentru a economisi spațiu. Scanează din nou seiful pentru a le vedea sau afișează-le manual.",
+        "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
+    },
+    "vault_recovery_show_scan_results": {
+        "message": "Afișează rezultatele scanării",
+        "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
+    },
+    "vault_recovery_hide_scan_results": {
+        "message": "Ascunde",
+        "description": "Button to manually collapse the scan results card in the vault recovery tool"
+    },
+    "vault_recovery_working_on_vault": {
+        "message": "Se lucrează la seiful: $NAME$",
+        "description": "Shown at the top of the vault recovery tool to indicate which vault is being scanned/repaired"
+    },
+    "vault_recovery_progress_working": {
+        "message": "Se lucrează…",
+        "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
+    },
+    "vault_recovery_stage_loading": {
+        "message": "Se încarcă seiful de pe server",
+        "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
+    },
+    "vault_recovery_stage_credentials": {
+        "message": "Se scanează datele de autentificare",
+        "description": "Vault recovery progress stage: scanning credential ciphertext"
+    },
+    "vault_recovery_stage_files": {
+        "message": "Se sondează fișierele",
+        "description": "Vault recovery progress stage: probing file blobs"
+    },
+    "vault_recovery_stage_repair": {
+        "message": "Se repară",
+        "description": "Vault recovery progress stage: applying in-place repairs"
+    },
+    "vault_recovery_stage_materialize": {
+        "message": "Se pregătesc datele de autentificare",
+        "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
+    },
+    "vault_recovery_stage_write": {
+        "message": "Se scrie",
+        "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {
         "message": "Passman",
