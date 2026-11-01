@@ -384,7 +384,7 @@
         "description": "Custom field type text"
     },
     "custom_fields_types_password": {
-        "message": "Password",
+        "message": "密碼",
         "description": "Custom field type password"
     },
     "custom_fields_types_file": {
@@ -552,7 +552,7 @@
         "description": "OTP issuer"
     },
     "type": {
-        "message": "Type",
+        "message": "類型",
         "description": "OTP type"
     },
     "digits": {
@@ -740,7 +740,7 @@
         "description": "Column header for creation date in files table"
     },
     "files_header_size": {
-        "message": "Size",
+        "message": "大小",
         "description": "Column header for file size in files table"
     },
     "error_file_upload_popup": {
