@@ -8,7 +8,7 @@
         "description": "No credentials found for the current site"
     },
     "no_credentials_found_for_site": {
-        "message": "Pre túto stránku neboli nájdené žiadne prístupové údaje.",
+        "message": "Pre túto stránku sa nenašli žiadne prihlasovacie údaje.",
         "description": "No credentials found for the current site"
     },
     "no_credentials_found": {
@@ -20,11 +20,11 @@
         "description": "Credential notes / description"
     },
     "invalid_response_from_server": {
-        "message": "Neplatná odpoveď zo servra\" [$STATUS_CODE$] $STATUS_TEXT$",
+        "message": "Neplatná odpoveď zo servera: [$STATUS_CODE$] $STATUS_TEXT$",
         "description": "No credentials found for the current site"
     },
     "please_enter_nextcloud_credentials": {
-        "message": "Zadajte prosím prihlasovacie údaje pre svoj Nextcloud",
+        "message": "Zadajte, prosím, svoje prihlasovacie údaje do služby Nextcloud / ownCloud",
         "description": "No credentials found for the current site"
     },
     "save_site": {
@@ -44,7 +44,7 @@
         "description": "Settings for the password generator"
     },
     "toggle_extended_password_settings": {
-        "message": "Prepínať rozšírené nastavenia hesla",
+        "message": "Prepnúť zobrazenie rozšírených nastavení hesla",
         "description": "Toggle extended password settings"
     },
     "generate_password": {
@@ -56,15 +56,15 @@
         "description": "Toggle visibility"
     },
     "toggle_advanced": {
-        "message": "Pokročilé možnosti",
+        "message": "Prepnúť zobrazenie pokročilých možností",
         "description": "Toggle advanced options"
     },
     "use_generated_password": {
-        "message": "Použiť hesl",
+        "message": "Použiť heslo",
         "description": "Use password"
     },
     "add_hint": {
-        "message": "Po vytvorení môžete prihlasovací údaj upravovať v Passman",
+        "message": "Po vytvorení môžete prihlasovací údaj upravovať v aplikácii Passman",
         "description": "After creating it, you can edit the credential in Passman"
     },
     "pw_length": {
@@ -72,7 +72,7 @@
         "description": "Password length"
     },
     "min_digits": {
-        "message": "Minimálny počet číselných znakov",
+        "message": "Minimálny počet číslic",
         "description": "Minimum amount of digits"
     },
     "avoid_ambiguous": {
@@ -80,7 +80,7 @@
         "description": "Avoid ambiguous characters"
     },
     "require_every_character_type": {
-        "message": "Vyžadovať znak z každého typu",
+        "message": "Vyžadovať aspoň jeden znak každého typu",
         "description": "Require every character type"
     },
     "use_uppercase": {
@@ -124,15 +124,15 @@
         "description": "Add"
     },
     "credential_changed": {
-        "message": "Poverenie zmenené",
+        "message": "Prihlasovacie údaje boli zmenené",
         "description": "Credential changed"
     },
     "credential_created": {
-        "message": "Prihlasovací údaj bol vytvorený",
+        "message": "Prihlasovacie údaje boli vytvorené",
         "description": "Credential created"
     },
     "credentials_expires": {
-        "message": "Poverenie vyprší",
+        "message": "Platnosť prihlasovacích údajov končí",
         "description": "Credential expires"
     },
     "expire_date": {
@@ -160,7 +160,7 @@
         "description": "Password"
     },
     "detected_new_login": {
-        "message": "Zistené nové prihlasovacie meno",
+        "message": "Zistené nové prihlasovacie údaje",
         "description": "Detected new login"
     },
     "detected_changed_login": {
@@ -168,7 +168,7 @@
         "description": "Detected changed password for user"
     },
     "browser_action_title_login": {
-        "message": "Passman - $CREDENTIAL_AMOUNT$ $PLURAL$ nájdené pre túto stránku",
+        "message": "Passman - pre túto stránku sa našlo: $CREDENTIAL_AMOUNT$ $PLURAL$",
         "description": "String for the browser action"
     },
     "browser_action_title_locked": {
@@ -180,15 +180,15 @@
         "description": "Detected changed URL for"
     },
     "edit_credential": {
-        "message": "Upraviť poverenie",
+        "message": "Upraviť prihlasovacie údaje",
         "description": "Edit credential button label for the edit credential page"
     },
     "create_new_credential": {
-        "message": "Vytvoriť nové poverenie",
+        "message": "Vytvoriť nové prihlasovacie údaje",
         "description": "Create new credential button label for the new credential page"
     },
     "credential": {
-        "message": "Poverenie",
+        "message": "Prihlasovací údaj",
         "description": "Credential singular form"
     },
     "credentials": {
@@ -212,31 +212,31 @@
         "description": "Label for the settings section about modifying default credential matching behavior for all websites"
     },
     "ignore_protocol": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj protokol",
+        "message": "Pri hľadaní zhodnej stránky ignorovať protokol",
         "description": "Checkbox label for ignoring the url protocol when matching credentials to websites"
     },
     "ignore_subdomain": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj subdoménu",
+        "message": "Pri párovaní stránok ignorovať subdoménu",
         "description": "Checkbox label for ignoring the url subdomain when matching credentials to websites"
     },
     "ignore_port": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj port",
+        "message": "Ignorovať port pri párovaní so stránkami",
         "description": "Checkbox label for ignoring the url port when matching credentials to websites"
     },
     "http_warning": {
-        "message": "Používate protokol HTTP!  Prihlasovacie údaje budú odoslané nezašifrované.  Prihlasovacie údaje v Passman ale zostávajú šifrované.",
+        "message": "Používate protokol HTTP! Prihlasovacie údaje sa odošlú ako nešifrovaný text. Vaše prihlasovacie údaje v aplikácii Passman však zostávajú šifrované.",
         "description": "Warning for http connections"
     },
     "ignore_path": {
-        "message": "Pri hľadaní zhodnej stránky ignoruj cestu",
+        "message": "Pri hľadaní zhodnej stránky ignorovať cestu",
         "description": "Checkbox label for ignoring the url path when matching credentials to websites"
     },
     "ignore_page": {
-        "message": "Ignorovať túto stránku pri navrhovaní poverení",
+        "message": "Ignorovať túto stránku pri navrhovaní prihlasovacích údajov",
         "description": "Checkbox label for ignoring a specific page when suggesting credentials in the password picker"
     },
     "enable_autofill": {
-        "message": "Povoliť automatické vyplnenie formulára (pre jedno zodpovedajúce poverenie)",
+        "message": "Povoliť automatické vyplnenie formulára (pri jedinej zhode prihlasovacích údajov)",
         "description": "Enable auto fill of forms, but only if it is a clear credential match for the current page"
     },
     "enable_autosubmit": {
@@ -244,7 +244,7 @@
         "description": "Enable form auto submit"
     },
     "enable_update_url": {
-        "message": "Spýtať sa na aktualizáciu URL prihlasovacieho údaja v prípade že sa nezhoduje s aktuálnou URL",
+        "message": "Spýtať sa na aktualizáciu URL prihlasovacieho údaja, ak sa nezhoduje s aktuálnou URL",
         "description": "Enable form auto submit"
     },
     "disable_browser_autofill": {
@@ -252,7 +252,7 @@
         "description": "Disable auto fill of forms"
     },
     "ignore_site_placeholder": {
-        "message": "Zadajte ignorovanú doménu alebo TLD a stlačte enter",
+        "message": "Zadajte doménu alebo TLD, ktorú chcete ignorovať, a stlačte ↵",
         "description": "Disable auto fill of forms"
     },
     "enable_password_picker": {
@@ -260,7 +260,7 @@
         "description": "Setting label for whether to enable the password picker in-page-overlay for selecting passwords / filling forms"
     },
     "password_picker_gotolist": {
-        "message": "Keď sa nájde heslo, prejdi na zoznam radšej než na posledný aktívny tab",
+        "message": "Keď sa nájde heslo, prejsť na zoznam namiesto poslednej aktívnej karty",
         "description": "Disable password picker"
     },
     "hide_adv": {
@@ -288,15 +288,15 @@
         "description": "saved, lowercase"
     },
     "credential_updated": {
-        "message": "Prístupové údaje boli aktualizované",
+        "message": "Prihlasovacie údaje boli aktualizované",
         "description": "updated, lowercase"
     },
     "credential_update_error": {
-        "message": "Pri aktualizácii poverenia sa vyskytla chyba",
+        "message": "Pri aktualizácii prihlasovacích údajov sa vyskytla chyba",
         "description": "An error occurred while updating the credential"
     },
     "credential_create_error": {
-        "message": "Pri vytváraní poverenia sa vyskytla chyba",
+        "message": "Pri vytváraní prihlasovacích údajov sa vyskytla chyba",
         "description": "An error occurred while creating the credential"
     },
     "open_options_page": {
@@ -320,11 +320,11 @@
         "description": "Update"
     },
     "btn_save_site": {
-        "message": "Uložiť prístupové údaje pre túto stránku",
+        "message": "Uložiť prihlasovacie údaje pre túto stránku",
         "description": "Save credentials for this site"
     },
     "btn_search": {
-        "message": "Hladať prihlasovacie údaje",
+        "message": "Hľadať prihlasovacie údaje",
         "description": "Search credentials"
     },
     "welcome_to_passman": {
@@ -340,7 +340,7 @@
         "description": "Primary CTA on the setup welcome screen"
     },
     "intro_text": {
-        "message": "Vaše heslá Nextcloud sú pripravené v prehliadači. Krátke nastavenie pripojí toto rozšírenie k vášmu trezoru Passman.",
+        "message": "Vaše heslá z Nextcloudu sú pripravené v prehliadači. Krátkym nastavením pripojíte toto rozšírenie k trezoru Passman.",
         "description": "Supporting sentence under the setup welcome title"
     },
     "cancel": {
@@ -360,11 +360,11 @@
         "description": "Enter master password"
     },
     "enter_master_password_desc": {
-        "message": "Všetky vaše nastavenia pre doplnok budú zašifrované pomocou tohto hesla. Môžete si zvoliť uloženie tohto hesla lokálne, avšak v tom prípade bude uložené ako OBYČAJNÝ TEXT (nešifrované).",
+        "message": "Toto heslo sa použije na šifrovanie všetkých nastavení rozšírenia. Môžete si ho uložiť lokálne, ale uloží sa v NEŠIFROVANOM TEXTE.",
         "description": "Enter master password"
     },
     "remember_master_password": {
-        "message": "Zapamätať hlavné hesl",
+        "message": "Zapamätať hlavné heslo",
         "description": "Remember master password"
     },
     "master_pw_warning": {
@@ -384,7 +384,7 @@
         "description": "Custom field type text"
     },
     "custom_fields_types_password": {
-        "message": "Password",
+        "message": "Heslo",
         "description": "Custom field type password"
     },
     "custom_fields_types_file": {
@@ -444,7 +444,7 @@
         "description": "Finish"
     },
     "done_donate": {
-        "message": "Nezabudnite prispieť, ak sa vám páči",
+        "message": "Ak chcete, nezabudnite prispieť",
         "description": "If you like, don't forget to donate"
     },
     "close": {
@@ -452,7 +452,7 @@
         "description": "Close"
     },
     "prev": {
-        "message": "Predch",
+        "message": "Predch.",
         "description": "Previous"
     },
     "back": {
@@ -496,7 +496,7 @@
         "description": "Disable site"
     },
     "disable_picker_text": {
-        "message": "Chcete zakázať Passman pre aktuálnu stránku alebo pre všetky?",
+        "message": "Chcete zakázať Passman pre aktuálnu stránku alebo pre celý web?",
         "description": "Would you like to disable Passman for the current page, or for the entire website?"
     },
     "no_sites_ignored": {
@@ -508,11 +508,11 @@
         "description": "Vault password"
     },
     "label_required": {
-        "message": "Zadajte prosím názov!",
+        "message": "Zadajte, prosím, štítok",
         "description": "When comparing passwords"
     },
     "invalid_host": {
-        "message": "Neplatná url servera",
+        "message": "Neplatná URL servera",
         "description": "Invalid server URL"
     },
     "ignore_site_tab": {
@@ -524,7 +524,7 @@
         "description": "When comparing passwords"
     },
     "invalid_vault_password": {
-        "message": "Kľúč do trezora naplatný!",
+        "message": "Neplatný kľúč trezoru!",
         "description": "Vault password"
     },
     "empty_master_key": {
@@ -548,11 +548,11 @@
         "description": "Clear OTP configuration"
     },
     "issuer": {
-        "message": "Vydavateľ",
+        "message": "Vydávateľ",
         "description": "OTP issuer"
     },
     "type": {
-        "message": "Type",
+        "message": "Typ",
         "description": "OTP type"
     },
     "digits": {
@@ -596,7 +596,7 @@
         "description": "Search"
     },
     "type_to_search": {
-        "message": "Začnite písať",
+        "message": "Píšte pre vyhľadávanie",
         "description": "Type to search placeholder for the search input"
     },
     "credential_deleted": {
@@ -604,19 +604,19 @@
         "description": "Credential deleted"
     },
     "mark_credential_deleted": {
-        "message": "Označiť poverenie ako odstránené",
+        "message": "Označiť prihlasovacie údaje ako odstránené",
         "description": "Mark credential as deleted button label"
     },
     "select_password_picker_default_tab": {
-        "message": "V prípade že sa nenájde žiadny prihlasovací údaj, prejde sa na:",
+        "message": "Ak výber hesiel nenájde žiadne prihlasovacie údaje, prejde na:",
         "description": "Select password picker default tab"
     },
     "no_vaults": {
-        "message": "Prepáčte, žiadny trezor sa nenašiel.  Prosím vytvorte trezor cez Nextcloud / ownCloud aplikáciu a skúste znova.",
+        "message": "Prepáčte, nenašiel sa žiadny trezor. Vytvorte trezor v aplikácii Nextcloud / ownCloud a skúste to znova.",
         "description": "Search"
     },
     "msg_reset_extension": {
-        "message": "Môžete resetovať Vaše heslo.  Toto spôsobí nastenie rozšírenia na pôvodný stav.",
+        "message": "Môžete obnoviť svoje heslo. Tým sa obnoví predvolený stav rozšírenia.",
         "description": "Search"
     },
     "forgot_password": {
@@ -624,7 +624,7 @@
         "description": "Search"
     },
     "reset_extension": {
-        "message": "Resetovať rozšírenie",
+        "message": "Obnoviť predvolené nastavenia rozšírenia",
         "description": "Search"
     },
     "reset_settings": {
@@ -632,11 +632,11 @@
         "description": "Reset settings button label"
     },
     "iam_sure": {
-        "message": "Áno, som si istý!",
+        "message": "Áno, potvrdiť!",
         "description": "Search"
     },
     "edit_insufficient_permissions": {
-        "message": "Nemáte oprávnenie na úpravu tohto prihlasovacieho údaju.",
+        "message": "Nemáte oprávnenie upravovať tento prihlasovací údaj.",
         "description": "You don't have permissions to edit this credential."
     },
     "invalid_server_settings": {
@@ -648,15 +648,15 @@
         "description": "Refresh the credential list"
     },
     "donate_button_title": {
-        "message": "Vývoj závisí od darov, prosím podporte nás",
+        "message": "Vývoj závisí od darov, prosím, podporte nás",
         "description": "Title on the PayPal button"
     },
     "lock_extension": {
-        "message": "Uzamknúť doplnok",
+        "message": "Uzamknúť rozšírenie",
         "description": "Title on the PayPal button"
     },
     "extension_locked": {
-        "message": "Rozšírenie Passman je uzamknuté, pre použitie ho odomknite",
+        "message": "Rozšírenie Passman je uzamknuté. Ak ho chcete používať, odomknite ho.",
         "description": "When the extension is locked, and requires an unlock to use it"
     },
     "invalid_master_password": {
@@ -672,7 +672,7 @@
         "description": "Unlock without refresh button label"
     },
     "credentials_found_for_site": {
-        "message": "Pre túto stránku boli nájdené  $AMOUNT$ prístupové údaje",
+        "message": "Počet prihlasovacích údajov nájdených pre túto stránku: $AMOUNT$",
         "description": "Amount of the credentials found for the current site"
     },
     "save_to": {
@@ -756,7 +756,7 @@
         "description": "Clear tab url filter button label"
     },
     "no_matching_credentials": {
-        "message": "Žiadne zodpovedajúce poverenia",
+        "message": "Žiadne zodpovedajúce prihlasovacie údaje",
         "description": "No matching credentials"
     },
     "update_default_settings": {
@@ -776,7 +776,7 @@
         "description": "Extended settings card description"
     },
     "nextcloud_server_setup": {
-        "message": "Nastavenie servera Nextcloud",
+        "message": "Nastavenie servera Nextcloudu",
         "description": "Nextcloud server setup"
     },
     "nextcloud_server_setup_description": {
@@ -796,7 +796,7 @@
         "description": "Page rules"
     },
     "page_rules_description": {
-        "message": "Nastavte pravidlá pre konkrétne stránky a prispôsobte globálne správanie rozšírenia. V súčasnosti sú určené iba pre domény, nie pre konkrétne cesty. (V budúcnosti sa to môže zmeniť.)",
+        "message": "Nastavte pravidlá pre konkrétne stránky a prispôsobte globálne správanie rozšírenia. Momentálne sa pravidlá vzťahujú iba na domény, nie na konkrétne cesty. Podpora ciest môže pribudnúť neskôr.",
         "description": "Page rules card description"
     },
     "page_rules_existing_rules": {
@@ -840,7 +840,7 @@
         "description": "Success notification when deleting a page rule"
     },
     "page_rules_override_section": {
-        "message": "Prepísať globálne nastavenia",
+        "message": "Vlastné nastavenia namiesto globálnych",
         "description": "Heading for page rule override settings"
     },
     "page_rules_picker_current_site": {
@@ -852,7 +852,7 @@
         "description": "Intro text for picker page rules tab"
     },
     "page_rules_picker_reset": {
-        "message": "Obnoviť zmeny",
+        "message": "Zrušiť zmeny",
         "description": "Reset button label in picker page rules tab"
     },
     "page_rules_picker_loading": {
@@ -860,7 +860,7 @@
         "description": "Loading label for picker page rules tab"
     },
     "page_rules_picker_retry": {
-        "message": "Opakovať",
+        "message": "Skúsiť znova",
         "description": "Retry button label for picker page rules tab"
     },
     "page_rules_picker_load_error": {
@@ -872,7 +872,7 @@
         "description": "Error shown when picker tab cannot save page rules"
     },
     "page_rules_search_label": {
-        "message": "Pravidlá vyhľadávania",
+        "message": "Hľadať pravidlá",
         "description": "Label for the page rules search input"
     },
     "page_rules_search_placeholder": {
@@ -920,7 +920,7 @@
         "description": "Error message when page rule delete fails"
     },
     "page_rules_overrides_count": {
-        "message": "Prepísania: $COUNT$",
+        "message": "Počet vlastných nastavení: $COUNT$",
         "description": "Summary text that shows how many overrides a page rule has"
     },
     "save_default_vault_settings": {
@@ -936,7 +936,7 @@
         "description": "Extension version"
     },
     "enable_email_as_username_fallback_filling": {
-        "message": "Povoliť automatické dopĺňanie používateľského mena e-mailom (a naopak)",
+        "message": "Povoliť náhradné vyplnenie používateľského mena e-mailovou adresou a naopak",
         "description": "Enable email as username fallback filling (and vice versa)"
     },
     "form_detection_settings": {
@@ -948,7 +948,7 @@
         "description": "Enable user event based form detection"
     },
     "enable_user_event_based_form_detection_description": {
-        "message": "Počúvať niektoré špeciálne udalosti používateľa s logikou debouncingu a obmedzovania frekvencie",
+        "message": "Sledovať niektoré špeciálne udalosti používateľa s potláčaním rýchlo sa opakujúcich udalostí a obmedzovaním ich frekvencie",
         "description": "Description for user event based form detection"
     },
     "enable_form_detection_on_url_popstate_events": {
@@ -956,11 +956,11 @@
         "description": "Enable form detection on URL popstate events"
     },
     "enable_form_detection_on_url_popstate_events_description": {
-        "message": "Užitočné najmä pre SPA (ale nie nevyhnutne)",
+        "message": "Užitočné najmä pre jednostránkové aplikácie (SPA), no nielen pre ne",
         "description": "Description for detection on URL popstate events"
     },
     "enable_form_detection_on_url_changes_by_interval": {
-        "message": "Povoliť rozpoznávanie formulárov pri zmenách URL kontrolovaných v intervale (1 s)",
+        "message": "Povoliť rozpoznávanie formulárov pri zmenách URL (kontrola každú sekundu)",
         "description": "Enable form detection on URL changes by interval"
     },
     "enable_form_detection_by_mutation_observer": {
@@ -988,11 +988,11 @@
         "description": "Explains what the offline model-store cache is"
     },
     "offline_cache_size": {
-        "message": "Odhadovaná veľkosť: $1 ($2 poverení v $3 trezoroch)",
+        "message": "Odhadovaná veľkosť: $1 (počet prihlasovacích údajov: $2, počet trezorov: $3)",
         "description": "Shows approximate IndexedDB offline cache size"
     },
     "offline_cache_size_loading": {
-        "message": "Meria sa offline vyrovnávacia pamäť…",
+        "message": "Zisťuje sa veľkosť offline vyrovnávacej pamäte…",
         "description": "Shown while estimating IndexedDB size"
     },
     "offline_cache_size_unavailable": {
@@ -1028,15 +1028,15 @@
         "description": "Offline cache backend option: native IndexedDB"
     },
     "offline_cache_storage_backend_memory": {
-        "message": "V pamäti (relácia / časovo obmedzené)",
+        "message": "V pamäti (obmedzené na reláciu alebo časovo)",
         "description": "Offline cache backend option: volatile in-memory model store (cleared when the extension background script restarts)"
     },
     "offline_cache_memory_mode_notice": {
-        "message": "Používa sa pamäťová vyrovnávacia pamäť. Trezory vo vyrovnávacej pamäti sa stratia pri reštarte skriptu rozšírenia na pozadí; v prípade potreby sa znova načítajú zo servera.",
+        "message": "Používa sa vyrovnávacia pamäť v operačnej pamäti. Trezory uložené vo vyrovnávacej pamäti sa pri reštarte skriptu rozšírenia na pozadí stratia; v prípade potreby sa znova načítajú zo servera.",
         "description": "Amber notice when effective offline cache backend is memory"
     },
     "offline_cache_forced_fallback_notice": {
-        "message": "Natívne IndexedDB nie je v tomto profile prehliadača k dispozícii (napríklad vo Firefoxe s nastavením „Nikdy si nepamätať históriu“). Namiesto neho sa používa pamäťová vyrovnávacia pamäť.",
+        "message": "Natívne IndexedDB nie je v tomto profile prehliadača k dispozícii (napríklad vo Firefoxe s nastavením „Nikdy si nepamätať históriu“). Namiesto neho sa používa vyrovnávacia pamäť v operačnej pamäti.",
         "description": "Amber notice when IndexedDB was requested but blocked"
     },
     "offline_cache_size_memory_note": {
@@ -1064,7 +1064,7 @@
         "description": "Description under the connection directory heading"
     },
     "server_connection_active": {
-        "message": "aktívny",
+        "message": "aktívne",
         "description": "Label marker for the currently active server connection"
     },
     "server_connection_switch": {
@@ -1080,7 +1080,7 @@
         "description": "Button / heading to add another Nextcloud server connection"
     },
     "server_connection_edit_active": {
-        "message": "Poverenia aktívneho servera",
+        "message": "Prihlasovacie údaje aktívneho servera",
         "description": "Heading for editing the currently active Nextcloud server login"
     },
     "server_connection_remove_confirm": {
@@ -1104,7 +1104,7 @@
         "description": "Error toast when removing a server connection fails"
     },
     "setup_dev_warning": {
-        "message": "Toto prepísanie sa stále aktívne vyvíja. Očakávajte nedostatky.$BR$Našli ste chybu? Otvorte problém na $LINK_START$GitHube$LINK_END$.",
+        "message": "Táto prepracovaná verzia sa stále aktívne vyvíja. Môže obsahovať nedostatky.$BR$Našli ste chybu? Nahláste ju na $LINK_START$GitHube$LINK_END$.",
         "description": "Development warning shown on the setup welcome screen"
     },
     "set_extension_unlock_password": {
@@ -1132,7 +1132,7 @@
         "description": "Label for the new extension unlock password field"
     },
     "change_unlock_password_button": {
-        "message": "Zmena hesla",
+        "message": "Zmeniť heslo",
         "description": "Button to submit a change of the extension unlock password"
     },
     "unlock_password_changed_successfully": {
@@ -1200,7 +1200,7 @@
         "description": "Intro on migrate page after decrypt, during review"
     },
     "migrate_legacy_continue_review": {
-        "message": "Pokračovať v kontrole",
+        "message": "Pokračovať na kontrolu",
         "description": "Button to decrypt legacy settings and open the editable review"
     },
     "migrate_legacy_confirm": {
@@ -1224,7 +1224,7 @@
         "description": "Section title for global prefs on the migrate review page"
     },
     "migrate_legacy_ignored_sites_hint": {
-        "message": "Jedna lokalita na riadok. Z nich sa vytvoria pravidlá stránok s povolenou možnosťou „ignorovať stránku“.",
+        "message": "Jeden web na riadok. Pre každý sa vytvorí pravidlo stránky so zapnutou možnosťou „ignorovať stránku“.",
         "description": "Hint under ignored sites textarea on migrate review"
     },
     "migrate_legacy_status_idle": {
@@ -1260,11 +1260,11 @@
         "description": "Success toast after importing legacy settings"
     },
     "passman_app_required": {
-        "message": "Toto rozšírenie vyžaduje, aby bola na serveri Nextcloud nainštalovaná aplikácia $LINK_START$Passman$LINK_END$.",
+        "message": "Toto rozšírenie vyžaduje, aby bola na vašom serveri Nextcloudu nainštalovaná $LINK_START$aplikácia Passman$LINK_END$.",
         "description": "Notice that the Passman Nextcloud app must be installed"
     },
     "no_data_transferred_elsewhere": {
-        "message": "Žiadne údaje sa neprenášajú na iné zdroje než na zadaný server Nextcloud.",
+        "message": "Žiadne údaje sa neprenášajú na iné miesta než na zadaný server Nextcloudu.",
         "description": "Privacy notice on the server settings card"
     },
     "no_selected_vault_info_found": {
@@ -1280,7 +1280,7 @@
         "description": "Error when metadata about the default vault is missing"
     },
     "could_not_get_or_decrypt_vault": {
-        "message": "Trezor sa nepodarilo získať ani dešifrovať",
+        "message": "Trezor sa nepodarilo získať alebo dešifrovať",
         "description": "Error when loading or decrypting the vault fails"
     },
     "unknown_error_refresh_credential_list": {
@@ -1312,7 +1312,7 @@
         "description": "Placeholder for the credential tags input"
     },
     "remove_tag": {
-        "message": "Odstrániť značku $TAG$",
+        "message": "Odstrániť štítok $TAG$",
         "description": "Accessible label for removing a credential tag"
     },
     "click_to_add": {
@@ -1320,11 +1320,11 @@
         "description": "Placeholder shown for empty in-place editable fields"
     },
     "no_field_to_copy": {
-        "message": "Žiadne pole $FIELDNAME$ na skopírovanie",
+        "message": "Pole $FIELDNAME$ nemá hodnotu na skopírovanie",
         "description": "Tooltip when a credential field has no value to copy"
     },
     "could_not_find_selected_credential": {
-        "message": "Vybrané poverenie sa nenašlo",
+        "message": "Vybraný prihlasovací údaj sa nenašiel",
         "description": "Error when the selected credential cannot be loaded for editing"
     },
     "credential_delete_unknown_error": {
@@ -1332,11 +1332,11 @@
         "description": "Fallback error when credential deletion fails without details"
     },
     "credential_delete_error": {
-        "message": "Pri odstraňovaní poverenia sa vyskytla chyba",
+        "message": "Pri odstraňovaní prihlasovacieho údaja sa vyskytla chyba",
         "description": "Error when credential deletion fails"
     },
     "password_strength_poor": {
-        "message": "veľmi slabé",
+        "message": "slabé",
         "description": "Password strength meter label"
     },
     "password_strength_weak": {
@@ -1344,7 +1344,7 @@
         "description": "Password strength meter label"
     },
     "password_strength_good": {
-        "message": "dobré",
+        "message": "dobrá",
         "description": "Password strength meter label"
     },
     "password_strength_strong": {
@@ -1352,11 +1352,11 @@
         "description": "Password strength meter label"
     },
     "dismiss_alert": {
-        "message": "Odmietnuť upozornenie",
+        "message": "Zatvoriť upozornenie",
         "description": "Accessible label for dismissing a toast / alert"
     },
     "credential_icon": {
-        "message": "Ikona poverenia",
+        "message": "Ikona prihlasovacieho údaja",
         "description": "Alt text for a credential favicon / icon"
     },
     "otp_qr_code": {
@@ -1400,7 +1400,7 @@
         "description": "Browser context menu submenu item under Generate password"
     },
     "field_copied_to_clipboard": {
-        "message": "$FIELDNAME$ bolo skopírované do schránky",
+        "message": "Skopírované do schránky: $FIELDNAME$",
         "description": "Success toast after copying a field to the clipboard"
     },
     "failed_to_copy_field": {
@@ -1428,11 +1428,11 @@
         "description": "Generic unknown error fallback"
     },
     "no_credential_data_provided": {
-        "message": "Neboli poskytnuté údaje poverenia",
+        "message": "Neboli poskytnuté prihlasovacie údaje",
         "description": "Error when creating a credential without payload data"
     },
     "no_source_tab_found": {
-        "message": "Nenašla sa karta zdroja",
+        "message": "Zdrojová karta sa nenašla",
         "description": "Error when the originating browser tab cannot be resolved"
     },
     "failed_to_save_credential": {
@@ -1440,7 +1440,7 @@
         "description": "Error when saving a new credential fails"
     },
     "could_not_get_backend_passman_client": {
-        "message": "Klienta Passman na backende sa nepodarilo získať",
+        "message": "Klienta Passman na strane servera sa nepodarilo získať",
         "description": "Error when the backend Passman client is unavailable"
     },
     "invalid_request_check_body": {
@@ -1484,11 +1484,11 @@
         "description": "Setting label for whether to enable the doorhanger overlay for collecting passwords"
     },
     "doorhanger_save_title": {
-        "message": "Uložiť prihlásenie do Passmanu?",
+        "message": "Uložiť prihlasovacie údaje do aplikácie Passman?",
         "description": "Doorhanger title when offering to add a new credential"
     },
     "doorhanger_update_title": {
-        "message": "Aktualizovať prihlásenie v Passmane?",
+        "message": "Aktualizovať prihlasovacie údaje v aplikácii Passman?",
         "description": "Doorhanger title when offering to update a matched credential"
     },
     "doorhanger_dismiss": {
@@ -1496,15 +1496,15 @@
         "description": "Doorhanger button to dismiss the prompt for this attempt"
     },
     "doorhanger_select_credential": {
-        "message": "Poverenie na aktualizáciu",
+        "message": "Prihlasovací údaj na aktualizáciu",
         "description": "Label for selecting which matched credential to update"
     },
     "doorhanger_unnamed_credential": {
-        "message": "Poverenie bez názvu",
+        "message": "Prihlasovacie údaje bez názvu",
         "description": "Fallback label when a doorhanger update candidate has no label"
     },
     "doorhanger_settings": {
-        "message": "Doorhanger",
+        "message": "Vyskakovacie okno",
         "description": "Extended settings section title for doorhanger appearance"
     },
     "doorhanger_settings_description": {
@@ -1516,7 +1516,7 @@
         "description": "Label for doorhanger layout dropdown"
     },
     "doorhanger_layout_description": {
-        "message": "Karta pláva v rohu. Horný riadok je banner po celej šírke v hornej časti stránky.",
+        "message": "Karta sa zobrazuje v rohu. Horný riadok je banner na celú šírku v hornej časti stránky.",
         "description": "Help text for doorhanger layout setting"
     },
     "doorhanger_layout_card": {
@@ -1532,7 +1532,7 @@
         "description": "Label for doorhanger gravity/position dropdown"
     },
     "doorhanger_gravity_description": {
-        "message": "Roh pre rozloženie karty alebo zarovnanie obsahu pre rozloženie horného riadka.",
+        "message": "Umiestnenie v rohu pri rozložení karty alebo zarovnanie obsahu pri rozložení s horným riadkom.",
         "description": "Help text for doorhanger gravity setting"
     },
     "doorhanger_gravity_top_right": {
@@ -1716,7 +1716,7 @@
         "description": "Vault recovery credential kind: shared by the current user with others"
     },
     "vault_recovery_kind_shared_with_us": {
-        "message": "Shared with you",
+        "message": "Zdieľané s vami",
         "description": "Vault recovery credential kind: shared with the current user by someone else"
     },
     "vault_recovery_strategy_rewrap_owned": {
@@ -1808,7 +1808,7 @@
         "description": "Notice on the credential list when some credentials were skipped after an encryption error"
     },
     "vault_recovery_destination_section": {
-        "message": "Destination",
+        "message": "Cieľ",
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
