@@ -1616,7 +1616,7 @@
         "description": "Button to remove an alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_scan_button": {
-        "message": "Scan vault",
+        "message": "Analyser le coffre-fort",
         "description": "Button to start a read-only vault recovery scan"
     },
     "vault_recovery_preferred_password_required": {
@@ -1676,7 +1676,7 @@
         "description": "Copies the original encrypted credential JSON from an expanded vault recovery scan row"
     },
     "vault_recovery_select_all": {
-        "message": "Select all repairable credentials",
+        "message": "Sélectionner tous les identifiants réparables",
         "description": "Checkbox label to select all actionable hits in the vault recovery tool"
     },
     "vault_recovery_selected_count": {
@@ -1752,7 +1752,7 @@
         "description": "Hint below the vault recovery dry run checkbox"
     },
     "vault_recovery_repair_button": {
-        "message": "Repair selected",
+        "message": "Réparer la sélection",
         "description": "Button to start repairing the selected credentials in the vault recovery tool"
     },
     "vault_recovery_repair_confirm": {
@@ -1780,7 +1780,7 @@
         "description": "Per-credential error note in the vault recovery repair results"
     },
     "vault_recovery_done_section": {
-        "message": "Repair summary",
+        "message": "Récapitulatif de la réparation",
         "description": "Section title for the vault recovery repair summary"
     },
     "vault_recovery_repair_summary": {
@@ -1812,7 +1812,7 @@
         "description": "Section title for choosing where recovered credentials are written to in the vault recovery tool"
     },
     "vault_recovery_destination_new_vault_label": {
-        "message": "Create a new vault (recommended)",
+        "message": "Créer un nouveau coffre-fort (recommandé)",
         "description": "Radio option label: copy recovered credentials into a freshly created vault"
     },
     "vault_recovery_destination_new_vault_hint": {
@@ -1848,7 +1848,7 @@
         "description": "Validation error when the new vault name is empty"
     },
     "vault_recovery_include_healthy_label": {
-        "message": "Also include already-healthy credentials",
+        "message": "Inclure également les identifiants qui sont déjà sains",
         "description": "Checkbox label to also copy/export credentials that are already fine, for the new-vault / JSON destinations"
     },
     "vault_recovery_include_healthy_hint": {
@@ -1856,7 +1856,7 @@
         "description": "Hint below the include-healthy-credentials checkbox"
     },
     "vault_recovery_write_warning_new_vault": {
-        "message": "This creates a new vault on your Passman server and uploads the copied credentials to it. This cannot be undone.",
+        "message": "Cela crée un nouveau coffre-fort sur votre serveur Passman et téléverse dedans les identifiants copiés. Cette action est irréversible.",
         "description": "Pinned safety warning shown before creating a new vault in the vault recovery tool"
     },
     "vault_recovery_write_warning_json": {
@@ -1888,7 +1888,7 @@
         "description": "Hint next to a shared-with-us credential explaining that selecting it copies it as owned, for the new-vault / JSON destinations"
     },
     "vault_recovery_file_status_ok": {
-        "message": "Ok",
+        "message": "OK",
         "description": "Vault recovery file blob status: already on the preferred key"
     },
     "vault_recovery_file_status_needs_rewrap": {
@@ -1900,7 +1900,7 @@
         "description": "Vault recovery file blob status: no candidate key decrypts this file"
     },
     "vault_recovery_skip_deleted": {
-        "message": "Skip deleted credentials",
+        "message": "Ignorer les identifiants supprimés",
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
@@ -1920,7 +1920,7 @@
         "description": "Shown instead of the scan results card after a repair/copy was applied, in the vault recovery tool"
     },
     "vault_recovery_show_scan_results": {
-        "message": "Show scan results",
+        "message": "Afficher les résultats de l'analyse",
         "description": "Button to manually re-expand the collapsed scan results card in the vault recovery tool"
     },
     "vault_recovery_hide_scan_results": {
@@ -1936,15 +1936,15 @@
         "description": "Fallback progress label in the vault recovery tool while a scan/repair step has not reported a stage yet"
     },
     "vault_recovery_stage_loading": {
-        "message": "Loading vault from the server",
+        "message": "Chargement du coffre-fort depuis le serveur",
         "description": "Vault recovery progress stage: fetching the full vault, before any decrypt/probe step starts"
     },
     "vault_recovery_stage_credentials": {
-        "message": "Scanning credentials",
+        "message": "Analyse des identifiants",
         "description": "Vault recovery progress stage: scanning credential ciphertext"
     },
     "vault_recovery_stage_files": {
-        "message": "Probing files",
+        "message": "Examen des fichiers",
         "description": "Vault recovery progress stage: probing file blobs"
     },
     "vault_recovery_stage_repair": {
@@ -1952,11 +1952,11 @@
         "description": "Vault recovery progress stage: applying in-place repairs"
     },
     "vault_recovery_stage_materialize": {
-        "message": "Preparing credentials",
+        "message": "Préparation des identifiants",
         "description": "Vault recovery progress stage: decrypting credentials/files for a copy destination"
     },
     "vault_recovery_stage_write": {
-        "message": "Writing",
+        "message": "Écriture en cours",
         "description": "Vault recovery progress stage: creating the new vault / uploading copied credentials"
     },
     "extName": {
