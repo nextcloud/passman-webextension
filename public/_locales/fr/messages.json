@@ -1592,7 +1592,7 @@
         "description": "Explanation shown at the top of the vault recovery tool"
     },
     "vault_recovery_keys_section": {
-        "message": "Vault keys",
+        "message": "Clés du coffre-fort",
         "description": "Section title for entering candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_preferred_password_label": {
@@ -1608,7 +1608,7 @@
         "description": "Label for the list of alternate candidate vault passwords in the vault recovery tool"
     },
     "vault_recovery_add_alternate_password": {
-        "message": "Add password",
+        "message": "Ajouter un mot de passe",
         "description": "Button to add another alternate vault password candidate in the vault recovery tool"
     },
     "vault_recovery_remove_alternate_password": {
@@ -1904,11 +1904,11 @@
         "description": "Checkbox label to skip deleted credentials during the vault recovery scan"
     },
     "vault_recovery_config_changed_hint": {
-        "message": "The vault passwords or options changed since this scan. Press 'Scan vault' again before repairing or copying anything.",
+        "message": "Les options ou les mots de passe du coffre-fort ont changé depuis cette analyse. Appuyez à nouveau sur 'Analyser le coffre-fort' avant de réparer ou copier quoi que ce soit.",
         "description": "Shown when the scanned report no longer matches the current password/skip-deleted configuration, in the vault recovery tool"
     },
     "vault_recovery_apply_disabled_hint": {
-        "message": "Scan the vault with the current passwords before repairing or copying anything.",
+        "message": "Analysez le coffre-fort avec les mots de passe actuels avant de réparer ou copier quoi que ce soit.",
         "description": "Shown under the destination controls while no dry run matching the current configuration exists yet"
     },
     "vault_recovery_dry_run_item_failed": {
