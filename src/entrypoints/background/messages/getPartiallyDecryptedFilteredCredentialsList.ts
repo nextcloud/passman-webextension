@@ -157,6 +157,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                             errorMessage = i18n.getMessage('could_not_decrypt_vault');
                         }
                     } catch (exception) {
+                        logger.error('[getPartiallyDecryptedFilteredCredentialsList] background message handler failed to get, decrypt or filter the vault credentials', exception);
                         errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                     } finally {
                         if (defaultVaultInfo.guid) {

@@ -69,6 +69,7 @@ onMessage('getCredentialsForVault', async (message) => {
                         errorMessage = i18n.getMessage('no_vault_info_in_extension_settings');
                     }
                 } catch (exception) {
+                    logger.error('[getCredentialsForVault] background message handler failed to get, decrypt or serialize the vault credentials', exception);
                     errorMessage = i18n.getMessage('could_not_get_or_decrypt_vault');
                 }
             });
