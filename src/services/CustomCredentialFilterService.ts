@@ -79,9 +79,17 @@ export class CustomCredentialFilterService {
         }
 
         return (credential: Credential): boolean => {
-            try {    
-                let credential_url = credential.url;
-                if (credential_url && credential_url !== '' && userTabUrl && !/^(ht)tps?:\/\//i.test(credential_url)) {
+            try {
+                const rawCredentialUrl: unknown = credential.url;
+                if (typeof rawCredentialUrl !== 'string') {
+                    // null is a valid "no url" value; anything else is malformed decrypted data (e.g. boolean false)
+                    if (rawCredentialUrl !== null && rawCredentialUrl !== undefined) {
+                        logger.debug("Skipping credential with non-string url for URL matching", credential.guid, typeof rawCredentialUrl);
+                    }
+                    return false;
+                }
+                let credential_url = rawCredentialUrl;
+                if (credential_url !== '' && userTabUrl && !/^(ht)tps?:\/\//i.test(credential_url)) {
                     try {
                         const protocol = userTabUrl.split('://').shift();
                         credential_url = protocol + "://" + credential_url;
@@ -96,11 +104,9 @@ export class CustomCredentialFilterService {
                     }
                 }
             } catch (e) {
-                if (!ignoreParseExceptionEntry) {
-                    // this is not necessarily a real problem, since like about:debugging is not a valid/parseable URL, but it's a valid URL for Firefox
-                    logger.error("Error processing URL", e);
-                    throw e;
-                }
+                // the tab url has already been validated above, so this can only be caused by the credential's own url
+                // (e.g. containing a space). Never let a single unparseable credential url abort the matching of the whole vault.
+                logger.debug("Skipping credential with unparseable url for URL matching", credential.guid, e);
             }
             return false;
         }
