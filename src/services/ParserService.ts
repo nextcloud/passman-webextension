@@ -1,14 +1,20 @@
 import tlds from '~/../public/tlds.json';
 
 export class ParserService {
-    public static processURL = (inputUrl: string, ignoreProtocol: boolean, ignoreSubdomain: boolean, ignorePath: boolean, ignorePort: boolean) => {
-        if (inputUrl === null || inputUrl === "") {
-            return inputUrl;
+    /**
+     * Normalizes the given url according to the ignore* options.
+     *
+     * Returns an empty string for an empty or non-string input.
+     * @throws TypeError if the input is a non-empty string, that is not a parseable URL
+     */
+    public static processURL = (inputUrl: unknown, ignoreProtocol: boolean, ignoreSubdomain: boolean, ignorePath: boolean, ignorePort: boolean): string => {
+        if (typeof inputUrl !== 'string' || inputUrl === "") {
+            return "";
         }
 
         const { hostname, pathname, port, protocol } = ParserService.parseUrl(inputUrl);
 
-        if (hostname === null || hostname === "") {
+        if (!hostname) {
             return inputUrl;
         }
 
