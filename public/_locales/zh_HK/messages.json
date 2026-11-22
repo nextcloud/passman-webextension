@@ -1452,7 +1452,7 @@
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "未提供 connectionId",
+        "message": "No connection ID provided",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
@@ -1460,7 +1460,7 @@
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "沒有 ID 為 $CONNECTION_ID$ 的受管理連線",
+        "message": "No managed connection with ID $CONNECTION_ID$",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
