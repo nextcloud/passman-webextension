@@ -37,13 +37,38 @@ export type DecryptedPartialCredentialData = {
     can_write: boolean | null,
 }
 
+/** Non-secret identity of a credential with malformed (non-string) decrypted field values. */
+export type MalformedFieldDataCredential = {
+    guid: string,
+    label: string,
+    malformedFields: string[]
+}
+
 export type GetCredentialsListMessagingResponse = {
     status: boolean,
     errorMessage: string | null,
     decryptedPartialCredentialData: DecryptedPartialCredentialData[],
     invalidUrlProvided: boolean | null,
     /** Credentials remembered because a filter skipped them after an encryption error. Empty when this request did not read the store. */
-    encryptionErrorSkippedCredentials: SkippedEncryptionErrorCredential[]
+    encryptionErrorSkippedCredentials: SkippedEncryptionErrorCredential[],
+    /**
+     * Not deleted, visible credentials of the vault, where malformed field data has been detected so far.
+     * Only covers fields that have been decrypted (read), like the listed fields of this response.
+     */
+    malformedFieldDataCredentials: MalformedFieldDataCredential[]
+}
+
+/**
+ * Collects credentials with detected malformed field data, that vault recovery would scan (not hidden, not deleted).
+ */
+export function collectMalformedFieldDataCredentials(credentials: Credential[]): MalformedFieldDataCredential[] {
+    return credentials
+        .filter((credential) => !credential.hidden && !CredentialFilterService.isDeleted(credential) && credential.hasMalformedFieldData())
+        .map((credential) => ({
+            guid: credential.guid,
+            label: typeof credential.label === 'string' ? credential.label : '',
+            malformedFields: [...credential.getMalformedFields()]
+        }));
 }
 
 export function toDecryptedPartialCredentialData(credential: Credential, forPicker: boolean = false): DecryptedPartialCredentialData {
@@ -84,6 +109,8 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
     let decryptedPartialCredentialData: DecryptedPartialCredentialData[] = [];
     let invalidUrlProvided: boolean | null = null;
     let encryptionErrorSkippedCredentials: SkippedEncryptionErrorCredential[] = [];
+    let malformedFieldDataCredentials: MalformedFieldDataCredential[] = [];
+    let vaultCredentials: Credential[] = [];
     const skippedEncryptionErrors: Credential[] = [];
 
     const body = message.data;
@@ -152,6 +179,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
                                 );
                             }
 
+                            vaultCredentials = myVault.credentials;
                             status = true;
                         } else {
                             errorMessage = i18n.getMessage('could_not_decrypt_vault');
@@ -173,7 +201,19 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         });
         for (const filteredCredential of filteredCredentials) {
             decryptedPartialCredentialData.push(toDecryptedPartialCredentialData(filteredCredential));
+
+            // may won't cover all credentials with malformed field data, but it's a better solution than adding another loop (see comment below)
+            if (filteredCredential.hasMalformedFieldData()) {
+                malformedFieldDataCredentials.push({
+                    guid: filteredCredential.guid,
+                    label: typeof filteredCredential.label === 'string' ? filteredCredential.label : '',
+                    malformedFields: [...filteredCredential.getMalformedFields()]
+                });
+            }
         }
+        // after building the response data, since that decrypts (and thereby checks) the listed fields
+        // this would be the best and most reliable solution, but would add up to the response time every time the extension is opened
+        // malformedFieldDataCredentials = collectMalformedFieldDataCredentials(vaultCredentials);
     }
 
     return {
@@ -181,6 +221,7 @@ onMessage('getPartiallyDecryptedFilteredCredentialsList', async (message) => {
         errorMessage,
         decryptedPartialCredentialData,
         invalidUrlProvided,
-        encryptionErrorSkippedCredentials
+        encryptionErrorSkippedCredentials,
+        malformedFieldDataCredentials
     };
 });

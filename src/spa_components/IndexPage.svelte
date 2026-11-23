@@ -19,7 +19,8 @@
     import {
         GetCredentialsListMessagingFilterType,
         type DecryptedPartialCredentialData,
-        type GetCredentialsListMessagingResponse
+        type GetCredentialsListMessagingResponse,
+        type MalformedFieldDataCredential
     } from "~/entrypoints/background/messages/getPartiallyDecryptedFilteredCredentialsList";
     import type { SkippedEncryptionErrorCredential } from "~/services/EncryptionErrorSkippedCredentialStore";
     import type { GetCredentialsForVaultMessagingResponse } from "~/entrypoints/background/messages/getCredentialsForVault";
@@ -40,6 +41,7 @@
     let urlFilter = $state<string | null>(null);
     let errorMessage = $state<string | null>(null);
     let encryptionErrorSkippedCredentials = $state<SkippedEncryptionErrorCredential[]>([]);
+    let malformedFieldDataCredentials = $state<MalformedFieldDataCredential[]>([]);
     let vault = $state<Vault | null>(null);
     let listItems = $state<DecryptedPartialCredentialData[]>([]);
     let pageIsLoading = $state(true);
@@ -329,6 +331,7 @@
 
             if (response.status) {
                 encryptionErrorSkippedCredentials = response.encryptionErrorSkippedCredentials ?? [];
+                malformedFieldDataCredentials = response.malformedFieldDataCredentials ?? [];
                 if (response.invalidUrlProvided) {
                     // Opening the popup on an invalid URL to be filtered is not an error, but we handle it by clearing the URL filter.
                     clearUrlFilter();
@@ -545,16 +548,28 @@
                     </div>
                 {/if}
             {/if}
-            {#if encryptionErrorSkippedCredentials.length > 0}
+            {#if encryptionErrorSkippedCredentials.length > 0 || malformedFieldDataCredentials.length > 0}
                 <div class="my-2 max-w-[24rem] text-center space-y-2 px-2">
-                    <p class="text-xs text-orange-500">
-                        {i18n.getMessage('vault_recovery_skipped_encryption_hint', [String(encryptionErrorSkippedCredentials.length)])}
-                    </p>
-                    <ul class="text-xs text-gray-400 space-y-0.5">
-                        {#each encryptionErrorSkippedCredentials.slice(0, 5) as item (item.guid)}
-                            <li class="truncate">{item.label.trim() !== '' ? item.label : item.guid}</li>
-                        {/each}
-                    </ul>
+                    {#if encryptionErrorSkippedCredentials.length > 0}
+                        <p class="text-xs text-orange-500">
+                            {i18n.getMessage('vault_recovery_skipped_encryption_hint', [String(encryptionErrorSkippedCredentials.length)])}
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-0.5">
+                            {#each encryptionErrorSkippedCredentials.slice(0, 5) as item (item.guid)}
+                                <li class="truncate">{item.label.trim() !== '' ? item.label : item.guid}</li>
+                            {/each}
+                        </ul>
+                    {/if}
+                    {#if malformedFieldDataCredentials.length > 0}
+                        <p class="text-xs text-orange-500">
+                            {i18n.getMessage('vault_recovery_malformed_list_hint', [String(malformedFieldDataCredentials.length)])}
+                        </p>
+                        <ul class="text-xs text-gray-400 space-y-0.5">
+                            {#each malformedFieldDataCredentials.slice(0, 5) as item (item.guid)}
+                                <li class="truncate">{item.label.trim() !== '' ? item.label : item.guid} ({item.malformedFields.join(', ')})</li>
+                            {/each}
+                        </ul>
+                    {/if}
                     <OnClickButton callback={openVaultRecoveryToolPage} title={i18n.getMessage('vault_recovery_open_tool')}>
                         {i18n.getMessage('vault_recovery_open_tool')}
                     </OnClickButton>

@@ -1823,6 +1823,26 @@
       }
     }
   },
+  "vault_recovery_malformed_hint": {
+    "message": "Credentials with invalid field values, like \"false\" instead of a text: $COUNT$. Such values can break the search and URL matching. A repair stores them as text or as empty field. Credentials shared with you can only be repaired by their owner.",
+    "description": "Explanation shown in the vault recovery scan results, if credentials with malformed (non-text) field values were found. The count is placed as a value after a label on purpose, since browser i18n does not support plural forms.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "vault_recovery_malformed_fields": {
+    "message": "Fields with invalid values: $FIELDS$",
+    "description": "Lists payload field names that decrypt fine, but contain an invalid (non-text) value, in the vault recovery scan details",
+    "placeholders": {
+      "fields": {
+        "content": "$1",
+        "example": "username, url"
+      }
+    }
+  },
   "vault_recovery_preview_title": {
     "message": "Recovered details",
     "description": "Heading of the expanded recovered-credential preview in the vault recovery scan results"
@@ -2012,6 +2032,16 @@
   "vault_recovery_skipped_encryption_hint": {
     "message": "$COUNT$ credentials with decryption errors have been detected and were left out of this list. Vault recovery can diagnose the vault.",
     "description": "Notice on the credential list when some credentials were skipped after an encryption error",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "vault_recovery_malformed_list_hint": {
+    "message": "$COUNT$ credentials with invalid field values have been detected. Such values can break the search and URL matching. Vault recovery can repair them.",
+    "description": "Notice on the credential list when credentials with malformed (non-text) field values, like \"false\" instead of a username, have been detected.",
     "placeholders": {
       "count": {
         "content": "$1",

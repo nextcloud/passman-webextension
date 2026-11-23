@@ -614,6 +614,13 @@
                     </div>
                 {/if}
 
+                {#if (report.malformedCount ?? 0) > 0}
+                    <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100 flex gap-2 items-start">
+                        <span class="shrink-0 mt-0.5"><Icon data={exclamationTriangle} scale={1.0}/></span>
+                        <span>{i18n.getMessage('vault_recovery_malformed_hint', [String(report.malformedCount)])}</span>
+                    </div>
+                {/if}
+
                 {#if visibleHits.length === 0}
                     <p class="text-sm text-gray-500">{i18n.getMessage('no_matching_credentials')}</p>
                 {:else}
@@ -672,6 +679,11 @@
                                                 {#if hit.status === 'broken' && (hit.brokenFields?.length ?? 0) > 0}
                                                     <p class="text-xs text-red-500 mt-1">
                                                         {i18n.getMessage('vault_recovery_broken_fields', [hit.brokenFields.join(', ')])}
+                                                    </p>
+                                                {/if}
+                                                {#if (hit.malformedFields?.length ?? 0) > 0}
+                                                    <p class="text-xs text-amber-700 dark:text-amber-300 mt-1">
+                                                        {i18n.getMessage('vault_recovery_malformed_fields', [(hit.malformedFields ?? []).join(', ')])}
                                                     </p>
                                                 {/if}
                                             </div>
