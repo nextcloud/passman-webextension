@@ -1452,7 +1452,7 @@
         "description": "Error when default vault info cannot be loaded"
     },
     "no_connection_id_provided": {
-        "message": "No connection ID provided",
+        "message": "Идентификатор подключения не указан",
         "description": "Error when a server connection id is missing from the request"
     },
     "could_not_get_passman_client": {
@@ -1460,7 +1460,7 @@
         "description": "Error when the Passman client instance is unavailable"
     },
     "no_managed_connection_with_id": {
-        "message": "No managed connection with ID $CONNECTION_ID$",
+        "message": "Управляемое подключение с идентификатором $CONNECTION_ID$ не найдено",
         "description": "Error when a saved server connection id cannot be found"
     },
     "vault_decrypt_failed_with_password": {
